@@ -3,25 +3,25 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import MouseGlow from "../components/MouseGlow";
 import PartnersMarquee from "../components/PartnersMarquee";
 import WhatWeDoSection from "../components/WhatWeDoSection";
-import FeaturedWorkSection from "../components/FeaturedWorkSection";
 import AboutUsSection from "../components/AboutUsSection";
+import FeaturedWorkSection from "../components/FeaturedWorkSection";
+import BlogsSection from "../components/BlogsSection";
+import TestimonialsSection from "../components/TestimonialsSection";
+import NewsletterSection from "../components/NewsletterSection";
+import Footer from "../components/Footer";
 import { LanguageProvider } from "../context/LanguageContext";
 
 export default function Home() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-white flex flex-col overflow-x-hidden relative pt-0 px-0 pb-0 w-full">
+      <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative pt-0 px-0 pb-0 w-full">
         {/* Viewfinder L-shaped Corner Markings */}
         <div className="fixed top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-zinc-300 pointer-events-none z-30"></div>
         <div className="fixed top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-zinc-300 pointer-events-none z-30"></div>
         <div className="fixed bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-zinc-300 pointer-events-none z-30"></div>
         <div className="fixed bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-zinc-300 pointer-events-none z-30"></div>
-
-        {/* Mouse hover glowing tracker */}
-        <MouseGlow />
 
         {/* Header Navigation */}
         <Navbar />
@@ -30,12 +30,14 @@ export default function Home() {
         <main className="flex flex-col justify-center relative z-10 w-full">
           <Hero />
           <PartnersMarquee />
+          <AboutUsSection />
           <WhatWeDoSection />
           <FeaturedWorkSection />
+          <BlogsSection />
+          <TestimonialsSection />
+          <NewsletterSection />
+          <Footer />
         </main>
-
-        {/* About Us Section */}
-        <AboutUsSection />
       </div>
     </LanguageProvider>
   );

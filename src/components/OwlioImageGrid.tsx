@@ -45,14 +45,14 @@ export default function OwlioImageGrid() {
 
   return (
     <div className="w-full flex flex-col items-center lg:items-end justify-center select-none relative overflow-visible">
-      {/* Pure Photos View - No Outer Card Container/Border and No Dots */}
-      <div className="w-full max-w-full sm:max-w-[620px] md:max-w-[700px] lg:max-w-[780px] xl:max-w-[880px] 2xl:max-w-[960px] aspect-[16/9] relative overflow-visible flex items-center justify-center">
+      {/* Full width container with object-contain so NO images are cut off */}
+      <div className="w-full max-w-full sm:max-w-[620px] md:max-w-[680px] lg:max-w-[740px] xl:max-w-[800px] 2xl:max-w-[860px] aspect-[16/9] relative overflow-visible flex items-center justify-center lg:justify-end scale-100 lg:scale-[1.10] xl:scale-[1.12] lg:origin-right transition-transform px-1 sm:px-0">
         {showcaseItems.map((item, idx) => (
           <img
             key={item.id}
             src={item.src}
             alt={item.alt}
-            className={`absolute inset-0 w-full h-full object-contain object-center rounded-2xl ${getAnimationClass(
+            className={`absolute inset-0 w-full h-full object-contain object-center rounded-xl sm:rounded-2xl ${getAnimationClass(
               idx
             )}`}
           />
