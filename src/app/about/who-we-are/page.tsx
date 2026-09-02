@@ -444,7 +444,7 @@ export default function WhoWeArePage() {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="bg-black text-[#fbea3d] px-8 py-3.5 rounded-full font-bold text-sm hover:bg-zinc-900 transition-all shadow-lg hover:scale-105"
                 >
                   Start a Project →

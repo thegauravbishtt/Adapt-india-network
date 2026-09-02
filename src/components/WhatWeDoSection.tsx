@@ -58,16 +58,16 @@ export default function WhatWeDoSection() {
               </div>
             </div>
 
-            {/* Bottom Button */}
-            <button
-              type="button"
+            {/* Bottom Button: Explore Industries -> /industries */}
+            <a
+              href="/industries"
               className="inline-flex items-center justify-center gap-2 bg-black text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-extrabold hover:bg-zinc-800 transition-all self-start shadow-md cursor-pointer group-btn"
             >
               {t.whatWeDo.card1.btn}
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">
                 →
               </span>
-            </button>
+            </a>
           </div>
 
           {/* Card 2: The Growth Practice (Digital & Performance - Patterned Card) */}
@@ -105,16 +105,16 @@ export default function WhatWeDoSection() {
               </div>
             </div>
 
-            {/* Bottom Button */}
-            <button
-              type="button"
+            {/* Bottom Button: Explore Digital -> /services */}
+            <a
+              href="/services"
               className="relative z-10 inline-flex items-center justify-center gap-2 bg-[#fbea3d] text-black px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-extrabold hover:bg-black hover:text-white hover:border-black border border-[#fbea3d] transition-all self-start shadow-md cursor-pointer group-btn"
             >
               {t.whatWeDo.card2.btn}
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">
                 →
               </span>
-            </button>
+            </a>
           </div>
 
         </div>

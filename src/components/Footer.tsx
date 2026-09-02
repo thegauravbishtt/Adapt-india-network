@@ -206,20 +206,27 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-3 text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-normal">
               <a
-                href="tel:+180041229176"
-                className="hover:text-black transition-colors font-medium text-zinc-800"
+                href="tel:+917838240941"
+                className="hover:text-black transition-colors font-semibold text-zinc-900 flex items-center gap-1.5"
               >
-                +1800 4122 9176
+                <span>+91 78382 40941</span>
               </a>
               <a
-                href="mailto:djb@thebrandbee.com"
-                className="hover:text-black transition-colors font-medium text-zinc-800"
+                href="mailto:owlioworks@gmail.com"
+                className="hover:text-black transition-colors font-semibold text-zinc-900"
               >
-                djb@thebrandbee.com
+                owlioworks@gmail.com
               </a>
               <p className="text-zinc-600 leading-relaxed">
-                AIHP Cyber Greens 2, Plot 484-485, Phase 3, Udyog Vihar, Sector 20, Gurugram - 122016, Haryana, India
+                Saket, New Delhi - 110017, Delhi, India
               </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1 text-xs font-bold text-black hover:text-[#b29f00] pt-1 uppercase tracking-wider font-mono"
+              >
+                <span>Go to Contact Page</span>
+                <span>→</span>
+              </Link>
             </div>
           </div>
 
@@ -227,6 +234,9 @@ export default function Footer() {
 
         {/* Sub-Navigation Links Row */}
         <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-8 gap-y-2 text-xs sm:text-[13px] text-zinc-600 font-normal pt-2">
+          <Link href="/contact" className="hover:text-black transition-colors font-medium">
+            Contact Us
+          </Link>
           <a href="#faqs" className="hover:text-black transition-colors">
             FAQs
           </a>
@@ -247,7 +257,7 @@ export default function Footer() {
           {/* Copyright text */}
           <div className="text-left">
             <p className="text-zinc-500 text-xs sm:text-[13px]">
-              Copyright © 2012-2026 Brand Bee Management Pvt. Ltd. All rights reserved.
+              Copyright © 2012-2026 Owlio Works Pvt. Ltd. All rights reserved.
             </p>
           </div>
 
@@ -261,7 +271,7 @@ export default function Footer() {
           {/* Global Locations List */}
           <div className="text-right">
             <span className="text-[11px] sm:text-xs tracking-wider text-zinc-600 uppercase font-medium">
-              GURUGRAM · NEW DELHI · LONDON · NEW YORK · SYDNEY · DUBAI
+              NEW DELHI · GURUGRAM · LONDON · NEW YORK · SYDNEY · DUBAI
             </span>
           </div>
 

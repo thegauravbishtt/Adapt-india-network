@@ -1,71 +1,96 @@
 "use client";
 
 import React from "react";
-import OwlioImageGrid from "./OwlioImageGrid";
-import InteractiveWordMatrix from "./InteractiveWordMatrix";
-import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLanguage();
-
   return (
-    <section className="relative w-full bg-[#0c0c0d] text-white pt-0 sm:pt-10 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 px-0 sm:px-8 lg:px-10 xl:px-12 overflow-hidden border-b-0 sm:border-b border-zinc-900 select-none">
+    <section className="relative w-full bg-white text-zinc-950 pt-64 xs:pt-72 sm:pt-80 lg:pt-40 pb-56 xs:pb-64 sm:pb-72 lg:pb-28 px-5 sm:px-12 lg:px-16 xl:px-20 overflow-hidden border-b border-zinc-200 select-none min-h-[105vh] xs:min-h-[110vh] sm:min-h-[115vh] lg:min-h-[620px] flex flex-col justify-center">
       
-      {/* Dynamic Ambient Background Glow */}
-      <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-[#fbea3d]/4 rounded-full blur-[140px] pointer-events-none z-0"></div>
-      
-      {/* Interactive Cursor-Repel Alphabet Word Matrix on Right */}
-      <InteractiveWordMatrix />
+      {/* 1. MOBILE ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile */}
+      <svg
+        viewBox="0 0 390 600"
+        fill="none"
+        preserveAspectRatio="none"
+        className="block md:hidden absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
+      >
+        {/* Vibrant Yellow Lightning Polygon on Right */}
+        <path
+          d="M 155 600 L 230 380 L 190 380 L 255 0 L 390 0 L 390 600 Z"
+          fill="#fac917"
+        />
+        {/* Deep Black Lightning Polygon on Right Edge */}
+        <path
+          d="M 285 600 L 340 360 L 315 360 L 340 0 L 390 0 L 390 600 Z"
+          fill="#0c0c0e"
+        />
+      </svg>
 
-      <div className="w-full flex flex-col items-start relative z-10 pointer-events-none">
-        
-        {/* MOBILE ONLY: Images Showcase Edge-to-Edge at the TOP + generous bottom gap */}
-        <div className="block lg:hidden w-full mb-48 sm:mb-56 pointer-events-auto">
-          <OwlioImageGrid />
-        </div>
+      {/* 2. TABLET & DESKTOP ONLY: Refined Geometric Lightning with expanded White canvas */}
+      <svg
+        viewBox="0 0 1440 640"
+        fill="none"
+        preserveAspectRatio="none"
+        className="hidden md:block absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
+      >
+        {/* Center Vibrant Yellow Lightning Polygon (Shifted right for more white area) */}
+        <path
+          d="M 560 640 L 700 400 L 620 400 L 780 0 L 1440 0 L 1440 640 Z"
+          fill="#fac917"
+        />
+        {/* Right Deep Black Lightning Polygon */}
+        <path
+          d="M 1060 640 L 1280 340 L 1180 340 L 1320 0 L 1440 0 L 1440 640 Z"
+          fill="#0c0c0e"
+        />
+      </svg>
 
-        {/* Text and Actions Container (with mobile horizontal padding) */}
-        <div className="flex flex-col items-start px-4 sm:px-0 w-full">
+      <div className="w-full flex flex-col items-center lg:items-start relative z-10 max-w-6xl mx-auto">
+        {/* Main Content Container */}
+        <div className="flex flex-col items-center lg:items-start w-full text-center lg:text-left pointer-events-auto">
           
-          {/* Top Category Label */}
-          <span className="text-zinc-400 font-sans tracking-wide text-xs sm:text-sm font-medium block mb-4 sm:mb-6 select-none pointer-events-auto">
-            {t.hero.category || "Branding · Technology · Performance"}
-          </span>
+          {/* Top Squiggly Wave Lines */}
+          <div className="flex flex-col gap-1.5 lg:gap-1 mb-3 sm:mb-4 lg:mb-3 text-zinc-950 w-fit mx-auto lg:mx-0">
+            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
+            </svg>
+            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
+            </svg>
+          </div>
 
-          {/* Massive Headline */}
-          <h1 
-            className="font-display text-[54px] xs:text-[68px] sm:text-[84px] md:text-[96px] lg:text-[115px] xl:text-[130px] font-black text-white leading-[0.92] tracking-tighter uppercase mb-6 sm:mb-8 select-none pointer-events-auto"
-          >
-            <span className="block">{t.hero.heading1 || "BUILD"}</span>
-            <span className="block mt-1 sm:mt-2">
-              {t.hero.heading2 || "BRAN"}
-              <span className="text-[#fbea3d]">{t.hero.heading3 || "DS."}</span>
-            </span>
+          {/* Clean 2-Line Headline: Centered on Mobile, Left-Aligned on Desktop */}
+          <h1 className="font-sans font-normal text-[45px] xs:text-[50px] sm:text-[60px] md:text-[64px] lg:text-[66px] xl:text-[74px] text-zinc-950 leading-[1.06] lg:leading-[1.07] tracking-[-0.03em] select-text text-center lg:text-left mx-auto lg:mx-0 max-w-full lg:max-w-none px-2 xs:px-3 sm:px-0">
+            <span className="block">We build & scale</span>
+            <span className="block">iconic brands online!</span>
           </h1>
 
-          {/* Subtitle / Paragraph */}
-          <p className="text-zinc-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl sm:max-w-2xl mb-8 sm:mb-10 font-normal select-text pointer-events-auto">
-            {t.hero.subtitle ||
-              "We build high-impact digital platforms, enterprise search systems, and performance growth engines that scale ambitious businesses into industry leaders."}
-          </p>
+          {/* Bottom Squiggly Wave Lines */}
+          <div className="flex flex-col gap-1.5 lg:gap-1 mt-3 lg:mt-2 mb-4 lg:mb-3.5 mx-auto lg:mx-0 lg:ml-[380px] xl:ml-[440px] text-zinc-950 w-fit">
+            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
+            </svg>
+            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
+            </svg>
+          </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto pointer-events-auto">
-            <a
-              href="#newsletter"
-              className="bg-[#fbea3d] text-black px-8 py-3.5 rounded-full text-xs sm:text-sm font-extrabold hover:bg-[#fae420] active:scale-95 transition-all shadow-[0_4px_20px_rgba(251,234,61,0.25)] flex items-center justify-center gap-2 group cursor-pointer"
-            >
-              <span>{t.hero.auditBtn || "Run Free Growth Audit"}</span>
-              <span className="inline-block transition-transform group-hover:translate-x-1 duration-200">→</span>
-            </a>
-
-            <a
-              href="#newsletter"
-              className="bg-zinc-900/90 border border-zinc-700/80 text-white px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold hover:bg-zinc-800 hover:border-zinc-500 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
-            >
-              <span>{t.hero.callBtn || "Book Discovery Call"}</span>
-              <span className="text-zinc-400 text-xs">↗</span>
-            </a>
+          {/* Bottom Center (Mobile) / Left (Desktop) Minimal Little Owl Icon */}
+          <div className="w-full mt-10 sm:mt-14 lg:mt-12 z-20 pointer-events-auto flex justify-center lg:justify-start">
+            <div className="select-none flex items-center justify-center text-zinc-950">
+              <svg width="26" height="26" className="w-6 h-6 sm:w-7 sm:h-7 lg:w-7 lg:h-7 opacity-90 transition-transform duration-200 hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round">
+                {/* Top Owl Brow / Ears */}
+                <path d="M 4.5 7.5 C 7.5 3.5, 16.5 3.5, 19.5 7.5" />
+                {/* Left Eye */}
+                <circle cx="8" cy="11.5" r="3.2" />
+                {/* Right Eye */}
+                <circle cx="16" cy="11.5" r="3.2" />
+                {/* Center Bridge & Beak */}
+                <path d="M 11.2 11.5 h 1.6" />
+                <path d="M 12 12.5 v 2" />
+                {/* Bottom Face Chin Arc */}
+                <path d="M 6.2 15 C 8.5 19, 15.5 19, 17.8 15" />
+              </svg>
+            </div>
           </div>
 
         </div>

@@ -37,8 +37,8 @@ export default function FeaturedWorkSection() {
 
             <div className="self-start sm:self-end shrink-0">
               <a
-                href="#work"
-                className="group inline-flex flex-col items-start gap-1 text-xs sm:text-[13px] font-bold text-white hover:text-[#fbea3d] transition-colors"
+                href="/work"
+                className="group inline-flex flex-col items-start gap-1 text-xs sm:text-[13px] font-bold text-white hover:text-[#fbea3d] transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-1.5">
                   <span>{t.featuredWork.viewAll}</span>
@@ -64,8 +64,8 @@ export default function FeaturedWorkSection() {
               </span>
             </h2>
             <a
-              href="#work"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#fbea3d] border-b-2 border-[#fbea3d] pb-0.5 mt-2 hover:text-white hover:border-white transition-colors"
+              href="/work"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#fbea3d] border-b-2 border-[#fbea3d] pb-0.5 mt-2 hover:text-white hover:border-white transition-colors cursor-pointer"
             >
               <span>{t.featuredWork.viewAll}</span>
               <span className="font-normal">→</span>

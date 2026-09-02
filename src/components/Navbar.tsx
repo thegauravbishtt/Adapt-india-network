@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLanguage, Language } from "../context/LanguageContext";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface IndustryItem {
   name: string;
@@ -112,6 +113,9 @@ const servicesData: Record<string, ServiceSection> = {
 };
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const { language, setLanguage, currentLanguageOption, languages, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
@@ -315,38 +319,40 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-8 lg:px-14 xl:px-20 flex flex-col z-50 select-none transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/75 backdrop-blur-xl border-b border-zinc-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] py-2.5 sm:py-3"
-            : "bg-white/95 backdrop-blur-md border-b border-zinc-200/60 py-3 sm:py-3.5 shadow-none"
+        className={`w-full select-none transition-all duration-300 z-40 ${
+          !isHomePage
+            ? "sticky top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-zinc-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.04)] py-3 sm:py-3.5 px-6 sm:px-10 lg:px-16"
+            : isScrolled
+            ? "fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-zinc-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] py-3 px-6 sm:px-10 lg:px-16"
+            : "absolute top-0 left-0 right-0 bg-transparent border-none shadow-none pt-4 sm:pt-6 lg:pt-8 pb-2 sm:pb-3 px-5 sm:px-10 lg:px-16"
         }`}
       >
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
         {/* Brand Logo */}
         <div className="flex items-center gap-3 select-none shrink-0">
-          <Link href="/" className="flex items-center gap-2.5 group cursor-pointer">
+          <Link href="/" className="flex items-center gap-1 xs:gap-1.5 sm:gap-3 group cursor-pointer">
             <img
               src="/logo.png"
               alt="Owlio Works Logo"
-              className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+              className="h-9 xs:h-10 sm:h-10 lg:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
             />
-            <span className="text-lg sm:text-xl font-black text-zinc-950 tracking-tighter uppercase font-display whitespace-nowrap">
-              OWLIO <span className="text-zinc-500 font-bold group-hover:text-black transition-colors">WORKS</span>
+            <span className="text-[21px] xs:text-[23px] sm:text-2xl lg:text-[26px] font-black text-zinc-950 tracking-tighter uppercase font-display whitespace-nowrap">
+              OWLIO <span className="text-zinc-600 font-bold group-hover:text-black transition-colors">WORKS</span>
             </span>
           </Link>
         </div>
 
-        {/* Center Navigation Links (Floating Capsule Island) */}
-        <nav className="hidden md:flex items-center bg-zinc-100/80 border border-zinc-200/80 p-1 rounded-full shadow-2xs">
+        {/* Single Unified Desktop Navigation Bar on Right */}
+        <div className="hidden md:flex items-center gap-3.5 lg:gap-5 xl:gap-6">
           {/* 1. Home */}
           <a
             href="/"
-            className="px-4 py-1.5 rounded-full text-[13px] font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs transition-all duration-150 cursor-pointer"
+            className="text-[14px] lg:text-[15px] font-bold text-zinc-950 hover:text-black transition-colors cursor-pointer whitespace-nowrap"
           >
-            {t.navbar.home || "Home"}
+            <span>{t.navbar.home || "Home"}</span>
           </a>
 
-          {/* 2. About with Submenu Trigger */}
+          {/* 2. About Us with Submenu Trigger */}
           <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("about")}
@@ -354,16 +360,16 @@ export default function Navbar() {
           >
             <a
               href="/about"
-              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+              className={`text-[14px] lg:text-[15px] font-semibold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap ${
                 activeMegaMenu === "about"
-                  ? "bg-white text-zinc-950 shadow-xs font-bold"
-                  : "text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs"
+                  ? "text-black font-bold"
+                  : "text-zinc-900 hover:text-black"
               }`}
             >
-              <span>{t.navbar.about}</span>
+              <span>{t.navbar.about || "About Us"}</span>
               <svg
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "about" ? "rotate-180 text-zinc-950" : "text-zinc-400"
+                  activeMegaMenu === "about" ? "rotate-180 text-black" : "text-zinc-600"
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -375,7 +381,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* 3. Services with Mega Menu Trigger */}
+          {/* 3. Our Services with Mega Menu Trigger */}
           <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("services")}
@@ -383,16 +389,16 @@ export default function Navbar() {
           >
             <a
               href="/services"
-              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+              className={`text-[14px] lg:text-[15px] font-semibold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap ${
                 activeMegaMenu === "services"
-                  ? "bg-white text-zinc-950 shadow-xs font-bold"
-                  : "text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs"
+                  ? "text-black font-bold"
+                  : "text-zinc-900 hover:text-black"
               }`}
             >
-              <span>{t.navbar.services || "Services"}</span>
+              <span>{t.navbar.services || "Our Services"}</span>
               <svg
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "services" ? "rotate-180 text-zinc-950" : "text-zinc-400"
+                  activeMegaMenu === "services" ? "rotate-180 text-black" : "text-zinc-600"
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -404,7 +410,15 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* 4. Industries with Mega Menu Trigger */}
+          {/* 4. Our Work */}
+          <a
+            href="/work"
+            className="text-[14px] lg:text-[15px] font-semibold text-zinc-900 hover:text-black transition-colors cursor-pointer whitespace-nowrap"
+          >
+            {t.navbar.work || "Our Work"}
+          </a>
+
+          {/* 5. Industries */}
           <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("industries")}
@@ -412,16 +426,16 @@ export default function Navbar() {
           >
             <a
               href="/industries"
-              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+              className={`text-[14px] lg:text-[15px] font-semibold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap ${
                 activeMegaMenu === "industries"
-                  ? "bg-white text-zinc-950 shadow-xs font-bold"
-                  : "text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs"
+                  ? "text-black font-bold"
+                  : "text-zinc-900 hover:text-black"
               }`}
             >
               <span>{t.navbar.industries || "Industries"}</span>
               <svg
                 className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "industries" ? "rotate-180 text-zinc-950" : "text-zinc-400"
+                  activeMegaMenu === "industries" ? "rotate-180 text-black" : "text-zinc-600"
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -433,302 +447,25 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* 5. Work */}
+          {/* 6. Blog */}
           <a
-            href="/work"
-            className="px-4 py-1.5 rounded-full text-[13px] font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs transition-all duration-150 cursor-pointer"
+            href="/blog"
+            className="text-[14px] lg:text-[15px] font-semibold text-zinc-900 hover:text-black transition-colors cursor-pointer whitespace-nowrap"
           >
-            {t.navbar.work}
+            Blog
           </a>
-        </nav>
 
-        {/* Mega Menu Dropdowns (Desktop) */}
-        {activeMegaMenu && (
-          <div
-            className="hidden md:block absolute top-full left-1/2 -translate-x-1/2 pt-2.5 w-[94vw] max-w-[1040px] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
-            onMouseEnter={() => {
-              if (megaMenuTimeoutRef.current) {
-                clearTimeout(megaMenuTimeoutRef.current);
-              }
-            }}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* 1. INDUSTRIES MEGA MENU (without bottom bar) */}
-            {activeMegaMenu === "industries" && (
-              <div
-                style={{ backgroundColor: "#ffffff", color: "#000000" }}
-                className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none"
-              >
-                
-                {/* Header Tag */}
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#fbea3d] border border-black/20 inline-block animate-pulse"></span>
-                    <span className="text-xs font-sans font-bold tracking-wider text-zinc-900 uppercase">
-                      Industries We Serve
-                    </span>
-                  </div>
-                  <span className="font-sans text-xs text-zinc-400 font-medium hidden sm:inline-block">
-                    Domain Growth Architectures
-                  </span>
-                </div>
-
-                {/* 7 Industries Multi-Column Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-3.5 items-stretch">
-                  {industriesData.map((item, idx) => (
-                    <a
-                      key={idx}
-                      href={item.href}
-                      className="flex items-start gap-3.5 p-3 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer"
-                    >
-                      <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 mt-0.5 shadow-2xs">
-                        {renderIcon(item.icon)}
-                      </div>
-                      <div className="flex flex-col text-left">
-                        <span className="font-sans font-semibold text-[13px] sm:text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
-                          {item.name}
-                        </span>
-                        <span className="font-sans text-xs text-zinc-500 font-normal group-hover/item:text-zinc-600 transition-colors leading-tight mt-0.5">
-                          {item.desc}
-                        </span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-
-                {/* Bottom Bar: View All Industries Link */}
-                <div className="mt-6 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-xs text-zinc-500 font-sans">
-                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                    <span>8 Specialized Industry Sectors · Compliance & ROI Focused</span>
-                  </div>
-                  <a
-                    href="/industries"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-[#dfcc23] transition-colors font-sans group/all"
-                  >
-                    <span>View All Industries</span>
-                    <span className="inline-block transition-transform duration-200 group-hover/all:translate-x-1 font-normal">→</span>
-                  </a>
-                </div>
-
-              </div>
-            )}
-
-            {/* 2. SERVICES MEGA MENU (without bottom bar) */}
-            {activeMegaMenu === "services" && (
-              <div
-                style={{ backgroundColor: "#ffffff", color: "#000000" }}
-                className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none"
-              >
-                
-                {/* 4 Column Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-start">
-                  
-                  {/* Column 1: Development */}
-                  <div className="flex flex-col items-start text-left w-full">
-                    <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                      {servicesData.development.title}
-                    </span>
-                    <ul className="flex flex-col gap-1 w-full">
-                      {servicesData.development.items.map((item, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={item.href}
-                            className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                          >
-                            <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                              {renderIcon(item.icon)}
-                            </span>
-                            <span className="leading-snug">{item.name}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Column 2: Design */}
-                  <div className="flex flex-col items-start text-left w-full">
-                    <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                      {servicesData.design.title}
-                    </span>
-                    <ul className="flex flex-col gap-1 w-full">
-                      {servicesData.design.items.map((item, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={item.href}
-                            className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                          >
-                            <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                              {renderIcon(item.icon)}
-                            </span>
-                            <span className="leading-snug">{item.name}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Column 3: Marketing */}
-                  <div className="flex flex-col items-start text-left w-full">
-                    <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                      {servicesData.marketing.title}
-                    </span>
-                    <ul className="flex flex-col gap-1 w-full">
-                      {servicesData.marketing.items.map((item, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={item.href}
-                            className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                          >
-                            <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                              {renderIcon(item.icon)}
-                            </span>
-                            <span className="leading-snug">{item.name}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Column 4: Security */}
-                  <div className="flex flex-col items-start text-left w-full">
-                    <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                      {servicesData.security.title}
-                    </span>
-                    <ul className="flex flex-col gap-1 w-full">
-                      {servicesData.security.items.map((item, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={item.href}
-                            className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                          >
-                            <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                              {renderIcon(item.icon)}
-                            </span>
-                            <span className="leading-snug">{item.name}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                </div>
-
-                {/* Bottom Bar: View All Services Link */}
-                <div className="mt-6 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-xs text-zinc-500 font-sans">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>13 Core Practice Areas · Senior Engineering Teams</span>
-                  </div>
-                  <a
-                    href="/services"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-[#dfcc23] transition-colors font-sans group/all"
-                  >
-                    <span>View All Services</span>
-                    <span className="inline-block transition-transform duration-200 group-hover/all:translate-x-1 font-normal">→</span>
-                  </a>
-                </div>
-
-              </div>
-            )}
-
-            {/* 3. ABOUT SUBMENU */}
-            {activeMegaMenu === "about" && (
-              <div
-                style={{ backgroundColor: "#ffffff", color: "#000000" }}
-                className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none max-w-2xl mx-auto"
-              >
-                {/* Header Tag */}
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#fbea3d] border border-black/20 inline-block animate-pulse"></span>
-                    <span className="text-xs font-sans font-bold tracking-wider text-zinc-900 uppercase">
-                      About Owlio Works
-                    </span>
-                  </div>
-                  <span className="font-sans text-xs text-zinc-400 font-medium hidden sm:inline-block">
-                    Identity, Culture &amp; Capabilities
-                  </span>
-                </div>
-
-                {/* 3 Submenu Items Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 items-stretch">
-                  <a
-                    href="/about/who-we-are"
-                    className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
-                      01
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
-                        Who We Are
-                      </span>
-                      <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
-                        Our mission, leadership &amp; core philosophy
-                      </span>
-                    </div>
-                  </a>
-
-                  <a
-                    href="/about/how-we-work"
-                    className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
-                      02
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
-                        How We Work
-                      </span>
-                      <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
-                        Agile sprints, zero tech-debt &amp; QA standards
-                      </span>
-                    </div>
-                  </a>
-
-                  <a
-                    href="/about/what-we-do"
-                    className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
-                      03
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
-                        What We Do ?
-                      </span>
-                      <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
-                        End-to-end engineering, design &amp; marketing
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Right Controls: Multi-Language Selector Dropdown + CTA / Mobile Menu */}
-        <div className="flex items-center gap-2 sm:gap-3.5">
-          {/* Language Selector Dropdown Container */}
+          {/* 7. Language Switcher */}
           <div className="relative" ref={dropdownRef}>
             <button
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="flex items-center gap-1.5 bg-zinc-100/80 hover:bg-zinc-200/70 border border-zinc-200/80 px-3 py-1.5 rounded-full text-xs font-semibold text-zinc-800 transition-all cursor-pointer shadow-2xs active:scale-95"
-              aria-expanded={langDropdownOpen}
-              aria-label="Select Language"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer select-none bg-black text-white hover:bg-zinc-800 border border-black shadow-xs active:scale-95"
             >
               <span className="text-sm leading-none">{currentLanguageOption.flag}</span>
-              <span className="font-semibold uppercase tracking-wider text-[11px] sm:text-xs">
-                {currentLanguageOption.code}
-              </span>
+              <span className="font-extrabold uppercase text-[11px] tracking-wider">{currentLanguageOption.code}</span>
               <svg
-                className={`w-3 h-3 text-zinc-400 transition-transform duration-200 ${
-                  langDropdownOpen ? "rotate-180 text-zinc-800" : ""
-                }`}
+                className={`w-3 h-3 transition-transform duration-200 ${langDropdownOpen ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2.5"
@@ -770,7 +507,7 @@ export default function Navbar() {
                           </div>
                         </div>
                         {isSelected && (
-                          <svg className="w-4 h-4 text-[#fbea3d] shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-[#fac917] shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         )}
@@ -782,34 +519,309 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Desktop Let's Talk CTA */}
+          {/* 8. Let's Talk Button */}
           <a
-            href="#newsletter"
-            className="hidden md:flex items-center gap-2 bg-[#fbea3d] text-zinc-950 px-5 lg:px-6 py-2 sm:py-2.5 text-xs sm:text-[13px] font-bold rounded-full hover:bg-zinc-950 hover:text-white transition-all duration-200 cursor-pointer group select-none shadow-[0_2px_12px_rgba(251,234,61,0.35)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.15)] active:scale-95"
+            href="/contact"
+            className={`px-5 py-2 text-xs font-extrabold rounded-full transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 ${
+              !isHomePage || isScrolled
+                ? "bg-black text-white hover:bg-zinc-800 shadow-xs border border-zinc-800"
+                : "bg-white text-zinc-950 hover:bg-zinc-100 hover:shadow-md shadow-[0_2px_12px_rgba(0,0,0,0.15)] border border-zinc-200/90"
+            }`}
           >
-            <span>{t.navbar.letsTalk}</span>
-            <span className="inline-block transition-transform group-hover:translate-x-1 duration-200 text-sm">→</span>
+            Let&apos;s Talk →
           </a>
-
-          {/* Mobile Menu Button */}
-          <button 
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex items-center gap-1.5 border border-zinc-200 text-black px-3 py-1.5 text-xs font-bold uppercase tracking-wider hover:bg-zinc-50 transition-colors rounded-full cursor-pointer bg-transparent"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-            {t.navbar.menu}
-          </button>
         </div>
+
+        {/* Mobile Menu Button (< md) */}
+        <button 
+          type="button"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className={`md:hidden flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full cursor-pointer transition-all active:scale-95 ${
+            !isHomePage || isScrolled
+              ? "border border-zinc-200 text-black bg-white shadow-2xs hover:bg-zinc-50"
+              : "border border-white/30 text-white bg-black/60 backdrop-blur-md hover:bg-black/80 shadow-xs"
+          }`}
+        >
+          {mobileMenuOpen ? (
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+          {t.navbar.menu}
+        </button>
       </div>
+
+      {/* Mega Menu Dropdowns (Desktop) */}
+      {activeMegaMenu && (
+        <div
+          className="hidden md:block absolute top-full left-1/2 -translate-x-1/2 pt-2.5 w-[94vw] max-w-[1040px] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+          onMouseEnter={() => {
+            if (megaMenuTimeoutRef.current) {
+              clearTimeout(megaMenuTimeoutRef.current);
+            }
+          }}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* 1. INDUSTRIES MEGA MENU (without bottom bar) */}
+          {activeMegaMenu === "industries" && (
+            <div
+              style={{ backgroundColor: "#ffffff", color: "#000000" }}
+              className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none"
+            >
+              
+              {/* Header Tag */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#fbea3d] border border-black/20 inline-block animate-pulse"></span>
+                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-900 uppercase">
+                    Industries We Serve
+                  </span>
+                </div>
+                <span className="font-sans text-xs text-zinc-400 font-medium hidden sm:inline-block">
+                  Domain Growth Architectures
+                </span>
+              </div>
+
+              {/* 7 Industries Multi-Column Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-3.5 items-stretch">
+                {industriesData.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    className="flex items-start gap-3.5 p-3 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 mt-0.5 shadow-2xs">
+                      {renderIcon(item.icon)}
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="font-sans font-semibold text-[13px] sm:text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
+                        {item.name}
+                      </span>
+                      <span className="font-sans text-xs text-zinc-500 font-normal group-hover/item:text-zinc-600 transition-colors leading-tight mt-0.5">
+                        {item.desc}
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Bottom Bar: View All Industries Link */}
+              <div className="mt-6 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs text-zinc-500 font-sans">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                  <span>8 Specialized Industry Sectors · Compliance & ROI Focused</span>
+                </div>
+                <a
+                  href="/industries"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-[#dfcc23] transition-colors font-sans group/all"
+                >
+                  <span>View All Industries</span>
+                  <span className="inline-block transition-transform duration-200 group-hover/all:translate-x-1 font-normal">→</span>
+                </a>
+              </div>
+
+            </div>
+          )}
+
+          {/* 2. SERVICES MEGA MENU (without bottom bar) */}
+          {activeMegaMenu === "services" && (
+            <div
+              style={{ backgroundColor: "#ffffff", color: "#000000" }}
+              className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none"
+            >
+              
+              {/* 4 Column Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-start">
+                
+                {/* Column 1: Development */}
+                <div className="flex flex-col items-start text-left w-full">
+                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
+                    {servicesData.development.title}
+                  </span>
+                  <ul className="flex flex-col gap-1 w-full">
+                    {servicesData.development.items.map((item, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={item.href}
+                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
+                        >
+                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
+                            {renderIcon(item.icon)}
+                          </span>
+                          <span className="leading-snug">{item.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 2: Design */}
+                <div className="flex flex-col items-start text-left w-full">
+                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
+                    {servicesData.design.title}
+                  </span>
+                  <ul className="flex flex-col gap-1 w-full">
+                    {servicesData.design.items.map((item, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={item.href}
+                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
+                        >
+                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
+                            {renderIcon(item.icon)}
+                          </span>
+                          <span className="leading-snug">{item.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 3: Marketing */}
+                <div className="flex flex-col items-start text-left w-full">
+                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
+                    {servicesData.marketing.title}
+                  </span>
+                  <ul className="flex flex-col gap-1 w-full">
+                    {servicesData.marketing.items.map((item, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={item.href}
+                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
+                        >
+                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
+                            {renderIcon(item.icon)}
+                          </span>
+                          <span className="leading-snug">{item.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 4: Security */}
+                <div className="flex flex-col items-start text-left w-full">
+                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
+                    {servicesData.security.title}
+                  </span>
+                  <ul className="flex flex-col gap-1 w-full">
+                    {servicesData.security.items.map((item, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={item.href}
+                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
+                        >
+                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
+                            {renderIcon(item.icon)}
+                          </span>
+                          <span className="leading-snug">{item.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              </div>
+
+              {/* Bottom Bar: View All Services Link */}
+              <div className="mt-6 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs text-zinc-500 font-sans">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>13 Core Practice Areas · Senior Engineering Teams</span>
+                </div>
+                <a
+                  href="/services"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-[#dfcc23] transition-colors font-sans group/all"
+                >
+                  <span>View All Services</span>
+                  <span className="inline-block transition-transform duration-200 group-hover/all:translate-x-1 font-normal">→</span>
+                </a>
+              </div>
+
+            </div>
+          )}
+
+          {/* 3. ABOUT SUBMENU */}
+          {activeMegaMenu === "about" && (
+            <div
+              style={{ backgroundColor: "#ffffff", color: "#000000" }}
+              className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none max-w-2xl mx-auto"
+            >
+              {/* Header Tag */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#fbea3d] border border-black/20 inline-block animate-pulse"></span>
+                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-900 uppercase">
+                    About Owlio Works
+                  </span>
+                </div>
+                <span className="font-sans text-xs text-zinc-400 font-medium hidden sm:inline-block">
+                  Identity, Culture &amp; Capabilities
+                </span>
+              </div>
+
+              {/* 3 Submenu Items Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 items-stretch">
+                <a
+                  href="/about/who-we-are"
+                  className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
+                >
+                  <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
+                    01
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
+                      Who We Are
+                    </span>
+                    <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
+                      Our mission, leadership &amp; core philosophy
+                    </span>
+                  </div>
+                </a>
+
+                <a
+                  href="/about/how-we-work"
+                  className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
+                >
+                  <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
+                    02
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
+                      How We Work
+                    </span>
+                    <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
+                      Agile sprints, zero tech-debt &amp; QA standards
+                    </span>
+                  </div>
+                </a>
+
+                <a
+                  href="/about/what-we-do"
+                  className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
+                >
+                  <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
+                    03
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
+                      What We Do ?
+                    </span>
+                    <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
+                      End-to-end engineering, design &amp; marketing
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
@@ -1022,6 +1034,11 @@ export default function Navbar() {
             {t.navbar.work}
           </a>
 
+          {/* 6. Blog */}
+          <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors font-semibold">
+            Blog
+          </a>
+
           {/* Quick Mobile Language Switcher Row */}
           <div className="pt-2 pb-1 border-t border-zinc-100">
             <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block mb-2 px-1">
@@ -1052,7 +1069,7 @@ export default function Navbar() {
           </div>
 
           <a 
-            href="#newsletter"
+            href="/contact"
             onClick={() => setMobileMenuOpen(false)}
             className="w-full mt-2 bg-[#fbea3d] text-black py-2.5 text-xs font-extrabold rounded-full flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all"
           >
@@ -1062,8 +1079,6 @@ export default function Navbar() {
         </div>
       )}
       </header>
-      {/* Spacer to prevent content from jumping behind fixed header */}
-      <div className="h-[58px] sm:h-[64px] w-full shrink-0 select-none pointer-events-none" />
     </>
   );
 }

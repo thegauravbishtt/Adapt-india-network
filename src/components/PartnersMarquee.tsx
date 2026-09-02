@@ -118,15 +118,15 @@ export default function PartnersMarquee() {
             <span className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-500 uppercase">
               {t.partners.trustedBy}
             </span>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-900 tracking-tight leading-snug">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 tracking-tight leading-snug">
               {t.partners.headline}
             </h2>
           </div>
 
           <div className="self-start sm:self-end shrink-0">
             <a
-              href="#clients"
-              className="group inline-flex flex-col items-start gap-1 text-xs sm:text-sm font-bold text-zinc-900 hover:text-black transition-colors"
+              href="/contact"
+              className="group inline-flex flex-col items-start gap-1 text-xs sm:text-sm font-bold text-zinc-900 hover:text-black transition-colors cursor-pointer"
             >
               <div className="flex items-center gap-1.5">
                 <span>{t.partners.viewAll}</span>
@@ -139,13 +139,13 @@ export default function PartnersMarquee() {
           </div>
         </div>
 
-        {/* Logo Ribbon Marquee (Infinite Smooth Scroll) */}
+        {/* Logo Ribbon Marquee (Infinite Fast & Smooth Scroll) */}
         <div className="w-full overflow-hidden relative pt-2">
           {/* Subtle fade edges */}
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
-          <div className="flex gap-14 sm:gap-20 items-center animate-marquee min-w-full pr-14 sm:pr-20 opacity-85 hover:opacity-100 transition-opacity">
+          <div className="flex gap-14 sm:gap-20 items-center animate-marquee [animation-duration:4.5s] sm:[animation-duration:14s] min-w-full pr-14 sm:pr-20 opacity-85 hover:opacity-100 transition-opacity">
             {clientLogos.map((client, idx) => (
               <div
                 key={idx}

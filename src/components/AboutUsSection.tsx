@@ -329,16 +329,16 @@ export default function AboutUsSection() {
 
           </div>
 
-          {/* Centered Tilted Circular Button: LEARN MORE */}
+          {/* Centered Tilted Circular Button: LEARN MORE -> Links to About Us */}
           <div className="w-full flex justify-center items-center pt-8 sm:pt-10">
-            <button
-              type="button"
+            <a
+              href="/about"
               className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-[#fbea3d] text-black font-display font-black text-[10px] sm:text-xs tracking-widest uppercase flex items-center justify-center text-center p-3 cursor-pointer shadow-[0_8px_25px_rgba(251,234,61,0.2)] hover:shadow-[0_12px_35px_rgba(251,234,61,0.4)] hover:bg-white hover:text-black hover:scale-105 transition-all duration-300 rotate-[-12deg] hover:rotate-0 group select-none"
             >
               <span className="group-hover:tracking-[0.15em] transition-all duration-300 leading-tight text-center">
                 {t.about.learnMoreBtn}
               </span>
-            </button>
+            </a>
           </div>
 
         </div>

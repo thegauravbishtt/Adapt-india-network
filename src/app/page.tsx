@@ -11,18 +11,13 @@ import BlogsSection from "../components/BlogsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import NewsletterSection from "../components/NewsletterSection";
 import Footer from "../components/Footer";
+import MobileFloatingLanguage from "../components/MobileFloatingLanguage";
 import { LanguageProvider } from "../context/LanguageContext";
 
 export default function Home() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative pt-0 px-0 pb-0 w-full">
-        {/* Viewfinder L-shaped Corner Markings */}
-        <div className="fixed top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-zinc-300 pointer-events-none z-30"></div>
-        <div className="fixed top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-zinc-300 pointer-events-none z-30"></div>
-        <div className="fixed bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-zinc-300 pointer-events-none z-30"></div>
-        <div className="fixed bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-zinc-300 pointer-events-none z-30"></div>
-
         {/* Header Navigation */}
         <Navbar />
 
@@ -38,6 +33,9 @@ export default function Home() {
           <NewsletterSection />
           <Footer />
         </main>
+
+        {/* Mobile Floating Side Language Switcher (Stays visible across scroll) */}
+        <MobileFloatingLanguage />
       </div>
     </LanguageProvider>
   );

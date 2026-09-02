@@ -120,13 +120,13 @@ export default function BlogsSection() {
             </p>
 
             {/* View All Button */}
-            <button
-              type="button"
+            <a
+              href="/blog"
               className="inline-flex items-center gap-1.5 bg-black text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs font-bold hover:bg-[#fbea3d] hover:text-black transition-all shadow-xs cursor-pointer active:scale-95 group"
             >
               <span>View all</span>
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">→</span>
-            </button>
+            </a>
 
             {/* Slider Navigation Arrows */}
             <div className="flex items-center gap-1.5 shrink-0">
