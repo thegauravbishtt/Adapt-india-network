@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useLanguage, Language } from "../context/LanguageContext";
+import Link from "next/link";
 
 interface IndustryItem {
   name: string;
@@ -15,43 +16,49 @@ const industriesData: IndustryItem[] = [
     name: "IT & Technology",
     desc: "Enterprise SaaS, AI & Cloud Platforms",
     icon: "laptop",
-    href: "#industries",
+    href: "/industries/it-technology",
   },
   {
     name: "Healthcare",
     desc: "HealthTech, Clinics & Biotech Systems",
     icon: "activity",
-    href: "#industries",
+    href: "/industries/healthcare",
   },
   {
     name: "Hospitality",
     desc: "Hotels, Luxury Resorts & Dining",
     icon: "hotel",
-    href: "#industries",
+    href: "/industries/hospitality",
   },
   {
     name: "Jewellery",
     desc: "High-End Luxury, D2C & Fine Craft",
     icon: "gem",
-    href: "#industries",
+    href: "/industries/jewellery",
   },
   {
     name: "E-Commerce",
     desc: "Omnichannel Brands & Scaling Stores",
     icon: "shopping",
-    href: "#industries",
+    href: "/industries/ecommerce",
   },
   {
     name: "Real Estate",
     desc: "PropTech, Commercial & Housing",
     icon: "building",
-    href: "#industries",
+    href: "/industries/real-estate",
   },
   {
     name: "Food & Beverages",
     desc: "QSR, FMCG & Gourmet Experiences",
     icon: "utensils",
-    href: "#industries",
+    href: "/industries/food-beverages",
+  },
+  {
+    name: "Education",
+    desc: "EdTech, LMS & Virtual Classrooms",
+    icon: "education",
+    href: "/industries/education",
   },
 ];
 
@@ -203,6 +210,14 @@ export default function Navbar() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2M15 11v11M5 2v14a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2M8 2v6" />
           </svg>
         );
+      case "education":
+        return (
+          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 14v7" />
+          </svg>
+        );
       case "cog":
         return (
           <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -309,87 +324,29 @@ export default function Navbar() {
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
         {/* Brand Logo */}
         <div className="flex items-center gap-3 select-none shrink-0">
-          <a href="#" className="flex items-center gap-2 group cursor-pointer">
+          <Link href="/" className="flex items-center gap-2.5 group cursor-pointer">
+            <img
+              src="/logo.png"
+              alt="Owlio Works Logo"
+              className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+            />
             <span className="text-lg sm:text-xl font-black text-zinc-950 tracking-tighter uppercase font-display whitespace-nowrap">
-              <span className="text-[#dfcc23] group-hover:text-black transition-colors font-mono">//</span> OWLIO WORKS
+              OWLIO <span className="text-zinc-500 font-bold group-hover:text-black transition-colors">WORKS</span>
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* Center Navigation Links (Floating Capsule Island) */}
         <nav className="hidden md:flex items-center bg-zinc-100/80 border border-zinc-200/80 p-1 rounded-full shadow-2xs">
+          {/* 1. Home */}
           <a
-            href="#work"
+            href="/"
             className="px-4 py-1.5 rounded-full text-[13px] font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs transition-all duration-150 cursor-pointer"
           >
-            {t.navbar.work}
+            {t.navbar.home || "Home"}
           </a>
-          <a
-            href="#clients"
-            className="px-4 py-1.5 rounded-full text-[13px] font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs transition-all duration-150 cursor-pointer"
-          >
-            {t.navbar.clients}
-          </a>
-          
-          {/* Industries with Mega Menu Trigger */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("industries")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <a
-              href="#industries"
-              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
-                activeMegaMenu === "industries"
-                  ? "bg-white text-zinc-950 shadow-xs font-bold"
-                  : "text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs"
-              }`}
-            >
-              <span>{t.navbar.industries || "Industries"}</span>
-              <svg
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "industries" ? "rotate-180 text-zinc-950" : "text-zinc-400"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </a>
-          </div>
 
-          {/* Services with Mega Menu Trigger */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("services")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <a
-              href="#services"
-              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
-                activeMegaMenu === "services"
-                  ? "bg-white text-zinc-950 shadow-xs font-bold"
-                  : "text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs"
-              }`}
-            >
-              <span>{t.navbar.services || "Services"}</span>
-              <svg
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "services" ? "rotate-180 text-zinc-950" : "text-zinc-400"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </a>
-          </div>
-
-          {/* About with Submenu Trigger */}
+          {/* 2. About with Submenu Trigger */}
           <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("about")}
@@ -417,6 +374,72 @@ export default function Navbar() {
               </svg>
             </a>
           </div>
+
+          {/* 3. Services with Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => handleMouseEnter("services")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <a
+              href="/services"
+              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+                activeMegaMenu === "services"
+                  ? "bg-white text-zinc-950 shadow-xs font-bold"
+                  : "text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs"
+              }`}
+            >
+              <span>{t.navbar.services || "Services"}</span>
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMegaMenu === "services" ? "rotate-180 text-zinc-950" : "text-zinc-400"
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </a>
+          </div>
+
+          {/* 4. Industries with Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => handleMouseEnter("industries")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <a
+              href="/industries"
+              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+                activeMegaMenu === "industries"
+                  ? "bg-white text-zinc-950 shadow-xs font-bold"
+                  : "text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs"
+              }`}
+            >
+              <span>{t.navbar.industries || "Industries"}</span>
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  activeMegaMenu === "industries" ? "rotate-180 text-zinc-950" : "text-zinc-400"
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </a>
+          </div>
+
+          {/* 5. Work */}
+          <a
+            href="/work"
+            className="px-4 py-1.5 rounded-full text-[13px] font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-white hover:shadow-xs transition-all duration-150 cursor-pointer"
+          >
+            {t.navbar.work}
+          </a>
         </nav>
 
         {/* Mega Menu Dropdowns (Desktop) */}
@@ -471,6 +494,21 @@ export default function Navbar() {
                       </div>
                     </a>
                   ))}
+                </div>
+
+                {/* Bottom Bar: View All Industries Link */}
+                <div className="mt-6 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-xs text-zinc-500 font-sans">
+                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span>8 Specialized Industry Sectors · Compliance & ROI Focused</span>
+                  </div>
+                  <a
+                    href="/industries"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-[#dfcc23] transition-colors font-sans group/all"
+                  >
+                    <span>View All Industries</span>
+                    <span className="inline-block transition-transform duration-200 group-hover/all:translate-x-1 font-normal">→</span>
+                  </a>
                 </div>
 
               </div>
@@ -776,24 +814,22 @@ export default function Navbar() {
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-3 pt-3 border-t border-zinc-100 flex flex-col gap-2.5 text-sm font-medium animate-fadeIn">
-          <a href="#work" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors">
-            {t.navbar.work}
+          {/* 1. Home */}
+          <a href="/" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors font-semibold">
+            {t.navbar.home || "Home"}
           </a>
-          <a href="#clients" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors">
-            {t.navbar.clients}
-          </a>
-          
-          {/* Mobile Industries Accordion */}
+
+          {/* 2. Mobile About Accordion */}
           <div>
             <button
               type="button"
-              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
               className="w-full py-1 px-2 text-left text-zinc-800 hover:text-black flex items-center justify-between rounded-lg transition-colors font-semibold"
             >
-              <span>{t.navbar.industries || "Industries"}</span>
+              <span>{t.navbar.about}</span>
               <svg
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  mobileIndustriesOpen ? "rotate-180" : ""
+                  mobileAboutOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -804,24 +840,54 @@ export default function Navbar() {
               </svg>
             </button>
 
-            {mobileIndustriesOpen && (
+            {mobileAboutOpen && (
               <div className="bg-zinc-50 border border-zinc-200/90 text-black p-3 rounded-xl mt-1.5 flex flex-col gap-2 text-xs font-sans">
-                {industriesData.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
-                  >
-                    <span className="text-zinc-500">{renderIcon(item.icon)}</span>
-                    <span>{item.name}</span>
-                  </a>
-                ))}
+                <a
+                  href="/about/who-we-are"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
+                >
+                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
+                    1
+                  </span>
+                  <div>
+                    <span className="font-bold block text-zinc-900">Who We Are</span>
+                    <span className="text-[10px] text-zinc-500">Our mission &amp; core philosophy</span>
+                  </div>
+                </a>
+
+                <a
+                  href="/about/how-we-work"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
+                >
+                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
+                    2
+                  </span>
+                  <div>
+                    <span className="font-bold block text-zinc-900">How We Work</span>
+                    <span className="text-[10px] text-zinc-500">Agile sprints &amp; QA standards</span>
+                  </div>
+                </a>
+
+                <a
+                  href="/about/what-we-do"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
+                >
+                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
+                    3
+                  </span>
+                  <div>
+                    <span className="font-bold block text-zinc-900">What We Do ?</span>
+                    <span className="text-[10px] text-zinc-500">Full capability matrix</span>
+                  </div>
+                </a>
               </div>
             )}
           </div>
 
-          {/* Mobile Services Accordion */}
+          {/* 3. Mobile Services Accordion */}
           <div>
             <button
               type="button"
@@ -904,17 +970,17 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Mobile About Accordion */}
+          {/* 4. Mobile Industries Accordion */}
           <div>
             <button
               type="button"
-              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
               className="w-full py-1 px-2 text-left text-zinc-800 hover:text-black flex items-center justify-between rounded-lg transition-colors font-semibold"
             >
-              <span>{t.navbar.about}</span>
+              <span>{t.navbar.industries || "Industries"}</span>
               <svg
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  mobileAboutOpen ? "rotate-180" : ""
+                  mobileIndustriesOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -925,52 +991,36 @@ export default function Navbar() {
               </svg>
             </button>
 
-            {mobileAboutOpen && (
+            {mobileIndustriesOpen && (
               <div className="bg-zinc-50 border border-zinc-200/90 text-black p-3 rounded-xl mt-1.5 flex flex-col gap-2 text-xs font-sans">
-                <a
-                  href="/about/who-we-are"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
-                >
-                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
-                    1
-                  </span>
-                  <div>
-                    <span className="font-bold block text-zinc-900">Who We Are</span>
-                    <span className="text-[10px] text-zinc-500">Our mission &amp; core philosophy</span>
-                  </div>
-                </a>
+                {industriesData.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
+                  >
+                    <span className="text-zinc-500">{renderIcon(item.icon)}</span>
+                    <span>{item.name}</span>
+                  </a>
+                ))}
 
                 <a
-                  href="/about/how-we-work"
+                  href="/industries"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
+                  className="flex items-center justify-between py-2 px-2.5 rounded-lg bg-black text-[#fbea3d] font-bold text-xs mt-1"
                 >
-                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
-                    2
-                  </span>
-                  <div>
-                    <span className="font-bold block text-zinc-900">How We Work</span>
-                    <span className="text-[10px] text-zinc-500">Agile sprints &amp; QA standards</span>
-                  </div>
-                </a>
-
-                <a
-                  href="/about/what-we-do"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
-                >
-                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
-                    3
-                  </span>
-                  <div>
-                    <span className="font-bold block text-zinc-900">What We Do ?</span>
-                    <span className="text-[10px] text-zinc-500">Full capability matrix</span>
-                  </div>
+                  <span>View All Industries</span>
+                  <span>→</span>
                 </a>
               </div>
             )}
           </div>
+
+          {/* 5. Work */}
+          <a href="/work" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors font-semibold">
+            {t.navbar.work}
+          </a>
 
           {/* Quick Mobile Language Switcher Row */}
           <div className="pt-2 pb-1 border-t border-zinc-100">

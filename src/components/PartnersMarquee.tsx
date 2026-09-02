@@ -109,7 +109,7 @@ export default function PartnersMarquee() {
   const { t } = useLanguage();
 
   return (
-    <section className="w-full bg-white border-t border-zinc-200/90 py-12 sm:py-16 px-6 sm:px-12 lg:px-20 select-none overflow-hidden relative">
+    <section className="w-full bg-white border-0 py-10 sm:py-16 px-6 sm:px-12 lg:px-20 select-none overflow-hidden relative">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         
         {/* Header Row: Title on Left, View All Link on Right */}

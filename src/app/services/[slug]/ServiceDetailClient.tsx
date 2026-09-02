@@ -51,16 +51,16 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         {/* 1. HERO BANNER (Compact, Sleek Service Background Banner) */}
         <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
           
-          {/* Background Image with Dark Vignette & Gradient Overlays */}
+          {/* Background Image with Clear Directional Gradient (Photo clearly visible) */}
           <div className="absolute inset-0 z-0">
             <img
               src={service.image}
               alt={service.name}
-              className="w-full h-full object-cover object-center scale-105 filter brightness-[0.65] contrast-[1.1]"
+              className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
             />
-            {/* Dark Studio Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-[#0c0c0d] z-10"></div>
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px] z-10"></div>
+            {/* Directional gradient to keep photo vibrant on right while left text is readable */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
           </div>
 
           {/* Top Row: Back to Home + Global Divider Line */}

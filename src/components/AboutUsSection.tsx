@@ -35,7 +35,7 @@ export default function AboutUsSection() {
   return (
     <div
       id="about"
-      className="w-full flex flex-col items-center relative bg-[#0c0c0d]"
+      className="w-full flex flex-col items-center relative bg-transparent"
       onMouseMove={handleMouseMove}
     >
       {/* Floating Hover Image Preview (Follows Cursor) */}
@@ -63,23 +63,23 @@ export default function AboutUsSection() {
         )}
       </div>
 
-      {/* Arched Dome Curve Header (seamless transition from white PartnersMarquee into black AboutUsSection) */}
-      <div className="w-full overflow-hidden leading-none select-none -mb-[1px] relative z-20 pointer-events-none bg-white">
+      {/* Arched Dome Curve Header (seamless transition from white PartnersMarquee into black AboutUsSection with zero lines) */}
+      <div className="w-full overflow-hidden leading-none select-none -mb-[1px] relative z-20 pointer-events-none bg-transparent">
         <svg
-          viewBox="0 0 1440 100"
+          viewBox="0 0 1440 120"
           fill="none"
           preserveAspectRatio="none"
-          className="w-full h-8 sm:h-12 md:h-16 lg:h-20 block text-[#0c0c0d]"
+          className="w-full h-8 sm:h-12 md:h-16 lg:h-20 block"
         >
           <path
-            d="M0,100 C400,0 1040,0 1440,100 L1440,100 L0,100 Z"
-            fill="currentColor"
+            d="M0,120 Q720,0 1440,120 L1440,120 L0,120 Z"
+            fill="#0c0c0d"
           />
         </svg>
       </div>
 
       {/* About Us Content Body (100% full-width black background) */}
-      <section className="w-full bg-[#0c0c0d] text-white pt-4 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 px-6 sm:px-12 lg:px-20 relative overflow-hidden">
+      <section className="w-full bg-[#0c0c0d] text-white pt-4 sm:pt-8 lg:pt-10 pb-16 sm:pb-20 md:pb-24 px-6 sm:px-12 lg:px-20 relative overflow-hidden">
         
         {/* Subtle background ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-white/[0.03] rounded-full blur-[100px] pointer-events-none"></div>
@@ -343,21 +343,6 @@ export default function AboutUsSection() {
 
         </div>
       </section>
-
-      {/* Bottom Arched Dome Curve (seamless transition from black AboutUsSection into white WhatWeDoSection) */}
-      <div className="w-full overflow-hidden leading-none select-none -mt-[1px] relative z-20 pointer-events-none bg-[#0c0c0d]">
-        <svg
-          viewBox="0 0 1440 100"
-          fill="none"
-          preserveAspectRatio="none"
-          className="w-full h-8 sm:h-12 md:h-16 lg:h-20 block text-white"
-        >
-          <path
-            d="M0,100 C400,0 1040,0 1440,100 L1440,100 L0,100 Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
     </div>
   );
 }

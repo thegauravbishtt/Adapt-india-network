@@ -32,6 +32,7 @@ export interface FeaturedWorkItem {
 
 export interface Translations {
   navbar: {
+    home: string;
     work: string;
     clients: string;
     industries: string;
@@ -165,6 +166,7 @@ export const defaultFeaturedWorkItems: FeaturedWorkItem[] = [
 export const translations: Record<Language, Translations> = {
   en: {
     navbar: {
+      home: "Home",
       work: "Work",
       clients: "Clients",
       industries: "Industries",
@@ -262,6 +264,7 @@ export const translations: Record<Language, Translations> = {
   },
   hi: {
     navbar: {
+      home: "होम",
       work: "हमारा काम",
       clients: "क्लाइंट्स",
       industries: "उद्योग",
@@ -335,6 +338,7 @@ export const translations: Record<Language, Translations> = {
   },
   es: {
     navbar: {
+      home: "Inicio",
       work: "Trabajos",
       clients: "Clientes",
       industries: "Industrias",
@@ -407,6 +411,7 @@ export const translations: Record<Language, Translations> = {
   },
   zh: {
     navbar: {
+      home: "首页",
       work: "案例作品",
       clients: "合作客户",
       industries: "行业领域",
@@ -479,6 +484,7 @@ export const translations: Record<Language, Translations> = {
   },
   ru: {
     navbar: {
+      home: "Главная",
       work: "Работы",
       clients: "Клиенты",
       industries: "Индустрии",
@@ -551,6 +557,7 @@ export const translations: Record<Language, Translations> = {
   },
   ko: {
     navbar: {
+      home: "홈",
       work: "프로젝트",
       clients: "고객사",
       industries: "산업 분야",
@@ -623,6 +630,7 @@ export const translations: Record<Language, Translations> = {
   },
   ja: {
     navbar: {
+      home: "ホーム",
       work: "実績",
       clients: "クライアント",
       industries: "業界分野",

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import Link from "next/link";
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -57,13 +58,18 @@ export default function Footer() {
           {/* Column 1: Brand Logo, About & Socials */}
           <div className="lg:col-span-4 flex flex-col items-start text-left pr-0 lg:pr-4">
             
-            {/* Circular Brand Badge */}
-            <div className="flex items-center gap-3">
-              <div className="w-13 h-13 rounded-full bg-black text-white flex flex-col items-center justify-center font-display leading-[0.95] text-center shadow-md select-none border border-black p-1">
-                <span className="text-[9px] font-medium text-zinc-300 uppercase tracking-tight">the</span>
-                <span className="text-[12px] font-black tracking-tighter uppercase text-[#fbea3d]">owlio</span>
-                <span className="text-[10px] font-extrabold tracking-widest uppercase text-white">WORKS</span>
-              </div>
+            {/* Brand Logo */}
+            <div className="flex items-center gap-3 select-none">
+              <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+                <img
+                  src="/logo.png"
+                  alt="Owlio Works Logo"
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+                />
+                <span className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tighter uppercase font-display">
+                  OWLIO <span className="text-zinc-500 font-bold group-hover:text-black transition-colors">WORKS</span>
+                </span>
+              </Link>
             </div>
 
             {/* Agency Bio */}
@@ -171,7 +177,7 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-600 font-normal">
               <li>
-                <a href="#industries" className="hover:text-black transition-colors">
+                <a href="/industries" className="hover:text-black transition-colors">
                   Industries we Serve
                 </a>
               </li>

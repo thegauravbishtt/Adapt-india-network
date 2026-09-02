@@ -9,7 +9,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full bg-[#0c0c0d] text-white pt-0 sm:pt-10 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 px-0 sm:px-8 lg:px-10 xl:px-12 overflow-hidden border-b border-zinc-900 select-none">
+    <section className="relative w-full bg-[#0c0c0d] text-white pt-0 sm:pt-10 lg:pt-16 pb-16 sm:pb-24 lg:pb-32 px-0 sm:px-8 lg:px-10 xl:px-12 overflow-hidden border-b-0 sm:border-b border-zinc-900 select-none">
       
       {/* Dynamic Ambient Background Glow */}
       <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-[#fbea3d]/4 rounded-full blur-[140px] pointer-events-none z-0"></div>

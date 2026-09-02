@@ -53,7 +53,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Enduring Growth.",
     heroSubtitle:
       "We architect, engineer, and deploy mission-critical enterprise systems that eliminate technical debt, automate complex workflows, and handle high-throughput operations with 99.99% availability.",
-    image: "/services/hero_enterprise_software.jpg",
+    image: "/services/enterprise_software.jpg",
     galleryImages: ["/gro.png", "/image1.png", "/studio-photo.png"],
     stats: [
       { value: "99.99%", label: "Uptime SLA Guarantee" },
@@ -155,6 +155,11 @@ export const allServices: ServiceDetail[] = [
         answer:
           "You own 100% of all intellectual property, source code, repositories, and documentation from day one.",
       },
+      {
+        question: "What development methodology and sprint cadence do you follow?",
+        answer:
+          "We run agile 2-week sprint cycles with weekly video demos, shared Jira/GitHub boards, daily asynchronous Slack updates, and continuous integration deployments to dedicated staging environments.",
+      },
     ],
   },
   {
@@ -166,8 +171,8 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Measurable Revenue.",
     heroSubtitle:
       "We design and engineer bespoke web platforms with Next.js, Headless CMS architectures, and interactive 3D/micro-animations that score 95+ on Core Web Vitals and outperform competitors.",
-    image: "/services/hero_web_dev.jpg",
-    galleryImages: ["/services/hero_enterprise_software.jpg", "/wed.png", "/image2.png"],
+    image: "/services/web_development.jpg",
+    galleryImages: ["/services/enterprise_software.jpg", "/wed.png", "/image2.png"],
     stats: [
       { value: "98+", label: "Google PageSpeed Score" },
       { value: "< 0.8s", label: "Average First Contentful Paint" },
@@ -261,6 +266,16 @@ export const allServices: ServiceDetail[] = [
         answer:
           "We utilize Next.js server-side rendering, automatic image conversion to AVIF/WebP, minimal JavaScript payloads, clean critical CSS, and edge caching on global CDNs.",
       },
+      {
+        question: "Do you build custom responsive designs or rely on pre-made templates?",
+        answer:
+          "Every web platform we build is 100% custom-designed in Figma and coded from scratch with Next.js and Tailwind CSS, tailored specifically to your brand identity, user journeys, and conversion goals.",
+      },
+      {
+        question: "How do you ensure SEO best practices are baked into the development process?",
+        answer:
+          "We implement semantic HTML5 structures, dynamic JSON-LD schema markup, automated XML sitemaps, OpenGraph social meta tags, and edge-rendered server-side caching for instant crawler indexing.",
+      },
     ],
     structuredSection: {
       title: "STRUCTURED FOR SEARCH ENGINE VISIBILITY",
@@ -298,7 +313,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Millions of Users.",
     heroSubtitle:
       "We develop fluid, intuitive, and secure mobile applications for iOS and Android using React Native and Flutter, backed by resilient cloud infrastructure and offline-first data sync.",
-    image: "/services/hero_app_dev.jpg",
+    image: "/services/app_development.jpg",
     galleryImages: ["/image3.png", "/creative3.png", "/gro.png"],
     stats: [
       { value: "60 FPS", label: "Smooth Animation Fidelity" },
@@ -382,6 +397,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "For 95% of modern consumer and business apps, React Native or Flutter provides identical 60 FPS performance, cuts development time by half, and allows synchronized feature rollouts on both platforms.",
       },
+      {
+        question: "How do you handle offline functionality and data synchronization?",
+        answer:
+          "We engineer offline-first architectures using local encrypted databases (WatermelonDB/SQLite) with background sync engines that automatically resolve data conflicts when the device reconnects to the network.",
+      },
+      {
+        question: "Can you assist with App Store and Google Play submission and approval?",
+        answer:
+          "Yes. We manage the entire store submission lifecycle—from generating compliance assets, privacy manifests, and TestFlight builds to resolving review inquiries and ensuring seamless public launch approval.",
+      },
+      {
+        question: "How do you handle push notifications and user engagement tracking?",
+        answer:
+          "We integrate enterprise push notification engines (OneSignal, Firebase Cloud Messaging) with granular user segmentation, deep-linking, automated lifecycle triggers, and real-time analytics dashboards.",
+      },
     ],
   },
   {
@@ -393,7 +423,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Uncapped Scale.",
     heroSubtitle:
       "We design, automate, and manage cloud environments on AWS and GCP with Terraform, Kubernetes, and automated CI/CD pipelines to guarantee high availability and reduced cloud spend.",
-    image: "/services/hero_cloud_devops.jpg",
+    image: "/services/cloud_devops.jpg",
     galleryImages: ["/gro.png", "/image4.png", "/studio-photo.png"],
     stats: [
       { value: "99.99%", label: "System Availability" },
@@ -477,6 +507,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "We use Blue/Green and Canary deployment strategies with Kubernetes and load balancers. Traffic is only shifted to new containers once health checks pass 100%.",
       },
+      {
+        question: "How do you help us reduce and optimize monthly AWS/GCP cloud costs?",
+        answer:
+          "We conduct comprehensive FinOps audits—identifying idle resources, rightsizing compute instances, implementing automated auto-scaling policies, and transitioning workloads to reserved instances or spot fleets for 30-50% savings.",
+      },
+      {
+        question: "Can you migrate our on-premise or legacy servers to modern cloud infrastructure?",
+        answer:
+          "Yes. We engineer phased cloud migration blueprints using Infrastructure-as-Code (Terraform), containerizing legacy services with Docker and Kubernetes to ensure uninterrupted business operations throughout the migration.",
+      },
+      {
+        question: "What monitoring, logging, and alert systems do you implement?",
+        answer:
+          "We configure centralized observability suites using Datadog, Prometheus, Grafana, and AWS CloudWatch with automated error telemetry, performance tracing, and 24/7 PagerDuty escalation policies.",
+      },
     ],
   },
   {
@@ -488,7 +533,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "High-Growth Companies.",
     heroSubtitle:
       "We provide high-IQ technical guidance, system architecture reviews, technical due diligence, and roadmap execution to eliminate costly engineering mistakes and accelerate time-to-market.",
-    image: "/services/hero_enterprise_software.jpg",
+    image: "/services/it_consulting.jpg",
     galleryImages: ["/studio-photo.png", "/gro.png", "/image1.png"],
     stats: [
       { value: "100+", label: "Architectural Reviews Completed" },
@@ -563,6 +608,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "We integrate directly into your leadership meetings, Slack channels, and code review processes for a fixed weekly or monthly allocation, providing immediate executive-level engineering guidance.",
       },
+      {
+        question: "How do you assess technical debt and codebase health in existing systems?",
+        answer:
+          "We perform rigorous static code analysis, test coverage reviews, architectural dependency mapping, and security vulnerability scans to provide a prioritized technical remediation scorecard.",
+      },
+      {
+        question: "Can you assist with technical due diligence for M&A or fundraising rounds?",
+        answer:
+          "Yes. We deliver comprehensive due diligence reports for venture capital firms and acquirers, assessing codebase scalability, IP risks, cloud infrastructure costs, and engineering team capabilities.",
+      },
+      {
+        question: "How do you help our team choose the right tech stack for new products?",
+        answer:
+          "We evaluate your expected traffic scale, team expertise, time-to-market constraints, and long-term operating costs to recommend modern, vendor-neutral architectures that avoid premature optimization and lock-in.",
+      },
     ],
   },
   {
@@ -574,7 +634,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Maximum User Adoption.",
     heroSubtitle:
       "We design intuitive, high-converting digital products, web apps, and design systems in Figma that captivate users, lower churn, and turn complex workflows into delightful simplicity.",
-    image: "/services/hero_ui_ux.jpg",
+    image: "/services/ui_ux_design.jpg",
     galleryImages: ["/creative5.png", "/image3.png", "/gro.png"],
     stats: [
       { value: "4.2x", label: "User Task Completion Rate" },
@@ -650,6 +710,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "Yes. Our Figma files are built with strict Auto-Layout, variant properties, and tokenized variables directly matching frontend frameworks like Tailwind CSS for frictionless implementation.",
       },
+      {
+        question: "What is your design process from initial concept to final sign-off?",
+        answer:
+          "Our iterative design process spans discovery and user research, low-fidelity wireframing, clickable interactive Figma prototypes, usability testing, and final high-fidelity visual design tokenization.",
+      },
+      {
+        question: "How do you validate design decisions and user experience before coding?",
+        answer:
+          "We conduct moderated and unmoderated user testing sessions with clickable Figma prototypes, mapping task completion times, confusion heatmaps, and qualitative feedback before engineering begins.",
+      },
+      {
+        question: "Do you create full design systems and component libraries?",
+        answer:
+          "Yes. We architect enterprise-grade design systems with modular component variants, strict auto-layout, typography hierarchies, and tokenized variables mapped directly to Tailwind CSS or React component libraries.",
+      },
     ],
     structuredSection: {
       title: "STRUCTURED FOR USER CONVERSION & VISUAL IMPACT",
@@ -687,7 +762,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Sustainable Revenue.",
     heroSubtitle:
       "We engineer technical search architectures, programmatic content engines, and high-authority link acquisition strategies that capture high-intent buyers and dominate Google, ChatGPT, and AI Search engines.",
-    image: "/services/hero_seo_services.jpg",
+    image: "/services/seo_services.jpg",
     galleryImages: ["/image1.png", "/creative5.png", "/gro.png"],
     stats: [
       { value: "10x", label: "Average Organic Traffic Growth" },
@@ -769,6 +844,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "While technical fixes and quick-win keyword updates often produce indexation and ranking gains within 30 to 60 days, compounded revenue growth typically accelerates strongly between months 3 and 6.",
       },
+      {
+        question: "How do you optimize websites for AI Search engines like ChatGPT, Perplexity, and Gemini?",
+        answer:
+          "We structure your content for AI Engine Optimization (AEO/GEO) using direct-answer formatting, comprehensive entity schema, authoritative citation networks, and knowledge graph seeding so AI models cite your brand.",
+      },
+      {
+        question: "What is your approach to white-hat backlink acquisition and digital PR?",
+        answer:
+          "We build authoritative editorial backlinks through proprietary industry studies, data-driven infographics, thought-leadership guest columns, and targeted digital PR outreach to high-domain-authority publications.",
+      },
+      {
+        question: "How do you prevent search traffic drops during website redesigns or migrations?",
+        answer:
+          "We execute meticulous URL mapping, implement 1-to-1 301 redirects, preserve existing metadata and canonical tags, and monitor search console indexation daily post-launch to maintain existing ranking equity.",
+      },
     ],
   },
   {
@@ -780,7 +870,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Return on Ad Spend.",
     heroSubtitle:
       "We design, manage, and scale high-converting Google Search, Performance Max, and YouTube ad campaigns with precision audience targeting, negative keyword sculpting, and conversion API tracking.",
-    image: "/services/hero_google_ads.jpg",
+    image: "/services/google_ads.jpg",
     galleryImages: ["/image4.png", "/creative6.png", "/hotel.png"],
     stats: [
       { value: "3.8x", label: "Average Client ROAS" },
@@ -855,6 +945,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "No. We believe our performance should earn your business every month. We work on clear monthly retainer models with transparent weekly reporting.",
       },
+      {
+        question: "How do you prevent wasted ad spend on irrelevant search terms?",
+        answer:
+          "We employ strict Single-Theme Ad Groups (STAGs), rigorous negative keyword sculpting, daily search term audits, and exact-match bidding strategies to ensure your budget is spent exclusively on high-intent buyers.",
+      },
+      {
+        question: "What is server-side conversion tracking and why is it necessary for Google Ads?",
+        answer:
+          "Server-side tagging streams conversion data directly from your cloud server to Google Ads, bypassing ad-blockers and browser cookie restrictions to restore 100% conversion attribution and improve smart bidding accuracy.",
+      },
+      {
+        question: "Do you design custom landing pages for paid search campaigns?",
+        answer:
+          "Yes. We build ultra-fast, dedicated landing pages engineered specifically for high paid conversion rates, featuring dynamic headline insertion, persuasive micro-copy, and frictionless 1-step lead capture forms.",
+      },
     ],
   },
   {
@@ -866,7 +971,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Customer Acquisition.",
     heroSubtitle:
       "We scale Facebook and Instagram advertising through iterative creative testing, UGC production, custom audience segmentation, and Conversions API (CAPI) infrastructure.",
-    image: "/services/hero_google_ads.jpg",
+    image: "/services/meta_ads.jpg",
     galleryImages: ["/creative7.png", "/image2.png", "/wed.png"],
     stats: [
       { value: "4.5x", label: "Top Funnel ROAS" },
@@ -941,6 +1046,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "We produce and launch new creative batches weekly or bi-weekly to proactively combat ad fatigue and continually lower customer acquisition costs.",
       },
+      {
+        question: "How do you combat iOS tracking limitations and data loss on Facebook & Instagram?",
+        answer:
+          "We configure the Meta Conversions API (CAPI) on dedicated cloud endpoints with automatic event deduplication and advanced customer matching, restoring full attribution fidelity and lowering customer acquisition costs.",
+      },
+      {
+        question: "What types of ad creatives do you produce for paid social campaigns?",
+        answer:
+          "We script, design, and edit high-converting direct-response video ads, user-generated content (UGC), high-retention motion graphics, and editorial product carousels tested with varying hooks and angles.",
+      },
+      {
+        question: "How do you scale ad spend without driving up Cost Per Acquisition (CPA)?",
+        answer:
+          "We use systematic Dynamic Creative Testing (DCT) to identify statistically validated winning combinations of hooks, visuals, and copy, gradually scaling winning assets into broad Advantage+ budget pools.",
+      },
     ],
   },
   {
@@ -952,7 +1072,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Active Advocates.",
     heroSubtitle:
       "We craft compelling social narratives, high-engagement short-form videos (Reels & Shorts), and community engagement strategies that turn casual followers into loyal brand evangelists.",
-    image: "/services/hero_app_dev.jpg",
+    image: "/services/social_media.jpg",
     galleryImages: ["/creative1.png", "/creative4.png", "/hotel.png"],
     stats: [
       { value: "5.8M+", label: "Organic Social Impressions" },
@@ -1028,6 +1148,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "Yes! We handle the entire creative pipeline—from conceptual scripting and on-site/studio shooting to high-energy motion editing and audio mastering.",
       },
+      {
+        question: "How do you develop a consistent brand voice and visual aesthetic across social channels?",
+        answer:
+          "We establish comprehensive social brand guidelines covering visual moodboards, typographic styles, color palettes, tone-of-voice playbooks, and 4-5 high-performing content pillars tailored to your target demographic.",
+      },
+      {
+        question: "How do you measure ROI and business impact from organic social media?",
+        answer:
+          "We track meaningful business KPIs including website referral traffic, qualified direct message inquiries, audience retention rates, saves, shares, and assisted conversion value rather than superficial follower metrics.",
+      },
+      {
+        question: "How do you manage community engagement and customer comments?",
+        answer:
+          "Our dedicated community managers monitor your social feeds daily—responding promptly to inquiries, sparking thoughtful conversations, moderating comments, and escalating customer service tickets in real time.",
+      },
     ],
   },
   {
@@ -1039,7 +1174,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Converts Buyers.",
     heroSubtitle:
       "We produce in-depth technical whitepapers, SEO-optimized articles, case studies, and editorial journalism that position your leadership as industry titans and drive inbound enterprise deals.",
-    image: "/services/hero_ui_ux.jpg",
+    image: "/services/content_marketing.jpg",
     galleryImages: ["/image1.png", "/hotel.png", "/creative3.png"],
     stats: [
       { value: "100%", label: "Subject-Matter Expert Written" },
@@ -1114,6 +1249,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "Yes. Our content team specializes in B2B SaaS, FinTech, cloud architecture, and technical domains, ensuring every piece reflects deep domain accuracy.",
       },
+      {
+        question: "How do you ensure content is original, accurate, and free of generic AI fluff?",
+        answer:
+          "Our content is crafted by experienced technical writers who conduct 1-on-1 interviews with your internal subject-matter experts, integrating proprietary data, custom diagrams, and real-world case studies.",
+      },
+      {
+        question: "How do you repurpose long-form content across multiple marketing channels?",
+        answer:
+          "Every cornerstone article or whitepaper is sliced into high-engagement LinkedIn carousel decks, Twitter/X threads, executive newsletter snippets, and downloadable lead-magnet PDFs to maximize content ROI.",
+      },
+      {
+        question: "How do you align content strategy with pipeline revenue rather than just pageviews?",
+        answer:
+          "We map content topics directly to buyer search intent stages—creating problem-aware educational guides, product comparison tables, and customer case studies designed to drive demo bookings and sales inquiries.",
+      },
     ],
   },
   {
@@ -1125,7 +1275,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Customer Footfall.",
     heroSubtitle:
       "We optimize Google Business Profiles (GMB), local citation networks, localized landing pages, and geo-targeted schema markup to capture top 3 Map Pack rankings and phone calls.",
-    image: "/services/hero_seo_services.jpg",
+    image: "/services/local_seo_gmb.jpg",
     galleryImages: ["/hotel.png", "/gro.png", "/creative1.png"],
     stats: [
       { value: "Top 3", label: "Google Map Pack Placements" },
@@ -1199,6 +1349,21 @@ export const allServices: ServiceDetail[] = [
         answer:
           "Yes. We specialize in both single-location authority and multi-location enterprise chains with centralized reporting and location-specific optimization.",
       },
+      {
+        question: "How long does it take to rank in Google's local 3-Pack Map results?",
+        answer:
+          "With complete profile optimization, category alignment, citation standardization, and targeted local review acquisition, businesses typically see significant Map Pack ranking improvements within 30 to 90 days.",
+      },
+      {
+        question: "How do you handle NAP (Name, Address, Phone) citation consistency?",
+        answer:
+          "We audit and synchronize your business information across 80+ authoritative local directories, aggregators, and map networks (Google, Apple Maps, Bing, Yelp), automatically suppressing duplicate or incorrect listings.",
+      },
+      {
+        question: "What is your strategy for generating authentic positive customer reviews?",
+        answer:
+          "We implement automated SMS and email review request workflows, QR code review cards for physical storefronts, and proactive review monitoring with custom response templates that enhance local search authority.",
+      },
     ],
   },
   {
@@ -1210,7 +1375,7 @@ export const allServices: ServiceDetail[] = [
     heroHighlight: "Cyber Threats.",
     heroSubtitle:
       "We conduct penetration testing, cloud vulnerability assessments, OWASP compliance auditing, and secure architecture engineering to protect your proprietary data and customer trust.",
-    image: "/services/hero_cybersecurity.jpg",
+    image: "/services/cybersecurity.jpg",
     galleryImages: ["/image1.png", "/hotel.png", "/gro.png"],
     stats: [
       { value: "Zero", label: "Security Breaches on Client Systems" },
@@ -1285,6 +1450,21 @@ export const allServices: ServiceDetail[] = [
         question: "How often should an enterprise perform security penetration testing?",
         answer:
           "We recommend quarterly penetration tests or immediately following major software releases and significant architectural changes.",
+      },
+      {
+        question: "What is the difference between automated vulnerability scanning and manual penetration testing?",
+        answer:
+          "Automated scanners check for known CVE signatures, while our manual penetration testers simulate real-world human adversary tactics to uncover complex business logic flaws, authorization bypasses, and chained exploits.",
+      },
+      {
+        question: "Can you help our company achieve SOC2 Type II or ISO 27001 compliance?",
+        answer:
+          "Yes. We guide organizations through end-to-end audit readiness—establishing security policies, configuring access control boundaries, automating continuous compliance monitoring, and assembling audit evidence packages.",
+      },
+      {
+        question: "How do you secure cloud infrastructure and API endpoints against data breaches?",
+        answer:
+          "We enforce zero-trust security perimeters, least-privilege IAM policies, Web Application Firewall (WAF) rate-limiting rules, KMS database encryption, and automated secret detection across your CI/CD pipelines.",
       },
     ],
   },

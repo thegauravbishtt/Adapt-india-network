@@ -1,76 +1,82 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar";
 import NewsletterSection from "../../components/NewsletterSection";
 import Footer from "../../components/Footer";
 import { LanguageProvider } from "../../context/LanguageContext";
 import { allServices } from "../../data/servicesData";
 
+import Link from "next/link";
+
 export default function ServicesPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-
-  const categories = ["All", "Development", "Design", "Marketing", "Security"];
-
-  const filteredServices =
-    selectedCategory === "All"
-      ? allServices
-      : allServices.filter((s) => s.category === selectedCategory);
-
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none">
         <Navbar />
 
-        {/* Hero Section */}
-        <section className="w-full bg-[#0c0c0d] text-white pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-8 lg:px-14 xl:px-20 relative overflow-hidden border-b border-zinc-800">
-          <div className="max-w-7xl mx-auto flex flex-col items-start text-left relative z-10">
-            {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-xs font-mono text-zinc-400 mb-6 uppercase tracking-wider">
-              <a href="/" className="hover:text-white transition-colors">
-                Home
-              </a>
-              <span>/</span>
-              <span className="text-[#fbea3d] font-bold">Services</span>
+        {/* 1. HERO BANNER (Compact, Sleek Service Background Banner) */}
+        <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+          
+          {/* Background Image with Clear Directional Gradient (Photo clearly visible) */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/services/web_development.jpg"
+              alt="Services - Owlio Works"
+              className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
+            />
+            {/* Directional gradient to keep photo vibrant on right while left text is readable */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
+          </div>
+
+          {/* Top Row: Back to Home + Global Divider Line */}
+          <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
+            <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
+              >
+                <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
+                <span>BACK TO HOME</span>
+              </Link>
+
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                  // ALL SERVICES
+                </span>
+              </div>
             </div>
+          </div>
 
-            {/* Tag / Category Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-[#fbea3d] font-mono text-xs font-extrabold uppercase tracking-widest mb-4">
-              <span>//</span>
-              <span>PRACTICES & CAPABILITIES</span>
-            </div>
+          {/* Center Content: Clean Title + Scroll Down Indicator */}
+          <div className="relative z-20 max-w-7xl mx-auto w-full">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+              
+              <div className="flex flex-col items-start text-left max-w-3xl">
+                {/* Category Pill Tagline */}
+                <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
+                  // PRACTICES & CAPABILITIES
+                </span>
 
-            {/* H1 Title */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white font-display tracking-tight leading-[1.08] max-w-4xl mb-6">
-              Engineering Infrastructure & Performance for the{" "}
-              <span className="relative inline-block text-[#fbea3d]">
-                Next Decade.
-              </span>
-            </h1>
+                {/* Compact Display Title */}
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                  OUR SERVICES
+                </h1>
 
-            {/* Subtitle */}
-            <p className="text-zinc-400 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed font-medium mb-8">
-              We eliminate technical debt and bridge high-performance engineering with sales-driven product design, algorithmic search systems, and scalable advertising engines.
-            </p>
+                <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                  Engineering Infrastructure & Performance for the Next Decade. We eliminate technical debt and bridge high-performance engineering with sales-driven product design, algorithmic search systems, and scalable advertising engines.
+                </p>
+              </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
-              {categories.map((cat) => {
-                const isSelected = selectedCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-[13px] font-bold uppercase font-mono tracking-wider transition-all duration-200 cursor-pointer ${
-                      isSelected
-                        ? "bg-[#fbea3d] text-black shadow-[0_2px_12px_rgba(251,234,61,0.3)] scale-105"
-                        : "bg-zinc-900/90 text-zinc-400 border border-zinc-800 hover:text-white hover:bg-zinc-800"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
+              {/* Right Side: Scroll Down Indicator */}
+              <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
+                <span>SCROLL DOWN</span>
+                <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
+                  ↓
+                </span>
+              </div>
+
             </div>
           </div>
         </section>
@@ -82,7 +88,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-200 pb-6">
               <div>
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-500 block mb-1">
-                  OUR CAPABILITIES ({filteredServices.length})
+                  OUR CAPABILITIES ({allServices.length})
                 </span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900 font-display tracking-tight">
                   Tailored Practice Areas
@@ -95,7 +101,7 @@ export default function ServicesPage() {
 
             {/* Grid of Service Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {filteredServices.map((service) => (
+              {allServices.map((service) => (
                 <article
                   key={service.slug}
                   className="bg-white rounded-3xl overflow-hidden border border-zinc-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
