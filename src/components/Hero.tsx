@@ -9,12 +9,12 @@ export default function Hero() {
   return (
     <section className="relative w-full bg-white text-zinc-950 pt-60 xs:pt-68 sm:pt-76 lg:pt-40 pb-56 xs:pb-64 sm:pb-72 lg:pb-28 px-4 xs:px-6 sm:px-12 lg:px-16 xl:px-20 overflow-hidden border-b border-zinc-200 select-none min-h-[110vh] xs:min-h-[115vh] sm:min-h-[120vh] lg:min-h-[620px] flex flex-col justify-center">
       
-      {/* 1. MOBILE ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile */}
+      {/* 1. MOBILE & IPAD/TABLET ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile & Tablet/iPad */}
       <svg
         viewBox="0 0 390 600"
         fill="none"
         preserveAspectRatio="none"
-        className="block md:hidden absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
+        className="block lg:hidden absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
       >
         {/* Vibrant Yellow Lightning Polygon */}
         <path
@@ -28,12 +28,12 @@ export default function Hero() {
         />
       </svg>
 
-      {/* 2. TABLET & DESKTOP ONLY: Refined Geometric Lightning with expanded White canvas */}
+      {/* 2. LAPTOP & DESKTOP ONLY: Refined Geometric Lightning with expanded White canvas */}
       <svg
         viewBox="0 0 1440 640"
         fill="none"
         preserveAspectRatio="none"
-        className="hidden md:block absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
+        className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
       >
         {/* Center Vibrant Yellow Lightning Polygon (Shifted right for more white area) */}
         <path
@@ -61,10 +61,10 @@ export default function Hero() {
             </svg>
           </div>
 
-          {/* Headline: 3 Lines on Mobile Phones, 2 Lines on Tablet / Laptop / Desktop */}
-          <h1 className="font-sans font-normal text-[30px] min-[375px]:text-[34px] xs:text-[38px] sm:text-[48px] md:text-[64px] lg:text-[66px] xl:text-[74px] text-zinc-950 leading-[1.14] md:leading-[1.08] lg:leading-[1.07] tracking-[-0.03em] select-text text-center lg:text-left mx-auto lg:mx-0 max-w-full lg:max-w-none px-1 xs:px-2 sm:px-0">
-            {/* Phone view: 3 lines */}
-            <span className="block md:hidden">
+          {/* Headline: 3 Lines on Mobile & iPad/Tablet, 2 Lines on Laptop / Desktop */}
+          <h1 className="font-sans font-normal text-[30px] min-[375px]:text-[34px] xs:text-[38px] sm:text-[46px] md:text-[56px] lg:text-[66px] xl:text-[74px] text-zinc-950 leading-[1.14] md:leading-[1.12] lg:leading-[1.07] tracking-[-0.03em] select-text text-center lg:text-left mx-auto lg:mx-0 max-w-full lg:max-w-none px-1 xs:px-2 sm:px-0">
+            {/* Mobile & iPad/Tablet: 3 lines */}
+            <span className="block lg:hidden">
               {language === "en" ? (
                 <>
                   <span className="block">We build &amp; scale</span>
@@ -79,8 +79,8 @@ export default function Hero() {
               )}
             </span>
 
-            {/* Laptop / Desktop / Tablet: 2 lines */}
-            <span className="hidden md:block">
+            {/* Laptop / Desktop: 2 lines */}
+            <span className="hidden lg:block">
               <span className="block whitespace-normal">{t.hero.line1}</span>
               <span className="block whitespace-normal">{t.hero.line2}</span>
             </span>
