@@ -9,21 +9,21 @@ export default function Hero() {
   return (
     <section className="relative w-full bg-white text-zinc-950 pt-60 xs:pt-68 sm:pt-76 lg:pt-40 pb-56 xs:pb-64 sm:pb-72 lg:pb-28 px-4 xs:px-6 sm:px-12 lg:px-16 xl:px-20 overflow-hidden border-b border-zinc-200 select-none min-h-[110vh] xs:min-h-[115vh] sm:min-h-[120vh] lg:min-h-[620px] flex flex-col justify-center">
       
-      {/* 1. MOBILE ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile (Safely on the right edge so text is never hidden) */}
+      {/* 1. MOBILE ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile */}
       <svg
         viewBox="0 0 390 600"
         fill="none"
         preserveAspectRatio="none"
         className="block md:hidden absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
       >
-        {/* Vibrant Yellow Lightning Polygon on Right Edge */}
+        {/* Vibrant Yellow Lightning Polygon */}
         <path
-          d="M 235 600 L 305 380 L 270 380 L 320 0 L 390 0 L 390 600 Z"
+          d="M 160 600 L 245 370 L 210 370 L 270 0 L 390 0 L 390 600 Z"
           fill="#fac917"
         />
-        {/* Deep Black Lightning Polygon on Rightmost Edge */}
+        {/* Deep Black Lightning Polygon */}
         <path
-          d="M 355 600 L 380 360 L 365 360 L 375 0 L 390 0 L 390 600 Z"
+          d="M 280 600 L 340 350 L 315 350 L 350 0 L 390 0 L 390 600 Z"
           fill="#0c0c0e"
         />
       </svg>
