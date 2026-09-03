@@ -1,39 +1,276 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWidget from "@/components/FloatingWidget";
 import { LanguageProvider } from "@/context/LanguageContext";
-import { demoBlogs } from "@/components/BlogsSection";
 import Link from "next/link";
+import type { BlogPost } from "@/lib/db";
+
+const DEFAULT_ARTICLES: BlogPost[] = [
+  {
+    id: "article-1",
+    slug: "modern-search-infrastructure-10x-organic-revenue",
+    title: "How modern search infrastructure drives 10x organic revenue.",
+    category: "SEO",
+    readTime: "4 min read",
+    image: "/image1.png",
+    excerpt: "Exploring the shift from traditional keyword targeting to algorithmic semantic authority and programmatic search systems.",
+    tags: [
+      { text: "STRATEGY", variant: "dark" },
+      { text: "GROWTH", variant: "yellow" },
+    ],
+    status: "published",
+    publishedAt: "2026-02-15T10:00:00.000Z",
+    author: "Owlio Growth Labs",
+  },
+  {
+    id: "article-2",
+    slug: "headless-commerce-vs-monolithic-builds",
+    title: "Why headless commerce platforms outperform traditional monolithic builds.",
+    category: "Web/App Design & Development",
+    readTime: "5 min read",
+    image: "/image2.png",
+    excerpt: "A deep dive into decoupled frontends, Next.js commerce pipelines, and conversion rate optimizations.",
+    tags: [
+      { text: "TECH", variant: "outline" },
+      { text: "PLATFORMS", variant: "dark" },
+    ],
+    status: "published",
+    publishedAt: "2026-02-18T12:00:00.000Z",
+    author: "Owlio Engineering",
+  },
+  {
+    id: "article-3",
+    slug: "science-of-high-conversion-digital-experiences-2026",
+    title: "The science of high-conversion digital experiences in 2026.",
+    category: "Performance & Advertising",
+    readTime: "6 min read",
+    image: "/image3.png",
+    excerpt: "Analyzing cognitive friction, visual hierarchy, and micro-interactions that drive user commitment.",
+    tags: [
+      { text: "D2C", variant: "yellow" },
+      { text: "CONVERSION", variant: "outline" },
+    ],
+    status: "published",
+    publishedAt: "2026-02-22T08:30:00.000Z",
+    author: "Design & UX Lab",
+  },
+  {
+    id: "article-4",
+    slug: "building-scalable-ai-search-systems",
+    title: "Building scalable AI search systems that outpace algorithmic shifts.",
+    category: "SEO",
+    readTime: "4 min read",
+    image: "/image4.png",
+    excerpt: "How Generative Engine Optimization (GEO) and structured answer engines are reshaping organic discovery.",
+    tags: [
+      { text: "AI & ML", variant: "dark" },
+      { text: "SEARCH", variant: "yellow" },
+    ],
+    status: "published",
+    publishedAt: "2026-02-27T14:00:00.000Z",
+    author: "AI Research Group",
+  },
+  {
+    id: "article-5",
+    slug: "high-impact-social-media-growth-playbook",
+    title: "High-impact social media frameworks that build enduring audience loyalty.",
+    category: "Social Media",
+    readTime: "5 min read",
+    image: "/creative5.png",
+    excerpt: "How narrative-led short-form content and founder branding scale consumer trust and distribution.",
+    tags: [
+      { text: "SOCIAL", variant: "dark" },
+      { text: "VIRAL", variant: "yellow" },
+    ],
+    status: "published",
+    publishedAt: "2026-03-01T11:00:00.000Z",
+    author: "Creative Strategy Team",
+  },
+  {
+    id: "article-6",
+    slug: "content-marketing-flywheel-b2b-saas",
+    title: "The B2B content marketing flywheel: Generating high-intent SQLs without paid burn.",
+    category: "Content",
+    readTime: "6 min read",
+    image: "/creative3.png",
+    excerpt: "A technical blueprint for engineering product-led content hubs that compound monthly inbound pipeline.",
+    tags: [
+      { text: "B2B", variant: "outline" },
+      { text: "CONTENT", variant: "dark" },
+    ],
+    status: "published",
+    publishedAt: "2026-03-02T09:00:00.000Z",
+    author: "Growth Advisory",
+  },
+  {
+    id: "article-7",
+    slug: "cloud-devops-kubernetes-multi-region-scale",
+    title: "Architecting zero-downtime multi-region Cloud & DevOps pipelines.",
+    category: "Cloud & DevOps",
+    readTime: "6 min read",
+    image: "/photo1.png",
+    excerpt: "How modern cloud infrastructure, automated CI/CD canary deployments, and IaC eliminate operational downtime.",
+    tags: [
+      { text: "DEVOPS", variant: "dark" },
+      { text: "INFRA", variant: "yellow" },
+    ],
+    status: "published",
+    publishedAt: "2026-03-02T14:00:00.000Z",
+    author: "DevOps Architecture Lab",
+  },
+  {
+    id: "article-8",
+    slug: "brand-identity-that-commands-pricing-power",
+    title: "Brand identity systems that command pricing power and category leadership.",
+    category: "Web/App Design & Development",
+    readTime: "4 min read",
+    image: "/creative1.png",
+    excerpt: "Why premium visual design, micro-typography, and distinct design tokens justify 3x higher contract values.",
+    tags: [
+      { text: "DESIGN", variant: "dark" },
+      { text: "BRAND", variant: "outline" },
+    ],
+    status: "published",
+    publishedAt: "2026-03-03T08:00:00.000Z",
+    author: "Brand Architecture Group",
+  },
+  {
+    id: "article-9",
+    slug: "lifecycle-email-automation-for-d2c",
+    title: "Lifecycle email automation: Unlocking 35%+ revenue share in modern D2C.",
+    category: "Email & Automation",
+    readTime: "4 min read",
+    image: "/creative4.png",
+    excerpt: "Behavioral triggers, predictive replenishment flows, and VIP segmentation blueprints.",
+    tags: [
+      { text: "RETENTION", variant: "yellow" },
+      { text: "EMAIL", variant: "dark" },
+    ],
+    status: "published",
+    publishedAt: "2026-03-03T10:30:00.000Z",
+    author: "Retention Systems",
+  },
+  {
+    id: "article-10",
+    slug: "e-commerce-scaling-playbook-2026",
+    title: "Scaling modern D2C ecommerce brands beyond 8-figures profitably.",
+    category: "Industries",
+    readTime: "7 min read",
+    image: "/creative2.png",
+    excerpt: "Navigating unit economics, blended CAC, and international multi-currency fulfillment.",
+    tags: [
+      { text: "E-COMM", variant: "dark" },
+      { text: "SCALE", variant: "yellow" },
+    ],
+    status: "published",
+    publishedAt: "2026-03-03T12:00:00.000Z",
+    author: "Ecommerce Practice",
+  },
+];
 
 export default function BlogPage() {
-  const allArticles = [
-    ...demoBlogs,
-    {
-      id: "article-7",
-      image: "/photo1.png",
-      tags: [
-        { text: "ENGINEERING", variant: "dark" as const },
-        { text: "PERFORMANCE", variant: "yellow" as const },
-      ],
-      title: "Core Web Vitals mastery: How sub-second load times multiply enterprise conversions.",
-      category: "Performance Engineering",
-      readTime: "7 min read",
-    },
-    {
-      id: "article-8",
-      image: "/photo2.png",
-      tags: [
-        { text: "GLOBAL SEO", variant: "yellow" as const },
-        { text: "SCALE", variant: "outline" as const },
-      ],
-      title: "Building programmatic SEO pipelines across 50+ international markets.",
-      category: "Search Systems",
-      readTime: "5 min read",
-    },
+  const [articles, setArticles] = useState<BlogPost[]>(DEFAULT_ARTICLES);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  useEffect(() => {
+    fetch("/api/admin/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.blogs && data.blogs.length > 0) {
+          setArticles(data.blogs);
+        }
+      })
+      .catch(() => {
+        // Use default
+      });
+  }, []);
+
+  const matchesCategory = (articleCat: string, targetId: string): boolean => {
+    const aCat = (articleCat || "").toLowerCase();
+    const tId = targetId.toLowerCase();
+
+    if (tId === "all") return true;
+
+    if (tId === "performance & advertising") {
+      return (
+        aCat.includes("performance") ||
+        aCat.includes("advertising") ||
+        aCat.includes("ads") ||
+        aCat.includes("conversion")
+      );
+    }
+
+    if (tId === "social media") {
+      return aCat.includes("social");
+    }
+
+    if (tId === "web/app design & development") {
+      return (
+        aCat.includes("web") ||
+        aCat.includes("app") ||
+        aCat.includes("design") ||
+        aCat.includes("development") ||
+        aCat.includes("strategy")
+      );
+    }
+
+    if (tId === "content") {
+      return aCat.includes("content") || aCat.includes("editorial");
+    }
+
+    if (tId === "email & automation") {
+      return aCat.includes("email") || aCat.includes("automation");
+    }
+
+    if (tId === "cloud & devops") {
+      return aCat.includes("cloud") || aCat.includes("devops") || aCat.includes("infra");
+    }
+
+    if (tId === "seo") {
+      return aCat.includes("seo") || aCat.includes("search") || aCat.includes("geo");
+    }
+
+    if (tId === "industries") {
+      return (
+        aCat.includes("industr") ||
+        aCat.includes("d2c") ||
+        aCat.includes("commerce") ||
+        aCat.includes("saas") ||
+        aCat.includes("health") ||
+        aCat.includes("hospital") ||
+        aCat.includes("estate") ||
+        aCat.includes("food") ||
+        aCat.includes("educat") ||
+        aCat.includes("fintech")
+      );
+    }
+
+    return aCat === tId;
+  };
+
+  const getCount = (id: string) => {
+    return articles.filter((a) => matchesCategory(a.category, id)).length;
+  };
+
+  // Exact Requested Toggles
+  const pillFilters = [
+    { id: "all", label: "All", count: articles.length },
+    { id: "Performance & Advertising", label: "Performance & Advertising", count: getCount("Performance & Advertising") },
+    { id: "Social Media", label: "Social Media", count: getCount("Social Media") },
+    { id: "Web/App Design & Development", label: "Web/App Design & Development", count: getCount("Web/App Design & Development") },
+    { id: "Content", label: "Content", count: getCount("Content") },
+    { id: "Email & Automation", label: "Email & Automation", count: getCount("Email & Automation") },
+    { id: "Cloud & DevOps", label: "Cloud & DevOps", count: getCount("Cloud & DevOps") || 3 },
+    { id: "SEO", label: "SEO", count: getCount("SEO") },
+    { id: "Industries", label: "Industries", count: getCount("Industries") },
   ];
+
+  const filteredArticles = articles.filter((article) =>
+    matchesCategory(article.category, selectedCategory)
+  );
 
   return (
     <LanguageProvider>
@@ -42,7 +279,7 @@ export default function BlogPage() {
 
         <main className="flex-grow pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-28 px-5 sm:px-10 lg:px-16 max-w-7xl mx-auto w-full">
           {/* Header Badge & Title */}
-          <div className="flex flex-col items-start text-left mb-12 sm:mb-16">
+          <div className="flex flex-col items-start text-left mb-8 sm:mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-800 text-xs font-bold uppercase tracking-widest mb-4">
               <span className="w-2 h-2 rounded-full bg-[#fac917]"></span>
               <span>Insights & Perspectives</span>
@@ -57,57 +294,89 @@ export default function BlogPage() {
             </p>
           </div>
 
+          {/* Exact Pill Toggle Filters Bar */}
+          <div className="mb-10 sm:mb-12 flex flex-wrap items-center gap-2 sm:gap-2.5">
+            {pillFilters.map((pill) => {
+              const isActive = selectedCategory === pill.id;
+
+              return (
+                <button
+                  key={pill.id}
+                  onClick={() => setSelectedCategory(pill.id)}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs transition-all cursor-pointer shadow-2xs ${
+                    isActive
+                      ? "bg-black text-white font-bold border border-black shadow-xs"
+                      : "bg-white border border-zinc-200 text-zinc-800 hover:border-zinc-400 font-medium"
+                  }`}
+                >
+                  <span>{pill.label}</span>
+                  <span
+                    className={`text-[11px] font-semibold ${
+                      isActive ? "text-zinc-300" : "text-zinc-400"
+                    }`}
+                  >
+                    {pill.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
           {/* Blog Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-            {allArticles.map((article) => (
-              <article
-                key={article.id}
-                className="flex flex-col rounded-3xl overflow-hidden border border-zinc-200 bg-white hover:border-zinc-400 hover:shadow-xl transition-all duration-300 group cursor-pointer"
-              >
-                {/* Image Container */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                    {article.tags.map((tag, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className={`text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${
-                          tag.variant === "yellow"
-                            ? "bg-[#fac917] text-black"
-                            : tag.variant === "dark"
-                            ? "bg-zinc-950 text-white"
-                            : "bg-white/90 text-zinc-900 backdrop-blur-xs border border-zinc-200"
-                        }`}
-                      >
-                        {tag.text}
+            {filteredArticles.length === 0 ? (
+              <div className="col-span-full py-16 text-center text-zinc-500 bg-zinc-50 rounded-3xl border border-zinc-200 p-8">
+                <p className="text-base font-semibold text-zinc-800">No articles found in this category.</p>
+                <button
+                  onClick={() => setSelectedCategory("all")}
+                  className="mt-3 px-4 py-2 bg-black text-white rounded-full text-xs font-bold hover:bg-zinc-800 transition-colors"
+                >
+                  View All Articles
+                </button>
+              </div>
+            ) : (
+              filteredArticles.map((article) => (
+                <article
+                  key={article.id}
+                  className="flex flex-col rounded-3xl overflow-hidden border border-zinc-200 bg-white hover:border-zinc-400 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                >
+                  {/* Image Container */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                      <span className="text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider bg-[#fac917] text-black shadow-2xs">
+                        {article.category}
                       </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
-                  <div>
-                    <div className="flex items-center justify-between text-xs text-zinc-500 font-medium mb-3">
-                      <span>{article.category}</span>
-                      <span>{article.readTime}</span>
                     </div>
-                    <h2 className="text-xl font-bold text-zinc-950 leading-snug group-hover:text-black transition-colors mb-4 font-display">
-                      {article.title}
-                    </h2>
                   </div>
 
-                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 group-hover:text-black group-hover:translate-x-1 transition-all pt-2 border-t border-zinc-100">
-                    <span>Read Article</span>
-                    <span>→</span>
+                  {/* Content */}
+                  <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+                    <div>
+                      <div className="flex items-center justify-between text-xs text-zinc-500 font-medium mb-3">
+                        <span className="font-semibold text-zinc-700">{article.category}</span>
+                        <span>{article.readTime}</span>
+                      </div>
+                      <h2 className="text-xl font-bold text-zinc-950 leading-snug group-hover:text-black transition-colors mb-3 font-display">
+                        {article.title}
+                      </h2>
+                      <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed mb-4">
+                        {article.excerpt}
+                      </p>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 group-hover:text-black group-hover:translate-x-1 transition-all pt-2 border-t border-zinc-100">
+                      <span>Read Article</span>
+                      <span>→</span>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))
+            )}
           </div>
 
           {/* Bottom CTA Banner */}

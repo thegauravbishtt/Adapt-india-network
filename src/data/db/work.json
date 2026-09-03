@@ -1,0 +1,72 @@
+[
+  {
+    "id": "creative1",
+    "name": "Smokey Lounge",
+    "category": "HOSPITALITY & DINING",
+    "headline": "Culinary Elegance Under The Stars",
+    "description": "End-to-end launch branding and experiential digital campaign for Smokey's flagship rooftop lounge.",
+    "src": "/creative1.png",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "creative2",
+    "name": "PM GatiShakti",
+    "category": "PUBLIC SECTOR & POLICY",
+    "headline": "National Logistics Policy Launch",
+    "description": "Omnichannel digital rollout and media broadcast for the National Logistics Policy with NICDC.",
+    "src": "/creative2.png",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "creative3",
+    "name": "The Sell Campaign",
+    "category": "ADVERTISING & COPY",
+    "headline": "The More You Tell, The More You Sell",
+    "description": "High-conversion retro print and performance copy strategy driving 4.2x ROAS in omnichannel retail.",
+    "src": "/creative3.png",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "creative4",
+    "name": "Pasta Delizioso",
+    "category": "FOOD & GOURMET",
+    "headline": "Alfredo Panne Chicken Gourmet",
+    "description": "Visual identity and mouth-watering performance creative campaign for artisanal gourmet dining.",
+    "src": "/creative4.png",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "id": "creative5",
+    "name": "Let's Do Lunch",
+    "category": "EDITORIAL & CAFE",
+    "headline": "Vintage Editorial Dining Campaign",
+    "description": "Atmospheric newspaper-style creative concept and localized activation for urban cafes.",
+    "src": "/creative5.png",
+    "featured": true,
+    "order": 5
+  },
+  {
+    "id": "creative6",
+    "name": "Berry Basil Lady",
+    "category": "BEVERAGE & MIXOLOGY",
+    "headline": "Signature Drink Deserves Attention",
+    "description": "Craft cocktail digital visual campaign that generated 1.2M+ organic impressions.",
+    "src": "/creative6.png",
+    "featured": true,
+    "order": 6
+  },
+  {
+    "id": "creative7",
+    "name": "Weekend Personality",
+    "category": "EXPERIENTIAL & NIGHTLIFE",
+    "headline": "Your Weekend Personality Lives Here",
+    "description": "Vibrant personality-led social campaign for leading nightlife and weekend destinations.",
+    "src": "/creative7.png",
+    "featured": true,
+    "order": 7
+  }
+]

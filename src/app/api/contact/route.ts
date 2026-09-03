@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { saveLead } from "@/lib/db";
 
 export async function POST(req: Request) {
   try {
@@ -29,6 +30,24 @@ export async function POST(req: Request) {
         { error: "Please enter a valid email address." },
         { status: 400 }
       );
+    }
+
+    // Save lead to persistent store
+    try {
+      await saveLead({
+        name,
+        email,
+        phone,
+        countryCode,
+        companyName,
+        service: service || "General Growth Inquiry",
+        budget: budget || "Not specified",
+        requirement,
+        status: "new",
+        source: "Website Contact Form",
+      });
+    } catch (dbErr) {
+      console.error("[Contact API] Failed to save lead to database:", dbErr);
     }
 
     const destinationEmail = process.env.EMAIL_TO || "owlioworks@gmail.com";

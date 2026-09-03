@@ -7,23 +7,23 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full bg-white text-zinc-950 pt-64 xs:pt-72 sm:pt-80 lg:pt-40 pb-56 xs:pb-64 sm:pb-72 lg:pb-28 px-5 sm:px-12 lg:px-16 xl:px-20 overflow-hidden border-b border-zinc-200 select-none min-h-[105vh] xs:min-h-[110vh] sm:min-h-[115vh] lg:min-h-[620px] flex flex-col justify-center">
+    <section className="relative w-full bg-white text-zinc-950 pt-60 xs:pt-68 sm:pt-76 lg:pt-40 pb-56 xs:pb-64 sm:pb-72 lg:pb-28 px-4 xs:px-6 sm:px-12 lg:px-16 xl:px-20 overflow-hidden border-b border-zinc-200 select-none min-h-[110vh] xs:min-h-[115vh] sm:min-h-[120vh] lg:min-h-[620px] flex flex-col justify-center">
       
-      {/* 1. MOBILE ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile */}
+      {/* 1. MOBILE ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile (Safely on the right edge so text is never hidden) */}
       <svg
         viewBox="0 0 390 600"
         fill="none"
         preserveAspectRatio="none"
         className="block md:hidden absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
       >
-        {/* Vibrant Yellow Lightning Polygon on Right */}
+        {/* Vibrant Yellow Lightning Polygon on Right Edge */}
         <path
-          d="M 155 600 L 230 380 L 190 380 L 255 0 L 390 0 L 390 600 Z"
+          d="M 235 600 L 305 380 L 270 380 L 320 0 L 390 0 L 390 600 Z"
           fill="#fac917"
         />
-        {/* Deep Black Lightning Polygon on Right Edge */}
+        {/* Deep Black Lightning Polygon on Rightmost Edge */}
         <path
-          d="M 285 600 L 340 360 L 315 360 L 340 0 L 390 0 L 390 600 Z"
+          d="M 355 600 L 380 360 L 365 360 L 375 0 L 390 0 L 390 600 Z"
           fill="#0c0c0e"
         />
       </svg>
@@ -53,32 +53,32 @@ export default function Hero() {
           
           {/* Top Squiggly Wave Lines */}
           <div className="flex flex-col gap-1.5 lg:gap-1 mb-3 sm:mb-4 lg:mb-3 text-zinc-950 w-fit mx-auto lg:mx-0">
-            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
               <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
             </svg>
-            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
               <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
             </svg>
           </div>
 
-          {/* Clean 2-Line Headline: Centered on Mobile, Left-Aligned on Desktop */}
-          <h1 className="font-sans font-normal text-[45px] xs:text-[50px] sm:text-[60px] md:text-[64px] lg:text-[66px] xl:text-[74px] text-zinc-950 leading-[1.06] lg:leading-[1.07] tracking-[-0.03em] select-text text-center lg:text-left mx-auto lg:mx-0 max-w-full lg:max-w-none px-2 xs:px-3 sm:px-0">
-            <span className="block">{t.hero.line1}</span>
-            <span className="block">{t.hero.line2}</span>
+          {/* Clean 2-Line Headline: Centered on Mobile, Left-Aligned on Desktop with responsive sizing that prevents black overlap */}
+          <h1 className="font-sans font-normal text-[32px] min-[375px]:text-[36px] xs:text-[42px] sm:text-[54px] md:text-[64px] lg:text-[66px] xl:text-[74px] text-zinc-950 leading-[1.08] lg:leading-[1.07] tracking-[-0.03em] select-text text-center lg:text-left mx-auto lg:mx-0 max-w-full lg:max-w-none px-1 xs:px-2 sm:px-0">
+            <span className="block whitespace-normal">{t.hero.line1}</span>
+            <span className="block whitespace-normal">{t.hero.line2}</span>
           </h1>
 
           {/* Bottom Squiggly Wave Lines */}
           <div className="flex flex-col gap-1.5 lg:gap-1 mt-3 lg:mt-2 mb-4 lg:mb-3.5 mx-auto lg:mx-0 lg:ml-[380px] xl:ml-[440px] text-zinc-950 w-fit">
-            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
               <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
             </svg>
-            <svg className="w-12 xs:w-14 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
+            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
               <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
             </svg>
           </div>
 
           {/* Bottom Center (Mobile) / Left (Desktop) Minimal Little Owl Icon */}
-          <div className="w-full mt-10 sm:mt-14 lg:mt-12 z-20 pointer-events-auto flex justify-center lg:justify-start">
+          <div className="w-full mt-6 sm:mt-10 lg:mt-12 z-20 pointer-events-auto flex justify-center lg:justify-start">
             <div className="select-none flex items-center justify-center text-zinc-950">
               <svg width="26" height="26" className="w-6 h-6 sm:w-7 sm:h-7 lg:w-7 lg:h-7 opacity-90 transition-transform duration-200 hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round">
                 {/* Top Owl Brow / Ears */}

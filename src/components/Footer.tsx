@@ -267,6 +267,9 @@ export default function Footer() {
           <Link href="/terms-and-conditions" className="hover:text-black transition-colors">
             Terms &amp; Conditions
           </Link>
+          <Link href="/admin/login" className="hover:text-black text-zinc-400 font-mono transition-colors">
+            Admin Portal ↗
+          </Link>
         </div>
 
         {/* Bottom Bar Divider & Meta Row */}
