@@ -15,6 +15,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ExternalLink,
+  AlertCircle,
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -31,6 +32,7 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const servicesList = [
     "Choose Service",
@@ -50,7 +52,7 @@ export default function ContactPage() {
   const [currency, setCurrency] = useState<"INR" | "USD">("INR");
 
   const inrBudgetList = [
-    "Estimated Budget (INR)",
+    "Select Budget (Optional)",
     "₹50,000 – ₹1 Lakh",
     "₹1 Lakh – ₹3 Lakhs",
     "₹3 Lakhs – ₹5 Lakhs",
@@ -60,7 +62,7 @@ export default function ContactPage() {
   ];
 
   const usdBudgetList = [
-    "Estimated Budget (USD)",
+    "Select Budget (Optional)",
     "$600 – $1,200",
     "$1,200 – $3,500",
     "$3,500 – $7,000",
@@ -78,12 +80,28 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(
+          data.error || "Failed to submit project brief. Please try again."
+        );
+      }
+
       setIsSubmitted(true);
       setFormData({
         name: "",
@@ -95,7 +113,15 @@ export default function ContactPage() {
         budget: "",
         requirement: "",
       });
-    }, 700);
+    } catch (err: any) {
+      console.error("[Contact Form Submit Error]:", err);
+      setErrorMessage(
+        err.message ||
+          "An unexpected error occurred. Please try again or reach out directly at owlioworks@gmail.com"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -220,6 +246,24 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5">
+                    {errorMessage && (
+                      <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-red-800 text-xs sm:text-sm flex items-start gap-3">
+                        <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                        <div className="flex-1 flex flex-col gap-1">
+                          <p className="font-bold text-red-950">Unable to submit brief</p>
+                          <p className="text-red-800 font-normal">{errorMessage}</p>
+                          <p className="text-xs text-red-700 mt-1">
+                            You can also email us directly at{" "}
+                            <a
+                              href="mailto:owlioworks@gmail.com"
+                              className="font-bold underline hover:text-black"
+                            >
+                              owlioworks@gmail.com
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    )}
                     
                     {/* 1. Your Name */}
                     <div className="flex flex-col gap-1.5">
@@ -324,8 +368,9 @@ export default function ContactPage() {
                       {/* Estimated Budget with Currency Toggle */}
                       <div className="flex flex-col gap-1.5">
                         <div className="flex items-center justify-between">
-                          <label className="text-xs font-bold text-zinc-800">
-                            Estimated Budget
+                          <label className="text-xs font-bold text-zinc-800 flex items-center gap-1">
+                            <span>Estimated Budget</span>
+                            <span className="text-[10px] sm:text-[11px] font-normal text-zinc-400">(Optional)</span>
                           </label>
                           {/* Currency Toggle (₹ INR / $ USD) */}
                           <div className="flex items-center bg-zinc-100 p-0.5 rounded-lg border border-zinc-200 text-[10px] sm:text-[11px] font-bold">
@@ -503,7 +548,7 @@ export default function ContactPage() {
                         Office Location
                       </span>
                       <p className="text-zinc-300 leading-relaxed">
-                        Saket, New Delhi - 110017, Delhi, India
+                        Saket, New Delhi - 110062, Delhi, India
                       </p>
                     </div>
 
@@ -521,63 +566,6 @@ export default function ContactPage() {
                           owlioworks@gmail.com
                         </a>
                       </p>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* 2. LIGHT CARD: "Why brands buzz with us" */}
-                <div className="bg-white border border-zinc-200/90 rounded-3xl p-7 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.06)] flex flex-col gap-5 text-left">
-                  
-                  <div>
-                    <h3 className="text-xl font-black font-display text-zinc-950">
-                      Why brands buzz with us
-                    </h3>
-                    <p className="text-xs text-zinc-500 mt-1">
-                      Fourteen years of building brands people talk about.
-                    </p>
-                  </div>
-
-                  {/* 2x2 Stats Grid */}
-                  <div className="grid grid-cols-2 gap-3.5">
-                    {/* Stat 1 */}
-                    <div className="bg-[#faf7ee] border border-amber-200/50 rounded-2xl p-4 flex flex-col gap-0.5">
-                      <span className="text-2xl sm:text-3xl font-black font-display text-zinc-950">
-                        85<span className="text-[#dfcc23] font-bold">+</span>
-                      </span>
-                      <span className="text-[11px] font-medium text-zinc-600">
-                        Specialists in-house
-                      </span>
-                    </div>
-
-                    {/* Stat 2 */}
-                    <div className="bg-[#faf7ee] border border-amber-200/50 rounded-2xl p-4 flex flex-col gap-0.5">
-                      <span className="text-2xl sm:text-3xl font-black font-display text-zinc-950">
-                        18<span className="text-[#dfcc23] font-bold">+</span>
-                      </span>
-                      <span className="text-[11px] font-medium text-zinc-600">
-                        Countries served
-                      </span>
-                    </div>
-
-                    {/* Stat 3 */}
-                    <div className="bg-[#faf7ee] border border-amber-200/50 rounded-2xl p-4 flex flex-col gap-0.5">
-                      <span className="text-2xl sm:text-3xl font-black font-display text-zinc-950">
-                        50<span className="text-[#dfcc23] font-bold">M+</span>
-                      </span>
-                      <span className="text-[11px] font-medium text-zinc-600">
-                        Revenue Generated
-                      </span>
-                    </div>
-
-                    {/* Stat 4 */}
-                    <div className="bg-[#faf7ee] border border-amber-200/50 rounded-2xl p-4 flex flex-col gap-0.5">
-                      <span className="text-2xl sm:text-3xl font-black font-display text-zinc-950">
-                        2012
-                      </span>
-                      <span className="text-[11px] font-medium text-zinc-600">
-                        Year Founded
-                      </span>
                     </div>
                   </div>
 

@@ -14,7 +14,7 @@ export default function WhatWeDoPage() {
       category: "engineering",
       categoryLabel: "Engineering",
       title: "Enterprise Software & Cloud Platforms",
-      desc: "Architecting high-load microservices, scalable distributed backends, and fault-tolerant SaaS systems.",
+      desc: "Engineering high-load microservices, scalable distributed backends, and fault-tolerant SaaS systems.",
       href: "/services/enterprise-software",
       tags: ["Microservices", "Next.js", "Python/Go", "PostgreSQL"],
     },
@@ -37,7 +37,7 @@ export default function WhatWeDoPage() {
     {
       category: "engineering",
       categoryLabel: "Engineering",
-      title: "Cloud Architecture & DevOps SRE",
+      title: "Cloud Infrastructure & DevOps SRE",
       desc: "Zero-downtime Kubernetes deployments, multi-region failovers, and automated Terraform infrastructure.",
       href: "/services/cloud-devops",
       tags: ["Kubernetes", "AWS / GCP", "Terraform", "FinOps"],
@@ -54,7 +54,7 @@ export default function WhatWeDoPage() {
       category: "marketing",
       categoryLabel: "Marketing",
       title: "Technical SEO & Search Dominance",
-      desc: "Googlebot crawler optimization, semantic JSON-LD schema, and programmatic content architecture.",
+      desc: "Googlebot crawler optimization, semantic JSON-LD schema, and programmatic content structure.",
       href: "/services/seo-services",
       tags: ["Ahrefs", "Schema.org", "Core Web Vitals", "Crawl Budget"],
     },
@@ -126,13 +126,12 @@ export default function WhatWeDoPage() {
             {/* Background Image with Dark Vignette & Gradient Overlays */}
             <div className="absolute inset-0 z-0">
               <img
-                src="/creative1.png"
-                alt="What We Do - Owlio Works"
-                className="w-full h-full object-cover object-center scale-105 filter brightness-[0.45] contrast-[1.15]"
+                src="/banner-what-we-do.jpg"
+                alt="What We Do - Owlio Works Capabilities"
+                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.75] contrast-[1.05]"
               />
-              {/* Dark Studio Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-[#0c0c0d] z-10"></div>
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px] z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
             </div>
 
             {/* Top Row: Back to Home + Global Divider Line */}
@@ -282,7 +281,7 @@ export default function WhatWeDoPage() {
           <section className="w-full bg-[#fbea3d] text-black py-16 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20">
             <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-6">
               <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-black leading-tight uppercase">
-                HAVE A PROJECT IN MIND? LET&apos;S TALK ARCHITECTURE.
+                HAVE A PROJECT IN MIND? LET&apos;S TALK GROWTH STRATEGY.
               </h2>
               <p className="text-black/85 text-sm sm:text-base max-w-xl">
                 Whether you need a full-stack squad or specialized performance growth marketing, our team is ready to deliver.

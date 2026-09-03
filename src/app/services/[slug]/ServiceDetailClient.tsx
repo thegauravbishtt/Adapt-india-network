@@ -298,7 +298,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               {/* Left Column: Heading & Detailed Description */}
               <div className="lg:col-span-6 flex flex-col items-start text-left">
                 <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08] mb-6">
-                  HIGH-AVAILABILITY CLOUD ARCHITECTURE{" "}
+                  HIGH-AVAILABILITY CLOUD INFRASTRUCTURE{" "}
                   <span className="text-zinc-400 font-black block">FOR MODERN ENTERPRISES</span>
                 </h2>
 
@@ -492,7 +492,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 </h2>
 
                 <p className="text-zinc-700 text-sm sm:text-base leading-relaxed font-normal mb-5">
-                  Technology choices dictate your business velocity, valuation, and security. We provide executive-level technical leadership, unbiased architecture audits, and enterprise digital transformation blueprints that prevent multi-million dollar engineering rewrites.
+                  Technology choices dictate your business velocity, valuation, and security. We provide executive-level technical leadership, unbiased technology audits, and enterprise digital transformation blueprints that prevent multi-million dollar engineering rewrites.
                 </p>
 
                 <p className="text-zinc-500 text-xs sm:text-sm leading-relaxed font-normal">
@@ -610,7 +610,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       <div className="flex flex-col gap-2.5 text-left font-mono text-xs animate-fadeIn">
                         <div className="bg-emerald-950/40 border border-emerald-800/60 p-2.5 rounded-xl">
                           <span className="text-[10px] text-emerald-400 block font-bold">SERIES B DUE DILIGENCE AUDIT</span>
-                          <span className="text-zinc-200 text-[11px]">Architecture Score: 94/100 (Tier 1)</span>
+                          <span className="text-zinc-200 text-[11px]">Infrastructure Score: 94/100 (Tier 1)</span>
                         </div>
                         <div className="bg-zinc-900 p-2.5 rounded-xl border border-zinc-800">
                           <span className="text-[10px] text-zinc-400 block font-bold">COMPLIANCE READINESS</span>
@@ -1574,7 +1574,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               {/* Left Column: Heading & Detailed Description */}
               <div className="lg:col-span-6 flex flex-col items-start text-left">
                 <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08] mb-6">
-                  ORGANIC SOCIAL MEDIA ARCHITECTURE{" "}
+                  ORGANIC SOCIAL MEDIA STRATEGY{" "}
                   <span className="text-zinc-400 font-black block">&amp; VIRAL AUDIENCE LOOPS</span>
                 </h2>
 
@@ -1756,7 +1756,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             </div>
           </section>
         ) : service.slug === "content-marketing" || service.slug === "content-writing" ? (
-          /* Content Writing Custom "CONTENT WRITING SERVICES FOR BUSINESS GROWTH" + Editorial Manuscript Studio */
+          /* Content Writing Custom "CONTENT WRITING SERVICES FOR BUSINESS GROWTH" + Editorial Manuscript System */
           <section className="w-full bg-white text-black py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               
@@ -1869,7 +1869,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                             Zero Fluff &amp; High Cognitive Readability
                           </h4>
                           <p className="text-[11px] text-zinc-600 leading-relaxed">
-                            Crafted with crisp sentence structures, scannable bullet architectures, and clear value propositions that retain reader focus.
+                            Crafted with crisp sentence structures, scannable bullet structures, and clear value propositions that retain reader focus.
                           </p>
                         </div>
                       )}
@@ -2151,7 +2151,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-black font-display">
-                    Architectural Integrity & Commercial Impact
+                    Strategic Quality & Commercial Impact
                   </h3>
                   <p className="text-black/90 text-sm leading-relaxed font-medium">
                     {service.ourSolution}
@@ -2324,7 +2324,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   service.slug === "seo-services" ? "text-zinc-900 font-extrabold" : "text-[#fbea3d]"
                 }`}
               >
-                // ARCHITECTURE &amp; TOOLING
+                // TECHNOLOGY &amp; TOOLING
               </span>
               <h2
                 className={`text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight ${
@@ -2531,7 +2531,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               {/* Left Column: Heading + Descriptive Text + 6 Numbered DevOps Strategy Cards */}
               <div className="lg:col-span-7 flex flex-col items-start text-left">
                 <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08] mb-5">
-                  ENTERPRISE CLOUD ARCHITECTURE & GITOPS RELIABILITY
+                  ENTERPRISE CLOUD INFRASTRUCTURE & GITOPS RELIABILITY
                 </h2>
 
                 <p className="text-zinc-600 text-xs sm:text-sm md:text-[15px] leading-relaxed font-normal mb-8 max-w-2xl">
@@ -3028,13 +3028,13 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             </div>
           </section>
         ) : service.slug === "social-media" ? (
-          /* Social Media Marketing Custom Content Cadence & Publishing Studio */
+          /* Social Media Marketing Custom Content Cadence & Publishing System */
           <section className="w-full bg-[#fafafb] text-black py-10 sm:py-14 px-4 sm:px-6 lg:px-8 border-b border-zinc-200">
             <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
               
               {/* Header Title & Subtitle */}
               <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-zinc-900 font-display tracking-tight uppercase leading-tight mb-2">
-                OUR SOCIAL CONTENT CADENCE &amp; STUDIO ENGINE
+                OUR SOCIAL CONTENT CADENCE &amp; CAMPAIGN ENGINE
               </h2>
               <p className="text-zinc-600 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed mb-8">
                 Explore our editorial batch production workflows, multi-platform publishing schedule, and real-time community engagement frameworks.
@@ -3091,7 +3091,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   })}
                 </div>
 
-                {/* Right Column: Dark Social Studio Hub Console */}
+                {/* Right Column: Dark Social Publishing Hub Console */}
                 <div className="lg:col-span-7 bg-[#0c0c0d] border border-zinc-800 rounded-2xl p-4 sm:p-6 text-white shadow-xl flex flex-col justify-between min-h-[290px] w-full text-left">
                   {/* Console Bar */}
                   <div className="flex items-center justify-between border-b border-zinc-800 pb-2.5 mb-3">
@@ -3101,7 +3101,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
                     </div>
                     <span className="font-mono text-[11px] text-zinc-400">
-                      Studio Hub // Multi-Channel Content
+                      Publishing Hub // Multi-Channel Content
                     </span>
                     <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-800">
                       LIVE CADENCE: 30 DAYS
@@ -3274,7 +3274,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       )}
                       {copyOptimizerMode === "keywords" && (
                         <p className="text-zinc-900 font-medium animate-fadeIn">
-                          Discover custom enterprise software solutions designed to scale your operations. Our expert software development architects engineer secure, high-load web applications tailored to your business goals.
+                          Discover custom enterprise software solutions designed to scale your operations. Our expert software developers and engineers build secure, high-load web applications tailored to your business goals.
                         </p>
                       )}
                       {copyOptimizerMode === "readability" && (
@@ -3435,7 +3435,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 </h2>
                 <p className="text-zinc-600 text-xs sm:text-sm md:text-[15px] leading-relaxed font-normal mb-8 max-w-2xl">
                   {service.structuredSection?.description ||
-                    "Smart optimization techniques to enhance reach online whilst keeping users engaged in an interesting layout. We implement modern, semantic code architectures that make it simple for Google crawlers to index key business sections."}
+                    "Smart optimization techniques to enhance reach online whilst keeping users engaged in an interesting layout. We implement modern, semantic code structures that make it simple for Google crawlers to index key business sections."}
                 </p>
               </div>
 
@@ -3446,7 +3446,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                     "Responsive page structure",
                     "Mobile-ready framework",
                     "Fast-loading content",
-                    "Keyword-focused architecture",
+                    "Keyword-focused site structure",
                     "Search-friendly coding",
                     "Easy navigation flow",
                     "Structured content placement",

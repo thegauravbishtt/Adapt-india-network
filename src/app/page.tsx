@@ -11,7 +11,6 @@ import BlogsSection from "../components/BlogsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import NewsletterSection from "../components/NewsletterSection";
 import Footer from "../components/Footer";
-import MobileFloatingLanguage from "../components/MobileFloatingLanguage";
 import { LanguageProvider } from "../context/LanguageContext";
 
 export default function Home() {
@@ -33,9 +32,6 @@ export default function Home() {
           <NewsletterSection />
           <Footer />
         </main>
-
-        {/* Mobile Floating Side Language Switcher (Stays visible across scroll) */}
-        <MobileFloatingLanguage />
       </div>
     </LanguageProvider>
   );

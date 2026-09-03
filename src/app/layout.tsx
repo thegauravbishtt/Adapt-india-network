@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "../context/LanguageContext";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -25,6 +26,15 @@ export const metadata: Metadata = {
   title: "Owlio Works - A Global SEO & Growth Engine for Startups",
   description:
     "We connect ambitious digital brands with a world-class network of technical SEO developers, marketers, and growth experts working across 12 countries.",
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -38,7 +48,9 @@ export default function RootLayout({
       className={`${poppins.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
     >
       <body className="min-h-screen bg-transparent text-black font-sans flex flex-col">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

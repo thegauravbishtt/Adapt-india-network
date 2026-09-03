@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { useLanguage, Language } from "../context/LanguageContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "../context/LanguageContext";
 
 interface IndustryItem {
   name: string;
@@ -116,16 +116,14 @@ export default function Navbar() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
-  const { language, setLanguage, currentLanguageOption, languages, t } = useLanguage();
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<"industries" | "services" | "about" | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const megaMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Track scroll position to apply dynamic frosted glass blur
@@ -149,22 +147,6 @@ export default function Navbar() {
     megaMenuTimeoutRef.current = setTimeout(() => {
       setActiveMegaMenu(null);
     }, 200);
-  };
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setLangDropdownOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleSelectLanguage = (code: Language) => {
-    setLanguage(code);
-    setLangDropdownOpen(false);
   };
 
   const renderIcon = (icon: string) => {
@@ -455,71 +437,7 @@ export default function Navbar() {
             Blog
           </a>
 
-          {/* 7. Language Switcher */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              type="button"
-              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer select-none bg-black text-white hover:bg-zinc-800 border border-black shadow-xs active:scale-95"
-            >
-              <span className="text-sm leading-none">{currentLanguageOption.flag}</span>
-              <span className="font-extrabold uppercase text-[11px] tracking-wider">{currentLanguageOption.code}</span>
-              <svg
-                className={`w-3 h-3 transition-transform duration-200 ${langDropdownOpen ? "rotate-180" : ""}`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </button>
-
-            {/* Language Dropdown Menu */}
-            {langDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 sm:w-52 bg-white border border-zinc-200 rounded-2xl shadow-xl py-1.5 z-50 animate-in fade-in zoom-in-95 duration-150">
-                <div className="px-3 py-1.5 border-b border-zinc-100 mb-1">
-                  <span className="text-[10px] uppercase tracking-wider font-extrabold text-zinc-600 block">
-                    Choose Language
-                  </span>
-                </div>
-                <div className="max-h-64 overflow-y-auto py-0.5">
-                  {languages.map((lang) => {
-                    const isSelected = lang.code === language;
-                    return (
-                      <button
-                        key={lang.code}
-                        type="button"
-                        onClick={() => handleSelectLanguage(lang.code)}
-                        className={`w-full text-left px-3 py-2 flex items-center justify-between text-xs font-medium transition-colors cursor-pointer ${
-                          isSelected
-                            ? "bg-zinc-900 text-white font-bold"
-                            : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
-                        }`}
-                      >
-                        <div className="flex items-center gap-2.5">
-                          <span className="text-base leading-none">{lang.flag}</span>
-                          <div>
-                            <span className="block leading-tight">{lang.nativeLabel}</span>
-                            <span className={`text-[10px] block ${isSelected ? "text-zinc-300" : "text-zinc-400"}`}>
-                              {lang.label}
-                            </span>
-                          </div>
-                        </div>
-                        {isSelected && (
-                          <svg className="w-4 h-4 text-[#fac917] shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* 8. Let's Talk Button */}
+          {/* 7. Let's Talk Button */}
           <a
             href="/contact"
             className={`px-5 py-2 text-xs font-extrabold rounded-full transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 ${
@@ -582,7 +500,7 @@ export default function Navbar() {
                   </span>
                 </div>
                 <span className="font-sans text-xs text-zinc-400 font-medium hidden sm:inline-block">
-                  Domain Growth Architectures
+                  Domain Growth Frameworks
                 </span>
               </div>
 
@@ -1031,7 +949,7 @@ export default function Navbar() {
 
           {/* 5. Work */}
           <a href="/work" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors font-semibold">
-            {t.navbar.work}
+            Work
           </a>
 
           {/* 6. Blog */}
@@ -1039,41 +957,12 @@ export default function Navbar() {
             Blog
           </a>
 
-          {/* Quick Mobile Language Switcher Row */}
-          <div className="pt-2 pb-1 border-t border-zinc-100">
-            <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block mb-2 px-1">
-              Language
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {languages.map((lang) => {
-                const isSelected = lang.code === language;
-                return (
-                  <button
-                    key={lang.code}
-                    type="button"
-                    onClick={() => {
-                      setLanguage(lang.code);
-                    }}
-                    className={`px-2.5 py-1 text-xs rounded-full font-bold transition-all flex items-center gap-1 cursor-pointer ${
-                      isSelected
-                        ? "bg-black text-white"
-                        : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"
-                    }`}
-                  >
-                    <span>{lang.flag}</span>
-                    <span>{lang.nativeLabel}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
           <a 
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}
             className="w-full mt-2 bg-[#fbea3d] text-black py-2.5 text-xs font-extrabold rounded-full flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all"
           >
-            {t.navbar.letsTalk}
+            Let&apos;s Talk
             <span>→</span>
           </a>
         </div>

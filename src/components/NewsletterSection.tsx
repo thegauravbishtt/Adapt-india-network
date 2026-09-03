@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -83,13 +84,13 @@ export default function NewsletterSection() {
           </svg>
           <p className="font-sans">
             By sending the form you agree to the{" "}
-            <a href="#terms" className="underline font-semibold hover:text-black">
-              Terms & Conditions
-            </a>{" "}
+            <Link href="/terms-and-conditions" className="underline font-semibold hover:text-black">
+              Terms &amp; Conditions
+            </Link>{" "}
             and{" "}
-            <a href="#privacy" className="underline font-semibold hover:text-black">
+            <Link href="/privacy-policy" className="underline font-semibold hover:text-black">
               Privacy Policy
-            </a>
+            </Link>
             .
           </p>
         </div>

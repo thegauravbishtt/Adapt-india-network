@@ -305,7 +305,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                   <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-xl group">
                     <img
                       src="/industries/jewellery_overview.jpg"
-                      alt="Luxury Fine Jewellery, Diamonds and Haute Joaillerie Architecture"
+                      alt="Luxury Fine Jewellery, Diamonds and Haute Joaillerie Design"
                       className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     
@@ -419,7 +419,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                   <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-xl group">
                     <img
                       src="/industries/food_beverages_overview.jpg"
-                      alt="Specialty Cafe, Artisanal Coffee and Dining Architecture"
+                      alt="Specialty Cafe, Artisanal Coffee and Dining Experience"
                       className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     
@@ -507,7 +507,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                         </h4>
                       </div>
                       <p className="text-xs text-zinc-600 leading-relaxed pl-8">
-                        Centralized brand architecture for luxury hotel groups, private villa collections, and boutique restaurant chains.
+                        Centralized brand systems for luxury hotel groups, private villa collections, and boutique restaurant chains.
                       </p>
                     </div>
 
@@ -533,7 +533,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                   <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-xl group">
                     <img
                       src="/industries/hospitality_overview.jpg"
-                      alt="Luxury Hospitality and Boutique Resort Architecture"
+                      alt="Luxury Hospitality and Boutique Resort Design"
                       className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     
@@ -561,7 +561,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
 
               </div>
             ) : industry.slug === "real-estate" ? (
-              /* REAL ESTATE CONNECT 2-COLUMN SECTION: TEXT + CONNECTED ARCHITECTURE PHOTO ON RIGHT */
+              /* REAL ESTATE CONNECT 2-COLUMN SECTION: TEXT + CONNECTED PROPERTY PHOTO ON RIGHT */
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 
                 {/* Left Column: Context & 4 Connected Value Blocks (7 cols) */}
@@ -621,7 +621,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                         </h4>
                       </div>
                       <p className="text-xs text-zinc-600 leading-relaxed pl-8">
-                        Fluid WebGL walkthroughs and high-res architectural galleries with instant mobile touch optimization.
+                        Fluid WebGL walkthroughs and high-res property galleries with instant mobile touch optimization.
                       </p>
                     </div>
 
@@ -647,7 +647,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                   <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-xl group">
                     <img
                       src="/industries/real_estate_overview.jpg"
-                      alt="Modern Luxury Real Estate and Architecture"
+                      alt="Modern Luxury Real Estate and Property Developments"
                       className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     
@@ -891,7 +891,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-800/90 pb-6">
                 <div>
                   <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#fbea3d] block mb-1">
-                    // BESPOKE HOSPITALITY ARCHITECTURE
+                    // BESPOKE HOSPITALITY SYSTEMS
                   </span>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight text-white">
                     Specialized Digital Solutions for Luxury Hospitality
@@ -1033,7 +1033,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-800 pb-6">
                 <div>
                   <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#fbea3d] block mb-1">
-                    // TAILORED ARCHITECTURE
+                    // TAILORED SYSTEMS
                   </span>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight text-white">
                     Specialized Solutions for {industry.name}
@@ -1208,7 +1208,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                       // CLINICAL INFRASTRUCTURE &amp; EHR
                     </span>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight text-zinc-900">
-                      HealthTech Architecture &amp; Integrations
+                      HealthTech Systems &amp; Integrations
                     </h2>
                     <p className="text-zinc-600 text-xs sm:text-sm font-medium leading-relaxed">
                       We engineer secure, accessible clinical systems that integrate directly into existing hospital networks and private medical practices.
@@ -1309,11 +1309,11 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
               
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 
-                {/* Left Column: Clean Architectural Photo with Floating Badges (5 cols) */}
+                {/* Left Column: Clean Property Photo with Floating Badges (5 cols) */}
                 <div className="lg:col-span-5 relative rounded-3xl overflow-hidden border border-zinc-200 shadow-xl group">
                   <img
                     src="/industries/real_estate_infra.jpg"
-                    alt="PropTech Platform & Architecture"
+                    alt="PropTech Platform & Infrastructure"
                     className="w-full h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   
@@ -1441,7 +1441,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
             </div>
           </section>
         ) : industry.slug === "education" ? (
-          /* CLEAN EDUCATION DIGITAL GROWTH & INSTITUTIONAL SEO STUDIO (PHOTO + SERVICES) */
+          /* CLEAN EDUCATION DIGITAL GROWTH & INSTITUTIONAL SEO (PHOTO + SERVICES) */
           <section className="w-full bg-[#fafafb] py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 text-black border-b border-zinc-200">
             <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-14">
               
@@ -1706,7 +1706,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                       </div>
                       <div className="pt-4 mt-4 border-t border-zinc-200/70 flex items-center gap-2 text-xs font-semibold text-zinc-900">
                         <span className="text-black bg-[#fbea3d] rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-black">✓</span>
-                        <span>Lifecycle Flow Architecture</span>
+                        <span>Lifecycle Flow Strategy</span>
                       </div>
                     </div>
 

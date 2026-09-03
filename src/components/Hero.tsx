@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full bg-white text-zinc-950 pt-64 xs:pt-72 sm:pt-80 lg:pt-40 pb-56 xs:pb-64 sm:pb-72 lg:pb-28 px-5 sm:px-12 lg:px-16 xl:px-20 overflow-hidden border-b border-zinc-200 select-none min-h-[105vh] xs:min-h-[110vh] sm:min-h-[115vh] lg:min-h-[620px] flex flex-col justify-center">
       
@@ -60,8 +63,8 @@ export default function Hero() {
 
           {/* Clean 2-Line Headline: Centered on Mobile, Left-Aligned on Desktop */}
           <h1 className="font-sans font-normal text-[45px] xs:text-[50px] sm:text-[60px] md:text-[64px] lg:text-[66px] xl:text-[74px] text-zinc-950 leading-[1.06] lg:leading-[1.07] tracking-[-0.03em] select-text text-center lg:text-left mx-auto lg:mx-0 max-w-full lg:max-w-none px-2 xs:px-3 sm:px-0">
-            <span className="block">We build & scale</span>
-            <span className="block">iconic brands online!</span>
+            <span className="block">{t.hero.line1}</span>
+            <span className="block">{t.hero.line2}</span>
           </h1>
 
           {/* Bottom Squiggly Wave Lines */}

@@ -37,13 +37,14 @@ export interface Translations {
     clients: string;
     industries: string;
     services: string;
-    branding?: string;
-    digitalPerformance?: string;
     about: string;
+    blog: string;
     letsTalk: string;
     menu: string;
   };
   hero: {
+    line1: string;
+    line2: string;
     category: string;
     heading1: string;
     heading2: string;
@@ -167,29 +168,30 @@ export const translations: Record<Language, Translations> = {
   en: {
     navbar: {
       home: "Home",
-      work: "Work",
+      work: "Our Work",
       clients: "Clients",
       industries: "Industries",
-      services: "Services",
-      branding: "Industries",
-      digitalPerformance: "Services",
-      about: "About",
-      letsTalk: "Let's Talk",
+      services: "Our Services",
+      about: "About Us",
+      blog: "Blog",
+      letsTalk: "Let's Talk →",
       menu: "Menu",
     },
     hero: {
+      line1: "We build & scale",
+      line2: "iconic brands online!",
       category: "Branding · Technology · Performance",
-      heading1: "BUILD",
-      heading2: "BRAN",
-      heading3: "DS.",
+      heading1: "We build & scale",
+      heading2: "",
+      heading3: "iconic brands online!",
       subtitle:
-        "We build high-impact digital platforms, enterprise search systems, and performance growth engines that scale ambitious businesses into industry leaders.",
+        "We build high-impact digital platforms, modern web applications, and performance growth engines that scale ambitious businesses.",
       auditBtn: "Run Free Growth Audit",
       callBtn: "Book Discovery Call",
     },
     partners: {
       trustedBy: "Trusted By",
-      headline: "We don't believe in monogamy – we keep every client happy at once.",
+      headline: "We keep every client ahead with results that matter.",
       viewAll: "View all clients",
       title: "Trusted by Leading Emerging Brands",
     },
@@ -202,16 +204,16 @@ export const translations: Record<Language, Translations> = {
       card1: {
         tag: "The Industry Practice",
         title: "Industries",
-        desc: "From high-growth D2C and B2B SaaS to FinTech and HealthTech — specialized growth architectures tailored for your specific domain.",
+        desc: "From high-growth D2C and B2B SaaS to FinTech and HealthTech — specialized growth frameworks tailored for your specific domain.",
         pills: [
           "D2C & E-Commerce",
           "B2B SaaS & Tech",
           "FinTech & Web3",
           "HealthTech & Wellness",
-          "AI & DeepTech Startups",
-          "EdTech & Creator Economy",
-          "Real Estate & PropTech",
-          "Mobility & CleanTech",
+          "AI & DeepTech",
+          "EdTech & Creators",
+          "Real Estate",
+          "CleanTech",
         ],
         btn: "Explore Industries",
       },
@@ -224,11 +226,10 @@ export const translations: Record<Language, Translations> = {
           "SEO · AEO · GEO",
           "Social Media Marketing",
           "Performance Marketing",
-          "Performance Content",
-          "Content Marketing",
-          "Influencer Marketing",
+          "Content Strategy",
           "Email & Automation",
-          "ORM & Analytics",
+          "UI/UX Design",
+          "Analytics & Conversion",
         ],
         btn: "Explore Digital",
       },
@@ -244,13 +245,13 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "ABOUT OWLIO WORKS",
       description:
-        "Owlio Works is a digital growth & engineering studio based in India & globally, specializing in secure, scalable search systems and modern digital platforms for high-growth businesses. We are your end-to-end technical growth partner, focused on building enterprise infrastructure that lasts.",
+        "Owlio Works is an independent digital marketing agency based in New Delhi, India. We design and build modern websites, web applications, and digital growth systems for growing businesses worldwide.",
       storyTitle: "OUR STORY",
       storyDesc:
-        "Founded by seasoned engineers and growth architects, Owlio Works was established to replace traditional agency bureaucracy with relentless technical execution. We build high-converting digital experiences, robust search architectures, and scalable enterprise platforms that drive sustainable revenue and outpace market competition.",
+        "Founded to replace traditional bureaucracy with direct collaboration, we combine clean design, fast code, and honest communication to help businesses thrive online.",
       missionTitle: "OUR MISSION",
       missionDesc:
-        "Our mission is to empower visionary founders and market leaders with resilient digital infrastructure, uncompromising performance, and algorithmic search dominance. We engineer future-proof technology assets and seamless user journeys that deliver measurable commercial impact for the next decade.",
+        "Our mission is to empower founders and companies with resilient digital infrastructure, uncompromising speed, and high-conversion experiences that endure for the next decade.",
       learnMoreBtn: "LEARN MORE",
     },
     nextDecade: {
@@ -259,7 +260,7 @@ export const translations: Record<Language, Translations> = {
       titleLine3: "NEXT",
       titleLine4: "DECADE.",
       description:
-        "WE ENGINEER INFRASTRUCTURE FOR ENDURING SUCCESS. OUR MANDATE IS TO FUSE TECHNICAL INTEGRITY WITH SUPERIOR PRODUCT DESIGN, DELIVERING SCALABLE, SECURE ASSETS AND HIGH-CONVERSION EXPERIENCES THAT ENDURE FOR THE NEXT DECADE.",
+        "WE ENGINEER INFRASTRUCTURE FOR ENDURING SUCCESS. OUR MANDATE IS TO FUSE TECHNICAL INTEGRITY WITH SUPERIOR PRODUCT DESIGN.",
     },
   },
   hi: {
@@ -268,64 +269,66 @@ export const translations: Record<Language, Translations> = {
       work: "हमारा काम",
       clients: "क्लाइंट्स",
       industries: "उद्योग",
-      services: "सेवाएं",
-      branding: "उद्योग",
-      digitalPerformance: "सेवाएं",
+      services: "हमारी सेवाएं",
       about: "हमारे बारे में",
-      letsTalk: "बात करें",
+      blog: "ब्लॉग",
+      letsTalk: "बात करें →",
       menu: "मेनू",
     },
     hero: {
-      category: "सर्च · रूपांतरण · विकास",
-      heading1: "आपका ब्रांड",
-      heading2: "हकदार है",
-      heading3: "अटेंशन का.",
+      line1: "हम ऑनलाइन प्रतिष्ठित",
+      line2: "ब्रांड्स का निर्माण करते हैं!",
+      category: "ब्रांडिंग · तकनीक · परफॉर्मेंस",
+      heading1: "हम ऑनलाइन प्रतिष्ठित",
+      heading2: "",
+      heading3: "ब्रांड्स का निर्माण करते हैं!",
       subtitle:
-        "हम एक इंटीग्रेटेड सर्च, रूपांतरण और परफॉर्मेंस इंजन हैं जो स्टार्टअप्स को खास पहचान दिलाते हैं।",
-      auditBtn: "मुफ्त SEO ऑडिट करें",
-      callBtn: "इंट्रो कॉल बुक करें",
+        "हम आधुनिक वेबसाइट्स, स्केलेबल ऍप्लिकेशन्स और डिजिटल ग्रोथ सिस्टम्स बनाते हैं जो आपके व्यवसाय को नई ऊंचाइयों पर ले जाते हैं।",
+      auditBtn: "मुफ्त ग्रोथ ऑडिट प्राप्त करें",
+      callBtn: "कॉल बुक करें",
     },
     partners: {
-      trustedBy: "विश्वसनीय भागीदार",
-      headline: "हम हर क्लाइंट को एक साथ खुश और सफल रखते हैं।",
+      trustedBy: "विश्वसनीय ब्रांड्स",
+      headline: "हम हर क्लाइंट के लिए उत्कृष्ट परिणाम सुनिश्चित करते हैं।",
       viewAll: "सभी क्लाइंट्स देखें",
       title: "उभरते शीर्ष ब्रांड्स द्वारा विश्वसनीय",
     },
     whatWeDo: {
       tag: "हम क्या करते हैं",
-      titleStart: "हम मिलकर क्या कर सकते ",
-      titleHighlight: "हैं?",
-      subtitle: "दो मजबूत विशेषज्ञताएं, एक एकीकृत टीम।",
+      titleStart: "हम मिलकर क्या हासिल ",
+      titleHighlight: "कर सकते हैं?",
+      subtitle: "आधुनिक तकनीक और परिणाम-उन्मुख रणनीतियां — दो विशेषज्ञताएं, एक समर्पित टीम।",
       card1: {
         tag: "उद्योग विशेषज्ञता",
         title: "प्रमुख उद्योग",
-        desc: "विशेष रूप से तैयार किए गए ग्रोथ सिस्टम।",
-        pills: ["D2C और ई-कॉमर्स", "B2B SaaS", "फिनटेक", "हेल्थटेक"],
+        desc: "D2C, B2B SaaS, फिनटेक और हेल्थटेक के लिए विशेष रूप से तैयार किए गए विकास समाधान।",
+        pills: ["D2C और ई-कॉमर्स", "B2B SaaS", "फिनटेक और वेब3", "हेल्थटेक", "AI स्टार्टअप्स", "रियल एस्टेट"],
         btn: "उद्योग देखें",
       },
       card2: {
-        tag: "ग्रोथ विशेषज्ञता",
+        tag: "ग्रोथ व तकनीक",
         title: "डिजिटल और परफॉर्मेंस",
-        desc: "सदा सक्रिय विकास इंजन।",
-        pills: ["वेबसाइट विकास", "SEO · AEO · GEO", "सोशल मीडिया"],
+        desc: "वेबसाइट, सर्च रैंकिंग और कन्वर्जन बढ़ाने के लिए हमेशा सक्रिय विकास इंजन।",
+        pills: ["वेबसाइट और ऐप विकास", "SEO · AEO · GEO", "परफॉर्मेंस मार्केटिंग", "UI/UX डिज़ाइन", "कंटेंट रणनीति"],
         btn: "सेवाएं देखें",
       },
     },
     featuredWork: {
       tag: "प्रमुख कार्य",
-      titlePart1: "जबरदस्त चर्चा। ",
-      titleHighlight: "कम स्क्रॉल।",
+      titlePart1: "जबरदस्त प्रभाव। ",
+      titleHighlight: "सटीक परिणाम।",
       viewAll: "सभी कार्य देखें",
       viewWorkBtn: "कार्य देखें",
       items: defaultFeaturedWorkItems,
     },
     about: {
       tag: "OWLIO WORKS के बारे में",
-      description: "Owlio Works एक डिजिटल ग्रोथ और इंजीनियरिंग स्टूडियो है।",
+      description:
+        "Owlio Works नई दिल्ली स्थित एक स्वतंत्र डिजिटल मार्केटिंग एजेंसी है। हम आधुनिक वेबसाइट्स, ऍप्लिकेशन्स और डिजिटल विकास प्रणालियां डिजाइन और विकसित करते हैं।",
       storyTitle: "हमारी कहानी",
-      storyDesc: "हम व्यर्थ की मीटिंग्स की जगह तकनीकी निष्पादन को प्राथमिकता देते हैं।",
+      storyDesc: "हम पारंपरिक एजेंसी की जटिलताओं को समाप्त कर सीधे डेवलपर्स और डिजाइनर्स के साथ पारदर्शी सहयोग प्रदान करते हैं।",
       missionTitle: "हमारा मिशन",
-      missionDesc: "लचीले डिजिटल इंफ्रास्ट्रक्चर से सशक्त बनाना।",
+      missionDesc: "हमारा लक्ष्य संस्थापकों और व्यवसायों को मजबूत डिजिटल बुनियादी ढांचा और बेहतरीन प्रदर्शन प्रदान करना है।",
       learnMoreBtn: "और जानें",
     },
     nextDecade: {
@@ -343,24 +346,26 @@ export const translations: Record<Language, Translations> = {
       clients: "Clientes",
       industries: "Industrias",
       services: "Servicios",
-      branding: "Industrias",
-      digitalPerformance: "Servicios",
       about: "Nosotros",
-      letsTalk: "Hablemos",
+      blog: "Blog",
+      letsTalk: "Hablemos →",
       menu: "Menú",
     },
     hero: {
-      category: "Búsqueda · Conversión · Crecimiento",
-      heading1: "TU MARCA",
-      heading2: "MERECE",
-      heading3: "ATENCIÓN.",
-      subtitle: "Construimos canales de crecimiento de alto impacto.",
-      auditBtn: "Auditoría SEO Gratis",
+      line1: "¡Construimos y escalamos",
+      line2: "marcas icónicas en línea!",
+      category: "Branding · Tecnología · Rendimiento",
+      heading1: "¡Construimos y escalamos",
+      heading2: "",
+      heading3: "marcas icónicas en línea!",
+      subtitle:
+        "Diseñamos y desarrollamos plataformas web modernas, aplicaciones escalables y motores de crecimiento digital para empresas.",
+      auditBtn: "Auditoría de Crecimiento Gratis",
       callBtn: "Reservar Llamada",
     },
     partners: {
-      trustedBy: "Confiado Por",
-      headline: "Mantenemos satisfecho a cada cliente a la vez.",
+      trustedBy: "Marcas que confían",
+      headline: "Impulsamos resultados medibles para cada cliente.",
       viewAll: "Ver todos los clientes",
       title: "Confiado por Marcas Líderes",
     },
@@ -368,38 +373,39 @@ export const translations: Record<Language, Translations> = {
       tag: "Lo Que Hacemos",
       titleStart: "¿Qué podemos lograr ",
       titleHighlight: "juntos?",
-      subtitle: "Dos áreas de práctica, un equipo integrado.",
+      subtitle: "Tecnología, diseño y estrategias orientadas a resultados tangibles.",
       card1: {
         tag: "Especialización Sectorial",
         title: "Industrias",
-        desc: "Arquitecturas de crecimiento especializadas para su sector.",
-        pills: ["D2C y Comercio Electrónico", "B2B SaaS", "FinTech", "HealthTech"],
+        desc: "Estrategias de crecimiento adaptadas a D2C, SaaS B2B, FinTech y HealthTech.",
+        pills: ["D2C y Comercio Electrónico", "B2B SaaS", "FinTech", "HealthTech", "Startups de IA", "Bienes Raíces"],
         btn: "Explorar Industrias",
       },
       card2: {
         tag: "Área de Crecimiento",
         title: "Digital y Rendimiento",
-        desc: "El motor siempre activo para un ROI comprobable.",
-        pills: ["Desarrollo Web", "SEO · AEO · GEO", "Marketing Digital"],
+        desc: "El motor integral para aumentar tráfico, conversiones y retorno de inversión.",
+        pills: ["Desarrollo Web y Apps", "SEO · AEO · GEO", "Marketing Digital", "Diseño UI/UX", "Automatización"],
         btn: "Explorar Servicios",
       },
     },
     featuredWork: {
       tag: "Trabajos Destacados",
-      titlePart1: "Gran impacto. ",
-      titleHighlight: "Menos scroll.",
-      viewAll: "Ver todos los trabajos",
-      viewWorkBtn: "Ver trabajo",
+      titlePart1: "Gran impacto visual. ",
+      titleHighlight: "Resultados reales.",
+      viewAll: "Ver todos los proyectos",
+      viewWorkBtn: "Ver proyecto",
       items: defaultFeaturedWorkItems,
     },
     about: {
       tag: "SOBRE OWLIO WORKS",
-      description: "Owlio Works es un estudio de ingeniería digital y crecimiento.",
+      description:
+        "Owlio Works es una agencia de marketing digital independiente con sede en Nueva Delhi, India. Diseñamos y desarrollamos sitios web modernos y sistemas de crecimiento.",
       storyTitle: "NUESTRA HISTORIA",
-      storyDesc: "Ejecución técnica de precisión.",
+      storyDesc: "Sustituimos la burocracia tradicional de las agencias por colaboración directa con diseñadores e ingenieros.",
       missionTitle: "NUESTRA MISIÓN",
-      missionDesc: "Capacitar a fundadores visionarios.",
-      learnMoreBtn: "SABER MÁS",
+      missionDesc: "Capacitar a fundadores con infraestructura digital escalable, diseño intuitivo y rendimiento duradero.",
+      learnMoreBtn: "CONOCER MÁS",
     },
     nextDecade: {
       titleLine1: "CONSTRUIDO",
@@ -416,62 +422,64 @@ export const translations: Record<Language, Translations> = {
       clients: "合作客户",
       industries: "行业领域",
       services: "服务方案",
-      branding: "行业领域",
-      digitalPerformance: "服务方案",
       about: "关于我们",
-      letsTalk: "立即洽谈",
+      blog: "博客",
+      letsTalk: "立即洽谈 →",
       menu: "菜单",
     },
     hero: {
-      category: "搜索 · 转化 · 增长",
-      heading1: "让你的品牌",
-      heading2: "获得瞩目",
-      heading3: "焦点关注。",
-      subtitle: "助力初创企业迅速脱颖而出。",
-      auditBtn: "获取免费SEO审计",
-      callBtn: "预约咨询通话",
+      line1: "我们打造并拓展",
+      line2: "线上标志性品牌！",
+      category: "品牌设计 · 前沿技术 · 业务增长",
+      heading1: "我们打造并拓展",
+      heading2: "",
+      heading3: "线上标志性品牌！",
+      subtitle: "我们为雄心勃勃的企业设计并构建现代化网站、应用程序及数字化增长体系。",
+      auditBtn: "免费增长审计",
+      callBtn: "预约沟通",
     },
     partners: {
-      trustedBy: "信赖品牌",
-      headline: "专注服务每一位客户。",
-      viewAll: "查看全部客户",
+      trustedBy: "合作品牌",
+      headline: "以硬核技术与卓越设计助力客户全面成功。",
+      viewAll: "查看所有客户",
       title: "深受新锐领军品牌信赖",
     },
     whatWeDo: {
-      tag: "业务板块",
+      tag: "核心业务",
       titleStart: "我们能共同成就",
       titleHighlight: "什么？",
-      subtitle: "两大专业实践，一支全能团队。",
+      subtitle: "前沿科技与增长策略无缝融合——两大核心能力，一支全栈精英团队。",
       card1: {
-        tag: "垂直行业实践",
+        tag: "行业解决方案",
         title: "专注行业",
-        desc: "量身定制的高成效增长架构。",
-        pills: ["D2C电商", "B2B SaaS", "金融科技", "健康科技"],
+        desc: "覆盖D2C电商、企业级SaaS、金融科技与健康医疗等定制化增长框架。",
+        pills: ["D2C与电商", "B2B SaaS", "金融科技", "医疗健康", "人工智能AI", "房产科技"],
         btn: "了解专注行业",
       },
       card2: {
-        tag: "增长实践",
+        tag: "数字增长体系",
         title: "服务方案",
-        desc: "全天候运转的增长引擎。",
-        pills: ["网站开发", "SEO · AEO · GEO", "社交媒体营销"],
+        desc: "全天候驱动品牌声量、精准流量与商业转化的增长引擎。",
+        pills: ["网站与APP开发", "SEO · AEO · GEO", "精准效果营销", "UI/UX设计", "内容策略"],
         btn: "探索服务方案",
       },
     },
     featuredWork: {
       tag: "精选案例",
-      titlePart1: "引爆关注度。 ",
-      titleHighlight: "告别冗长浏览。",
+      titlePart1: "引爆全网声量。 ",
+      titleHighlight: "铸就真实成效。",
       viewAll: "查看全部案例",
-      viewWorkBtn: "查看项目",
+      viewWorkBtn: "查看案例",
       items: defaultFeaturedWorkItems,
     },
     about: {
       tag: "关于 OWLIO WORKS",
-      description: "专注于为现代企业构建安全、可扩展的系统。",
+      description:
+        "Owlio Works 是一家位于印度新德里的独立数字营销机构。我们为全球企业设计并构建高性能网站、应用程序与数字化增长体系。",
       storyTitle: "发展历程",
-      storyDesc: "以极致的技术执行力为品牌创造增长。",
+      storyDesc: "我们告别传统机构的繁琐流程，让客户直接与资深设计师和工程师协同，高效交付高品质项目。",
       missionTitle: "核心使命",
-      missionDesc: "赋能全球创业者与知名品牌。",
+      missionDesc: "赋能全球创业者与企业领袖，打造兼具极致性能、出众设计与持久商业价值的数字基础设施。",
       learnMoreBtn: "了解更多",
     },
     nextDecade: {
@@ -485,28 +493,30 @@ export const translations: Record<Language, Translations> = {
   ru: {
     navbar: {
       home: "Главная",
-      work: "Работы",
+      work: "Портфолио",
       clients: "Клиенты",
-      industries: "Индустрии",
+      industries: "Отрасли",
       services: "Услуги",
-      branding: "Индустрии",
-      digitalPerformance: "Услуги",
       about: "О нас",
-      letsTalk: "Обсудить проект",
+      blog: "Блог",
+      letsTalk: "Связаться →",
       menu: "Меню",
     },
     hero: {
-      category: "Поиск · Конверсия · Рост",
-      heading1: "ВАШ БРЕНД",
-      heading2: "ЗАСЛУЖИВАЕТ",
-      heading3: "ВНИМАНИЯ.",
-      subtitle: "Комплексный движок роста.",
-      auditBtn: "Бесплатный SEO-аудит",
+      line1: "Мы создаем и развиваем",
+      line2: "культовые бренды в сети!",
+      category: "Брендинг · Технологии · Рост",
+      heading1: "Мы создаем и развиваем",
+      heading2: "",
+      heading3: "культовые бренды в сети!",
+      subtitle:
+        "Мы проектируем и разрабатываем современные веб-сайты, масштабируемые платформы и цифровые системы роста для бизнеса.",
+      auditBtn: "Бесплатный аудит роста",
       callBtn: "Записаться на звонок",
     },
     partners: {
       trustedBy: "Нам доверяют",
-      headline: "Делаем счастливым каждого клиента.",
+      headline: "Обеспечиваем измеримые результаты для каждого клиента.",
       viewAll: "Все клиенты",
       title: "Нам доверяют растущие бренды",
     },
@@ -514,38 +524,39 @@ export const translations: Record<Language, Translations> = {
       tag: "Что мы делаем",
       titleStart: "Чего мы можем достичь ",
       titleHighlight: "вместе?",
-      subtitle: "Два направления, одна команда.",
+      subtitle: "Дизайн, код и стратегия для масштабирования вашего бизнеса.",
       card1: {
         tag: "Отраслевая экспертиза",
-        title: "Индустрии",
-        desc: "Специализированные стратегии.",
-        pills: ["D2C и e-Commerce", "B2B SaaS", "FinTech", "HealthTech"],
-        btn: "Смотреть индустрии",
+        title: "Отрасли",
+        desc: "Специализированные решения для D2C, B2B SaaS, FinTech и HealthTech.",
+        pills: ["D2C и e-Commerce", "B2B SaaS", "FinTech и Web3", "HealthTech", "AI Стартапы", "Недвижимость"],
+        btn: "Смотреть отрасли",
       },
       card2: {
         tag: "Практика роста",
-        title: "Услуги",
-        desc: "Движок постоянного роста.",
-        pills: ["Разработка сайтов", "SEO", "SMM"],
+        title: "Цифровые услуги",
+        desc: "Постоянно работающий двигатель для трафика, лидогенерации и высокой конверсии.",
+        pills: ["Разработка сайтов и приложений", "SEO · AEO · GEO", "Performance-маркетинг", "UI/UX Дизайн", "Контент"],
         btn: "Смотреть услуги",
       },
     },
     featuredWork: {
       tag: "Избранные работы",
-      titlePart1: "Максимум шума. ",
-      titleHighlight: "Минимум скролла.",
-      viewAll: "Все кейсы",
-      viewWorkBtn: "Смотреть кейс",
+      titlePart1: "Максимум внимания. ",
+      titleHighlight: "Реальный результат.",
+      viewAll: "Все проекты",
+      viewWorkBtn: "Смотреть проект",
       items: defaultFeaturedWorkItems,
     },
     about: {
       tag: "О КОМПАНИИ OWLIO WORKS",
-      description: "Студия цифровой инженерии и органического роста.",
+      description:
+        "Owlio Works — независимое агентство цифрового маркетинга из Нью-Дели, Индия. Мы создаем современные веб-решения и системы роста для растущих компаний по всему миру.",
       storyTitle: "НАША ИСТОРИЯ",
-      storyDesc: "Быстрая техническая разработка.",
+      storyDesc: "Мы отказались от бюрократии агентств в пользу прямого общения с ведущими разработчиками и дизайнерами.",
       missionTitle: "НАША МИССИЯ",
-      missionDesc: "Обеспечить доминирование в поиске.",
-      learnMoreBtn: "ПОДРОБНЕЕ",
+      missionDesc: "Предоставить основателям надежную цифровую инфраструктуру, безупречную скорость и долгосрочный успех.",
+      learnMoreBtn: "УЗНАТЬ БОЛЬШЕ",
     },
     nextDecade: {
       titleLine1: "СОЗДАНО",
@@ -558,66 +569,69 @@ export const translations: Record<Language, Translations> = {
   ko: {
     navbar: {
       home: "홈",
-      work: "프로젝트",
+      work: "포트폴리오",
       clients: "고객사",
       industries: "산업 분야",
       services: "서비스",
-      branding: "산업 분야",
-      digitalPerformance: "서비스",
       about: "회사 소개",
-      letsTalk: "상담 시작",
+      blog: "블로그",
+      letsTalk: "상담하기 →",
       menu: "메뉴",
     },
     hero: {
-      category: "검색 · 전환 · 성장",
-      heading1: "당신의 브랜드는",
-      heading2: "주목받을",
-      heading3: "자격이 있습니다.",
-      subtitle: "스타트업을 돋보이게 만드는 성장 파이프라인.",
-      auditBtn: "무료 SEO 진단 신청",
-      callBtn: "소개 상담 예약",
+      line1: "온라인에서 상징적인 브랜드를",
+      line2: "구축하고 성장시킵니다!",
+      category: "브랜딩 · 기술 엔지니어링 · 퍼포먼스 성장",
+      heading1: "온라인에서 상징적인 브랜드를",
+      heading2: "",
+      heading3: "구축하고 성장시킵니다!",
+      subtitle:
+        "우리는 고성장 기업을 위한 현대적인 웹사이트, 확장 가능한 애플리케이션 및 디지털 성장 시스템을 설계하고 구축합니다.",
+      auditBtn: "무료 성장 진단 신청",
+      callBtn: "상담 예약하기",
     },
     partners: {
-      trustedBy: "파트너 신뢰",
-      headline: "모든 고객사를 만족시키는 파트너.",
-      viewAll: "고객사 전체 보기",
-      title: "신뢰받는 파트너",
+      trustedBy: "신뢰하는 고객사",
+      headline: "모든 고객에게 검증된 성과를 제공합니다.",
+      viewAll: "모든 파트너 보기",
+      title: "주목받는 혁신 브랜드들의 선택",
     },
     whatWeDo: {
       tag: "서비스 소개",
       titleStart: "우리가 함께 만들 수 있는 ",
-      titleHighlight: "것은?",
-      subtitle: "두 가지 전문 분야, 하나의 통합 팀.",
+      titleHighlight: "미래는?",
+      subtitle: "디자인과 코딩, 그리고 전략이 결합된 원스톱 전문가 팀.",
       card1: {
-        tag: "산업별 전문 영역",
+        tag: "산업별 전문 솔루션",
         title: "주요 산업군",
-        desc: "최적화된 성장 아키텍처.",
-        pills: ["D2C & 이커머스", "B2B SaaS", "핀테크", "헬스케어"],
+        desc: "D2C 커머스, B2B SaaS, 핀테크 및 헬스케어를 위한 맞춤형 성장 프레임워크.",
+        pills: ["D2C & 이커머스", "B2B SaaS", "핀테크 & Web3", "헬스케어", "인공지능 AI", "부동산 프롭테크"],
         btn: "산업 분야 보기",
       },
       card2: {
-        tag: "그로스 실무 영역",
-        title: "서비스",
-        desc: "상시 가동되는 성장 엔진.",
-        pills: ["웹사이트 개발", "SEO · AEO · GEO", "마케팅"],
+        tag: "그로스 & 디지털 솔루션",
+        title: "디지털 서비스",
+        desc: "트래픽, 브랜드 인지도, 전환율을 지속적으로 극대화하는 성장 엔진.",
+        pills: ["웹사이트 및 앱 개발", "SEO · AEO · GEO", "퍼포먼스 마케팅", "UI/UX 디자인", "콘텐츠 전략"],
         btn: "서비스 보기",
       },
     },
     featuredWork: {
       tag: "주요 프로젝트",
       titlePart1: "압도적인 화제성. ",
-      titleHighlight: "간결한 스크롤.",
+      titleHighlight: "확실한 성과.",
       viewAll: "전체 프로젝트 보기",
-      viewWorkBtn: "작품 보기",
+      viewWorkBtn: "프로젝트 보기",
       items: defaultFeaturedWorkItems,
     },
     about: {
       tag: "OWLIO WORKS 소개",
-      description: "엔드투엔드 디지털 엔지니어링 파트너.",
-      storyTitle: "우리의 이야기",
-      storyDesc: "정밀한 기술 실행으로 비즈니스 성장.",
+      description:
+        "Owlio Works는 인도 뉴델리에 본사를 둔 독립 디지털 마케팅 에이전시입니다. 우리는 전 세계 성장하는 기업을 위해 최신 웹사이트와 디지털 성장 시스템을 구축합니다.",
+      storyTitle: "우리의 스토리",
+      storyDesc: "불필요한 중간 관리 없이 클라이언트가 실무 디자이너 및 엔지니어와 직접 소통하여 최상의 결과물을 만듭니다.",
       missionTitle: "우리의 미션",
-      missionDesc: "견고한 인프라 제공.",
+      missionDesc: "안정적인 기술 인프라와 뛰어난 사용자 경험을 통해 비즈니스가 지속적으로 번창하도록 돕습니다.",
       learnMoreBtn: "더 알아보기",
     },
     nextDecade: {
@@ -631,66 +645,69 @@ export const translations: Record<Language, Translations> = {
   ja: {
     navbar: {
       home: "ホーム",
-      work: "実績",
+      work: "実績・事例",
       clients: "クライアント",
       industries: "業界分野",
       services: "サービス",
-      branding: "業界分野",
-      digitalPerformance: "サービス",
       about: "会社概要",
-      letsTalk: "お問い合わせ",
+      blog: "ブログ",
+      letsTalk: "お問い合わせ →",
       menu: "メニュー",
     },
     hero: {
-      category: "検索 · コンバージョン · 成長",
-      heading1: "あなたのブランドは",
-      heading2: "注目される",
-      heading3: "価値がある。",
-      subtitle: "成長パイプラインを構築します。",
-      auditBtn: "無料SEO診断を実施",
-      callBtn: "オンライン相談を予約",
+      line1: "象徴的なブランドを",
+      line2: "オンラインで構築・拡大します！",
+      category: "ブランディング · テクノロジー · 成果創出",
+      heading1: "象徴的なブランドを",
+      heading2: "",
+      heading3: "オンラインで構築・拡大します！",
+      subtitle:
+        "成長企業のために、最新のWebサイト、拡張性の高いシステム、そして持続的なデジタル成長基盤を設計・構築します。",
+      auditBtn: "無料成長診断を受ける",
+      callBtn: "個別相談を予約する",
     },
     partners: {
-      trustedBy: "導入実績",
-      headline: "確かな成果を提供します。",
+      trustedBy: "導入企業・パートナー",
+      headline: "すべてのクライアントに確かな成果と価値を届けます。",
       viewAll: "すべてのクライアントを見る",
       title: "新鋭ブランドから選ばれる信頼",
     },
     whatWeDo: {
       tag: "提供ソリューション",
       titleStart: "共に創り出せる",
-      titleHighlight: "価値とは？",
-      subtitle: "2つの専門領域、1つの統合チーム。",
+      titleHighlight: "新たな価値とは？",
+      subtitle: "洗練されたデザインと確かな技術力 — 2つの強みを融合した統合チーム。",
       card1: {
         tag: "業界別ソリューション",
         title: "対応業界",
-        desc: "成長アーキテクチャを構築。",
-        pills: ["D2C & Eコマース", "B2B SaaS", "FinTech", "HealthTech"],
-        btn: "業界分野を見る",
+        desc: "D2C、B2B SaaS、FinTech、HealthTechなど、各分野に最適化した成長設計。",
+        pills: ["D2C & Eコマース", "B2B SaaS", "FinTech & Web3", "HealthTech", "AIスタートアップ", "不動産テック"],
+        btn: "対応業界を見る",
       },
       card2: {
-        tag: "成長グロース領域",
-        title: "サービス",
-        desc: "常に稼働する成長エンジン。",
-        pills: ["Web開発", "SEO · AEO · GEO", "マーケティング"],
+        tag: "グロース & テクノロジー",
+        title: "サービス一覧",
+        desc: "トラフィック獲得からCVR向上まで、持続的に機能するデジタル成長エンジン。",
+        pills: ["Webサイト・アプリ開発", "SEO · AEO · GEO", "パフォーマンスマーケティング", "UI/UXデザイン", "コンテンツ戦略"],
         btn: "サービスを見る",
       },
     },
     featuredWork: {
       tag: "注目の実績",
       titlePart1: "圧倒的な反響。 ",
-      titleHighlight: "無駄のないスクロール。",
+      titleHighlight: "確かな成果。",
       viewAll: "すべての実績を見る",
       viewWorkBtn: "実績を見る",
       items: defaultFeaturedWorkItems,
     },
     about: {
       tag: "OWLIO WORKS について",
-      description: "最新企業向けの安全で拡張性の高いシステム構築。",
-      storyTitle: "ストーリー",
-      storyDesc: "確固たる技術力で本質的な売上成長を実現。",
+      description:
+        "Owlio Works は、インド・ニューデリーを拠点とする独立系デジタルマーケティングエージェンシーです。世界中の成長企業に向けて、最新のWebサイトや成長システムを構築しています。",
+      storyTitle: "私たちのストーリー",
+      storyDesc: "従来のエージェンシーのような無駄な階層を省き、開発者やデザイナーと直接対話できる透明な開発体制を提供します。",
       missionTitle: "ミッション",
-      missionDesc: "強靭なデジタルインフラを提供。",
+      missionDesc: "強固な技術基盤と優れたユーザー体験を通じて、次の10年を見据えた持続的な成功を支援します。",
       learnMoreBtn: "詳細を見る",
     },
     nextDecade: {
@@ -722,16 +739,35 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       const validLangs: Language[] = ["en", "hi", "es", "zh", "ru", "ko", "ja"];
       if (validLangs.includes(savedLang)) {
         setLanguageState(savedLang);
+        if (typeof document !== "undefined") {
+          document.documentElement.lang = savedLang;
+        }
       }
     } catch {
       // ignore
     }
+
+    const handleCustomChange = (e: Event) => {
+      const customEvent = e as CustomEvent<Language>;
+      if (customEvent.detail) {
+        setLanguageState(customEvent.detail);
+      }
+    };
+
+    window.addEventListener("owlio_lang_change", handleCustomChange);
+    return () => {
+      window.removeEventListener("owlio_lang_change", handleCustomChange);
+    };
   }, []);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     try {
       localStorage.setItem("owlio_lang", lang);
+      if (typeof document !== "undefined") {
+        document.documentElement.lang = lang;
+      }
+      window.dispatchEvent(new CustomEvent("owlio_lang_change", { detail: lang }));
     } catch {
       // ignore
     }
@@ -759,7 +795,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    // Fallback gracefully to English if outside provider
+    return {
+      language: "en" as Language,
+      setLanguage: () => {},
+      currentLanguageOption: LANGUAGES[0],
+      languages: LANGUAGES,
+      t: translations.en,
+    };
   }
   return context;
 }

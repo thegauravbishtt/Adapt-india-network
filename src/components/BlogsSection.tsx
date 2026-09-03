@@ -32,7 +32,7 @@ export const demoBlogs: BlogCardItem[] = [
       { text: "PLATFORMS", variant: "dark" },
     ],
     title: "Why headless commerce platforms outperform traditional monolithic builds.",
-    category: "Digital Architecture",
+    category: "Digital Strategy",
     readTime: "5 min read",
   },
   {
@@ -116,7 +116,7 @@ export default function BlogsSection() {
           {/* Right Column: Subtitle, View All Button & Nav Arrows */}
           <div className="flex items-center justify-between md:justify-end gap-3 sm:gap-4 self-stretch md:self-end flex-wrap">
             <p className="text-zinc-600 text-xs sm:text-[13px] md:text-sm font-medium max-w-sm leading-relaxed text-left hidden lg:block">
-              Perspectives on engineering, high-growth architecture, and digital strategy.
+              Perspectives on engineering, high-growth systems, and digital strategy.
             </p>
 
             {/* View All Button */}

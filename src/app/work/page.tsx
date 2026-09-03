@@ -69,9 +69,9 @@ const caseStudiesData: CaseStudy[] = [
     title: "Built for Better Living",
     client: "Habitat",
     category: "Websites & Apps",
-    categoryLabel: "Architecture · Living Spaces",
-    headline: "Architectural web showcase with daylight simulation and unit filters.",
-    description: "A minimalist digital experience for luxury architectural developments — interactive blueprints, daylight simulation tours, and high-intent inquiry capture engineered for discerning modern homeowners.",
+    categoryLabel: "Real Estate · Living Spaces",
+    headline: "Luxury property web showcase with daylight simulation and unit filters.",
+    description: "A minimalist digital experience for premium residential developments — interactive floor plans, daylight simulation tours, and high-intent inquiry capture engineered for discerning modern homeowners.",
     image: "/mockup-habitat.jpg",
     metrics: [
       { label: "Qualified Inquiries", value: "3.2x" },
@@ -372,7 +372,7 @@ const caseStudiesData: CaseStudy[] = [
     ],
     tags: ["Programmatic SEO", "Schema.org Graphs", "AEO / GEO", "Content Clusters", "SurferSEO"],
     challenge: "High Google Ads CPC costs ($35+/click) made paid acquisition unsustainable for competitive enterprise automation software keywords.",
-    solution: "Architected a 300-page semantic topical cluster with JSON-LD schema graphs that establish definitive industry authority for search engines and LLMs.",
+    solution: "Engineered a 300-page semantic topical cluster with JSON-LD schema graphs that establish definitive industry authority for search engines and LLMs.",
     results: [
       "Generated $1.8M in qualified inbound enterprise sales pipeline in 6 months.",
       "Secured featured Google AI Overviews and top citations on Perplexity & Claude.",
@@ -495,19 +495,19 @@ const caseStudiesData: CaseStudy[] = [
       "Unlocked enterprise tier partnerships requiring strict financial compliance certifications.",
     ],
     clientQuote: {
-      text: "Their security engineering gave our banking partners total confidence in our architecture.",
+      text: "Their security engineering gave our banking partners total confidence in our infrastructure.",
       author: "Raymond Holt",
       role: "Chief Information Security Officer",
     },
   },
   {
-    id: "prime-living-architecture",
+    id: "prime-living-developments",
     title: "Prime Living Real Estate & PropTech Portal",
     client: "Apex Living Developments",
     category: "Case Study",
     categoryLabel: "Real Estate & Interactive Portal",
     headline: "Interactive property exploration engine with high-intent lead qualification.",
-    description: "Created an architectural web showcase for premium residential developments with floor plan filters, sunrise/sunset daylight simulations, and CRM sync.",
+    description: "Created a modern web showcase for premium residential developments with floor plan filters, sunrise/sunset daylight simulations, and CRM sync.",
     image: "/creative5.png",
     metrics: [
       { label: "Qualified Inquiries", value: "3.2x" },
@@ -535,7 +535,7 @@ const caseStudiesData: CaseStudy[] = [
     category: "Case Study",
     categoryLabel: "FinTech & Real-Time Settlement",
     headline: "$240M+ in cross-border settlement transactions handled securely.",
-    description: "Architected multi-ledger currency settlement system with sub-100ms transaction confirmation, automated AML compliance, and biometric authentication.",
+    description: "Engineered multi-ledger currency settlement system with sub-100ms transaction confirmation, automated AML compliance, and biometric authentication.",
     image: "/photo1.png",
     metrics: [
       { label: "Total Volume Handled", value: "$240M+" },
@@ -551,7 +551,7 @@ const caseStudiesData: CaseStudy[] = [
       "Secured Tier-1 banking partnerships across North America and Europe.",
     ],
     clientQuote: {
-      text: "Owlio Works delivered fintech architecture that rivals the most established global payment gateways.",
+      text: "Owlio Works delivered fintech engineering that rivals the most established global payment gateways.",
       author: "Jonathan Pierce",
       role: "Founder & CEO",
     },
@@ -567,7 +567,7 @@ const caseStudiesData: CaseStudy[] = [
     category: "Case Study",
     categoryLabel: "Stealth R&D · Autonomous AI",
     headline: "Next-generation spatial AI reasoning and real-time voice copilot.",
-    description: "An unreleased conversational intelligence platform fusing zero-latency localized LLM inference, dynamic canvas rendering, and voice agent architecture.",
+    description: "An unreleased conversational intelligence platform fusing zero-latency localized LLM inference, dynamic canvas rendering, and voice agent systems.",
     image: "/creative1.png",
     metrics: [
       { label: "Status", value: "Private Alpha" },
@@ -585,7 +585,7 @@ const caseStudiesData: CaseStudy[] = [
     clientQuote: {
       text: "A preview into what human-computer interaction will look like for the next decade.",
       author: "Confidential",
-      role: "Lead AI Architect",
+      role: "Lead AI Engineer",
     },
     isStealth: true,
   },
@@ -634,14 +634,14 @@ const caseStudiesData: CaseStudy[] = [
     ],
     tags: ["Rust", "Wasm Edge", "CRDT State", "Global Anycast", "Zero Cold Starts"],
     challenge: "Global distributed apps suffer from database replication lag and painful cold starts across multi-region clusters.",
-    solution: "Architected a custom Rust-based runtime using conflict-free replicated data types (CRDTs) deployed across 300+ edge points of presence.",
+    solution: "Engineered a custom Rust-based runtime using conflict-free replicated data types (CRDTs) deployed across 300+ edge points of presence.",
     results: [
       "Zero cold-start overhead with instant warm invocation.",
       "Consistent 9.4ms worldwide state synchronization.",
       "Benchmark throughput of 850,000 operations per second per node.",
     ],
     clientQuote: {
-      text: "This architecture makes multi-region data synchronization feel as fast as local memory.",
+      text: "This system makes multi-region data synchronization feel as fast as local memory.",
       author: "Confidential",
       role: "Principal Systems Engineer",
     },
@@ -1160,7 +1160,7 @@ const deepDiveCases = [
     ],
     tags: ["Industrial Brand", "Product Catalog", "Global B2B", "Next.js"],
     challenge: "Industrial safety equipment catalog was difficult for international procurement teams to navigate and verify certifications.",
-    solution: "Rebuilt digital brand positioning and product architecture with certified safety standard matrix and instant bulk RFPs.",
+    solution: "Rebuilt digital brand positioning and product taxonomy with certified safety standard matrix and instant bulk RFPs.",
     results: [
       "B2B product catalog engagement surged by 240%.",
       "Expanded verified distributor requests across 55 countries.",

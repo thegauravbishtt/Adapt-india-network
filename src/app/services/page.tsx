@@ -95,7 +95,7 @@ export default function ServicesPage() {
                 </h2>
               </div>
               <p className="text-zinc-600 text-xs sm:text-sm font-medium max-w-md text-left sm:text-right">
-                Every service is delivered with dedicated senior architects, zero legacy debt, and commercial accountability.
+                Every service is delivered with dedicated senior specialists, zero legacy debt, and commercial accountability.
               </p>
             </div>
 
@@ -187,7 +187,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-zinc-900/90 border border-zinc-800 p-6 rounded-2xl flex flex-col gap-2">
                 <span className="text-2xl font-black text-[#fbea3d] font-mono">01</span>
-                <h4 className="text-base font-bold text-white font-display">Senior Architects Only</h4>
+                <h4 className="text-base font-bold text-white font-display">Senior Specialists Only</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed">Your projects are led and built directly by seasoned engineers and performance growth leaders.</p>
               </div>
 

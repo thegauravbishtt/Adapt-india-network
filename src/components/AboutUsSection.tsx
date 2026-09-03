@@ -105,13 +105,13 @@ export default function AboutUsSection() {
                     onMouseEnter={() =>
                       setHoveredImage({
                         src: "/studio-photo.png",
-                        title: "Creative Growth Studio",
+                        title: "Creative Growth Agency",
                       })
                     }
                     onMouseLeave={() => setHoveredImage(null)}
-                    className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                    className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                   >
-                    digital growth & engineering studio
+                    digital growth & marketing agency
                   </span>{" "}
                   based in India & globally, specializing in{" "}
                   <span
@@ -122,7 +122,7 @@ export default function AboutUsSection() {
                       })
                     }
                     onMouseLeave={() => setHoveredImage(null)}
-                    className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                    className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                   >
                     secure, scalable search systems
                   </span>{" "}
@@ -135,7 +135,7 @@ export default function AboutUsSection() {
                       })
                     }
                     onMouseLeave={() => setHoveredImage(null)}
-                    className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                    className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                   >
                     modern digital platforms
                   </span>{" "}
@@ -148,7 +148,7 @@ export default function AboutUsSection() {
                       })
                     }
                     onMouseLeave={() => setHoveredImage(null)}
-                    className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                    className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                   >
                     technical growth partner
                   </span>
@@ -160,11 +160,11 @@ export default function AboutUsSection() {
                     onMouseEnter={() =>
                       setHoveredImage({
                         src: "/studio-photo.png",
-                        title: "Owlio Works Studio",
+                        title: "Owlio Works Agency",
                       })
                     }
                     onMouseLeave={() => setHoveredImage(null)}
-                    className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                    className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                   >
                     {t.about.description}
                   </span>
@@ -203,7 +203,7 @@ export default function AboutUsSection() {
               >
                 {language === "en" ? (
                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200 pt-1">
-                    Founded by seasoned engineers and growth architects, Owlio Works was established to replace traditional agency bureaucracy with{" "}
+                    Founded by seasoned engineers and growth strategists, Owlio Works was established to replace traditional agency bureaucracy with{" "}
                     <span
                       onMouseEnter={() =>
                         setHoveredImage({
@@ -212,7 +212,7 @@ export default function AboutUsSection() {
                         })
                       }
                       onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                     >
                       relentless technical execution
                     </span>
@@ -221,15 +221,15 @@ export default function AboutUsSection() {
                       onMouseEnter={() =>
                         setHoveredImage({
                           src: "/gro.png",
-                          title: "Conversion Architecture",
+                          title: "Conversion Strategy",
                         })
                       }
                       onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                     >
                       high-converting digital experiences
                     </span>
-                    , robust search architectures, and{" "}
+                    , robust search strategies, and{" "}
                     <span
                       onMouseEnter={() =>
                         setHoveredImage({
@@ -238,7 +238,7 @@ export default function AboutUsSection() {
                         })
                       }
                       onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                     >
                       scalable enterprise platforms
                     </span>{" "}
@@ -287,7 +287,7 @@ export default function AboutUsSection() {
                         })
                       }
                       onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                     >
                       resilient digital infrastructure
                     </span>
@@ -300,7 +300,7 @@ export default function AboutUsSection() {
                         })
                       }
                       onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                     >
                       algorithmic search dominance
                     </span>
@@ -313,7 +313,7 @@ export default function AboutUsSection() {
                         })
                       }
                       onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold underline decoration-zinc-600 decoration-2 underline-offset-4 hover:decoration-[#fbea3d] hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
                     >
                       future-proof technology assets
                     </span>{" "}

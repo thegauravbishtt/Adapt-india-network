@@ -22,7 +22,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Impactful”",
     rating: 5,
     content:
-      "Growth engineering and search architecture at Owlio Works is unparalleled to what our team has witnessed with other agencies. With their technical depth and high-velocity execution, we have established dominance in our target market, resulting in a remarkable 4x expansion in organic revenue. Their unwavering guidance and inventive strategy transformed our platform.",
+      "Growth engineering and search marketing at Owlio Works is unparalleled to what our team has witnessed with other agencies. With their technical depth and high-velocity execution, we have established dominance in our target market, resulting in a remarkable 4x expansion in organic revenue. Their unwavering guidance and inventive strategy transformed our platform.",
     author: {
       name: "Sanjiv Nishchal",
       role: "Founder",
@@ -35,7 +35,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Dynamic”",
     rating: 5,
     content:
-      "The scalable platform and digital experience engineering provided by Owlio Works has truly elevated our online ecosystem, delivering a seamless, lightning-fast experience to millions of customers. The level of craftsmanship and architectural rigor they brought captured the exact essence of our brand vision. Thank you team.",
+      "The scalable platform and digital experience engineering provided by Owlio Works has truly elevated our online ecosystem, delivering a seamless, lightning-fast experience to millions of customers. The level of craftsmanship and strategic rigor they brought captured the exact essence of our brand vision. Thank you team.",
     author: {
       name: "Sumeet Gupta",
       role: "Founder",

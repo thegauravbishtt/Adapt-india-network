@@ -11,7 +11,7 @@ export default function AboutMainPage() {
     {
       title: "Who We Are",
       badge: "01 // COMPANY IDENTITY",
-      desc: "Our mission, leadership, core principles, and origin story as a high-IQ engineering and brand studio.",
+      desc: "Our mission, leadership, core principles, and origin story as a full-service digital marketing and growth agency.",
       href: "/about/who-we-are",
       cta: "Explore Our Identity →",
       stats: "$50M+ Generated · 99.4% Retention",
@@ -54,7 +54,7 @@ export default function AboutMainPage() {
                 alt="About Owlio Works"
                 className="w-full h-full object-cover object-center scale-105 filter brightness-[0.45] contrast-[1.15]"
               />
-              {/* Dark Studio Overlays */}
+              {/* Dark Ambient Overlays */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-[#0c0c0d] z-10"></div>
               <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px] z-10"></div>
             </div>

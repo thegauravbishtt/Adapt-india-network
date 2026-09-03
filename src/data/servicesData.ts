@@ -52,7 +52,7 @@ export const allServices: ServiceDetail[] = [
     heroHeadline: "Scalable Enterprise Software Built for",
     heroHighlight: "Enduring Growth.",
     heroSubtitle:
-      "We architect, engineer, and deploy mission-critical enterprise systems that eliminate technical debt, automate complex workflows, and handle high-throughput operations with 99.99% availability.",
+      "We design, engineer, and deploy mission-critical enterprise systems that eliminate technical debt, automate complex workflows, and handle high-throughput operations with 99.99% availability.",
     image: "/services/enterprise_software.jpg",
     galleryImages: ["/gro.png", "/image1.png", "/studio-photo.png"],
     stats: [
@@ -62,11 +62,11 @@ export const allServices: ServiceDetail[] = [
       { value: "SOC2", label: "Compliance-Ready Code" },
     ],
     overview:
-      "Modern enterprises cannot afford fragile architectures or slow execution. Owlio Works builds modular, microservices-driven backend systems and bespoke SaaS platforms designed for seamless integrations, low-latency performance, and massive scale.",
+      "Modern enterprises cannot afford fragile frameworks or slow execution. Owlio Works builds modular, microservices-driven backend systems and bespoke SaaS platforms designed for seamless integrations, low-latency performance, and massive scale.",
     theChallenge:
       "Traditional enterprise software is slow to develop, riddled with legacy dependencies, and requires massive maintenance overhead. Off-the-shelf software rarely fits proprietary workflows, leading to costly workarounds.",
     ourSolution:
-      "We build clean, robust custom architectures using modern cloud primitives, event-driven pipelines, and type-safe systems that your engineering team can easily maintain, extend, and scale for the next decade.",
+      "We build clean, robust custom platforms using modern cloud primitives, event-driven pipelines, and type-safe systems that your engineering team can easily maintain, extend, and scale for the next decade.",
     capabilities: [
       {
         title: "Bespoke SaaS & Internal Tools",
@@ -107,7 +107,7 @@ export const allServices: ServiceDetail[] = [
       {
         step: "01",
         title: "Technical Discovery & Schema Design",
-        desc: "We analyze your data models, user flows, and enterprise constraints to craft a resilient system architecture.",
+        desc: "We analyze your data models, user flows, and enterprise constraints to craft a resilient system framework.",
       },
       {
         step: "02",
@@ -170,7 +170,7 @@ export const allServices: ServiceDetail[] = [
     heroHeadline: "Modern Web Platforms That Turn Traffic Into",
     heroHighlight: "Measurable Revenue.",
     heroSubtitle:
-      "We design and engineer bespoke web platforms with Next.js, Headless CMS architectures, and interactive 3D/micro-animations that score 95+ on Core Web Vitals and outperform competitors.",
+      "We design and engineer bespoke web platforms with Next.js, Headless CMS platforms, and interactive 3D/micro-animations that score 95+ on Core Web Vitals and outperform competitors.",
     image: "/services/web_development.jpg",
     galleryImages: ["/services/enterprise_software.jpg", "/wed.png", "/image2.png"],
     stats: [
@@ -184,11 +184,11 @@ export const allServices: ServiceDetail[] = [
     theChallenge:
       "Most agency websites are slow, bloated with heavy page builders, fragile on mobile screens, and difficult for internal marketing teams to update without breaking layouts.",
     ourSolution:
-      "We build custom headless architectures powered by Next.js and Tailwind CSS. Marketing teams get intuitive CMS workflows while visitors experience app-like instant loading speeds.",
+      "We build custom headless platforms powered by Next.js and Tailwind CSS. Marketing teams get intuitive CMS workflows while visitors experience app-like instant loading speeds.",
     capabilities: [
       {
         title: "Headless CMS & Custom Frontends",
-        description: "Modular content architectures with Sanity, Strapi, or Contentful connected to blazing Next.js frontends.",
+        description: "Modular content systems with Sanity, Strapi, or Contentful connected to blazing Next.js frontends.",
         deliverables: ["Dynamic Component Blocks", "Live Preview Workflows", "Structured Schema Markup", "Global CDN Caching"],
       },
       {
@@ -203,7 +203,7 @@ export const allServices: ServiceDetail[] = [
       },
       {
         title: "Technical SEO & Speed Optimization",
-        description: "Architectural optimization for Google Core Web Vitals, SSR, structured JSON-LD, and crawler indexing.",
+        description: "Technical optimization for Google Core Web Vitals, SSR, structured JSON-LD, and crawler indexing.",
         deliverables: ["Sub-Second TTFB", "Asset Minification", "Automated Image Optimization", "Robots & Sitemap Generation"],
       },
     ],
@@ -223,7 +223,7 @@ export const allServices: ServiceDetail[] = [
       {
         step: "01",
         title: "UX Strategy & Wireframing",
-        desc: "Mapping conversion funnels, information architecture, and technical requirements before writing code.",
+        desc: "Mapping conversion funnels, user navigation hierarchy, and technical requirements before writing code.",
       },
       {
         step: "02",
@@ -280,12 +280,12 @@ export const allServices: ServiceDetail[] = [
     structuredSection: {
       title: "STRUCTURED FOR SEARCH ENGINE VISIBILITY",
       description:
-        "Smart optimization techniques to enhance reach online whilst keeping users engaged in an interesting layout. We implement modern, semantic code architectures that make it simple for Google crawlers to index key business sections.",
+        "Smart optimization techniques to enhance reach online whilst keeping users engaged in an interesting layout. We implement modern, semantic code structures that make it simple for Google crawlers to index key business sections.",
       checklist: [
         "Responsive page structure",
         "Mobile-ready framework",
         "Fast-loading content",
-        "Keyword-focused architecture",
+        "Keyword-focused site structure",
         "Search-friendly coding",
         "Easy navigation flow",
         "Structured content placement",
@@ -326,12 +326,12 @@ export const allServices: ServiceDetail[] = [
     theChallenge:
       "Building separate native apps for iOS and Android is expensive and slow. Poorly built hybrid apps suffer from laggy frame rates, high battery consumption, and frequent crashes.",
     ourSolution:
-      "We leverage production-hardened React Native and Flutter architectures combined with native bridge modules to deliver 60 FPS performance, shared business logic, and rapid release cycles.",
+      "We leverage production-hardened React Native and Flutter frameworks combined with native bridge modules to deliver 60 FPS performance, shared business logic, and rapid release cycles.",
     capabilities: [
       {
         title: "Cross-Platform iOS & Android Apps",
         description: "Unified cross-platform engineering that looks, feels, and performs like pure native code.",
-        deliverables: ["Single Codebase Architecture", "Native UI Component Bridges", "Biometric Authentication", "Deep Linking"],
+        deliverables: ["Single Codebase Framework", "Native UI Component Bridges", "Biometric Authentication", "Deep Linking"],
       },
       {
         title: "Offline-First Data Synchronization",
@@ -364,7 +364,7 @@ export const allServices: ServiceDetail[] = [
     processSteps: [
       {
         step: "01",
-        title: "Mobile Architecture & Flow Mapping",
+        title: "Mobile System Design & Flow Mapping",
         desc: "Designing ergonomic screen flows, state machines, and API contracts optimized for mobile devices.",
       },
       {
@@ -400,7 +400,7 @@ export const allServices: ServiceDetail[] = [
       {
         question: "How do you handle offline functionality and data synchronization?",
         answer:
-          "We engineer offline-first architectures using local encrypted databases (WatermelonDB/SQLite) with background sync engines that automatically resolve data conflicts when the device reconnects to the network.",
+          "We engineer offline-first data systems using local encrypted databases (WatermelonDB/SQLite) with background sync engines that automatically resolve data conflicts when the device reconnects to the network.",
       },
       {
         question: "Can you assist with App Store and Google Play submission and approval?",
@@ -432,7 +432,7 @@ export const allServices: ServiceDetail[] = [
       { value: "Zero", label: "Single Points of Failure" },
     ],
     overview:
-      "Infrastructure should never be a bottleneck. We build self-healing, auto-scaling cloud architectures with Infrastructure-as-Code (IaC), zero-trust security perimeters, and continuous delivery pipelines.",
+      "Infrastructure should never be a bottleneck. We build self-healing, auto-scaling cloud infrastructure with Infrastructure-as-Code (IaC), zero-trust security perimeters, and continuous delivery pipelines.",
     theChallenge:
       "Unoptimized cloud setups bleed money, suffer from deployment downtime, and lack proactive alerting—meaning issues are discovered by users rather than engineers.",
     ourSolution:
@@ -446,7 +446,7 @@ export const allServices: ServiceDetail[] = [
       {
         title: "Containerization & Kubernetes",
         description: "Dockerized microservices deployed on managed Kubernetes (EKS / GKE) with auto-scaling pods.",
-        deliverables: ["Helm Charts", "Ingress Controller Setup", "Horizontal Pod Autoscaling", "Service Mesh Architecture"],
+        deliverables: ["Helm Charts", "Ingress Controller Setup", "Horizontal Pod Autoscaling", "Service Mesh Networking"],
       },
       {
         title: "CI/CD Pipeline Automation",
@@ -455,7 +455,7 @@ export const allServices: ServiceDetail[] = [
       },
       {
         title: "Cloud Cost Optimization & Security",
-        description: "FinOps audits, reserved instance planning, and zero-trust IAM security architectures.",
+        description: "FinOps audits, reserved instance planning, and zero-trust IAM security frameworks.",
         deliverables: ["Cost Optimization Audits", "VPC & Security Groups Setup", "Secret Management with Vault", "Automated Daily Backups"],
       },
     ],
@@ -475,7 +475,7 @@ export const allServices: ServiceDetail[] = [
       {
         step: "01",
         title: "Infrastructure Audit & Cost Analysis",
-        desc: "Inspecting current architecture, network topologies, bottlenecks, and security vulnerabilities.",
+        desc: "Inspecting current infrastructure, network topologies, bottlenecks, and security vulnerabilities.",
       },
       {
         step: "02",
@@ -528,15 +528,15 @@ export const allServices: ServiceDetail[] = [
     slug: "it-consulting",
     name: "IT Consulting",
     category: "Development",
-    tagline: "Strategic Technology Leadership & Architecture",
-    heroHeadline: "Fractional CTO & Strategic Architecture for",
+    tagline: "Strategic Technology Leadership & System Strategy",
+    heroHeadline: "Fractional CTO & Strategic Guidance for",
     heroHighlight: "High-Growth Companies.",
     heroSubtitle:
-      "We provide high-IQ technical guidance, system architecture reviews, technical due diligence, and roadmap execution to eliminate costly engineering mistakes and accelerate time-to-market.",
+      "We provide high-IQ technical guidance, technology stack reviews, technical due diligence, and roadmap execution to eliminate costly engineering mistakes and accelerate time-to-market.",
     image: "/services/it_consulting.jpg",
     galleryImages: ["/studio-photo.png", "/gro.png", "/image1.png"],
     stats: [
-      { value: "100+", label: "Architectural Reviews Completed" },
+      { value: "100+", label: "Technology Audits Completed" },
       { value: "3x", label: "Faster Engineering Velocity" },
       { value: "Zero", label: "Vendor Lock-In Traps" },
       { value: "$2M+", label: "Client Technical Debt Saved" },
@@ -544,7 +544,7 @@ export const allServices: ServiceDetail[] = [
     overview:
       "Making the wrong technical decision early on can cost millions in rewrites. We act as your high-IQ technical advisors, guiding tech stack selection, scalability planning, team structuring, and security compliance.",
     theChallenge:
-      "Founders and executives often face technical crossroads without unbiased, battle-tested expertise, leading to bloated vendor contracts and architectures that fail to scale.",
+      "Founders and executives often face technical crossroads without unbiased, battle-tested expertise, leading to bloated vendor contracts and systems that fail to scale.",
     ourSolution:
       "We step in with objective, senior-level engineering experience to audit codebases, define technology strategy, optimize software licensing, and lead high-stakes technical implementations.",
     capabilities: [
@@ -556,16 +556,16 @@ export const allServices: ServiceDetail[] = [
       {
         title: "Technical Due Diligence",
         description: "In-depth code quality, security, and scalability audits for investors, M&A, and founders.",
-        deliverables: ["Architecture Assessment Report", "Security Risk Scoring", "Technical Debt Valuation", "Remediation Playbook"],
+        deliverables: ["Technical Assessment Report", "Security Risk Scoring", "Technical Debt Valuation", "Remediation Playbook"],
       },
       {
-        title: "System Architecture & Scalability Planning",
+        title: "System Design & Scalability Planning",
         description: "Blueprints for high-load data pipelines, microservices, and database scaling.",
         deliverables: ["System Design Documents", "Capacity Planning Models", "Disaster Recovery Protocols", "API Standards"],
       },
     ],
     techStack: [
-      "System Architecture",
+      "System Design",
       "Cloud Strategy",
       "Security Audits",
       "API Design",
@@ -586,17 +586,17 @@ export const allServices: ServiceDetail[] = [
       {
         step: "03",
         title: "Hands-On Guidance & Review",
-        desc: "Pair programming with leadership, reviewing PRs, and supervising mission-critical architectural shifts.",
+        desc: "Pair programming with leadership, reviewing PRs, and supervising mission-critical system shifts.",
       },
       {
         step: "04",
         title: "Continuous Governance & Milestones",
-        desc: "Monthly architecture reviews, SLA benchmarking, and ongoing technical advisory support.",
+        desc: "Monthly system reviews, SLA benchmarking, and ongoing technical advisory support.",
       },
     ],
     caseStudies: [
       {
-        title: "Enterprise Architecture Transformation",
+        title: "Enterprise Technology Transformation",
         client: "Global Logistics Network",
         impact: "Identified and resolved 43 critical bottlenecks before peak seasonal volume.",
         image: "/creative2.png",
@@ -611,7 +611,7 @@ export const allServices: ServiceDetail[] = [
       {
         question: "How do you assess technical debt and codebase health in existing systems?",
         answer:
-          "We perform rigorous static code analysis, test coverage reviews, architectural dependency mapping, and security vulnerability scans to provide a prioritized technical remediation scorecard.",
+          "We perform rigorous static code analysis, test coverage reviews, system dependency mapping, and security vulnerability scans to provide a prioritized technical remediation scorecard.",
       },
       {
         question: "Can you assist with technical due diligence for M&A or fundraising rounds?",
@@ -621,7 +621,7 @@ export const allServices: ServiceDetail[] = [
       {
         question: "How do you help our team choose the right tech stack for new products?",
         answer:
-          "We evaluate your expected traffic scale, team expertise, time-to-market constraints, and long-term operating costs to recommend modern, vendor-neutral architectures that avoid premature optimization and lock-in.",
+          "We evaluate your expected traffic scale, team expertise, time-to-market constraints, and long-term operating costs to recommend modern, vendor-neutral frameworks that avoid premature optimization and lock-in.",
       },
     ],
   },
@@ -651,11 +651,11 @@ export const allServices: ServiceDetail[] = [
     capabilities: [
       {
         title: "SaaS & Web App UI/UX Design",
-        description: "Dashboard architectures, data visualizations, and ergonomic workflow interfaces.",
+        description: "Dashboard structures, data visualizations, and ergonomic workflow interfaces.",
         deliverables: ["Figma Interactive Prototypes", "Component Design Libraries", "User Journey Maps", "Responsive Layouts"],
       },
       {
-        title: "Design Systems & Token Architecture",
+        title: "Design Systems & Token Frameworks",
         description: "Scalable design token systems (colors, typography, spacing) mapped 1:1 to Tailwind CSS and code.",
         deliverables: ["Figma Design System File", "Design Tokens JSON", "Component States & Variants", "Accessibility Guides (WCAG)"],
       },
@@ -677,7 +677,7 @@ export const allServices: ServiceDetail[] = [
     processSteps: [
       {
         step: "01",
-        title: "User Research & Information Architecture",
+        title: "User Research & Information Hierarchy",
         desc: "Uncovering user pain points, competitor gaps, and structuring clean conceptual hierarchy.",
       },
       {
@@ -723,7 +723,7 @@ export const allServices: ServiceDetail[] = [
       {
         question: "Do you create full design systems and component libraries?",
         answer:
-          "Yes. We architect enterprise-grade design systems with modular component variants, strict auto-layout, typography hierarchies, and tokenized variables mapped directly to Tailwind CSS or React component libraries.",
+          "Yes. We engineer enterprise-grade design systems with modular component variants, strict auto-layout, typography hierarchies, and tokenized variables mapped directly to Tailwind CSS or React component libraries.",
       },
     ],
     structuredSection: {
@@ -746,7 +746,7 @@ export const allServices: ServiceDetail[] = [
       whyChooseBullets: [
         "User-centered product design",
         "Conversion-driven interfaces",
-        "Tokenized Figma architectures",
+        "Tokenized Figma design systems",
         "Rapid high-fidelity prototyping",
         "Interactive micro-interactions",
         "Seamless engineering handoff",
@@ -761,11 +761,11 @@ export const allServices: ServiceDetail[] = [
     heroHeadline: "Data-Driven Search Engine Optimization for",
     heroHighlight: "Sustainable Revenue.",
     heroSubtitle:
-      "We engineer technical search architectures, programmatic content engines, and high-authority link acquisition strategies that capture high-intent buyers and dominate Google, ChatGPT, and AI Search engines.",
+      "We engineer technical search frameworks, programmatic content engines, and high-authority link acquisition strategies that capture high-intent buyers and dominate Google, ChatGPT, and AI Search engines.",
     image: "/services/seo_services.jpg",
     galleryImages: ["/image1.png", "/creative5.png", "/gro.png"],
     stats: [
-      { value: "10x", label: "Average Organic Traffic Growth" },
+      { value: "100%", label: "Average Organic Traffic Growth" },
       { value: "#1", label: "Rankings for High-Intent Commercial Queries" },
       { value: "100%", label: "White-Hat Algorithmic Strategies" },
       { value: "AEO/GEO", label: "Optimized for AI Search & Gemini" },
@@ -773,19 +773,19 @@ export const allServices: ServiceDetail[] = [
     overview:
       "SEO is no longer just keywords and meta tags—it is a technical engineering discipline. We build high-authority organic pipelines that establish market authority and outpace algorithmic shifts.",
     theChallenge:
-      "Traditional SEO agencies focus on vanity traffic metrics that fail to produce pipeline or revenue, while ignoring critical technical indexing and semantic content architectures.",
+      "Traditional SEO agencies focus on vanity traffic metrics that fail to produce pipeline or revenue, while ignoring critical technical indexing and semantic content structures.",
     ourSolution:
       "We combine deep technical website audits, intent-based content silos, schema markup, and AI Engine Optimization (AEO/GEO) to position your brand as the definitive authority in your niche.",
     capabilities: [
       {
-        title: "Technical SEO & Core Architecture",
+        title: "Technical SEO & Core Framework",
         description: "Resolving crawl budget, rendering issues, canonicalization, and Core Web Vitals performance.",
         deliverables: ["Complete Technical Crawl Audit", "JSON-LD Rich Schema Setup", "Dynamic XML Sitemaps", "Log File Analysis"],
       },
       {
         title: "Programmatic SEO & Content Silos",
-        description: "Building scalable keyword architectures and programmatic landing pages targeting long-tail queries.",
-        deliverables: ["Topic Cluster Architecture", "Programmatic Page Templates", "Semantic Keyword Mapping", "Entity Optimization"],
+        description: "Building scalable keyword frameworks and programmatic landing pages targeting long-tail queries.",
+        deliverables: ["Topic Cluster Framework", "Programmatic Page Templates", "Semantic Keyword Mapping", "Entity Optimization"],
       },
       {
         title: "AI Search Optimization (AEO & GEO)",
@@ -812,7 +812,7 @@ export const allServices: ServiceDetail[] = [
       {
         step: "01",
         title: "Comprehensive Technical & Keyword Audit",
-        desc: "Analyzing site architecture, indexation bottlenecks, and lucrative high-intent competitor keywords.",
+        desc: "Analyzing site structure, indexation bottlenecks, and lucrative high-intent competitor keywords.",
       },
       {
         step: "02",
@@ -879,7 +879,7 @@ export const allServices: ServiceDetail[] = [
       { value: "100%", label: "Server-Side Conversion Tracking" },
     ],
     overview:
-      "Every dollar spent on paid search should produce measurable pipeline. We eliminate wasted ad spend through granular campaign architecture, dedicated high-converting landing pages, and relentless A/B testing.",
+      "Every dollar spent on paid search should produce measurable pipeline. We eliminate wasted ad spend through granular campaign structure, dedicated high-converting landing pages, and relentless A/B testing.",
     theChallenge:
       "Most Google Ads accounts waste 30-50% of their budget on broad irrelevant search queries, bad bidding algorithms, and sending traffic to slow, non-optimized homepages.",
     ourSolution:
@@ -905,7 +905,7 @@ export const allServices: ServiceDetail[] = [
       "Google Ads",
       "Google Tag Manager",
       "Google Analytics 4",
-      "Looker Studio",
+      "Looker Dashboards",
       "Optmyzr",
       "Unbounce / Next.js",
     ],
@@ -992,7 +992,7 @@ export const allServices: ServiceDetail[] = [
         deliverables: ["Video Hook Variations", "Static Ad Carousels", "UGC Creator Scripting", "Dynamic Creative Testing (DCT)"],
       },
       {
-        title: "Meta Conversions API (CAPI) Architecture",
+        title: "Meta Conversions API (CAPI) Integration",
         description: "Server-side event streaming that captures 100% of purchase and lead data despite ad blockers.",
         deliverables: ["AWS / Cloud Run Gateway", "Event Deduplication", "Advanced Matching Data", "Custom Conversion Events"],
       },
@@ -1146,7 +1146,7 @@ export const allServices: ServiceDetail[] = [
       {
         question: "Do you handle shooting and video editing?",
         answer:
-          "Yes! We handle the entire creative pipeline—from conceptual scripting and on-site/studio shooting to high-energy motion editing and audio mastering.",
+          "Yes! We handle the entire creative pipeline—from conceptual scripting and on-location shooting to high-energy motion editing and audio mastering.",
       },
       {
         question: "How do you develop a consistent brand voice and visual aesthetic across social channels?",
@@ -1202,7 +1202,7 @@ export const allServices: ServiceDetail[] = [
       {
         title: "SEO-Led Content Hubs",
         description: "Interlinked knowledge bases and programmatic content hubs designed for search engines and humans.",
-        deliverables: ["Topic Cluster Content", "Glossaries & Calculators", "Internal Link Architecture", "Conversion CTAs"],
+        deliverables: ["Topic Cluster Content", "Glossaries & Calculators", "Internal Link Structure", "Conversion CTAs"],
       },
     ],
     techStack: [
@@ -1237,7 +1237,7 @@ export const allServices: ServiceDetail[] = [
     ],
     caseStudies: [
       {
-        title: "B2B Cloud Technical Architecture Playbook",
+        title: "B2B Cloud Infrastructure Playbook",
         client: "DevOps Infrastructure Firm",
         impact: "Shared by 1,400+ senior engineers, driving 35 enterprise RFP inquiries.",
         image: "/creative3.png",
@@ -1247,7 +1247,7 @@ export const allServices: ServiceDetail[] = [
       {
         question: "Do you write technical and complex B2B topics?",
         answer:
-          "Yes. Our content team specializes in B2B SaaS, FinTech, cloud architecture, and technical domains, ensuring every piece reflects deep domain accuracy.",
+          "Yes. Our content team specializes in B2B SaaS, FinTech, cloud infrastructure, and technical domains, ensuring every piece reflects deep domain accuracy.",
       },
       {
         question: "How do you ensure content is original, accurate, and free of generic AI fluff?",
@@ -1370,11 +1370,11 @@ export const allServices: ServiceDetail[] = [
     slug: "cybersecurity",
     name: "Cybersecurity & Systems",
     category: "Security",
-    tagline: "Zero-Trust Architecture & Threat Defense",
+    tagline: "Zero-Trust Security & Threat Defense",
     heroHeadline: "Fortify Your Digital Infrastructure Against Modern",
     heroHighlight: "Cyber Threats.",
     heroSubtitle:
-      "We conduct penetration testing, cloud vulnerability assessments, OWASP compliance auditing, and secure architecture engineering to protect your proprietary data and customer trust.",
+      "We conduct penetration testing, cloud vulnerability assessments, OWASP compliance auditing, and secure infrastructure engineering to protect your proprietary data and customer trust.",
     image: "/services/cybersecurity.jpg",
     galleryImages: ["/image1.png", "/hotel.png", "/gro.png"],
     stats: [
@@ -1396,7 +1396,7 @@ export const allServices: ServiceDetail[] = [
         deliverables: ["Full Pen-Test Report", "Vulnerability Severity Matrix", "Step-by-Step Remediation Guides", "Post-Fix Re-testing"],
       },
       {
-        title: "Cloud Security & Zero-Trust Architecture",
+        title: "Cloud Security & Zero-Trust Infrastructure",
         description: "Hardening AWS and GCP perimeters with IAM least-privilege policies, VPC peering, and KMS encryption.",
         deliverables: ["IAM Policy Audit", "KMS Encryption at Rest", "WAF Rules & Rate Limiting", "DDoS Mitigation Layer"],
       },
@@ -1449,7 +1449,7 @@ export const allServices: ServiceDetail[] = [
       {
         question: "How often should an enterprise perform security penetration testing?",
         answer:
-          "We recommend quarterly penetration tests or immediately following major software releases and significant architectural changes.",
+          "We recommend quarterly penetration tests or immediately following major software releases and significant infrastructure changes.",
       },
       {
         question: "What is the difference between automated vulnerability scanning and manual penetration testing?",

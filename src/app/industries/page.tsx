@@ -64,7 +64,7 @@ export default function IndustriesPage() {
                 </h1>
 
                 <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
-                  Tailored Technical Architecture &amp; Growth Systems for High-Stakes Sectors. We bring specialized domain expertise, compliance readiness, and commercial accountability to 8 core industries.
+                  Tailored Technical Solutions &amp; Growth Systems for High-Stakes Sectors. We bring specialized domain expertise, compliance readiness, and commercial accountability to 8 core industries.
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ export default function IndustriesPage() {
                 </h2>
               </div>
               <p className="text-zinc-600 text-xs sm:text-sm font-medium max-w-md text-left sm:text-right">
-                Every sector is paired with senior architects who understand the exact compliance, consumer behaviors, and software requirements of your market.
+                Every sector is paired with senior domain specialists who understand the exact compliance, consumer behaviors, and software requirements of your market.
               </p>
             </div>
 
@@ -173,7 +173,7 @@ export default function IndustriesPage() {
             
             <div className="lg:col-span-6 flex flex-col gap-5 text-left">
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#fbea3d]">
-                // INDUSTRY-GRADE ARCHITECTURE
+                // INDUSTRY-GRADE SYSTEMS
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight leading-tight">
                 Domain Mastery Meets Relentless Engineering.

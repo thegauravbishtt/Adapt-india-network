@@ -52,7 +52,7 @@ export const allIndustries: IndustryDetail[] = [
     slug: "it-technology",
     name: "IT & Technology",
     badge: "B2B SAAS & SOFTWARE ENGINEERING",
-    tagline: "Custom Web Applications, Cloud Architecture & Scalable Engineering",
+    tagline: "Custom Web Applications, Cloud Infrastructure & Scalable Engineering",
     heroHeadline: "Modern Software Engineering & Cloud Solutions for",
     heroHighlight: "Growing Tech Companies.",
     heroSubtitle:
@@ -65,7 +65,7 @@ export const allIndustries: IndustryDetail[] = [
       { value: "2x", label: "Faster Feature Delivery" },
     ],
     overview:
-      "Building software is one thing—building maintainable, scalable software that users love is another. We embed senior full-stack developers and cloud architects directly with your team to ship robust features, refactor legacy bottlenecks, and automate CI/CD pipelines.",
+      "Building software is one thing—building maintainable, scalable software that users love is another. We embed senior full-stack developers and cloud engineers directly with your team to ship robust features, refactor legacy bottlenecks, and automate CI/CD pipelines.",
     theChallenge:
       "Many tech companies struggle with growing pains: slow feature releases, fragile codebases that break under traffic spikes, unexpected cloud bills, and internal engineering teams stretched too thin with maintenance.",
     ourSolution:
@@ -85,7 +85,7 @@ export const allIndustries: IndustryDetail[] = [
       {
         title: "Early-Stage Startups & Founders",
         badge: "0-TO-1 MVP LAUNCH",
-        desc: "Turn your product concept into a production-grade web or mobile app in 6 to 8 weeks without cutting architectural or security corners.",
+        desc: "Turn your product concept into a production-grade web or mobile app in 6 to 8 weeks without cutting quality or security corners.",
         highlights: [
           "Clean database schema design with PostgreSQL",
           "Complete auth, role permissions & Stripe billing setup",
@@ -119,7 +119,7 @@ export const allIndustries: IndustryDetail[] = [
         deliverables: ["Automated GitHub Actions CI/CD Workflows", "Kubernetes & Docker Container Orchestration", "Cloud Cost Auditing (25-40% AWS Savings)", "Multi-Region Failovers & Datadog APM"],
       },
       {
-        title: "API Architecture & Third-Party Integrations",
+        title: "API Systems & Third-Party Integrations",
         description: "High-throughput REST and GraphQL endpoints connecting your core platform with payment gateways, enterprise CRMs, and external webhook pipelines.",
         image: "/industries/it_cap_api.jpg",
         deliverables: ["Type-Safe REST & GraphQL APIs", "Stripe & LemonSqueezy Billing Systems", "PostgreSQL Database Schema & Indexing", "Real-Time Webhooks & Message Queues"],
@@ -139,7 +139,7 @@ export const allIndustries: IndustryDetail[] = [
         tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       },
       {
-        title: "Cloud Architecture & DevOps",
+        title: "Cloud Infrastructure & DevOps",
         desc: "Automated build and deployment pipelines with proactive uptime monitoring and backups.",
         icon: "cloud",
         tags: ["AWS", "Docker", "Kubernetes", "CI/CD"],
@@ -159,8 +159,8 @@ export const allIndustries: IndustryDetail[] = [
     ],
     techStack: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Redis", "Docker", "AWS", "Tailwind CSS", "GitHub Actions"],
     processSteps: [
-      { step: "01", title: "Discovery & Technical Scoping", desc: "Understanding your project goals, user needs, architectural requirements, and sprint milestones." },
-      { step: "02", title: "Architecture & Sprint Planning", desc: "Designing the database schema, UI components, and breaking development into clear bi-weekly sprints." },
+      { step: "01", title: "Discovery & Technical Scoping", desc: "Understanding your project goals, user needs, system requirements, and sprint milestones." },
+      { step: "02", title: "System Design & Sprint Planning", desc: "Designing the database schema, UI components, and breaking development into clear bi-weekly sprints." },
       { step: "03", title: "Agile Development & Code Review", desc: "Writing clean, type-safe code with automated tests and weekly staging preview deployments." },
       { step: "04", title: "Production Launch & Support", desc: "Seamless zero-downtime deployment with error monitoring, performance logging, and ongoing support." },
     ],
@@ -214,7 +214,7 @@ export const allIndustries: IndustryDetail[] = [
     overview:
       "Healthcare technology demands an uncompromising commitment to privacy, data security, and accessible human-first UX. We build frictionless digital health platforms that connect patients with practitioners effortlessly.",
     theChallenge:
-      "Legacy clinical software is notoriously clunky, difficult for elderly patients to navigate, and vulnerable to data breaches if not architected with stringent encryption protocols.",
+      "Legacy clinical software is notoriously clunky, difficult for elderly patients to navigate, and vulnerable to data breaches if not engineered with stringent encryption protocols.",
     ourSolution:
       "We engineer accessible WCAG AAA web portals, real-time WebRTC telehealth consult rooms, encrypted HL7/FHIR health record syncs, and automated SMS appointment reminders.",
     focusAreas: [
@@ -446,7 +446,7 @@ export const allIndustries: IndustryDetail[] = [
     techStack: ["Next.js", "TypeScript", "Three.js", "Framer Motion", "Tailwind CSS", "Stripe", "SevenRooms API", "Google Ads", "Meta CAPI"],
     processSteps: [
       { step: "01", title: "Brand Identity & Visual Storytelling", desc: "Curating high-end editorial typography, color palettes, and video assets." },
-      { step: "02", title: "Booking Funnel Architecture", desc: "Designing 2-click frictionless room and dining reservation user journeys." },
+      { step: "02", title: "Booking Funnel Strategy", desc: "Designing 2-click frictionless room and dining reservation user journeys." },
       { step: "03", title: "PMS & Payment Integration", desc: "Connecting live property management systems and international payment gateways." },
       { step: "04", title: "Multi-Channel Launch Campaign", desc: "Deploying high-impact Instagram Reels and Google Search campaigns for immediate occupancy." },
     ],
@@ -594,7 +594,7 @@ export const allIndustries: IndustryDetail[] = [
     processSteps: [
       { step: "01", title: "Luxury Brand Audit & Moodboard", desc: "Defining editorial aesthetics, serif typography, and premium color palettes." },
       { step: "02", title: "3D Asset Modeling & Interactive UX", desc: "Building 4K gemstone textures, reflections, and intuitive customizer controls." },
-      { step: "03", title: "Headless Commerce Architecture", desc: "Pairing Next.js frontend with Shopify Plus backend and international payment gateways." },
+      { step: "03", title: "Headless Commerce Strategy", desc: "Pairing Next.js frontend with Shopify Plus backend and international payment gateways." },
       { step: "04", title: "White-Glove Campaign Launch", desc: "Deploying high-intent paid search and luxury video campaigns on Instagram." },
     ],
     caseStudies: [
@@ -645,7 +645,7 @@ export const allIndustries: IndustryDetail[] = [
       { value: "95+", label: "Google Core Web Vitals Score" },
     ],
     overview:
-      "From custom Shopify 2.0 theme builds to enterprise headless architectures with Next.js, we eliminate checkout friction, improve mobile site speeds, and increase average order value (AOV) without relying on bloated third-party apps.",
+      "From custom Shopify 2.0 theme builds to enterprise headless storefronts with Next.js, we eliminate checkout friction, improve mobile site speeds, and increase average order value (AOV) without relying on bloated third-party apps.",
     theChallenge:
       "Bloated Shopify themes and slow page builders cause high bounce rates, cart abandonment, and rising customer acquisition costs (CAC) that erode store profitability.",
     ourSolution:
@@ -708,13 +708,13 @@ export const allIndustries: IndustryDetail[] = [
         title: "Klaviyo Lifecycle & Retention Marketing",
         description: "Data-driven email and SMS marketing flows designed to recover lost carts and drive predictable repeat purchases.",
         image: "/industries/ecom_cap_analytics.jpg",
-        deliverables: ["Klaviyo Flow Architecture", "VIP Customer Segmentation", "SMS Restock Reminders", "Server-Side Meta CAPI"],
+        deliverables: ["Klaviyo Flow Strategy", "VIP Customer Segmentation", "SMS Restock Reminders", "Server-Side Meta CAPI"],
       },
     ],
     solutions: [
       {
         title: "Shopify 2.0 Theme Development",
-        desc: "Custom Liquid architecture with modular blocks, slide-out carts, and fast page load speeds.",
+        desc: "Custom Liquid framework with modular blocks, slide-out carts, and fast page load speeds.",
         icon: "shopping-bag",
         tags: ["Shopify Plus", "Liquid", "Theme 2.0"],
       },
@@ -810,7 +810,7 @@ export const allIndustries: IndustryDetail[] = [
         ],
       },
       {
-        title: "Architects & Luxury Developments",
+        title: "Luxury Developments & Communities",
         badge: "3D VIRTUAL SHOWCASES",
         desc: "Immersive development showcase websites featuring interactive floorplans, Matterport 3D walkthroughs, and VIP pre-sales funnels.",
         highlights: [
@@ -869,7 +869,7 @@ export const allIndustries: IndustryDetail[] = [
       },
       {
         title: "Luxury Development Hubs",
-        desc: "Showcasing master-planned architectural developments with 3D renderings.",
+        desc: "Showcasing master-planned luxury developments with 3D renderings.",
         icon: "building",
         tags: ["Three.js", "Tailwind CSS", "Framer"],
       },
@@ -883,7 +883,7 @@ export const allIndustries: IndustryDetail[] = [
     techStack: ["Next.js", "TypeScript", "Mapbox GL", "PostgreSQL (PostGIS)", "Redis", "Tailwind CSS", "HubSpot CRM", "Google Ads"],
     processSteps: [
       { step: "01", title: "Data Model & MLS API Mapping", desc: "Configuring RESO Web API feeds, normalization schemas, and geo-spatial indexing." },
-      { step: "02", title: "Map Interface & UX Architecture", desc: "Designing responsive search controls, map clustering, and listing cards." },
+      { step: "02", title: "Map Interface & UX Design", desc: "Designing responsive search controls, map clustering, and listing cards." },
       { step: "03", title: "Lead Routing & CRM Automation", desc: "Connecting lead capture forms to agent routing logic and instant SMS alerts." },
       { step: "04", title: "Local Market SEO Launch", desc: "Deploying thousands of programmatic neighborhood landing pages for organic search dominance." },
     ],
@@ -1029,7 +1029,7 @@ export const allIndustries: IndustryDetail[] = [
     ],
     techStack: ["Next.js", "TypeScript", "Toast API", "Square POS", "Tailwind CSS", "Recharge", "Stripe", "Twilio SMS"],
     processSteps: [
-      { step: "01", title: "Brand & Menu Architecture", desc: "Designing mouth-watering menu layouts with high-resolution photography and modifier flows." },
+      { step: "01", title: "Brand & Menu Design", desc: "Designing mouth-watering menu layouts with high-resolution photography and modifier flows." },
       { step: "02", title: "POS & Hardware Integration", desc: "Connecting cloud order routing to existing kitchen printers and terminal displays." },
       { step: "03", title: "Subscription & SMS Setup", desc: "Configuring automated post-purchase review capture and VIP repeat discount codes." },
       { step: "04", title: "Local Footfall Launch", desc: "Deploying hyper-local Instagram Reels ads and Google Maps 3-Pack optimization." },
@@ -1094,7 +1094,7 @@ export const allIndustries: IndustryDetail[] = [
         desc: "Dominate search engine rankings for competitive degree programs, vocational coaching, and regional certification courses.",
         highlights: [
           "Technical site speed & Core Web Vitals optimization",
-          "Programmatic course landing page architecture",
+          "Programmatic course landing page structure",
           "Local Google Business Profile 3-Pack placement",
           "Authority link acquisition & academic content strategy",
         ],
@@ -1125,9 +1125,9 @@ export const allIndustries: IndustryDetail[] = [
     capabilities: [
       {
         title: "Higher-Ed SEO & Organic Search Dominance",
-        description: "Comprehensive technical SEO audits, course keyword architecture, and content strategies driving sustainable organic student traffic.",
+        description: "Comprehensive technical SEO audits, course keyword strategy, and content strategies driving sustainable organic student traffic.",
         image: "/industries/edu_cap_lms.jpg",
-        deliverables: ["Course Keyword Architecture", "Technical SEO Infrastructure", "Local Campus Map Optimization", "Academic Authority Backlinks"],
+        deliverables: ["Course Keyword Strategy", "Technical SEO Infrastructure", "Local Campus Map Optimization", "Academic Authority Backlinks"],
       },
       {
         title: "Institutional Web Design & Program Finders",

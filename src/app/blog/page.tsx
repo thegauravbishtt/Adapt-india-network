@@ -53,7 +53,7 @@ export default function BlogPage() {
             </h1>
 
             <p className="text-zinc-600 text-base sm:text-lg max-w-2xl leading-relaxed">
-              Deep dives into search systems, platform engineering, conversion architectures, and AI engine optimization by the Owlio Works team.
+              Deep dives into search systems, platform engineering, conversion systems, and AI engine optimization by the Owlio Works team.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export default function BlogPage() {
             <div className="flex flex-col text-left max-w-xl">
               <span className="text-xs font-bold uppercase tracking-widest text-[#fac917] mb-2">Partner with Us</span>
               <h3 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight font-display">
-                Ready to scale your search & product architecture?
+                Ready to scale your search & digital growth strategy?
               </h3>
             </div>
             <Link

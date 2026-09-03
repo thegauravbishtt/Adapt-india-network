@@ -105,10 +105,8 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full border border-zinc-200 bg-white text-zinc-800 flex items-center justify-center hover:bg-black hover:text-[#fbea3d] hover:border-black transition-all shadow-2xs hover:scale-105 active:scale-95 cursor-pointer"
                 aria-label="Instagram"
               >
-                <svg className="w-3.5 h-3.5 fill-none stroke-currentColor strokeWidth='2'" viewBox="0 0 24 24">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
               </a>
 
@@ -141,31 +139,41 @@ export default function Footer() {
 
           </div>
 
-          {/* Column 2: Explore */}
+          {/* Column 2: Services */}
           <div className="lg:col-span-2 lg:pl-2 flex flex-col items-start text-left">
             <h4 className="text-sm font-bold text-zinc-950 font-display mb-4">
-              Explore
+              Services
             </h4>
             <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-600 font-normal">
               <li>
-                <a href="#branding" className="hover:text-black transition-colors">
-                  Branding
-                </a>
+                <Link href="/services/web-development" className="hover:text-black transition-colors">
+                  Web Development
+                </Link>
               </li>
               <li>
-                <a href="#digital" className="hover:text-black transition-colors">
-                  Digital & Performance
-                </a>
+                <Link href="/services/ui-ux-design" className="hover:text-black transition-colors">
+                  UI/UX Design
+                </Link>
               </li>
               <li>
-                <a href="#work" className="hover:text-black transition-colors">
-                  Sample Work
-                </a>
+                <Link href="/services/seo-services" className="hover:text-black transition-colors">
+                  SEO Optimization
+                </Link>
               </li>
               <li>
-                <a href="#clients" className="hover:text-black transition-colors">
-                  Our Clients
-                </a>
+                <Link href="/services/google-ads" className="hover:text-black transition-colors">
+                  Google &amp; Meta Ads
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/enterprise-software" className="hover:text-black transition-colors">
+                  Enterprise Software
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-black transition-colors font-semibold text-zinc-900">
+                  All Services →
+                </Link>
               </li>
             </ul>
           </div>
@@ -177,24 +185,34 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-600 font-normal">
               <li>
-                <a href="/industries" className="hover:text-black transition-colors">
-                  Industries we Serve
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-black transition-colors">
+                <Link href="/about/who-we-are" className="hover:text-black transition-colors">
                   Who We Are
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#careers" className="hover:text-black transition-colors">
-                  Careers
-                </a>
+                <Link href="/about/what-we-do" className="hover:text-black transition-colors">
+                  What We Do
+                </Link>
               </li>
               <li>
-                <a href="#blogs" className="hover:text-black transition-colors">
-                  Insights
-                </a>
+                <Link href="/about/how-we-work" className="hover:text-black transition-colors">
+                  How We Work
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries" className="hover:text-black transition-colors">
+                  Industries We Serve
+                </Link>
+              </li>
+              <li>
+                <Link href="/work" className="hover:text-black transition-colors">
+                  Featured Work
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-black transition-colors">
+                  Insights &amp; Blog
+                </Link>
               </li>
             </ul>
           </div>
@@ -218,7 +236,7 @@ export default function Footer() {
                 owlioworks@gmail.com
               </a>
               <p className="text-zinc-600 leading-relaxed">
-                Saket, New Delhi - 110017, Delhi, India
+                Saket, New Delhi - 110062, Delhi, India
               </p>
               <Link
                 href="/contact"
@@ -237,41 +255,34 @@ export default function Footer() {
           <Link href="/contact" className="hover:text-black transition-colors font-medium">
             Contact Us
           </Link>
-          <a href="#faqs" className="hover:text-black transition-colors">
+          <Link href="/faqs" className="hover:text-black transition-colors">
             FAQs
-          </a>
-          <a href="#privacy" className="hover:text-black transition-colors">
+          </Link>
+          <Link href="/privacy-policy" className="hover:text-black transition-colors">
             Privacy Policy
-          </a>
-          <a href="#cookies" className="hover:text-black transition-colors">
+          </Link>
+          <Link href="/cookie-preferences" className="hover:text-black transition-colors">
             Cookie Preferences
-          </a>
-          <a href="#terms" className="hover:text-black transition-colors">
-            Terms & Conditions
-          </a>
+          </Link>
+          <Link href="/terms-and-conditions" className="hover:text-black transition-colors">
+            Terms &amp; Conditions
+          </Link>
         </div>
 
         {/* Bottom Bar Divider & Meta Row */}
-        <div className="border-t border-zinc-200/90 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500 w-full">
+        <div className="border-t border-zinc-200/90 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 w-full">
           
           {/* Copyright text */}
           <div className="text-left">
             <p className="text-zinc-500 text-xs sm:text-[13px]">
-              Copyright © 2012-2026 Owlio Works Pvt. Ltd. All rights reserved.
+              Copyright © {new Date().getFullYear()} Owlio Works Pvt. Ltd. All rights reserved.
             </p>
           </div>
 
-          {/* Tagline */}
-          <div className="text-center">
-            <span className="italic font-medium text-zinc-900 text-xs sm:text-[13px]">
-              Meliora - Towards Better
-            </span>
-          </div>
-
-          {/* Global Locations List */}
+          {/* Location */}
           <div className="text-right">
             <span className="text-[11px] sm:text-xs tracking-wider text-zinc-600 uppercase font-medium">
-              NEW DELHI · GURUGRAM · LONDON · NEW YORK · SYDNEY · DUBAI
+              NEW DELHI, INDIA
             </span>
           </div>
 
