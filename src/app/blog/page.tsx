@@ -381,52 +381,55 @@ export default function BlogPage() {
                 <p className="text-base font-semibold text-zinc-800">No articles found in this category.</p>
                 <button
                   onClick={() => setSelectedCategory("all")}
-                  className="mt-3 px-4 py-2 bg-black text-white rounded-full text-xs font-bold hover:bg-zinc-800 transition-colors"
+                  className="mt-3 px-4 py-2 bg-black text-white rounded-full text-xs font-bold hover:bg-zinc-800 transition-colors cursor-pointer"
                 >
                   View All Articles
                 </button>
               </div>
             ) : (
               filteredArticles.map((article) => (
-                <article
+                <Link
                   key={article.id}
-                  className="flex flex-col rounded-3xl overflow-hidden border border-zinc-200 bg-white hover:border-zinc-400 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                  href={`/blog/${article.slug || article.id}`}
+                  className="flex flex-col rounded-3xl overflow-hidden border border-zinc-200 bg-white hover:border-zinc-400 hover:shadow-xl transition-all duration-300 group cursor-pointer block"
                 >
-                  {/* Image Container */}
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                      <span className="text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider bg-[#fac917] text-black shadow-2xs">
-                        {article.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
-                    <div>
-                      <div className="flex items-center justify-between text-xs text-zinc-500 font-medium mb-3">
-                        <span className="font-semibold text-zinc-700">{article.category}</span>
-                        <span>{article.readTime}</span>
+                  <article className="flex flex-col h-full justify-between">
+                    {/* Image Container */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                        <span className="text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider bg-[#fac917] text-black shadow-2xs">
+                          {article.category}
+                        </span>
                       </div>
-                      <h2 className="text-xl font-bold text-zinc-950 leading-snug group-hover:text-black transition-colors mb-3 font-display">
-                        {article.title}
-                      </h2>
-                      <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed mb-4">
-                        {article.excerpt}
-                      </p>
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 group-hover:text-black group-hover:translate-x-1 transition-all pt-2 border-t border-zinc-100">
-                      <span>Read Article</span>
-                      <span>→</span>
+                    {/* Content */}
+                    <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+                      <div>
+                        <div className="flex items-center justify-between text-xs text-zinc-500 font-medium mb-3">
+                          <span className="font-semibold text-zinc-700">{article.category}</span>
+                          <span>{article.readTime}</span>
+                        </div>
+                        <h2 className="text-xl font-bold text-zinc-950 leading-snug group-hover:text-black transition-colors mb-3 font-display">
+                          {article.title}
+                        </h2>
+                        <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed mb-4">
+                          {article.excerpt}
+                        </p>
+                      </div>
+
+                      <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 group-hover:text-black group-hover:translate-x-1 transition-all pt-2 border-t border-zinc-100">
+                        <span>Read Article</span>
+                        <span>→</span>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               ))
             )}
           </div>

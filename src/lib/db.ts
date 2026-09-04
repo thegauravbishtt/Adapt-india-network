@@ -31,6 +31,7 @@ export interface BlogPost {
   status: "published" | "draft";
   publishedAt: string;
   author: string;
+  faqs?: Array<{ question: string; answer: string }>;
 }
 
 export interface WorkItem {

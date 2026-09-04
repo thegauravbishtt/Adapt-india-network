@@ -3,8 +3,11 @@
 import React, { useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
+import Link from "next/link";
+
 interface BlogCardItem {
   id: string;
+  slug?: string;
   image: string;
   tags: Array<{ text: string; variant: "dark" | "outline" | "yellow" }>;
   title: string;
@@ -15,6 +18,7 @@ interface BlogCardItem {
 export const demoBlogs: BlogCardItem[] = [
   {
     id: "article-1",
+    slug: "modern-search-infrastructure-10x-organic-revenue",
     image: "/image1.png",
     tags: [
       { text: "STRATEGY", variant: "dark" },
@@ -26,6 +30,7 @@ export const demoBlogs: BlogCardItem[] = [
   },
   {
     id: "article-2",
+    slug: "headless-commerce-vs-monolithic-builds",
     image: "/image2.png",
     tags: [
       { text: "TECH", variant: "outline" },
@@ -37,6 +42,7 @@ export const demoBlogs: BlogCardItem[] = [
   },
   {
     id: "article-3",
+    slug: "science-of-high-conversion-digital-experiences-2026",
     image: "/image3.png",
     tags: [
       { text: "D2C", variant: "yellow" },
@@ -48,6 +54,7 @@ export const demoBlogs: BlogCardItem[] = [
   },
   {
     id: "article-4",
+    slug: "building-scalable-ai-search-systems",
     image: "/image4.png",
     tags: [
       { text: "AI & ML", variant: "dark" },
@@ -59,6 +66,7 @@ export const demoBlogs: BlogCardItem[] = [
   },
   {
     id: "article-5",
+    slug: "content-marketing-flywheel-b2b-saas",
     image: "/creative3.png",
     tags: [
       { text: "B2B", variant: "outline" },
@@ -70,6 +78,7 @@ export const demoBlogs: BlogCardItem[] = [
   },
   {
     id: "article-6",
+    slug: "high-impact-social-media-growth-playbook",
     image: "/creative5.png",
     tags: [
       { text: "PERFORMANCE", variant: "yellow" },
@@ -120,13 +129,13 @@ export default function BlogsSection() {
             </p>
 
             {/* View All Button */}
-            <a
+            <Link
               href="/blog"
               className="inline-flex items-center gap-1.5 bg-black text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs font-bold hover:bg-[#fbea3d] hover:text-black transition-all shadow-xs cursor-pointer active:scale-95 group"
             >
               <span>View all</span>
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">→</span>
-            </a>
+            </Link>
 
             {/* Slider Navigation Arrows */}
             <div className="flex items-center gap-1.5 shrink-0">
@@ -161,79 +170,82 @@ export default function BlogsSection() {
           className="flex gap-4 sm:gap-5 overflow-x-auto pb-5 pt-2 w-full scrollbar-none snap-x snap-mandatory"
         >
           {demoBlogs.map((blog) => (
-            <article
+            <Link
               key={blog.id}
-              className="snap-start shrink-0 w-[76vw] sm:w-[310px] md:w-[340px] lg:w-[360px] bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-zinc-200/90 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              href={`/blog/${blog.slug || blog.id}`}
+              className="snap-start shrink-0 w-[76vw] sm:w-[310px] md:w-[340px] lg:w-[360px] bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-zinc-200/90 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer block"
             >
-              <div>
-                {/* Clean Image Container */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-100">
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                </div>
-
-                {/* Bottom Body Content */}
-                <div className="p-4 sm:p-5 flex flex-col gap-2.5">
-                  {/* Pills Row */}
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    {blog.tags.map((tag, tIdx) => {
-                      if (tag.variant === "dark") {
-                        return (
-                          <span
-                            key={tIdx}
-                            className="px-2.5 py-0.5 rounded-full bg-black text-[#fbea3d] text-[10px] font-mono font-extrabold uppercase tracking-wider"
-                          >
-                            {tag.text}
-                          </span>
-                        );
-                      }
-                      if (tag.variant === "yellow") {
-                        return (
-                          <span
-                            key={tIdx}
-                            className="px-2.5 py-0.5 rounded-full bg-[#fbea3d] text-black text-[10px] font-mono font-extrabold uppercase tracking-wider shadow-2xs"
-                          >
-                            {tag.text}
-                          </span>
-                        );
-                      }
-                      return (
-                        <span
-                          key={tIdx}
-                          className="px-2.5 py-0.5 rounded-full bg-white border border-zinc-300 text-zinc-800 text-[10px] font-mono font-extrabold uppercase tracking-wider"
-                        >
-                          {tag.text}
-                        </span>
-                      );
-                    })}
+              <article className="flex flex-col justify-between h-full">
+                <div>
+                  {/* Clean Image Container */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-100">
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
                   </div>
 
-                  {/* Title Headline */}
-                  <h3 className="text-sm sm:text-base md:text-[17px] font-black text-zinc-900 font-display tracking-tight leading-snug group-hover:text-black transition-colors line-clamp-2">
-                    {blog.title}
-                  </h3>
-                </div>
-              </div>
+                  {/* Bottom Body Content */}
+                  <div className="p-4 sm:p-5 flex flex-col gap-2.5">
+                    {/* Pills Row */}
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      {blog.tags.map((tag, tIdx) => {
+                        if (tag.variant === "dark") {
+                          return (
+                            <span
+                              key={tIdx}
+                              className="px-2.5 py-0.5 rounded-full bg-black text-[#fbea3d] text-[10px] font-mono font-extrabold uppercase tracking-wider"
+                            >
+                              {tag.text}
+                            </span>
+                          );
+                        }
+                        if (tag.variant === "yellow") {
+                          return (
+                            <span
+                              key={tIdx}
+                              className="px-2.5 py-0.5 rounded-full bg-[#fbea3d] text-black text-[10px] font-mono font-extrabold uppercase tracking-wider shadow-2xs"
+                            >
+                              {tag.text}
+                            </span>
+                          );
+                        }
+                        return (
+                          <span
+                            key={tIdx}
+                            className="px-2.5 py-0.5 rounded-full bg-white border border-zinc-300 text-zinc-800 text-[10px] font-mono font-extrabold uppercase tracking-wider"
+                          >
+                            {tag.text}
+                          </span>
+                        );
+                      })}
+                    </div>
 
-              {/* Action Callout Link */}
-              <div className="px-4 sm:px-5 pt-0 pb-4 sm:pb-5 flex items-center justify-between border-t border-zinc-100 mt-1">
-                <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-800 group-hover:text-black transition-colors pt-3">
-                  <span>Read article</span>
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">
-                    →
-                  </span>
+                    {/* Title Headline */}
+                    <h3 className="text-sm sm:text-base md:text-[17px] font-black text-zinc-900 font-display tracking-tight leading-snug group-hover:text-black transition-colors line-clamp-2">
+                      {blog.title}
+                    </h3>
+                  </div>
                 </div>
-                {blog.readTime && (
-                  <span className="text-[10px] font-mono text-zinc-400 font-medium pt-3">
-                    {blog.readTime}
-                  </span>
-                )}
-              </div>
 
-            </article>
+                {/* Action Callout Link */}
+                <div className="px-4 sm:px-5 pt-0 pb-4 sm:pb-5 flex items-center justify-between border-t border-zinc-100 mt-1">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-800 group-hover:text-black transition-colors pt-3">
+                    <span>Read article</span>
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">
+                      →
+                    </span>
+                  </div>
+                  {blog.readTime && (
+                    <span className="text-[10px] font-mono text-zinc-400 font-medium pt-3">
+                      {blog.readTime}
+                    </span>
+                  )}
+                </div>
+
+              </article>
+            </Link>
           ))}
         </div>
 
