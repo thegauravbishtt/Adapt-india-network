@@ -1823,9 +1823,9 @@ export default function WorkPage() {
             {/* 6 Performance Metric Cards (2 rows x 3 cols) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {performanceCards.map((card) => (
-                <div
+                <Link
                   key={card.id}
-                  onClick={() => setSelectedCaseStudy(card as unknown as CaseStudy)}
+                  href="/contact"
                   className="bg-white rounded-3xl p-6 sm:p-8 border border-zinc-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
@@ -1872,7 +1872,7 @@ export default function WorkPage() {
                       <span className="transition-transform group-hover:translate-x-1 duration-200">→</span>
                     </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -2146,13 +2146,13 @@ export default function WorkPage() {
                   >
                     Close
                   </button>
-                  <a
-                    href="#newsletter"
+                  <Link
+                    href="/contact"
                     onClick={() => setSelectedCaseStudy(null)}
                     className="px-5 py-2.5 rounded-full bg-black text-[#fbea3d] text-xs font-bold uppercase tracking-wider hover:bg-zinc-800 transition-all cursor-pointer"
                   >
                     Start a Project →
-                  </a>
+                  </Link>
                 </div>
 
               </div>

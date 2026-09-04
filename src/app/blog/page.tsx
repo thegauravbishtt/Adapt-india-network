@@ -274,25 +274,77 @@ export default function BlogPage() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-white text-zinc-950 font-sans flex flex-col selection:bg-[#fac917] selection:text-black">
+      <div className="min-h-screen bg-white text-zinc-900 flex flex-col justify-between overflow-x-clip relative w-full select-none selection:bg-[#fac917] selection:text-black">
         <Navbar />
 
-        <main className="flex-grow pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-28 px-5 sm:px-10 lg:px-16 max-w-7xl mx-auto w-full">
-          {/* Header Badge & Title */}
-          <div className="flex flex-col items-start text-left mb-8 sm:mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-800 text-xs font-bold uppercase tracking-widest mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#fac917]"></span>
-              <span>Insights & Perspectives</span>
-            </div>
-
-            <h1 className="text-4xl xs:text-5xl sm:text-6xl font-black text-zinc-950 tracking-tight leading-[1.08] mb-4 font-display">
-              Insights, not <span className="relative inline-block">noise.<span className="absolute bottom-1.5 left-0 w-full h-3 bg-[#fac917] -z-10 rounded-xs"></span></span>
-            </h1>
-
-            <p className="text-zinc-600 text-base sm:text-lg max-w-2xl leading-relaxed">
-              Deep dives into search systems, platform engineering, conversion systems, and AI engine optimization by the Owlio Works team.
-            </p>
+        {/* 1. HERO BANNER (Compact, Sleek Background Banner) */}
+        <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+          
+          {/* Background Image with Clear Directional Gradient (Photo clearly visible) */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/services/content_marketing.jpg"
+              alt="Insights & Perspectives - Owlio Works"
+              className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
+            />
+            {/* Directional gradient to keep photo vibrant on right while left text is readable */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
           </div>
+
+          {/* Top Row: Back to Home + Global Divider Line */}
+          <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
+            <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
+              >
+                <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
+                <span>BACK TO HOME</span>
+              </Link>
+
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                  // INSIGHTS &amp; PERSPECTIVES
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Center Content: Clean Title + Scroll Down Indicator */}
+          <div className="relative z-20 max-w-7xl mx-auto w-full">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+              
+              <div className="flex flex-col items-start text-left max-w-3xl">
+                {/* Category Pill Tagline */}
+                <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
+                  // THOUGHT LEADERSHIP &amp; ENGINEERING
+                </span>
+
+                {/* Compact Display Title */}
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                  INSIGHTS &amp; ARTICLES
+                </h1>
+
+                <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                  Deep dives into search systems, platform engineering, conversion systems, and AI engine optimization by the Owlio Works team.
+                </p>
+              </div>
+
+              {/* Right Side: Scroll Down Indicator */}
+              <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
+                <span>SCROLL DOWN</span>
+                <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
+                  ↓
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* MAIN CONTENT */}
+        <main className="flex-grow py-12 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20 max-w-7xl mx-auto w-full">
 
           {/* Exact Pill Toggle Filters Bar */}
           <div className="mb-10 sm:mb-12 flex flex-wrap items-center gap-2 sm:gap-2.5">

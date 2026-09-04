@@ -28,12 +28,11 @@ export const metadata: Metadata = {
     "We connect ambitious digital brands with a world-class network of technical SEO developers, marketers, and growth experts working across 12 countries.",
   icons: {
     icon: [
-      { url: "/logo.png", type: "image/png" },
       { url: "/icon.png", type: "image/png" },
       { url: "/favicon.ico" },
     ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
   },
 };
 

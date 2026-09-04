@@ -59,16 +59,13 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col items-start text-left pr-0 lg:pr-4">
             
             {/* Brand Logo */}
-            <div className="flex items-center gap-3 select-none">
-              <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+            <div className="flex items-center select-none">
+              <Link href="/" className="flex items-center group cursor-pointer">
                 <img
                   src="/logo.png"
                   alt="Owlio Works Logo"
                   className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
                 />
-                <span className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tighter uppercase font-display">
-                  OWLIO <span className="text-zinc-500 font-bold group-hover:text-black transition-colors">WORKS</span>
-                </span>
               </Link>
             </div>
 
@@ -266,9 +263,6 @@ export default function Footer() {
           </Link>
           <Link href="/terms-and-conditions" className="hover:text-black transition-colors">
             Terms &amp; Conditions
-          </Link>
-          <Link href="/admin/login" className="hover:text-black text-zinc-400 font-mono transition-colors">
-            Admin Portal ↗
           </Link>
         </div>
 

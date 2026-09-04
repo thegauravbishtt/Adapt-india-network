@@ -312,15 +312,12 @@ export default function Navbar() {
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
         {/* Brand Logo */}
         <div className="flex items-center gap-3 select-none shrink-0">
-          <Link href="/" className="flex items-center gap-1 xs:gap-1.5 sm:gap-3 group cursor-pointer">
+          <Link href="/" className="flex items-center group cursor-pointer py-0.5">
             <img
               src="/logo.png"
               alt="Owlio Works Logo"
-              className="h-9 xs:h-10 sm:h-10 lg:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+              className="h-8 xs:h-9 sm:h-9.5 lg:h-10.5 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
             />
-            <span className="text-[21px] xs:text-[23px] sm:text-2xl lg:text-[26px] font-black text-zinc-950 tracking-tighter uppercase font-display whitespace-nowrap">
-              OWLIO <span className="text-zinc-600 font-bold group-hover:text-black transition-colors">WORKS</span>
-            </span>
           </Link>
         </div>
 
