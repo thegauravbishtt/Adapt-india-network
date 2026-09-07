@@ -23,9 +23,9 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Owlio Works - A Global SEO & Growth Engine for Startups",
+  title: "Owlio Works - Full-Stack Digital Marketing, Branding & Growth Agency",
   description:
-    "We connect ambitious digital brands with a world-class network of technical SEO developers, marketers, and growth experts working across 12 countries.",
+    "Owlio Works is an integrated digital marketing, branding, and growth agency building creative, performance-driven digital solutions and search systems for ambitious brands worldwide.",
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png" },

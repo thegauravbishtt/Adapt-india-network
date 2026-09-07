@@ -184,11 +184,9 @@ export default function TestimonialsSection() {
 
               {/* Bottom Author Section */}
               <div className="border-t border-zinc-800/90 pt-5 sm:pt-6 mt-6 sm:mt-8 flex items-center gap-3.5">
-                <img
-                  src={item.author.avatar}
-                  alt={item.author.name}
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover object-center border-2 border-zinc-700 shadow-xs shrink-0"
-                />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-700 text-[#fbea3d] font-black text-sm sm:text-base flex items-center justify-center shrink-0 select-none shadow-xs font-display">
+                  {item.author.name.trim().charAt(0).toUpperCase()}
+                </div>
                 <div className="flex flex-col text-left">
                   <span className="font-black text-sm sm:text-[15px] text-white leading-tight font-display">
                     {item.author.name}

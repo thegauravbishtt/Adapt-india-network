@@ -249,18 +249,29 @@ export default function AdminBlogsPage() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this article?")) return;
+    if (!confirm("Are you sure you want to permanently delete this article?")) return;
+
+    // Optimistic UI update
+    setBlogs((prev) =>
+      prev.filter(
+        (b) =>
+          String(b.id).trim() !== String(id).trim() &&
+          String(b.slug || "").trim() !== String(id).trim()
+      )
+    );
 
     try {
-      const res = await fetch(`/api/admin/blogs?id=${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/admin/blogs?id=${encodeURIComponent(id)}`, { method: "DELETE" });
       if (res.ok) {
-        toast("Article deleted", "info");
-        setBlogs((prev) => prev.filter((b) => b.id !== id));
+        toast("Article deleted successfully", "info");
       } else {
-        toast("Failed to delete article", "error");
+        const errJson = await res.json().catch(() => ({}));
+        toast(errJson.error || "Failed to delete article", "error");
+        fetchBlogs();
       }
     } catch {
       toast("Error deleting article", "error");
+      fetchBlogs();
     }
   };
 

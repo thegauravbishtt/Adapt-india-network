@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingWidget from "@/components/FloatingWidget";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/db";
@@ -453,7 +452,6 @@ export default function BlogPage() {
         </main>
 
         <Footer />
-        <FloatingWidget />
       </div>
     </LanguageProvider>
   );

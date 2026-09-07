@@ -78,17 +78,20 @@ export async function DELETE(req: Request) {
 
   try {
     const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
+    let id = searchParams.get("id");
+    if (!id) {
+      try {
+        const body = await req.json();
+        id = body?.id;
+      } catch {}
+    }
+
     if (!id) {
       return NextResponse.json({ error: "Lead ID required" }, { status: 400 });
     }
 
-    const success = await deleteLead(id);
-    if (!success) {
-      return NextResponse.json({ error: "Lead not found" }, { status: 404 });
-    }
-
-    return NextResponse.json({ success: true });
+    await deleteLead(id);
+    return NextResponse.json({ success: true, message: "Lead deleted" });
   } catch (err: any) {
     return NextResponse.json({ error: err?.message || "Failed to delete lead" }, { status: 500 });
   }

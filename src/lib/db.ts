@@ -65,33 +65,83 @@ export interface AgencySettings {
   adminPassword?: string;
 }
 
-// Database directory
-const DB_DIR = path.join(process.cwd(), "src", "data", "db");
+import os from "os";
 
-async function ensureDbDir() {
+// In-memory global cache across requests
+const globalCache = (globalThis as unknown as { __owlio_db_cache?: Record<string, any> });
+if (!globalCache.__owlio_db_cache) {
+  globalCache.__owlio_db_cache = {};
+}
+
+// Database directory (local repo vs serverless tmp)
+const DB_DIR = path.join(process.cwd(), "src", "data", "db");
+const TMP_DIR = path.join(os.tmpdir(), "owlio_db");
+
+async function ensureDirs() {
   try {
     await fs.mkdir(DB_DIR, { recursive: true });
-  } catch (error) {
-    // Ignore if exists
-  }
+  } catch {}
+  try {
+    await fs.mkdir(TMP_DIR, { recursive: true });
+  } catch {}
 }
 
 async function readJsonFile<T>(filename: string, fallback: T): Promise<T> {
-  await ensureDbDir();
-  const filePath = path.join(DB_DIR, filename);
-  try {
-    const data = await fs.readFile(filePath, "utf-8");
-    return JSON.parse(data) as T;
-  } catch {
-    await writeJsonFile(filename, fallback);
-    return fallback;
+  if (globalCache.__owlio_db_cache?.[filename]) {
+    return globalCache.__owlio_db_cache[filename] as T;
   }
+
+  await ensureDirs();
+
+  // 1. Try reading from TMP_DIR (if written in serverless)
+  try {
+    const tmpPath = path.join(TMP_DIR, filename);
+    const data = await fs.readFile(tmpPath, "utf-8");
+    const parsed = JSON.parse(data) as T;
+    if (globalCache.__owlio_db_cache) {
+      globalCache.__owlio_db_cache[filename] = parsed;
+    }
+    return parsed;
+  } catch {}
+
+  // 2. Try reading from DB_DIR
+  try {
+    const filePath = path.join(DB_DIR, filename);
+    const data = await fs.readFile(filePath, "utf-8");
+    const parsed = JSON.parse(data) as T;
+    if (globalCache.__owlio_db_cache) {
+      globalCache.__owlio_db_cache[filename] = parsed;
+    }
+    return parsed;
+  } catch {}
+
+  // 3. Fallback
+  if (globalCache.__owlio_db_cache) {
+    globalCache.__owlio_db_cache[filename] = fallback;
+  }
+  await writeJsonFile(filename, fallback);
+  return fallback;
 }
 
 async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
-  await ensureDbDir();
-  const filePath = path.join(DB_DIR, filename);
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");
+  if (globalCache.__owlio_db_cache) {
+    globalCache.__owlio_db_cache[filename] = data;
+  }
+
+  await ensureDirs();
+  const serialized = JSON.stringify(data, null, 2);
+
+  // Try writing to TMP_DIR (always writable on serverless)
+  try {
+    const tmpPath = path.join(TMP_DIR, filename);
+    await fs.writeFile(tmpPath, serialized, "utf-8");
+  } catch {}
+
+  // Try writing to DB_DIR (writable in local dev / non-serverless)
+  try {
+    const filePath = path.join(DB_DIR, filename);
+    await fs.writeFile(filePath, serialized, "utf-8");
+  } catch {}
 }
 
 // Default Seed Data
@@ -329,7 +379,7 @@ const DEFAULT_SUBSCRIBERS: Subscriber[] = [
 
 const DEFAULT_SETTINGS: AgencySettings = {
   agencyName: "Owlio Works",
-  tagline: "A Global SEO & Growth Engine for Startups",
+  tagline: "Integrated Digital Marketing, Branding & Growth Agency",
   notificationEmail: process.env.EMAIL_TO || "owlioworks@gmail.com",
   supportPhone: "+91 98765 43210",
   address: "Saket, New Delhi, India",
@@ -388,8 +438,8 @@ export async function updateLeadStatus(id: string, status: Lead["status"], notes
 
 export async function deleteLead(id: string): Promise<boolean> {
   const leads = await getLeads();
-  const filtered = leads.filter((l) => l.id !== id);
-  if (filtered.length === leads.length) return false;
+  const targetId = String(id).trim();
+  const filtered = leads.filter((l) => String(l.id).trim() !== targetId);
   await writeJsonFile("leads.json", filtered);
   return true;
 }
@@ -422,8 +472,12 @@ export async function saveBlog(blogData: Omit<BlogPost, "id"> & { id?: string })
 
 export async function deleteBlog(id: string): Promise<boolean> {
   const blogs = await getBlogs();
-  const filtered = blogs.filter((b) => b.id !== id);
-  if (filtered.length === blogs.length) return false;
+  const targetId = String(id).trim();
+  const filtered = blogs.filter(
+    (b) =>
+      String(b.id).trim() !== targetId &&
+      String(b.slug || "").trim() !== targetId
+  );
   await writeJsonFile("blogs.json", filtered);
   return true;
 }

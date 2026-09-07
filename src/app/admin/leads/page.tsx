@@ -155,18 +155,27 @@ export default function AdminLeadsPage() {
   const handleDeleteLead = async (leadId: string) => {
     if (!confirm("Are you sure you want to permanently delete this lead?")) return;
 
+    // Optimistic UI update
+    setLeads((prev) => prev.filter((l) => String(l.id).trim() !== String(leadId).trim()));
+    if (selectedLead && String(selectedLead.id).trim() === String(leadId).trim()) {
+      setSelectedLead(null);
+    }
+
     try {
-      const res = await fetch(`/api/admin/leads?id=${leadId}`, {
+      const res = await fetch(`/api/admin/leads?id=${encodeURIComponent(leadId)}`, {
         method: "DELETE",
       });
 
       if (res.ok) {
-        toast("Lead deleted", "info");
-        setLeads((prev) => prev.filter((l) => l.id !== leadId));
-        if (selectedLead?.id === leadId) setSelectedLead(null);
+        toast("Lead deleted permanently", "info");
+      } else {
+        const errJson = await res.json().catch(() => ({}));
+        toast(errJson.error || "Failed to delete lead", "error");
+        fetchLeads(true);
       }
     } catch {
       toast("Error deleting lead", "error");
+      fetchLeads(true);
     }
   };
 
@@ -452,12 +461,24 @@ export default function AdminLeadsPage() {
                             })}
                           </td>
                           <td className="py-3 px-4 text-right">
-                            <button
-                              onClick={() => setSelectedLead(lead)}
-                              className="px-2.5 py-1 text-xs font-medium text-zinc-700 hover:text-zinc-900 bg-zinc-100 hover:bg-zinc-200 rounded transition-colors cursor-pointer"
-                            >
-                              View Details
-                            </button>
+                            <div className="flex items-center justify-end gap-1.5">
+                              <button
+                                onClick={() => setSelectedLead(lead)}
+                                className="px-2.5 py-1 text-xs font-medium text-zinc-700 hover:text-zinc-900 bg-zinc-100 hover:bg-zinc-200 rounded transition-colors cursor-pointer"
+                              >
+                                View Details
+                              </button>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleDeleteLead(lead.id);
+                                }}
+                                className="p-1 rounded-md text-zinc-400 hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
+                                title="Delete Lead"
+                              >
+                                <Trash2 className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       );

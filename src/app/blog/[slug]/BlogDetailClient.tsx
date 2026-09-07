@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingWidget from "@/components/FloatingWidget";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
 import {
@@ -386,7 +385,6 @@ export default function BlogDetailClient({
         </main>
 
         <Footer />
-        <FloatingWidget />
       </div>
     </LanguageProvider>
   );

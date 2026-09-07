@@ -30,17 +30,20 @@ export async function DELETE(req: Request) {
 
   try {
     const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
+    let id = searchParams.get("id");
+    if (!id) {
+      try {
+        const body = await req.json();
+        id = body?.id;
+      } catch {}
+    }
+
     if (!id) {
       return NextResponse.json({ error: "Blog ID required" }, { status: 400 });
     }
 
-    const success = await deleteBlog(id);
-    if (!success) {
-      return NextResponse.json({ error: "Blog not found" }, { status: 404 });
-    }
-
-    return NextResponse.json({ success: true });
+    await deleteBlog(id);
+    return NextResponse.json({ success: true, message: "Blog deleted" });
   } catch (err: any) {
     return NextResponse.json({ error: err?.message || "Failed to delete blog" }, { status: 500 });
   }
