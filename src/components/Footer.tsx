@@ -221,12 +221,20 @@ export default function Footer() {
               Contact
             </h4>
             <div className="flex flex-col gap-3 text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-normal">
-              <a
-                href="tel:+917838240941"
-                className="hover:text-black transition-colors font-semibold text-zinc-900 flex items-center gap-1.5"
-              >
-                <span>+91 78382 40941</span>
-              </a>
+              <div className="flex flex-col gap-1.5">
+                <a
+                  href="tel:+917838240941"
+                  className="hover:text-black transition-colors font-semibold text-zinc-900 flex items-center gap-1.5"
+                >
+                  <span>+91 78382 40941</span>
+                </a>
+                <a
+                  href="tel:+917042460941"
+                  className="hover:text-black transition-colors font-semibold text-zinc-900 flex items-center gap-1.5"
+                >
+                  <span>+91 70424 60941</span>
+                </a>
+              </div>
               <a
                 href="mailto:owlioworks@gmail.com"
                 className="hover:text-black transition-colors font-semibold text-zinc-900"

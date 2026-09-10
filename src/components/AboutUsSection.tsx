@@ -1,20 +1,16 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function AboutUsSection() {
   const { t, language } = useLanguage();
   const [openAccordion, setOpenAccordion] = useState<"story" | "mission" | null>(null);
   const [hoveredImage, setHoveredImage] = useState<{ src: string; title: string } | null>(null);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const previewRef = useRef<HTMLDivElement>(null);
 
   const toggleAccordion = (key: "story" | "mission") => {
     setOpenAccordion((prev) => (prev === key ? null : key));
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setCursorPos({ x: e.clientX, y: e.clientY });
   };
 
   // Preload images for instant hover display
@@ -32,21 +28,39 @@ export default function AboutUsSection() {
     });
   }, []);
 
+  // Track mouse position directly on the preview DOM element without re-rendering the entire component
+  useEffect(() => {
+    if (!hoveredImage) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (previewRef.current) {
+        previewRef.current.style.left = `${e.clientX}px`;
+        previewRef.current.style.top = `${e.clientY}px`;
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [hoveredImage]);
+
   return (
     <div
       id="about"
       className="w-full flex flex-col items-center relative bg-transparent"
-      onMouseMove={handleMouseMove}
     >
       {/* Floating Hover Image Preview (Follows Cursor) */}
       <div
-        className={`fixed pointer-events-none z-50 transition-all duration-200 ease-out hidden md:block ${
-          hoveredImage ? "opacity-100 scale-100" : "opacity-0 scale-90"
+        ref={previewRef}
+        className={`fixed pointer-events-none z-50 transition-opacity duration-200 ease-out hidden md:block ${
+          hoveredImage ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
         }`}
         style={{
-          left: `${cursorPos.x}px`,
-          top: `${cursorPos.y}px`,
+          left: "-9999px",
+          top: "-9999px",
           transform: "translate(-50%, -125%)",
+          willChange: "transform, left, top",
         }}
       >
         {hoveredImage && (
@@ -189,7 +203,7 @@ export default function AboutUsSection() {
                   {t.about.storyTitle}
                 </span>
                 <span
-                  className={`text-xl sm:text-2xl font-light text-zinc-400 group-hover:text-white transition-transform duration-300 inline-block ${
+                  className={`text-xl sm:text-2xl font-light text-zinc-400 group-hover:text-white transition-transform duration-300 ease-out inline-block ${
                     openAccordion === "story" ? "rotate-45" : ""
                   }`}
                 >
@@ -197,58 +211,64 @@ export default function AboutUsSection() {
                 </span>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openAccordion === "story" ? "max-h-[800px] pb-6 opacity-100" : "max-h-0 pb-0 opacity-0"
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openAccordion === "story"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                 }`}
               >
-                {language === "en" ? (
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200 pt-1">
-                    Founded by seasoned engineers and growth strategists, Owlio Works was established to replace traditional agency bureaucracy with{" "}
-                    <span
-                      onMouseEnter={() =>
-                        setHoveredImage({
-                          src: "/studio-photo.png",
-                          title: "Relentless Execution",
-                        })
-                      }
-                      onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
-                    >
-                      relentless technical execution
-                    </span>
-                    . We build{" "}
-                    <span
-                      onMouseEnter={() =>
-                        setHoveredImage({
-                          src: "/gro.png",
-                          title: "Conversion Strategy",
-                        })
-                      }
-                      onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
-                    >
-                      high-converting digital experiences
-                    </span>
-                    , robust search strategies, and{" "}
-                    <span
-                      onMouseEnter={() =>
-                        setHoveredImage({
-                          src: "/hotel.png",
-                          title: "Scalable Platforms",
-                        })
-                      }
-                      onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
-                    >
-                      scalable enterprise platforms
-                    </span>{" "}
-                    that drive sustainable revenue and outpace market competition.
-                  </p>
-                ) : (
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200 pt-1">
-                    {t.about.storyDesc}
-                  </p>
-                )}
+                <div className="overflow-hidden">
+                  <div className="pb-6 pt-1">
+                    {language === "en" ? (
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200">
+                        Founded by seasoned engineers and growth strategists, Owlio Works was established to replace traditional agency bureaucracy with{" "}
+                        <span
+                          onMouseEnter={() =>
+                            setHoveredImage({
+                              src: "/studio-photo.png",
+                              title: "Relentless Execution",
+                            })
+                          }
+                          onMouseLeave={() => setHoveredImage(null)}
+                          className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                        >
+                          relentless technical execution
+                        </span>
+                        . We build{" "}
+                        <span
+                          onMouseEnter={() =>
+                            setHoveredImage({
+                              src: "/gro.png",
+                              title: "Conversion Strategy",
+                            })
+                          }
+                          onMouseLeave={() => setHoveredImage(null)}
+                          className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                        >
+                          high-converting digital experiences
+                        </span>
+                        , robust search strategies, and{" "}
+                        <span
+                          onMouseEnter={() =>
+                            setHoveredImage({
+                              src: "/hotel.png",
+                              title: "Scalable Platforms",
+                            })
+                          }
+                          onMouseLeave={() => setHoveredImage(null)}
+                          className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                        >
+                          scalable enterprise platforms
+                        </span>{" "}
+                        that drive sustainable revenue and outpace market competition.
+                      </p>
+                    ) : (
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200">
+                        {t.about.storyDesc}
+                      </p>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -264,7 +284,7 @@ export default function AboutUsSection() {
                   {t.about.missionTitle}
                 </span>
                 <span
-                  className={`text-xl sm:text-2xl font-light text-zinc-400 group-hover:text-white transition-transform duration-300 inline-block ${
+                  className={`text-xl sm:text-2xl font-light text-zinc-400 group-hover:text-white transition-transform duration-300 ease-out inline-block ${
                     openAccordion === "mission" ? "rotate-45" : ""
                   }`}
                 >
@@ -272,58 +292,64 @@ export default function AboutUsSection() {
                 </span>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openAccordion === "mission" ? "max-h-[800px] pb-6 opacity-100" : "max-h-0 pb-0 opacity-0"
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openAccordion === "mission"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                 }`}
               >
-                {language === "en" ? (
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200 pt-1">
-                    Our mission is to empower visionary founders and market leaders with{" "}
-                    <span
-                      onMouseEnter={() =>
-                        setHoveredImage({
-                          src: "/hotel.png",
-                          title: "Resilient Infrastructure",
-                        })
-                      }
-                      onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
-                    >
-                      resilient digital infrastructure
-                    </span>
-                    , uncompromising performance, and{" "}
-                    <span
-                      onMouseEnter={() =>
-                        setHoveredImage({
-                          src: "/gro.png",
-                          title: "Search Dominance",
-                        })
-                      }
-                      onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
-                    >
-                      algorithmic search dominance
-                    </span>
-                    . We engineer{" "}
-                    <span
-                      onMouseEnter={() =>
-                        setHoveredImage({
-                          src: "/team-photo.png",
-                          title: "Future-Proof Assets",
-                        })
-                      }
-                      onMouseLeave={() => setHoveredImage(null)}
-                      className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
-                    >
-                      future-proof technology assets
-                    </span>{" "}
-                    and seamless user journeys that deliver measurable commercial impact for the next decade.
-                  </p>
-                ) : (
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200 pt-1">
-                    {t.about.missionDesc}
-                  </p>
-                )}
+                <div className="overflow-hidden">
+                  <div className="pb-6 pt-1">
+                    {language === "en" ? (
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200">
+                        Our mission is to empower visionary founders and market leaders with{" "}
+                        <span
+                          onMouseEnter={() =>
+                            setHoveredImage({
+                              src: "/hotel.png",
+                              title: "Resilient Infrastructure",
+                            })
+                          }
+                          onMouseLeave={() => setHoveredImage(null)}
+                          className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                        >
+                          resilient digital infrastructure
+                        </span>
+                        , uncompromising performance, and{" "}
+                        <span
+                          onMouseEnter={() =>
+                            setHoveredImage({
+                              src: "/gro.png",
+                              title: "Search Dominance",
+                            })
+                          }
+                          onMouseLeave={() => setHoveredImage(null)}
+                          className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                        >
+                          algorithmic search dominance
+                        </span>
+                        . We engineer{" "}
+                        <span
+                          onMouseEnter={() =>
+                            setHoveredImage({
+                              src: "/team-photo.png",
+                              title: "Future-Proof Assets",
+                            })
+                          }
+                          onMouseLeave={() => setHoveredImage(null)}
+                          className="text-white font-semibold hover:bg-[#fbea3d] hover:text-black px-1 rounded-sm transition-all duration-200 cursor-pointer"
+                        >
+                          future-proof technology assets
+                        </span>{" "}
+                        and seamless user journeys that deliver measurable commercial impact for the next decade.
+                      </p>
+                    ) : (
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-[1.5] tracking-tight text-zinc-200">
+                        {t.about.missionDesc}
+                      </p>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
 

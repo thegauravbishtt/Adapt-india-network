@@ -480,15 +480,25 @@ export default function ContactPage() {
                   {/* Contact Methods List */}
                   <div className="flex flex-col gap-4 text-xs sm:text-[13px]">
                     {/* Phone */}
-                    <a
-                      href="tel:+917838240941"
-                      className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors group cursor-pointer"
-                    >
-                      <Phone className="w-4 h-4 text-[#fbea3d] shrink-0" />
-                      <span className="font-semibold text-sm text-white group-hover:text-[#fbea3d] transition-colors">
-                        +91 78382 40941
-                      </span>
-                    </a>
+                    <div className="flex flex-col gap-2">
+                      <a
+                        href="tel:+917838240941"
+                        className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors group cursor-pointer"
+                      >
+                        <Phone className="w-4 h-4 text-[#fbea3d] shrink-0" />
+                        <span className="font-semibold text-sm text-white group-hover:text-[#fbea3d] transition-colors">
+                          +91 78382 40941
+                        </span>
+                      </a>
+                      <a
+                        href="tel:+917042460941"
+                        className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors group cursor-pointer pl-7"
+                      >
+                        <span className="font-semibold text-sm text-white group-hover:text-[#fbea3d] transition-colors">
+                          +91 70424 60941
+                        </span>
+                      </a>
+                    </div>
 
                     {/* Email */}
                     <a
@@ -503,7 +513,7 @@ export default function ContactPage() {
 
                     {/* WhatsApp */}
                     <a
-                      href="https://wa.me/917838240941?text=Hi%20Owlio%20Works%20team,%20I'd%20like%20to%20discuss%20a%20project"
+                      href="https://wa.me/917042460941?text=Hi%20Owlio%20Works%20team,%20I'd%20like%20to%20discuss%20a%20project"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-zinc-300 hover:text-[#25D366] transition-colors group cursor-pointer"
@@ -536,6 +546,10 @@ export default function ContactPage() {
                           +91 78382 40941
                         </a>{" "}
                         ·{" "}
+                        <a href="tel:+917042460941" className="underline decoration-[#fbea3d] decoration-2 underline-offset-4 hover:text-[#fbea3d] font-semibold text-white">
+                          +91 70424 60941
+                        </a>{" "}
+                        ·{" "}
                         <a href="mailto:owlioworks@gmail.com" className="hover:underline">
                           owlioworks@gmail.com
                         </a>
@@ -559,7 +573,11 @@ export default function ContactPage() {
                       </span>
                       <p className="text-zinc-300">
                         <a href="tel:+917838240941" className="underline decoration-[#fbea3d] decoration-2 underline-offset-4 hover:text-[#fbea3d] font-semibold text-white">
-                          +91-7838240941
+                          +91 78382 40941
+                        </a>{" "}
+                        ·{" "}
+                        <a href="tel:+917042460941" className="underline decoration-[#fbea3d] decoration-2 underline-offset-4 hover:text-[#fbea3d] font-semibold text-white">
+                          +91 70424 60941
                         </a>{" "}
                         ·{" "}
                         <a href="mailto:owlioworks@gmail.com" className="hover:underline">
