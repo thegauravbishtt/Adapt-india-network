@@ -1,7 +1,7 @@
 export interface ServiceDetail {
   slug: string;
   name: string;
-  category: "Development" | "Design" | "Marketing" | "Security";
+  category: "Development" | "Design" | "Marketing" | "Channels & Build" | "AI & Automation" | "Security" | string;
   tagline: string;
   heroHeadline: string;
   heroHighlight: string;
@@ -1468,8 +1468,441 @@ export const allServices: ServiceDetail[] = [
       },
     ],
   },
+  {
+    slug: "email-marketing",
+    name: "Email Marketing",
+    category: "Channels & Build",
+    tagline: "Automated Flows, High Deliverability & Retention",
+    heroHeadline: "High-Converting Email Marketing Campaigns &",
+    heroHighlight: "Lifecycle Automation.",
+    heroSubtitle:
+      "We design, code, and execute revenue-generating email marketing campaigns, automated customer lifecycle flows, and hyper-segmented drip sequences with 99.4% inbox deliverability.",
+    image: "/services/email_marketing.jpg",
+    galleryImages: ["/creative5.png", "/creative6.png", "/image1.png"],
+    stats: [
+      { value: "42x", label: "Average Email ROI" },
+      { value: "99.4%", label: "Inbox Deliverability Rate" },
+      { value: "+38%", label: "Repeat Purchase Rate" },
+      { value: "< 0.05%", label: "Spam Complaint Rate" },
+    ],
+    overview:
+      "Email is the highest-ROI direct channel for modern brands. We build bespoke email ecosystems—from bespoke responsive HTML/MJML template design and automated welcome/cart abandonment flows to advanced RFM segmentation and deliverability warming.",
+    theChallenge:
+      "Most brands blast generic, non-segmented emails that land in spam or promotions tabs, alienate subscribers, suffer from high unsubscribe rates, and leave recurring customer revenue on the table.",
+    ourSolution:
+      "We architect behavioral automated email funnels triggered by real-time customer actions, optimize domain reputations (DKIM, SPF, DMARC, BIMI), and craft persuasive, high-converting copy paired with pixel-perfect responsive designs.",
+    capabilities: [
+      {
+        title: "Automated Lifecycle Flows & Drip Sequences",
+        description: "Triggered sequences based on user activity, purchase history, browsing habits, and churn risk.",
+        deliverables: ["Welcome Series & Onboarding", "Abandoned Cart & Browse Recovery", "Post-Purchase & VIP Nurture", "Winback & Sunset Flows"],
+      },
+      {
+        title: "Responsive HTML & MJML Email Design",
+        description: "Bespoke, brand-aligned email templates hand-coded to render flawlessly across all devices and clients.",
+        deliverables: ["Dark Mode Compatibility", "Cross-Client Litmus Testing", "Interactive AMP Elements", "Modular Design Systems"],
+      },
+      {
+        title: "Audience Segmentation & RFM Modeling",
+        description: "Hyper-targeted customer clustering based on Recency, Frequency, and Monetary transaction data.",
+        deliverables: ["Dynamic Merge Tags", "Predictive Lifetime Value Clusters", "Zero-Party Data Surveys", "Suppression List Hygiene"],
+      },
+      {
+        title: "Deliverability & Domain Infrastructure",
+        description: "Dedicated IP warming, SPF, DKIM, DMARC, and BIMI authentication to maximize primary inbox placement.",
+        deliverables: ["DMARC / BIMI Setup", "Reputation Monitoring", "Spam Trap Prevention", "Bounce Rate Optimization"],
+      },
+    ],
+    techStack: [
+      "Klaviyo",
+      "Mailchimp",
+      "SendGrid",
+      "Brevo",
+      "ActiveCampaign",
+      "Customer.io",
+      "HubSpot",
+      "MJML",
+      "Litmus",
+      "Postmark",
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: "Domain Audit & List Hygiene",
+        desc: "We analyze deliverability, authenticate DNS records (SPF, DKIM, DMARC), and scrub inactive contacts.",
+      },
+      {
+        step: "02",
+        title: "Lifecycle Flow Architecture",
+        desc: "Mapping customer journey touchpoints and building automated multi-branch drip triggers.",
+      },
+      {
+        step: "03",
+        title: "Template Design & Copywriting",
+        desc: "Creating mobile-first responsive templates with engaging storytelling and clear conversion CTAs.",
+      },
+      {
+        step: "04",
+        title: "A/B Testing & Revenue Scaling",
+        desc: "Continuously optimizing subject lines, send-times, discount thresholds, and segment behaviors.",
+      },
+    ],
+    caseStudies: [
+      {
+        title: "D2C Lifestyle Brand Flow Overhaul",
+        client: "Kivanza Living",
+        impact: "Generated 34% of total store revenue through automated email flows within 90 days.",
+        image: "/creative5.png",
+      },
+      {
+        title: "B2B SaaS Lead Nurture Funnel",
+        client: "CloudPulse Enterprise",
+        impact: "+185% increase in trial-to-paid conversion rate with behavioral email onboarding.",
+        image: "/creative6.png",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which email marketing platforms (ESPs) do you support?",
+        answer:
+          "We work with Klaviyo, Mailchimp, SendGrid, ActiveCampaign, HubSpot, Customer.io, Brevo, and custom SMTP/Postmark infrastructures.",
+      },
+      {
+        question: "How do you ensure emails land in the primary inbox instead of spam or promotions?",
+        answer:
+          "We enforce strict DNS authentication (DKIM, SPF, DMARC, BIMI), clean list hygiene, dedicated IP warmup strategies, and engagement-based segmentation to maintain pristine sender reputation.",
+      },
+      {
+        question: "How long does it take to see revenue impact from automated flows?",
+        answer:
+          "Core automated flows (like Cart Recovery and Welcome series) start generating measurable revenue within 48 to 72 hours of going live.",
+      },
+      {
+        question: "Do you provide custom design and copywriting as well as technical setup?",
+        answer:
+          "Yes. Our full-service service includes bespoke copy, custom HTML/MJML design, graphic assets, technical DNS authentication, and automated journey logic.",
+      },
+    ],
+    structuredSection: {
+      title: "ENGINEERED FOR MAXIMUM INBOX DELIVERABILITY & REVENUE",
+      description:
+        "Every campaign is optimized for high open rates, engagement signals, and direct conversion without compromising sender domain reputation.",
+      checklist: [
+        "SPF, DKIM & DMARC Authentication",
+        "Mobile & Dark Mode Responsive Design",
+        "Behavioral Cart & Checkout Recovery",
+        "Predictive RFM Segmentation",
+        "A/B Subject Line & CTA Testing",
+        "Cross-Client Litmus Validation",
+        "List Scrubbing & Spam Trap Avoidance",
+        "Revenue Attribution & LTV Analytics",
+      ],
+      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR EMAIL?",
+      whyChooseDesc:
+        "We don't just send newsletters. We engineer automated revenue engines that generate predictable recurring sales while you sleep.",
+      whyChooseBullets: [
+        "Zero Spam Trap Deliverability Guarantee",
+        "Brand-tailored bespoke HTML/MJML code",
+        "Automated real-time customer data sync",
+        "Transparent revenue & ROI reporting",
+        "Dedicated retention strategists",
+        "End-to-end copy, design, and logic",
+      ],
+    },
+  },
+  {
+    slug: "whatsapp-marketing",
+    name: "WhatsApp Marketing",
+    category: "Channels & Build",
+    tagline: "Direct Conversational Commerce & 98% Open Rates",
+    heroHeadline: "Direct WhatsApp Conversational Marketing &",
+    heroHighlight: "Broadcast Automation.",
+    heroSubtitle:
+      "Reach your customers directly on WhatsApp with 98% open rates and instant engagement. We build automated chatbots, verified Meta Business API broadcasting, Click-to-WhatsApp ad funnels, and CRM-synced recovery workflows.",
+    image: "/services/whatsapp_marketing.jpg",
+    galleryImages: ["/creative1.png", "/creative7.png", "/gro.png"],
+    stats: [
+      { value: "98%", label: "Average Message Open Rate" },
+      { value: "45-60%", label: "Click-Through / Response Rate" },
+      { value: "3.8x", label: "Conversion vs Traditional SMS" },
+      { value: "< 2s", label: "Automated Bot Response Time" },
+    ],
+    overview:
+      "WhatsApp is where your customers spend their day. Owlio Works harnesses the official Meta WhatsApp Cloud API and enterprise broadcast platforms to build automated support, broadcast marketing, catalog shopping, and multi-agent customer support consoles.",
+    theChallenge:
+      "Manual WhatsApp chats don't scale, account bans happen with unverified numbers, and disconnected messaging tools fail to synchronize customer purchase records with your central CRM.",
+    ourSolution:
+      "We implement verified Meta WhatsApp Green Tick Business accounts with automated 24/7 AI chatbots, interactive carousel messages, Click-to-WhatsApp ad attribution, and seamless Shopify/CRM webhooks.",
+    capabilities: [
+      {
+        title: "Official WhatsApp Business API & Green Tick",
+        description: "Setting up verified business profiles with green badge credibility and multi-agent team access.",
+        deliverables: ["Meta Business Verification", "Green Tick Application", "Multi-Agent Inbox Setup", "Tier-3 Broadcast Quota"],
+      },
+      {
+        title: "Automated AI Chatbots & Catalog Commerce",
+        description: "24/7 automated conversational bots that qualify leads, display product catalogs, and close orders.",
+        deliverables: ["Interactive Menu Buttons", "Product Catalog Integration", "Instant FAQs & Lead Qualification", "Human Agent Routing"],
+      },
+      {
+        title: "Click-to-WhatsApp (CTWA) Ad Funnels",
+        description: "Direct high-intent traffic from Meta & Google Ads straight into automated WhatsApp conversation flows.",
+        deliverables: ["Ad Tracking & UTM Parameters", "Instant Automated Welcome Bot", "Lead Capture Form Sync", "Conversion Retargeting"],
+      },
+      {
+        title: "E-Commerce Recovery & Transactional Alerts",
+        description: "Automated order confirmations, live shipping tracking, and high-converting abandoned checkout alerts.",
+        deliverables: ["Abandoned Cart Notifications", "COD Confirmation & OTP Verification", "Real-Time Tracking Alerts", "Review & Feedback Solicitations"],
+      },
+    ],
+    techStack: [
+      "Meta WhatsApp Cloud API",
+      "Wati",
+      "AiSensy",
+      "Interakt",
+      "Twilio",
+      "Gupshup",
+      "Shopify Webhooks",
+      "Node.js",
+      "Zendesk",
+      "HubSpot",
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: "API Onboarding & Meta Verification",
+        desc: "Setting up your official Meta WhatsApp Business API, phone number migration, and template message approvals.",
+      },
+      {
+        step: "02",
+        title: "Bot Conversation Flow Design",
+        desc: "Designing branching logic trees, rich media carousels, and quick-reply buttons tailored to user intent.",
+      },
+      {
+        step: "03",
+        title: "CRM & E-Commerce Webhook Sync",
+        desc: "Connecting real-time events from Shopify, WooCommerce, or custom databases for instant order alerts.",
+      },
+      {
+        step: "04",
+        title: "Targeted Broadcast & Optimization",
+        desc: "Launching segmented promotional broadcasts with deep engagement analytics and continuous template testing.",
+      },
+    ],
+    caseStudies: [
+      {
+        title: "Automated WhatsApp E-Commerce Checkout",
+        client: "Urban Heritage D2C",
+        impact: "Recovered $42,000 in abandoned carts within 45 days with a 28% recovery rate.",
+        image: "/creative7.png",
+      },
+      {
+        title: "Click-to-WhatsApp Real Estate Lead Engine",
+        client: "Prime PropTech",
+        impact: "Cut cost-per-qualified-lead by 54% with instant automated WhatsApp site visit bookings.",
+        image: "/creative1.png",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the difference between WhatsApp Business App and WhatsApp Business API?",
+        answer:
+          "The Business App is limited to 1 phone, manual messaging, and has broadcast limits. The official WhatsApp Business API allows multi-agent logins, 100,000+ automated daily broadcasts, interactive buttons/carousels, chatbot automation, and full CRM integration.",
+      },
+      {
+        question: "Will our number get banned for sending bulk messages?",
+        answer:
+          "No. We only use official Meta WhatsApp Cloud API routes with pre-approved message templates, opt-in compliance, and tier-rate management to ensure 100% account safety.",
+      },
+      {
+        question: "Can we integrate WhatsApp with our existing CRM or Shopify store?",
+        answer:
+          "Yes. We build webhook pipelines to sync WhatsApp chats, customer details, order statuses, and abandoned checkouts directly with Shopify, WooCommerce, HubSpot, Salesforce, and custom databases.",
+      },
+      {
+        question: "How do Click-to-WhatsApp (CTWA) ads work?",
+        answer:
+          "When users click your ad on Facebook or Instagram, it opens WhatsApp with a pre-filled message, triggering our automated AI chatbot to instantly qualify the lead and capture contact details.",
+      },
+    ],
+    structuredSection: {
+      title: "CONVERSATIONAL COMMERCE BUILT FOR SCALE",
+      description:
+        "Direct customer interaction channels with high-converting rich media templates, instant automated responses, and complete compliance with Meta policies.",
+      checklist: [
+        "Official Meta API & Cloud Hosting",
+        "Interactive Buttons & Product Lists",
+        "Shopify & WooCommerce Webhook Sync",
+        "Click-to-WhatsApp Ad Attribution",
+        "Automated COD & Order Confirmations",
+        "Multi-Agent Support Dashboard",
+        "Opt-In & GDPR Compliant Messaging",
+        "Real-Time Open & Read Analytics",
+      ],
+      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR WHATSAPP?",
+      whyChooseDesc:
+        "We turn WhatsApp into your most lucrative direct-response revenue stream through smart bot logic and verified enterprise infrastructure.",
+      whyChooseBullets: [
+        "Official Meta Business Partner setup",
+        "Zero risk of phone number blocking",
+        "Instant 24/7 lead qualification bots",
+        "Bespoke webhook and CRM integrations",
+        "High-converting copy & media templates",
+        "Dedicated conversational strategist",
+      ],
+    },
+  },
+  {
+    slug: "ai-automation",
+    name: "AI & Automation",
+    category: "Channels & Build",
+    tagline: "Custom AI Agents, LLM Pipelines & Workflow Automation",
+    heroHeadline: "Custom AI Agents, LLM Workflows &",
+    heroHighlight: "Enterprise Automation.",
+    heroSubtitle:
+      "We engineer autonomous AI agents, fine-tuned LLM workflows, two-way CRM webhooks, and intelligent multi-channel automations that eliminate manual operational bottlenecks and scale business capacity 10x.",
+    image: "/services/marketing_automation.jpg",
+    galleryImages: ["/creative2.png", "/image4.png", "/studio-photo.png"],
+    stats: [
+      { value: "10x", label: "Operational Velocity" },
+      { value: "-85%", label: "Manual Data Entry Hours" },
+      { value: "+48%", label: "Lead-to-Close Conversion Lift" },
+      { value: "100%", label: "Real-Time Pipeline Sync" },
+    ],
+    overview:
+      "Scaling modern enterprises requires autonomous precision. Owlio Works connects your entire marketing, sales, and operational tech stack into a unified, AI-driven ecosystem where leads are scored instantly, customer inquiries are answered by custom AI agents, and workflows run with zero manual drag.",
+    theChallenge:
+      "Teams waste hundreds of hours manually moving data, qualifying leads, fielding repetitive questions, and managing fragmented tools that don't communicate with each other.",
+    ourSolution:
+      "We engineer custom generative AI agents, fine-tuned LLM tools, and resilient automated workflow architectures using Make.com, Zapier, n8n, and custom API webhooks to streamline complex business logic end-to-end.",
+    capabilities: [
+      {
+        title: "Autonomous AI Agents & LLM Pipelines",
+        description: "Custom AI agents fine-tuned on your internal knowledge base to automate customer support, research, and data triage.",
+        deliverables: ["Custom AI Agent Workflows", "RAG Knowledge Base Integration", "Function Calling & Tool Use", "Automated QA & Guardrails"],
+      },
+      {
+        title: "Omnichannel Lead Nurturing & Scoring",
+        description: "Dynamic AI lead scoring models that trigger tailored emails, SMS, and WhatsApp alerts based on user readiness.",
+        deliverables: ["Behavioral AI Lead Scoring", "Multi-Channel Drip Sequences", "Sales Rep Auto-Assignment", "Instant Slack / Teams Alerts"],
+      },
+      {
+        title: "CRM & Two-Way Database Webhooks",
+        description: "Bi-directional synchronization between CRMs (HubSpot, Salesforce), advertising accounts, and databases.",
+        deliverables: ["Custom Webhook Infrastructure", "Two-Way Data Synchronization", "De-Duplication & Data Normalization", "Automated Deal Stage Moves"],
+      },
+      {
+        title: "Server-Side Conversions & Audience Sync",
+        description: "Server-side Meta and Google Ads audience updates and offline conversion event streaming for lower CPAs.",
+        deliverables: ["Server-Side CAPI Setup", "Dynamic LTV Customer Lists", "Automated Churn Suppression", "Lookalike Seed Generation"],
+      },
+    ],
+    techStack: [
+      "OpenAI",
+      "Anthropic Claude",
+      "LangChain",
+      "Make.com",
+      "Zapier",
+      "n8n",
+      "HubSpot",
+      "Salesforce",
+      "Segment",
+      "Python",
+      "Node.js",
+      "Webhooks",
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: "AI & Workflow Architecture Audit",
+        desc: "Auditing all active tools, data schemas, API limits, and identifying high-friction manual bottlenecks.",
+      },
+      {
+        step: "02",
+        title: "Agent Blueprint & Logic Design",
+        desc: "Mapping visual state diagrams, prompt engineering guidelines, and event trigger definitions before building.",
+      },
+      {
+        step: "03",
+        title: "Integration Build & Stress Testing",
+        desc: "Building webhook pipelines with Make/Zapier/custom code and validating payload delivery under high traffic.",
+      },
+      {
+        step: "04",
+        title: "Continuous Monitoring & LLM Guardrails",
+        desc: "Configuring automated failure alerts, telemetry logging, and ongoing prompt/trigger refinement.",
+      },
+    ],
+    caseStudies: [
+      {
+        title: "Automated B2B Enterprise Lead Routing",
+        client: "Vanguard Logistics Tech",
+        impact: "Reduced lead response time from 4.5 hours to 12 seconds, boosting closed deals by 62%.",
+        image: "/creative2.png",
+      },
+      {
+        title: "Multi-Platform E-Commerce Sync",
+        client: "OmniRetail Group",
+        impact: "Automated 120,000 monthly transactions across CRM, ERP, and WhatsApp with zero data loss.",
+        image: "/creative4.png",
+      },
+    ],
+    faqs: [
+      {
+        question: "What tools and AI frameworks do you build with?",
+        answer:
+          "We build with OpenAI, Claude, LangChain, Make.com, Zapier, n8n, HubSpot, Salesforce, Segment, and bespoke Node.js / Python webhook microservices.",
+      },
+      {
+        question: "How do automation workflows handle API outages or errors?",
+        answer:
+          "We build enterprise-grade error handling with automated retries, payload queues, dead-letter storage, and instant Slack/email developer alert triggers.",
+      },
+      {
+        question: "Can AI agents hallucinate or give wrong answers to customers?",
+        answer:
+          "We enforce strict Retrieval-Augmented Generation (RAG) guardrails, temperature controls, and system rules that confine AI answers strictly to your verified knowledge base with automated human agent fallbacks.",
+      },
+      {
+        question: "How does server-side Conversions API (CAPI) improve ad performance?",
+        answer:
+          "CAPI bypasses browser ad blockers and iOS tracking restrictions by streaming verified purchase and lead events directly from your server to Meta and Google, restoring ad attribution and lowering acquisition costs.",
+      },
+    ],
+    structuredSection: {
+      title: "INTELLIGENT SYSTEMS BUILT FOR ZERO MANUAL OVERHEAD",
+      description:
+        "Eliminate manual operational drag with autonomous AI agents and automated pipelines that process leads, trigger campaigns, and synchronize databases in real-time.",
+      checklist: [
+        "Autonomous AI Agent Workflows",
+        "Two-Way CRM & Marketing Sync",
+        "Real-Time Webhook Architecture",
+        "Automated AI Lead Scoring",
+        "Server-Side Meta & Google CAPI",
+        "Custom Data Formatting & Cleanup",
+        "Fail-Safe Retry & Error Logging",
+        "Unified ROI & Pipeline Dashboards",
+      ],
+      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR AI & AUTOMATION?",
+      whyChooseDesc:
+        "We don't just connect simple apps. We architect scalable, fault-tolerant business automation engines and autonomous AI agents that power sustainable growth.",
+      whyChooseBullets: [
+        "End-to-end AI & integration architecture",
+        "Enterprise error-handling & retry queues",
+        "Strict RAG guardrails & zero hallucination rules",
+        "Real-time Slack & CRM notifications",
+        "Strict data privacy & SOC2 compliance",
+        "Dedicated AI & automation engineers",
+      ],
+    },
+  },
 ];
 
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
+  if (slug === "ai-automation" || slug === "ai" || slug === "marketing-automation" || slug === "automation") {
+    return allServices.find((s) => s.slug === "ai-automation");
+  }
+  if (slug === "email") return allServices.find((s) => s.slug === "email-marketing");
+  if (slug === "whatsapp") return allServices.find((s) => s.slug === "whatsapp-marketing");
   return allServices.find((s) => s.slug === slug);
 }

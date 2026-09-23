@@ -7,7 +7,7 @@ import { LanguageProvider } from "../../../context/LanguageContext";
 import Link from "next/link";
 
 export default function WhatWeDoPage() {
-  const [activeCategory, setActiveCategory] = useState<"all" | "engineering" | "design" | "marketing" | "security">("all");
+  const [activeCategory, setActiveCategory] = useState<"all" | "engineering" | "design" | "marketing" | "ai-automation">("all");
 
   const capabilities = [
     {
@@ -99,12 +99,28 @@ export default function WhatWeDoPage() {
       tags: ["Google Maps", "Citations", "Review SMS", "Local 3-Pack"],
     },
     {
-      category: "security",
-      categoryLabel: "Security",
-      title: "Cybersecurity & Systems Hardening",
-      desc: "Zero-Trust IAM, vulnerability assessments, automated penetration audits, and SOC2 compliance governance.",
-      href: "/services/cybersecurity",
-      tags: ["Zero-Trust", "Pen Testing", "SOC2 Compliance", "Cloud Guard"],
+      category: "channels-build",
+      categoryLabel: "Channels & Build",
+      title: "Email Marketing & Lifecycle Funnels",
+      desc: "Behavioral drip automations, responsive HTML templates, and 99.4% inbox deliverability with DKIM/DMARC.",
+      href: "/services/email-marketing",
+      tags: ["Klaviyo", "Lifecycle Drips", "RFM Clusters", "DMARC/BIMI"],
+    },
+    {
+      category: "channels-build",
+      categoryLabel: "Channels & Build",
+      title: "WhatsApp Marketing & Commerce Bots",
+      desc: "Direct conversational commerce with 98% open rates, verified Green Tick API, and Click-to-WhatsApp funnels.",
+      href: "/services/whatsapp-marketing",
+      tags: ["Meta Cloud API", "AI Chatbots", "CTWA Ads", "Cart Recovery"],
+    },
+    {
+      category: "channels-build",
+      categoryLabel: "Channels & Build",
+      title: "AI & Automation & Webhook Pipelines",
+      desc: "Autonomous generative AI agents, LLM tool workflows, two-way CRM sync, and server-side CAPI infrastructure.",
+      href: "/services/ai-automation",
+      tags: ["OpenAI", "Claude", "Make.com", "Zapier", "Meta CAPI"],
     },
   ];
 
@@ -214,7 +230,7 @@ export default function WhatWeDoPage() {
                     { id: "engineering", label: "Engineering" },
                     { id: "design", label: "Design" },
                     { id: "marketing", label: "Marketing" },
-                    { id: "security", label: "Security" },
+                    { id: "channels-build", label: "Channels & Build" },
                   ].map((tab) => (
                     <button
                       type="button"

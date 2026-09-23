@@ -38,6 +38,247 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
   const [seoParameter, setSeoParameter] = useState<"headings" | "metatags" | "linking">("headings");
   const [seoIsOptimized, setSeoIsOptimized] = useState<boolean>(true);
   const [activePillIndex, setActivePillIndex] = useState<number>(0);
+  const [activeEmailTab, setActiveEmailTab] = useState<"welcome" | "abandoned" | "rfm" | "deliverability">("welcome");
+  const [activeWhatsappTab, setActiveWhatsappTab] = useState<"bot" | "broadcast" | "ctwa" | "cart">("bot");
+  const [activeAutomationTab, setActiveAutomationTab] = useState<"lead" | "crm" | "capi" | "nurture">("lead");
+  const [automationWorkflowMode, setAutomationWorkflowMode] = useState<"lead" | "ecommerce" | "support">("lead");
+  const [automationTriggering, setAutomationTriggering] = useState<boolean>(false);
+  const [automationStepCount, setAutomationStepCount] = useState<number>(4);
+
+  const handleRunAutomationSimulation = (mode?: "lead" | "ecommerce" | "support") => {
+    const targetMode = mode || automationWorkflowMode;
+    if (mode) setAutomationWorkflowMode(mode);
+    setAutomationTriggering(true);
+    setAutomationStepCount(1);
+    setTimeout(() => setAutomationStepCount(2), 250);
+    setTimeout(() => setAutomationStepCount(3), 500);
+    setTimeout(() => {
+      setAutomationStepCount(4);
+      setAutomationTriggering(false);
+    }, 750);
+  };
+
+  // PHONE WORKABLE EMAIL CLIENT STATE & INITIAL ITEMS
+  interface PhoneEmailItem {
+    id: string;
+    sender: string;
+    senderEmail: string;
+    avatar: string;
+    avatarBg: string;
+    subject: string;
+    preview: string;
+    time: string;
+    unread: boolean;
+    starred: boolean;
+    body: string;
+  }
+
+  const initialPhoneEmails: PhoneEmailItem[] = [
+    {
+      id: "1",
+      sender: "Owlio Works",
+      senderEmail: "hello@owlioworks.com",
+      avatar: "OW",
+      avatarBg: "bg-black text-[#fbea3d]",
+      subject: "Q4 Growth Strategy & Campaign Deliverables",
+      preview: "Hi Sarah, here is the summary of our campaign performance for this month and roadmap...",
+      time: "10:30 AM",
+      unread: true,
+      starred: true,
+      body: `Hi Sarah,\n\nHere is the summary of our campaign performance for this month and the roadmap for Q4.\n\nKey highlights from this cycle:\n• 48.2% Verified Open Rate (+14% vs industry average)\n• 8.6% Direct Click-Through Engagement\n• Clean 99.4% Primary Inbox Placement (Zero Spam Flags)\n\nWe have also finalized your upcoming mobile sequences. Everything is tested and verified across Apple Mail, iOS Mail, and Gmail.\n\nLet me know if you'd like to adjust anything before we schedule the rollout.\n\nBest regards,\nOwlio Works Team\nhello@owlioworks.com · owlioworks.com`,
+    },
+    {
+      id: "2",
+      sender: "Stripe Billing",
+      senderEmail: "notifications@stripe.com",
+      avatar: "S",
+      avatarBg: "bg-[#635bff] text-white",
+      subject: "Payout of $14,850.00 is on its way",
+      preview: "Your scheduled daily payout has been initiated to your business checking account ending in 8842...",
+      time: "Yesterday",
+      unread: true,
+      starred: false,
+      body: `Hi Sarah,\n\nYour payout of $14,850.00 USD has been initiated to your business account ending in •••• 8842.\n\nEstimated arrival date: Tomorrow by 5:00 PM.\n\nSummary:\n• Gross sales volume: $15,320.00\n• Payment processing: -$470.00\n• Net deposit: $14,850.00\n\nThanks,\nThe Stripe Team`,
+    },
+    {
+      id: "3",
+      sender: "Alex Vance · Tech Lead",
+      senderEmail: "alex@owlioworks.com",
+      avatar: "AV",
+      avatarBg: "bg-emerald-700 text-white",
+      subject: "DKIM & SPF Authentication Verified ✓",
+      preview: "All custom domain DNS routing records are validated with 100% deliverability score across...",
+      time: "Tuesday",
+      unread: false,
+      starred: false,
+      body: `Hi Sarah,\n\nQuick technical update: your custom sending domain records (SPF, DKIM 2048-bit, and strict DMARC policy) have fully propagated.\n\nYour domain reputation score is now 100/100 across Google Postmaster and Microsoft SNDS.\n\nReady for high-volume broadcast rollout.\n\nCheers,\nAlex`,
+    },
+  ];
+
+  const [phoneEmailList, setPhoneEmailList] = useState<PhoneEmailItem[]>(initialPhoneEmails);
+  const [phoneSelectedEmailId, setPhoneSelectedEmailId] = useState<string>("1");
+  const [phoneEmailScreen, setPhoneEmailScreen] = useState<"inbox" | "message" | "compose">("message");
+  const [phoneComposeTo, setPhoneComposeTo] = useState<string>("sarah.jenkins@acmebrand.com");
+  const [phoneComposeSubject, setPhoneComposeSubject] = useState<string>("Welcome to Owlio Works VIP Club 🎉");
+  const [phoneComposeBody, setPhoneComposeBody] = useState<string>(
+    `Hi Sarah,\n\nWelcome to our community! We are excited to partner with you to scale your business.\n\nHere are 3 quick perks you get immediate access to:\n1. Dedicated sprint Slack channel\n2. Real-time deliverability dashboards\n3. Weekly conversion optimization reports\n\nFeel free to reply to this email anytime.\n\nBest regards,\nOwlio Works Team`
+  );
+  const [phoneSending, setPhoneSending] = useState<boolean>(false);
+  const [phoneToast, setPhoneToast] = useState<string | null>(null);
+
+  const selectedPhoneEmail =
+    phoneEmailList.find((e) => e.id === phoneSelectedEmailId) || phoneEmailList[0];
+  const unreadCount = phoneEmailList.filter((e) => e.unread).length;
+
+  const handleSelectPhoneEmail = (id: string) => {
+    setPhoneSelectedEmailId(id);
+    setPhoneEmailList((prev) =>
+      prev.map((e) => (e.id === id ? { ...e, unread: false } : e))
+    );
+    setPhoneEmailScreen("message");
+  };
+
+  const handleToggleStar = (id: string) => {
+    setPhoneEmailList((prev) =>
+      prev.map((e) => (e.id === id ? { ...e, starred: !e.starred } : e))
+    );
+  };
+
+  const handleDeletePhoneEmail = (id: string) => {
+    const updated = phoneEmailList.filter((e) => e.id !== id);
+    setPhoneEmailList(updated);
+    if (updated.length > 0) {
+      setPhoneSelectedEmailId(updated[0].id);
+    }
+    setPhoneEmailScreen("inbox");
+  };
+
+  const handleSendPhoneEmail = () => {
+    if (!phoneComposeSubject.trim()) return;
+    setPhoneSending(true);
+    setTimeout(() => {
+      const newId = `msg_${phoneEmailList.length + 1}`;
+      const newEmail: PhoneEmailItem = {
+        id: newId,
+        sender: "You (Owlio Works)",
+        senderEmail: "hello@owlioworks.com",
+        avatar: "OW",
+        avatarBg: "bg-black text-[#fbea3d]",
+        subject: phoneComposeSubject,
+        preview: phoneComposeBody.slice(0, 75).replace(/\n/g, " ") + "...",
+        time: "Just now",
+        unread: false,
+        starred: false,
+        body: phoneComposeBody,
+      };
+      setPhoneEmailList((prev) => [newEmail, ...prev]);
+      setPhoneSelectedEmailId(newId);
+      setPhoneSending(false);
+      setPhoneEmailScreen("message");
+      setPhoneToast("Email Delivered to Inbox!");
+      setTimeout(() => setPhoneToast(null), 3500);
+    }, 600);
+  };
+
+  // WORKABLE WHATSAPP SIMULATOR STATE
+  interface WhatsappMessage {
+    id: string;
+    sender: "bot" | "user";
+    text: string;
+    time: string;
+    buttons?: string[];
+  }
+
+  const [whatsappMode, setWhatsappMode] = useState<"order" | "support" | "broadcast">("order");
+  const [whatsappInputText, setWhatsappInputText] = useState<string>("");
+  const [whatsappChatHistory, setWhatsappChatHistory] = useState<Record<string, WhatsappMessage[]>>({
+    order: [
+      {
+        id: "o1",
+        sender: "bot",
+        text: "Hi Sarah! 📦 Your order #OW-8921 has officially shipped via FedEx Express.\n\nEstimated delivery: Tomorrow by 2:00 PM.",
+        time: "10:30 AM",
+        buttons: ["📍 Track Package Live", "📄 View Invoice", "💬 Help"],
+      },
+    ],
+    support: [
+      {
+        id: "s1",
+        sender: "bot",
+        text: "Hello Sarah! Welcome to Owlio Works 👋 How can our team help you grow your business today?",
+        time: "10:30 AM",
+        buttons: ["🛍️ View Services Catalog", "💼 Book Strategy Call", "⚡ Ask a Question"],
+      },
+    ],
+    broadcast: [
+      {
+        id: "b1",
+        sender: "bot",
+        text: "🎉 EXCLUSIVE VIP ACCESS: Our Q4 Scaling Masterclass and Early Product Drops are now live for VIP members!\n\nUse code VIP2026 for 20% off your first sprint.",
+        time: "10:30 AM",
+        buttons: ["🚀 Claim VIP Access", "📅 Schedule Demo", "🛑 Opt Out"],
+      },
+    ],
+  });
+  const [whatsappTyping, setWhatsappTyping] = useState<boolean>(false);
+
+  const handleSendWhatsappMessage = (textToSend?: string) => {
+    const messageContent = (textToSend || whatsappInputText).trim();
+    if (!messageContent) return;
+
+    const currentChat = whatsappChatHistory[whatsappMode] || [];
+    const userMsg: WhatsappMessage = {
+      id: `u_${currentChat.length + 1}`,
+      sender: "user",
+      text: messageContent,
+      time: "10:31 AM",
+    };
+
+    setWhatsappChatHistory((prev) => ({
+      ...prev,
+      [whatsappMode]: [...(prev[whatsappMode] || []), userMsg],
+    }));
+    setWhatsappInputText("");
+    setWhatsappTyping(true);
+
+    setTimeout(() => {
+      let replyText = "Thank you! Our dedicated account strategist will assist you shortly. Is there anything else you need?";
+      let replyButtons: string[] | undefined = ["📞 Request Instant Callback", "💬 Speak to Agent"];
+
+      if (messageContent.toLowerCase().includes("track")) {
+        replyText = "📍 Tracking Status: In Transit\nCurrent Location: Dallas Hub\nCarrier: FedEx #7829-1920\nETA: Tomorrow, 2:00 PM ✓";
+        replyButtons = ["🔔 Subscribe to SMS Alerts", "💬 Chat Support"];
+      } else if (messageContent.toLowerCase().includes("catalog") || messageContent.toLowerCase().includes("services")) {
+        replyText = "Here are our core service verticals:\n1. App & Web Development\n2. AI & Automations\n3. Performance Marketing\n\nWhich area interests you?";
+        replyButtons = ["📱 App Development", "🤖 AI & Automations", "📈 Marketing"];
+      } else if (
+        messageContent.toLowerCase().includes("call") ||
+        messageContent.toLowerCase().includes("book") ||
+        messageContent.toLowerCase().includes("demo") ||
+        messageContent.toLowerCase().includes("schedule")
+      ) {
+        replyText = "Great! You can pick a convenient 15-min slot on our calendar: owlioworks.com/book";
+        replyButtons = ["📅 Open Booking Page", "👋 Thanks"];
+      } else if (messageContent.toLowerCase().includes("vip") || messageContent.toLowerCase().includes("claim")) {
+        replyText = "🎉 VIP Code VIP2026 verified! Applied 20% discount to your account checkout.";
+        replyButtons = ["🛍️ Proceed to Checkout"];
+      }
+
+      const botReply: WhatsappMessage = {
+        id: `b_${currentChat.length + 2}`,
+        sender: "bot",
+        text: replyText,
+        time: "10:31 AM",
+        buttons: replyButtons,
+      };
+
+      setWhatsappChatHistory((prev) => ({
+        ...prev,
+        [whatsappMode]: [...(prev[whatsappMode] || []), botReply],
+      }));
+      setWhatsappTyping(false);
+    }, 800);
+  };
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIndex((prev) => (prev === idx ? null : idx));
@@ -2104,6 +2345,1008 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
             </div>
           </section>
+        ) : service.slug === "email-marketing" ? (
+          /* Workable Compact Mobile Smartphone Email Client Simulator */
+          <section className="w-full bg-[#fafafb] text-black py-12 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              
+              {/* Left Column: Heading, Mobile Value Proposition & Compact Interactive Controls */}
+              <div className="lg:col-span-6 flex flex-col items-start text-left">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-zinc-500">
+                    // DIRECT MOBILE COMMUNICATIONS
+                  </span>
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.1] mb-4">
+                  CLEAN, HIGH-DELIVERABILITY{" "}
+                  <span className="text-zinc-400 font-black block">EMAIL ON MOBILE</span>
+                </h2>
+
+                <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal mb-5">
+                  Over 72% of modern email opens happen on mobile screens. We engineer responsive, inbox-optimized email communications that render cleanly across Apple Mail &amp; Gmail—reaching your customers directly without landing in spam or promo folders.
+                </p>
+
+                {/* Compact Interactive Mode Switcher Box */}
+                <div className="w-full bg-white border border-zinc-200 rounded-2xl p-4 shadow-sm flex flex-col gap-3 mb-5">
+                  <div className="flex items-center justify-between pb-2 border-b border-zinc-100 text-xs font-mono font-bold text-zinc-800">
+                    <span className="flex items-center gap-1.5">
+                      <span>📱</span> Simulator Controls
+                    </span>
+                    <span className="text-emerald-600 font-mono text-[10px]">
+                      Live &amp; Workable
+                    </span>
+                  </div>
+
+                  <p className="text-[11px] text-zinc-500 leading-relaxed">
+                    Test the live mobile client on the right. Tap emails to read, star, or compose and send a live email to the inbox:
+                  </p>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setPhoneEmailScreen("inbox")}
+                      className={`py-2 px-2 rounded-xl border text-center text-[11px] font-bold transition-all cursor-pointer flex flex-col items-center gap-0.5 ${
+                        phoneEmailScreen === "inbox"
+                          ? "bg-black text-[#fbea3d] border-black shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <span className="text-xs">📬</span>
+                      <span>Inbox ({unreadCount})</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setPhoneEmailScreen("message")}
+                      className={`py-2 px-2 rounded-xl border text-center text-[11px] font-bold transition-all cursor-pointer flex flex-col items-center gap-0.5 ${
+                        phoneEmailScreen === "message"
+                          ? "bg-black text-[#fbea3d] border-black shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <span className="text-xs">✉️</span>
+                      <span>Read Mail</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setPhoneEmailScreen("compose")}
+                      className={`py-2 px-2 rounded-xl border text-center text-[11px] font-bold transition-all cursor-pointer flex flex-col items-center gap-0.5 ${
+                        phoneEmailScreen === "compose"
+                          ? "bg-black text-[#fbea3d] border-black shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <span className="text-xs">✏️</span>
+                      <span>Compose</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* 3 Metric Pills */}
+                <div className="grid grid-cols-3 gap-2 w-full">
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Open Rate</span>
+                    <span className="text-xs sm:text-sm font-black text-zinc-900 font-display">48.2%</span>
+                    <span className="text-[9px] text-emerald-600 font-semibold block">+14% vs avg</span>
+                  </div>
+
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Placement</span>
+                    <span className="text-xs sm:text-sm font-black text-zinc-900 font-display">99.4%</span>
+                    <span className="text-[9px] text-emerald-600 font-semibold block">Primary inbox</span>
+                  </div>
+
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Click Rate</span>
+                    <span className="text-xs sm:text-sm font-black text-zinc-900 font-display">8.6%</span>
+                    <span className="text-[9px] text-emerald-600 font-semibold block">High CTR</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Compact, Sleek iPhone Smartphone Mockup */}
+              <div className="lg:col-span-6 flex justify-center items-center w-full py-2">
+                
+                {/* Compact Smartphone Chassis */}
+                <div className="w-[250px] sm:w-[270px] h-[460px] sm:h-[490px] rounded-[38px] border-[5px] border-zinc-800 bg-black p-2 shadow-2xl relative flex flex-col justify-between overflow-hidden ring-1 ring-zinc-700/60 shrink-0">
+                  
+                  {/* Phone Top Status Bar & Dynamic Island */}
+                  <div className="relative pt-1 pb-1.5 px-3 flex items-center justify-between text-[10px] font-semibold text-zinc-800 bg-white border-b border-zinc-100 rounded-t-[28px] z-20 shrink-0">
+                    <span className="font-mono text-[10px] font-bold text-zinc-900">9:41</span>
+                    
+                    {/* Compact Dynamic Island pill */}
+                    <div className="w-16 h-3.5 bg-black rounded-full flex items-center justify-end px-1.5 gap-1 shadow-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-900 border border-zinc-700"></div>
+                      <div className="w-1 h-1 rounded-full bg-blue-900/80"></div>
+                    </div>
+
+                    <div className="flex items-center gap-1 font-mono text-[9px] text-zinc-800">
+                      <span>5G</span>
+                      <div className="w-4 h-2 border border-zinc-800 rounded-[2px] p-[1px] flex items-center">
+                        <div className="w-full h-full bg-zinc-900 rounded-[1px]"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Phone Screen Canvas */}
+                  <div className="flex-1 bg-white flex flex-col overflow-hidden relative text-zinc-900">
+                    
+                    {/* Toast Notification Banner */}
+                    {phoneToast && (
+                      <div className="absolute top-1.5 left-2 right-2 z-30 bg-emerald-600 text-white text-[10px] font-bold py-1.5 px-2.5 rounded-lg shadow-md flex items-center justify-center gap-1 animate-fadeIn">
+                        <span>✓</span>
+                        <span>{phoneToast}</span>
+                      </div>
+                    )}
+
+                    {/* SCREEN 1: INBOX LIST */}
+                    {phoneEmailScreen === "inbox" && (
+                      <div className="flex-1 flex flex-col overflow-hidden animate-fadeIn">
+                        
+                        {/* Top Nav Bar */}
+                        <div className="px-3 pt-1.5 pb-1.5 bg-white border-b border-zinc-100 flex items-center justify-between shrink-0">
+                          <button
+                            type="button"
+                            className="text-[#007aff] text-[10px] font-medium flex items-center gap-0.5 hover:opacity-75 cursor-pointer"
+                          >
+                            <span>‹</span> <span>Mailboxes</span>
+                          </button>
+                          <span className="text-[11px] font-bold text-zinc-900">Inbox</span>
+                          <button
+                            type="button"
+                            onClick={() => setPhoneEmailScreen("compose")}
+                            className="text-[#007aff] text-[10px] font-semibold hover:opacity-75 cursor-pointer"
+                          >
+                            Edit
+                          </button>
+                        </div>
+
+                        {/* Search Bar */}
+                        <div className="px-2.5 pt-1.5 pb-1.5 bg-white shrink-0 text-left">
+                          <div className="bg-zinc-100/90 rounded-lg px-2 py-1 flex items-center gap-1.5 text-zinc-400 text-[10px]">
+                            <span>🔍</span>
+                            <span className="text-[10px] text-zinc-400 font-medium truncate">Search inboxes...</span>
+                          </div>
+                        </div>
+
+                        {/* Email Items List */}
+                        <div className="flex-1 overflow-y-auto divide-y divide-zinc-100 bg-white">
+                          {phoneEmailList.map((item) => {
+                            const isSelected = item.id === phoneSelectedEmailId;
+                            return (
+                              <div
+                                key={item.id}
+                                onClick={() => handleSelectPhoneEmail(item.id)}
+                                className={`px-2.5 py-2 flex items-start gap-2 transition-colors cursor-pointer text-left ${
+                                  isSelected ? "bg-blue-50/50" : "hover:bg-zinc-50"
+                                }`}
+                              >
+                                <div className="pt-1 shrink-0">
+                                  {item.unread ? (
+                                    <span className="block w-2 h-2 rounded-full bg-[#007aff] shadow-sm"></span>
+                                  ) : (
+                                    <span className="block w-2 h-2"></span>
+                                  )}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center justify-between gap-1 mb-0.5">
+                                    <span
+                                      className={`text-[11px] truncate ${
+                                        item.unread ? "font-bold text-zinc-900" : "font-semibold text-zinc-700"
+                                      }`}
+                                    >
+                                      {item.sender}
+                                    </span>
+                                    <span className="text-[9px] text-zinc-400 shrink-0 font-mono">
+                                      {item.time}
+                                    </span>
+                                  </div>
+                                  <p
+                                    className={`text-[10px] truncate mb-0.5 ${
+                                      item.unread ? "font-semibold text-zinc-900" : "text-zinc-600"
+                                    }`}
+                                  >
+                                    {item.subject}
+                                  </p>
+                                  <p className="text-[9px] text-zinc-400 line-clamp-1 leading-tight">
+                                    {item.preview}
+                                  </p>
+                                </div>
+                                <span className="text-zinc-300 text-[10px] pt-0.5">›</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        {/* Inbox Bottom Bar */}
+                        <div className="px-3 py-1.5 bg-zinc-50/90 border-t border-zinc-200/80 flex items-center justify-between text-[10px] text-zinc-600 shrink-0">
+                          <span className="text-[9px] font-mono text-zinc-400">
+                            {unreadCount} Unread
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setPhoneEmailScreen("compose")}
+                            className="w-6 h-6 rounded-full bg-[#007aff] text-white flex items-center justify-center text-[10px] shadow-sm hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                            title="Compose New Email"
+                          >
+                            ✏️
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* SCREEN 2: MESSAGE DETAIL VIEW */}
+                    {phoneEmailScreen === "message" && (
+                      <div className="flex-1 flex flex-col overflow-hidden animate-fadeIn">
+                        
+                        {/* Top Nav Bar */}
+                        <div className="px-2.5 py-1.5 bg-white border-b border-zinc-100 flex items-center justify-between shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => setPhoneEmailScreen("inbox")}
+                            className="text-[#007aff] text-[10px] font-semibold flex items-center gap-0.5 hover:opacity-75 cursor-pointer"
+                          >
+                            <span className="text-xs">‹</span> <span>Inbox ({unreadCount})</span>
+                          </button>
+
+                          <div className="flex items-center gap-2 text-zinc-500 text-[11px]">
+                            <button
+                              type="button"
+                              onClick={() => handleToggleStar(selectedPhoneEmail.id)}
+                              className="hover:text-amber-500 transition-colors cursor-pointer"
+                              title="Flag / Star"
+                            >
+                              {selectedPhoneEmail.starred ? "⭐" : "☆"}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleDeletePhoneEmail(selectedPhoneEmail.id)}
+                              className="hover:text-red-500 transition-colors cursor-pointer"
+                              title="Delete"
+                            >
+                              🗑️
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setPhoneComposeSubject(`Re: ${selectedPhoneEmail.subject}`);
+                                setPhoneEmailScreen("compose");
+                              }}
+                              className="hover:text-[#007aff] transition-colors cursor-pointer"
+                              title="Reply"
+                            >
+                              ↩️
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Email Header Card */}
+                        <div className="px-2.5 py-2 bg-zinc-50/80 border-b border-zinc-100 flex flex-col gap-1.5 shrink-0 text-left">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div
+                                className={`w-6 h-6 rounded-full ${selectedPhoneEmail.avatarBg} font-bold text-[10px] flex items-center justify-center shrink-0 shadow-sm`}
+                              >
+                                {selectedPhoneEmail.avatar}
+                              </div>
+                              <div className="flex flex-col">
+                                <div className="flex items-center gap-1">
+                                  <span className="font-bold text-[11px] text-zinc-900 truncate max-w-[120px]">
+                                    {selectedPhoneEmail.sender}
+                                  </span>
+                                  <span className="text-blue-500 text-[9px]">✓</span>
+                                </div>
+                                <span className="text-[8px] text-zinc-400 font-mono truncate max-w-[130px]">
+                                  &lt;{selectedPhoneEmail.senderEmail}&gt;
+                                </span>
+                              </div>
+                            </div>
+
+                            <span className="text-[9px] font-mono text-zinc-400">
+                              {selectedPhoneEmail.time}
+                            </span>
+                          </div>
+
+                          <div className="flex items-center justify-between text-[9px] text-zinc-500 pt-1 border-t border-zinc-200/50">
+                            <span>To: sarah.jenkins@acmebrand.com</span>
+                            <span className="text-emerald-600 font-mono font-bold bg-emerald-50 px-1 py-0.2 rounded border border-emerald-200 text-[8px]">
+                              ✓ TLS
+                            </span>
+                          </div>
+
+                          <h4 className="text-[11px] font-bold text-zinc-900 leading-snug">
+                            {selectedPhoneEmail.subject}
+                          </h4>
+                        </div>
+
+                        {/* Email Body Content */}
+                        <div className="flex-1 overflow-y-auto p-2.5 text-zinc-800 text-[10px] leading-relaxed whitespace-pre-line text-left bg-white font-normal select-text">
+                          {selectedPhoneEmail.body}
+                        </div>
+
+                        {/* Message Bottom Action Bar */}
+                        <div className="px-2.5 py-1.5 bg-zinc-50 border-t border-zinc-200/80 flex items-center justify-between text-[10px] text-zinc-500 shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => handleDeletePhoneEmail(selectedPhoneEmail.id)}
+                            className="text-zinc-400 hover:text-red-500 cursor-pointer text-xs"
+                            title="Delete"
+                          >
+                            🗑️
+                          </button>
+                          <span className="text-[9px] font-mono text-emerald-600 font-bold">
+                            99.4% Placement
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setPhoneComposeSubject(`Re: ${selectedPhoneEmail.subject}`);
+                              setPhoneEmailScreen("compose");
+                            }}
+                            className="text-[#007aff] hover:opacity-80 cursor-pointer font-semibold text-[10px] flex items-center gap-1"
+                          >
+                            <span>Reply</span> <span>↩️</span>
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* SCREEN 3: COMPOSE EMAIL SHEET */}
+                    {phoneEmailScreen === "compose" && (
+                      <div className="flex-1 flex flex-col overflow-hidden animate-fadeIn bg-white">
+                        
+                        {/* Sheet Header */}
+                        <div className="px-2.5 py-1.5 bg-zinc-50 border-b border-zinc-200 flex items-center justify-between shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => setPhoneEmailScreen("inbox")}
+                            className="text-[#007aff] text-[10px] font-medium hover:opacity-75 cursor-pointer"
+                          >
+                            Cancel
+                          </button>
+                          <span className="text-[11px] font-bold text-zinc-900">New Message</span>
+                          <button
+                            type="button"
+                            disabled={phoneSending}
+                            onClick={handleSendPhoneEmail}
+                            className="w-5 h-5 rounded-full bg-[#007aff] text-white flex items-center justify-center text-[9px] shadow-sm hover:bg-blue-600 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+                            title="Send Email"
+                          >
+                            {phoneSending ? (
+                              <span className="w-2.5 h-2.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                            ) : (
+                              <span>⬆️</span>
+                            )}
+                          </button>
+                        </div>
+
+                        {/* Inputs Container */}
+                        <div className="flex-1 flex flex-col p-2.5 gap-1.5 overflow-y-auto text-left">
+                          <div className="flex items-center gap-1.5 border-b border-zinc-100 pb-1.5">
+                            <span className="text-[9px] font-mono text-zinc-400 font-semibold w-8">To:</span>
+                            <input
+                              type="text"
+                              value={phoneComposeTo}
+                              onChange={(e) => setPhoneComposeTo(e.target.value)}
+                              className="flex-1 text-[10px] text-zinc-900 font-medium focus:outline-none"
+                              placeholder="recipient@domain.com"
+                            />
+                          </div>
+
+                          <div className="flex items-center gap-1.5 border-b border-zinc-100 pb-1.5">
+                            <span className="text-[9px] font-mono text-zinc-400 font-semibold w-8">From:</span>
+                            <span className="text-[9px] text-zinc-700 font-mono truncate">hello@owlioworks.com (✓)</span>
+                          </div>
+
+                          <div className="flex items-center gap-1.5 border-b border-zinc-100 pb-1.5">
+                            <span className="text-[9px] font-mono text-zinc-400 font-semibold w-8">Subj:</span>
+                            <input
+                              type="text"
+                              value={phoneComposeSubject}
+                              onChange={(e) => setPhoneComposeSubject(e.target.value)}
+                              className="flex-1 text-[10px] font-semibold text-zinc-900 focus:outline-none"
+                              placeholder="Subject line..."
+                            />
+                          </div>
+
+                          <div className="flex-1 flex flex-col pt-0.5">
+                            <textarea
+                              rows={4}
+                              value={phoneComposeBody}
+                              onChange={(e) => setPhoneComposeBody(e.target.value)}
+                              className="w-full flex-1 text-[10px] text-zinc-800 leading-relaxed focus:outline-none resize-none"
+                              placeholder="Write your email message..."
+                            ></textarea>
+                          </div>
+                        </div>
+
+                        {/* Compose Bottom Send Action Button */}
+                        <div className="p-2 border-t border-zinc-100 shrink-0">
+                          <button
+                            type="button"
+                            disabled={phoneSending}
+                            onClick={handleSendPhoneEmail}
+                            className="w-full py-2 bg-black text-[#fbea3d] font-bold text-[10px] rounded-lg flex items-center justify-center gap-1.5 hover:bg-zinc-800 active:scale-98 transition-all cursor-pointer shadow-sm"
+                          >
+                            {phoneSending ? (
+                              <>
+                                <span className="w-3 h-3 border-2 border-[#fbea3d] border-t-transparent rounded-full animate-spin"></span>
+                                <span>Delivering to Inbox...</span>
+                              </>
+                            ) : (
+                              <>
+                                <span>Send Email from Phone</span>
+                                <span>⬆️</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                  </div>
+
+                  {/* Bottom Home Indicator Bar */}
+                  <div className="pt-1 pb-0.5 bg-white rounded-b-[28px] flex justify-center shrink-0">
+                    <div className="w-20 h-0.5 bg-zinc-900/80 rounded-full"></div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+        ) : service.slug === "whatsapp-marketing" ? (
+          /* Workable Compact Mobile Smartphone WhatsApp Chat Simulator */
+          <section className="w-full bg-[#fafafb] text-black py-12 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              
+              {/* Left Column: Heading, WhatsApp Value Proposition & Compact Interactive Controls */}
+              <div className="lg:col-span-6 flex flex-col items-start text-left">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-emerald-600">
+                    // OFFICIAL META WHATSAPP BUSINESS API
+                  </span>
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.1] mb-4">
+                  CONVERSATIONAL COMMERCE{" "}
+                  <span className="text-zinc-400 font-black block">FOR HIGH-GROWTH BRANDS</span>
+                </h2>
+
+                <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal mb-5">
+                  WhatsApp delivers an industry-leading 98% open rate and 45-60% click-through engagement. We implement verified Meta Green-Tick Business accounts, automated transactional notifications, interactive product lists, and 24/7 conversational support funnels.
+                </p>
+
+                {/* Compact Interactive Mode Switcher Box */}
+                <div className="w-full bg-white border border-zinc-200 rounded-2xl p-4 shadow-sm flex flex-col gap-3 mb-5">
+                  <div className="flex items-center justify-between pb-2 border-b border-zinc-100 text-xs font-mono font-bold text-zinc-800">
+                    <span className="flex items-center gap-1.5">
+                      <span>💬</span> WhatsApp Simulator Controls
+                    </span>
+                    <span className="text-emerald-600 font-mono text-[10px]">
+                      Live &amp; Interactive
+                    </span>
+                  </div>
+
+                  <p className="text-[11px] text-zinc-500 leading-relaxed">
+                    Test different WhatsApp business message templates on the right. You can tap quick reply buttons or type your own messages:
+                  </p>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setWhatsappMode("order")}
+                      className={`py-2 px-2 rounded-xl border text-center text-[11px] font-bold transition-all cursor-pointer flex flex-col items-center gap-0.5 ${
+                        whatsappMode === "order"
+                          ? "bg-[#075e54] text-white border-[#075e54] shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <span className="text-xs">📦</span>
+                      <span>Order Alerts</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setWhatsappMode("support")}
+                      className={`py-2 px-2 rounded-xl border text-center text-[11px] font-bold transition-all cursor-pointer flex flex-col items-center gap-0.5 ${
+                        whatsappMode === "support"
+                          ? "bg-[#075e54] text-white border-[#075e54] shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <span className="text-xs">🤖</span>
+                      <span>Support Bot</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setWhatsappMode("broadcast")}
+                      className={`py-2 px-2 rounded-xl border text-center text-[11px] font-bold transition-all cursor-pointer flex flex-col items-center gap-0.5 ${
+                        whatsappMode === "broadcast"
+                          ? "bg-[#075e54] text-white border-[#075e54] shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <span className="text-xs">📢</span>
+                      <span>Broadcast</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* 3 Metric Pills */}
+                <div className="grid grid-cols-3 gap-2 w-full">
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Open Rate</span>
+                    <span className="text-xs sm:text-sm font-black text-emerald-600 font-display">98.2%</span>
+                    <span className="text-[9px] text-zinc-500 font-medium block">4x vs traditional</span>
+                  </div>
+
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Avg Response</span>
+                    <span className="text-xs sm:text-sm font-black text-zinc-900 font-display">&lt; 90s</span>
+                    <span className="text-[9px] text-emerald-600 font-semibold block">24/7 Automated</span>
+                  </div>
+
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">ROI Boost</span>
+                    <span className="text-xs sm:text-sm font-black text-zinc-900 font-display">3.8x</span>
+                    <span className="text-[9px] text-emerald-600 font-semibold block">Verified Meta API</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Compact, Sleek iPhone Smartphone with WhatsApp UI */}
+              <div className="lg:col-span-6 flex justify-center items-center w-full py-2">
+                
+                {/* Compact Smartphone Chassis */}
+                <div className="w-[250px] sm:w-[270px] h-[460px] sm:h-[490px] rounded-[38px] border-[5px] border-zinc-800 bg-black p-2 shadow-2xl relative flex flex-col justify-between overflow-hidden ring-1 ring-zinc-700/60 shrink-0">
+                  
+                  {/* Phone Top Status Bar & Dynamic Island */}
+                  <div className="relative pt-1 pb-1.5 px-3 flex items-center justify-between text-[10px] font-semibold text-white bg-[#075e54] rounded-t-[28px] z-20 shrink-0">
+                    <span className="font-mono text-[10px] font-bold">9:41</span>
+                    
+                    {/* Compact Dynamic Island pill */}
+                    <div className="w-16 h-3.5 bg-black rounded-full flex items-center justify-end px-1.5 gap-1 shadow-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-900 border border-zinc-700"></div>
+                      <div className="w-1 h-1 rounded-full bg-blue-900/80"></div>
+                    </div>
+
+                    <div className="flex items-center gap-1 font-mono text-[9px]">
+                      <span>5G</span>
+                      <div className="w-4 h-2 border border-white/80 rounded-[2px] p-[1px] flex items-center">
+                        <div className="w-full h-full bg-white rounded-[1px]"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp Header Bar */}
+                  <div className="bg-[#075e54] text-white px-2.5 py-1.5 flex items-center justify-between shadow-md z-10 shrink-0">
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <span className="text-white/80 text-xs font-bold">‹</span>
+                      <div className="w-6 h-6 rounded-full bg-black text-[#fbea3d] font-black text-[9px] flex items-center justify-center shrink-0 border border-[#25d366]">
+                        OW
+                      </div>
+                      <div className="flex flex-col min-w-0">
+                        <div className="flex items-center gap-1">
+                          <span className="font-bold text-[11px] text-white truncate max-w-[110px]">
+                            Owlio Works
+                          </span>
+                          <span className="text-[#25d366] text-[9px] font-bold" title="Meta Verified Green Tick">
+                            ✓
+                          </span>
+                        </div>
+                        <span className="text-[8px] text-emerald-200/90 leading-none">
+                          {whatsappTyping ? "typing..." : "Verified Business"}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-white/80 text-xs">
+                      <span>📹</span>
+                      <span>📞</span>
+                      <span>⋮</span>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp Chat Canvas */}
+                  <div className="flex-1 bg-[#efeae2] flex flex-col justify-between overflow-hidden relative p-2.5">
+                    
+                    {/* Chat Messages Stream */}
+                    <div className="flex-1 overflow-y-auto flex flex-col gap-2 pr-0.5 text-left">
+                      
+                      {/* Encryption Notice */}
+                      <div className="bg-[#ffeecd] border border-amber-200/70 rounded-lg p-1.5 text-center shadow-xs mx-auto max-w-[90%]">
+                        <span className="text-[8px] text-amber-900 leading-tight block">
+                          🔒 Messages are end-to-end encrypted · Meta Cloud API
+                        </span>
+                      </div>
+
+                      {/* Dynamic Conversation Bubble Stream */}
+                      {(whatsappChatHistory[whatsappMode] || []).map((msg) => (
+                        <div
+                          key={msg.id}
+                          className={`flex flex-col gap-1 max-w-[88%] animate-fadeIn ${
+                            msg.sender === "user" ? "self-end items-end" : "self-start items-start"
+                          }`}
+                        >
+                          <div
+                            className={`p-2 rounded-xl text-[10px] leading-relaxed shadow-xs relative ${
+                              msg.sender === "user"
+                                ? "bg-[#d9fdd3] text-zinc-900 rounded-tr-none"
+                                : "bg-white text-zinc-900 rounded-tl-none"
+                            }`}
+                          >
+                            <p className="whitespace-pre-line">{msg.text}</p>
+                            <div className="flex items-center justify-end gap-1 mt-1 text-[8px] text-zinc-400">
+                              <span>{msg.time}</span>
+                              {msg.sender === "user" && <span className="text-[#53bdeb] font-bold">✓✓</span>}
+                            </div>
+                          </div>
+
+                          {/* Interactive Action Buttons inside Bot Message */}
+                          {msg.buttons && msg.buttons.length > 0 && (
+                            <div className="flex flex-col gap-1 w-full mt-0.5">
+                              {msg.buttons.map((btn, bIdx) => (
+                                <button
+                                  type="button"
+                                  key={bIdx}
+                                  onClick={() => handleSendWhatsappMessage(btn)}
+                                  className="w-full py-1 px-2 bg-white hover:bg-emerald-50 text-[#00a884] border border-zinc-200/80 rounded-lg text-[9px] font-bold text-center shadow-xs transition-colors cursor-pointer flex items-center justify-center gap-1"
+                                >
+                                  <span>{btn}</span>
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+
+                      {/* Typing indicator */}
+                      {whatsappTyping && (
+                        <div className="self-start bg-white p-2 rounded-xl rounded-tl-none shadow-xs flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 bg-[#00a884] rounded-full animate-bounce"></span>
+                          <span className="w-1.5 h-1.5 bg-[#00a884] rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                          <span className="w-1.5 h-1.5 bg-[#00a884] rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                        </div>
+                      )}
+
+                    </div>
+
+                    {/* Bottom Chat Input Bar */}
+                    <div className="pt-1.5 flex items-center gap-1 shrink-0">
+                      <div className="flex-1 bg-white rounded-full px-2.5 py-1.5 flex items-center gap-1.5 shadow-xs border border-zinc-200/80">
+                        <span className="text-zinc-400 text-[10px]">😊</span>
+                        <input
+                          type="text"
+                          value={whatsappInputText}
+                          onChange={(e) => setWhatsappInputText(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") handleSendWhatsappMessage();
+                          }}
+                          placeholder="Type a message..."
+                          className="flex-1 text-[10px] text-zinc-900 focus:outline-none bg-transparent"
+                        />
+                        <span className="text-zinc-400 text-[10px]">📎</span>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => handleSendWhatsappMessage()}
+                        className="w-7 h-7 rounded-full bg-[#00a884] text-white flex items-center justify-center text-[10px] shadow-sm hover:bg-[#008f6f] active:scale-95 transition-all cursor-pointer shrink-0"
+                        title="Send WhatsApp Message"
+                      >
+                        {whatsappInputText.trim() ? "➤" : "🎤"}
+                      </button>
+                    </div>
+
+                  </div>
+
+                  {/* Bottom Home Indicator Bar */}
+                  <div className="pt-1 pb-0.5 bg-[#efeae2] rounded-b-[28px] flex justify-center shrink-0">
+                    <div className="w-20 h-0.5 bg-zinc-900/80 rounded-full"></div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+        ) : (service.slug === "ai-automation" || service.slug === "marketing-automation") ? (
+          /* Simple, Beautiful Visual Workflow Builder */
+          <section className="w-full bg-[#fafafb] text-black py-12 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              
+              {/* Left Column: Friendly Heading, Explanation & Interactive Tabs */}
+              <div className="lg:col-span-5 flex flex-col items-start text-left">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="font-mono text-[11px] font-extrabold uppercase tracking-widest text-black bg-[#fbea3d] px-2.5 py-0.5 rounded-md">
+                    // SIMPLE BUSINESS AUTOMATIONS
+                  </span>
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.12] mb-3">
+                  WORKFLOWS THAT RUN <span className="text-zinc-400 font-black block">ON AUTOPILOT</span>
+                </h2>
+
+                <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal mb-5">
+                  Connect your favorite tools and let repetitive tasks handle themselves. From capturing website leads to sending real-time customer updates, your business stays organized 24/7 without manual work.
+                </p>
+
+                {/* 3 Selectable Workflows */}
+                <div className="w-full bg-white border border-zinc-200/90 rounded-2xl p-4 shadow-sm flex flex-col gap-3 mb-5">
+                  <div className="flex items-center justify-between pb-2 border-b border-zinc-100 text-xs font-mono font-bold text-zinc-800">
+                    <span>⚡ Choose a Workflow</span>
+                    <span className="text-emerald-600 font-mono text-[10px] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                      Live Preview
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleRunAutomationSimulation("lead")}
+                      className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                        automationWorkflowMode === "lead"
+                          ? "bg-black text-white border-black shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-base">📋</span>
+                        <div>
+                          <div className="text-xs font-bold leading-tight">Lead Follow-Up</div>
+                          <div className={`text-[10px] ${automationWorkflowMode === "lead" ? "text-zinc-400" : "text-zinc-500"}`}>
+                            Website ➔ CRM ➔ Slack ➔ Email
+                          </div>
+                        </div>
+                      </div>
+                      <span className={`text-[11px] font-bold ${automationWorkflowMode === "lead" ? "text-[#fbea3d]" : "text-zinc-400"}`}>
+                        {automationWorkflowMode === "lead" ? "Active" : "Select"}
+                      </span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => handleRunAutomationSimulation("ecommerce")}
+                      className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                        automationWorkflowMode === "ecommerce"
+                          ? "bg-black text-white border-black shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-base">🛍️</span>
+                        <div>
+                          <div className="text-xs font-bold leading-tight">Store Order Updates</div>
+                          <div className={`text-[10px] ${automationWorkflowMode === "ecommerce" ? "text-zinc-400" : "text-zinc-500"}`}>
+                            Shopify ➔ Inventory ➔ WhatsApp
+                          </div>
+                        </div>
+                      </div>
+                      <span className={`text-[11px] font-bold ${automationWorkflowMode === "ecommerce" ? "text-[#fbea3d]" : "text-zinc-400"}`}>
+                        {automationWorkflowMode === "ecommerce" ? "Active" : "Select"}
+                      </span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => handleRunAutomationSimulation("support")}
+                      className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                        automationWorkflowMode === "support"
+                          ? "bg-black text-white border-black shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-base">💬</span>
+                        <div>
+                          <div className="text-xs font-bold leading-tight">Customer Inquiries</div>
+                          <div className={`text-[10px] ${automationWorkflowMode === "support" ? "text-zinc-400" : "text-zinc-500"}`}>
+                            Contact Form ➔ Auto-Route ➔ Calendar
+                          </div>
+                        </div>
+                      </div>
+                      <span className={`text-[11px] font-bold ${automationWorkflowMode === "support" ? "text-[#fbea3d]" : "text-zinc-400"}`}>
+                        {automationWorkflowMode === "support" ? "Active" : "Select"}
+                      </span>
+                    </button>
+                  </div>
+
+                  <button
+                    type="button"
+                    disabled={automationTriggering}
+                    onClick={() => handleRunAutomationSimulation()}
+                    className="w-full py-2.5 bg-[#fbea3d] text-black font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 hover:bg-[#e2ce1c] active:scale-98 transition-all cursor-pointer mt-1 shadow-sm"
+                  >
+                    {automationTriggering ? (
+                      <>
+                        <span className="w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+                        <span>Running Automation Flow...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>▶ Test This Automation</span>
+                        <span className="text-[10px] text-black/70 font-mono font-medium">· Instant</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* 3 Simple Business Benefit Pills */}
+                <div className="grid grid-cols-3 gap-2 w-full">
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left shadow-2xs">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Speed</span>
+                    <span className="text-xs sm:text-sm font-black text-zinc-900 font-display">&lt; 3 Seconds</span>
+                    <span className="text-[9px] text-emerald-600 font-semibold block">Instant Response</span>
+                  </div>
+
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left shadow-2xs">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Accuracy</span>
+                    <span className="text-xs sm:text-sm font-black text-emerald-600 font-display">100%</span>
+                    <span className="text-[9px] text-zinc-500 font-medium block">Zero Missed Leads</span>
+                  </div>
+
+                  <div className="bg-white border border-zinc-200/90 rounded-xl p-2.5 text-left shadow-2xs">
+                    <span className="text-[9px] font-mono text-zinc-400 block uppercase font-bold">Time Saved</span>
+                    <span className="text-xs sm:text-sm font-black text-zinc-900 font-display">15+ Hrs/Wk</span>
+                    <span className="text-[9px] text-zinc-500 font-medium block">Hands-Off Work</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Clean, Light-Themed Visual Connected Flow Canvas */}
+              <div className="lg:col-span-7 bg-white border border-zinc-200/90 rounded-3xl p-5 sm:p-7 text-zinc-900 flex flex-col justify-between gap-4 shadow-lg min-h-[440px]">
+                
+                {/* Top Card Header */}
+                <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="font-display text-xs sm:text-sm font-bold text-zinc-900 tracking-wide uppercase">
+                      {automationWorkflowMode === "lead" && "Lead Capture & Follow-Up Flow"}
+                      {automationWorkflowMode === "ecommerce" && "E-Commerce Order Automation"}
+                      {automationWorkflowMode === "support" && "Customer Inquiry & Triage Flow"}
+                    </span>
+                  </div>
+                  <span className="font-mono text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full font-bold">
+                    ● Connected &amp; Active
+                  </span>
+                </div>
+
+                {/* Visual Connected 3-Step Flow */}
+                <div className="flex flex-col gap-3 my-auto text-left relative">
+                  
+                  {/* STEP 1: TRIGGER */}
+                  <div className={`p-4 rounded-2xl border transition-all flex items-start gap-3.5 ${
+                    automationStepCount >= 1
+                      ? "bg-blue-50/50 border-blue-200 text-zinc-900 shadow-2xs"
+                      : "bg-zinc-50 border-zinc-200 text-zinc-400"
+                  }`}>
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 font-bold text-sm ${
+                      automationStepCount >= 1 ? "bg-blue-600 text-white shadow-sm" : "bg-zinc-200 text-zinc-500"
+                    }`}>
+                      {automationWorkflowMode === "lead" ? "🌐" : automationWorkflowMode === "ecommerce" ? "🛍️" : "✉️"}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700">
+                          Step 1 · When This Happens
+                        </span>
+                        <span className="text-[10px] font-bold text-emerald-600 bg-emerald-100/70 px-2 py-0.2 rounded-md">
+                          Triggered ✓
+                        </span>
+                      </div>
+                      <div className="text-xs sm:text-sm font-bold text-zinc-900">
+                        {automationWorkflowMode === "lead" && "New customer submits inquiry on your website"}
+                        {automationWorkflowMode === "ecommerce" && "Customer places an order on Shopify store"}
+                        {automationWorkflowMode === "support" && "New customer question received via contact form"}
+                      </div>
+                      <div className="text-[11px] text-zinc-500 mt-0.5">
+                        {automationWorkflowMode === "lead" && "Details: Alex Chen · Requested: Business Scaling Strategy"}
+                        {automationWorkflowMode === "ecommerce" && "Order #8921 · Value: $140 · Payment settled"}
+                        {automationWorkflowMode === "support" && "Subject: Requesting meeting with growth strategist"}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Flow Arrow / Connector Line */}
+                  <div className="flex justify-center -my-1">
+                    <div className="w-0.5 h-4 bg-zinc-300 rounded-full"></div>
+                  </div>
+
+                  {/* STEP 2: AUTO-ORGANIZE */}
+                  <div className={`p-4 rounded-2xl border transition-all flex items-start gap-3.5 ${
+                    automationStepCount >= 2
+                      ? "bg-amber-50/60 border-amber-200 text-zinc-900 shadow-2xs"
+                      : "bg-zinc-50 border-zinc-200 text-zinc-400"
+                  }`}>
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 font-bold text-sm ${
+                      automationStepCount >= 2 ? "bg-amber-500 text-black shadow-sm" : "bg-zinc-200 text-zinc-500"
+                    }`}>
+                      {automationWorkflowMode === "lead" ? "📁" : automationWorkflowMode === "ecommerce" ? "📦" : "🎯"}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700">
+                          Step 2 · Automatically Organized
+                        </span>
+                        <span className="text-[10px] font-bold text-emerald-600 bg-emerald-100/70 px-2 py-0.2 rounded-md">
+                          Auto-Synced ✓
+                        </span>
+                      </div>
+                      <div className="text-xs sm:text-sm font-bold text-zinc-900">
+                        {automationWorkflowMode === "lead" && "Saved to CRM & assigned to sales specialist"}
+                        {automationWorkflowMode === "ecommerce" && "Inventory updated & packing shipping label created"}
+                        {automationWorkflowMode === "support" && "Categorized & assigned to available account manager"}
+                      </div>
+                      <div className="text-[11px] text-zinc-500 mt-0.5">
+                        {automationWorkflowMode === "lead" && "Contact record updated in HubSpot · Priority: High"}
+                        {automationWorkflowMode === "ecommerce" && "Stock deducted · FedEx shipping airway bill queued"}
+                        {automationWorkflowMode === "support" && "Priority: High · Assigned with customer background"}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Flow Arrow / Connector Line */}
+                  <div className="flex justify-center -my-1">
+                    <div className="w-0.5 h-4 bg-zinc-300 rounded-full"></div>
+                  </div>
+
+                  {/* STEP 3: INSTANT ACTION */}
+                  <div className={`p-4 rounded-2xl border transition-all flex items-start gap-3.5 ${
+                    automationStepCount >= 3
+                      ? "bg-emerald-50/70 border-emerald-300 text-zinc-900 shadow-2xs"
+                      : "bg-zinc-50 border-zinc-200 text-zinc-400"
+                  }`}>
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 font-bold text-sm ${
+                      automationStepCount >= 3 ? "bg-emerald-600 text-white shadow-sm" : "bg-zinc-200 text-zinc-500"
+                    }`}>
+                      {automationWorkflowMode === "lead" ? "💬" : automationWorkflowMode === "ecommerce" ? "📱" : "📅"}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800">
+                          Step 3 · Instant Outcome
+                        </span>
+                        <span className="text-[10px] font-bold text-emerald-700 bg-emerald-200/80 px-2 py-0.2 rounded-md">
+                          Completed in 2s ✓
+                        </span>
+                      </div>
+                      <div className="text-xs sm:text-sm font-bold text-zinc-900">
+                        {automationWorkflowMode === "lead" && "Slack alert sent to team + Welcome email to client"}
+                        {automationWorkflowMode === "ecommerce" && "Instant WhatsApp tracking link delivered to customer"}
+                        {automationWorkflowMode === "support" && "Instant confirmation & calendar link emailed to client"}
+                      </div>
+                      <div className="text-[11px] text-zinc-500 mt-0.5">
+                        {automationWorkflowMode === "lead" && "Team notified immediately · Zero delay in lead response"}
+                        {automationWorkflowMode === "ecommerce" && "Real-time delivery ETA delivered to customer's phone"}
+                        {automationWorkflowMode === "support" && "Client books directly on calendar with zero back-and-forth"}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Bottom Card Footer */}
+                <div className="pt-3 border-t border-zinc-100 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-zinc-500">
+                  <div className="flex items-center gap-1.5 font-medium text-[11px]">
+                    <span className="text-zinc-400">⚡ Connects with:</span>
+                    <span className="font-semibold text-zinc-700">HubSpot · Shopify · Slack · WhatsApp · Zapier · Make</span>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                    100% Automated · No Coding Needed
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+          </section>
         ) : (
           /* For all other services: Strategic Overview */
           <section className="w-full bg-[#fafafb] text-black py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
@@ -2163,7 +3406,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
           </section>
         )}
 
-        {/* 3. CORE CAPABILITIES & DELIVERABLES (Custom Yellow Section for UI/UX Design) */}
+        {/* 3. CORE CAPABILITIES & DELIVERABLES (Custom Yellow Section for UI/UX Design, Hidden for Email & WhatsApp Marketing) */}
         {service.slug === "ui-ux-design" ? (
           <section id="capabilities" className="w-full bg-[#fbea3d] text-black py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-black/10">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -2242,7 +3485,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
             </div>
           </section>
-        ) : (
+        ) : service.slug === "email-marketing" || service.slug === "whatsapp-marketing" || service.slug === "ai-automation" || service.slug === "marketing-automation" ? null : (
           /* For all other services: Standard Core Capabilities */
           <section id="capabilities" className="w-full bg-white text-black py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
             <div className="max-w-6xl mx-auto flex flex-col gap-12 sm:gap-16">
@@ -2310,48 +3553,50 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         )}
 
         {/* 4. TECH STACK & TOOLS ECOSYSTEM */}
-        <section
-          className={`w-full py-14 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20 border-b ${
-            service.slug === "seo-services"
-              ? "bg-[#fbea3d] text-black border-black/10"
-              : "bg-[#0c0c0d] text-white border-zinc-900"
-          }`}
-        >
-          <div className="max-w-6xl mx-auto flex flex-col gap-8 text-left">
-            <div>
-              <span
-                className={`font-mono text-xs font-bold uppercase tracking-widest block mb-2 ${
-                  service.slug === "seo-services" ? "text-zinc-900 font-extrabold" : "text-[#fbea3d]"
-                }`}
-              >
-                // TECHNOLOGY &amp; TOOLING
-              </span>
-              <h2
-                className={`text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight ${
-                  service.slug === "seo-services" ? "text-black" : "text-white"
-                }`}
-              >
-                Modern Technology Stack
-              </h2>
-            </div>
-
-            <div className="flex flex-wrap gap-2.5 sm:gap-3">
-              {service.techStack.map((tech, idx) => (
-                <div
-                  key={idx}
-                  className={`px-4 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-bold flex items-center gap-2 transition-all ${
-                    service.slug === "seo-services"
-                      ? "bg-black text-white border border-black/20 shadow-md hover:scale-[1.02]"
-                      : "bg-zinc-900 border border-zinc-800 text-zinc-200 hover:border-[#fbea3d] hover:text-[#fbea3d]"
+        {service.slug !== "whatsapp-marketing" && (
+          <section
+            className={`w-full py-14 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20 border-b ${
+              service.slug === "seo-services"
+                ? "bg-[#fbea3d] text-black border-black/10"
+                : "bg-[#0c0c0d] text-white border-zinc-900"
+            }`}
+          >
+            <div className="max-w-6xl mx-auto flex flex-col gap-8 text-left">
+              <div>
+                <span
+                  className={`font-mono text-xs font-bold uppercase tracking-widest block mb-2 ${
+                    service.slug === "seo-services" ? "text-zinc-900 font-extrabold" : "text-[#fbea3d]"
                   }`}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#fbea3d]"></span>
-                  <span>{tech}</span>
-                </div>
-              ))}
+                  // TECHNOLOGY &amp; TOOLING
+                </span>
+                <h2
+                  className={`text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight ${
+                    service.slug === "seo-services" ? "text-black" : "text-white"
+                  }`}
+                >
+                  Modern Technology Stack
+                </h2>
+              </div>
+
+              <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                {service.techStack.map((tech, idx) => (
+                  <div
+                    key={idx}
+                    className={`px-4 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-bold flex items-center gap-2 transition-all ${
+                      service.slug === "seo-services"
+                        ? "bg-black text-white border border-black/20 shadow-md hover:scale-[1.02]"
+                        : "bg-zinc-900 border border-zinc-800 text-zinc-200 hover:border-[#fbea3d] hover:text-[#fbea3d]"
+                    }`}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#fbea3d]"></span>
+                    <span>{tech}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* 5. 4-STEP DELIVERY PROCESS / COLLABORATE WITH PROS (App Development Custom) */}
         {service.slug === "app-development" ? (
@@ -3386,6 +4631,424 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
             </div>
           </section>
+        ) : service.slug === "whatsapp-marketing" ? (
+          /* Enterprise WhatsApp Execution Blueprint: 4-Stage Growth Roadmap */
+          <section className="w-full bg-[#fafafb] text-black py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
+            <div className="max-w-6xl mx-auto flex flex-col gap-10 sm:gap-12 text-left">
+              
+              {/* Header */}
+              <div className="flex flex-col items-start gap-3">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-600 block">
+                  // PROVEN EXECUTION METHODOLOGY
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08]">
+                  ENTERPRISE WHATSAPP <span className="text-zinc-400 font-black">REVENUE BLUEPRINT</span>
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-3xl font-normal">
+                  We implement a complete conversational commerce architecture for your brand—handling official Meta Green Tick verification, zero-latency webhook automation, high-converting broadcast segmentation, and multi-agent customer support integration.
+                </p>
+              </div>
+
+              {/* 4-Stage Pillars Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                
+                {/* Stage 01 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-white bg-[#075e54] px-3 py-1 rounded-md">
+                        PHASE 01
+                      </span>
+                      <span className="text-xs font-mono text-emerald-600 font-bold uppercase tracking-wider">
+                        INFRASTRUCTURE
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      Meta Green Tick &amp; Cloud API Provisioning
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Official Meta Business Manager verification, dedicated WABA (WhatsApp Business Account) phone number provisioning, Tier-3 messaging clearance (unlimited daily broadcasts), and zero-downtime webhook gateway setup.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Meta Verified Green Tick</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Cloud API Tier-3 Access</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Encrypted Webhook Proxy</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Business Profile Setup</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Stage 02 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-white bg-[#075e54] px-3 py-1 rounded-md">
+                        PHASE 02
+                      </span>
+                      <span className="text-xs font-mono text-emerald-600 font-bold uppercase tracking-wider">
+                        AUTOMATION
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      E-Commerce Webhook Triggers &amp; Cart Recovery
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Instant event synchronization connecting Shopify, WooCommerce, or custom checkouts to automated WhatsApp sequences. Recover lost revenue through high-converting abandoned checkout alerts and real-time shipping updates.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>1-Click Cart Recovery Links</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Automated COD Confirmation</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Real-Time Shipping Alerts</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Instant Post-Purchase Nudges</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Stage 03 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-white bg-[#075e54] px-3 py-1 rounded-md">
+                        PHASE 03
+                      </span>
+                      <span className="text-xs font-mono text-emerald-600 font-bold uppercase tracking-wider">
+                        BROADCASTS
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      Segmented Campaigns &amp; High-Converting Drops
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Transform one-time buyers into recurring VIP clients. We design rich interactive catalog broadcasts with action buttons, monitor sender phone quality scores, and maintain strict Meta compliance to achieve 98% open rates.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>98% Open Rate Optimization</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>VIP RFM Segmentation</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Interactive CTA Buttons</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Sender Quality Protection</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Stage 04 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-white bg-[#075e54] px-3 py-1 rounded-md">
+                        PHASE 04
+                      </span>
+                      <span className="text-xs font-mono text-emerald-600 font-bold uppercase tracking-wider">
+                        SUPPORT &amp; CRM
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      Multi-Agent Team Inbox &amp; CRM Synchronization
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Empower your human support team with a centralized multi-agent dashboard. Route incoming inquiries intelligently, automate quick canned answers, and sync conversations two-way with Zendesk, HubSpot, and Freshdesk.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Multi-Agent Support Inbox</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Two-Way CRM Synchronization</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Canned Macro Response Library</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>Revenue Attribution Analytics</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+        ) : (service.slug === "ai-automation" || service.slug === "marketing-automation") ? (
+          /* Enterprise Automation Execution Blueprint: 4-Stage Growth Roadmap */
+          <section className="w-full bg-[#fafafb] text-black py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
+            <div className="max-w-6xl mx-auto flex flex-col gap-10 sm:gap-12 text-left">
+              
+              {/* Header */}
+              <div className="flex flex-col items-start gap-3">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-900 bg-[#fbea3d] px-2.5 py-0.5 rounded-md block">
+                  // PROVEN EXECUTION METHODOLOGY
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08]">
+                  ENTERPRISE AUTOMATION <span className="text-zinc-400 font-black">BLUEPRINT</span>
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-3xl font-normal">
+                  We engineer resilient, low-latency automated workflows connecting your entire marketing, sales, and operational technology stack into a unified, high-throughput ecosystem.
+                </p>
+              </div>
+
+              {/* 4-Stage Pillars Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                
+                {/* Stage 01 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-black bg-[#fbea3d] px-3 py-1 rounded-md">
+                        PHASE 01
+                      </span>
+                      <span className="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider">
+                        AUDIT &amp; ARCHITECTURE
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      Systems &amp; API Integration Audit
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Comprehensive technical review of all active CRMs, marketing platforms, databases, and third-party APIs. We map data schemas, token security, and endpoint rate limits to identify manual bottlenecks.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>API Rate Limit &amp; Schema Map</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Token &amp; Webhook Security Audit</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Manual Bottleneck Analysis</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Architecture Specification</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Stage 02 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-black bg-[#fbea3d] px-3 py-1 rounded-md">
+                        PHASE 02
+                      </span>
+                      <span className="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider">
+                        MIDDLEWARE ENGINE
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      Webhook Routing &amp; Event Middleware
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Engineering zero-downtime event routers and webhook proxies using Make.com, Zapier, n8n, and custom serverless functions. We implement deduplication rules and secure payload verification.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Zero-Loss Webhook Relays</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Payload De-duplication Logic</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Serverless Event Handlers</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Encrypted Data Transit</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Stage 03 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-black bg-[#fbea3d] px-3 py-1 rounded-md">
+                        PHASE 03
+                      </span>
+                      <span className="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider">
+                        TWO-WAY SYNC
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      Multi-Platform Database &amp; CRM Synchronization
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Bi-directional data synchronization connecting CRMs (HubSpot, Salesforce), ERPs, payment gateways (Stripe), and internal databases in sub-second latency with automated conflict resolution.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Two-Way CRM Webhooks</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Real-Time Deal Stage Sync</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Multi-App Field Mapping</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Automated Lead Scoring</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Stage 04 */}
+                <div className="bg-white border border-zinc-200/90 p-6 sm:p-8 rounded-3xl hover:border-zinc-400 transition-all flex flex-col justify-between gap-6 group shadow-sm hover:shadow-md">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black text-black bg-[#fbea3d] px-3 py-1 rounded-md">
+                        PHASE 04
+                      </span>
+                      <span className="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider">
+                        OBSERVABILITY &amp; SLA
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-zinc-900 font-display group-hover:text-black transition-colors">
+                      Continuous Monitoring, Retry Queues &amp; SLAs
+                    </h3>
+
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      Enterprise observability with automated exponential backoff retries, dead-letter queue storage, instant Slack/pager duty alerts on third-party API downtime, and weekly execution telemetry.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-zinc-100">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Included Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-zinc-800">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Automated Retry Backoff</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Dead-Letter Error Queues</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>Instant Slack / Email Alerts</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-black font-bold">✓</span>
+                        <span>99.99% Uptime SLA Monitoring</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </section>
         ) : (
           /* For all other services: 4-Phase Delivery Framework */
           <section className="w-full bg-white text-black py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
@@ -3423,81 +5086,83 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
           </section>
         )}
 
-        {/* 6. STRUCTURED FOR SEARCH ENGINE VISIBILITY / WHY CHOOSE OWLIO WORKS (Replaces Featured Case Studies) */}
-        <section className="w-full bg-[#f4f4f5] text-black py-14 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
-            
-            {/* Left Column: Heading + Paragraph + 8 Capsule Checklist Cards */}
-            <div className="lg:col-span-7 flex flex-col justify-between text-left">
-              <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.1] mb-5">
-                  {service.structuredSection?.title || "STRUCTURED FOR SEARCH ENGINE VISIBILITY"}
-                </h2>
-                <p className="text-zinc-600 text-xs sm:text-sm md:text-[15px] leading-relaxed font-normal mb-8 max-w-2xl">
-                  {service.structuredSection?.description ||
-                    "Smart optimization techniques to enhance reach online whilst keeping users engaged in an interesting layout. We implement modern, semantic code structures that make it simple for Google crawlers to index key business sections."}
-                </p>
-              </div>
+        {/* 6. STRUCTURED FOR SEARCH ENGINE VISIBILITY / WHY CHOOSE OWLIO WORKS (Hidden for AI & Automation) */}
+        {service.slug !== "ai-automation" && service.slug !== "marketing-automation" && (
+          <section className="w-full bg-[#f4f4f5] text-black py-14 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 border-b border-zinc-200">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+              
+              {/* Left Column: Heading + Paragraph + 8 Capsule Checklist Cards */}
+              <div className="lg:col-span-7 flex flex-col justify-between text-left">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.1] mb-5">
+                    {service.structuredSection?.title || "STRUCTURED FOR SEARCH ENGINE VISIBILITY"}
+                  </h2>
+                  <p className="text-zinc-600 text-xs sm:text-sm md:text-[15px] leading-relaxed font-normal mb-8 max-w-2xl">
+                    {service.structuredSection?.description ||
+                      "Smart optimization techniques to enhance reach online whilst keeping users engaged in an interesting layout. We implement modern, semantic code structures that make it simple for Google crawlers to index key business sections."}
+                  </p>
+                </div>
 
-              {/* 2-Column Grid of 8 White Pill Checklist Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
-                {(
-                  service.structuredSection?.checklist || [
-                    "Responsive page structure",
-                    "Mobile-ready framework",
-                    "Fast-loading content",
-                    "Keyword-focused site structure",
-                    "Search-friendly coding",
-                    "Easy navigation flow",
-                    "Structured content placement",
-                    "Conversion-focused pages",
-                  ]
-                ).map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white border border-zinc-200/80 px-4 py-3 sm:py-3.5 rounded-2xl shadow-xs flex items-center gap-3 text-xs sm:text-[13px] font-medium text-zinc-800 hover:border-zinc-400 transition-colors"
-                  >
-                    <span className="text-black font-bold text-sm leading-none">✓</span>
-                    <span className="leading-snug">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column: Dark Modern Card "WHY CHOOSE OWLIO WORKS?" */}
-            <div className="lg:col-span-5 bg-[#0c0c0d] border border-zinc-800 rounded-3xl p-7 sm:p-9 text-white flex flex-col justify-between text-left shadow-xl">
-              <div>
-                <h3 className="text-xs sm:text-sm font-mono font-bold tracking-wider text-white uppercase pb-3.5 mb-5 border-b border-zinc-800">
-                  {service.structuredSection?.whyChooseTitle || "WHY CHOOSE OWLIO WORKS?"}
-                </h3>
-                <p className="text-zinc-400 text-xs sm:text-[13px] leading-relaxed mb-6 font-normal">
-                  {service.structuredSection?.whyChooseDesc ||
-                    "The problem many companies face is having a website that looks good, but doesn't work. Creativity and Digital Strategy are the comfort of our team that is helping businesses to achieve measurable results."}
-                </p>
-
-                {/* Bullets with glowing yellow dots */}
-                <ul className="flex flex-col gap-3 text-xs sm:text-[13px] text-zinc-200 font-medium">
+                {/* 2-Column Grid of 8 White Pill Checklist Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                   {(
-                    service.structuredSection?.whyChooseBullets || [
-                      "Business-focused solutions",
-                      "Performance-driven development",
-                      "Search optimized framework",
-                      "Customer-first approach",
-                      "Scalable digital platforms",
-                      "Professional project execution",
+                    service.structuredSection?.checklist || [
+                      "Responsive page structure",
+                      "Mobile-ready framework",
+                      "Fast-loading content",
+                      "Keyword-focused site structure",
+                      "Search-friendly coding",
+                      "Easy navigation flow",
+                      "Structured content placement",
+                      "Conversion-focused pages",
                     ]
-                  ).map((bullet, bIdx) => (
-                    <li key={bIdx} className="flex items-center gap-2.5">
-                      <span className="text-[#fbea3d] text-lg leading-none select-none">•</span>
-                      <span>{bullet}</span>
-                    </li>
+                  ).map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white border border-zinc-200/80 px-4 py-3 sm:py-3.5 rounded-2xl shadow-xs flex items-center gap-3 text-xs sm:text-[13px] font-medium text-zinc-800 hover:border-zinc-400 transition-colors"
+                    >
+                      <span className="text-black font-bold text-sm leading-none">✓</span>
+                      <span className="leading-snug">{item}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-            </div>
 
-          </div>
-        </section>
+              {/* Right Column: Dark Modern Card "WHY CHOOSE OWLIO WORKS?" */}
+              <div className="lg:col-span-5 bg-[#0c0c0d] border border-zinc-800 rounded-3xl p-7 sm:p-9 text-white flex flex-col justify-between text-left shadow-xl">
+                <div>
+                  <h3 className="text-xs sm:text-sm font-mono font-bold tracking-wider text-white uppercase pb-3.5 mb-5 border-b border-zinc-800">
+                    {service.structuredSection?.whyChooseTitle || "WHY CHOOSE OWLIO WORKS?"}
+                  </h3>
+                  <p className="text-zinc-400 text-xs sm:text-[13px] leading-relaxed mb-6 font-normal">
+                    {service.structuredSection?.whyChooseDesc ||
+                      "The problem many companies face is having a website that looks good, but doesn't work. Creativity and Digital Strategy are the comfort of our team that is helping businesses to achieve measurable results."}
+                  </p>
+
+                  {/* Bullets with glowing yellow dots */}
+                  <ul className="flex flex-col gap-3 text-xs sm:text-[13px] text-zinc-200 font-medium">
+                    {(
+                      service.structuredSection?.whyChooseBullets || [
+                        "Business-focused solutions",
+                        "Performance-driven development",
+                        "Search optimized framework",
+                        "Customer-first approach",
+                        "Scalable digital platforms",
+                        "Professional project execution",
+                      ]
+                    ).map((bullet, bIdx) => (
+                      <li key={bIdx} className="flex items-center gap-2.5">
+                        <span className="text-[#fbea3d] text-lg leading-none select-none">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        )}
 
         {/* 7. FREQUENTLY ASKED QUESTIONS (Accordion) */}
         {service.faqs.length > 0 && (

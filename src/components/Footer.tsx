@@ -98,7 +98,7 @@ export default function Footer() {
 
               {/* Twitter / X */}
               <a
-                href="https://x.com/owlioworks"
+                href="https://x.com/OwlioWorks"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-zinc-200 bg-white text-zinc-800 flex items-center justify-center hover:bg-black hover:text-[#fbea3d] hover:border-black transition-all shadow-2xs hover:scale-105 active:scale-95 cursor-pointer"
@@ -124,7 +124,7 @@ export default function Footer() {
 
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Owlio-Works/61594586423122/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-zinc-200 bg-white text-zinc-800 flex items-center justify-center hover:bg-black hover:text-[#fbea3d] hover:border-black transition-all shadow-2xs hover:scale-105 active:scale-95 cursor-pointer"
