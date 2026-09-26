@@ -164,6 +164,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services/ai-automation" className="hover:text-black transition-colors">
+                  AI, Email &amp; WhatsApp Automation
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/enterprise-software" className="hover:text-black transition-colors">
                   Enterprise Software
                 </Link>

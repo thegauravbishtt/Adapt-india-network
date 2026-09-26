@@ -91,6 +91,7 @@ const servicesData: Record<string, ServiceSection> = {
       { name: "UI/UX Design", icon: "heart", href: "/services/ui-ux-design" },
       { name: "Web Design", icon: "monitor", href: "/services/web-development" },
       { name: "App Design", icon: "smartphone", href: "/services/app-development" },
+      { name: "Content Marketing", icon: "file", href: "/services/content-marketing" },
     ],
   },
   marketing: {
@@ -100,14 +101,15 @@ const servicesData: Record<string, ServiceSection> = {
       { name: "Google Ads / PPC", icon: "target", href: "/services/google-ads" },
       { name: "Meta Ads", icon: "users", href: "/services/meta-ads" },
       { name: "Social Media Marketing", icon: "star", href: "/services/social-media" },
-      { name: "Content Marketing", icon: "file", href: "/services/content-marketing" },
       { name: "Local SEO & GMB", icon: "pin", href: "/services/local-seo-gmb" },
     ],
   },
-  security: {
-    title: "Security",
+  automation: {
+    title: "AI & Automation",
     items: [
-      { name: "Cybersecurity & Systems", icon: "lock", href: "/services/cybersecurity" },
+      { name: "AI & Automation", icon: "sparkles", href: "/services/ai-automation" },
+      { name: "Email Marketing", icon: "mail", href: "/services/email-marketing" },
+      { name: "WhatsApp Marketing", icon: "whatsapp", href: "/services/whatsapp-marketing" },
     ],
   },
 };
@@ -284,6 +286,25 @@ export default function Navbar() {
           <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a8 8 0 0 0 8-8c0-5-8-11-8-11s-8 6-8 11a8 8 0 0 0 8 8Z" />
             <circle cx="12" cy="13" r="3" />
+          </svg>
+        );
+      case "mail":
+        return (
+          <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+        );
+      case "whatsapp":
+        return (
+          <svg className="w-3.5 h-3.5 shrink-0 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        );
+      case "sparkles":
+        return (
+          <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
           </svg>
         );
       case "lock":
@@ -618,13 +639,13 @@ export default function Navbar() {
                   </ul>
                 </div>
 
-                {/* Column 4: Security */}
+                {/* Column 4: AI & Automation */}
                 <div className="flex flex-col items-start text-left w-full">
                   <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                    {servicesData.security.title}
+                    {servicesData.automation.title}
                   </span>
                   <ul className="flex flex-col gap-1 w-full">
-                    {servicesData.security.items.map((item, idx) => (
+                    {servicesData.automation.items.map((item, idx) => (
                       <li key={idx}>
                         <a
                           href={item.href}
@@ -881,10 +902,10 @@ export default function Navbar() {
                 </div>
                 <div>
                   <span className="text-[11px] font-bold text-zinc-900 uppercase tracking-wider block mb-1.5 border-b border-zinc-200 pb-1">
-                    Security
+                    AI & Automation
                   </span>
                   <ul className="flex flex-col gap-1 text-zinc-700">
-                    {servicesData.security.items.map((item, idx) => (
+                    {servicesData.automation.items.map((item, idx) => (
                       <li key={idx}>
                         <a href={item.href} onClick={() => setMobileMenuOpen(false)} className="hover:text-black block py-0.5">
                           • {item.name}
