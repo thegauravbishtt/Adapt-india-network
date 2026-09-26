@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
+import MobileBottomBar from "../components/MobileBottomBar";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-transparent text-black font-sans flex flex-col">
         <LanguageProvider>
           {children}
+          <MobileBottomBar />
         </LanguageProvider>
       </body>
     </html>

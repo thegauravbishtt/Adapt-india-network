@@ -28,14 +28,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-white text-zinc-800 pt-16 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 relative border-t border-zinc-200/80 select-none">
+    <footer className="w-full bg-white text-zinc-800 pt-16 sm:pt-20 pb-16 sm:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 relative border-t border-zinc-200/80 select-none">
       
       {/* Floating Back to Top Button */}
       {showScrollTop && (
         <button
           type="button"
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full bg-black text-[#fbea3d] border-2 border-black/80 flex items-center justify-center shadow-[0_4px_20px_rgba(251,234,61,0.35)] hover:bg-[#fbea3d] hover:text-black hover:border-black hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group"
+          className="fixed bottom-16 md:bottom-6 left-6 z-40 w-11 h-11 rounded-full bg-black text-[#fbea3d] border-2 border-black/80 flex items-center justify-center shadow-[0_4px_20px_rgba(251,234,61,0.35)] hover:bg-[#fbea3d] hover:text-black hover:border-black hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group"
           aria-label="Scroll to top"
         >
           <svg
