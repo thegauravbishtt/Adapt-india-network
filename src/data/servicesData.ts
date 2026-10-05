@@ -1652,155 +1652,164 @@ export const allServices: ServiceDetail[] = [
   },
   {
     slug: "ai-automation",
-    name: "AI & Automation",
+    name: "Marketing & Workflow Automation",
     category: "Channels & Build",
-    tagline: "Custom AI Agents, LLM Pipelines & Workflow Automation",
-    heroHeadline: "Custom AI Agents, LLM Workflows &",
-    heroHighlight: "Enterprise Automation.",
+    tagline: "Smart Workflow Automations & Tool Integrations",
+    heroHeadline: "Connect Your Business Tools &",
+    heroHighlight: "Automate Repetitive Work.",
     heroSubtitle:
-      "We engineer autonomous AI agents, fine-tuned LLM workflows, two-way CRM webhooks, and intelligent multi-channel automations that eliminate manual operational bottlenecks and scale business capacity 10x.",
+      "We design and build reliable automated workflows that connect your website, CRM, email, and messaging apps—so your team saves 15+ hours every week and never misses a customer.",
     image: "/services/marketing_automation.jpg",
     galleryImages: ["/creative2.png", "/image4.png", "/studio-photo.png"],
     stats: [
-      { value: "10x", label: "Operational Velocity" },
-      { value: "-85%", label: "Manual Data Entry Hours" },
-      { value: "+48%", label: "Lead-to-Close Conversion Lift" },
-      { value: "100%", label: "Real-Time Pipeline Sync" },
+      { value: "15+ Hrs", label: "Saved Per Employee / Wk" },
+      { value: "< 5s", label: "Instant Lead Response Time" },
+      { value: "100%", label: "Accurate Data Synchronization" },
+      { value: "0", label: "Manual Data Entry Overhead" },
     ],
     overview:
-      "Scaling modern enterprises requires autonomous precision. Owlio Works connects your entire marketing, sales, and operational tech stack into a unified, AI-driven ecosystem where leads are scored instantly, customer inquiries are answered by custom AI agents, and workflows run with zero manual drag.",
+      "Growing a business shouldn't mean drowning in repetitive copy-pasting, manually moving leads across spreadsheets, or replying to the same questions dozens of times a day. We connect your software stack—Shopify, HubSpot, Slack, WhatsApp, and email—so your everyday operations run smoothly on autopilot.",
     theChallenge:
-      "Teams waste hundreds of hours manually moving data, qualifying leads, fielding repetitive questions, and managing fragmented tools that don't communicate with each other.",
+      "Teams waste hundreds of hours each month manually entering data, chasing unassigned leads, and copying information between apps that don't talk to each other.",
     ourSolution:
-      "We engineer custom generative AI agents, fine-tuned LLM tools, and resilient automated workflow architectures using Make.com, Zapier, n8n, and custom API webhooks to streamline complex business logic end-to-end.",
+      "We build clean, robust automated workflows using Make.com, Zapier, HubSpot, and direct webhooks to connect your tools, route leads instantly, and keep your entire team updated automatically.",
     capabilities: [
       {
-        title: "Autonomous AI Agents & LLM Pipelines",
-        description: "Custom AI agents fine-tuned on your internal knowledge base to automate customer support, research, and data triage.",
-        deliverables: ["Custom AI Agent Workflows", "RAG Knowledge Base Integration", "Function Calling & Tool Use", "Automated QA & Guardrails"],
+        title: "Website Lead Routing & Instant Alerts",
+        description: "Instantly capture incoming inquiries from your website forms, log them into your CRM, and ping your sales team on Slack or WhatsApp in under 5 seconds.",
+        deliverables: ["Instant Website Form Sync", "Slack & Teams Notifications", "Sales Rep Auto-Assignment", "Automated Client Confirmation Email"],
       },
       {
-        title: "Omnichannel Lead Nurturing & Scoring",
-        description: "Dynamic AI lead scoring models that trigger tailored emails, SMS, and WhatsApp alerts based on user readiness.",
-        deliverables: ["Behavioral AI Lead Scoring", "Multi-Channel Drip Sequences", "Sales Rep Auto-Assignment", "Instant Slack / Teams Alerts"],
+        title: "E-Commerce & Order Automations",
+        description: "Automatically update inventory, generate shipping labels, and send live tracking notifications directly to customer phones via WhatsApp & Email.",
+        deliverables: ["Shopify & WooCommerce Webhooks", "Automated Order Receipts", "WhatsApp Shipping Updates", "Abandoned Cart Follow-Up"],
       },
       {
-        title: "CRM & Two-Way Database Webhooks",
-        description: "Bi-directional synchronization between CRMs (HubSpot, Salesforce), advertising accounts, and databases.",
-        deliverables: ["Custom Webhook Infrastructure", "Two-Way Data Synchronization", "De-Duplication & Data Normalization", "Automated Deal Stage Moves"],
+        title: "CRM & Multi-Tool Data Sync",
+        description: "Seamlessly connect HubSpot, Salesforce, Google Sheets, and databases so your contact records and deal stages are always in sync.",
+        deliverables: ["Two-Way Data Synchronization", "Duplicate Contact Prevention", "Automated Pipeline Updates", "Google Sheets Live Sync"],
       },
       {
-        title: "Server-Side Conversions & Audience Sync",
-        description: "Server-side Meta and Google Ads audience updates and offline conversion event streaming for lower CPAs.",
-        deliverables: ["Server-Side CAPI Setup", "Dynamic LTV Customer Lists", "Automated Churn Suppression", "Lookalike Seed Generation"],
+        title: "Customer Communication & Booking Flows",
+        description: "Automate calendar booking links, confirmation emails, reminder texts, and review requests without any manual back-and-forth.",
+        deliverables: ["Automated Meeting Booking", "Email & SMS Reminders", "Customer Review Requests", "Post-Service Follow-Up Drips"],
       },
     ],
     techStack: [
-      "OpenAI",
-      "Anthropic Claude",
-      "LangChain",
       "Make.com",
       "Zapier",
-      "n8n",
       "HubSpot",
-      "Salesforce",
-      "Segment",
-      "Python",
-      "Node.js",
+      "Shopify",
+      "Slack",
+      "WhatsApp API",
+      "Google Workspace",
+      "Notion",
+      "Stripe",
       "Webhooks",
+      "Node.js",
     ],
     processSteps: [
       {
         step: "01",
-        title: "AI & Workflow Architecture Audit",
-        desc: "Auditing all active tools, data schemas, API limits, and identifying high-friction manual bottlenecks.",
+        title: "Workflow & Time-Drain Audit",
+        desc: "We review your daily business processes and pinpoint the most repetitive, time-consuming tasks.",
       },
       {
         step: "02",
-        title: "Agent Blueprint & Logic Design",
-        desc: "Mapping visual state diagrams, prompt engineering guidelines, and event trigger definitions before building.",
+        title: "Visual Connection Blueprint",
+        desc: "We map clear, simple trigger-and-action pathways between your software tools before building.",
       },
       {
         step: "03",
-        title: "Integration Build & Stress Testing",
-        desc: "Building webhook pipelines with Make/Zapier/custom code and validating payload delivery under high traffic.",
+        title: "Integration Build & Live Testing",
+        desc: "We build the automations on reliable platforms (Make/Zapier/Webhooks) and thoroughly test every condition.",
       },
       {
         step: "04",
-        title: "Continuous Monitoring & LLM Guardrails",
-        desc: "Configuring automated failure alerts, telemetry logging, and ongoing prompt/trigger refinement.",
+        title: "Team Handoff & Peace of Mind",
+        desc: "We walk your team through how it works, provide simple documentation, and monitor uptime.",
       },
     ],
     caseStudies: [
       {
-        title: "Automated B2B Enterprise Lead Routing",
-        client: "Vanguard Logistics Tech",
-        impact: "Reduced lead response time from 4.5 hours to 12 seconds, boosting closed deals by 62%.",
+        title: "Commercial Real Estate Lead Routing",
+        client: "Vanguard Property Tech",
+        impact: "Reduced lead follow-up time from 3 hours to 8 seconds, increasing booked site visits by 52%.",
         image: "/creative2.png",
       },
       {
-        title: "Multi-Platform E-Commerce Sync",
-        client: "OmniRetail Group",
-        impact: "Automated 120,000 monthly transactions across CRM, ERP, and WhatsApp with zero data loss.",
+        title: "D2C Brand Order & Shipping Automation",
+        client: "OmniRetail Direct",
+        impact: "Automated 15,000 monthly order notifications and tracking alerts across Shopify and WhatsApp.",
         image: "/creative4.png",
       },
     ],
     faqs: [
       {
-        question: "What tools and AI frameworks do you build with?",
+        question: "Do we need coding experience to maintain these automations?",
         answer:
-          "We build with OpenAI, Claude, LangChain, Make.com, Zapier, n8n, HubSpot, Salesforce, Segment, and bespoke Node.js / Python webhook microservices.",
+          "No coding is needed. We build on user-friendly visual platforms like Make.com and Zapier, and provide simple documentation so anyone on your team can easily understand and manage them.",
       },
       {
-        question: "How do automation workflows handle API outages or errors?",
+        question: "What tools and software can you connect together?",
         answer:
-          "We build enterprise-grade error handling with automated retries, payload queues, dead-letter storage, and instant Slack/email developer alert triggers.",
+          "We can connect virtually any modern tool—including Shopify, HubSpot, Salesforce, Slack, WhatsApp, Google Sheets, Gmail, Stripe, Notion, and custom databases.",
       },
       {
-        question: "Can AI agents hallucinate or give wrong answers to customers?",
+        question: "What happens if an external app has a temporary glitch or outage?",
         answer:
-          "We enforce strict Retrieval-Augmented Generation (RAG) guardrails, temperature controls, and system rules that confine AI answers strictly to your verified knowledge base with automated human agent fallbacks.",
+          "We build fail-safe retry queues and instant alert notifications so data is safely stored and processed as soon as the service recovers, with zero lost leads.",
       },
       {
-        question: "How does server-side Conversions API (CAPI) improve ad performance?",
+        question: "How quickly can our business see time savings?",
         answer:
-          "CAPI bypasses browser ad blockers and iOS tracking restrictions by streaming verified purchase and lead events directly from your server to Meta and Google, restoring ad attribution and lowering acquisition costs.",
+          "Most core automations (such as lead routing, order confirmations, and CRM sync) are designed, tested, and live within 3 to 5 business days.",
       },
     ],
     structuredSection: {
-      title: "INTELLIGENT SYSTEMS BUILT FOR ZERO MANUAL OVERHEAD",
+      title: "PRACTICAL AUTOMATION ENGINEERED FOR RELIABILITY",
       description:
-        "Eliminate manual operational drag with autonomous AI agents and automated pipelines that process leads, trigger campaigns, and synchronize databases in real-time.",
+        "Save valuable team hours and eliminate human error with clean, reliable automations that keep your leads, orders, and customer data connected 24/7.",
       checklist: [
-        "Autonomous AI Agent Workflows",
-        "Two-Way CRM & Marketing Sync",
-        "Real-Time Webhook Architecture",
-        "Automated AI Lead Scoring",
-        "Server-Side Meta & Google CAPI",
-        "Custom Data Formatting & Cleanup",
-        "Fail-Safe Retry & Error Logging",
-        "Unified ROI & Pipeline Dashboards",
+        "Instant Website Lead Notifications",
+        "Shopify & E-Commerce Webhook Sync",
+        "Two-Way HubSpot & CRM Sync",
+        "WhatsApp & Email Customer Updates",
+        "Automated Calendar Meeting Booking",
+        "Google Sheets Live Data Pipelines",
+        "Fail-Safe Error Alerts & Queueing",
+        "Zero Coding Required For Your Team",
       ],
-      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR AI & AUTOMATION?",
+      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR AUTOMATION?",
       whyChooseDesc:
-        "We don't just connect simple apps. We architect scalable, fault-tolerant business automation engines and autonomous AI agents that power sustainable growth.",
+        "We build practical, reliable business automations that solve real problems, save hours every week, and help your team focus on high-value work.",
       whyChooseBullets: [
-        "End-to-end AI & integration architecture",
-        "Enterprise error-handling & retry queues",
-        "Strict RAG guardrails & zero hallucination rules",
-        "Real-time Slack & CRM notifications",
-        "Strict data privacy & SOC2 compliance",
-        "Dedicated AI & automation engineers",
+        "Clean, visual workflows anyone can understand",
+        "Direct connection between all your favorite apps",
+        "Instant lead notifications in under 5 seconds",
+        "Thorough testing with zero lost customer data",
+        "Simple team documentation and ongoing support",
+        "Transparent setup with fast 3-5 day turnaround",
       ],
     },
   },
 ];
 
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
-  if (slug === "ai-automation" || slug === "ai" || slug === "marketing-automation" || slug === "automation") {
+  const normalized = slug?.toLowerCase() || "";
+  if (
+    normalized === "ai-automation" ||
+    normalized === "ai" ||
+    normalized === "marketing-automation" ||
+    normalized === "automation"
+  ) {
     return allServices.find((s) => s.slug === "ai-automation");
   }
-  if (slug === "email") return allServices.find((s) => s.slug === "email-marketing");
-  if (slug === "whatsapp") return allServices.find((s) => s.slug === "whatsapp-marketing");
-  return allServices.find((s) => s.slug === slug);
+  if (normalized === "email" || normalized === "email-marketing" || normalized === "emailmarketing") {
+    return allServices.find((s) => s.slug === "email-marketing");
+  }
+  if (normalized === "whatsapp" || normalized === "whatsapp-marketing" || normalized === "whatsappmarketing") {
+    return allServices.find((s) => s.slug === "whatsapp-marketing");
+  }
+  return allServices.find((s) => s.slug === normalized || s.slug === slug);
 }

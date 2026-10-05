@@ -694,10 +694,30 @@ export default function Navbar() {
                       <li>
                         <a href="/services/ai-automation" className="group/link flex flex-col text-left">
                           <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
-                            AI &amp; Automation
+                            Workflow &amp; Marketing Automation
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
-                            Custom AI workflows &amp; smart CRM triggers.
+                            Connect apps, sync leads &amp; automate workflows.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/email-marketing" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Email Marketing
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Automated lifecycle flows &amp; 99.4% deliverability.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/whatsapp-marketing" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            WhatsApp Marketing
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Conversational commerce &amp; 98% open rates.
                           </span>
                         </a>
                       </li>
@@ -1134,10 +1154,30 @@ export default function Navbar() {
                       <li>
                         <a href="/services/ai-automation" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
                           <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
-                            AI &amp; Automation
+                            Workflow &amp; Marketing Automation
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
-                            Custom AI workflows &amp; smart CRM triggers.
+                            Connect apps, sync leads &amp; automate workflows.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/email-marketing" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Email Marketing
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Automated lifecycle flows &amp; 99.4% deliverability.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/whatsapp-marketing" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            WhatsApp Marketing
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Conversational commerce &amp; 98% open rates.
                           </span>
                         </a>
                       </li>
