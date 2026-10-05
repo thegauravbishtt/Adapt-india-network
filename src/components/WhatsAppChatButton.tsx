@@ -46,7 +46,7 @@ export default function WhatsAppChatButton() {
     <aside
       ref={widgetRef}
       aria-label="Chat with Owlio Works"
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end select-none"
+      className="fixed bottom-16 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end select-none"
     >
       {/* 1. SIMPLE CLEAN WHITE CHAT POPUP */}
       {isOpen && (

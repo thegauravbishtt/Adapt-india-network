@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 import WelcomeRequirementModal from "../components/WelcomeRequirementModal";
 import WhatsAppChatButton from "../components/WhatsAppChatButton";
+import MobileBottomBar from "../components/MobileBottomBar";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -60,6 +61,7 @@ export default function RootLayout({
           {children}
           <WelcomeRequirementModal />
           <WhatsAppChatButton />
+          <MobileBottomBar />
         </LanguageProvider>
       </body>
     </html>
