@@ -350,28 +350,32 @@ export default function Navbar() {
 
   return (
     <header
-        ref={headerRef}
-        className="fixed md:sticky top-0 left-0 right-0 w-full select-none transition-all duration-300 z-50 bg-[#121212] md:bg-white/95 backdrop-blur-md border-b border-[#222222] md:border-zinc-200 shadow-xs"
-      >
-        <div className="py-2.5 sm:py-3 px-5 sm:px-10 lg:px-16">
-          <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
-            {/* Brand Logo: White logo on mobile, Black logo on desktop */}
-            <div className="flex items-center gap-3 select-none shrink-0">
-              <Link href="/" className="flex items-center group cursor-pointer py-0.5">
-                {/* Mobile White Logo */}
-                <img
-                  src="/logo-white.png"
-                  alt="Owlio Works Logo"
-                  className="h-7.5 xs:h-8 w-auto object-contain md:hidden transition-transform group-hover:scale-105 duration-200"
-                />
-                {/* Desktop Black Logo */}
-                <img
-                  src="/logo.png"
-                  alt="Owlio Works Logo"
-                  className="hidden md:block h-7.5 xs:h-8 sm:h-9 lg:h-10.5 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
-                />
-              </Link>
-            </div>
+      ref={headerRef}
+      className={`fixed md:sticky top-0 left-0 right-0 w-full select-none transition-all duration-300 z-50 md:bg-white/95 md:backdrop-blur-md md:border-b md:border-zinc-200 shadow-xs ${
+        isScrolled || mobileMenuOpen
+          ? "bg-white/95 backdrop-blur-md border-b border-zinc-200 text-zinc-900"
+          : "bg-[#121212] border-b border-[#222222]"
+      }`}
+    >
+      <div className="py-2.5 sm:py-3 px-5 sm:px-10 lg:px-16">
+        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+          {/* Brand Logo */}
+          <div className="flex items-center gap-3 select-none shrink-0">
+            <Link href="/" className="flex items-center group cursor-pointer py-0.5">
+              {/* Mobile: White logo at top, Black logo when scrolled onto white blurred background */}
+              <img
+                src={isScrolled || mobileMenuOpen ? "/logo.png" : "/logo-white.png"}
+                alt="Owlio Works Logo"
+                className="h-7.5 xs:h-8 w-auto object-contain md:hidden transition-all duration-200 group-hover:scale-105"
+              />
+              {/* Desktop: Always black logo */}
+              <img
+                src="/logo.png"
+                alt="Owlio Works Logo"
+                className="hidden md:block h-7.5 xs:h-8 sm:h-9 lg:h-10.5 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+              />
+            </Link>
+          </div>
 
             {/* Centered Desktop Navigation Bar */}
             <nav className="hidden md:flex items-center justify-center gap-3 lg:gap-4 xl:gap-5 flex-1 mx-3 lg:mx-6">
@@ -504,7 +508,11 @@ export default function Navbar() {
               <button 
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-1.5 transition-colors cursor-pointer active:scale-95 text-white hover:text-amber-400"
+                className={`md:hidden p-1.5 transition-colors cursor-pointer active:scale-95 ${
+                  isScrolled || mobileMenuOpen
+                    ? "text-zinc-900 hover:text-amber-600"
+                    : "text-white hover:text-amber-400"
+                }`}
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Manrope, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
-import MobileBottomBar from "../components/MobileBottomBar";
 import WelcomeRequirementModal from "../components/WelcomeRequirementModal";
+import WhatsAppChatButton from "../components/WhatsAppChatButton";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -59,7 +59,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
           <WelcomeRequirementModal />
-          <MobileBottomBar />
+          <WhatsAppChatButton />
         </LanguageProvider>
       </body>
     </html>
