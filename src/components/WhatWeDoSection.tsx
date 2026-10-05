@@ -12,19 +12,19 @@ export default function WhatWeDoSection() {
         
         {/* Top Header */}
         <div className="flex flex-col items-start text-left mb-12 sm:mb-16">
-          <span className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-500 uppercase mb-3 block">
+          <span className="text-xs sm:text-[13px] font-bold tracking-[0.25em] text-zinc-400 uppercase mb-3 block font-mono">
             {t.whatWeDo.tag}
           </span>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-zinc-900 font-display tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-zinc-950 font-display tracking-tight leading-[1.12]">
             {t.whatWeDo.titleStart}
             <span className="relative inline-block whitespace-nowrap z-0">
               {t.whatWeDo.titleHighlight}
-              <span className="absolute bottom-1.5 sm:bottom-2 left-0 w-full h-3 sm:h-4 bg-[#fbea3d] -z-10 rounded-xs"></span>
+              <span className="absolute bottom-1.5 sm:bottom-2 left-0 w-full h-2.5 sm:h-3.5 bg-[#fbea3d] -z-10 rounded-xs"></span>
             </span>
           </h2>
 
-          <p className="text-zinc-600 text-sm sm:text-base font-medium max-w-xl leading-relaxed mt-4">
+          <p className="text-zinc-600 text-sm sm:text-base md:text-[17px] font-normal max-w-2xl leading-relaxed mt-4">
             {t.whatWeDo.subtitle}
           </p>
         </div>
@@ -33,15 +33,15 @@ export default function WhatWeDoSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           {/* Card 1: The Industry Practice (Yellow Card) */}
-          <div className="bg-[#fbea3d] rounded-3xl sm:rounded-[36px] p-8 sm:p-10 lg:p-12 flex flex-col justify-between border-2 border-black/10 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+          <div className="bg-[#fbea3d] rounded-3xl sm:rounded-[36px] p-8 sm:p-10 lg:p-14 flex flex-col justify-between border-2 border-black/10 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-black/70 mb-3 block">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-black/70 mb-3.5 block">
                 {t.whatWeDo.card1.tag}
               </span>
-              <h3 className="text-3xl sm:text-4xl lg:text-[40px] font-black text-black font-display tracking-tight mb-3">
+              <h3 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-black font-display tracking-tight mb-4 leading-tight">
                 {t.whatWeDo.card1.title}
               </h3>
-              <p className="text-black/80 text-xs sm:text-sm font-medium leading-relaxed mb-8 max-w-md">
+              <p className="text-black/85 text-sm sm:text-base font-medium leading-relaxed mb-8 max-w-lg">
                 {t.whatWeDo.card1.desc}
               </p>
 
@@ -50,7 +50,7 @@ export default function WhatWeDoSection() {
                 {t.whatWeDo.card1.pills.map((pill, idx) => (
                   <span
                     key={idx}
-                    className="px-3.5 py-1.5 rounded-full border border-black/40 text-xs sm:text-[13px] font-semibold text-black bg-transparent hover:bg-black hover:text-white transition-all cursor-default select-none"
+                    className="px-4 py-2 rounded-full border border-black/40 text-xs sm:text-sm font-semibold text-black bg-transparent hover:bg-black hover:text-white transition-all cursor-default select-none"
                   >
                     {pill}
                   </span>
@@ -61,7 +61,7 @@ export default function WhatWeDoSection() {
             {/* Bottom Button: Explore Industries -> /industries */}
             <a
               href="/industries"
-              className="inline-flex items-center justify-center gap-2 bg-black text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-extrabold hover:bg-zinc-800 transition-all self-start shadow-md cursor-pointer group-btn"
+              className="inline-flex items-center justify-center gap-2 bg-black text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-extrabold hover:bg-zinc-800 transition-all self-start shadow-md cursor-pointer group-btn"
             >
               {t.whatWeDo.card1.btn}
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">
@@ -71,7 +71,7 @@ export default function WhatWeDoSection() {
           </div>
 
           {/* Card 2: The Growth Practice (Digital & Performance - Patterned Card) */}
-          <div className="bg-[#fcfcfd] rounded-3xl sm:rounded-[36px] p-8 sm:p-10 lg:p-12 flex flex-col justify-between border-2 border-zinc-200/90 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+          <div className="bg-[#fcfcfd] rounded-3xl sm:rounded-[36px] p-8 sm:p-10 lg:p-14 flex flex-col justify-between border-2 border-zinc-200/90 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
             {/* Subtle grid pattern background */}
             <div 
               className="absolute inset-0 opacity-[0.04] pointer-events-none" 
@@ -82,13 +82,13 @@ export default function WhatWeDoSection() {
             ></div>
 
             <div className="relative z-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-3 block">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-500 mb-3.5 block">
                 {t.whatWeDo.card2.tag}
               </span>
-              <h3 className="text-3xl sm:text-4xl lg:text-[40px] font-black text-zinc-950 font-display tracking-tight mb-3">
+              <h3 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-zinc-950 font-display tracking-tight mb-4 leading-tight">
                 {t.whatWeDo.card2.title}
               </h3>
-              <p className="text-zinc-600 text-xs sm:text-sm font-medium leading-relaxed mb-8 max-w-md">
+              <p className="text-zinc-600 text-sm sm:text-base font-medium leading-relaxed mb-8 max-w-lg">
                 {t.whatWeDo.card2.desc}
               </p>
 
@@ -97,7 +97,7 @@ export default function WhatWeDoSection() {
                 {t.whatWeDo.card2.pills.map((pill, idx) => (
                   <span
                     key={idx}
-                    className="px-3.5 py-1.5 rounded-full border border-zinc-300 text-xs sm:text-[13px] font-semibold text-zinc-800 bg-white hover:border-black hover:text-black transition-all cursor-default select-none shadow-xs"
+                    className="px-4 py-2 rounded-full border border-zinc-300 text-xs sm:text-sm font-semibold text-zinc-800 bg-white hover:border-black hover:text-black transition-all cursor-default select-none shadow-xs"
                   >
                     {pill}
                   </span>
@@ -108,7 +108,7 @@ export default function WhatWeDoSection() {
             {/* Bottom Button: Explore Digital -> /services */}
             <a
               href="/services"
-              className="relative z-10 inline-flex items-center justify-center gap-2 bg-[#fbea3d] text-black px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-extrabold hover:bg-black hover:text-white hover:border-black border border-[#fbea3d] transition-all self-start shadow-md cursor-pointer group-btn"
+              className="relative z-10 inline-flex items-center justify-center gap-2 bg-[#fbea3d] text-black px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-extrabold hover:bg-black hover:text-white hover:border-black border border-[#fbea3d] transition-all self-start shadow-md cursor-pointer group-btn"
             >
               {t.whatWeDo.card2.btn}
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">

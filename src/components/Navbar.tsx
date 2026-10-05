@@ -127,6 +127,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const megaMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
 
   // Track scroll position to apply dynamic frosted glass blur
   useEffect(() => {
@@ -136,6 +137,27 @@ export default function Navbar() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close mega menus on outside click or Escape key
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setActiveMegaMenu(null);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveMegaMenu(null);
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const handleMouseEnter = (menuType: "industries" | "services" | "about") => {
@@ -148,7 +170,14 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     megaMenuTimeoutRef.current = setTimeout(() => {
       setActiveMegaMenu(null);
-    }, 200);
+    }, 300);
+  };
+
+  const toggleMegaMenu = (menuType: "industries" | "services" | "about") => {
+    if (megaMenuTimeoutRef.current) {
+      clearTimeout(megaMenuTimeoutRef.current);
+    }
+    setActiveMegaMenu(prev => (prev === menuType ? null : menuType));
   };
 
   const renderIcon = (icon: string) => {
@@ -320,181 +349,182 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <header
-        className={`w-full select-none transition-all duration-300 z-40 ${
-          !isHomePage
-            ? "sticky top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-zinc-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.04)] py-3 sm:py-3.5 px-6 sm:px-10 lg:px-16"
-            : isScrolled
-            ? "fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-zinc-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] py-3 px-6 sm:px-10 lg:px-16"
-            : "absolute top-0 left-0 right-0 bg-transparent border-none shadow-none pt-4 sm:pt-6 lg:pt-8 pb-2 sm:pb-3 px-5 sm:px-10 lg:px-16"
-        }`}
+    <header
+        ref={headerRef}
+        className="fixed md:sticky top-0 left-0 right-0 w-full select-none transition-all duration-300 z-50 bg-[#121212] md:bg-white/95 backdrop-blur-md border-b border-[#222222] md:border-zinc-200 shadow-xs"
       >
-      <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
-        {/* Brand Logo */}
-        <div className="flex items-center gap-3 select-none shrink-0">
-          <Link href="/" className="flex items-center group cursor-pointer py-0.5">
-            <img
-              src="/logo.png"
-              alt="Owlio Works Logo"
-              className="h-8 xs:h-9 sm:h-9.5 lg:h-10.5 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
-            />
-          </Link>
+        <div className="py-2.5 sm:py-3 px-5 sm:px-10 lg:px-16">
+          <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+            {/* Brand Logo: White logo on mobile, Black logo on desktop */}
+            <div className="flex items-center gap-3 select-none shrink-0">
+              <Link href="/" className="flex items-center group cursor-pointer py-0.5">
+                {/* Mobile White Logo */}
+                <img
+                  src="/logo-white.png"
+                  alt="Owlio Works Logo"
+                  className="h-7.5 xs:h-8 w-auto object-contain md:hidden transition-transform group-hover:scale-105 duration-200"
+                />
+                {/* Desktop Black Logo */}
+                <img
+                  src="/logo.png"
+                  alt="Owlio Works Logo"
+                  className="hidden md:block h-7.5 xs:h-8 sm:h-9 lg:h-10.5 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+                />
+              </Link>
+            </div>
+
+            {/* Centered Desktop Navigation Bar */}
+            <nav className="hidden md:flex items-center justify-center gap-3 lg:gap-4 xl:gap-5 flex-1 mx-3 lg:mx-6">
+              {/* 1. Home */}
+              <a
+                href="/"
+                className="text-[14px] lg:text-[15px] font-bold transition-colors cursor-pointer whitespace-nowrap text-zinc-900 hover:text-amber-500"
+              >
+                <span>{t.navbar.home || "Home"}</span>
+              </a>
+
+              {/* 2. About Us with Submenu Trigger */}
+              <div
+                className="relative py-1.5"
+                onMouseEnter={() => handleMouseEnter("about")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleMegaMenu("about")}
+                  className={`text-[14px] lg:text-[15px] font-bold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap bg-transparent border-0 p-0 relative ${
+                    activeMegaMenu === "about"
+                      ? "text-zinc-900 after:absolute after:-bottom-2.5 after:left-0 after:right-0 after:h-[2.5px] after:bg-[#fbea3d] after:rounded-full"
+                      : "text-zinc-900 hover:text-amber-500"
+                  }`}
+                >
+                  <span>{t.navbar.about || "About Us"}</span>
+                  <svg
+                    className={`w-3 h-3 transition-transform duration-200 text-zinc-900 ${
+                      activeMegaMenu === "about" ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* 3. Our Services with Mega Menu Trigger */}
+              <div
+                className="relative py-1.5"
+                onMouseEnter={() => handleMouseEnter("services")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleMegaMenu("services")}
+                  className={`text-[14px] lg:text-[15px] font-bold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap bg-transparent border-0 p-0 relative ${
+                    activeMegaMenu === "services"
+                      ? "text-zinc-900 after:absolute after:-bottom-2.5 after:left-0 after:right-0 after:h-[2.5px] after:bg-[#fbea3d] after:rounded-full"
+                      : "text-zinc-900 hover:text-amber-500"
+                  }`}
+                >
+                  <span>{t.navbar.services || "Our Services"}</span>
+                  <svg
+                    className={`w-3 h-3 transition-transform duration-200 text-zinc-900 ${
+                      activeMegaMenu === "services" ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* 4. Our Work */}
+              <a
+                href="/work"
+                className="text-[14px] lg:text-[15px] font-bold transition-colors cursor-pointer whitespace-nowrap text-zinc-900 hover:text-amber-500"
+              >
+                {t.navbar.work || "Our Work"}
+              </a>
+
+              {/* 5. Industries */}
+              <div
+                className="relative py-1.5"
+                onMouseEnter={() => handleMouseEnter("industries")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleMegaMenu("industries")}
+                  className={`text-[14px] lg:text-[15px] font-bold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap bg-transparent border-0 p-0 relative ${
+                    activeMegaMenu === "industries"
+                      ? "text-zinc-900 after:absolute after:-bottom-2.5 after:left-0 after:right-0 after:h-[2.5px] after:bg-[#fbea3d] after:rounded-full"
+                      : "text-zinc-900 hover:text-amber-500"
+                  }`}
+                >
+                  <span>{t.navbar.industries || "Industries"}</span>
+                  <svg
+                    className={`w-3 h-3 transition-transform duration-200 text-zinc-900 ${
+                      activeMegaMenu === "industries" ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* 6. Blog */}
+              <a
+                href="/blog"
+                className="text-[14px] lg:text-[15px] font-bold transition-colors cursor-pointer whitespace-nowrap text-zinc-900 hover:text-amber-500"
+              >
+                Blog
+              </a>
+            </nav>
+
+            {/* Right Action: Let's Talk Button & Mobile Toggle */}
+            <div className="flex items-center gap-3 shrink-0">
+              {/* 7. Let's Talk Button (Desktop) */}
+              <a
+                href="/contact"
+                className="hidden md:inline-flex items-center justify-center px-6 lg:px-7 py-2.5 lg:py-3 text-[13.5px] lg:text-[14.5px] font-extrabold rounded-full transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95 whitespace-nowrap bg-[#fac917] text-black hover:bg-[#eab308] shadow-md hover:shadow-lg shadow-[#fac917]/25"
+              >
+                Let&apos;s Talk →
+              </a>
+
+              {/* Mobile Menu Button (< md) */}
+              <button 
+                type="button"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-1.5 transition-colors cursor-pointer active:scale-95 text-white hover:text-amber-400"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+                  </svg>
+                )}
+              </button>
+            </div>
         </div>
-
-        {/* Single Unified Desktop Navigation Bar on Right */}
-        <div className="hidden md:flex items-center gap-3.5 lg:gap-5 xl:gap-6">
-          {/* 1. Home */}
-          <a
-            href="/"
-            className="text-[14px] lg:text-[15px] font-bold text-zinc-950 hover:text-black transition-colors cursor-pointer whitespace-nowrap"
-          >
-            <span>{t.navbar.home || "Home"}</span>
-          </a>
-
-          {/* 2. About Us with Submenu Trigger */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("about")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <a
-              href="/about"
-              className={`text-[14px] lg:text-[15px] font-semibold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap ${
-                activeMegaMenu === "about"
-                  ? "text-black font-bold"
-                  : "text-zinc-900 hover:text-black"
-              }`}
-            >
-              <span>{t.navbar.about || "About Us"}</span>
-              <svg
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "about" ? "rotate-180 text-black" : "text-zinc-600"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </a>
-          </div>
-
-          {/* 3. Our Services with Mega Menu Trigger */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("services")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <a
-              href="/services"
-              className={`text-[14px] lg:text-[15px] font-semibold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap ${
-                activeMegaMenu === "services"
-                  ? "text-black font-bold"
-                  : "text-zinc-900 hover:text-black"
-              }`}
-            >
-              <span>{t.navbar.services || "Our Services"}</span>
-              <svg
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "services" ? "rotate-180 text-black" : "text-zinc-600"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </a>
-          </div>
-
-          {/* 4. Our Work */}
-          <a
-            href="/work"
-            className="text-[14px] lg:text-[15px] font-semibold text-zinc-900 hover:text-black transition-colors cursor-pointer whitespace-nowrap"
-          >
-            {t.navbar.work || "Our Work"}
-          </a>
-
-          {/* 5. Industries */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("industries")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <a
-              href="/industries"
-              className={`text-[14px] lg:text-[15px] font-semibold transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap ${
-                activeMegaMenu === "industries"
-                  ? "text-black font-bold"
-                  : "text-zinc-900 hover:text-black"
-              }`}
-            >
-              <span>{t.navbar.industries || "Industries"}</span>
-              <svg
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  activeMegaMenu === "industries" ? "rotate-180 text-black" : "text-zinc-600"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </a>
-          </div>
-
-          {/* 6. Blog */}
-          <a
-            href="/blog"
-            className="text-[14px] lg:text-[15px] font-semibold text-zinc-900 hover:text-black transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Blog
-          </a>
-
-          {/* 7. Let's Talk Button */}
-          <a
-            href="/contact"
-            className={`px-5 py-2 text-xs font-extrabold rounded-full transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 ${
-              !isHomePage || isScrolled
-                ? "bg-black text-white hover:bg-zinc-800 shadow-xs border border-zinc-800"
-                : "bg-white text-zinc-950 hover:bg-zinc-100 hover:shadow-md shadow-[0_2px_12px_rgba(0,0,0,0.15)] border border-zinc-200/90"
-            }`}
-          >
-            Let&apos;s Talk →
-          </a>
-        </div>
-
-        {/* Mobile Menu Button (< md) */}
-        <button 
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`md:hidden flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full cursor-pointer transition-all active:scale-95 ${
-            !isHomePage || isScrolled
-              ? "border border-zinc-200 text-black bg-white shadow-2xs hover:bg-zinc-50"
-              : "border border-white/30 text-white bg-black/60 backdrop-blur-md hover:bg-black/80 shadow-xs"
-          }`}
-        >
-          {mobileMenuOpen ? (
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-          {t.navbar.menu}
-        </button>
       </div>
 
-      {/* Mega Menu Dropdowns (Desktop) */}
+      {/* Mega Menu Dropdowns (Desktop) - Exact Full Width Panel Matching Reference */}
       {activeMegaMenu && (
         <div
-          className="hidden md:block absolute top-full left-1/2 -translate-x-1/2 pt-2.5 w-[94vw] max-w-[1040px] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+          className="hidden md:block absolute top-full left-0 right-0 w-full bg-white border-b border-zinc-200 shadow-2xl z-50 animate-in fade-in slide-in-from-top-1 duration-150 pointer-events-auto"
           onMouseEnter={() => {
             if (megaMenuTimeoutRef.current) {
               clearTimeout(megaMenuTimeoutRef.current);
@@ -502,490 +532,776 @@ export default function Navbar() {
           }}
           onMouseLeave={handleMouseLeave}
         >
-          {/* 1. INDUSTRIES MEGA MENU (without bottom bar) */}
-          {activeMegaMenu === "industries" && (
-            <div
-              style={{ backgroundColor: "#ffffff", color: "#000000" }}
-              className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none"
-            >
-              
-              {/* Header Tag */}
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#fbea3d] border border-black/20 inline-block animate-pulse"></span>
-                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-900 uppercase">
-                    Industries We Serve
-                  </span>
-                </div>
-                <span className="font-sans text-xs text-zinc-400 font-medium hidden sm:inline-block">
-                  Domain Growth Frameworks
-                </span>
-              </div>
-
-              {/* 7 Industries Multi-Column Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-3.5 items-stretch">
-                {industriesData.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    className="flex items-start gap-3.5 p-3 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 mt-0.5 shadow-2xs">
-                      {renderIcon(item.icon)}
-                    </div>
-                    <div className="flex flex-col text-left">
-                      <span className="font-sans font-semibold text-[13px] sm:text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
-                        {item.name}
-                      </span>
-                      <span className="font-sans text-xs text-zinc-500 font-normal group-hover/item:text-zinc-600 transition-colors leading-tight mt-0.5">
-                        {item.desc}
-                      </span>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              {/* Bottom Bar: View All Industries Link */}
-              <div className="mt-6 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs text-zinc-500 font-sans">
-                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                  <span>8 Specialized Industry Sectors · Compliance & ROI Focused</span>
-                </div>
-                <a
-                  href="/industries"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-[#dfcc23] transition-colors font-sans group/all"
-                >
-                  <span>View All Industries</span>
-                  <span className="inline-block transition-transform duration-200 group-hover/all:translate-x-1 font-normal">→</span>
-                </a>
-              </div>
-
-            </div>
-          )}
-
-          {/* 2. SERVICES MEGA MENU (without bottom bar) */}
-          {activeMegaMenu === "services" && (
-            <div
-              style={{ backgroundColor: "#ffffff", color: "#000000" }}
-              className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none"
-            >
-              
-              {/* 4 Column Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-start">
-                
-                {/* Column 1: Development */}
-                <div className="flex flex-col items-start text-left w-full">
-                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                    {servicesData.development.title}
-                  </span>
-                  <ul className="flex flex-col gap-1 w-full">
-                    {servicesData.development.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={item.href}
-                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                        >
-                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                            {renderIcon(item.icon)}
+          <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16 py-8">
+            {/* 1. OUR SERVICES MEGA MENU */}
+            {activeMegaMenu === "services" && (
+              <div>
+                {/* 3 Full-Width Columns of Categorized Services */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start text-left">
+                  
+                  {/* Column 1: Strategy & Development */}
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
+                      Strategy &amp; Dev
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/services/enterprise-software" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Enterprise Software
                           </span>
-                          <span className="leading-snug">{item.name}</span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Custom SaaS &amp; enterprise operations.
+                          </span>
                         </a>
                       </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Column 2: Design */}
-                <div className="flex flex-col items-start text-left w-full">
-                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                    {servicesData.design.title}
-                  </span>
-                  <ul className="flex flex-col gap-1 w-full">
-                    {servicesData.design.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={item.href}
-                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                        >
-                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                            {renderIcon(item.icon)}
+                      <li>
+                        <a href="/services/web-development" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Web Development
                           </span>
-                          <span className="leading-snug">{item.name}</span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            High-speed, scalable Next.js platforms.
+                          </span>
                         </a>
                       </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Column 3: Marketing */}
-                <div className="flex flex-col items-start text-left w-full">
-                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                    {servicesData.marketing.title}
-                  </span>
-                  <ul className="flex flex-col gap-1 w-full">
-                    {servicesData.marketing.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={item.href}
-                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                        >
-                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                            {renderIcon(item.icon)}
+                      <li>
+                        <a href="/services/app-development" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            App Development
                           </span>
-                          <span className="leading-snug">{item.name}</span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Native iOS &amp; Android applications.
+                          </span>
                         </a>
                       </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Column 4: AI & Automation */}
-                <div className="flex flex-col items-start text-left w-full">
-                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-400 uppercase pb-2.5 mb-3 border-b border-zinc-100 w-full block">
-                    {servicesData.automation.title}
-                  </span>
-                  <ul className="flex flex-col gap-1 w-full">
-                    {servicesData.automation.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={item.href}
-                          className="flex items-center gap-2.5 py-2 px-2.5 rounded-xl text-zinc-700 hover:text-black hover:bg-zinc-100 font-sans text-[13px] font-medium transition-all group/item"
-                        >
-                          <span className="text-zinc-400 group-hover/item:text-black transition-colors">
-                            {renderIcon(item.icon)}
+                      <li>
+                        <a href="/services/cloud-devops" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Cloud &amp; DevOps
                           </span>
-                          <span className="leading-snug">{item.name}</span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Cloud architecture &amp; CI/CD automation.
+                          </span>
                         </a>
                       </li>
-                    ))}
-                  </ul>
-                </div>
-
-              </div>
-
-              {/* Bottom Bar: View All Services Link */}
-              <div className="mt-6 pt-3.5 border-t border-zinc-100 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs text-zinc-500 font-sans">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span>13 Core Practice Areas · Senior Engineering Teams</span>
-                </div>
-                <a
-                  href="/services"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-black hover:text-[#dfcc23] transition-colors font-sans group/all"
-                >
-                  <span>View All Services</span>
-                  <span className="inline-block transition-transform duration-200 group-hover/all:translate-x-1 font-normal">→</span>
-                </a>
-              </div>
-
-            </div>
-          )}
-
-          {/* 3. ABOUT SUBMENU */}
-          {activeMegaMenu === "about" && (
-            <div
-              style={{ backgroundColor: "#ffffff", color: "#000000" }}
-              className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.08)] text-black select-none max-w-2xl mx-auto"
-            >
-              {/* Header Tag */}
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#fbea3d] border border-black/20 inline-block animate-pulse"></span>
-                  <span className="text-xs font-sans font-bold tracking-wider text-zinc-900 uppercase">
-                    About Owlio Works
-                  </span>
-                </div>
-                <span className="font-sans text-xs text-zinc-400 font-medium hidden sm:inline-block">
-                  Identity, Culture &amp; Capabilities
-                </span>
-              </div>
-
-              {/* 3 Submenu Items Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 items-stretch">
-                <a
-                  href="/about/who-we-are"
-                  className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
-                >
-                  <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
-                    01
+                      <li>
+                        <a href="/services/it-consulting" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            IT Consulting
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Strategic digital roadmap &amp; audit.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                  <div className="flex flex-col">
-                    <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
+
+                  {/* Column 2: Identity & Design */}
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
+                      Identity &amp; Design
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/services/ui-ux-design" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            UI/UX Design
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            High-converting, user-first interfaces.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/web-development" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Web Design
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Distinctive aesthetics that command attention.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/app-development" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            App Design
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Intuitive mobile UX &amp; design systems.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/content-marketing" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Content Marketing
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Words and visuals that drive customer sales.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Column 3: Growth & Performance */}
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
+                      Growth &amp; Comms
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/services/seo-services" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            SEO Services
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Dominating high-intent search rankings.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/google-ads" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Google Ads / PPC
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Paid search engineered for maximum ROI.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/meta-ads" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Meta &amp; Social Ads
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Full-funnel customer acquisition campaigns.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/ai-automation" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            AI &amp; Automation
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Custom AI workflows &amp; smart CRM triggers.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                {/* Bottom Row: Only Contact Us Button */}
+                <div className="mt-8 pt-5 border-t border-zinc-200/80 flex items-center justify-end">
+                  <a
+                    href="/contact"
+                    className="px-5 py-2 text-xs font-semibold rounded-full bg-[#fac917] text-black hover:bg-[#eab308] transition-all shadow-md shadow-[#fac917]/25"
+                  >
+                    Contact Us →
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {/* 2. ABOUT US MEGA MENU */}
+            {activeMegaMenu === "about" && (
+              <div>
+                {/* 3 Full-Width Columns: Who We Are, How We Work, What We Do */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 text-left">
+                  {/* Item 1: Who We Are */}
+                  <a href="/about/who-we-are" className="group flex flex-col text-left">
+                    <span className="font-medium text-[15px] text-zinc-900 group-hover:text-amber-600 transition-colors leading-snug">
                       Who We Are
                     </span>
-                    <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
-                      Our mission, leadership &amp; core philosophy
+                    <span className="text-xs text-zinc-500 font-normal leading-relaxed mt-1.5">
+                      Our mission, leadership, core culture &amp; philosophy driving high-impact digital growth.
                     </span>
-                  </div>
-                </a>
+                  </a>
 
-                <a
-                  href="/about/how-we-work"
-                  className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
-                >
-                  <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
-                    02
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
+                  {/* Item 2: How We Work */}
+                  <a href="/about/how-we-work" className="group flex flex-col text-left">
+                    <span className="font-medium text-[15px] text-zinc-900 group-hover:text-amber-600 transition-colors leading-snug">
                       How We Work
                     </span>
-                    <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
-                      Agile sprints, zero tech-debt &amp; QA standards
+                    <span className="text-xs text-zinc-500 font-normal leading-relaxed mt-1.5">
+                      Agile sprints, zero tech-debt, transparent roadmaps &amp; QA engineering standards.
                     </span>
-                  </div>
-                </a>
+                  </a>
 
-                <a
-                  href="/about/what-we-do"
-                  className="flex flex-col gap-2.5 p-4 rounded-2xl bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/60 hover:border-zinc-300 transition-all duration-200 group/item cursor-pointer text-left"
-                >
-                  <div className="w-9 h-9 rounded-xl bg-white border border-zinc-200 text-zinc-700 group-hover/item:text-black group-hover/item:border-black group-hover/item:bg-[#fbea3d] flex items-center justify-center transition-all shrink-0 shadow-2xs font-mono font-bold text-xs">
-                    03
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-sans font-bold text-sm text-zinc-900 group-hover/item:text-black transition-colors leading-snug">
-                      What We Do ?
+                  {/* Item 3: What We Do */}
+                  <a href="/about/what-we-do" className="group flex flex-col text-left">
+                    <span className="font-medium text-[15px] text-zinc-900 group-hover:text-amber-600 transition-colors leading-snug">
+                      What We Do
                     </span>
-                    <span className="font-sans text-xs text-zinc-500 group-hover/item:text-zinc-600 transition-colors leading-tight mt-1">
-                      End-to-end engineering, design &amp; marketing
+                    <span className="text-xs text-zinc-500 font-normal leading-relaxed mt-1.5">
+                      End-to-end engineering, custom web applications, UI/UX design &amp; performance marketing.
                     </span>
-                  </div>
-                </a>
+                  </a>
+                </div>
+
+                {/* Bottom Row: Only Contact Us Button */}
+                <div className="mt-8 pt-5 border-t border-zinc-200/80 flex items-center justify-end">
+                  <a
+                    href="/contact"
+                    className="px-5 py-2 text-xs font-semibold rounded-full bg-[#fac917] text-black hover:bg-[#eab308] transition-all shadow-md shadow-[#fac917]/25"
+                  >
+                    Contact Us →
+                  </a>
+                </div>
               </div>
+            )}
 
-            </div>
-          )}
+            {/* 3. INDUSTRIES MEGA MENU */}
+            {activeMegaMenu === "industries" && (
+              <div>
+                {/* 3 Full-Width Columns of Categorized Industries */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start text-left">
+                  
+                  {/* Column 1: Tech & Enterprise */}
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
+                      Tech &amp; Enterprise
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/industries/it-technology" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            IT &amp; Technology
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Enterprise SaaS, AI &amp; Cloud Platforms.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/real-estate" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Real Estate
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            PropTech, Commercial &amp; Housing systems.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/education" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Education
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            EdTech, LMS &amp; virtual learning.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Column 2: Commerce & Lifestyle */}
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
+                      Commerce &amp; Luxury
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/industries/ecommerce" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            E-Commerce
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Omnichannel Brands &amp; scaling stores.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/jewellery" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Jewellery
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            High-End Luxury, D2C &amp; Fine Craft.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/food-beverages" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Food &amp; Beverages
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            QSR, FMCG &amp; Gourmet brands.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Column 3: Health & Care */}
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
+                      Care &amp; Stays
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/industries/healthcare" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Healthcare
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            HealthTech, Clinics &amp; Biotech systems.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/hospitality" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Hospitality
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Hotels, Luxury Resorts &amp; Dining.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                {/* Bottom Row: Only Contact Us Button */}
+                <div className="mt-8 pt-5 border-t border-zinc-200/80 flex items-center justify-end">
+                  <a
+                    href="/contact"
+                    className="px-5 py-2 text-xs font-semibold rounded-full bg-[#fac917] text-black hover:bg-[#eab308] transition-all shadow-md shadow-[#fac917]/25"
+                  >
+                    Contact Us →
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation Full-Screen Slide-Down Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-3 pt-3 border-t border-zinc-100 flex flex-col gap-2.5 text-sm font-medium animate-fadeIn">
-          {/* 1. Home */}
-          <a href="/" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors font-semibold">
-            {t.navbar.home || "Home"}
-          </a>
-
-          {/* 2. Mobile About Accordion */}
-          <div>
-            <button
-              type="button"
-              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-              className="w-full py-1 px-2 text-left text-zinc-800 hover:text-black flex items-center justify-between rounded-lg transition-colors font-semibold"
+        <div className="md:hidden fixed inset-x-0 top-14 bottom-0 h-[calc(100dvh-56px)] bg-white z-[100] overflow-y-auto px-5 pt-4 pb-28 flex flex-col justify-between text-zinc-900 border-t border-zinc-100">
+          <div className="flex flex-col divide-y divide-zinc-100">
+            {/* 1. Home Link */}
+            <a
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-3.5 text-zinc-900 hover:text-amber-500 font-semibold text-[17px] transition-colors"
             >
-              <span>{t.navbar.about}</span>
-              <svg
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  mobileAboutOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
+              {t.navbar.home || "Home"}
+            </a>
+
+            {/* 2. About Us Accordion */}
+            <div className="py-3.5">
+              <button
+                type="button"
+                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                className="w-full text-left text-zinc-900 flex items-center justify-between font-semibold text-[17px] cursor-pointer"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </button>
-
-            {mobileAboutOpen && (
-              <div className="bg-zinc-50 border border-zinc-200/90 text-black p-3 rounded-xl mt-1.5 flex flex-col gap-2 text-xs font-sans">
-                <a
-                  href="/about/who-we-are"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
+                <span>{t.navbar.about || "About Us"}</span>
+                <svg
+                  className={`w-4 h-4 text-zinc-400 transition-transform duration-200 ${mobileAboutOpen ? "rotate-180 text-amber-500" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
-                    1
-                  </span>
-                  <div>
-                    <span className="font-bold block text-zinc-900">Who We Are</span>
-                    <span className="text-[10px] text-zinc-500">Our mission &amp; core philosophy</span>
-                  </div>
-                </a>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
 
-                <a
-                  href="/about/how-we-work"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
-                >
-                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
-                    2
-                  </span>
-                  <div>
-                    <span className="font-bold block text-zinc-900">How We Work</span>
-                    <span className="text-[10px] text-zinc-500">Agile sprints &amp; QA standards</span>
-                  </div>
-                </a>
+              {mobileAboutOpen && (
+                <div className="pt-4 pl-1 flex flex-col gap-4">
+                  <ul className="flex flex-col gap-3.5 w-full">
+                    <li>
+                      <a href="/about/who-we-are" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                        <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                          Who We Are
+                        </span>
+                        <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                          Our mission, leadership, core culture &amp; philosophy.
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/about/how-we-work" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                        <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                          How We Work
+                        </span>
+                        <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                          Agile sprints, zero tech-debt &amp; QA engineering standards.
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/about/what-we-do" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                        <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                          What We Do
+                        </span>
+                        <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                          End-to-end engineering, custom web platforms &amp; growth.
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
 
-                <a
-                  href="/about/what-we-do"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
+            {/* 3. Our Services Accordion matching RetailMark style */}
+            <div className="py-3.5">
+              <button
+                type="button"
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="w-full text-left text-zinc-900 flex items-center justify-between font-semibold text-[17px] cursor-pointer"
+              >
+                <span>{t.navbar.services || "Our Services"}</span>
+                <svg
+                  className={`w-4 h-4 text-zinc-400 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-amber-500" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <span className="w-5 h-5 rounded-full bg-zinc-200 text-zinc-800 flex items-center justify-center font-mono text-[10px] font-bold">
-                    3
-                  </span>
-                  <div>
-                    <span className="font-bold block text-zinc-900">What We Do ?</span>
-                    <span className="text-[10px] text-zinc-500">Full capability matrix</span>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+
+              {mobileServicesOpen && (
+                <div className="pt-4 pl-1 flex flex-col gap-6">
+                  {/* Category 1: STRATEGY & DEV */}
+                  <div className="flex flex-col items-start text-left w-full">
+                    <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
+                      Strategy &amp; Dev
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/services/enterprise-software" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Enterprise Software
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Custom SaaS &amp; enterprise operations.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/web-development" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Web Development
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            High-speed, scalable Next.js platforms.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/app-development" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            App Development
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Native iOS &amp; Android applications.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/cloud-devops" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Cloud &amp; DevOps
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Cloud architecture &amp; CI/CD automation.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/it-consulting" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            IT Consulting
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Strategic digital roadmap &amp; audit.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                </a>
-              </div>
-            )}
+
+                  {/* Category 2: IDENTITY & DESIGN */}
+                  <div className="flex flex-col items-start text-left w-full">
+                    <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
+                      Identity &amp; Design
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/services/ui-ux-design" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            UI/UX Design
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            High-converting, user-first interfaces.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/web-development" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Web Design
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Distinctive aesthetics that command attention.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/app-development" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            App Design
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Intuitive mobile UX &amp; design systems.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/content-marketing" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Content Marketing
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Words and visuals that drive customer sales.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Category 3: GROWTH & COMMS */}
+                  <div className="flex flex-col items-start text-left w-full">
+                    <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
+                      Growth &amp; Comms
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/services/seo-services" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            SEO Services
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Dominating high-intent search rankings.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/google-ads" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Google Ads / PPC
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Paid search engineered for maximum ROI.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/meta-ads" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Meta &amp; Social Ads
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Full-funnel customer acquisition campaigns.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services/ai-automation" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            AI &amp; Automation
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Custom AI workflows &amp; smart CRM triggers.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 4. Industries Accordion matching RetailMark style */}
+            <div className="py-3.5">
+              <button
+                type="button"
+                onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                className="w-full text-left text-zinc-900 flex items-center justify-between font-semibold text-[17px] cursor-pointer"
+              >
+                <span>{t.navbar.industries || "Industries"}</span>
+                <svg
+                  className={`w-4 h-4 text-zinc-400 transition-transform duration-200 ${mobileIndustriesOpen ? "rotate-180 text-amber-500" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+
+              {mobileIndustriesOpen && (
+                <div className="pt-4 pl-1 flex flex-col gap-6">
+                  {/* Category 1: Tech & Enterprise */}
+                  <div className="flex flex-col items-start text-left w-full">
+                    <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
+                      Tech &amp; Enterprise
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/industries/it-technology" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            IT &amp; Technology
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Enterprise SaaS, AI &amp; Cloud Platforms.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/real-estate" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Real Estate
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            PropTech, Commercial &amp; Housing systems.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/education" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Education
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            EdTech, LMS &amp; virtual learning.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Category 2: Commerce & Luxury */}
+                  <div className="flex flex-col items-start text-left w-full">
+                    <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
+                      Commerce &amp; Luxury
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/industries/ecommerce" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            E-Commerce
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Omnichannel Brands &amp; scaling stores.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/jewellery" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Jewellery
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            High-End Luxury, D2C &amp; Fine Craft.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/food-beverages" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Food &amp; Beverages
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            QSR, FMCG &amp; Gourmet brands.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Category 3: Care & Stays */}
+                  <div className="flex flex-col items-start text-left w-full">
+                    <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
+                      Care &amp; Stays
+                    </span>
+                    <ul className="flex flex-col gap-3.5 w-full">
+                      <li>
+                        <a href="/industries/healthcare" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Healthcare
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            HealthTech, Clinics &amp; Biotech systems.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/hospitality" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Hospitality
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Hotels, Luxury Resorts &amp; Dining.
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 5. Work Link */}
+            <a
+              href="/work"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-3.5 text-zinc-900 hover:text-amber-500 font-semibold text-[17px] transition-colors"
+            >
+              {t.navbar.work || "Our Work"}
+            </a>
+
+            {/* 6. Blog Link */}
+            <a
+              href="/blog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-3.5 text-zinc-900 hover:text-amber-500 font-semibold text-[17px] transition-colors"
+            >
+              Blog
+            </a>
           </div>
 
-          {/* 3. Mobile Services Accordion */}
-          <div>
-            <button
-              type="button"
-              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className="w-full py-1 px-2 text-left text-zinc-800 hover:text-black flex items-center justify-between rounded-lg transition-colors font-semibold"
+          {/* Bottom Action Button */}
+          <div className="pt-6 mt-4">
+            <a
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-3.5 bg-[#fac917] hover:bg-[#eab308] text-black font-bold text-[15px] rounded-full flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-md shadow-[#fac917]/20 text-center"
             >
-              <span>{t.navbar.services || "Services"}</span>
-              <svg
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  mobileServicesOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </button>
-
-            {mobileServicesOpen && (
-              <div className="bg-zinc-50 border border-zinc-200/90 text-black p-4 rounded-xl mt-1.5 flex flex-col gap-4 text-xs font-sans">
-                <div>
-                  <span className="text-[11px] font-bold text-zinc-900 uppercase tracking-wider block mb-1.5 border-b border-zinc-200 pb-1">
-                    Development
-                  </span>
-                  <ul className="flex flex-col gap-1 text-zinc-700">
-                    {servicesData.development.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a href={item.href} onClick={() => setMobileMenuOpen(false)} className="hover:text-black block py-0.5">
-                          • {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold text-zinc-900 uppercase tracking-wider block mb-1.5 border-b border-zinc-200 pb-1">
-                    Design
-                  </span>
-                  <ul className="flex flex-col gap-1 text-zinc-700">
-                    {servicesData.design.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a href={item.href} onClick={() => setMobileMenuOpen(false)} className="hover:text-black block py-0.5">
-                          • {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold text-zinc-900 uppercase tracking-wider block mb-1.5 border-b border-zinc-200 pb-1">
-                    Marketing
-                  </span>
-                  <ul className="flex flex-col gap-1 text-zinc-700">
-                    {servicesData.marketing.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a href={item.href} onClick={() => setMobileMenuOpen(false)} className="hover:text-black block py-0.5">
-                          • {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold text-zinc-900 uppercase tracking-wider block mb-1.5 border-b border-zinc-200 pb-1">
-                    AI & Automation
-                  </span>
-                  <ul className="flex flex-col gap-1 text-zinc-700">
-                    {servicesData.automation.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a href={item.href} onClick={() => setMobileMenuOpen(false)} className="hover:text-black block py-0.5">
-                          • {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
+              <span>Let&apos;s Talk</span>
+              <span>→</span>
+            </a>
           </div>
-
-          {/* 4. Mobile Industries Accordion */}
-          <div>
-            <button
-              type="button"
-              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
-              className="w-full py-1 px-2 text-left text-zinc-800 hover:text-black flex items-center justify-between rounded-lg transition-colors font-semibold"
-            >
-              <span>{t.navbar.industries || "Industries"}</span>
-              <svg
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  mobileIndustriesOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </button>
-
-            {mobileIndustriesOpen && (
-              <div className="bg-zinc-50 border border-zinc-200/90 text-black p-3 rounded-xl mt-1.5 flex flex-col gap-2 text-xs font-sans">
-                {industriesData.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-zinc-700 hover:text-black hover:bg-zinc-200/70 font-medium transition-colors"
-                  >
-                    <span className="text-zinc-500">{renderIcon(item.icon)}</span>
-                    <span>{item.name}</span>
-                  </a>
-                ))}
-
-                <a
-                  href="/industries"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2 px-2.5 rounded-lg bg-black text-[#fbea3d] font-bold text-xs mt-1"
-                >
-                  <span>View All Industries</span>
-                  <span>→</span>
-                </a>
-              </div>
-            )}
-          </div>
-
-          {/* 5. Work */}
-          <a href="/work" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors font-semibold">
-            Work
-          </a>
-
-          {/* 6. Blog */}
-          <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="py-1 px-2 text-zinc-800 hover:text-black hover:bg-zinc-50 rounded-lg transition-colors font-semibold">
-            Blog
-          </a>
-
-          <a 
-            href="/contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="w-full mt-2 bg-[#fbea3d] text-black py-2.5 text-xs font-extrabold rounded-full flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all"
-          >
-            Let&apos;s Talk
-            <span>→</span>
-          </a>
         </div>
       )}
       </header>
-    </>
   );
 }

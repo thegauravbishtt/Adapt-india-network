@@ -77,7 +77,7 @@ export default function Footer() {
 
 
             {/* Follow Us */}
-            <span className="text-xs sm:text-[13px] font-semibold text-zinc-900 mt-6 mb-3 block">
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-zinc-400 uppercase mt-6 mb-3 block font-mono">
               Follow Us
             </span>
 
@@ -139,9 +139,9 @@ export default function Footer() {
 
           {/* Column 2: Services */}
           <div className="lg:col-span-2 lg:pl-2 flex flex-col items-start text-left">
-            <h4 className="text-sm font-bold text-zinc-950 font-display mb-4">
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-zinc-400 uppercase mb-4 block font-mono">
               Services
-            </h4>
+            </span>
             <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-600 font-normal">
               <li>
                 <Link href="/services/web-development" className="hover:text-black transition-colors">
@@ -183,9 +183,9 @@ export default function Footer() {
 
           {/* Column 3: Company */}
           <div className="lg:col-span-3 lg:pl-2 flex flex-col items-start text-left">
-            <h4 className="text-sm font-bold text-zinc-950 font-display mb-4">
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-zinc-400 uppercase mb-4 block font-mono">
               Company
-            </h4>
+            </span>
             <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-600 font-normal">
               <li>
                 <Link href="/about/who-we-are" className="hover:text-black transition-colors">
@@ -222,9 +222,9 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div className="lg:col-span-3 flex flex-col items-start text-left">
-            <h4 className="text-sm font-bold text-zinc-950 font-display mb-4">
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-zinc-400 uppercase mb-4 block font-mono">
               Contact
-            </h4>
+            </span>
             <div className="flex flex-col gap-3 text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-normal">
               <div className="flex flex-col gap-1.5">
                 <a

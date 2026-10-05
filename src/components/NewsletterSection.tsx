@@ -22,9 +22,9 @@ export default function NewsletterSection() {
       <div className="max-w-5xl mx-auto flex flex-col gap-4 sm:gap-5 w-full">
         
         {/* Top Tag */}
-        <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono font-bold tracking-[0.25em] uppercase text-black">
+        <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono font-bold tracking-widest uppercase text-black">
           <span className="w-2 h-2 rounded-full bg-black inline-block"></span>
-          <span>SUBSCRIBE OUR NEWSLETTER</span>
+          <span>// SUBSCRIBE OUR NEWSLETTER</span>
         </div>
 
         {/* Input Form & Button */}
@@ -34,7 +34,7 @@ export default function NewsletterSection() {
               ✓
             </div>
             <div>
-              <p className="text-lg sm:text-xl font-black font-display tracking-tight text-black">
+              <p className="text-lg sm:text-xl font-extrabold font-display tracking-tight text-black">
                 You're all set!
               </p>
               <p className="text-xs sm:text-sm font-medium text-black/80 font-sans">
@@ -55,17 +55,17 @@ export default function NewsletterSection() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="ENTER YOUR EMAIL"
-                className="w-full bg-transparent border-b-2 border-black text-xl sm:text-2xl md:text-3xl font-display font-extrabold tracking-tight text-black placeholder:text-black/40 placeholder:font-display placeholder:font-bold pb-2 sm:pb-2.5 focus:outline-none focus:border-black transition-colors uppercase"
+                className="w-full bg-transparent border-b-2 border-black text-xl sm:text-2xl md:text-3xl font-display font-extrabold tracking-tight text-black placeholder:text-black/45 placeholder:font-display placeholder:font-bold pb-2 sm:pb-2.5 focus:outline-none focus:border-black transition-colors uppercase"
               />
             </div>
 
             {/* Subscribe Pill Button */}
             <button
               type="submit"
-              className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-black text-[#fbea3d] hover:bg-white hover:text-black border-2 border-black font-display font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 shadow-md flex items-center justify-center gap-2 group"
+              className="bg-black hover:bg-zinc-800 text-white font-mono font-bold text-xs sm:text-sm py-3 px-6 sm:px-8 rounded-full transition-all cursor-pointer whitespace-nowrap active:scale-95 shadow-md flex items-center justify-center gap-2 group self-start md:self-auto"
             >
               <span>SUBSCRIBE NOW</span>
-              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-normal">→</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </form>
         )}
@@ -82,7 +82,7 @@ export default function NewsletterSection() {
             <circle cx="12" cy="12" r="10" />
             <path strokeLinecap="round" d="M12 16v-4m0-4h.01" />
           </svg>
-          <p className="font-sans">
+          <p>
             By sending the form you agree to the{" "}
             <Link href="/terms-and-conditions" className="underline font-semibold hover:text-black">
               Terms &amp; Conditions

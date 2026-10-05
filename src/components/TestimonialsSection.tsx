@@ -110,12 +110,12 @@ export default function TestimonialsSection() {
           {/* Left Column: Tag + Headline with Yellow Highlight */}
           <div className="flex flex-col items-start text-left">
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-zinc-400 uppercase mb-2 block font-mono">
-              Testimonials
+              CLIENT TESTIMONIALS
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-black text-white font-display tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black text-white font-display tracking-tight leading-tight">
               Happy words from our{" "}
               <span className="relative inline-block whitespace-nowrap z-0">
-                valuable clients!
+                clients.
                 <span className="absolute bottom-1 sm:bottom-1.5 left-0 w-full h-2 sm:h-2.5 bg-[#fbea3d] -z-10 rounded-xs"></span>
               </span>
             </h2>

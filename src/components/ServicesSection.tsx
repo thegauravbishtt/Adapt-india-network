@@ -4,7 +4,7 @@ import React from "react";
 
 const webSolutions = [
   {
-    title: "Maatwerk WordPress websites",
+    title: "Custom Next.js & React Websites",
     icon: (
       <svg className="w-6 h-6 text-brand-red fill-none stroke-current" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
@@ -14,7 +14,7 @@ const webSolutions = [
     )
   },
   {
-    title: "Klantportalen",
+    title: "Customer Portals & Client Dashboards",
     icon: (
       <svg className="w-6 h-6 text-brand-red fill-none stroke-current" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -25,7 +25,7 @@ const webSolutions = [
     )
   },
   {
-    title: "Online platforms",
+    title: "Omnichannel E-Commerce Platforms",
     icon: (
       <svg className="w-6 h-6 text-brand-red fill-none stroke-current" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
@@ -39,7 +39,7 @@ const webSolutions = [
 
 const softwareSolutions = [
   {
-    title: "Inschrijfsystemen",
+    title: "Registration & Booking Systems",
     icon: (
       <svg className="w-6 h-6 text-brand-red fill-none stroke-current" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <circle cx="11" cy="11" r="8" />
@@ -48,7 +48,7 @@ const softwareSolutions = [
     )
   },
   {
-    title: "Bedrijfssoftware",
+    title: "Custom Enterprise Operations Software",
     icon: (
       <svg className="w-6 h-6 text-brand-red fill-none stroke-current" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M4 17h6v4H4zM14 3h6v4h-6zM14 13h6v4h-6zM4 5h6v4H4z" />
@@ -57,7 +57,7 @@ const softwareSolutions = [
     )
   },
   {
-    title: "Workflows & AI",
+    title: "AI Workflows & Smart CRM Triggers",
     icon: (
       <svg className="w-6 h-6 text-brand-red fill-none stroke-current" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
@@ -73,14 +73,17 @@ export default function ServicesSection() {
     <section className="w-full max-w-7xl mx-auto px-6 sm:pl-12 lg:pl-16 sm:pr-8 py-20 relative z-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
         
-        {/* Left Column: Valuable Websites */}
+        {/* Left Column: High-Performance Web Platforms */}
         <div className="flex flex-col">
           <div className="mb-10 text-left select-none">
-            <h2 className="font-display text-3xl sm:text-4xl font-medium text-black leading-tight uppercase mb-4 tracking-tight">
-              Waardevolle websites
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-zinc-400 uppercase mb-2 block font-mono">
+              DIGITAL EXPERIENCES
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-black leading-tight tracking-tight mb-3 font-display">
+              High-Converting Websites
             </h2>
-            <p className="text-[15px] sm:text-base text-zinc-500 leading-relaxed font-medium max-w-lg">
-              Wij ontwerpen websites die bedrijven op een daadkrachtige en vooral duidelijke manier online presenteren. Geen gedoe, geen poeha.
+            <p className="text-[14px] sm:text-[15px] text-zinc-600 leading-relaxed font-normal max-w-lg">
+              We engineer scalable, high-speed platforms designed to dominate search rankings and turn visitors into loyal customers.
             </p>
           </div>
 
@@ -88,17 +91,17 @@ export default function ServicesSection() {
             {webSolutions.map((item, idx) => (
               <div 
                 key={idx}
-                className="flex items-center gap-5 p-5 bg-white border-[3px] border-black rounded-2xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-0 active:translate-y-0 active:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 cursor-pointer group"
+                className="flex items-center gap-5 p-5 bg-white border-[2px] border-zinc-200 rounded-2xl shadow-xs hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
               >
                 {/* Badge Icon */}
-                <div className="w-12 h-12 bg-rose-50 border-[2.5px] border-black rounded-xl flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
-                <span className="text-sm sm:text-[15px] font-bold text-zinc-900 group-hover:text-black">
+                <span className="text-sm sm:text-[15px] font-medium text-zinc-900 group-hover:text-black">
                   {item.title}
                 </span>
                 {/* Arrow */}
-                <svg className="w-5 h-5 text-brand-red ml-auto group-hover:translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-zinc-400 ml-auto group-hover:text-black group-hover:translate-x-1 transition-all shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
               </div>
@@ -106,14 +109,17 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        {/* Right Column: Smart Software */}
+        {/* Right Column: Custom SaaS & Software */}
         <div className="flex flex-col">
           <div className="mb-10 text-left select-none">
-            <h2 className="font-display text-3xl sm:text-4xl font-medium text-black leading-tight uppercase mb-4 tracking-tight">
-              Slimme software
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-zinc-400 uppercase mb-2 block font-mono">
+              ENGINEERING & AUTOMATION
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-black leading-tight tracking-tight mb-3 font-display">
+              Smart Enterprise Software
             </h2>
-            <p className="text-[15px] sm:text-base text-zinc-500 leading-relaxed font-medium max-w-lg">
-              Waar wij voor gaan? Slimme systemen op poten zetten die onze klanten verder helpen en zichzelf meteen terugbetalen.
+            <p className="text-[14px] sm:text-[15px] text-zinc-600 leading-relaxed font-normal max-w-lg">
+              Custom SaaS applications, API architectures, and automated CRM workflows that streamline complex business operations.
             </p>
           </div>
 
@@ -121,17 +127,17 @@ export default function ServicesSection() {
             {softwareSolutions.map((item, idx) => (
               <div 
                 key={idx}
-                className="flex items-center gap-5 p-5 bg-white border-[3px] border-black rounded-2xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-0 active:translate-y-0 active:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 cursor-pointer group"
+                className="flex items-center gap-5 p-5 bg-white border-[2px] border-zinc-200 rounded-2xl shadow-xs hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
               >
                 {/* Badge Icon */}
-                <div className="w-12 h-12 bg-rose-50 border-[2.5px] border-black rounded-xl flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
-                <span className="text-sm sm:text-[15px] font-bold text-zinc-900 group-hover:text-black">
+                <span className="text-sm sm:text-[15px] font-medium text-zinc-900 group-hover:text-black">
                   {item.title}
                 </span>
                 {/* Arrow */}
-                <svg className="w-5 h-5 text-brand-red ml-auto group-hover:translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-zinc-400 ml-auto group-hover:text-black group-hover:translate-x-1 transition-all shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
               </div>

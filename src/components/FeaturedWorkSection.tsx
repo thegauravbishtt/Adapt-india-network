@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function FeaturedWorkSection() {
@@ -36,7 +37,7 @@ export default function FeaturedWorkSection() {
             </div>
 
             <div className="self-start sm:self-end shrink-0">
-              <a
+              <Link
                 href="/work"
                 className="group inline-flex flex-col items-start gap-1 text-xs sm:text-[13px] font-bold text-white hover:text-[#fbea3d] transition-colors cursor-pointer"
               >
@@ -47,7 +48,7 @@ export default function FeaturedWorkSection() {
                   </span>
                 </div>
                 <div className="w-full h-[2px] bg-[#fbea3d] rounded-full transition-all group-hover:h-[2.5px]"></div>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -63,16 +64,16 @@ export default function FeaturedWorkSection() {
                 <span className="absolute -bottom-1 left-0 w-full h-2 bg-[#fbea3d] -z-0"></span>
               </span>
             </h2>
-            <a
+            <Link
               href="/work"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#fbea3d] border-b-2 border-[#fbea3d] pb-0.5 mt-2 hover:text-white hover:border-white transition-colors cursor-pointer"
             >
               <span>{t.featuredWork.viewAll}</span>
               <span className="font-normal">→</span>
-            </a>
+            </Link>
           </div>
 
-          {/* 1. Desktop & Tablet Horizontal Expanding Accordion (7 Cards) - UNCHANGED */}
+          {/* 1. Desktop & Tablet Horizontal Expanding Accordion (7 Cards) */}
           <div className="hidden md:flex w-full h-[360px] sm:h-[400px] lg:h-[440px] xl:h-[480px] gap-2 sm:gap-3 items-stretch select-none">
             {items.map((item, idx) => {
               const isExpanded = activeIdx === idx;
@@ -137,15 +138,16 @@ export default function FeaturedWorkSection() {
 
                       {/* View Work Link Button */}
                       <div className="flex items-center gap-3">
-                        <button
-                          type="button"
+                        <Link
+                          href="/work"
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 bg-white text-black px-4 py-2 rounded-full text-[11px] font-black uppercase tracking-wider hover:bg-[#fbea3d] hover:scale-105 transition-all shadow-md cursor-pointer select-none group/btn"
                         >
                           <span>{t.featuredWork.viewWorkBtn}</span>
                           <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1 font-normal">
                             →
                           </span>
-                        </button>
+                        </Link>
                         <span className="text-zinc-400 text-[11px] font-mono tracking-widest uppercase">
                           {idx + 1} / {items.length}
                         </span>
@@ -161,9 +163,10 @@ export default function FeaturedWorkSection() {
           {/* 2. Mobile Responsive Horizontal Scroll Slider (< md screens) */}
           <div className="flex md:hidden overflow-x-auto gap-4 pb-4 pt-1 -mx-4 px-4 sm:-mx-8 sm:px-8 scrollbar-none snap-x snap-mandatory">
             {items.map((item) => (
-              <div
+              <Link
                 key={item.id}
-                className="snap-start shrink-0 w-[78vw] sm:w-[320px] aspect-[4/5] rounded-[24px] overflow-hidden relative shadow-2xl bg-zinc-900 border border-zinc-800/80 group"
+                href="/work"
+                className="snap-start shrink-0 w-[78vw] sm:w-[320px] aspect-[4/5] rounded-[24px] overflow-hidden relative shadow-2xl bg-zinc-900 border border-zinc-800/80 group block"
               >
                 {/* Poster Image */}
                 <img
@@ -185,7 +188,7 @@ export default function FeaturedWorkSection() {
                     <span className="font-normal text-xs">→</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

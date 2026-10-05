@@ -52,6 +52,7 @@ export interface Translations {
     subtitle: string;
     auditBtn: string;
     callBtn: string;
+    workBtn?: string;
   };
   partners: {
     trustedBy: string;
@@ -180,14 +181,15 @@ export const translations: Record<Language, Translations> = {
     hero: {
       line1: "We build & scale",
       line2: "iconic brands online!",
-      category: "Branding · Technology · Performance",
+      category: "Branding · Digital · Performance",
       heading1: "We build & scale",
       heading2: "",
       heading3: "iconic brands online!",
       subtitle:
-        "We build high-impact digital platforms, modern web applications, and performance growth engines that scale ambitious businesses.",
-      auditBtn: "Run Free Growth Audit",
-      callBtn: "Book Discovery Call",
+        "We're the integrated brand, digital and performance partner that gets everyone talking – so your brand can show up, stand out and sell more.",
+      auditBtn: "Book a Consultation",
+      callBtn: "Book a Consultation",
+      workBtn: "See our work",
     },
     partners: {
       trustedBy: "Trusted By",

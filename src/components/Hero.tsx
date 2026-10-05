@@ -1,120 +1,121 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
+
+const marketingBgImages = [
+  "/marketing-bg-1.jpg",
+  "/marketing-bg-2.jpg",
+  "/marketing-bg-3.jpg",
+  "/marketing-bg-4.jpg",
+];
+
+const rotatingWords = [
+  "Scale.",
+  "Revenue.",
+  "Growth.",
+];
 
 export default function Hero() {
   const { t, language } = useLanguage();
+  const [currentBgIndex, setCurrentBgIndex] = React.useState(0);
+  const [wordIndex, setWordIndex] = React.useState(0);
+  const [isWordVisible, setIsWordVisible] = React.useState(true);
+
+  React.useEffect(() => {
+    const bgTimer = setInterval(() => {
+      setCurrentBgIndex((prev) => (prev + 1) % marketingBgImages.length);
+    }, 4500);
+    return () => clearInterval(bgTimer);
+  }, []);
+
+  React.useEffect(() => {
+    const wordTimer = setInterval(() => {
+      setIsWordVisible(false);
+      setTimeout(() => {
+        setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+        setIsWordVisible(true);
+      }, 350);
+    }, 3200);
+    return () => clearInterval(wordTimer);
+  }, []);
 
   return (
-    <section className="relative w-full bg-white text-zinc-950 pt-60 xs:pt-68 sm:pt-76 lg:pt-40 pb-56 xs:pb-64 sm:pb-72 lg:pb-28 px-4 xs:px-6 sm:px-12 lg:px-16 xl:px-20 overflow-hidden border-b border-zinc-200 select-none min-h-[110vh] xs:min-h-[115vh] sm:min-h-[120vh] lg:min-h-[620px] flex flex-col justify-center">
-      
-      {/* 1. MOBILE & IPAD/TABLET ONLY: Vibrant Yellow and Deep Black Geometric Lightning on Mobile & Tablet/iPad */}
-      <svg
-        viewBox="0 0 390 600"
-        fill="none"
-        preserveAspectRatio="none"
-        className="block lg:hidden absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
-      >
-        {/* Vibrant Yellow Lightning Polygon */}
-        <path
-          d="M 160 600 L 245 370 L 210 370 L 270 0 L 390 0 L 390 600 Z"
-          fill="#fac917"
-        />
-        {/* Deep Black Lightning Polygon */}
-        <path
-          d="M 280 600 L 340 350 L 315 350 L 350 0 L 390 0 L 390 600 Z"
-          fill="#0c0c0e"
-        />
-      </svg>
+    <section className="relative w-full bg-zinc-950 text-white p-0 overflow-hidden border-b border-zinc-800/80 select-none min-h-screen md:min-h-[90vh] lg:min-h-screen flex flex-col justify-start md:justify-center">
 
-      {/* 2. LAPTOP & DESKTOP ONLY: Refined Geometric Lightning with expanded White canvas */}
-      <svg
-        viewBox="0 0 1440 640"
-        fill="none"
-        preserveAspectRatio="none"
-        className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
-      >
-        {/* Center Vibrant Yellow Lightning Polygon (Shifted right for more white area) */}
-        <path
-          d="M 560 640 L 700 400 L 620 400 L 780 0 L 1440 0 L 1440 640 Z"
-          fill="#fac917"
-        />
-        {/* Right Deep Black Lightning Polygon */}
-        <path
-          d="M 1060 640 L 1280 340 L 1180 340 L 1320 0 L 1440 0 L 1440 640 Z"
-          fill="#0c0c0e"
-        />
-      </svg>
+      {/* Background Marketing Images with Atmospheric Contrast */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden select-none z-0">
+        {marketingBgImages.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out filter grayscale brightness-[0.75] contrast-[1.08] md:brightness-[0.62] md:grayscale-[0.35] ${index === currentBgIndex
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-105"
+              }`}
+            style={{
+              backgroundImage: `url(${src})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          />
+        ))}
+        {/* Grey Scrim Gradient Overlay on Mobile, Directional Dark Gradient on Desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-[#202024]/86 via-[#27272d]/78 to-[#1a1a1e]/86 md:from-black/82 md:via-black/55 md:to-black/30 z-10" />
+      </div>
 
-      <div className="w-full flex flex-col items-center lg:items-start relative z-10 max-w-6xl mx-auto">
-        {/* Main Content Container */}
-        <div className="flex flex-col items-center lg:items-start w-full text-center lg:text-left pointer-events-auto">
-          
-          {/* Top Squiggly Wave Lines */}
-          <div className="flex flex-col gap-1.5 lg:gap-1 mb-3 sm:mb-4 lg:mb-3 text-zinc-950 w-fit mx-auto lg:mx-0">
-            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
-              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
-            </svg>
-            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
-              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
-            </svg>
-          </div>
+      {/* Hero Content Over Background (Unified Responsive Container) */}
+      <div className="relative z-20 max-w-7xl mx-auto w-full px-5 sm:px-12 lg:px-16 pt-20 sm:pt-28 md:pt-30 lg:pt-34 pb-12 sm:pb-18 lg:pb-22 flex flex-col items-start text-left pointer-events-auto">
 
-          {/* Headline: 3 Lines on Mobile & iPad/Tablet, 2 Lines on Laptop / Desktop */}
-          <h1 className="font-sans font-normal text-[30px] min-[375px]:text-[34px] xs:text-[38px] sm:text-[46px] md:text-[56px] lg:text-[66px] xl:text-[74px] text-zinc-950 leading-[1.14] md:leading-[1.12] lg:leading-[1.07] tracking-[-0.03em] select-text text-center lg:text-left mx-auto lg:mx-0 max-w-full lg:max-w-none px-1 xs:px-2 sm:px-0">
-            {/* Mobile & iPad/Tablet: 3 lines */}
-            <span className="block lg:hidden">
-              {language === "en" ? (
-                <>
-                  <span className="block">We build &amp; scale</span>
-                  <span className="block">iconic brands</span>
-                  <span className="block">online!</span>
-                </>
-              ) : (
-                <>
-                  <span className="block whitespace-normal">{t.hero.line1}</span>
-                  <span className="block whitespace-normal">{t.hero.line2}</span>
-                </>
-              )}
+        {/* Mobile-Only Wordmark matching RetailMark style */}
+        <div className="md:hidden pt-20 text-white font-extrabold text-[49px] tracking-[-0.04em] leading-none mb-5 select-none font-['Outfit',_'Plus_Jakarta_Sans',_sans-serif]">
+          Growth<span className="text-[#E8B923]">Mark</span>
+        </div>
+
+        {/* Category Pill Tagline */}
+        <div className="inline-flex items-center justify-center px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-[#E8B923]/80 md:border-zinc-700/80 bg-[#111111] md:bg-black/60 backdrop-blur-md mb-6 sm:mb-8 shadow-xs">
+          <span className="text-[11px] sm:text-[13px] font-sans font-bold tracking-[0.05em] text-[#E8B923] md:text-[#fbea3d] uppercase">
+            DIGITAL GROWTH SOLUTIONS
+          </span>
+        </div>
+
+        {/* High-Impact Headline with dynamic yellow word cycling */}
+        <h1 className="font-sans font-extrabold text-[35px] sm:text-[60px] md:text-[76px] lg:text-[84px] text-white leading-[1.08] tracking-[-0.03em] md:tracking-[-0.035em] text-left w-full max-w-3xl min-h-[84px] sm:min-h-[155px] md:min-h-[185px]">
+          <span className="block text-white">From Opportunity</span>
+          <span className="block mt-1 sm:mt-2 text-white">
+            to{" "}
+            <span
+              className={`text-[#E8B923] md:text-[#fac917] inline-block transition-all duration-350 ease-out transform ${
+                isWordVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-2"
+              }`}
+            >
+              {rotatingWords[wordIndex]}
             </span>
+          </span>
+        </h1>
 
-            {/* Laptop / Desktop: 2 lines */}
-            <span className="hidden lg:block">
-              <span className="block whitespace-normal">{t.hero.line1}</span>
-              <span className="block whitespace-normal">{t.hero.line2}</span>
-            </span>
-          </h1>
+        {/* Balanced High-Impact Paragraph */}
+        <p className="mt-6 sm:mt-7 lg:mt-8 text-[18px] sm:text-[17px] lg:text-[18px] text-[#E2E2E6] md:text-zinc-300 font-normal leading-[1.55] sm:leading-[1.65] text-left w-full max-w-xl md:max-w-2xl">
+          We engineer high-performance web platforms, custom digital products, and ROI-driven growth engines across Google, Meta, Shopify, Amazon, and enterprise cloud stacks. From strategic architecture to seamless execution, we empower ambitious brands to dominate their market and drive compounding revenue.
+        </p>
 
-          {/* Bottom Squiggly Wave Lines */}
-          <div className="flex flex-col gap-1.5 lg:gap-1 mt-3 lg:mt-2 mb-4 lg:mb-3.5 mx-auto lg:mx-0 lg:ml-[380px] xl:ml-[440px] text-zinc-950 w-fit">
-            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
-              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
-            </svg>
-            <svg className="w-10 xs:w-12 lg:w-[46px] h-auto" viewBox="0 0 46 6.5" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round">
-              <path d="M 2 3.2 Q 5 0.5, 8 3.2 T 14 3.2 T 20 3.2 T 26 3.2 T 32 3.2 T 38 3.2 T 44 3.2" />
-            </svg>
-          </div>
+        {/* Action CTAs: Pill Buttons matching natural content widths */}
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-4 w-full sm:w-auto">
+          <Link
+            href="/contact"
+            className="w-auto py-3.5 sm:py-4 px-9 sm:px-8 bg-[#E8B923] hover:bg-[#C79A15] md:bg-[#fac917] md:hover:bg-[#eab308] text-[#111111] md:text-black text-[14.5px] sm:text-[15px] font-bold rounded-full inline-flex items-center justify-center active:scale-[0.98] transition-colors cursor-pointer text-center whitespace-nowrap shadow-md shadow-[#E8B923]/20 md:shadow-[#fac917]/20"
+          >
+            <span>Book Your Free Strategy Call</span>
+          </Link>
 
-          {/* Bottom Center (Mobile) / Left (Desktop) Minimal Little Owl Icon */}
-          <div className="w-full mt-6 sm:mt-10 lg:mt-12 z-20 pointer-events-auto flex justify-center lg:justify-start">
-            <div className="select-none flex items-center justify-center text-zinc-950">
-              <svg width="26" height="26" className="w-6 h-6 sm:w-7 sm:h-7 lg:w-7 lg:h-7 opacity-90 transition-transform duration-200 hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round">
-                {/* Top Owl Brow / Ears */}
-                <path d="M 4.5 7.5 C 7.5 3.5, 16.5 3.5, 19.5 7.5" />
-                {/* Left Eye */}
-                <circle cx="8" cy="11.5" r="3.2" />
-                {/* Right Eye */}
-                <circle cx="16" cy="11.5" r="3.2" />
-                {/* Center Bridge & Beak */}
-                <path d="M 11.2 11.5 h 1.6" />
-                <path d="M 12 12.5 v 2" />
-                {/* Bottom Face Chin Arc */}
-                <path d="M 6.2 15 C 8.5 19, 15.5 19, 17.8 15" />
-              </svg>
-            </div>
-          </div>
-
+          <Link
+            href="/work"
+            className="w-auto py-3.5 sm:py-4 px-9 sm:px-8 bg-white/10 hover:bg-white/15 md:bg-zinc-900/90 md:hover:bg-zinc-800 text-white text-[14.5px] sm:text-[15px] font-bold rounded-full inline-flex items-center justify-center border-[1.5px] border-white/55 hover:border-white/80 md:border-zinc-400/80 active:scale-[0.98] transition-colors cursor-pointer backdrop-blur-md text-center whitespace-nowrap"
+          >
+            <span>See How It Works</span>
+          </Link>
         </div>
 
       </div>

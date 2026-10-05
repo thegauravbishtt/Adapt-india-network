@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
-import { Poppins, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Manrope, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 import MobileBottomBar from "../components/MobileBottomBar";
+import WelcomeRequirementModal from "../components/WelcomeRequirementModal";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const spaceMono = Space_Mono({
@@ -21,6 +17,7 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   fallback: ["monospace"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -48,11 +45,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
+      className={`${manrope.variable} ${spaceMono.variable} antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen bg-transparent text-black font-sans flex flex-col">
         <LanguageProvider>
           {children}
+          <WelcomeRequirementModal />
           <MobileBottomBar />
         </LanguageProvider>
       </body>

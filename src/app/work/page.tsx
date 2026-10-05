@@ -1496,7 +1496,7 @@ export default function WorkPage() {
 
                   <div className="shrink-0 self-start md:self-end">
                     <Link
-                      href="/services/web-development"
+                      href="/contact"
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-zinc-950 hover:text-black border-b-2 border-[#fbea3d] pb-0.5 transition-all group"
                     >
                       <span>Explore Website Services</span>
@@ -1739,7 +1739,7 @@ export default function WorkPage() {
 
               <div className="shrink-0 self-start md:self-end">
                 <Link
-                  href="/services/social-media-marketing"
+                  href="/contact"
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-black hover:opacity-80 border-b-2 border-black pb-0.5 transition-all group"
                 >
                   <span>Explore Social Media Services</span>
@@ -1811,7 +1811,7 @@ export default function WorkPage() {
 
               <div className="shrink-0 self-start md:self-end">
                 <Link
-                  href="/services/performance-marketing"
+                  href="/contact"
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-zinc-950 hover:text-black border-b-2 border-[#fbea3d] pb-0.5 transition-all group"
                 >
                   <span>Explore Performance Services</span>
@@ -1901,7 +1901,7 @@ export default function WorkPage() {
 
               <div className="shrink-0 self-start md:self-end">
                 <Link
-                  href="/services/seo-optimization"
+                  href="/contact"
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-zinc-950 hover:text-black border-b-2 border-[#fbea3d] pb-0.5 transition-all group"
                 >
                   <span>Explore SEO Services</span>

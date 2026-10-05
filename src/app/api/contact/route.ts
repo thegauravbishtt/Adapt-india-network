@@ -14,15 +14,21 @@ export async function POST(req: Request) {
       service,
       budget,
       requirement,
+      source = "Website Contact Form",
     } = body;
 
-    // 1. Basic validation
-    if (!name || !email || !phone || !companyName || !requirement) {
+    // 1. Basic validation: name, email, and phone are essential
+    if (!name || !email || !phone) {
       return NextResponse.json(
-        { error: "Please provide all required fields." },
+        { error: "Please provide your name, email, and phone number." },
         { status: 400 }
       );
     }
+
+    const effectiveCompanyName = companyName?.trim() || "Individual / Direct Inquiry";
+    const effectiveService = service?.trim() || "Growth & Marketing Strategy";
+    const effectiveBudget = budget?.trim() || "Not specified";
+    const effectiveRequirement = requirement?.trim() || `Consultation request for ${effectiveService}`;
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -39,12 +45,12 @@ export async function POST(req: Request) {
         email,
         phone,
         countryCode,
-        companyName,
-        service: service || "General Growth Inquiry",
-        budget: budget || "Not specified",
-        requirement,
+        companyName: effectiveCompanyName,
+        service: effectiveService,
+        budget: effectiveBudget,
+        requirement: effectiveRequirement,
         status: "new",
-        source: "Website Contact Form",
+        source: source || "Website Contact Form",
       });
     } catch (dbErr) {
       console.error("[Contact API] Failed to save lead to database:", dbErr);
@@ -96,7 +102,7 @@ export async function POST(req: Request) {
                         </td>
                         <td align="right">
                           <span style="background-color: rgba(251, 234, 61, 0.15); color: #fbea3d; border: 1px solid rgba(251, 234, 61, 0.3); padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700; text-transform: uppercase; font-family: monospace;">
-                            Contact Form
+                            ${escapeHtml(source || "Website Form")}
                           </span>
                         </td>
                       </tr>
@@ -109,7 +115,7 @@ export async function POST(req: Request) {
                   <td style="padding: 32px;">
                     
                     <p style="margin: 0 0 20px 0; font-size: 15px; color: #52525b; line-height: 1.5;">
-                      A new project brief was submitted on <strong style="color: #18181b;">owlioworks.com</strong>. Here are the full submission details:
+                      A new project inquiry was submitted via <strong style="color: #18181b;">${escapeHtml(source || "owlioworks.com")}</strong>. Here are the submission details:
                     </p>
 
                     <!-- CLIENT DETAILS CARD -->
@@ -125,8 +131,8 @@ export async function POST(req: Request) {
 
                           <!-- Company -->
                           <div style="margin-bottom: 12px;">
-                            <span style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #71717a; letter-spacing: 0.5px;">Company</span>
-                            <span style="font-size: 15px; font-weight: 600; color: #18181b;">${escapeHtml(companyName)}</span>
+                            <span style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #71717a; letter-spacing: 0.5px;">Company / Brand</span>
+                            <span style="font-size: 15px; font-weight: 600; color: #18181b;">${escapeHtml(effectiveCompanyName)}</span>
                           </div>
 
                           <!-- Email -->
@@ -152,12 +158,12 @@ export async function POST(req: Request) {
                             <tr>
                               <td width="50%" style="vertical-align: top;">
                                 <span style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #71717a; letter-spacing: 0.5px;">Service Interested In</span>
-                                <span style="font-size: 14px; font-weight: 700; color: #09090b;">${escapeHtml(service || "Not specified")}</span>
+                                <span style="font-size: 14px; font-weight: 700; color: #09090b;">${escapeHtml(effectiveService)}</span>
                               </td>
                               <td width="50%" style="vertical-align: top;">
                                 <span style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #71717a; letter-spacing: 0.5px;">Estimated Budget</span>
                                 <span style="font-size: 14px; font-weight: 700; color: #15803d; background-color: #dcfce7; padding: 2px 8px; border-radius: 6px; display: inline-block;">
-                                  ${escapeHtml(budget || "Not specified")}
+                                  ${escapeHtml(effectiveBudget)}
                                 </span>
                               </td>
                             </tr>
@@ -173,7 +179,7 @@ export async function POST(req: Request) {
                         Project Requirement &amp; Brief:
                       </span>
                       <div style="background-color: #faf7ee; border-left: 4px solid #fbea3d; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.6; color: #27272a; white-space: pre-wrap; word-break: break-word;">
-${escapeHtml(requirement)}
+${escapeHtml(effectiveRequirement)}
                       </div>
                     </div>
 
@@ -181,12 +187,12 @@ ${escapeHtml(requirement)}
                     <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 24px; margin-bottom: 12px;">
                       <tr>
                         <td align="center" style="padding-right: 6px;">
-                          <a href="mailto:${encodeURIComponent(email)}?subject=Re:%20Owlio%20Works%20-%20Project%20Inquiry%20(${encodeURIComponent(companyName)})" style="display: block; text-align: center; background-color: #18181b; color: #ffffff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.3px;">
+                          <a href="mailto:${encodeURIComponent(email)}?subject=Re:%20Owlio%20Works%20-%20Project%20Inquiry%20(${encodeURIComponent(effectiveCompanyName)})" style="display: block; text-align: center; background-color: #18181b; color: #ffffff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.3px;">
                             ✉ Reply via Email
                           </a>
                         </td>
                         <td align="center" style="padding-left: 6px;">
-                          <a href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi ${name}, thank you for reaching out to Owlio Works regarding your ${service || 'project'} requirements.`)}" style="display: block; text-align: center; background-color: #22c55e; color: #ffffff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.3px;">
+                          <a href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi ${name}, thank you for reaching out to Owlio Works regarding your ${effectiveService} requirements.`)}" style="display: block; text-align: center; background-color: #22c55e; color: #ffffff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.3px;">
                             💬 WhatsApp Client
                           </a>
                         </td>
@@ -213,22 +219,22 @@ ${escapeHtml(requirement)}
     `;
 
     const plainTextContent = `
-NEW PROJECT BRIEF - OWLIO WORKS
+NEW INQUIRY - OWLIO WORKS (${source || "Website Form"})
 ========================================
 
 Time: ${submissionTime}
 
 CLIENT DETAILS:
 - Name: ${name}
-- Company: ${companyName}
+- Company: ${effectiveCompanyName}
 - Email: ${email}
 - Phone: ${fullPhoneFormatted}
-- Service: ${service || "Not specified"}
-- Budget: ${budget || "Not specified"}
+- Service: ${effectiveService}
+- Budget: ${effectiveBudget}
 
 PROJECT REQUIREMENT:
 ----------------------------------------
-${requirement}
+${effectiveRequirement}
 ----------------------------------------
     `;
 
@@ -249,7 +255,7 @@ ${requirement}
         from: `"Owlio Works Website" <${cleanUser}>`,
         to: destinationEmail,
         replyTo: `"${name}" <${email}>`,
-        subject: `🔥 New Lead: ${name} (${companyName}) - ${service || "Project Inquiry"}`,
+        subject: `🔥 New Lead: ${name} (${effectiveCompanyName}) - ${effectiveService}`,
         text: plainTextContent,
         html: htmlContent,
       });
