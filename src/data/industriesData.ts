@@ -1212,6 +1212,518 @@ export const allIndustries: IndustryDetail[] = [
       },
     ],
   },
+  {
+    slug: "finance-fintech",
+    name: "Finance & FinTech",
+    badge: "FINANCIAL ADVISORS, FINTECH & LENDING",
+    tagline: "Web Design, Search Engine Growth & High-Converting Client Funnels",
+    heroHeadline: "Credible Web Design & High-Intent Client Funnels for",
+    heroHighlight: "Financial Advisors, FinTechs & Lenders.",
+    heroSubtitle:
+      "We build trustworthy websites, high-converting lead funnels, and targeted search campaigns that help wealth managers, loan brokers, and fintech apps win high-value clients.",
+    image: "/industries/finance-fintech.jpg",
+    stats: [
+      { value: "3x", label: "Higher Lead Quality" },
+      { value: "100%", label: "Compliance Ready" },
+      { value: "Page 1", label: "Target Search Rankings" },
+      { value: "0%", label: "Wasted Ad Spend" },
+    ],
+    overview:
+      "Winning high-net-worth clients, borrowers, and investors requires an immediate sense of credibility and trust. We design clear, conversion-focused websites and run targeted digital campaigns that connect financial firms directly with qualified clients.",
+    theChallenge:
+      "Most financial websites look dated, lack clear regulatory disclosures, and fail to convert visitors into booked consultations, while generic advertising wastes budget on unqualified leads.",
+    ourSolution:
+      "We build modern, compliance-friendly websites equipped with interactive financial calculators, automated calendar booking, and precision search marketing that drives qualified inquiries.",
+    focusAreas: [
+      {
+        title: "Wealth Managers & Financial Advisors",
+        badge: "WEALTH & ADVISORY",
+        desc: "Fiduciary trust websites, retirement planning funnels, and direct calendar booking for high-net-worth prospects.",
+        highlights: [
+          "Clean advisor credentials and team bios",
+          "Automated introductory consultation scheduling",
+          "Retirement readiness lead capture guides",
+          "Compliance-ready fee disclosures and disclaimers",
+        ],
+      },
+      {
+        title: "FinTech Apps & Digital Banking",
+        badge: "CONSUMER & B2B FINTECH",
+        desc: "High-converting product landing pages, friction-free app onboarding, and clear value communication.",
+        highlights: [
+          "Mobile-first app feature showcases",
+          "High-converting waitlist & sign-up flows",
+          "Bank-grade security and trust badges",
+          "Transparent pricing and feature comparisons",
+        ],
+      },
+      {
+        title: "Mortgage Brokers & Lending",
+        badge: "LENDING & MORTGAGES",
+        desc: "Interactive loan calculators and pre-qualification funnels that capture serious borrowers actively seeking financing.",
+        highlights: [
+          "Interactive monthly mortgage payment calculators",
+          "Streamlined borrower pre-qualification forms",
+          "Local Google Search and Maps dominance",
+          "Automated instant lead notification alerts",
+        ],
+      },
+    ],
+    capabilities: [
+      {
+        title: "Credible Financial Websites",
+        description:
+          "High-trust, mobile-friendly websites designed for advisors and financial firms. Crisp layouts, fiduciary disclosures, and clear calls-to-action that inspire client confidence.",
+        deliverables: [
+          "Fast, mobile-optimized design",
+          "Advisor credentials & licensing displays",
+          "Built-in compliance & regulatory notices",
+          "Client review & accreditation badges",
+        ],
+      },
+      {
+        title: "High-Intent Google & Search Ads",
+        description:
+          "Targeted search campaigns that put your firm directly in front of people actively searching for financial advice, wealth management, or loan options in your area.",
+        deliverables: [
+          "Google Search & Local Services campaigns",
+          "Negative keyword filtering for quality leads",
+          "Transparent cost-per-lead tracking",
+          "Conversion tracking directly into your CRM",
+        ],
+      },
+      {
+        title: "Lead Capture & Financial Calculators",
+        description:
+          "Interactive mortgage calculators, retirement readiness tools, and frictionless appointment booking forms that turn casual website visitors into qualified meetings.",
+        deliverables: [
+          "Interactive savings & mortgage calculators",
+          "Direct Calendly / CRM calendar booking",
+          "Automated email & SMS lead notifications",
+          "Multi-step qualified intake questionnaires",
+        ],
+      },
+      {
+        title: "Financial SEO & Local Authority",
+        description:
+          "Proven search engine optimization tailored to financial services so your firm ranks on Page 1 for high-value client keywords and local Google Maps searches.",
+        deliverables: [
+          "Google Business Profile optimization",
+          "Targeted local keyword ranking strategies",
+          "Educational financial guides & articles",
+          "Reputation & review generation setup",
+        ],
+      },
+    ],
+    solutions: [
+      {
+        title: "Advisor Website & Booking",
+        desc: "Modern firm website with integrated calendar booking and fiduciary disclosures.",
+        icon: "shield",
+        tags: ["Fast Web", "Calendly", "Mobile-Ready", "Compliance"],
+      },
+      {
+        title: "High-Intent Search Ads",
+        desc: "Targeted Google Ads capturing people actively searching for financial guidance.",
+        icon: "trending-up",
+        tags: ["Google Ads", "Local Search", "Pre-Qualified", "ROI Tracking"],
+      },
+      {
+        title: "Mortgage & Loan Calculators",
+        desc: "Interactive calculators that capture prospective borrower contact details.",
+        icon: "credit-card",
+        tags: ["Calculators", "Lead Capture", "Instant Quotes", "Mobile"],
+      },
+      {
+        title: "Local Financial SEO",
+        desc: "Google Maps and local search optimization to dominate your metropolitan market.",
+        icon: "database",
+        tags: ["Local SEO", "Google Maps", "Reviews", "Organic Traffic"],
+      },
+    ],
+    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Google Ads", "Local SEO", "Calendly", "HubSpot", "Stripe"],
+    processSteps: [
+      { step: "01", title: "Discovery & Compliance Review", desc: "We review your ideal client profile, licensing requirements, and compliance guidelines to build a clear strategy." },
+      { step: "02", title: "Design & Campaign Setup", desc: "We build your modern website, configure interactive calculators and calendar booking, and set up targeted search campaigns." },
+      { step: "03", title: "Launch & Lead Optimization", desc: "Your site goes live and ad campaigns launch, driving qualified inquiries directly into your calendar and inbox." },
+      { step: "04", title: "Ongoing Growth & Refinement", desc: "We continuously optimize search rankings, lower cost-per-lead, and refine landing pages for maximum conversions." },
+    ],
+    caseStudies: [
+      {
+        title: "Wealth Advisory Client Acquisition Funnel",
+        client: "Apex Wealth Advisory",
+        impact: "Generated 34 qualified high-net-worth consultation requests in 60 days with a modern website and targeted search campaign.",
+        image: "/industries/finance-fintech.jpg",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you handle compliance and regulatory disclosures?",
+        answer:
+          "Every website and campaign we build includes proper disclaimers (SEC, FINRA, or state licensing disclosures), privacy policies, and fee transparency notices formatted for easy review and sign-off by your compliance officer.",
+      },
+      {
+        question: "What kinds of client leads will we receive?",
+        answer:
+          "We specifically target high-intent searchers who are actively seeking financial planners, mortgage options, or business accounting. We use pre-qualifying questionnaire fields so you only spend time on serious prospects.",
+      },
+      {
+        question: "Can you connect our current CRM or scheduling calendar?",
+        answer:
+          "Yes. We seamlessly connect Calendly, Acuity, HubSpot, Salesforce, Wealthbox, or any other tool your firm already uses so new inquiries land directly on your calendar or CRM.",
+      },
+      {
+        question: "Do you work with independent advisors or larger fintech firms?",
+        answer:
+          "We work with both. Independent advisors love our fast, turnkey local growth packages, while fintech startups partner with us for conversion rate optimization and landing page design.",
+      },
+    ],
+  },
+  {
+    slug: "travel-tourism",
+    name: "Travel & Tourism",
+    badge: "EXPERIENTIAL TRAVEL, OTAs & LUXURY TOURISM",
+    tagline: "Next-Gen Tour Portals, GDS Booking Engines & High-Yield Traveler Funnels",
+    heroHeadline: "Immersive Travel Booking Platforms & Growth Systems for",
+    heroHighlight: "Global Tourism Brands.",
+    heroSubtitle:
+      "We build custom travel portals, real-time airline/hotel GDS booking engines, interactive itinerary builders, and high-converting experiential tourism funnels that maximize direct guest reservations.",
+    image: "/industries/travel-tourism.jpg",
+    stats: [
+      { value: "+260%", label: "Direct Booking Growth" },
+      { value: "< 1.2s", label: "Multi-Destination Search" },
+      { value: "100%", label: "GDS & Bedbank API Sync" },
+      { value: "4.9/5", label: "Guest UX Satisfaction" },
+    ],
+    overview:
+      "Modern travelers expect editorial storytelling, instant live availability, dynamic packaging, and effortless mobile booking. We help tour operators, experiential travel agencies, and tourism boards bypass steep third-party commissions by engineering high-converting direct platforms.",
+    theChallenge:
+      "Travel brands lose up to 30% of booking revenue to intermediaries, while existing travel booking engines are notoriously sluggish, confusing on mobile devices, and fail to evoke the wanderlust required to convert dreamers into booked travelers.",
+    ourSolution:
+      "We replace antiquated booking templates with lightning-fast Next.js portals, integrating live Amadeus/Sabre flight feeds, Hotelbeds connectivity, interactive drag-and-drop itinerary builders, and targeted multi-channel traveler acquisition campaigns.",
+    focusAreas: [
+      {
+        title: "Luxury Tour Operators & DMC Platforms",
+        badge: "CURATED EXPEDITIONS & BESPOKE TRIPS",
+        desc: "Editorial expedition lookbooks, custom quote request engines, and private client portals for bespoke multi-day itineraries.",
+        highlights: [
+          "Interactive day-by-day visual itinerary builders",
+          "Dynamic multi-currency pricing & seasonal departure slots",
+          "Direct WhatsApp / VIP concierge inquiry routing",
+          "Offline-accessible digital travel vouchers & map guides",
+        ],
+      },
+      {
+        title: "Independent OTAs & Activity Hubs",
+        badge: "REAL-TIME RESERVATION ENGINES",
+        desc: "Sub-second search across thousands of hotels, flights, and excursions with instant 1-click mobile Apple Pay checkout.",
+        highlights: [
+          "Live Amadeus, Sabre & Hotelbeds API connectivity",
+          "Instant multi-filter date, destination & amenity search",
+          "Split-group payments & flexible deposit locks",
+          "Automated post-booking confirmation & SMS passes",
+        ],
+      },
+      {
+        title: "Destination Marketing & Regional Tourism Boards",
+        badge: "GEO-DISCOVERY & VISITOR GROWTH",
+        desc: "Interactive regional destination maps, seasonal festival guides, and high-impact digital advertising targeting affluent tourists.",
+        highlights: [
+          "MapBox interactive 3D landmark & trail guides",
+          "Multi-language localized tourism content (i18n)",
+          "High-intent Google Search & Instagram Reels tourism ads",
+          "Tourist footfall and direct booking telemetry",
+        ],
+      },
+    ],
+    capabilities: [
+      {
+        title: "Bespoke Travel Portals & Dynamic Packaging",
+        description:
+          "Modern Next.js digital travel platforms with sub-second catalog search, curated destination guides, and seamless multi-item checkout.",
+        image: "/industries/travel_cap_resort.jpg",
+        deliverables: [
+          "Sub-Second Destination Search Engine",
+          "Multi-Item Cart (Flight + Hotel + Tour)",
+          "Interactive Day-by-Day Itineraries",
+          "Multi-Currency Payment (Stripe / Apple Pay)",
+        ],
+      },
+      {
+        title: "GDS, Bedbank & Channel Manager Integration",
+        description:
+          "Live API connections to global airline and hotel aggregators (Amadeus, Sabre, Hotelbeds, Cloudbeds) with zero overbooking risk.",
+        image: "/industries/travel-tourism.jpg",
+        deliverables: [
+          "Amadeus & Sabre Flight Connectors",
+          "Hotelbeds & Expedia Partner Solutions Sync",
+          "Live Room Inventory & Dynamic Pricing",
+          "Automated PNR & Ticket Generation",
+        ],
+      },
+      {
+        title: "Interactive Itinerary Builders & Client Hubs",
+        description:
+          "Drag-and-drop custom trip builders allowing travelers and travel advisors to collaborate on tailor-made vacation packages in real time.",
+        deliverables: [
+          "Visual Day-by-Day Trip Architect",
+          "Interactive Route Map Previews",
+          "Sharable PDF & Mobile Vacation Dossiers",
+          "Client Trip Payment Milestone Schedules",
+        ],
+      },
+      {
+        title: "High-ROAS Traveler Acquisition & Tourism Ads",
+        description:
+          "Laser-targeted Meta Reels and Google Search campaigns targeting travelers during their active vacation planning windows.",
+        deliverables: [
+          "High-Intent Google Flights & Tour Search Ads",
+          "Cinematic Instagram Reels Video Production",
+          "Geo-Fenced Airport & In-Destination Ads",
+          "Server-Side Meta CAPI Conversion Tracking",
+        ],
+      },
+    ],
+    solutions: [
+      {
+        title: "Direct Tour Booking Engine",
+        desc: "Zero-commission booking flow with live departure calendar, instant deposit, and traveler seat locks.",
+        icon: "compass",
+        tags: ["Next.js", "Stripe", "Amadeus API", "Tailwind CSS"],
+      },
+      {
+        title: "Interactive Trip Architect",
+        desc: "Visual day-by-day travel builder with live route maps, hotel upgrades, and excursion add-ons.",
+        icon: "map",
+        tags: ["Mapbox GL", "TypeScript", "PDF Generator"],
+      },
+      {
+        title: "GDS Channel Synchronizer",
+        desc: "Live inventory sync with Hotelbeds, Sabre, and TourCMS preventing double-bookings.",
+        icon: "refresh-cw",
+        tags: ["REST APIs", "Redis", "Node.js", "Webhooks"],
+      },
+      {
+        title: "High-Yield Traveler Ads",
+        desc: "Paid search and social campaigns capturing tourists actively researching itineraries.",
+        icon: "target",
+        tags: ["Google Ads", "Meta CAPI", "Klaviyo"],
+      },
+    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Mapbox GL", "Amadeus API", "Hotelbeds API", "Stripe", "Redis", "Google Ads", "Meta CAPI"],
+    processSteps: [
+      { step: "01", title: "Market & Traveler Journey Discovery", desc: "Analyzing destination keywords, traveler booking hurdles, seasonal demand cycles, and competitor OTA fee leakages." },
+      { step: "02", title: "Interactive UI/UX & Itinerary Prototyping", desc: "Designing evocative editorial aesthetics, 1-click mobile booking funnels, and interactive trip builders." },
+      { step: "03", title: "GDS Backend & Payment Integration", desc: "Connecting live hotel/flight distribution feeds, multi-currency Stripe gateways, and automated voucher generation." },
+      { step: "04", title: "Global Traveler Campaign Launch", desc: "Rolling out localized SEO destination hubs and high-intent Google Search campaigns for immediate seasonal bookings." },
+    ],
+    caseStudies: [
+      {
+        title: "Direct Luxury Expedition Booking Engine & Itinerary Portal",
+        client: "Roamora Voyages & Expeditions",
+        impact: "Shifted 64% of guest bookings from OTAs to direct web checkouts, reducing commission payout by $180,000 in the first 9 months.",
+        image: "/industries/travel-tourism.jpg",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you integrate our custom travel portal with GDS feeds like Amadeus or Sabre?",
+        answer:
+          "Yes. We build custom API connectors to Amadeus, Sabre, Hotelbeds, and TourCMS for live rate search, instant seat/room holding, and automated PNR confirmation issuance.",
+      },
+      {
+        question: "How do you help travel brands bypass 20-30% OTA commission fees from Viator or Booking.com?",
+        answer:
+          "By building high-speed direct booking funnels with dynamic packaging, direct booking rate guarantees, VIP perks (complimentary upgrades, flexible cancellation), and multi-currency checkout.",
+      },
+      {
+        question: "Can travelers customize multi-day itineraries and pay in milestones?",
+        answer:
+          "Yes. We engineer interactive day-by-day itinerary builders with optional activity add-ons and automated milestone payment schedules (e.g. 20% deposit at booking, remainder 30 days prior to departure).",
+      },
+      {
+        question: "How do you handle multi-language and multi-currency for international travelers?",
+        answer:
+          "We deploy full internationalization (i18n) supporting 20+ languages with automatic geolocation, localized currency conversion, and regional payment methods including Apple Pay, Google Pay, and Klarna.",
+      },
+      {
+        question: "Will our website and booking engine work seamlessly on mobile phones?",
+        answer:
+          "Yes. Every platform is engineered mobile-first with sub-second page loads, responsive day-by-day itinerary views, 1-click Apple Pay checkout, and instant WhatsApp concierge integration for travelers on the move.",
+      },
+    ],
+  },
+  {
+    slug: "agriculture-agritech",
+    name: "Agriculture & Agritech",
+    badge: "AGRICULTURE & FARMS",
+    tagline: "Websites, Online Stores & Growth for Farms & Agribusiness",
+    heroHeadline: "Websites & Digital Marketing for",
+    heroHighlight: "Farms & Agriculture.",
+    heroSubtitle:
+      "We help farms, orchards, and agricultural businesses build clean websites, sell directly to customers, and reach more local buyers.",
+    image: "/industries/agriculture-agritech.jpg",
+    stats: [
+      { value: "Direct", label: "Farm-to-Consumer Sales" },
+      { value: "Mobile", label: "Fast & Easy to Browse" },
+      { value: "0%", label: "Third-Party App Fees" },
+      { value: "100%", label: "Your Farm, Your Brand" },
+    ],
+    overview:
+      "We build straightforward websites and digital marketing tools for agricultural businesses. Whether you sell produce directly to local families, take wholesale orders, or want to build a memorable farm brand, we make digital growth simple.",
+    theChallenge:
+      "Many farms and growers rely on outdated websites or expensive middlemen, making it hard for customers to find what is in season, order produce, or submit wholesale inquiries.",
+    ourSolution:
+      "We build clean, easy-to-use websites, direct-to-consumer farm stores, and wholesale inquiry pages that help agricultural businesses connect directly with buyers.",
+    focusAreas: [
+      {
+        title: "Commercial Farms & Organic Growers",
+        badge: "WEBSITES & BRANDING",
+        desc: "Clear, mobile-friendly websites that showcase your farm, crops, growing practices, and harvest.",
+        highlights: [
+          "Custom responsive farm website design with clear storytelling",
+          "High-resolution harvest photo and crop galleries",
+          "Local Google Search optimization for nearby farm customers",
+          "Effortless contact and farm visit inquiry forms",
+        ],
+      },
+      {
+        title: "Farm-to-Table & Direct Produce Sales",
+        badge: "ONLINE FARM STORE",
+        desc: "Sell fresh produce, harvest boxes, and farm goods directly to local families and retail customers.",
+        highlights: [
+          "Weekly harvest box and seasonal produce subscriptions",
+          "Simple mobile checkout with Apple Pay and Google Pay",
+          "Flexible on-farm pickup and local delivery scheduling",
+          "Automated harvest restock and customer notification alerts",
+        ],
+      },
+      {
+        title: "Wholesale Buyers & Agribusiness Commerce",
+        badge: "WHOLESALE INQUIRIES",
+        desc: "Simple inquiry and catalog pages for restaurants, grocers, and commercial food distributors.",
+        highlights: [
+          "Live crop availability and seasonal product lists",
+          "Wholesale pricing and quick quote request forms",
+          "Digital specification sheets and organic certificates",
+          "Direct communication with zero third-party middleman fees",
+        ],
+      },
+    ],
+    capabilities: [
+      {
+        title: "Custom Farm Websites & Branding",
+        description:
+          "Clean, memorable websites for family farms, organic producers, orchards, and agricultural suppliers.",
+        image: "/industries/agriculture-agritech.jpg",
+        deliverables: [
+          "Custom Farm Web Design",
+          "Brand Storytelling & Photos",
+          "Product & Crop Catalogs",
+          "Mobile Speed Optimization",
+        ],
+      },
+      {
+        title: "Direct-to-Consumer Produce Stores",
+        description:
+          "Simple online storefronts for seasonal harvest boxes, produce orders, and local farm pickup.",
+        image: "/industries/agri_cap_market.jpg",
+        deliverables: [
+          "Seasonal Box Subscriptions",
+          "1-Click Mobile Checkout",
+          "Local Pickup & Delivery Zones",
+          "Automated Restock Alerts",
+        ],
+      },
+      {
+        title: "Wholesale Inquiry & Buyer Pages",
+        description:
+          "Straightforward wholesale catalog pages connecting growers directly with grocers and restaurants.",
+        image: "/industries/agri_cap_smartfarm.jpg",
+        deliverables: [
+          "Volume Pricing Lists",
+          "Seasonal Availability Bulletins",
+          "Direct Quote Request Forms",
+          "Certifications & Spec Sheets",
+        ],
+      },
+      {
+        title: "Harvest & Stock Management Tools",
+        description:
+          "Straightforward, easy-to-use digital tools for tracking harvest yields and seasonal stock.",
+        image: "/industries/agri_cap_smartfarm.jpg",
+        deliverables: [
+          "Mobile Harvest Logging",
+          "Batch & Lot Numbers",
+          "Simple Stock Updates",
+          "Fast Mobile Access",
+        ],
+      },
+    ],
+    solutions: [
+      {
+        title: "Direct Farm-to-Table Storefronts",
+        desc: "Clean online stores for fresh produce boxes, seasonal harvest subscriptions, and local farm pickup.",
+        icon: "shopping-bag",
+        tags: ["E-Commerce", "Local Pickup", "Mobile Friendly"],
+      },
+      {
+        title: "Wholesale Produce & Grower Catalog",
+        desc: "B2B catalog portals for restaurants, grocers, and distributors to view crop availability and request quotes.",
+        icon: "clipboard",
+        tags: ["B2B Portal", "Crop Availability", "Direct Quotes"],
+      },
+      {
+        title: "Simple Harvest & Field Logs",
+        desc: "Easy mobile dashboards for logging daily harvest yields, field blocks, and seasonal planting schedules.",
+        icon: "calendar",
+        tags: ["Field Logs", "Harvest Tracking", "Mobile First"],
+      },
+      {
+        title: "Farm Storytelling & Origin Showcase",
+        desc: "Interactive origin maps and QR code storytelling highlighting sustainable farming practices and certifications.",
+        icon: "map-pin",
+        tags: ["Brand Story", "QR Verification", "Organic Standards"],
+      },
+    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shopify / Stripe", "PostgreSQL", "Cloudflare CDN"],
+    processSteps: [
+      { step: "01", title: "Discovery & Farm Brand Strategy", desc: "Understanding your crops, seasonal calendar, target customers, and direct sales goals." },
+      { step: "02", title: "Design & Produce Catalog Architecture", desc: "Creating an authentic, mobile-first design with clean typography and real farm photography." },
+      { step: "03", title: "Storefront & Ordering System Build", desc: "Setting up frictionless online ordering, local pickup slots, and wholesale inquiry flows." },
+      { step: "04", title: "Launch & Local Customer Growth", desc: "Deploying your site with Google Search optimization and automated customer email flows." },
+    ],
+    caseStudies: [
+      {
+        title: "Direct Farm Store & Digital Produce Platform",
+        client: "Oakwood Organic Farms",
+        impact: "Increased direct-to-consumer farm sales by 210%, cut wholesale inquiry turnaround to under 2 hours, and scaled farm pickup across 3 regional hubs.",
+        image: "/industries/agri_cap_market.jpg",
+      },
+    ],
+    faqs: [
+      {
+        question: "How can a modern website help our farm or agribusiness get more customers?",
+        answer:
+          "A modern, mobile-friendly website gives your farm instant credibility. It allows local consumers, restaurants, and wholesale buyers to discover your harvest, view real-time produce availability, and order or inquire directly without middlemen.",
+      },
+      {
+        question: "Can we sell seasonal harvest boxes and fresh produce online for local pickup?",
+        answer:
+          "Yes. We build easy-to-use e-commerce stores with automated pickup time slots, recurring weekly box subscriptions, and mobile payment options like Apple Pay and Google Pay.",
+      },
+      {
+        question: "Is it easy for our team to update produce availability and seasonal prices?",
+        answer:
+          "Absolutely. We build simple, intuitive admin dashboards where you can update harvest status, prices, and announcements from your smartphone in seconds—no technical experience required.",
+      },
+      {
+        question: "How do you help us connect with commercial wholesale buyers and restaurants?",
+        answer:
+          "We create dedicated wholesale portals where chefs, grocers, and distributors can view bulk specs, check seasonal calendar availability, and submit direct purchase orders or quote requests.",
+      },
+    ],
+  },
 ];
 
 export function getIndustryBySlug(slug: string): IndustryDetail | undefined {

@@ -50,6 +50,24 @@ const industriesData: IndustryItem[] = [
     href: "/industries/real-estate",
   },
   {
+    name: "Finance & FinTech",
+    desc: "Digital Banking, WealthTech & Payment Rails",
+    icon: "credit-card",
+    href: "/industries/finance-fintech",
+  },
+  {
+    name: "Travel & Tourism",
+    desc: "GDS Booking Engines & Tour Portals",
+    icon: "plane",
+    href: "/industries/travel-tourism",
+  },
+  {
+    name: "Agriculture & Agritech",
+    desc: "Farm Websites, Direct Produce & Agribusiness",
+    icon: "sprout",
+    href: "/industries/agriculture-agritech",
+  },
+  {
     name: "Food & Beverages",
     desc: "QSR, FMCG & Gourmet Experiences",
     icon: "utensils",
@@ -233,6 +251,25 @@ export default function Navbar() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 14v7" />
+          </svg>
+        );
+      case "credit-card":
+        return (
+          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <rect width="20" height="14" x="2" y="5" rx="2" />
+            <line x1="2" x2="22" y1="10" />
+          </svg>
+        );
+      case "plane":
+        return (
+          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.7-.1-1.3.2-1.7.7l-.4.6 5.5 3.5-3.2 3.2-2.5-.5c-.4-.1-.8.1-1.1.4l-.4.4 2.5 1.5 1.5 2.5.4-.4c.3-.3.5-.7.4-1.1l-.5-2.5 3.2-3.2 3.5 5.5.6-.4c.5-.4.8-1 .7-1.7z" />
+          </svg>
+        );
+      case "sprout":
+        return (
+          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M7 20h10M12 20v-8M6.5 12a4.5 4.5 0 0 1 4.5-4.5c0 4.5-4.5 4.5-4.5 4.5zM17.5 10a4.5 4.5 0 0 0-4.5-4.5c0 4.5 4.5 4.5 4.5 4.5z" />
           </svg>
         );
       case "cog":
@@ -792,10 +829,10 @@ export default function Navbar() {
                 {/* 3 Full-Width Columns of Categorized Industries */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start text-left">
                   
-                  {/* Column 1: Tech & Enterprise */}
+                  {/* Column 1: Tech & Finance */}
                   <div className="flex flex-col items-start text-left">
                     <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
-                      Tech &amp; Enterprise
+                      Tech &amp; Finance
                     </span>
                     <ul className="flex flex-col gap-3.5 w-full">
                       <li>
@@ -805,6 +842,16 @@ export default function Navbar() {
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
                             Enterprise SaaS, AI &amp; Cloud Platforms.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/finance-fintech" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Finance &amp; FinTech
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Digital Banking, WealthTech &amp; Payment Rails.
                           </span>
                         </a>
                       </li>
@@ -831,10 +878,10 @@ export default function Navbar() {
                     </ul>
                   </div>
 
-                  {/* Column 2: Commerce & Lifestyle */}
+                  {/* Column 2: Commerce & Agri */}
                   <div className="flex flex-col items-start text-left">
                     <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
-                      Commerce &amp; Luxury
+                      Commerce &amp; Agri
                     </span>
                     <ul className="flex flex-col gap-3.5 w-full">
                       <li>
@@ -858,6 +905,16 @@ export default function Navbar() {
                         </a>
                       </li>
                       <li>
+                        <a href="/industries/agriculture-agritech" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Agriculture &amp; Agritech
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Farm Websites, Direct Produce &amp; Agribusiness.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
                         <a href="/industries/food-beverages" className="group/link flex flex-col text-left">
                           <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
                             Food &amp; Beverages
@@ -870,19 +927,19 @@ export default function Navbar() {
                     </ul>
                   </div>
 
-                  {/* Column 3: Health & Care */}
+                  {/* Column 3: Travel, Care & Stays */}
                   <div className="flex flex-col items-start text-left">
                     <span className="text-xs font-medium tracking-wider text-zinc-400 uppercase pb-2 mb-4 border-b border-zinc-200 w-full block">
-                      Care &amp; Stays
+                      Travel &amp; Hospitality
                     </span>
                     <ul className="flex flex-col gap-3.5 w-full">
                       <li>
-                        <a href="/industries/healthcare" className="group/link flex flex-col text-left">
+                        <a href="/industries/travel-tourism" className="group/link flex flex-col text-left">
                           <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
-                            Healthcare
+                            Travel &amp; Tourism
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
-                            HealthTech, Clinics &amp; Biotech systems.
+                            GDS Booking Engines &amp; Tour Portals.
                           </span>
                         </a>
                       </li>
@@ -893,6 +950,16 @@ export default function Navbar() {
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
                             Hotels, Luxury Resorts &amp; Dining.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/healthcare" className="group/link flex flex-col text-left">
+                          <span className="font-medium text-[15px] text-zinc-900 group-hover/link:text-amber-500 transition-colors leading-snug">
+                            Healthcare
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            HealthTech, Clinics &amp; Biotech systems.
                           </span>
                         </a>
                       </li>
@@ -1208,10 +1275,10 @@ export default function Navbar() {
 
               {mobileIndustriesOpen && (
                 <div className="pt-4 pl-1 flex flex-col gap-6">
-                  {/* Category 1: Tech & Enterprise */}
+                  {/* Category 1: Tech & Finance */}
                   <div className="flex flex-col items-start text-left w-full">
                     <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
-                      Tech &amp; Enterprise
+                      Tech &amp; Finance
                     </span>
                     <ul className="flex flex-col gap-3.5 w-full">
                       <li>
@@ -1221,6 +1288,16 @@ export default function Navbar() {
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
                             Enterprise SaaS, AI &amp; Cloud Platforms.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/finance-fintech" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Finance &amp; FinTech
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Digital Banking, WealthTech &amp; Payment Rails.
                           </span>
                         </a>
                       </li>
@@ -1247,10 +1324,10 @@ export default function Navbar() {
                     </ul>
                   </div>
 
-                  {/* Category 2: Commerce & Luxury */}
+                  {/* Category 2: Commerce & Agri */}
                   <div className="flex flex-col items-start text-left w-full">
                     <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
-                      Commerce &amp; Luxury
+                      Commerce &amp; Agri
                     </span>
                     <ul className="flex flex-col gap-3.5 w-full">
                       <li>
@@ -1274,6 +1351,16 @@ export default function Navbar() {
                         </a>
                       </li>
                       <li>
+                        <a href="/industries/agriculture-agritech" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Agriculture &amp; Agritech
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            Farm Websites, Direct Produce &amp; Agribusiness.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
                         <a href="/industries/food-beverages" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
                           <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
                             Food &amp; Beverages
@@ -1286,19 +1373,19 @@ export default function Navbar() {
                     </ul>
                   </div>
 
-                  {/* Category 3: Care & Stays */}
+                  {/* Category 3: Travel & Hospitality */}
                   <div className="flex flex-col items-start text-left w-full">
                     <span className="text-[11px] font-bold tracking-wider text-zinc-400 uppercase pb-2 mb-3 border-b border-zinc-200/80 w-full block">
-                      Care &amp; Stays
+                      Travel &amp; Hospitality
                     </span>
                     <ul className="flex flex-col gap-3.5 w-full">
                       <li>
-                        <a href="/industries/healthcare" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                        <a href="/industries/travel-tourism" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
                           <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
-                            Healthcare
+                            Travel &amp; Tourism
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
-                            HealthTech, Clinics &amp; Biotech systems.
+                            GDS Booking Engines &amp; Tour Portals.
                           </span>
                         </a>
                       </li>
@@ -1309,6 +1396,16 @@ export default function Navbar() {
                           </span>
                           <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
                             Hotels, Luxury Resorts &amp; Dining.
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries/healthcare" onClick={() => setMobileMenuOpen(false)} className="group/link flex flex-col text-left">
+                          <span className="font-bold text-[15px] text-zinc-900 group-hover/link:text-amber-600 transition-colors leading-snug">
+                            Healthcare
+                          </span>
+                          <span className="text-xs text-zinc-500 font-normal leading-snug mt-0.5">
+                            HealthTech, Clinics &amp; Biotech systems.
                           </span>
                         </a>
                       </li>

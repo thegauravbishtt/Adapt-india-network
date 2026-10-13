@@ -22,6 +22,1437 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
 
   const otherIndustries = allIndustries.filter((i) => i.slug !== industry.slug);
 
+  if (industry.slug === "agriculture-agritech") {
+    return (
+      <LanguageProvider>
+        <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
+          <Navbar />
+
+          {/* 1. HERO BANNER (Original Sleek Background Banner with Visible Imagery) */}
+          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+            
+            {/* Background Image with Clear Directional Gradient */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src={industry.image}
+                alt={industry.name}
+                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
+            </div>
+
+            {/* Top Row: Back to Home + Global Divider Line */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
+              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
+                >
+                  <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
+                  <span>BACK TO HOME</span>
+                </Link>
+
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/industries"
+                    className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider transition-colors"
+                  >
+                    <span>ALL INDUSTRIES</span>
+                  </Link>
+                  <span className="hidden sm:inline-block text-zinc-600">/</span>
+                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                    // {industry.name}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Center Content: Clean Title + Scroll Down Indicator */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                
+                <div className="flex flex-col items-start text-left max-w-3xl">
+                  {/* Category Pill Tagline */}
+                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
+                    // {industry.badge}
+                  </span>
+
+                  {/* Compact Display Title */}
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                    {industry.name}
+                  </h1>
+
+                  <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                    {industry.heroSubtitle}
+                  </p>
+                </div>
+
+                {/* Right Side: Scroll Down Indicator */}
+                <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
+                  <span>SCROLL DOWN</span>
+                  <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
+                    ↓
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* 2. WHAT WE DO (Simple, honest 4-card grid) */}
+          <section id="services" className="w-full bg-white py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-100">
+            <div className="max-w-6xl mx-auto flex flex-col gap-12 sm:gap-16">
+              
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2 block">
+                  OUR SERVICES
+                </span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-950 font-display tracking-tight">
+                  Everything Your Farm Needs to Grow Online
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
+                  No complicated tech jargon. Just straightforward digital tools that bring customers to your farm.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                {/* Card 1 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    🌱
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Custom Farm Websites
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Fast, clean, mobile-friendly websites that showcase your farm, your story, your crops, and how visitors can find or contact you.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Photo &amp; harvest galleries</li>
+                    <li className="flex items-center gap-2">✓ Farm visit &amp; event info</li>
+                    <li className="flex items-center gap-2">✓ Fast on smartphones</li>
+                  </ul>
+                </div>
+
+                {/* Card 2 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    🧺
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Direct-to-Consumer Produce Stores
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Simple online stores where local families can order weekly produce boxes, seasonal harvests, or farm goods with easy pickup or delivery.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Weekly box subscriptions</li>
+                    <li className="flex items-center gap-2">✓ Farm stand pickup scheduling</li>
+                    <li className="flex items-center gap-2">✓ 0% middleman app commissions</li>
+                  </ul>
+                </div>
+
+                {/* Card 3 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    📦
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Wholesale Inquiry Portals
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Straightforward product catalogs and order inquiry forms for restaurants, local grocery stores, and commercial food distributors.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Bulk order quote requests</li>
+                    <li className="flex items-center gap-2">✓ Crop availability updates</li>
+                    <li className="flex items-center gap-2">✓ Direct contact with chefs &amp; buyers</li>
+                  </ul>
+                </div>
+
+                {/* Card 4 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    📍
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Local Google Search &amp; Maps
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Help nearby customers find your farm stand, orchard, or store when searching for fresh local produce on Google and Google Maps.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Google Business Profile optimization</li>
+                    <li className="flex items-center gap-2">✓ High local search visibility</li>
+                    <li className="flex items-center gap-2">✓ Directions, hours &amp; contact info</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 2.5 WHO WE WORK WITH & THE DIRECT ADVANTAGE (Between Services & How We Work) */}
+          <section className="w-full bg-[#0c0c0d] text-white py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-800">
+            <div className="max-w-6xl mx-auto flex flex-col gap-14 sm:gap-18">
+              
+              {/* Header */}
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#fbea3d] mb-2 block">
+                  WHO WE WORK WITH
+                </span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white">
+                  Built for Every Type of Farm
+                </h2>
+                <p className="text-zinc-400 text-sm sm:text-base mt-3 leading-relaxed">
+                  Whether you sell fresh vegetables at the farm gate, run a family orchard, or supply commercial wholesale accounts, we tailor your website to how you do business.
+                </p>
+              </div>
+
+              {/* 4 Farm Types Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                {/* Type 1 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🥬</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Market Gardens &amp; Organic Farms
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Weekly vegetable box subscriptions, seasonal harvest announcements, and easy on-farm pickup slots.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Direct Box Sales</span>
+                  </div>
+                </div>
+
+                {/* Type 2 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🍎</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Orchards, Berries &amp; Vineyards
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Pick-your-own visitor guides, fruit cases, artisanal ciders, and farm event tickets.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Visitor &amp; Event Booking</span>
+                  </div>
+                </div>
+
+                {/* Type 3 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🍯</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Dairy, Apiaries &amp; Specialty Goods
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Artisan cheeses, pure raw honey, grass-fed meats, and farm merchandise shipped or picked up.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Online Farm Pantry</span>
+                  </div>
+                </div>
+
+                {/* Type 4 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🚜</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Commercial Growers &amp; Wholesale
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Bulk crop availability bulletins, specification downloads, and quote requests for chefs and distributors.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>B2B Buyer Portals</span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Direct Farm Advantage Row (4 clean highlights) */}
+              <div className="bg-zinc-900/50 border border-zinc-800/90 rounded-3xl p-8 sm:p-10 flex flex-col gap-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800/80">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+                      The Direct Farm Advantage
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+                      Why modern farms choose direct websites over third-party platforms.
+                    </p>
+                  </div>
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#fbea3d]/10 border border-[#fbea3d]/30 text-xs font-mono font-bold text-[#fbea3d] shrink-0 self-start sm:self-auto">
+                    100% YOUR BRAND
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">0%</span>
+                    <h4 className="text-sm font-bold text-white">No App Commissions</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Keep 100% of your earnings instead of losing 15–30% cuts to middleman delivery apps.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">60s</span>
+                    <h4 className="text-sm font-bold text-white">Easy Phone Updates</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Update seasonal produce stock, prices, and pickup hours right from your smartphone.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">100%</span>
+                    <h4 className="text-sm font-bold text-white">Direct Customer Data</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Own your customer list and emails so you can announce new harvests directly to repeat buyers.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">1-Click</span>
+                    <h4 className="text-sm font-bold text-white">Fast Mobile Checkout</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Seamless Apple Pay and Google Pay checkout so local shoppers can order in seconds.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 3. HOW IT WORKS (Simple 3 steps) */}
+          <section className="w-full bg-[#fafafb] py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-200/70">
+            <div className="max-w-5xl mx-auto flex flex-col gap-12 sm:gap-16">
+              
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2 block">
+                  SIMPLE PROCESS
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 font-display tracking-tight">
+                  How We Work Together
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base mt-2">
+                  We handle the setup from start to finish so you can focus on farming.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    01
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    We Understand Your Farm
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    We learn what you grow, who your customers are, and whether you need a direct store, wholesale inquiries, or a simple informational website.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    02
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    We Build &amp; Set Up Everything
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    We create a clean, mobile-friendly website, configure easy payments, add your harvest photos, and test everything.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    03
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    You Launch &amp; Reach Buyers
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    Your site goes live, appears on Google Maps, and starts connecting your farm with local retail customers and wholesale buyers.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 4. FREQUENTLY ASKED QUESTIONS */}
+          <section className="w-full bg-white py-20 sm:py-24 px-5 sm:px-10 lg:px-16 border-b border-zinc-100">
+            <div className="max-w-3xl mx-auto flex flex-col gap-10">
+              <div className="text-center">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 block mb-2">
+                  COMMON QUESTIONS
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 font-display tracking-tight">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                {industry.faqs.map((faq, idx) => {
+                  const isOpen = openFaqIndex === idx;
+                  return (
+                    <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl overflow-hidden">
+                      <button
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer font-display font-bold text-base sm:text-lg text-zinc-900"
+                      >
+                        <span>{faq.question}</span>
+                        <span className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center shrink-0 font-mono text-sm text-zinc-600">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div className="px-6 pb-6 pt-0 text-sm text-zinc-600 leading-relaxed border-t border-zinc-200/60 mt-1 pt-4">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* 5. SIMPLE CALL TO ACTION */}
+          <section className="w-full bg-zinc-950 text-white py-20 sm:py-24 px-5 sm:px-10 lg:px-16 text-center">
+            <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#fbea3d]">
+                READY TO GROW?
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight">
+                Let’s Build a Website for Your Farm
+              </h2>
+              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                Tell us about your farm, what you produce, and what you’d like to achieve. We’ll guide you through the simplest next steps.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-2 py-4 px-9 bg-[#fbea3d] hover:bg-[#eab308] text-black font-bold text-sm rounded-full inline-flex items-center justify-center transition-colors shadow-lg cursor-pointer"
+              >
+                Get in Touch With Us →
+              </Link>
+            </div>
+          </section>
+
+          {/* 6. OTHER SECTORS */}
+          <section className="w-full bg-[#0c0c0d] text-white py-16 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20 border-t border-zinc-900">
+            <div className="max-w-7xl mx-auto flex flex-col gap-8">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#fbea3d]">
+                    // OTHER SECTORS
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-black font-display text-white">
+                    Explore More Industry Domains
+                  </h3>
+                </div>
+                <Link
+                  href="/industries"
+                  className="hidden sm:inline-flex items-center gap-1 text-xs font-mono text-[#fbea3d] font-bold uppercase hover:underline"
+                >
+                  <span>View All Sectors →</span>
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {otherIndustries.slice(0, 4).map((other) => (
+                  <Link
+                    key={other.slug}
+                    href={`/industries/${other.slug}`}
+                    className="p-5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-[#fbea3d] transition-all duration-200 flex flex-col gap-2 group cursor-pointer"
+                  >
+                    <span className="text-[10px] font-mono font-bold text-[#fbea3d] uppercase tracking-wider">
+                      {other.badge}
+                    </span>
+                    <h4 className="text-sm font-bold font-display text-white group-hover:text-[#fbea3d] transition-colors">
+                      {other.name} →
+                    </h4>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <NewsletterSection />
+          <Footer />
+        </div>
+      </LanguageProvider>
+    );
+  }
+
+  if (industry.slug === "finance-fintech") {
+    return (
+      <LanguageProvider>
+        <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
+          <Navbar />
+
+          {/* 1. HERO BANNER (Original Sleek Background Banner with Visible Imagery - DO NOT ALTER SIZE) */}
+          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+            
+            {/* Background Image with Clear Directional Gradient */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src={industry.image}
+                alt={industry.name}
+                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
+            </div>
+
+            {/* Top Row: Back to Home + Global Divider Line */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
+              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
+                >
+                  <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
+                  <span>BACK TO HOME</span>
+                </Link>
+
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/industries"
+                    className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider transition-colors"
+                  >
+                    <span>ALL INDUSTRIES</span>
+                  </Link>
+                  <span className="hidden sm:inline-block text-zinc-600">/</span>
+                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                    // {industry.name}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Center Content: Clean Title + Scroll Down Indicator */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                
+                <div className="flex flex-col items-start text-left max-w-3xl">
+                  {/* Category Pill Tagline */}
+                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
+                    // {industry.badge}
+                  </span>
+
+                  {/* Compact Display Title */}
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                    {industry.name}
+                  </h1>
+
+                  <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                    {industry.heroSubtitle}
+                  </p>
+                </div>
+
+                {/* Right Side: Scroll Down Indicator */}
+                <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
+                  <span>SCROLL DOWN</span>
+                  <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
+                    ↓
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* 2. WHAT WE DO (Simple, honest 4-card grid) */}
+          <section id="services" className="w-full bg-white py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-100">
+            <div className="max-w-6xl mx-auto flex flex-col gap-12 sm:gap-16">
+              
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2 block">
+                  OUR SERVICES
+                </span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-950 font-display tracking-tight">
+                  Everything Your Financial Practice Needs to Grow
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
+                  No complicated tech jargon. Just straightforward digital marketing, high-converting websites, and qualified client funnels.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                {/* Card 1 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    🏛️
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    High-Trust Financial Websites
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Modern, mobile-friendly websites designed to establish fiduciary credibility immediately. Clean layouts, clear fee structures, and professional bios that inspire confidence.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Clean mobile-first design</li>
+                    <li className="flex items-center gap-2">✓ Advisor credentials &amp; team bios</li>
+                    <li className="flex items-center gap-2">✓ Built-in compliance &amp; fee disclosures</li>
+                  </ul>
+                </div>
+
+                {/* Card 2 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    📈
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    High-Intent Google Search Ads
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Targeted search campaigns that put your practice directly in front of people actively searching for financial planners, wealth management, or loan options in your city.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Google Search &amp; Local Services Ads</li>
+                    <li className="flex items-center gap-2">✓ Negative keyword filtering to stop junk leads</li>
+                    <li className="flex items-center gap-2">✓ Transparent cost-per-lead reporting</li>
+                  </ul>
+                </div>
+
+                {/* Card 3 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    🎯
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Lead Funnels &amp; Financial Calculators
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Interactive mortgage payment calculators, retirement readiness tools, and frictionless appointment booking forms that turn website visitors into scheduled meetings.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Interactive savings &amp; loan calculators</li>
+                    <li className="flex items-center gap-2">✓ Direct Calendly &amp; CRM calendar booking</li>
+                    <li className="flex items-center gap-2">✓ Instant email &amp; SMS lead notification alerts</li>
+                  </ul>
+                </div>
+
+                {/* Card 4 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    📍
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Local Financial SEO &amp; Maps
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Rank on Page 1 of Google and Google Maps when prospective clients search for top-rated financial advisors, accountants, or loan brokers in your area.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Google Business Profile optimization</li>
+                    <li className="flex items-center gap-2">✓ Local client review acquisition setup</li>
+                    <li className="flex items-center gap-2">✓ High visibility for local searches</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 2.5 WHO WE WORK WITH & THE FINANCIAL ADVANTAGE */}
+          <section className="w-full bg-[#0c0c0d] text-white py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-800">
+            <div className="max-w-6xl mx-auto flex flex-col gap-14 sm:gap-18">
+              
+              {/* Header */}
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#fbea3d] mb-2 block">
+                  WHO WE WORK WITH
+                </span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white">
+                  Tailored for Every Financial Practice
+                </h2>
+                <p className="text-zinc-400 text-sm sm:text-base mt-3 leading-relaxed">
+                  Whether you manage private wealth, run a busy mortgage brokerage, or operate a scaling fintech app, we adapt our growth strategy to your clients.
+                </p>
+              </div>
+
+              {/* 4 Practice Types Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                {/* Type 1 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">💼</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Wealth Managers &amp; CFPs
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      High-net-worth client acquisition, retirement planning funnels, and private client portal landing pages.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Wealth &amp; Advisory</span>
+                  </div>
+                </div>
+
+                {/* Type 2 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">📱</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      FinTech Startups &amp; Apps
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      High-converting app landing pages, friction-free sign-up flows, and user onboarding conversion rate optimization.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>FinTech &amp; Apps</span>
+                  </div>
+                </div>
+
+                {/* Type 3 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🏡</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Mortgage &amp; Loan Brokers
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Borrower pre-qualification funnels, instant mortgage rate calculators, and local search ads.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Lending &amp; Mortgages</span>
+                  </div>
+                </div>
+
+                {/* Type 4 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">📊</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      CPAs &amp; Accounting Practices
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Corporate tax advisory leads, business bookkeeping client funnels, and automated appointment scheduling.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Tax &amp; Accounting</span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Financial Advantage Row (4 clean highlights) */}
+              <div className="bg-zinc-900/50 border border-zinc-800/90 rounded-3xl p-8 sm:p-10 flex flex-col gap-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800/80">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+                      The Financial Growth Advantage
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+                      Why modern financial practices choose dedicated client funnels over generic agencies.
+                    </p>
+                  </div>
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#fbea3d]/10 border border-[#fbea3d]/30 text-xs font-mono font-bold text-[#fbea3d] shrink-0 self-start sm:self-auto">
+                    QUALIFIED CLIENTS
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">100%</span>
+                    <h4 className="text-sm font-bold text-white">Compliance Ready</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Clear regulatory disclaimers, privacy policies, and fee disclosures formatted for swift compliance sign-off.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">3x</span>
+                    <h4 className="text-sm font-bold text-white">Higher Lead Quality</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Custom qualifying questions screen out tire-kickers so you only talk to serious prospective clients.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">Page 1</span>
+                    <h4 className="text-sm font-bold text-white">Search Rankings</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Rank at the top of local Google Maps and organic searches for high-value financial advisor keywords.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">0%</span>
+                    <h4 className="text-sm font-bold text-white">Wasted Ad Spend</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Tight negative keyword filtering and conversion tracking ensure every marketing dollar is accounted for.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 3. HOW IT WORKS (Simple 3 steps) */}
+          <section className="w-full bg-[#fafafb] py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-200/70">
+            <div className="max-w-5xl mx-auto flex flex-col gap-12 sm:gap-16">
+              
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2 block">
+                  SIMPLE PROCESS
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 font-display tracking-tight">
+                  How We Work Together
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base mt-2">
+                  A straightforward, hands-off process to get your client pipeline running.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    01
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    Strategy &amp; Compliance Review
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    We review your ideal client profile, licensing details, compliance requirements, and current marketing bottleneck.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    02
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    Design &amp; Campaign Setup
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    We build your modern website, configure interactive calculators and calendar booking, and launch your targeted search campaigns.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    03
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    You Welcome New Clients
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    Your campaigns go live, qualified prospects discover your firm, and introductory consultations appear directly on your calendar.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 4. FREQUENTLY ASKED QUESTIONS */}
+          <section className="w-full bg-white py-20 sm:py-24 px-5 sm:px-10 lg:px-16 border-b border-zinc-100">
+            <div className="max-w-3xl mx-auto flex flex-col gap-10">
+              <div className="text-center">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 block mb-2">
+                  COMMON QUESTIONS
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 font-display tracking-tight">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                {industry.faqs.map((faq, idx) => {
+                  const isOpen = openFaqIndex === idx;
+                  return (
+                    <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl overflow-hidden">
+                      <button
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer font-display font-bold text-base sm:text-lg text-zinc-900"
+                      >
+                        <span>{faq.question}</span>
+                        <span className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center shrink-0 font-mono text-sm text-zinc-600">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div className="px-6 pb-6 pt-0 text-sm text-zinc-600 leading-relaxed border-t border-zinc-200/60 mt-1 pt-4">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* 5. SIMPLE CALL TO ACTION */}
+          <section className="w-full bg-zinc-950 text-white py-20 sm:py-24 px-5 sm:px-10 lg:px-16 text-center">
+            <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#fbea3d]">
+                READY TO GROW YOUR PRACTICE?
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight">
+                Let’s Build a Steady Pipeline of Qualified Clients
+              </h2>
+              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                Tell us about your financial practice and where you want to grow. We’ll show you exactly how to reach qualified clients in your market.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-2 py-4 px-9 bg-[#fbea3d] hover:bg-[#eab308] text-black font-bold text-sm rounded-full inline-flex items-center justify-center transition-colors shadow-lg cursor-pointer"
+              >
+                Get in Touch With Us →
+              </Link>
+            </div>
+          </section>
+
+          {/* 6. OTHER SECTORS */}
+          <section className="w-full bg-[#0c0c0d] text-white py-16 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20 border-t border-zinc-900">
+            <div className="max-w-7xl mx-auto flex flex-col gap-8">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#fbea3d]">
+                    // OTHER SECTORS
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-black font-display text-white">
+                    Explore More Industry Domains
+                  </h3>
+                </div>
+                <Link
+                  href="/industries"
+                  className="hidden sm:inline-flex items-center gap-1 text-xs font-mono text-[#fbea3d] font-bold uppercase hover:underline"
+                >
+                  <span>View All Sectors →</span>
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {otherIndustries.slice(0, 4).map((other) => (
+                  <Link
+                    key={other.slug}
+                    href={`/industries/${other.slug}`}
+                    className="p-5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-[#fbea3d] transition-all duration-200 flex flex-col gap-2 group cursor-pointer"
+                  >
+                    <span className="text-[10px] font-mono font-bold text-[#fbea3d] uppercase tracking-wider">
+                      {other.badge}
+                    </span>
+                    <h4 className="text-sm font-bold font-display text-white group-hover:text-[#fbea3d] transition-colors">
+                      {other.name} →
+                    </h4>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <NewsletterSection />
+          <Footer />
+        </div>
+      </LanguageProvider>
+    );
+  }
+
+  if (industry.slug === "travel-tourism") {
+    return (
+      <LanguageProvider>
+        <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
+          <Navbar />
+
+          {/* 1. HERO BANNER (Original Sleek Background Banner with Visible Imagery - DO NOT ALTER SIZE) */}
+          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+            
+            {/* Background Image with Clear Directional Gradient */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src={industry.image}
+                alt={industry.name}
+                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
+            </div>
+
+            {/* Top Row: Back to Home + Global Divider Line */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
+              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
+                >
+                  <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
+                  <span>BACK TO HOME</span>
+                </Link>
+
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/industries"
+                    className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider transition-colors"
+                  >
+                    <span>ALL INDUSTRIES</span>
+                  </Link>
+                  <span className="hidden sm:inline-block text-zinc-600">/</span>
+                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                    // {industry.name}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Center Content: Clean Title + Scroll Down Indicator */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                
+                <div className="flex flex-col items-start text-left max-w-3xl">
+                  {/* Category Pill Tagline */}
+                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
+                    // {industry.badge}
+                  </span>
+
+                  {/* Compact Display Title */}
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                    {industry.name}
+                  </h1>
+
+                  <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                    {industry.heroSubtitle}
+                  </p>
+                </div>
+
+                {/* Right Side: Scroll Down Indicator */}
+                <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
+                  <span>SCROLL DOWN</span>
+                  <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
+                    ↓
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* 2. OUR SERVICES (Simple, high-converting 4-card grid) */}
+          <section id="services" className="w-full bg-white py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-100">
+            <div className="max-w-6xl mx-auto flex flex-col gap-12 sm:gap-16">
+              
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2 block">
+                  OUR SERVICES
+                </span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-950 font-display tracking-tight">
+                  Everything Your Travel Brand Needs to Win Direct Bookings
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
+                  No complicated tech jargon or middleman commissions. Just high-converting travel websites, real-time booking engines, and qualified guest acquisition funnels.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                {/* Card 1 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    ✈️
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Direct Tour &amp; Hotel Booking Engines
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Fast, frictionless booking portals engineered to capture full-margin direct bookings. Clean calendar availability, transparent room or tour rates, and instant 1-click checkout that bypass 20–30% OTA commission cuts.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Zero-commission direct guest reservations</li>
+                    <li className="flex items-center gap-2">✓ Mobile Apple Pay, Google Pay &amp; card checkout</li>
+                    <li className="flex items-center gap-2">✓ Flexible deposit locks &amp; milestone schedules</li>
+                  </ul>
+                </div>
+
+                {/* Card 2 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    🗺️
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    Interactive Itinerary Builders &amp; Route Maps
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Immersive day-by-day vacation architects allowing travelers to view interactive route maps, customize excursion add-ons, select lodging upgrades, and download offline mobile travel dossiers.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Visual day-by-day vacation planner</li>
+                    <li className="flex items-center gap-2">✓ Interactive route maps &amp; landmark guides</li>
+                    <li className="flex items-center gap-2">✓ Downloadable PDF &amp; mobile trip dossiers</li>
+                  </ul>
+                </div>
+
+                {/* Card 3 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    🔄
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    GDS &amp; Live Channel Synchronizer
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Live API connectivity with airline and hotel distribution systems (Amadeus, Sabre, Hotelbeds) and channel managers to prevent double-bookings and maintain accurate live pricing.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ Real-time flight &amp; hotel inventory sync</li>
+                    <li className="flex items-center gap-2">✓ Instant automated PNR &amp; voucher generation</li>
+                    <li className="flex items-center gap-2">✓ Multi-currency &amp; dynamic seasonal rates</li>
+                  </ul>
+                </div>
+
+                {/* Card 4 */}
+                <div className="bg-zinc-50 border border-zinc-200/80 rounded-3xl p-8 flex flex-col gap-4 hover:border-zinc-400 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#fbea3d] text-zinc-950 font-black text-xl flex items-center justify-center shadow-xs">
+                    🎯
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-zinc-900">
+                    High-ROAS Traveler Acquisition &amp; Ads
+                  </h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    Hyper-targeted Google Search, Google Flights, and cinematic social campaigns that place your tours and resorts directly in front of affluent travelers during their active vacation planning windows.
+                  </p>
+                  <ul className="flex flex-col gap-2 pt-3 border-t border-zinc-200/70 text-xs text-zinc-700 font-medium">
+                    <li className="flex items-center gap-2">✓ High-intent destination search campaigns</li>
+                    <li className="flex items-center gap-2">✓ Cinematic Reels &amp; visual storytelling</li>
+                    <li className="flex items-center gap-2">✓ Transparent cost-per-booking analytics</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 2.5 WHO WE WORK WITH & THE DIRECT TRAVEL ADVANTAGE */}
+          <section className="w-full bg-[#0c0c0d] text-white py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-800">
+            <div className="max-w-6xl mx-auto flex flex-col gap-14 sm:gap-18">
+              
+              {/* Header */}
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#fbea3d] mb-2 block">
+                  WHO WE WORK WITH
+                </span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white">
+                  Tailored for Every Travel Business
+                </h2>
+                <p className="text-zinc-400 text-sm sm:text-base mt-3 leading-relaxed">
+                  Whether you organize private luxury expeditions, run a boutique resort, or operate high-demand day excursions, we adapt our growth platform to your travelers.
+                </p>
+              </div>
+
+              {/* 4 Travel Business Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                {/* Type 1 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🧭</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Tour Operators &amp; DMCs
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Curated expeditions, bespoke multi-day itineraries, dynamic packages, and private client travel hubs.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Expeditions &amp; Tours</span>
+                  </div>
+                </div>
+
+                {/* Type 2 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🏨</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Boutique Hotels &amp; Resorts
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Zero-commission direct room reservations, dining &amp; spa upsells, and seamless guest arrival portals.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Stays &amp; Hospitality</span>
+                  </div>
+                </div>
+
+                {/* Type 3 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🏄‍♂️</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Excursions &amp; Adventures
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Live seat capacity management, instant mobile waiver signing, weather re-booking, and gear rental add-ons.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Activities &amp; Guides</span>
+                  </div>
+                </div>
+
+                {/* Type 4 */}
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#fbea3d]/60 hover:bg-zinc-900 transition-all">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-2xl">🗺️</span>
+                    <h3 className="text-lg font-bold font-display text-white">
+                      Tourism Boards &amp; DMOs
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed">
+                      Interactive regional destination portals, multi-language visitor guides, landmark trails, and tourism ad campaigns.
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-[#fbea3d]">
+                    <span>●</span>
+                    <span>Regional Tourism</span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Direct Travel Advantage Row (4 clean highlights) */}
+              <div className="bg-zinc-900/50 border border-zinc-800/90 rounded-3xl p-8 sm:p-10 flex flex-col gap-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800/80">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+                      The Direct Travel Advantage
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+                      Why modern travel operators choose direct booking platforms over steep middleman commissions.
+                    </p>
+                  </div>
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#fbea3d]/10 border border-[#fbea3d]/30 text-xs font-mono font-bold text-[#fbea3d] shrink-0 self-start sm:self-auto">
+                    DIRECT REVENUE
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">0%</span>
+                    <h4 className="text-sm font-bold text-white">OTA Middleman Fees</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Keep 100% of your booking margin instead of surrendering 20–30% cuts to Booking.com, Viator, or Expedia.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">&lt; 1.2s</span>
+                    <h4 className="text-sm font-bold text-white">Sub-Second Search</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Instant multi-destination catalog search and date filtering that keeps mobile travelers browsing and converting.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">+260%</span>
+                    <h4 className="text-sm font-bold text-white">Direct Booking Lift</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Turn wanderlust into confirmed guest reservations with 1-click Apple Pay checkouts and flexible deposits.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-2xl font-black font-display text-[#fbea3d]">100%</span>
+                    <h4 className="text-sm font-bold text-white">Live Inventory Sync</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Real-time synchronization with Amadeus, Sabre, and Bedbanks with zero risk of accidental overbooking.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 3. HOW IT WORKS (Simple 3 steps) */}
+          <section className="w-full bg-[#fafafb] py-20 sm:py-28 px-5 sm:px-10 lg:px-16 border-b border-zinc-200/70">
+            <div className="max-w-5xl mx-auto flex flex-col gap-12 sm:gap-16">
+              
+              <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2 block">
+                  SIMPLE PROCESS
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 font-display tracking-tight">
+                  How We Work Together
+                </h2>
+                <p className="text-zinc-600 text-sm sm:text-base mt-2">
+                  A straightforward, hands-off process to get your direct booking pipeline running.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    01
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    Traveler Journey Discovery
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    We review your destinations, guest profiles, seasonal travel peaks, and current OTA commission leakages.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    02
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    Platform Build &amp; Integration
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    We build your high-speed Next.js travel portal, connect your live booking engine, configure itinerary tools, and set up ad campaigns.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-zinc-200 rounded-3xl p-7 flex flex-col gap-3 shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-black text-[#fbea3d] font-bold text-sm flex items-center justify-center font-mono">
+                    03
+                  </span>
+                  <h4 className="text-lg font-bold font-display text-zinc-900 mt-2">
+                    You Welcome Direct Travelers
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    Your platform goes live, travelers discover your trips and book directly, and full-margin guest reservations arrive in your inbox.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 4. FREQUENTLY ASKED QUESTIONS */}
+          <section className="w-full bg-white py-20 sm:py-24 px-5 sm:px-10 lg:px-16 border-b border-zinc-100">
+            <div className="max-w-3xl mx-auto flex flex-col gap-10">
+              <div className="text-center">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 block mb-2">
+                  COMMON QUESTIONS
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 font-display tracking-tight">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                {industry.faqs.map((faq, idx) => {
+                  const isOpen = openFaqIndex === idx;
+                  return (
+                    <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl overflow-hidden">
+                      <button
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer font-display font-bold text-base sm:text-lg text-zinc-900"
+                      >
+                        <span>{faq.question}</span>
+                        <span className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center shrink-0 font-mono text-sm text-zinc-600">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div className="px-6 pb-6 pt-0 text-sm text-zinc-600 leading-relaxed border-t border-zinc-200/60 mt-1 pt-4">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* 5. SIMPLE CALL TO ACTION */}
+          <section className="w-full bg-zinc-950 text-white py-20 sm:py-24 px-5 sm:px-10 lg:px-16 text-center">
+            <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#fbea3d]">
+                READY TO GROW YOUR TRAVEL BRAND?
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight">
+                Let’s Build a Steady Pipeline of Direct Bookings
+              </h2>
+              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                Tell us about your tours, properties, or experiential travel agency. We’ll show you exactly how to capture more travelers directly and eliminate costly OTA commissions.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-2 py-4 px-9 bg-[#fbea3d] hover:bg-[#eab308] text-black font-bold text-sm rounded-full inline-flex items-center justify-center transition-colors shadow-lg cursor-pointer"
+              >
+                Get in Touch With Us →
+              </Link>
+            </div>
+          </section>
+
+          {/* 6. OTHER SECTORS */}
+          <section className="w-full bg-[#0c0c0d] text-white py-16 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20 border-t border-zinc-900">
+            <div className="max-w-7xl mx-auto flex flex-col gap-8">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#fbea3d]">
+                    // OTHER SECTORS
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-black font-display text-white">
+                    Explore More Industry Domains
+                  </h3>
+                </div>
+                <Link
+                  href="/industries"
+                  className="hidden sm:inline-flex items-center gap-1 text-xs font-mono text-[#fbea3d] font-bold uppercase hover:underline"
+                >
+                  <span>View All Sectors →</span>
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {otherIndustries.slice(0, 4).map((other) => (
+                  <Link
+                    key={other.slug}
+                    href={`/industries/${other.slug}`}
+                    className="p-5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-[#fbea3d] transition-all duration-200 flex flex-col gap-2 group cursor-pointer"
+                  >
+                    <span className="text-[10px] font-mono font-bold text-[#fbea3d] uppercase tracking-wider">
+                      {other.badge}
+                    </span>
+                    <h4 className="text-sm font-bold font-display text-white group-hover:text-[#fbea3d] transition-colors">
+                      {other.name} →
+                    </h4>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <NewsletterSection />
+          <Footer />
+        </div>
+      </LanguageProvider>
+    );
+  }
+
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
@@ -784,6 +2215,417 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                         Frictionless web and mobile care portals engineered for reliability, data privacy, and rapid clinical adoption.
                       </p>
                     </div>
+                  </div>
+                </div>
+
+              </div>
+            ) : industry.slug === "finance-fintech" ? (
+              /* FINANCE & FINTECH CONNECT 2-COLUMN SECTION: TEXT + CONNECTED FINTECH PHOTO ON RIGHT */
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                
+                {/* Left Column: Context & 4 Connected Value Blocks (7 cols) */}
+                <div className="lg:col-span-7 flex flex-col gap-8">
+                  <div className="flex flex-col gap-4 text-left">
+                    <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-500">
+                      // HOW WE ENGAGE &amp; DELIVER
+                    </span>
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight leading-tight">
+                      Ultra-Secure, Real-Time Financial Engineering for{" "}
+                      <span className="text-zinc-950 underline decoration-[#fbea3d] decoration-4 underline-offset-4">
+                        Modern FinTech.
+                      </span>
+                    </h2>
+                    <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-medium">
+                      Modern financial systems demand zero-downtime fault tolerance, sub-millisecond execution, and unassailable cryptographic security. We engineer bespoke financial technologies—from consumer digital banking applications and neo-brokerage platforms to automated ledger reconciliations and multi-rail cross-border payment pipelines.
+                    </p>
+                  </div>
+
+                  {/* 4 Connected Value Pillars */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          PCI-DSS Level 1 &amp; Tokenization
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        Card vaulting, 3D Secure 2.0 fraud defense, and zero plaintext PAN exposure on client servers.
+                      </p>
+                    </div>
+
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          WebSocket Sub-15ms Market Data
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        Ultra-low latency streaming order books, TradingView charts, and instantaneous trade fills.
+                      </p>
+                    </div>
+
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Biometric KYC &amp; Sanctions
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        Sub-60s customer onboarding with Persona/Jumio ID verification, PEP screening, and AML checks.
+                      </p>
+                    </div>
+
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Double-Entry Ledgers &amp; FinOps
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        ACID-compliant PostgreSQL transactional ledgers preventing balance race conditions and drift.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Right Column: Connected Photo with Floating Badges (5 cols) */}
+                <div className="lg:col-span-5 flex flex-col gap-4">
+                  <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-xl group">
+                    <img
+                      src="/industries/finance-fintech.jpg"
+                      alt="Modern Finance & FinTech Engineering"
+                      className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    
+                    {/* Top Floating Badge */}
+                    <div className="absolute top-4 left-4 bg-black/90 backdrop-blur-md border border-zinc-700 text-white px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+                      <span className="w-2 h-2 rounded-full bg-[#fbea3d] animate-pulse"></span>
+                      <span className="font-mono text-xs font-bold text-[#fbea3d]">PCI-DSS &amp; SOC2 READY</span>
+                    </div>
+
+                    {/* Bottom Floating Info Card */}
+                    <div className="absolute bottom-4 inset-x-4 bg-white/95 backdrop-blur-md border border-zinc-200 p-5 rounded-2xl shadow-xl flex flex-col gap-1.5 text-black">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-zinc-500 uppercase">CORE BANKING &amp; WEALTH</span>
+                        <span className="px-2 py-0.5 rounded-md bg-black text-[#fbea3d] font-mono text-[10px] font-bold">$2.4B+ VOLUME</span>
+                      </div>
+                      <h4 className="text-sm font-bold font-display text-zinc-900">
+                        Financial Technology Rails
+                      </h4>
+                      <p className="text-[11px] text-zinc-600 leading-relaxed">
+                        Bank-grade security, instant payment settlements, and intuitive digital asset dashboards.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            ) : industry.slug === "travel-tourism" ? (
+              /* TRAVEL & TOURISM CONNECT 2-COLUMN SECTION: TEXT + CONNECTED TRAVEL PHOTO ON RIGHT */
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                
+                {/* Left Column: Context & 4 Connected Value Blocks (7 cols) */}
+                <div className="lg:col-span-7 flex flex-col gap-8">
+                  <div className="flex flex-col gap-4 text-left">
+                    <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-500">
+                      // HOW WE ENGAGE &amp; DELIVER
+                    </span>
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight leading-tight">
+                      Immersive Travel Booking Platforms &amp; Growth for{" "}
+                      <span className="text-zinc-950 underline decoration-[#fbea3d] decoration-4 underline-offset-4">
+                        Tourism Brands.
+                      </span>
+                    </h2>
+                    <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-medium">
+                      Modern travelers expect editorial storytelling, instant live availability, dynamic packaging, and effortless mobile booking. We help tour operators, experiential travel agencies, and tourism boards bypass steep third-party commissions by engineering high-converting direct platforms.
+                    </p>
+                  </div>
+
+                  {/* 4 Connected Value Pillars */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Direct Tour Booking Engines
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        Zero-commission booking flows bypassing 20-30% OTA cuts with instant Apple Pay checkout.
+                      </p>
+                    </div>
+
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          GDS &amp; Bedbank Live Sync
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        Real-time airline and hotel connectivity via Amadeus, Sabre, and Hotelbeds with zero overbooking.
+                      </p>
+                    </div>
+
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Interactive Day-by-Day Trips
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        Visual itinerary builders with Mapbox route previews, activity add-ons, and mobile dossiers.
+                      </p>
+                    </div>
+
+                    <div className="bg-[#fafafb] border border-zinc-200/90 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 transition-all">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-black text-[#fbea3d] font-bold text-xs flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          High-Yield Paid Traveler Ads
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-8">
+                        High-intent Google Flights search ads and cinematic Instagram Reels capturing active vacationers.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Right Column: Connected Photo with Floating Badges (5 cols) */}
+                <div className="lg:col-span-5 flex flex-col gap-4">
+                  <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-xl group">
+                    <img
+                      src="/industries/travel-tourism.jpg"
+                      alt="Luxury Experiential Travel and Tourism"
+                      className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    
+                    {/* Top Floating Badge */}
+                    <div className="absolute top-4 left-4 bg-black/90 backdrop-blur-md border border-zinc-700 text-white px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+                      <span className="w-2 h-2 rounded-full bg-[#fbea3d] animate-pulse"></span>
+                      <span className="font-mono text-xs font-bold text-[#fbea3d]">GDS &amp; EXPERIENTIAL TRAVEL</span>
+                    </div>
+
+                    {/* Bottom Floating Info Card */}
+                    <div className="absolute bottom-4 inset-x-4 bg-white/95 backdrop-blur-md border border-zinc-200 p-5 rounded-2xl shadow-xl flex flex-col gap-1.5 text-black">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-zinc-500 uppercase">EXPEDITIONS &amp; OTAS</span>
+                        <span className="px-2 py-0.5 rounded-md bg-black text-[#fbea3d] font-mono text-[10px] font-bold">+260% DIRECT</span>
+                      </div>
+                      <h4 className="text-sm font-bold font-display text-zinc-900">
+                        High-Converting Travel Portals
+                      </h4>
+                      <p className="text-[11px] text-zinc-600 leading-relaxed">
+                        Frictionless direct checkout workflows capturing full-margin bookings and multi-day bespoke itineraries.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            ) : industry.slug === "agriculture-agritech" ? (
+              /* AGRICULTURE & FARMS: CLEAN, SIMPLE, HUMAN LAYOUT */
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                
+                {/* Left Column: Clear Text & 4 Grounded Services (7 cols) */}
+                <div className="lg:col-span-7 flex flex-col gap-8">
+                  <div className="flex flex-col gap-4 text-left">
+                    <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+                      HOW WE HELP FARMS GROW
+                    </span>
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight leading-tight">
+                      Simple Websites &amp; Online Growth for{" "}
+                      <span className="text-zinc-950 underline decoration-[#fbea3d] decoration-4 underline-offset-4">
+                        Farms &amp; Agriculture.
+                      </span>
+                    </h2>
+                    <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">
+                      We help family farms, orchards, and agricultural businesses connect with customers online. Whether you want to sell produce directly, take wholesale inquiries, or just showcase your farm, we make it simple and effective.
+                    </p>
+                  </div>
+
+                  {/* 4 Simple, Clear Service Cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-zinc-50/70 border border-zinc-200/80 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 hover:bg-white transition-all">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-5 h-5 rounded-full bg-[#fbea3d] text-zinc-950 font-black text-[11px] flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Custom Farm Websites
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-7">
+                        Clear, mobile-friendly websites that introduce your farm, what you grow, and how people can visit or buy.
+                      </p>
+                    </div>
+
+                    <div className="bg-zinc-50/70 border border-zinc-200/80 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 hover:bg-white transition-all">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-5 h-5 rounded-full bg-[#fbea3d] text-zinc-950 font-black text-[11px] flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Direct Produce Sales
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-7">
+                        Easy online ordering for seasonal produce boxes, fresh harvests, and local farm pickup.
+                      </p>
+                    </div>
+
+                    <div className="bg-zinc-50/70 border border-zinc-200/80 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 hover:bg-white transition-all">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-5 h-5 rounded-full bg-[#fbea3d] text-zinc-950 font-black text-[11px] flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Wholesale Inquiries
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-7">
+                        Simple inquiry forms and product lists for restaurants, local grocers, and commercial buyers.
+                      </p>
+                    </div>
+
+                    <div className="bg-zinc-50/70 border border-zinc-200/80 rounded-2xl p-5 flex flex-col gap-2 hover:border-zinc-400 hover:bg-white transition-all">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-5 h-5 rounded-full bg-[#fbea3d] text-zinc-950 font-black text-[11px] flex items-center justify-center shrink-0">
+                          ✓
+                        </span>
+                        <h4 className="text-sm font-bold font-display text-zinc-900">
+                          Local Google Maps &amp; Search
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-600 leading-relaxed pl-7">
+                        Help nearby customers find your farm stand, store, or market location quickly on Google.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Right Column: Clean Modern Farm Storefront UI Preview (Zero AI, Pure Code) */}
+                <div className="lg:col-span-5 flex flex-col">
+                  <div className="bg-gradient-to-b from-zinc-950 to-zinc-900 text-white rounded-3xl p-6 sm:p-7 border border-zinc-800 shadow-2xl flex flex-col gap-5 relative overflow-hidden">
+                    
+                    {/* Subtle warm ambient lighting */}
+                    <div className="absolute -top-16 -right-16 w-44 h-44 bg-[#fbea3d]/10 rounded-full blur-3xl pointer-events-none" />
+
+                    {/* Clean Browser Address Bar */}
+                    <div className="flex items-center justify-between pb-3.5 border-b border-zinc-800/80">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
+                      </div>
+                      <div className="bg-zinc-900 px-3.5 py-1 rounded-full text-[11px] font-mono text-zinc-300 flex items-center gap-1.5 border border-zinc-700/60">
+                        <span className="text-emerald-400">●</span>
+                        <span>yourfarm.com/store</span>
+                      </div>
+                      <span className="text-[10px] font-mono font-bold text-[#fbea3d] uppercase tracking-wider">LIVE</span>
+                    </div>
+
+                    {/* Farm Storefront Header Preview */}
+                    <div className="bg-zinc-900/90 rounded-2xl p-4 border border-zinc-800 flex items-center justify-between gap-3">
+                      <div>
+                        <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest block mb-0.5">
+                          FARM DIRECT STORE
+                        </span>
+                        <h4 className="text-base font-bold text-white font-display">
+                          Green Valley Farm Store
+                        </h4>
+                        <p className="text-xs text-zinc-400 mt-0.5">
+                          Fresh weekly harvest, local pickup &amp; delivery.
+                        </p>
+                      </div>
+                      <div className="w-10 h-10 rounded-xl bg-[#fbea3d] text-zinc-950 font-black text-sm flex items-center justify-center shrink-0 shadow-sm">
+                        🌿
+                      </div>
+                    </div>
+
+                    {/* Sample Store Items (What the customer sees) */}
+                    <div className="flex flex-col gap-2.5">
+                      <div className="bg-black/50 rounded-xl p-3 border border-zinc-800/80 flex items-center justify-between hover:border-zinc-700 transition-all">
+                        <div className="flex items-center gap-3">
+                          <span className="text-lg">🥕</span>
+                          <div>
+                            <span className="text-xs font-bold text-white block">Weekly Harvest Box</span>
+                            <span className="text-[11px] text-zinc-400">Seasonal farm-fresh produce box</span>
+                          </div>
+                        </div>
+                        <span className="text-xs font-mono font-bold text-[#fbea3d] bg-zinc-900 px-2.5 py-1 rounded-md border border-zinc-800">
+                          $35 / wk
+                        </span>
+                      </div>
+
+                      <div className="bg-black/50 rounded-xl p-3 border border-zinc-800/80 flex items-center justify-between hover:border-zinc-700 transition-all">
+                        <div className="flex items-center gap-3">
+                          <span className="text-lg">🍯</span>
+                          <div>
+                            <span className="text-xs font-bold text-white block">Raw Farm Honey &amp; Goods</span>
+                            <span className="text-[11px] text-zinc-400">Pure unfiltered local harvest</span>
+                          </div>
+                        </div>
+                        <span className="text-xs font-mono font-bold text-[#fbea3d] bg-zinc-900 px-2.5 py-1 rounded-md border border-zinc-800">
+                          $14
+                        </span>
+                      </div>
+
+                      <div className="bg-black/50 rounded-xl p-3 border border-zinc-800/80 flex items-center justify-between hover:border-zinc-700 transition-all">
+                        <div className="flex items-center gap-3">
+                          <span className="text-lg">📦</span>
+                          <div>
+                            <span className="text-xs font-bold text-white block">Wholesale Buyer Portal</span>
+                            <span className="text-[11px] text-zinc-400">Bulk supply for grocers &amp; restaurants</span>
+                          </div>
+                        </div>
+                        <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-950/70 px-2 py-1 rounded-md border border-emerald-800/60">
+                          Inquiry
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Quick Highlights */}
+                    <div className="pt-2 border-t border-zinc-800/80 grid grid-cols-3 gap-2 text-center">
+                      <div className="bg-zinc-900/70 rounded-xl py-2 px-1 border border-zinc-800/60">
+                        <span className="text-sm font-bold text-white block font-mono">0%</span>
+                        <span className="text-[10px] text-zinc-400">App Fees</span>
+                      </div>
+                      <div className="bg-zinc-900/70 rounded-xl py-2 px-1 border border-zinc-800/60">
+                        <span className="text-sm font-bold text-[#fbea3d] block font-mono">1-Click</span>
+                        <span className="text-[10px] text-zinc-400">Checkout</span>
+                      </div>
+                      <div className="bg-zinc-900/70 rounded-xl py-2 px-1 border border-zinc-800/60">
+                        <span className="text-sm font-bold text-emerald-400 block font-mono">Direct</span>
+                        <span className="text-[10px] text-zinc-400">Customer List</span>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
 
@@ -1619,8 +3461,8 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
           </section>
         ) : null}
 
-        {/* 7. OUR COMMERCE & ENGINEERING STANDARDS (Hidden on Healthcare, Real Estate, Hospitality, Food-Beverages, Jewellery & Education per user request) */}
-        {!["healthcare", "real-estate", "hospitality", "food-beverages", "jewellery", "education"].includes(industry.slug) && (
+        {/* 7. OUR COMMERCE & ENGINEERING STANDARDS (Hidden on Healthcare, Real Estate, Hospitality, Food-Beverages, Jewellery, Education & Agriculture per user request) */}
+        {!["healthcare", "real-estate", "hospitality", "food-beverages", "jewellery", "education", "agriculture-agritech"].includes(industry.slug) && (
           <section className="w-full bg-white py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 text-black border-b border-zinc-200">
             <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-14">
               
@@ -1824,8 +3666,8 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
           </section>
         )}
 
-        {/* 8. 4-PHASE DELIVERY CYCLE (Hidden on E-Commerce, Healthcare, Real Estate, Hospitality, Food-Beverages, Jewellery & Education per user request) */}
-        {!["ecommerce", "healthcare", "real-estate", "hospitality", "food-beverages", "jewellery", "education"].includes(industry.slug) && (
+        {/* 8. 4-PHASE DELIVERY CYCLE (Hidden on E-Commerce, Healthcare, Real Estate, Hospitality, Food-Beverages, Jewellery, Education & Agriculture per user request) */}
+        {!["ecommerce", "healthcare", "real-estate", "hospitality", "food-beverages", "jewellery", "education", "agriculture-agritech"].includes(industry.slug) && (
           <section className="w-full bg-white py-16 sm:py-24 px-4 sm:px-8 lg:px-14 xl:px-20 text-black border-b border-zinc-200">
             <div className="max-w-7xl mx-auto flex flex-col gap-10">
               <div className="text-left">

@@ -64,7 +64,7 @@ export default function IndustriesPage() {
                 </h1>
 
                 <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
-                  Tailored Technical Solutions &amp; Growth Systems for High-Stakes Sectors. We bring specialized domain expertise, compliance readiness, and commercial accountability to 8 core industries.
+                  Tailored Technical Solutions &amp; Growth Systems for High-Stakes Sectors. We bring specialized domain expertise, compliance readiness, and commercial accountability to 11 core industries.
                 </p>
               </div>
 

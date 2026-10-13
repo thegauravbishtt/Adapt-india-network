@@ -98,7 +98,7 @@ export default function Hero() {
 
         {/* Balanced High-Impact Paragraph */}
         <p className="mt-6 sm:mt-7 lg:mt-8 text-[18px] sm:text-[17px] lg:text-[18px] text-[#E2E2E6] md:text-zinc-300 font-normal leading-[1.55] sm:leading-[1.65] text-left w-full max-w-xl md:max-w-2xl">
-          We engineer high-performance web platforms, custom digital products, and ROI-driven growth engines across Google, Meta, Shopify, Amazon, and enterprise cloud stacks. From strategic architecture to seamless execution, we empower ambitious brands to dominate their market and drive compounding revenue.
+          We scale ambitious brands through ROI-driven performance marketing, paid advertising, and search dominance across Google, Meta, Shopify, Amazon, and modern growth channels. From creative strategy to seamless execution, we empower ambitious brands to dominate their market and drive compounding revenue.
         </p>
 
         {/* Action CTAs: Pill Buttons matching natural content widths */}
