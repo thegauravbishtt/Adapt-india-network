@@ -2,37 +2,38 @@
 
 import React from "react";
 
-const platforms = [
-  "Google",
-  "Meta",
-  "YouTube",
-  "Shopify",
-  "HubSpot",
-  "LinkedIn",
+const enterpriseServices = [
+  "SD-WAN",
+  "Leased Line (ILL)",
+  "Private MPLS",
+  "Enterprise Broadband",
+  "Cyber Security",
+  "SIP Trunk",
+  "Cloud Telephony",
 ];
 
 export default function PlatformsScaleSection() {
   return (
-    <section className="w-full bg-[#0c0c0e] text-white border-b border-zinc-800/80 select-none py-10 sm:py-14 lg:py-16 px-5 sm:px-8 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+    <section className="w-full bg-[#0c0c0e] text-white border-b border-zinc-800/80 select-none py-6 sm:py-8 lg:py-9 px-5 sm:px-8 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
         
-        {/* Top Gold Kicker Label matching Reference */}
-        <span className="text-[#fac917] font-sans font-extrabold text-[10.5px] sm:text-[11.5px] tracking-[0.22em] uppercase mb-5 sm:mb-6 block">
-          WHERE WE SCALE
+        {/* Top Kicker Label */}
+        <span className="text-[#E31E24] font-sans font-bold text-[9.5px] sm:text-[10.5px] tracking-[0.2em] uppercase mb-3 sm:mb-3.5 block">
+          CORE TELECOM &amp; ENTERPRISE NETWORKING INFRASTRUCTURE
         </span>
 
-        {/* Platforms Row with Bold Typography & Thin Vertical Dividers */}
-        <div className="w-full flex flex-wrap items-center justify-center gap-y-3 sm:gap-y-4">
-          {platforms.map((platform, idx) => (
-            <React.Fragment key={platform}>
-              <div className="px-3 xs:px-4 sm:px-5 md:px-6 lg:px-7 py-0.5">
-                <span className="font-sans font-extrabold text-[17px] xs:text-[19px] sm:text-[22px] md:text-[24px] lg:text-[26px] text-white tracking-tight hover:text-[#fac917] transition-colors duration-200">
-                  {platform}
+        {/* Services Row with Sleeker Compact Typography & Thin Dividers */}
+        <div className="w-full flex flex-wrap items-center justify-center gap-y-2 sm:gap-y-2.5">
+          {enterpriseServices.map((service, idx) => (
+            <React.Fragment key={service}>
+              <div className="px-2.5 xs:px-3 sm:px-3.5 md:px-4 lg:px-5 py-0.5">
+                <span className="font-sans font-bold text-[13px] xs:text-[14px] sm:text-[15px] md:text-[16px] lg:text-[16.5px] text-zinc-100 tracking-tight hover:text-[#E31E24] transition-colors duration-200">
+                  {service}
                 </span>
               </div>
-              {idx < platforms.length - 1 && (
+              {idx < enterpriseServices.length - 1 && (
                 <div 
-                  className="hidden sm:block h-5 sm:h-6 w-[1px] bg-zinc-700/80 self-center" 
+                  className="hidden sm:block h-3.5 sm:h-4 w-[1px] bg-zinc-700/70 self-center" 
                   aria-hidden="true" 
                 />
               )}
@@ -40,9 +41,9 @@ export default function PlatformsScaleSection() {
           ))}
         </div>
 
-        {/* Subtitle Paragraph matching Reference */}
-        <p className="mt-5 sm:mt-6 max-w-xl mx-auto text-zinc-400 text-xs sm:text-[13px] md:text-[13.5px] font-normal leading-[1.65] text-center px-4">
-          Six ecosystems, one team. A brand that scales on Google rarely stops there, and paid social, search algorithms, CRM retention, and custom web infrastructure each run on completely different rules.
+        {/* Subtitle Paragraph */}
+        <p className="mt-3.5 sm:mt-4 max-w-xl mx-auto text-zinc-400/90 text-[11px] sm:text-[12px] md:text-[12.5px] font-normal leading-[1.6] text-center px-4">
+          From high-throughput dedicated leased lines (ILL) and private multi-site MPLS connections to automated SD-WAN orchestration and enterprise cyber defense, we deliver guaranteed 99.9% uptime for modern corporate operations.
         </p>
 
       </div>

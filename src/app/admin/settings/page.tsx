@@ -27,15 +27,15 @@ export default function AdminSettingsPage() {
   const [nodeEnv, setNodeEnv] = useState("development");
 
   const [formData, setFormData] = useState<AgencySettings>({
-    agencyName: "Owlio Works",
-    tagline: "A Global SEO & Growth Engine for Startups",
-    notificationEmail: "owlioworks@gmail.com",
-    supportPhone: "+91 78382 40941",
-    address: "Saket, New Delhi, India 110062",
-    currency: "USD ($)",
+    agencyName: "Adapt India Network",
+    tagline: "Enterprise Telecom, SD-WAN & Network Infrastructure Solutions",
+    notificationEmail: "info@adapt-india.net",
+    supportPhone: "+91 82874 79961",
+    address: "Saket District Centre, New Delhi, India 110062",
+    currency: "INR (₹)",
     emailAlertsEnabled: true,
     maintenanceMode: false,
-    adminEmail: "owlioworks@gmail.com",
+    adminEmail: "info@adapt-india.net",
   });
 
   const fetchSettings = async () => {
@@ -133,7 +133,7 @@ export default function AdminSettingsPage() {
               <div className="p-3 bg-zinc-50 rounded-lg border border-zinc-200 flex flex-col justify-between">
                 <span className="text-[10px] uppercase font-semibold text-zinc-500">Admin Login Email</span>
                 <span className="font-bold text-zinc-900 text-xs mt-1">
-                  owlioworks@gmail.com
+                  info@adapt-india.net
                 </span>
                 <span className="text-[11px] text-zinc-400 mt-0.5 font-mono">ADMIN_EMAIL</span>
               </div>

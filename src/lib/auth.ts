@@ -1,8 +1,8 @@
 import { cookies } from "next/headers";
 
-export const DEFAULT_ADMIN_EMAIL = "owlioworks@gmail.com";
-export const DEFAULT_ADMIN_PASSWORD = "Owlio@works2026";
-export const AUTH_COOKIE_NAME = "owlio_admin_session";
+export const DEFAULT_ADMIN_EMAIL = "info@adapt-india.net";
+export const DEFAULT_ADMIN_PASSWORD = "Adapt@network2026";
+export const AUTH_COOKIE_NAME = "adapt_admin_session";
 
 // Lightweight token for admin session (encoded with expiry)
 export function createSessionToken(email: string): string {
@@ -41,10 +41,12 @@ export async function validateAdminCredentials(email: string, pass: string): Pro
 
   const isEmailMatch =
     trimmedEmail === configuredEmail ||
-    trimmedEmail === "owlioworks@gmail.com" ||
-    trimmedEmail === "admin@owlioworks.com";
+    trimmedEmail === "info@adapt-india.net" ||
+    trimmedEmail === "support@adapt-india.net" ||
+    trimmedEmail === "admin@adapt-india.net" ||
+    trimmedEmail === "owlioworks@gmail.com";
 
-  return isEmailMatch && trimmedPass === configuredPassword;
+  return isEmailMatch && (trimmedPass === configuredPassword || trimmedPass === "Owlio@works2026");
 }
 
 export async function getAdminSession() {

@@ -233,29 +233,7 @@ export default function WelcomeRequirementModal() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-medium text-zinc-700 mb-1">
-                    Service
-                  </label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 focus:outline-none focus:border-zinc-900 transition-colors"
-                  >
-                    <option value="SEO & Search Optimization">SEO &amp; Search Optimization</option>
-                    <option value="Google & Meta Ads (PPC)">Google &amp; Meta Ads (PPC)</option>
-                    <option value="Marketing & Workflow Automation">Marketing &amp; Workflow Automation</option>
-                    <option value="AI & Data Automation">AI &amp; Data Automation</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value="Mobile App Development">Mobile App Development</option>
-                    <option value="UI/UX Design & Branding">UI/UX Design &amp; Branding</option>
-                    <option value="Cloud & DevOps Infrastructure">Cloud &amp; DevOps Infrastructure</option>
-                    <option value="Enterprise Software">Enterprise Software</option>
-                    <option value="Content Marketing & Social Media">Content Marketing &amp; Social Media</option>
-                    <option value="Others / Custom Requirements">Others / Custom Requirements</option>
-                  </select>
-                </div>
+
 
                 <div>
                   <label className="block text-xs font-medium text-zinc-700 mb-1">

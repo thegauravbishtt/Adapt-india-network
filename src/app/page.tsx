@@ -5,12 +5,13 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import PlatformsScaleSection from "../components/PlatformsScaleSection";
 import PartnersMarquee from "../components/PartnersMarquee";
-import WhatWeDoSection from "../components/WhatWeDoSection";
-import AboutUsSection from "../components/AboutUsSection";
-import FeaturedWorkSection from "../components/FeaturedWorkSection";
+import EndToEndServicesSection from "../components/EndToEndServicesSection";
+import DigitalTransformationSection from "../components/DigitalTransformationSection";
+import EnterpriseSolutionsTabsSection from "../components/EnterpriseSolutionsTabsSection";
 import BlogsSection from "../components/BlogsSection";
-import TestimonialsSection from "../components/TestimonialsSection";
-import NewsletterSection from "../components/NewsletterSection";
+import ProvenResultsReviewsSection from "../components/ProvenResultsReviewsSection";
+import HomeFAQSection from "../components/HomeFAQSection";
+import BuildFoundationCTA from "../components/BuildFoundationCTA";
 import Footer from "../components/Footer";
 import { LanguageProvider } from "../context/LanguageContext";
 
@@ -26,12 +27,13 @@ export default function Home() {
           <Hero />
           <PlatformsScaleSection />
           <PartnersMarquee />
-          <AboutUsSection />
-          <WhatWeDoSection />
-          <FeaturedWorkSection />
+          <DigitalTransformationSection />
+          <EnterpriseSolutionsTabsSection />
+          <EndToEndServicesSection />
           <BlogsSection />
-          <TestimonialsSection />
-          <NewsletterSection />
+          <ProvenResultsReviewsSection />
+          <HomeFAQSection />
+          <BuildFoundationCTA />
           <Footer />
         </main>
       </div>

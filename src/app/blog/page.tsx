@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
+import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
@@ -10,99 +11,99 @@ import type { BlogPost } from "@/lib/db";
 const DEFAULT_ARTICLES: BlogPost[] = [
   {
     id: "article-1",
-    slug: "modern-search-infrastructure-10x-organic-revenue",
-    title: "How modern search infrastructure drives 10x organic revenue.",
-    category: "SEO",
+    slug: "sd-wan-vs-traditional-mpls-enterprise-guide",
+    title: "SD-WAN vs Traditional MPLS: How to choose the right architecture.",
+    category: "Enterprise Architecture",
     readTime: "4 min read",
-    image: "/image1.png",
-    excerpt: "Exploring the shift from traditional keyword targeting to algorithmic semantic authority and programmatic search systems.",
+    image: "/services/sdwan_clean.jpg",
+    excerpt: "Exploring the architectural advantages, cost efficiencies, and zero-touch deployment model of next-generation SD-WAN over legacy MPLS circuits.",
     tags: [
-      { text: "STRATEGY", variant: "dark" },
-      { text: "GROWTH", variant: "yellow" },
+      { text: "NETWORKING", variant: "dark" },
+      { text: "SD-WAN", variant: "yellow" },
     ],
     status: "published",
     publishedAt: "2026-02-15T10:00:00.000Z",
-    author: "Owlio Growth Labs",
+    author: "Adapt Network Solutions",
   },
   {
     id: "article-2",
-    slug: "headless-commerce-vs-monolithic-builds",
-    title: "Why headless commerce platforms outperform traditional monolithic builds.",
-    category: "Web/App Design & Development",
+    slug: "why-dedicated-internet-leased-lines-matter",
+    title: "Why Dedicated Internet Leased Lines (ILL) are essential for 99.99% SLA.",
+    category: "Network Reliability",
     readTime: "5 min read",
-    image: "/image2.png",
-    excerpt: "A deep dive into decoupled frontends, Next.js commerce pipelines, and conversion rate optimizations.",
+    image: "/banner-datacenter-racks.jpg",
+    excerpt: "A deep dive into 1:1 symmetrical bandwidth, uncompressed throughput, low-latency peering, and enterprise-grade SLAs.",
     tags: [
-      { text: "TECH", variant: "outline" },
-      { text: "PLATFORMS", variant: "dark" },
+      { text: "CONNECTIVITY", variant: "outline" },
+      { text: "ILL", variant: "dark" },
     ],
     status: "published",
     publishedAt: "2026-02-18T12:00:00.000Z",
-    author: "Owlio Engineering",
+    author: "Adapt Network Engineering",
   },
   {
     id: "article-3",
-    slug: "science-of-high-conversion-digital-experiences-2026",
-    title: "The science of high-conversion digital experiences in 2026.",
-    category: "Performance & Advertising",
+    slug: "securing-multi-branch-enterprise-networks",
+    title: "Securing multi-branch enterprise networks against modern cyber threats.",
+    category: "Cyber Defense",
     readTime: "6 min read",
-    image: "/image3.png",
-    excerpt: "Analyzing cognitive friction, visual hierarchy, and micro-interactions that drive user commitment.",
+    image: "/services/cybersecurity.jpg",
+    excerpt: "Analyzing unified threat management, zero-trust network access (ZTNA), and edge firewall security across distributed corporate offices.",
     tags: [
-      { text: "D2C", variant: "yellow" },
-      { text: "CONVERSION", variant: "outline" },
+      { text: "SECURITY", variant: "yellow" },
+      { text: "CYBER", variant: "outline" },
     ],
     status: "published",
     publishedAt: "2026-02-22T08:30:00.000Z",
-    author: "Design & UX Lab",
+    author: "Adapt Security Ops",
   },
   {
     id: "article-4",
-    slug: "building-scalable-ai-search-systems",
-    title: "Building scalable AI search systems that outpace algorithmic shifts.",
-    category: "SEO",
+    slug: "high-density-wifi-6-enterprise-office-deployment",
+    title: "High-density Wi-Fi 6: Designing seamless wireless connectivity for offices.",
+    category: "Wireless Systems",
     readTime: "4 min read",
-    image: "/image4.png",
-    excerpt: "How Generative Engine Optimization (GEO) and structured answer engines are reshaping organic discovery.",
+    image: "/wifi-banner.jpg",
+    excerpt: "How OFDMA, MU-MIMO, and centralized cloud controllers prevent congestion in crowded corporate campuses.",
     tags: [
-      { text: "AI & ML", variant: "dark" },
-      { text: "SEARCH", variant: "yellow" },
+      { text: "WI-FI 6", variant: "dark" },
+      { text: "OFFICE", variant: "yellow" },
     ],
     status: "published",
     publishedAt: "2026-02-27T14:00:00.000Z",
-    author: "AI Research Group",
+    author: "Adapt Wireless Team",
   },
   {
     id: "article-5",
-    slug: "high-impact-social-media-growth-playbook",
-    title: "High-impact social media frameworks that build enduring audience loyalty.",
-    category: "Social Media",
+    slug: "cloud-telephony-sip-trunking-modern-workforce",
+    title: "Cloud Telephony & SIP Trunking: Modernizing corporate voice communication.",
+    category: "Enterprise Systems",
     readTime: "5 min read",
-    image: "/creative5.png",
-    excerpt: "How narrative-led short-form content and founder branding scale consumer trust and distribution.",
+    image: "/services/enterprise_partnership.jpg",
+    excerpt: "Eliminating legacy PBX hardware with elastic cloud telephony, automated IVRs, and high-concurrency SIP trunking.",
     tags: [
-      { text: "SOCIAL", variant: "dark" },
-      { text: "VIRAL", variant: "yellow" },
+      { text: "TELEPHONY", variant: "outline" },
+      { text: "SIP TRUNK", variant: "dark" },
     ],
     status: "published",
     publishedAt: "2026-03-01T11:00:00.000Z",
-    author: "Creative Strategy Team",
+    author: "Adapt Telecom Solutions",
   },
   {
     id: "article-6",
-    slug: "content-marketing-flywheel-b2b-saas",
-    title: "The B2B content marketing flywheel: Generating high-intent SQLs without paid burn.",
-    category: "Content",
+    slug: "pan-india-carrier-redundancy-dual-homed-failover",
+    title: "Building Pan-India enterprise redundancy with dual-homed carrier failover.",
+    category: "Business Continuity",
     readTime: "6 min read",
-    image: "/creative3.png",
-    excerpt: "A technical blueprint for engineering product-led content hubs that compound monthly inbound pipeline.",
+    image: "/banner-global-telecom.jpg",
+    excerpt: "Engineering active-active link aggregation, sub-second BGP failover, and geographic tier-1 carrier redundancy.",
     tags: [
-      { text: "B2B", variant: "outline" },
-      { text: "CONTENT", variant: "dark" },
+      { text: "FAILOVER", variant: "yellow" },
+      { text: "UPTIME", variant: "outline" },
     ],
     status: "published",
     publishedAt: "2026-03-02T09:00:00.000Z",
-    author: "Growth Advisory",
+    author: "Adapt Infrastructure Core",
   },
   {
     id: "article-7",
@@ -264,7 +265,6 @@ export default function BlogPage() {
     { id: "Email & Automation", label: "Email & Automation", count: getCount("Email & Automation") },
     { id: "Cloud & DevOps", label: "Cloud & DevOps", count: getCount("Cloud & DevOps") || 3 },
     { id: "SEO", label: "SEO", count: getCount("SEO") },
-    { id: "Industries", label: "Industries", count: getCount("Industries") },
   ];
 
   const filteredArticles = articles.filter((article) =>
@@ -276,24 +276,24 @@ export default function BlogPage() {
       <div className="min-h-screen bg-white text-zinc-900 flex flex-col justify-between overflow-x-clip relative w-full select-none selection:bg-[#fac917] selection:text-black">
         <Navbar />
 
-        {/* 1. HERO BANNER (Compact, Sleek Background Banner) */}
-        <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+        {/* 1. HERO BANNER (Full-Bleed Photographic Background - Sleek Compact Ribbon) */}
+        <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
           
-          {/* Background Image with Clear Directional Gradient (Photo clearly visible) */}
+          {/* Full Background Image with Directional Dark Gradient */}
           <div className="absolute inset-0 z-0">
             <img
-              src="/services/content_marketing.jpg"
-              alt="Insights & Perspectives - Owlio Works"
-              className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
+              src="/banner-articles-enterprise.jpg"
+              alt="Adapt India Networks Telecom Research Studio & Engineering Lab"
+              className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
             />
-            {/* Directional gradient to keep photo vibrant on right while left text is readable */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
+            {/* Directional gradient to keep photo vibrant on right while text is super legible on left */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/45 z-10"></div>
           </div>
 
           {/* Top Row: Back to Home + Global Divider Line */}
-          <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
-            <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
+          <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">
+            <div className="flex items-center justify-between gap-4 pb-2.5 sm:pb-3 border-b border-white/20">
               <Link
                 href="/"
                 className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
@@ -303,39 +303,50 @@ export default function BlogPage() {
               </Link>
 
               <div className="flex items-center gap-3">
-                <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                  // INSIGHTS &amp; PERSPECTIVES
+                <span className="px-3 py-0.5 rounded-full bg-black/60 border border-sky-500/40 text-[#38bdf8] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                  // ARTICLES &amp; INSIGHTS
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Center Content: Clean Title + Scroll Down Indicator */}
+          {/* Center Content: Title, Description & Scroll Down */}
           <div className="relative z-20 max-w-7xl mx-auto w-full">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
               
               <div className="flex flex-col items-start text-left max-w-3xl">
-                {/* Category Pill Tagline */}
-                <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
-                  // THOUGHT LEADERSHIP &amp; ENGINEERING
+                {/* Category Tagline */}
+                <span className="font-mono text-xs font-extrabold tracking-widest text-[#38bdf8] uppercase mb-1.5 block">
+                  // TELECOM WHITE PAPERS &amp; ARCHITECTURAL GUIDES
                 </span>
 
-                {/* Compact Display Title */}
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
-                  INSIGHTS &amp; ARTICLES
+                {/* Display Title */}
+                <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black text-white font-display tracking-tight uppercase leading-[1.1] mb-2 drop-shadow-md">
+                  ENTERPRISE INSIGHTS
                 </h1>
 
-                <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
-                  Deep dives into search systems, platform engineering, conversion systems, and AI engine optimization by the Owlio Works team.
+                <p className="text-zinc-200 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-4">
+                  Technical deep dives, carrier SLA benchmarks, and architectural guides on SD-WAN, dedicated leased lines, MPLS routing, and corporate cyber defense by Adapt India network engineers.
                 </p>
+
+                {/* Quick Topic Badges */}
+                <div className="flex flex-wrap items-center gap-2 text-xs">
+                  <span className="px-3 py-1 bg-black/50 border border-white/20 rounded-md font-semibold text-zinc-200 backdrop-blur-sm">#SD-WAN</span>
+                  <span className="px-3 py-1 bg-black/50 border border-white/20 rounded-md font-semibold text-zinc-200 backdrop-blur-sm">#Internet Leased Lines</span>
+                  <span className="px-3 py-1 bg-black/50 border border-white/20 rounded-md font-semibold text-zinc-200 backdrop-blur-sm">#Carrier SLAs</span>
+                  <span className="px-3 py-1 bg-black/50 border border-white/20 rounded-md font-semibold text-zinc-200 backdrop-blur-sm">#Zero-Trust</span>
+                </div>
               </div>
 
               {/* Right Side: Scroll Down Indicator */}
-              <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
+              <div className="hidden lg:flex items-center gap-3 text-zinc-300 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end">
                 <span>SCROLL DOWN</span>
-                <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
+                <a
+                  href="#articles-feed"
+                  className="w-9 h-9 rounded-full border border-white/30 bg-black/40 flex items-center justify-center text-[#38bdf8] hover:bg-black/70 hover:border-white transition-all animate-bounce"
+                >
                   ↓
-                </span>
+                </a>
               </div>
 
             </div>
@@ -432,25 +443,9 @@ export default function BlogPage() {
               ))
             )}
           </div>
-
-          {/* Bottom CTA Banner */}
-          <div className="mt-16 sm:mt-24 rounded-3xl bg-zinc-950 text-white p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-            <div className="flex flex-col text-left max-w-xl">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#fac917] mb-2">Partner with Us</span>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight font-display">
-                Ready to scale your search & digital growth strategy?
-              </h3>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#fac917] text-zinc-950 px-8 py-3.5 rounded-full font-bold text-sm hover:bg-white transition-all shadow-md shrink-0 whitespace-nowrap"
-            >
-              <span>Let&apos;s Build Together</span>
-              <span>→</span>
-            </Link>
-          </div>
         </main>
 
+        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>

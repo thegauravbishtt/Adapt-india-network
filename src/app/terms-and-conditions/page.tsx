@@ -13,22 +13,24 @@ export default function TermsAndConditionsPage() {
         <Navbar />
 
         <main className="flex-1 w-full">
-          {/* 1. HERO BANNER (Compact Standard Layout) */}
-          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-            {/* Real Photography Background */}
+          {/* 1. HERO BANNER (Full-Bleed Photographic Background - Exactly like reference) */}
+          <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+            
+            {/* Full Background Image with Directional Dark Gradient */}
             <div className="absolute inset-0 z-0">
               <img
                 src="/banner-terms.jpg"
-                alt="Owlio Works Corporate Terms and Conditions"
-                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.75] contrast-[1.05]"
+                alt="Enterprise SLA Terms & Master Services"
+                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30 z-10"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
+              {/* Directional gradient to keep photo vibrant on right while text is super legible on left */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/45 z-10"></div>
             </div>
 
-            <div className="relative z-20 max-w-7xl mx-auto w-full">
-              {/* Back to Home & Top Tag */}
-              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20 mb-6 sm:mb-8">
+            {/* Top Row: Back to Home + Global Divider Line */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">
+              <div className="flex items-center justify-between gap-4 pb-2.5 sm:pb-3 border-b border-white/20">
                 <Link
                   href="/"
                   className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
@@ -37,25 +39,51 @@ export default function TermsAndConditionsPage() {
                   <span>BACK TO HOME</span>
                 </Link>
 
-                <span className="px-3.5 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                  // LEGAL
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-sky-500/40 text-[#38bdf8] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                    // LEGAL
+                  </span>
+                </div>
               </div>
+            </div>
 
-              {/* Title & Tagline */}
-              <div className="flex flex-col items-start text-left max-w-3xl">
-                <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
-                  // MASTER SERVICE TERMS
-                </span>
-                <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white font-display tracking-tight uppercase leading-none mb-2.5 drop-shadow-md">
-                  TERMS &amp; CONDITIONS
-                </h1>
-                <p className="text-zinc-300 text-xs sm:text-sm font-normal max-w-2xl leading-relaxed drop-shadow-sm">
-                  Standard master terms governing our digital engineering, design, and marketing engagements.
-                </p>
-                <span className="mt-2 text-[11px] sm:text-xs font-mono text-zinc-400">
-                  Last updated: September 3, 2026
-                </span>
+            {/* Center Content: Title, Description & Scroll Down */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full">
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+                
+                <div className="flex flex-col items-start text-left max-w-3xl">
+                  {/* Category Tagline */}
+                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#38bdf8] uppercase mb-1.5 block">
+                    // MASTER SERVICE TERMS
+                  </span>
+
+                  {/* Display Title */}
+                  <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black text-white font-display tracking-tight uppercase leading-[1.1] mb-2 drop-shadow-md">
+                    TERMS &amp; CONDITIONS
+                  </h1>
+
+                  <p className="text-zinc-200 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-3">
+                    Standard commercial and SLA provisions governing enterprise fiber connectivity, managed SD-WAN hardware deployments, SIP channel provisioning, and SLA credits.
+                  </p>
+
+                  <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400">
+                    <span>Effective: October 2026</span>
+                    <span>•</span>
+                    <span>Standard Enterprise SLA 99.999%</span>
+                  </div>
+                </div>
+
+                {/* Right Side: Scroll Down Indicator */}
+                <div className="hidden lg:flex items-center gap-3 text-zinc-300 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end">
+                  <span>SCROLL DOWN</span>
+                  <a
+                    href="#terms-content"
+                    className="w-9 h-9 rounded-full border border-white/30 bg-black/40 flex items-center justify-center text-[#38bdf8] hover:bg-black/70 hover:border-white transition-all animate-bounce"
+                  >
+                    ↓
+                  </a>
+                </div>
+
               </div>
             </div>
           </section>
@@ -67,7 +95,7 @@ export default function TermsAndConditionsPage() {
               {/* Introduction */}
               <div>
                 <p>
-                  Welcome to <strong>Owlio Works</strong>. These Terms and Conditions govern your access to our website (<Link href="/" className="text-zinc-950 font-medium underline">owlioworks.com</Link>) and the provision of our digital services, including web development, UI/UX design, SEO, digital advertising, and software consulting.
+                  Welcome to <strong>Adapt India Network</strong>. These Terms and Conditions govern your access to our website (<Link href="/" className="text-zinc-950 font-medium underline">adapt-india.net</Link>) and the provision of our enterprise telecommunications and network infrastructure services.
                 </p>
                 <p className="mt-3">
                   By engaging our services or using our website, you agree to comply with and be bound by these terms.
@@ -82,7 +110,7 @@ export default function TermsAndConditionsPage() {
                   1. Services &amp; Scope of Work
                 </h2>
                 <p>
-                  Owlio Works provides digital and software engineering services as defined in individual project proposals, quotations, or formal Statements of Work (SOW) mutually agreed with the client.
+                  Adapt India Network provides digital and software engineering services as defined in individual project proposals, quotations, or formal Statements of Work (SOW) mutually agreed with the client.
                 </p>
                 <p className="mt-3">
                   Any additional features, change requests, or expanded scope requested outside the initial agreement will be estimated and billed separately with client approval.
@@ -111,7 +139,7 @@ export default function TermsAndConditionsPage() {
                   Upon receipt of full payment for all agreed milestones, <strong>100% ownership of all custom code, design files, and project assets</strong> created specifically for the client is transferred directly to the client.
                 </p>
                 <p className="mt-3">
-                  Unless otherwise agreed in a separate Non-Disclosure Agreement (NDA), Owlio Works reserves the right to display the completed work in its portfolio and marketing case studies.
+                  Unless otherwise agreed in a separate Non-Disclosure Agreement (NDA), Adapt India Network reserves the right to display the completed work in its portfolio and marketing case studies.
                 </p>
               </div>
 
@@ -141,7 +169,7 @@ export default function TermsAndConditionsPage() {
                   6. Limitation of Liability
                 </h2>
                 <p>
-                  To the maximum extent permitted by law, Owlio Works shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use the delivered software or services.
+                  To the maximum extent permitted by law, Adapt India Network shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use the delivered software or services.
                 </p>
               </div>
 
@@ -164,9 +192,10 @@ export default function TermsAndConditionsPage() {
                   If you have questions regarding these Terms &amp; Conditions, please reach out to:
                 </p>
                 <div className="text-sm text-zinc-800 space-y-1">
-                  <p><strong>Owlio Works Pvt. Ltd.</strong></p>
-                  <p>Email: <a href="mailto:owlioworks@gmail.com" className="text-zinc-950 font-semibold underline">owlioworks@gmail.com</a></p>
-                  <p>Location: Saket, New Delhi - 110062, Delhi, India</p>
+                  <p><strong>Adapt India Network</strong></p>
+                  <p>Phone: <a href="tel:+918287479961" className="text-zinc-950 font-semibold underline">+91 82874 79961</a></p>
+                  <p>Email: <a href="mailto:info@adapt-india.net" className="text-zinc-950 font-semibold underline">info@adapt-india.net</a></p>
+                  <p>Location: Saket District Centre, New Delhi - 110062, Delhi, India</p>
                 </div>
               </div>
 

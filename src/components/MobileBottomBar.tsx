@@ -17,9 +17,9 @@ export default function MobileBottomBar() {
       <div className="grid grid-cols-2 w-full select-none">
         {/* Email Button */}
         <a
-          href="mailto:owlioworks@gmail.com"
+          href="mailto:info@adapt-india.net"
           className="flex items-center justify-center gap-2 bg-[#121212] hover:bg-black text-white font-bold text-[14px] sm:text-[15px] tracking-tight h-12 active:bg-zinc-900 transition-colors"
-          aria-label="Send email to Owlio Works"
+          aria-label="Send email to Adapt India Network"
         >
           <svg
             className="w-4 h-4 text-white shrink-0"
@@ -39,7 +39,7 @@ export default function MobileBottomBar() {
         {/* Let's Talk Button */}
         <Link
           href="/contact"
-          className="flex items-center justify-center gap-1.5 bg-[#fac917] hover:bg-[#eab308] text-black font-extrabold text-[14px] sm:text-[15px] tracking-tight h-12 active:brightness-95 transition-all"
+          className="flex items-center justify-center gap-1.5 bg-[#E31E24] hover:bg-[#C4161C] text-white font-extrabold text-[14px] sm:text-[15px] tracking-tight h-12 active:brightness-95 transition-all"
           aria-label="Go to contact page to talk with us"
         >
           <span>Let&apos;s Talk</span>

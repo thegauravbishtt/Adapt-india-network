@@ -19,27 +19,27 @@ interface TestimonialItem {
 export const demoTestimonials: TestimonialItem[] = [
   {
     id: "testimonial-1",
-    headline: "“Impactful”",
+    headline: "“Uninterrupted”",
     rating: 5,
     content:
-      "Growth engineering and search marketing at Owlio Works is unparalleled to what our team has witnessed with other agencies. With their technical depth and high-velocity execution, we have established dominance in our target market, resulting in a remarkable 4x expansion in organic revenue. Their unwavering guidance and inventive strategy transformed our platform.",
+      "Network engineering and enterprise leased line deployment from Adapt India Network is unparalleled. With their 99.999% SLA uptime and proactive dual-active NOC monitoring, our pan-India logistics operations run uninterrupted 24/7.",
     author: {
       name: "Sanjiv Nishchal",
-      role: "Founder",
-      company: "Hi Life Wellness",
+      role: "Operations Director",
+      company: "Hi Life Logistics",
       avatar: "/gustavo.jpg",
     },
   },
   {
     id: "testimonial-2",
-    headline: "“Dynamic”",
+    headline: "“Resilient”",
     rating: 5,
     content:
-      "The scalable platform and digital experience engineering provided by Owlio Works has truly elevated our online ecosystem, delivering a seamless, lightning-fast experience to millions of customers. The level of craftsmanship and strategic rigor they brought captured the exact essence of our brand vision. Thank you team.",
+      "The scalable SD-WAN architecture and redundant optical fiber rings deployed by Adapt India Network have transformed our corporate communications. Sub-50ms failover has eliminated downtime completely.",
     author: {
       name: "Sumeet Gupta",
-      role: "Founder",
-      company: "Mania Juices",
+      role: "Chief Technology Officer",
+      company: "Mania Retail Chains",
       avatar: "/chiseh.jpg",
     },
   },
@@ -48,37 +48,37 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Exceptional”",
     rating: 5,
     content:
-      "Owlio Works' end-to-end digital growth partnership has been a game-changer for our business. As Founder, I have been thoroughly impressed with their ability to understand complex product requirements and translate them into high-converting, resilient digital platforms. Their expertise in performance engineering and attention to detail has resulted in infrastructure that scales effortlessly.",
+      "Adapt India Network's enterprise telecom partnership with Tata and ACT has been a game-changer for our manufacturing campuses. Their 1:1 symmetric bandwidth and sub-4h MTTR ensure absolute business continuity.",
     author: {
       name: "Anupama Malik",
-      role: "Founder",
-      company: "Vert Enterprise",
+      role: "Head of Infrastructure",
+      company: "Vert Manufacturing",
       avatar: "/photo2.png",
     },
   },
   {
     id: "testimonial-4",
-    headline: "“Transformational”",
+    headline: "“Deterministic”",
     rating: 5,
     content:
-      "Working with Owlio Works felt like adding an elite Tier-1 engineering & growth SWAT team inside our company. They rebuilt our core search funnel in weeks, reducing latency by 70% and increasing enterprise conversion rates immediately. They don't just write code—they build systems that generate durable revenue.",
+      "Working with Adapt India Network felt like having an elite Tier-1 telecom engineering team on our side. They provisioned multi-gigabit fiber cross-connects ahead of schedule with zero packet jitter.",
     author: {
       name: "Vikramaditya Roy",
-      role: "Co-Founder & CTO",
-      company: "ScaleMatrix Cloud",
+      role: "VP of Enterprise IT",
+      company: "ScaleMatrix Data Centers",
       avatar: "/photo1.png",
     },
   },
   {
     id: "testimonial-5",
-    headline: "“Visionary”",
+    headline: "“Carrier-Grade”",
     rating: 5,
     content:
-      "The sheer technical integrity and creative design caliber at Owlio Works is world-class. From day one, they eliminated bureaucratic agency bloat and delivered real milestones ahead of schedule. Our digital infrastructure is now future-proofed for the next decade.",
+      "The technical integrity and 24/7 NOC responsiveness at Adapt India Network is world-class. From day one, our multi-site enterprise network has run at five-nines availability.",
     author: {
       name: "Kavita Sharma",
-      role: "VP of Product",
-      company: "Nexora Global",
+      role: "VP of Engineering",
+      company: "Nexora Global Hub",
       avatar: "/team-photo.png",
     },
   },
@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="w-full bg-[#0c0c0d] text-white py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-14 xl:px-16 select-none overflow-hidden relative border-t border-zinc-900">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 -left-40 w-[500px] h-[350px] bg-[#fbea3d]/[0.02] rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute top-1/3 -left-40 w-[500px] h-[350px] bg-red-600/[0.04] rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute bottom-10 right-0 w-[400px] h-[300px] bg-white/[0.015] rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto flex flex-col gap-10 sm:gap-12 lg:gap-14 w-full relative z-10">
@@ -107,16 +107,16 @@ export default function TestimonialsSection() {
         {/* Header Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 w-full">
           
-          {/* Left Column: Tag + Headline with Yellow Highlight */}
+          {/* Left Column: Tag + Headline with Red Highlight */}
           <div className="flex flex-col items-start text-left">
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-zinc-400 uppercase mb-2 block font-mono">
               CLIENT TESTIMONIALS
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black text-white font-display tracking-tight leading-tight">
-              Happy words from our{" "}
+              Trusted by high-performance{" "}
               <span className="relative inline-block whitespace-nowrap z-0">
-                clients.
-                <span className="absolute bottom-1 sm:bottom-1.5 left-0 w-full h-2 sm:h-2.5 bg-[#fbea3d] -z-10 rounded-xs"></span>
+                enterprises.
+                <span className="absolute bottom-1 sm:bottom-1.5 left-0 w-full h-2 sm:h-2.5 bg-[#E31E24] -z-10 rounded-xs"></span>
               </span>
             </h2>
           </div>
@@ -126,7 +126,7 @@ export default function TestimonialsSection() {
             <button
               type="button"
               onClick={() => scroll("left")}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-300 flex items-center justify-center hover:bg-[#fbea3d] hover:text-black hover:border-[#fbea3d] transition-all shadow-xs cursor-pointer active:scale-95"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-300 flex items-center justify-center hover:bg-[#E31E24] hover:text-white hover:border-[#E31E24] transition-all shadow-xs cursor-pointer active:scale-95"
               aria-label="Previous testimonial"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
             <button
               type="button"
               onClick={() => scroll("right")}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-300 flex items-center justify-center hover:bg-[#fbea3d] hover:text-black hover:border-[#fbea3d] transition-all shadow-xs cursor-pointer active:scale-95"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-300 flex items-center justify-center hover:bg-[#E31E24] hover:text-white hover:border-[#E31E24] transition-all shadow-xs cursor-pointer active:scale-95"
               aria-label="Next testimonial"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -164,7 +164,7 @@ export default function TestimonialsSection() {
                 </h3>
 
                 {/* 5 Stars Rating */}
-                <div className="flex items-center gap-1 text-[#fbea3d] mb-4">
+                <div className="flex items-center gap-1 text-[#E31E24] mb-4">
                   {[...Array(item.rating)].map((_, i) => (
                     <svg
                       key={i}
@@ -184,7 +184,7 @@ export default function TestimonialsSection() {
 
               {/* Bottom Author Section */}
               <div className="border-t border-zinc-800/90 pt-5 sm:pt-6 mt-6 sm:mt-8 flex items-center gap-3.5">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-700 text-[#fbea3d] font-black text-sm sm:text-base flex items-center justify-center shrink-0 select-none shadow-xs font-display">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-700 text-[#E31E24] font-black text-sm sm:text-base flex items-center justify-center shrink-0 select-none shadow-xs font-display">
                   {item.author.name.trim().charAt(0).toUpperCase()}
                 </div>
                 <div className="flex flex-col text-left">

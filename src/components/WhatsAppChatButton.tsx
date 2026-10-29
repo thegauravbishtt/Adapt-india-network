@@ -10,7 +10,7 @@ export default function WhatsAppChatButton() {
   const widgetRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
-  const phoneNumber = "917042460941";
+  const phoneNumber = "918287479961";
 
   // Hide on admin routes
   if (pathname?.startsWith("/admin")) {
@@ -19,7 +19,7 @@ export default function WhatsAppChatButton() {
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = message.trim() || "Hi Owlio Works, I would like to inquire about your services.";
+    const text = message.trim() || "Hi Adapt India Network, I would like to inquire about enterprise connectivity.";
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/${phoneNumber}?text=${encoded}`, "_blank", "noopener,noreferrer");
     setMessage("");
@@ -45,7 +45,7 @@ export default function WhatsAppChatButton() {
   return (
     <aside
       ref={widgetRef}
-      aria-label="Chat with Owlio Works"
+      aria-label="Chat with Adapt India Network"
       className="fixed bottom-16 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end select-none"
     >
       {/* 1. SIMPLE CLEAN WHITE CHAT POPUP */}
@@ -53,16 +53,16 @@ export default function WhatsAppChatButton() {
         <div className="w-[88vw] sm:w-[320px] bg-white text-zinc-900 rounded-2xl border border-zinc-200/90 shadow-[0_15px_40px_rgba(0,0,0,0.15)] overflow-hidden mb-3 animate-in fade-in duration-150">
           
           {/* Header */}
-          <div className="bg-[#fac917] px-4 py-3 flex items-center justify-between text-black">
+          <div className="bg-[#E31E24] px-4 py-3 flex items-center justify-between text-white">
             <div className="flex items-center gap-2">
-              <span className="font-black text-sm tracking-tight text-black">
-                Chat with Owlio Works
+              <span className="font-black text-sm tracking-tight text-white">
+                Chat with Adapt India
               </span>
             </div>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="w-6 h-6 rounded-full hover:bg-black/10 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer text-black"
+              className="w-6 h-6 rounded-full hover:bg-white/20 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer text-white"
               aria-label="Close"
             >
               ✕
@@ -81,12 +81,12 @@ export default function WhatsAppChatButton() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Hi! I want to discuss a project..."
-              className="w-full bg-zinc-50 text-zinc-900 text-xs sm:text-[13px] p-3 rounded-xl border border-zinc-200 focus:outline-hidden focus:border-[#fac917] focus:bg-white placeholder:text-zinc-400 resize-none transition-all"
+              className="w-full bg-zinc-50 text-zinc-900 text-xs sm:text-[13px] p-3 rounded-xl border border-zinc-200 focus:outline-hidden focus:border-[#E31E24] focus:bg-white placeholder:text-zinc-400 resize-none transition-all"
             />
 
             <button
               type="submit"
-              className="w-full py-2.5 bg-[#fac917] hover:bg-[#eab308] text-black font-extrabold text-xs sm:text-[13px] rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+              className="w-full py-2.5 bg-[#E31E24] hover:bg-[#C4161C] text-white font-extrabold text-xs sm:text-[13px] rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
             >
               <span>Send Message</span>
               <span className="font-bold">→</span>
@@ -96,22 +96,22 @@ export default function WhatsAppChatButton() {
         </div>
       )}
 
-      {/* 2. FLOATING YELLOW CHAT BUTTON */}
+      {/* 2. FLOATING RED CHAT BUTTON */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Open Chat"
-        className="flex items-center justify-center w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#fac917] hover:bg-[#eab308] text-black shadow-lg shadow-[#fac917]/35 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+        className="flex items-center justify-center w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#E31E24] hover:bg-[#C4161C] text-white shadow-lg shadow-[#E31E24]/35 hover:scale-105 active:scale-95 transition-all cursor-pointer"
       >
         {isOpen ? (
           /* Simple Close Icon */
-          <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
           /* Simple Clean Chat Bubble Icon */
           <svg
-            className="w-5.5 h-5.5 text-black"
+            className="w-5.5 h-5.5 text-white"
             fill="none"
             stroke="currentColor"
             strokeWidth="2.2"

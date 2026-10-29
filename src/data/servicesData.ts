@@ -43,7 +43,10 @@ export interface ServiceDetail {
   };
 }
 
+import { telecomServices } from "./telecomServicesData";
+
 export const allServices: ServiceDetail[] = [
+  ...telecomServices,
   {
     slug: "enterprise-software",
     name: "Enterprise Software",
@@ -62,7 +65,7 @@ export const allServices: ServiceDetail[] = [
       { value: "SOC2", label: "Compliance-Ready Code" },
     ],
     overview:
-      "Modern enterprises cannot afford fragile frameworks or slow execution. Owlio Works builds modular, microservices-driven backend systems and bespoke SaaS platforms designed for seamless integrations, low-latency performance, and massive scale.",
+      "Modern enterprises cannot afford fragile frameworks or slow execution. Adapt India Network builds modular, microservices-driven backend systems and bespoke SaaS platforms designed for seamless integrations, low-latency performance, and massive scale.",
     theChallenge:
       "Traditional enterprise software is slow to develop, riddled with legacy dependencies, and requires massive maintenance overhead. Off-the-shelf software rarely fits proprietary workflows, leading to costly workarounds.",
     ourSolution:
@@ -291,7 +294,7 @@ export const allServices: ServiceDetail[] = [
         "Structured content placement",
         "Conversion-focused pages",
       ],
-      whyChooseTitle: "WHY CHOOSE OWLIO WORKS?",
+      whyChooseTitle: "WHY CHOOSE ADAPT INDIA NETWORK?",
       whyChooseDesc:
         "The problem many companies face is having a website that looks good, but doesn't work. Creativity and Digital Strategy are the comfort of our team that is helping businesses to achieve measurable results.",
       whyChooseBullets: [
@@ -740,7 +743,7 @@ export const allServices: ServiceDetail[] = [
         "Interactive micro-animations",
         "Developer-ready tokens",
       ],
-      whyChooseTitle: "WHY CHOOSE OWLIO WORKS?",
+      whyChooseTitle: "WHY CHOOSE ADAPT INDIA NETWORK?",
       whyChooseDesc:
         "The problem many companies face is having an interface that looks artistic, but fails to convert. Creativity and UX engineering are the core focus of our team that is helping brands achieve scalable growth.",
       whyChooseBullets: [
@@ -1495,7 +1498,7 @@ export const allServices: ServiceDetail[] = [
         "List Scrubbing & Spam Trap Avoidance",
         "Revenue Attribution & LTV Analytics",
       ],
-      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR EMAIL?",
+      whyChooseTitle: "WHY CHOOSE ADAPT INDIA NETWORK FOR EMAIL?",
       whyChooseDesc:
         "We don't just send newsletters. We engineer automated revenue engines that generate predictable recurring sales while you sleep.",
       whyChooseBullets: [
@@ -1526,7 +1529,7 @@ export const allServices: ServiceDetail[] = [
       { value: "< 2s", label: "Automated Bot Response Time" },
     ],
     overview:
-      "WhatsApp is where your customers spend their day. Owlio Works harnesses the official Meta WhatsApp Cloud API and enterprise broadcast platforms to build automated support, broadcast marketing, catalog shopping, and multi-agent customer support consoles.",
+      "WhatsApp is where your customers spend their day. Adapt India Network harnesses the official Meta WhatsApp Cloud API and enterprise broadcast platforms to build automated support, broadcast marketing, catalog shopping, and multi-agent customer support consoles.",
     theChallenge:
       "Manual WhatsApp chats don't scale, account bans happen with unverified numbers, and disconnected messaging tools fail to synchronize customer purchase records with your central CRM.",
     ourSolution:
@@ -1637,7 +1640,7 @@ export const allServices: ServiceDetail[] = [
         "Opt-In & GDPR Compliant Messaging",
         "Real-Time Open & Read Analytics",
       ],
-      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR WHATSAPP?",
+      whyChooseTitle: "WHY CHOOSE ADAPT INDIA NETWORK FOR WHATSAPP?",
       whyChooseDesc:
         "We turn WhatsApp into your most lucrative direct-response revenue stream through smart bot logic and verified enterprise infrastructure.",
       whyChooseBullets: [
@@ -1780,7 +1783,7 @@ export const allServices: ServiceDetail[] = [
         "Fail-Safe Error Alerts & Queueing",
         "Zero Coding Required For Your Team",
       ],
-      whyChooseTitle: "WHY CHOOSE OWLIO WORKS FOR AUTOMATION?",
+      whyChooseTitle: "WHY CHOOSE ADAPT INDIA NETWORK FOR AUTOMATION?",
       whyChooseDesc:
         "We build practical, reliable business automations that solve real problems, save hours every week, and help your team focus on high-value work.",
       whyChooseBullets: [
@@ -1796,7 +1799,149 @@ export const allServices: ServiceDetail[] = [
 ];
 
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
-  const normalized = slug?.toLowerCase() || "";
+  const normalized = slug?.toLowerCase().trim() || "";
+
+  // 1. Smart Internet (ILL) & Leased Line aliases
+  if (
+    normalized === "ill" ||
+    normalized === "smart-internet-ill" ||
+    normalized === "smart-internet" ||
+    normalized === "internet-leased-line" ||
+    normalized === "leased-line" ||
+    normalized === "internet-leased-lines"
+  ) {
+    return allServices.find((s) => s.slug === "smart-internet-ill");
+  }
+
+  // 2. Smartflo SD-WAN aliases
+  if (
+    normalized === "sd-wan" ||
+    normalized === "smartflo-sd-wan" ||
+    normalized === "sdwan" ||
+    normalized === "smart-wan" ||
+    normalized === "smartflosdwan"
+  ) {
+    return allServices.find((s) => s.slug === "smartflo-sd-wan");
+  }
+
+  // 3. SmartOffice Connect aliases
+  if (
+    normalized === "smartoffice" ||
+    normalized === "smartoffice-connect" ||
+    normalized === "smart-office" ||
+    normalized === "smart-office-connect"
+  ) {
+    return allServices.find((s) => s.slug === "smartoffice-connect");
+  }
+
+  // 4. Managed MPLS aliases
+  if (
+    normalized === "mpls" ||
+    normalized === "managed-mpls" ||
+    normalized === "mpls-vpn" ||
+    normalized === "managedmpls"
+  ) {
+    return allServices.find((s) => s.slug === "managed-mpls");
+  }
+
+  // 5. Business Communications aliases
+  if (
+    normalized === "business-communications" ||
+    normalized === "business-comm" ||
+    normalized === "ccaas" ||
+    normalized === "cpaas" ||
+    normalized === "sip-trunk" ||
+    normalized === "sip-trunking" ||
+    normalized === "toll-free"
+  ) {
+    return allServices.find((s) => s.slug === "business-communications");
+  }
+
+  // 6. Network as a Service (NaaS) aliases
+  if (
+    normalized === "network-as-a-service" ||
+    normalized === "naas" ||
+    normalized === "network-connectivity" ||
+    normalized === "network-conn"
+  ) {
+    return allServices.find((s) => s.slug === "network-as-a-service");
+  }
+
+  // 7. Collaboration & Modern Workplace aliases
+  if (
+    normalized === "collaboration-productivity" ||
+    normalized === "collaboration" ||
+    normalized === "collab" ||
+    normalized === "m365" ||
+    normalized === "microsoft-365" ||
+    normalized === "copilot"
+  ) {
+    return allServices.find((s) => s.slug === "collaboration-productivity");
+  }
+
+  // 8. Cloud Infrastructure aliases
+  if (
+    normalized === "cloud-infrastructure" ||
+    normalized === "cloud" ||
+    normalized === "azure" ||
+    normalized === "cloud-services"
+  ) {
+    return allServices.find((s) => s.slug === "cloud-infrastructure");
+  }
+
+  // 9. Cybersecurity Solutions aliases
+  if (
+    normalized === "cybersecurity-solutions" ||
+    normalized === "cybersecurity" ||
+    normalized === "soc" ||
+    normalized === "managed-soc" ||
+    normalized === "firewall" ||
+    normalized === "ddos"
+  ) {
+    return allServices.find((s) => s.slug === "cybersecurity-solutions");
+  }
+
+  // 10. Managed Services (NOC) aliases
+  if (
+    normalized === "managed-services" ||
+    normalized === "managed-noc" ||
+    normalized === "noc" ||
+    normalized === "noc-operations"
+  ) {
+    return allServices.find((s) => s.slug === "managed-services");
+  }
+
+  // 11. Bundled Solutions aliases
+  if (
+    normalized === "bundled-solutions" ||
+    normalized === "bundled" ||
+    normalized === "branch-in-a-box" ||
+    normalized === "enterprise-bundles"
+  ) {
+    return allServices.find((s) => s.slug === "bundled-solutions");
+  }
+
+  // 12. Point-to-Point (P2P) Leased Line aliases
+  if (
+    normalized === "point-to-point-leased-line" ||
+    normalized === "p2p" ||
+    normalized === "p2p-leased-line" ||
+    normalized === "point-to-point"
+  ) {
+    return allServices.find((s) => s.slug === "point-to-point-leased-line");
+  }
+
+  // 13. Enterprise Broadband & Campus Wi-Fi aliases
+  if (
+    normalized === "enterprise-broadband" ||
+    normalized === "broadband" ||
+    normalized === "broadband-wifi" ||
+    normalized === "campus-wifi"
+  ) {
+    return allServices.find((s) => s.slug === "enterprise-broadband");
+  }
+
+  // Legacy agency service aliases
   if (
     normalized === "ai-automation" ||
     normalized === "ai" ||
@@ -1811,5 +1956,7 @@ export function getServiceBySlug(slug: string): ServiceDetail | undefined {
   if (normalized === "whatsapp" || normalized === "whatsapp-marketing" || normalized === "whatsappmarketing") {
     return allServices.find((s) => s.slug === "whatsapp-marketing");
   }
+
   return allServices.find((s) => s.slug === normalized || s.slug === slug);
 }
+

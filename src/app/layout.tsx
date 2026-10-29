@@ -3,8 +3,7 @@ import { Manrope, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 import WelcomeRequirementModal from "../components/WelcomeRequirementModal";
-import WhatsAppChatButton from "../components/WhatsAppChatButton";
-import MobileBottomBar from "../components/MobileBottomBar";
+import ScrollAnimationProvider from "../components/ScrollAnimationProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -22,9 +21,9 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Owlio Works - Full-Stack Digital Marketing, Branding & Growth Agency",
+  title: "Adapt India Network - Next-Gen Telecom, SD-WAN & Enterprise Networking Solutions",
   description:
-    "Owlio Works is an integrated digital marketing, branding, and growth agency building creative, performance-driven digital solutions and search systems for ambitious brands worldwide.",
+    "ADAPT India Network delivers tailored enterprise IT, SD-WAN, Internet Leased Line (ILL), Managed WiFi, MPLS, and Cloud Telephony solutions with guaranteed 99.5% uptime SLA backend connectivity across India.",
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png" },
@@ -58,10 +57,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-transparent text-black font-sans flex flex-col">
         <LanguageProvider>
+          <ScrollAnimationProvider />
           {children}
           <WelcomeRequirementModal />
-          <WhatsAppChatButton />
-          <MobileBottomBar />
         </LanguageProvider>
       </body>
     </html>

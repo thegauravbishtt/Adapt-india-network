@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: ServicePageProps) {
 
   if (!service) {
     return {
-      title: "Service Not Found | Owlio Works",
+      title: "Service Not Found | Adapt India Networks",
     };
   }
 
   return {
-    title: `${service.name} | Owlio Works`,
+    title: `${service.name} | Adapt India Networks`,
     description: service.heroSubtitle,
   };
 }

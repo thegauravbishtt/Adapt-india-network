@@ -92,11 +92,11 @@ export default function AdminSidebar({
           <div className="h-16 px-5 flex items-center justify-between border-b border-zinc-100">
             <Link href="/admin" className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center font-bold text-xs text-white">
-                OW
+                AI
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-sm text-zinc-900 leading-tight">
-                  Owlio Works
+                  Adapt India Network
                 </span>
                 <span className="text-[11px] text-zinc-500 font-medium">
                   Admin Workspace
@@ -180,7 +180,7 @@ export default function AdminSidebar({
               </div>
               <div className="flex flex-col min-w-0">
                 <span className="text-xs font-medium text-zinc-900 truncate">Administrator</span>
-                <span className="text-[10px] text-zinc-500 truncate">admin@owlioworks.com</span>
+                <span className="text-[10px] text-zinc-500 truncate">info@adapt-india.net</span>
               </div>
             </div>
 

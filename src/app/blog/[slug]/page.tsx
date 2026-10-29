@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 
   if (!blog) {
     return {
-      title: "Article Not Found | Owlio Works",
+      title: "Article Not Found | Adapt India Network",
     };
   }
 
   return {
-    title: `${blog.title} | Owlio Works`,
+    title: `${blog.title} | Adapt India Network`,
     description: blog.excerpt,
     openGraph: {
       title: blog.title,

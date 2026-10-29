@@ -212,76 +212,7 @@ const DEFAULT_LEADS: Lead[] = [
   },
 ];
 
-const DEFAULT_BLOGS: BlogPost[] = [
-  {
-    id: "article-1",
-    slug: "modern-search-infrastructure-10x-organic-revenue",
-    title: "How modern search infrastructure drives 10x organic revenue.",
-    category: "Search Systems",
-    readTime: "4 min read",
-    image: "/image1.png",
-    excerpt: "Exploring the shift from traditional keyword targeting to algorithmic semantic authority and programmatic search systems.",
-    content: "Modern search engines prioritize topical authority, performance metrics, and programmatic architecture. Here is how high-growth startups capitalize on modern search pipelines to generate enduring organic revenue.",
-    tags: [
-      { text: "STRATEGY", variant: "dark" },
-      { text: "GROWTH", variant: "yellow" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-15T10:00:00.000Z",
-    author: "Owlio Growth Labs",
-  },
-  {
-    id: "article-2",
-    slug: "headless-commerce-vs-monolithic-builds",
-    title: "Why headless commerce platforms outperform traditional monolithic builds.",
-    category: "Digital Strategy",
-    readTime: "5 min read",
-    image: "/image2.png",
-    excerpt: "A deep dive into decoupled frontends, Next.js commerce pipelines, and conversion rate optimizations.",
-    content: "Speed is currency in digital commerce. Decoupling the frontend from backend ERPs unlocks unprecedented flexibility and sub-second load times.",
-    tags: [
-      { text: "TECH", variant: "outline" },
-      { text: "PLATFORMS", variant: "dark" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-18T12:00:00.000Z",
-    author: "Owlio Engineering",
-  },
-  {
-    id: "article-3",
-    slug: "science-of-high-conversion-digital-experiences-2026",
-    title: "The science of high-conversion digital experiences in 2026.",
-    category: "Conversion Engineering",
-    readTime: "6 min read",
-    image: "/image3.png",
-    excerpt: "Analyzing cognitive friction, visual hierarchy, and micro-interactions that drive user commitment.",
-    content: "Conversion engineering combines behavioral psychology with rapid page feedback loops. Understanding cognitive load allows us to design effortless conversion pathways.",
-    tags: [
-      { text: "D2C", variant: "yellow" },
-      { text: "CONVERSION", variant: "outline" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-22T08:30:00.000Z",
-    author: "Design & UX Lab",
-  },
-  {
-    id: "article-4",
-    slug: "building-scalable-ai-search-systems",
-    title: "Building scalable AI search systems that outpace algorithmic shifts.",
-    category: "AI & Search Systems",
-    readTime: "4 min read",
-    image: "/image4.png",
-    excerpt: "How Generative Engine Optimization (GEO) and structured answer engines are reshaping organic discovery.",
-    content: "With LLM-driven search experiences, traditional meta tags are no longer sufficient. Learn how structured knowledge graphs and entity authority lead search engine indexes.",
-    tags: [
-      { text: "AI & ML", variant: "dark" },
-      { text: "SEARCH", variant: "yellow" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-27T14:00:00.000Z",
-    author: "AI Research Group",
-  },
-];
+const DEFAULT_BLOGS: BlogPost[] = [];
 
 const DEFAULT_WORK_ITEMS: WorkItem[] = [
   {
@@ -378,12 +309,12 @@ const DEFAULT_SUBSCRIBERS: Subscriber[] = [
 ];
 
 const DEFAULT_SETTINGS: AgencySettings = {
-  agencyName: "Owlio Works",
-  tagline: "Integrated Digital Marketing, Branding & Growth Agency",
-  notificationEmail: process.env.EMAIL_TO || "owlioworks@gmail.com",
-  supportPhone: "+91 98765 43210",
-  address: "Saket, New Delhi, India",
-  currency: "USD ($)",
+  agencyName: "Adapt India Network",
+  tagline: "Enterprise Telecom, SD-WAN & Network Infrastructure Solutions",
+  notificationEmail: process.env.EMAIL_TO || "info@adapt-india.net",
+  supportPhone: "+91 82874 79961",
+  address: "Saket District Centre, New Delhi, India",
+  currency: "INR (₹)",
   emailAlertsEnabled: true,
   maintenanceMode: false,
 };

@@ -28,74 +28,56 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
         <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
           <Navbar />
 
-          {/* 1. HERO BANNER (Original Sleek Background Banner with Visible Imagery) */}
-          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-            
-            {/* Background Image with Clear Directional Gradient */}
-            <div className="absolute inset-0 z-0">
-              <img
-                src={industry.image}
-                alt={industry.name}
-                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
-            </div>
-
-            {/* Top Row: Back to Home + Global Divider Line */}
-            <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
-              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
-                >
-                  <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
-                  <span>BACK TO HOME</span>
-                </Link>
-
-                <div className="flex items-center gap-3">
-                  <Link
-                    href="/industries"
-                    className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider transition-colors"
-                  >
-                    <span>ALL INDUSTRIES</span>
-                  </Link>
-                  <span className="hidden sm:inline-block text-zinc-600">/</span>
-                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                    // {industry.name}
-                  </span>
-                </div>
+          {/* 1. HERO BANNER (Bright, Sleek Enterprise Standard) */}
+          <section className="relative w-full bg-[#f8f9fa] border-b border-zinc-200/80 pt-36 sm:pt-40 lg:pt-44 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden">
+            <div className="max-w-7xl mx-auto w-full">
+              {/* Breadcrumb Navigation */}
+              <div className="flex items-center gap-2 text-xs font-mono text-zinc-500 uppercase tracking-wider mb-6">
+                <Link href="/" className="hover:text-[#E31E24] transition-colors">Home</Link>
+                <span>/</span>
+                <Link href="/industries" className="hover:text-[#E31E24] transition-colors">Industries</Link>
+                <span>/</span>
+                <span className="text-zinc-900 font-bold">{industry.name}</span>
               </div>
-            </div>
 
-            {/* Center Content: Clean Title + Scroll Down Indicator */}
-            <div className="relative z-20 max-w-7xl mx-auto w-full">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                
-                <div className="flex flex-col items-start text-left max-w-3xl">
-                  {/* Category Pill Tagline */}
-                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
-                    // {industry.badge}
-                  </span>
+              {/* Grid: Left Content + Right Pinterest Hero Image */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="lg:col-span-7 flex flex-col items-start text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-[#E31E24] text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E31E24] animate-pulse"></span>
+                    {industry.badge || "Industry Vertical"}
+                  </div>
 
-                  {/* Compact Display Title */}
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08] mb-4">
                     {industry.name}
                   </h1>
 
-                  <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                  <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-xl mb-6">
                     {industry.heroSubtitle}
                   </p>
+
+                  <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 bg-white px-3.5 py-1.5 rounded-lg border border-zinc-200 shadow-2xs">
+                    <span className="text-[#E31E24] font-bold">Pan-India Deployment</span>
+                    <span>•</span>
+                    <span>24/7/365 NOC Support</span>
+                  </div>
                 </div>
 
-                {/* Right Side: Scroll Down Indicator */}
-                <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
-                  <span>SCROLL DOWN</span>
-                  <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
-                    ↓
-                  </span>
+                {/* Right Pinterest-Aesthetic Photographic Card */}
+                <div className="lg:col-span-5 relative">
+                  <div className="relative rounded-2xl overflow-hidden border border-zinc-200/90 shadow-xl aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] bg-zinc-100 group">
+                    <img
+                      src={industry.image}
+                      alt={industry.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono backdrop-blur-md bg-black/40 px-3.5 py-2 rounded-lg border border-white/10">
+                      <span>{industry.name}</span>
+                      <span className="text-emerald-400 font-bold">Enterprise Ready</span>
+                    </div>
+                  </div>
                 </div>
-
               </div>
             </div>
           </section>
@@ -505,74 +487,56 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
         <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
           <Navbar />
 
-          {/* 1. HERO BANNER (Original Sleek Background Banner with Visible Imagery - DO NOT ALTER SIZE) */}
-          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-            
-            {/* Background Image with Clear Directional Gradient */}
-            <div className="absolute inset-0 z-0">
-              <img
-                src={industry.image}
-                alt={industry.name}
-                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
-            </div>
-
-            {/* Top Row: Back to Home + Global Divider Line */}
-            <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
-              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
-                >
-                  <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
-                  <span>BACK TO HOME</span>
-                </Link>
-
-                <div className="flex items-center gap-3">
-                  <Link
-                    href="/industries"
-                    className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider transition-colors"
-                  >
-                    <span>ALL INDUSTRIES</span>
-                  </Link>
-                  <span className="hidden sm:inline-block text-zinc-600">/</span>
-                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                    // {industry.name}
-                  </span>
-                </div>
+          {/* 1. HERO BANNER (Bright, Sleek Enterprise Standard) */}
+          <section className="relative w-full bg-[#f8f9fa] border-b border-zinc-200/80 pt-36 sm:pt-40 lg:pt-44 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden">
+            <div className="max-w-7xl mx-auto w-full">
+              {/* Breadcrumb Navigation */}
+              <div className="flex items-center gap-2 text-xs font-mono text-zinc-500 uppercase tracking-wider mb-6">
+                <Link href="/" className="hover:text-[#E31E24] transition-colors">Home</Link>
+                <span>/</span>
+                <Link href="/industries" className="hover:text-[#E31E24] transition-colors">Industries</Link>
+                <span>/</span>
+                <span className="text-zinc-900 font-bold">{industry.name}</span>
               </div>
-            </div>
 
-            {/* Center Content: Clean Title + Scroll Down Indicator */}
-            <div className="relative z-20 max-w-7xl mx-auto w-full">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                
-                <div className="flex flex-col items-start text-left max-w-3xl">
-                  {/* Category Pill Tagline */}
-                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
-                    // {industry.badge}
-                  </span>
+              {/* Grid: Left Content + Right Pinterest Hero Image */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="lg:col-span-7 flex flex-col items-start text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-[#E31E24] text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E31E24] animate-pulse"></span>
+                    {industry.badge || "BFSI & FinTech"}
+                  </div>
 
-                  {/* Compact Display Title */}
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08] mb-4">
                     {industry.name}
                   </h1>
 
-                  <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                  <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-xl mb-6">
                     {industry.heroSubtitle}
                   </p>
+
+                  <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 bg-white px-3.5 py-1.5 rounded-lg border border-zinc-200 shadow-2xs">
+                    <span className="text-[#E31E24] font-bold">Low Latency Exchange Cross-Connects</span>
+                    <span>•</span>
+                    <span>PCI-DSS &amp; RBI Compliant</span>
+                  </div>
                 </div>
 
-                {/* Right Side: Scroll Down Indicator */}
-                <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
-                  <span>SCROLL DOWN</span>
-                  <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
-                    ↓
-                  </span>
+                {/* Right Pinterest-Aesthetic Photographic Card */}
+                <div className="lg:col-span-5 relative">
+                  <div className="relative rounded-2xl overflow-hidden border border-zinc-200/90 shadow-xl aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] bg-zinc-100 group">
+                    <img
+                      src={industry.image}
+                      alt={industry.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono backdrop-blur-md bg-black/40 px-3.5 py-2 rounded-lg border border-white/10">
+                      <span>{industry.name}</span>
+                      <span className="text-emerald-400 font-bold">Sub-Millisecond Speed</span>
+                    </div>
+                  </div>
                 </div>
-
               </div>
             </div>
           </section>
@@ -982,74 +946,56 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
         <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
           <Navbar />
 
-          {/* 1. HERO BANNER (Original Sleek Background Banner with Visible Imagery - DO NOT ALTER SIZE) */}
-          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-            
-            {/* Background Image with Clear Directional Gradient */}
-            <div className="absolute inset-0 z-0">
-              <img
-                src={industry.image}
-                alt={industry.name}
-                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
-            </div>
-
-            {/* Top Row: Back to Home + Global Divider Line */}
-            <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
-              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
-                >
-                  <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
-                  <span>BACK TO HOME</span>
-                </Link>
-
-                <div className="flex items-center gap-3">
-                  <Link
-                    href="/industries"
-                    className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider transition-colors"
-                  >
-                    <span>ALL INDUSTRIES</span>
-                  </Link>
-                  <span className="hidden sm:inline-block text-zinc-600">/</span>
-                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                    // {industry.name}
-                  </span>
-                </div>
+          {/* 1. HERO BANNER (Bright, Sleek Enterprise Standard) */}
+          <section className="relative w-full bg-[#f8f9fa] border-b border-zinc-200/80 pt-36 sm:pt-40 lg:pt-44 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden">
+            <div className="max-w-7xl mx-auto w-full">
+              {/* Breadcrumb Navigation */}
+              <div className="flex items-center gap-2 text-xs font-mono text-zinc-500 uppercase tracking-wider mb-6">
+                <Link href="/" className="hover:text-[#E31E24] transition-colors">Home</Link>
+                <span>/</span>
+                <Link href="/industries" className="hover:text-[#E31E24] transition-colors">Industries</Link>
+                <span>/</span>
+                <span className="text-zinc-900 font-bold">{industry.name}</span>
               </div>
-            </div>
 
-            {/* Center Content: Clean Title + Scroll Down Indicator */}
-            <div className="relative z-20 max-w-7xl mx-auto w-full">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                
-                <div className="flex flex-col items-start text-left max-w-3xl">
-                  {/* Category Pill Tagline */}
-                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
-                    // {industry.badge}
-                  </span>
+              {/* Grid: Left Content + Right Pinterest Hero Image */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="lg:col-span-7 flex flex-col items-start text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-[#E31E24] text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E31E24] animate-pulse"></span>
+                    {industry.badge || "Travel & Hospitality"}
+                  </div>
 
-                  {/* Compact Display Title */}
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08] mb-4">
                     {industry.name}
                   </h1>
 
-                  <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                  <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-xl mb-6">
                     {industry.heroSubtitle}
                   </p>
+
+                  <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 bg-white px-3.5 py-1.5 rounded-lg border border-zinc-200 shadow-2xs">
+                    <span className="text-[#E31E24] font-bold">Managed Campus Wi-Fi 6</span>
+                    <span>•</span>
+                    <span>High-Density Hospitality Connectivity</span>
+                  </div>
                 </div>
 
-                {/* Right Side: Scroll Down Indicator */}
-                <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
-                  <span>SCROLL DOWN</span>
-                  <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
-                    ↓
-                  </span>
+                {/* Right Pinterest-Aesthetic Photographic Card */}
+                <div className="lg:col-span-5 relative">
+                  <div className="relative rounded-2xl overflow-hidden border border-zinc-200/90 shadow-xl aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] bg-zinc-100 group">
+                    <img
+                      src={industry.image}
+                      alt={industry.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono backdrop-blur-md bg-black/40 px-3.5 py-2 rounded-lg border border-white/10">
+                      <span>{industry.name}</span>
+                      <span className="text-emerald-400 font-bold">Resort &amp; Hotel Wi-Fi</span>
+                    </div>
+                  </div>
                 </div>
-
               </div>
             </div>
           </section>
@@ -1458,75 +1404,56 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
       <div className="min-h-screen bg-white flex flex-col overflow-x-clip relative w-full select-none text-zinc-900">
         <Navbar />
 
-        {/* 1. HERO BANNER (Compact, Sleek Background Banner with Visible Imagery) */}
-        <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-          
-          {/* Background Image with Clear Directional Gradient (Photo clearly visible) */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src={industry.image}
-              alt={industry.name}
-              className="w-full h-full object-cover object-center scale-100 filter brightness-[0.78] contrast-[1.08]"
-            />
-            {/* Directional gradient to keep photo vibrant on right while left text is readable */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/30 z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
-          </div>
-
-          {/* Top Row: Back to Home + Global Divider Line */}
-          <div className="relative z-20 max-w-7xl mx-auto w-full mb-6 sm:mb-8">
-            <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
-              >
-                <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
-                <span>BACK TO HOME</span>
-              </Link>
-
-              <div className="flex items-center gap-3">
-                <Link
-                  href="/industries"
-                  className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider transition-colors"
-                >
-                  <span>ALL INDUSTRIES</span>
-                </Link>
-                <span className="hidden sm:inline-block text-zinc-600">/</span>
-                <span className="px-3 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                  // {industry.name}
-                </span>
-              </div>
+        {/* 1. HERO BANNER (Bright, Sleek Enterprise Standard) */}
+        <section className="relative w-full bg-[#f8f9fa] border-b border-zinc-200/80 pt-36 sm:pt-40 lg:pt-44 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full">
+            {/* Breadcrumb Navigation */}
+            <div className="flex items-center gap-2 text-xs font-mono text-zinc-500 uppercase tracking-wider mb-6">
+              <Link href="/" className="hover:text-[#E31E24] transition-colors">Home</Link>
+              <span>/</span>
+              <Link href="/industries" className="hover:text-[#E31E24] transition-colors">Industries</Link>
+              <span>/</span>
+              <span className="text-zinc-900 font-bold">{industry.name}</span>
             </div>
-          </div>
 
-          {/* Center Content: Clean Title + Scroll Down Indicator */}
-          <div className="relative z-20 max-w-7xl mx-auto w-full">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-              
-              <div className="flex flex-col items-start text-left max-w-3xl">
-                {/* Category Pill Tagline */}
-                <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
-                  // {industry.badge}
-                </span>
+            {/* Grid: Left Content + Right Pinterest Hero Image */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="lg:col-span-7 flex flex-col items-start text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-[#E31E24] text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E31E24] animate-pulse"></span>
+                  {industry.badge || "Industry Vertical"}
+                </div>
 
-                {/* Compact Display Title */}
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-none mb-3 drop-shadow-md">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight uppercase leading-[1.08] mb-4">
                   {industry.name}
                 </h1>
 
-                <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm">
+                <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-xl mb-6">
                   {industry.heroSubtitle}
                 </p>
+
+                <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 bg-white px-3.5 py-1.5 rounded-lg border border-zinc-200 shadow-2xs">
+                  <span className="text-[#E31E24] font-bold">Pan-India Mission Critical Network</span>
+                  <span>•</span>
+                  <span>Dedicated Account Manager</span>
+                </div>
               </div>
 
-              {/* Right Side: Scroll Down Indicator */}
-              <div className="hidden lg:flex items-center gap-3 text-zinc-400 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end lg:self-center">
-                <span>SCROLL DOWN</span>
-                <span className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-[#fbea3d] animate-bounce">
-                  ↓
-                </span>
+              {/* Right Pinterest-Aesthetic Photographic Card */}
+              <div className="lg:col-span-5 relative">
+                <div className="relative rounded-2xl overflow-hidden border border-zinc-200/90 shadow-xl aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] bg-zinc-100 group">
+                  <img
+                    src={industry.image}
+                    alt={industry.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono backdrop-blur-md bg-black/40 px-3.5 py-2 rounded-lg border border-white/10">
+                    <span>{industry.name}</span>
+                    <span className="text-emerald-400 font-bold">Enterprise Grade</span>
+                  </div>
+                </div>
               </div>
-
             </div>
           </div>
         </section>

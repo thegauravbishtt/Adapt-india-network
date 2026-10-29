@@ -1068,12 +1068,12 @@ export const allIndustries: IndustryDetail[] = [
   {
     slug: "education",
     name: "Education",
-    badge: "DIGITAL GROWTH & STUDENT ENROLLMENT SERVICES",
-    tagline: "Institutional Websites, Higher-Ed SEO & Student Enrollment Marketing",
-    heroHeadline: "High-Converting Web Experiences & Digital Marketing for",
+    badge: "CAMPUS NETWORK INFRASTRUCTURE & CONNECTIVITY",
+    tagline: "Dedicated Fiber ILL, Campus Wi-Fi 6 & Secure Interconnects",
+    heroHeadline: "Campus Wi-Fi 6 & High-Speed Internet Leased Lines for",
     heroHighlight: "Educational Institutions.",
     heroSubtitle:
-      "We help universities, private schools, academies, and training institutes scale student enrollments through modern institutional websites, high-intent Google Search SEO, and performance-driven paid acquisition campaigns.",
+      "We help universities, private schools, academies, and training institutes deploy high-density Wi-Fi 6, 1:1 dedicated Internet Leased Lines, and low-latency digital campus infrastructure.",
     image: "/industries/education_overview.jpg",
     stats: [
       { value: "+240%", label: "Qualified Student Inquiries" },
@@ -1557,11 +1557,11 @@ export const allIndustries: IndustryDetail[] = [
     slug: "agriculture-agritech",
     name: "Agriculture & Agritech",
     badge: "AGRICULTURE & FARMS",
-    tagline: "Websites, Online Stores & Growth for Farms & Agribusiness",
-    heroHeadline: "Websites & Digital Marketing for",
+    tagline: "Rural Connectivity, IoT Telemetry & Network Infrastructure",
+    heroHeadline: "Enterprise Connectivity & IoT Networking for",
     heroHighlight: "Farms & Agriculture.",
     heroSubtitle:
-      "We help farms, orchards, and agricultural businesses build clean websites, sell directly to customers, and reach more local buyers.",
+      "We help farms, processing facilities, and agricultural enterprises deploy long-range wireless networks, secure IoT sensor telemetry, and reliable rural broadband connectivity.",
     image: "/industries/agriculture-agritech.jpg",
     stats: [
       { value: "Direct", label: "Farm-to-Consumer Sales" },
@@ -1570,7 +1570,7 @@ export const allIndustries: IndustryDetail[] = [
       { value: "100%", label: "Your Farm, Your Brand" },
     ],
     overview:
-      "We build straightforward websites and digital marketing tools for agricultural businesses. Whether you sell produce directly to local families, take wholesale orders, or want to build a memorable farm brand, we make digital growth simple.",
+      "We build high-reliability network infrastructure and IoT telemetry backbones for agricultural enterprises. From smart irrigation sensor data to packhouse broadband, we keep modern agribusinesses connected.",
     theChallenge:
       "Many farms and growers rely on outdated websites or expensive middlemen, making it hard for customers to find what is in season, order produce, or submit wholesale inquiries.",
     ourSolution:

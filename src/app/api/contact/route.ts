@@ -17,14 +17,15 @@ export async function POST(req: Request) {
       source = "Website Contact Form",
     } = body;
 
-    // 1. Basic validation: name, email, and phone are essential
-    if (!name || !email || !phone) {
+    // 1. Basic validation: name and email are essential
+    if (!name || !email) {
       return NextResponse.json(
-        { error: "Please provide your name, email, and phone number." },
+        { error: "Please provide your name and email address." },
         { status: 400 }
       );
     }
 
+    const effectivePhone = phone?.trim() || "Not provided";
     const effectiveCompanyName = companyName?.trim() || "Individual / Direct Inquiry";
     const effectiveService = service?.trim() || "Growth & Marketing Strategy";
     const effectiveBudget = budget?.trim() || "Not specified";
@@ -56,8 +57,8 @@ export async function POST(req: Request) {
       console.error("[Contact API] Failed to save lead to database:", dbErr);
     }
 
-    const destinationEmail = process.env.EMAIL_TO || "owlioworks@gmail.com";
-    const senderUser = process.env.EMAIL_USER || "owlioworks@gmail.com";
+    const destinationEmail = process.env.EMAIL_TO || "info@adapt-india.net";
+    const senderUser = process.env.EMAIL_USER || "info@adapt-india.net";
     const senderPass = process.env.EMAIL_PASS;
 
     // Clean phone number for WhatsApp link (strip spaces, dashes, plus)
@@ -240,7 +241,7 @@ ${effectiveRequirement}
 
     // 3. Dispatch Email via Nodemailer if credentials exist
     const cleanPass = senderPass ? senderPass.replace(/[\s"']/g, "").trim() : "";
-    const cleanUser = senderUser ? senderUser.trim() : "owlioworks@gmail.com";
+    const cleanUser = senderUser ? senderUser.trim() : "info@adapt-india.net";
 
     if (cleanPass) {
       const transporter = nodemailer.createTransport({
@@ -252,7 +253,7 @@ ${effectiveRequirement}
       });
 
       await transporter.sendMail({
-        from: `"Owlio Works Website" <${cleanUser}>`,
+        from: `"Adapt India Network" <${cleanUser}>`,
         to: destinationEmail,
         replyTo: `"${name}" <${email}>`,
         subject: `🔥 New Lead: ${name} (${effectiveCompanyName}) - ${effectiveService}`,
@@ -281,7 +282,7 @@ ${effectiveRequirement}
       {
         error:
           error?.message ||
-          "Failed to process your request. Please try again or reach out directly at owlioworks@gmail.com",
+          "Failed to process your request. Please try again or reach out directly at info@adapt-india.net",
       },
       { status: 500 }
     );

@@ -67,22 +67,24 @@ export default function CookiePreferencesPage() {
         <Navbar />
 
         <main className="flex-1 w-full">
-          {/* 1. HERO BANNER (Compact Standard Layout) */}
-          <section className="relative w-full text-white pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-            {/* Real Photography Background */}
+          {/* 1. HERO BANNER (Full-Bleed Photographic Background - Sleek Compact Ribbon) */}
+          <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
+            
+            {/* Full Background Image with Directional Dark Gradient */}
             <div className="absolute inset-0 z-0">
               <img
                 src="/banner-cookies.jpg"
-                alt="Owlio Works Web Technology and Privacy Controls"
-                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.75] contrast-[1.05]"
+                alt="Cookie Controls and Web Privacy"
+                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30 z-10"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/40 z-10"></div>
+              {/* Directional gradient to keep photo vibrant on right while text is super legible on left */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/45 z-10"></div>
             </div>
 
-            <div className="relative z-20 max-w-7xl mx-auto w-full">
-              {/* Back to Home & Top Tag */}
-              <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/20 mb-6 sm:mb-8">
+            {/* Top Row: Back to Home + Global Divider Line */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">
+              <div className="flex items-center justify-between gap-4 pb-2.5 sm:pb-3 border-b border-white/20">
                 <Link
                   href="/"
                   className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
@@ -91,22 +93,51 @@ export default function CookiePreferencesPage() {
                   <span>BACK TO HOME</span>
                 </Link>
 
-                <span className="px-3.5 py-0.5 rounded-full bg-black/60 border border-zinc-700/80 text-[#fbea3d] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                  // PRIVACY
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-0.5 rounded-full bg-black/60 border border-sky-500/40 text-[#38bdf8] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
+                    // PRIVACY
+                  </span>
+                </div>
               </div>
+            </div>
 
-              {/* Title & Tagline */}
-              <div className="flex flex-col items-start text-left max-w-3xl">
-                <span className="font-mono text-xs font-extrabold tracking-widest text-[#fbea3d] uppercase mb-2 block">
-                  // CONSENT CONTROLS
-                </span>
-                <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white font-display tracking-tight uppercase leading-none mb-2.5 drop-shadow-md">
-                  COOKIE PREFERENCES
-                </h1>
-                <p className="text-zinc-300 text-xs sm:text-sm font-normal max-w-2xl leading-relaxed drop-shadow-sm">
-                  Manage how cookies and tracking technologies are used during your browsing experience.
-                </p>
+            {/* Center Content: Title, Description & Scroll Down */}
+            <div className="relative z-20 max-w-7xl mx-auto w-full">
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+                
+                <div className="flex flex-col items-start text-left max-w-3xl">
+                  {/* Category Tagline */}
+                  <span className="font-mono text-xs font-extrabold tracking-widest text-[#38bdf8] uppercase mb-1.5 block">
+                    // CONSENT CONTROLS
+                  </span>
+
+                  {/* Display Title */}
+                  <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black text-white font-display tracking-tight uppercase leading-[1.1] mb-2 drop-shadow-md">
+                    COOKIE PREFERENCES
+                  </h1>
+
+                  <p className="text-zinc-200 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-3">
+                    Manage telemetry cookies, session preferences, and network analytics deployed across the Adapt India Networks enterprise portal.
+                  </p>
+
+                  <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400">
+                    <span>Privacy First</span>
+                    <span>•</span>
+                    <span>Zero Third-Party Advertising Trackers</span>
+                  </div>
+                </div>
+
+                {/* Right Side: Scroll Down Indicator */}
+                <div className="hidden lg:flex items-center gap-3 text-zinc-300 font-mono text-xs font-bold uppercase tracking-wider select-none shrink-0 self-end">
+                  <span>SCROLL DOWN</span>
+                  <a
+                    href="#cookie-settings"
+                    className="w-9 h-9 rounded-full border border-white/30 bg-black/40 flex items-center justify-center text-[#38bdf8] hover:bg-black/70 hover:border-white transition-all animate-bounce"
+                  >
+                    ↓
+                  </a>
+                </div>
+
               </div>
             </div>
           </section>
