@@ -30,6 +30,17 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Download listed images into public/
+        run: |
+          if [ -f .github/fetch-assets.txt ]; then
+            grep -vE '^\s*(#|$)' .github/fetch-assets.txt | while read -r path url; do
+              if [ ! -f "public/$path" ]; then
+                echo "Downloading $path"
+                curl -fsSL --retry 3 -o "public/$path" "$url"
+              fi
+            done
+          fi
+
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 

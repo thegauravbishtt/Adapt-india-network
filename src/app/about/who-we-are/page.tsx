@@ -164,8 +164,8 @@ export default function WhoWeArePage() {
               <div className="lg:col-span-6">
                 <div className="relative rounded-3xl overflow-hidden border border-zinc-200/90 shadow-md">
                   <img
-                    src="/banner-servers-lights.jpg"
-                    alt="Fibre-connected server racks monitored by the Adapt India Network 24/7 operations centre"
+                    src="/noc-monitoring.jpg"
+                    alt="Live network monitoring dashboard at the Adapt India Network 24/7 operations centre"
                     className="w-full h-80 sm:h-96 object-cover object-center"
                   />
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 text-white text-left">
