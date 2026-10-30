@@ -1,0 +1,154 @@
+1:"$Sreact.fragment"
+3:I[83773,["/_next/static/chunks/1lq27pqcbddfc.js"],"LanguageProvider"]
+4:I[3800,["/_next/static/chunks/1lq27pqcbddfc.js"],"default"]
+5:I[39756,["/_next/static/chunks/1lq27pqcbddfc.js"],"default"]
+6:I[37457,["/_next/static/chunks/1lq27pqcbddfc.js"],"default"]
+e:I[68027,["/_next/static/chunks/1lq27pqcbddfc.js"],"default",1]
+:HL["/_next/static/chunks/2jv8jpm08hgjc.css","style"]
+:HL["/_next/static/chunks/03faq9_fcjoa7.css","style"]
+:HL["/_next/static/media/8d05cfa5faa8406c.p.1s123piy9_v1m.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/a343f882a40d2cc9-s.p.0p-wng2nn8o-p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/dc0d9adbac686440.p.3cik_s2si-ft-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap","style"]
+2:T6ab,{"@context":"https://schema.org","@type":["Organization","LocalBusiness"],"@id":"https://www.adapt-india.net/#organization","name":"Adapt India Network","legalName":"Adapt India Network","url":"https://www.adapt-india.net/","logo":"https://www.adapt-india.net/logo-nobg.png","image":"https://www.adapt-india.net/banner-global-telecom.jpg","description":"Enterprise Internet Leased Line (ILL), SD-WAN, MPLS VPN, enterprise broadband, managed Wi-Fi, SIP trunk and cloud telephony provider in Delhi NCR, serving businesses across India.","telephone":"+91-8287479961","email":"info@adapt-india.net","address":{"@type":"PostalAddress","streetAddress":"Saket District Centre, Saket","addressLocality":"New Delhi","addressRegion":"Delhi","postalCode":"110062","addressCountry":"IN"},"areaServed":[{"@type":"Country","name":"India"},{"@type":"Place","name":"Delhi"},{"@type":"Place","name":"New Delhi"},{"@type":"Place","name":"Delhi NCR"},{"@type":"Place","name":"Gurugram"},{"@type":"Place","name":"Noida"},{"@type":"Place","name":"Greater Noida"},{"@type":"Place","name":"Ghaziabad"},{"@type":"Place","name":"Faridabad"},{"@type":"Place","name":"Lucknow"},{"@type":"Place","name":"Uttar Pradesh"},{"@type":"Place","name":"Haryana"}],"contactPoint":[{"@type":"ContactPoint","telephone":"+91-8287479961","email":"info@adapt-india.net","contactType":"sales","areaServed":"IN","availableLanguage":["English","Hindi"]},{"@type":"ContactPoint","email":"support@adapt-india.net","contactType":"technical support","areaServed":"IN","availableLanguage":["English","Hindi"]}],"knowsAbout":["Internet Leased Line","SD-WAN","MPLS VPN","Enterprise Broadband","Managed Wi-Fi","SIP Trunk","Cloud Telephony","Network Security"]}c:X
+0:{"P":null,"c":["","blog","why-dedicated-internet-leased-lines-matter",""],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","why-dedicated-internet-leased-lines-matter","d",[]],{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2jv8jpm08hgjc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/03faq9_fcjoa7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/1lq27pqcbddfc.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en-IN","className":"manrope_f0c0139d-module__VsWhoa__variable space_mono_f2e8ca11-module__K3YrUa__variable antialiased","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap","rel":"stylesheet"}],[["$","script","0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","script","1",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://www.adapt-india.net/#website\",\"url\":\"https://www.adapt-india.net/\",\"name\":\"Adapt India Network\",\"inLanguage\":\"en-IN\",\"publisher\":{\"@id\":\"https://www.adapt-india.net/#organization\"}}"}}]]]}],["$","body",null,{"className":"min-h-screen bg-transparent text-black font-sans flex flex-col","children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],"$L7"],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],"$L8"]}]}]]}]]}],{"children":["$L9",{"children":["$La",{"children":["$Lb",{},null,false,null]},null,false,"$c"]},null,false,null]},null,false,null],"$Ld",false]],"m":"$undefined","G":["$e",["$Lf","$L10"]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"YQxs_0N52UrEfXqYF9DRT"}
+11:I[28804,["/_next/static/chunks/1lq27pqcbddfc.js"],"default"]
+13:I[97367,["/_next/static/chunks/1lq27pqcbddfc.js"],"OutletBoundary"]
+14:"$Sreact.suspense"
+16:I[97367,["/_next/static/chunks/1lq27pqcbddfc.js"],"ViewportBoundary"]
+18:I[97367,["/_next/static/chunks/1lq27pqcbddfc.js"],"MetadataBoundary"]
+7:["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]
+8:["$","$L11",null,{}]
+9:["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+a:["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+b:["$","$1","c",{"children":["$L12",[["$","script","script-0",{"src":"/_next/static/chunks/3dro_rm-2zbni.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/1dxpipfq-wvqx.js","async":true,"nonce":"$undefined"}]],["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]]}]
+d:["$","$1","h",{"children":[null,["$","$L16",null,{"children":"$L17"}],["$","div",null,{"hidden":true,"children":["$","$L18",null,{"children":["$","$14",null,{"name":"Next.Metadata","children":"$L19"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2jv8jpm08hgjc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+10:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/03faq9_fcjoa7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+1a:I[73781,["/_next/static/chunks/1lq27pqcbddfc.js","/_next/static/chunks/3dro_rm-2zbni.js","/_next/static/chunks/1dxpipfq-wvqx.js"],"default"]
+c:C
+1b:Tc75,Most offices in India start on broadband. It is cheap, quick to install and fine for a few people browsing and sending email. As a business grows, video calls freeze, cloud software slows down in the evening, and uploads take far longer than downloads. That is usually the point where an Internet Leased Line (ILL) is worth a serious look.
+
+What is an Internet Leased Line
+
+An Internet Leased Line is a dedicated internet connection reserved for one customer. The bandwidth you buy is not shared with other subscribers in your building or area, and upload speed is the same as download speed. It is delivered over fibre, comes with static public IP addresses, and is backed by a Service Level Agreement (SLA) that commits the provider to uptime and repair targets.
+
+How broadband is different
+
+Business broadband is a shared service. Many customers use the same network capacity, so speeds drop when everyone is online at once. Broadband plans are usually asymmetric, meaning upload is much slower than download. Static IPs may cost extra or be unavailable, and support is typically best effort rather than bound by an SLA.
+
+Why symmetrical bandwidth matters
+
+Modern offices send almost as much data as they receive. Video meetings, cloud backups, CCTV streams to the cloud, uploading files to Google Drive or SharePoint, and VoIP calls all depend on upload speed. On a leased line a 100 Mbps connection means 100 Mbps both ways, so these tasks stop competing with each other.
+
+Static IPs, SLAs and support
+
+Static IP addresses let you host servers, run site-to-site VPNs, access CCTV recorders remotely and whitelist your office with banks, ERP vendors and government portals. The SLA gives you a written commitment on availability and on how quickly faults are fixed, which matters when downtime stops billing, dispatch or customer support. Leased lines are also monitored by the provider's network operations centre, so many problems are spotted before you notice them.
+
+When a business should move to a leased line
+
+Consider a leased line if your team has more than about 15 to 20 people working online, if you rely on cloud ERP, CRM or accounting software, if you run VoIP or a call centre, if you upload large files or CCTV footage, or if any downtime costs you sales. Offices that need guaranteed performance for clients, such as IT services firms, labs and financial businesses, usually need one regardless of size.
+
+How to make a leased line resilient
+
+A single connection can still fail if the fibre is cut. For critical sites, the best practice is a second link from a different carrier, ideally entering the building through a separate path, with automatic failover on your router, firewall or SD-WAN device. Some businesses use broadband or 4G/5G as a lower-cost backup.
+
+How Adapt India Network can help
+
+We arrange Internet Leased Lines for offices across Delhi, Gurgaon, Noida, Ghaziabad, Faridabad and the rest of India on the enterprise networks of Tata Tele Business Services and ACT Fibernet. We check which carriers already reach your building, recommend the right bandwidth, and coordinate installation and support. Contact us for a feasibility check at your address.1c:Tc29,Companies with offices, plants, stores or warehouses in several cities need a wide area network (WAN) to connect them. For years the default in India was MPLS. Today many businesses are moving to SD-WAN, or combining the two. Here is how to decide what fits your network.
+
+What MPLS is
+
+MPLS (Multiprotocol Label Switching) is a private network run by a telecom carrier. Your branches connect to the carrier's MPLS cloud and traffic between them never touches the public internet. It offers predictable latency, built-in quality of service for voice and critical applications, and a single carrier responsible for the whole network.
+
+What SD-WAN is
+
+SD-WAN (Software-Defined WAN) builds an encrypted overlay network on top of any internet connection: leased lines, broadband or 4G/5G. A central controller decides which link each application should use, combines multiple links, and moves traffic automatically when a link degrades. New branches can be brought online quickly because devices are configured from the cloud.
+
+Cost
+
+MPLS circuits generally cost more per Mbps than internet links, especially for small branches. SD-WAN lets you use lower-cost internet connections and still get resilience by combining two of them. The saving grows as the number of branches increases.
+
+Performance and reliability
+
+MPLS gives consistent performance between sites because traffic stays on one carrier's private backbone. SD-WAN performance depends on the quality of the underlying links, but it compensates by monitoring every path in real time and steering voice, video and ERP traffic to the best one. With a leased line plus a broadband or 4G/5G backup at each branch, SD-WAN can match or exceed single-link MPLS availability.
+
+Cloud and SaaS access
+
+Most applications now live in Microsoft 365, Google Workspace, AWS, Azure or SaaS tools. With traditional MPLS, branch internet traffic is often sent back to the head office first, which adds delay. SD-WAN can send trusted cloud traffic straight to the internet from each branch while keeping internal traffic on secure tunnels.
+
+Security
+
+MPLS is private but not encrypted by default. SD-WAN encrypts traffic between sites and usually integrates firewalling, and can be extended to a SASE model where security policies apply to every branch and remote user from the cloud.
+
+When MPLS still makes sense
+
+MPLS remains a good fit for banks, payment networks and businesses with strict compliance needs, latency-sensitive applications between data centres, or a policy of keeping all inter-site traffic off the internet.
+
+The hybrid approach
+
+Many Indian enterprises run a hybrid: MPLS at data centres and large sites, and SD-WAN with internet links at smaller branches, all managed as one network. This lets you migrate gradually without a risky cut-over.
+
+How Adapt India Network can help
+
+We design and deliver SD-WAN, MPLS and hybrid WANs for businesses headquartered in Delhi NCR with branches across India. We assess your current network and applications, recommend a design, and coordinate links and devices at every site. Get in touch to plan your migration.1d:T8f4,Business phone systems in India have changed quickly. PRI lines and boxes of PBX hardware in the server room are being replaced by SIP trunks and cloud telephony that run over your data network. Here is what each option does and how to choose.
+
+What a SIP trunk is
+
+A SIP trunk delivers phone lines to your business over an internet or private data connection instead of copper or PRI circuits. Your existing IP PBX connects to the SIP trunk, and you can scale the number of simultaneous calls up or down without new physical lines. Your existing numbers can usually be retained.
+
+What cloud telephony is
+
+Cloud telephony moves the phone system itself to the cloud. Call routing, IVR menus, call recording, queues and reporting are managed from a web dashboard, and employees can take calls on desk phones, a softphone app on their laptop, or a mobile app. There is no PBX hardware to maintain.
+
+Benefits for growing businesses
+
+Cloud telephony and SIP trunking make it easy to add users and channels as you grow, connect staff in different offices and at home on one system, and integrate calling with your CRM so agents see customer details when the phone rings. Toll-free numbers, virtual numbers, call recording and analytics are available without extra hardware.
+
+What to check before switching
+
+Voice quality depends on your network. A dedicated leased line or a well-managed SD-WAN with quality-of-service rules gives the best results, because calls need low latency and little jitter. Confirm compliance with Indian telecom regulations for your use case, check number porting timelines, plan for emergency calling, and make sure call recordings are stored in line with your data policies.
+
+Contact centres and customer engagement
+
+For sales and support teams, cloud contact centre platforms add features such as automatic call distribution, outbound dialling, live dashboards and WhatsApp Business messaging alongside voice, all managed from one place.
+
+How Adapt India Network can help
+
+We provide SIP trunks, cloud telephony, toll-free and virtual numbers, and cloud contact centre solutions, together with the leased line or SD-WAN connectivity they run on. That gives you one partner for both the network and the voice service. Contact us to plan your move from PRI or legacy PBX.1e:T975,Every branch, store and warehouse you connect is another way into your network. Smaller sites often have the weakest protection: a basic router, a shared Wi-Fi password and no one on site to notice problems. Here is how to secure a distributed network without making it hard to run.
+
+Put a proper firewall at every site
+
+Each location should have a business-grade firewall or a secure SD-WAN device with firewall features, not just the router supplied with the internet connection. Manage them centrally so that the same rules apply everywhere and updates are not forgotten.
+
+Separate your networks
+
+Keep point-of-sale systems, CCTV, guest Wi-Fi, staff devices and servers on separate network segments. If a guest device or camera is compromised, segmentation stops the attacker from reaching billing or finance systems.
+
+Encrypt traffic between sites
+
+Traffic between branches and the head office should travel over encrypted tunnels, whether through SD-WAN, site-to-site VPNs or a private MPLS network. Avoid exposing internal applications directly to the internet.
+
+Secure remote access
+
+Replace open remote desktop ports with VPN or zero-trust network access, use multi-factor authentication for every remote login, and give each person access only to the applications they need.
+
+Protect against DDoS and web threats
+
+Businesses that host services or accept online payments should consider DDoS protection on their internet links. Web filtering and DNS security block many phishing and malware sites before users reach them.
+
+Monitor and log
+
+Security is not set-and-forget. Collect firewall and system logs, alert on unusual activity, and review them regularly, or use a managed security operations centre (SOC) if you do not have an in-house team. Indian organisations also need to be ready to report certain cyber incidents to CERT-In within prescribed timelines, which is much easier with good logging.
+
+Keep people in the loop
+
+Most attacks start with a phishing email or a reused password. Regular awareness training, password managers and multi-factor authentication close many of the easiest routes in.
+
+How Adapt India Network can help
+
+We provide next-generation firewalls, secure SD-WAN, DDoS protection and managed monitoring alongside the connectivity for each of your sites, so security policies are consistent across Delhi NCR and every branch in India. Speak to us for a review of your current setup.12:[[["$","script","0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters\",\"description\":\"What an Internet Leased Line actually is, how it differs from business broadband, and how Indian businesses can decide which one they need.\",\"mainEntityOfPage\":\"https://www.adapt-india.net/blog/why-dedicated-internet-leased-lines-matter/\",\"image\":\"https://www.adapt-india.net/banner-datacenter-racks.jpg\",\"datePublished\":\"2026-02-18T12:00:00.000Z\",\"dateModified\":\"2026-02-18T12:00:00.000Z\",\"inLanguage\":\"en-IN\",\"author\":{\"@type\":\"Organization\",\"name\":\"Adapt India Network\"},\"publisher\":{\"@id\":\"https://www.adapt-india.net/#organization\"}}"}}],["$","script","1",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.adapt-india.net/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://www.adapt-india.net/blog/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters\",\"item\":\"https://www.adapt-india.net/blog/why-dedicated-internet-leased-lines-matter/\"}]}"}}],["$","script","2",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is a leased line faster than broadband?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A leased line gives you the full bandwidth you pay for in both directions at all times. Broadband headline speeds can be high, but they are shared and upload is usually much slower, so real-world performance for business use is often lower.\"}},{\"@type\":\"Question\",\"name\":\"Does a leased line include static IP addresses?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Internet Leased Lines are normally supplied with a block of static public IP addresses.\"}},{\"@type\":\"Question\",\"name\":\"Can I use broadband as a backup for my leased line?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Many businesses pair a leased line with broadband or 4G/5G as a backup, with automatic failover on the router or SD-WAN device.\"}}]}"}}]],["$","$L1a",null,{"blog":{"id":"article-2","slug":"why-dedicated-internet-leased-lines-matter","title":"Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters","category":"Network Reliability","readTime":"6 min read","image":"/banner-datacenter-racks.jpg","excerpt":"What an Internet Leased Line actually is, how it differs from business broadband, and how Indian businesses can decide which one they need.","tags":[{"text":"CONNECTIVITY","variant":"outline"},{"text":"ILL","variant":"dark"}],"status":"published","publishedAt":"2026-02-18T12:00:00.000Z","author":"Adapt India Network","content":"$1b","faqs":[{"question":"Is a leased line faster than broadband?","answer":"A leased line gives you the full bandwidth you pay for in both directions at all times. Broadband headline speeds can be high, but they are shared and upload is usually much slower, so real-world performance for business use is often lower."},{"question":"Does a leased line include static IP addresses?","answer":"Yes. Internet Leased Lines are normally supplied with a block of static public IP addresses."},{"question":"Can I use broadband as a backup for my leased line?","answer":"Yes. Many businesses pair a leased line with broadband or 4G/5G as a backup, with automatic failover on the router or SD-WAN device."}]},"relatedBlogs":[{"id":"article-1","slug":"sd-wan-vs-traditional-mpls-enterprise-guide","title":"SD-WAN vs MPLS: How Indian Businesses Should Choose a WAN in 2026","category":"SD-WAN","readTime":"6 min read","image":"/services/sdwan_clean.jpg","excerpt":"A practical comparison of SD-WAN and MPLS for companies with branches across India: cost, performance, security and when to use both.","tags":[{"text":"NETWORKING","variant":"dark"},{"text":"SD-WAN","variant":"yellow"}],"status":"published","publishedAt":"2026-02-15T10:00:00.000Z","author":"Adapt India Network","content":"$1c","faqs":[{"question":"Is SD-WAN cheaper than MPLS?","answer":"Usually, yes. SD-WAN can run over lower-cost internet links, and combining two links per site gives resilience without paying MPLS prices for every branch."},{"question":"Can SD-WAN replace MPLS completely?","answer":"For many businesses it can. Organisations with strict compliance or very latency-sensitive inter-site traffic often keep MPLS for core sites and use SD-WAN elsewhere."},{"question":"Is SD-WAN secure?","answer":"SD-WAN encrypts traffic between sites and typically includes firewall features. It can be combined with cloud security services for a full SASE setup."}]},{"id":"article-5","slug":"cloud-telephony-sip-trunking-modern-workforce","title":"Cloud Telephony & SIP Trunking: A Guide for Indian Businesses","category":"Enterprise Systems","readTime":"5 min read","image":"/services/enterprise_partnership.jpg","excerpt":"How SIP trunks and cloud telephony replace PRI lines and on-premise PBX hardware, and what Indian businesses should check before switching.","tags":[{"text":"TELEPHONY","variant":"outline"},{"text":"SIP TRUNK","variant":"dark"}],"status":"published","publishedAt":"2026-03-01T11:00:00.000Z","author":"Adapt India Network","content":"$1d","faqs":[{"question":"Can I keep my existing business numbers when moving to SIP?","answer":"In most cases, yes. Number porting depends on the current provider and number type, and we can check this for you."},{"question":"Do I need a leased line for cloud telephony?","answer":"Not always, but a dedicated, stable connection gives the best call quality, especially for call centres or offices with many simultaneous calls."}]},{"id":"article-3","slug":"securing-multi-branch-enterprise-networks","title":"How to Secure a Multi-Branch Business Network in India","category":"Cyber Defense","readTime":"6 min read","image":"/services/cybersecurity.jpg","excerpt":"A practical security checklist for businesses with offices, stores or plants in several cities: firewalls, segmentation, secure remote access and monitoring.","tags":[{"text":"SECURITY","variant":"yellow"},{"text":"CYBER","variant":"outline"}],"status":"published","publishedAt":"2026-02-22T08:30:00.000Z","author":"Adapt India Network","content":"$1e","faqs":[{"question":"Is the router from my internet provider enough for a branch office?","answer":"Usually not. A business-grade firewall or secure SD-WAN device adds traffic inspection, segmentation, VPN and central management that basic routers lack."},{"question":"What is network segmentation?","answer":"Dividing your network into separate zones, such as staff, guests, CCTV and payment systems, so a problem in one zone cannot spread to the others."}]}]}]]
+17:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1f:I[27201,["/_next/static/chunks/1lq27pqcbddfc.js"],"IconMark"]
+15:null
+19:[["$","title","0",{"children":"Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters | Adapt India Network"}],["$","meta","1",{"name":"description","content":"What an Internet Leased Line actually is, how it differs from business broadband, and how Indian businesses can decide which one they need."}],["$","meta","2",{"name":"application-name","content":"Adapt India Network"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"name":"geo.region","content":"IN-DL"}],["$","meta","5",{"name":"geo.placename","content":"New Delhi"}],["$","link","6",{"rel":"canonical","href":"https://www.adapt-india.net/blog/why-dedicated-internet-leased-lines-matter/"}],["$","link","7",{"rel":"alternate","hrefLang":"en-IN","href":"https://www.adapt-india.net/blog/why-dedicated-internet-leased-lines-matter/"}],["$","link","8",{"rel":"alternate","hrefLang":"x-default","href":"https://www.adapt-india.net/blog/why-dedicated-internet-leased-lines-matter/"}],["$","meta","9",{"name":"google-site-verification","content":"Eit2xn2_l8ZQiNMgsLU8ICkdJM_7IgHvAHyl4tw08y0"}],["$","meta","10",{"property":"og:title","content":"Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters | Adapt India Network"}],["$","meta","11",{"property":"og:description","content":"What an Internet Leased Line actually is, how it differs from business broadband, and how Indian businesses can decide which one they need."}],["$","meta","12",{"property":"og:url","content":"https://www.adapt-india.net/blog/why-dedicated-internet-leased-lines-matter/"}],["$","meta","13",{"property":"og:site_name","content":"Adapt India Network"}],["$","meta","14",{"property":"og:locale","content":"en_IN"}],["$","meta","15",{"property":"og:image","content":"https://www.adapt-india.net/banner-datacenter-racks.jpg"}],["$","meta","16",{"property":"og:image:alt","content":"Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters | Adapt India Network"}],["$","meta","17",{"property":"og:type","content":"article"}],["$","meta","18",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","19",{"name":"twitter:title","content":"Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters | Adapt India Network"}],["$","meta","20",{"name":"twitter:description","content":"What an Internet Leased Line actually is, how it differs from business broadband, and how Indian businesses can decide which one they need."}],["$","meta","21",{"name":"twitter:image","content":"https://www.adapt-india.net/banner-datacenter-racks.jpg"}],["$","link","22",{"rel":"shortcut icon","href":"/icon.png"}],["$","link","23",{"rel":"icon","href":"/favicon.ico?favicon.1hs6po81qnkik.ico","sizes":"64x64","type":"image/x-icon"}],["$","link","24",{"rel":"icon","href":"/icon.png","type":"image/png"}],["$","link","25",{"rel":"icon","href":"/favicon.ico"}],["$","link","26",{"rel":"apple-touch-icon","href":"/apple-icon.png"}],["$","$L1f","27",{}]]
