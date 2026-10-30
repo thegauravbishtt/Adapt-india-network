@@ -29,7 +29,7 @@ service-banners/smartflo-email-platform.jpg https://images.unsplash.com/photo-16
 service-banners/ill-burstable-bandwidth.jpg https://images.unsplash.com/photo-1687038520693-e528c10e450a?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/sd-wan-ready-ill.jpg https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/secured-leased-line.jpg https://images.unsplash.com/photo-1614064548237-096f735f344f?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
-service-banners/standard-carrier-ill.jpg https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
+service-banners/standard-carrier-ill.jpg https://images.unsplash.com/photo-1578016980868-197203ff4b02?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/smart-ddos-protection.jpg https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/sd-wan-iflx-edge-gateway.jpg https://images.unsplash.com/photo-1531668383211-64743e924c66?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/ez-cloud-connect.jpg https://images.unsplash.com/photo-1667984390538-3dea7a3fe33d?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
