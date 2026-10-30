@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import NewsletterSection from "../../components/NewsletterSection";
 import Footer from "../../components/Footer";
 import { LanguageProvider } from "../../context/LanguageContext";
+import UpgradeCTA from "@/components/UpgradeCTA";
 import Link from "next/link";
 import { CheckCircle2, ShieldCheck, Zap, Activity, Radio, Server } from "lucide-react";
 
@@ -247,33 +248,10 @@ export default function AboutMainPage() {
           </section>
 
           {/* 4. CALL TO ACTION RIBBON */}
-          <section className="w-full bg-zinc-950 text-white py-16 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20">
-            <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-6">
-              <span className="font-mono text-xs font-extrabold tracking-widest text-[#E31E24] uppercase">
-                // ENTERPRISE CONNECTIVITY FEASIBILITY
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white leading-tight uppercase">
-                READY TO UPGRADE YOUR ENTERPRISE NETWORK?
-              </h2>
-              <p className="text-zinc-300 text-sm sm:text-base max-w-xl">
-                Request a fiber route feasibility survey and receive custom bandwidth SLA pricing within 2 hours.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-                <Link
-                  href="/contact"
-                  className="bg-[#E31E24] hover:bg-[#c9171d] text-white px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg hover:scale-105"
-                >
-                  Request Feasibility Survey →
-                </Link>
-                <Link
-                  href="/services"
-                  className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-sm"
-                >
-                  Explore All Solutions →
-                </Link>
-              </div>
-            </div>
-          </section>
+          <UpgradeCTA
+            title="Let's plan your network together"
+            text="Share your sites and requirements. We'll come back with carrier options, timelines and pricing for each location."
+          />
 
         </main>
 

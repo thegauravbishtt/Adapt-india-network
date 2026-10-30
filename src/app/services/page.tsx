@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import React from "react";
 import Navbar from "../../components/Navbar";
 import NewsletterSection from "../../components/NewsletterSection";
@@ -411,6 +412,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Global Newsletter & Footer */}
+        <UpgradeCTA title="Not sure which service fits?" text="Tell us how many sites you have and what you run on the network. We'll suggest the right setup, not the most expensive one." />
         <NewsletterSection />
         <Footer />
       </div>

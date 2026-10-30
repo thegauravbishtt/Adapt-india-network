@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -202,6 +203,7 @@ export default function PrivacyPolicyPage() {
           </section>
         </main>
 
+        <UpgradeCTA />
         <Footer />
       </div>
     </LanguageProvider>

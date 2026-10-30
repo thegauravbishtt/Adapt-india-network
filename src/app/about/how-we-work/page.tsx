@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState } from "react";
 import Navbar from "../../../components/Navbar";
 import NewsletterSection from "../../../components/NewsletterSection";
@@ -323,6 +324,7 @@ export default function HowWeWorkPage() {
         </main>
 
         {/* Strategy Call / Newsletter Section */}
+        <UpgradeCTA title="See how we'd deliver your connection" text="From site survey to go-live, one team handles the carrier, installation and testing for every location." />
         <NewsletterSection />
 
         {/* FOOTER */}

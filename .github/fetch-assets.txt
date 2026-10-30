@@ -1,4 +1,7 @@
 # Images downloaded into public/ during the GitHub build (only if not already present).
 # Format: <path inside public/> <url>
-# noc-monitoring.jpg: Unsplash License (free for commercial use), https://unsplash.com/photos/turned-on-monitoring-screen-qwtCeJ5cLYs
-noc-monitoring.jpg https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=1600&q=80&fm=jpg&fit=crop
+# All from Unsplash under the Unsplash License (free for commercial use, no attribution required).
+# https://unsplash.com/photos/server-rack-filled-with-network-and-electronic-equipment-UpkcO_xS5k0
+about-network-rack.jpg https://images.unsplash.com/photo-1785682231847-93265d8e633d?w=1600&q=80&fm=jpg&fit=crop
+# https://unsplash.com/photos/a-rack-of-electronic-components-with-labels-HrWyLvKOSr4
+about-network-rack-2.jpg https://images.unsplash.com/photo-1742729251236-eab20c52da81?w=1600&q=80&fm=jpg&fit=crop

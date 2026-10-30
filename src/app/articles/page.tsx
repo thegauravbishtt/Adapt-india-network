@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -178,6 +179,7 @@ export default function ArticlesPage() {
           </div>
         </main>
 
+        <UpgradeCTA title="Want advice for your own network?" text="Share your setup and we'll suggest practical improvements, from backup links to SD-WAN." />
         <NewsletterSection />
         <Footer />
       </div>

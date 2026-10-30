@@ -1,5 +1,8 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
+import ServiceGuideSection from "@/components/ServiceGuideSection";
+import { serviceGuides } from "@/data/serviceGuides";
 import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../../../components/Navbar";
@@ -275,6 +278,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             </div>
           </div>
         </section>
+
+        {/* 2b. PLAIN-LANGUAGE GUIDE (different layout per service) */}
+        {serviceGuides[service.slug] && (
+          <ServiceGuideSection guide={serviceGuides[service.slug]} serviceName={service.name} />
+        )}
 
         {/* 3. BESPOKE PAGE CONTENT: Tailored Distinctive Design per Service */}
         
@@ -911,6 +919,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             </div>
           </section>
         )}
+
+        <UpgradeCTA
+          title={`Get ${service.name} for your business`}
+          text="Share your locations and requirements. We'll check feasibility at each address and send a clear proposal."
+        />
 
         {/* Global Strategy Call & Feasibility Section (RetailMark Offset Card in Brand Logo Red) */}
         <NewsletterSection

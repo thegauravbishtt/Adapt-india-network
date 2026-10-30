@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import JsonLd from "../../../components/JsonLd";
+import UpgradeCTA from "../../../components/UpgradeCTA";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import { cityPages, getCityBySlug, cityServiceLinks } from "../../../data/locationsData";
 import {
@@ -261,24 +262,16 @@ export default async function CityLandingPage({ params }: CityPageProps) {
                   </li>
                 </ul>
               </div>
-              <div className="max-w-md">
-                <h2 className="text-lg sm:text-xl font-black font-display text-zinc-950 mb-2">
-                  Get a quote for your {page.city} office
-                </h2>
-                <p className="text-sm text-zinc-700 mb-4">
-                  Share your address and bandwidth needs. We will check which carriers reach your building and send options.
-                </p>
-                <Link
-                  href="/contact/"
-                  className="inline-block px-6 py-2.5 bg-[#E31E24] hover:bg-[#c9171d] text-white text-sm font-bold uppercase tracking-wider rounded-md"
-                >
-                  Request a quote
-                </Link>
-              </div>
             </div>
           </section>
         </main>
 
+        <UpgradeCTA
+          title={`Get a quote for your ${page.city} office`}
+          text="Share your address and bandwidth needs. We'll check which carriers reach your building and send options."
+          secondaryLabel="Call +91 82874 79961"
+          secondaryHref="tel:+918287479961"
+        />
         <Footer />
       </div>
     </LanguageProvider>

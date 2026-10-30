@@ -5,6 +5,7 @@ import Navbar from "../../../components/Navbar";
 import NewsletterSection from "../../../components/NewsletterSection";
 import Footer from "../../../components/Footer";
 import { LanguageProvider } from "../../../context/LanguageContext";
+import UpgradeCTA from "@/components/UpgradeCTA";
 import Link from "next/link";
 import { ChevronDown, CheckCircle2, ShieldCheck, Activity, Network, Award } from "lucide-react";
 
@@ -164,8 +165,8 @@ export default function WhoWeArePage() {
               <div className="lg:col-span-6">
                 <div className="relative rounded-3xl overflow-hidden border border-zinc-200/90 shadow-md">
                   <img
-                    src="/noc-monitoring.jpg"
-                    alt="Live network monitoring dashboard at the Adapt India Network 24/7 operations centre"
+                    src="/about-network-rack.jpg"
+                    alt="Network rack with switches and patch cabling managed by Adapt India Network"
                     className="w-full h-80 sm:h-96 object-cover object-center"
                   />
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 text-white text-left">
@@ -310,30 +311,10 @@ export default function WhoWeArePage() {
           </section>
 
           {/* 6. CTA BANNER */}
-          <section className="w-full bg-[#E31E24] text-white py-14 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20">
-            <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-6">
-              <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white leading-tight uppercase">
-                READY TO UPGRADE YOUR ENTERPRISE NETWORK?
-              </h2>
-              <p className="text-white/90 text-sm sm:text-base max-w-xl">
-                Get carrier-grade connectivity backed by 99.999% SLA uptime and 24/7 NOC engineering support. Contact our enterprise telecom specialists today.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-                <Link
-                  href="/contact"
-                  className="bg-black text-white px-8 py-3.5 rounded-full font-bold text-sm hover:bg-zinc-900 transition-all shadow-lg hover:scale-105"
-                >
-                  Request Feasibility Survey →
-                </Link>
-                <Link
-                  href="/services"
-                  className="bg-white text-zinc-900 px-8 py-3.5 rounded-full font-bold text-sm hover:bg-zinc-100 transition-all shadow-sm"
-                >
-                  Explore All Network Solutions →
-                </Link>
-              </div>
-            </div>
-          </section>
+          <UpgradeCTA
+            title="Ready to upgrade your business network?"
+            text="Talk to our Delhi team about a leased line, SD-WAN or MPLS for your offices anywhere in India."
+          />
         </main>
 
         <NewsletterSection />

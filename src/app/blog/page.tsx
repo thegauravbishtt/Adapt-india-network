@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -284,6 +285,7 @@ export default function BlogPage() {
           </div>
         </main>
 
+        <UpgradeCTA title="Planning a network upgrade?" text="Turn what you've read into a plan. We'll check feasibility at your address and share options." />
         <NewsletterSection />
         <Footer />
       </div>

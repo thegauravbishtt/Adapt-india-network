@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import React from "react";
 import Navbar from "@/components/Navbar";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -324,6 +325,7 @@ export default function ClientsPage() {
         </main>
 
         {/* 3. NEWSLETTER & FOOTER */}
+        <UpgradeCTA title="Join the businesses that rely on us" text="Get the same carrier-backed connectivity and single point of support for your offices across India." />
         <NewsletterSection />
         <Footer />
       </div>

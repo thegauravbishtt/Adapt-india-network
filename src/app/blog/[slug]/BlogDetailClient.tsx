@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -386,6 +387,7 @@ export default function BlogDetailClient({
           {/* Bottom Strategy Call Section */}
         </main>
 
+        <UpgradeCTA title="Want this set up for your business?" text="Our team can check what's available at your office and recommend the right connection." />
         <NewsletterSection />
         <Footer />
       </div>

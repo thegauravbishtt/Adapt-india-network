@@ -1,5 +1,6 @@
 "use client";
 
+import UpgradeCTA from "@/components/UpgradeCTA";
 import JsonLd from "../../components/JsonLd";
 import { faqSchema } from "../../lib/seo";
 import React, { useState, useMemo } from "react";
@@ -266,6 +267,7 @@ export default function FAQPage() {
           </section>
         </main>
 
+        <UpgradeCTA title="Still have a question?" text="Speak to our team directly. We'll answer honestly, including when a cheaper option will do the job." />
         <NewsletterSection />
         <Footer />
       </div>

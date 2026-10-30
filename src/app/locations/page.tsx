@@ -1,4 +1,5 @@
 import React from "react";
+import UpgradeCTA from "@/components/UpgradeCTA";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
@@ -93,6 +94,7 @@ export default function LocationsPage() {
             </div>
           </section>
         </main>
+        <UpgradeCTA title="Connecting offices in several cities?" text="We handle every location through one team, with one contract and one support desk." />
         <Footer />
       </div>
     </LanguageProvider>
