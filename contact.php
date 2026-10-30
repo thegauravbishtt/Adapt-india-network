@@ -45,7 +45,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$to = 'owlioworks@gmail.com';
+$to = 'info@adapt-india.net';
 $subject = "🔥 New Lead: " . $name . " (" . $companyName . ") - " . $service;
 
 $message = "NEW CLIENT INQUIRY - ADAPT INDIA NETWORK\n";
