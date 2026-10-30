@@ -427,6 +427,512 @@ export const cityPages: CityPage[] = [
     ],
     nearby: ["noida", "ghaziabad", "delhi"],
   },
+  {
+    slug: "mumbai",
+    city: "Mumbai",
+    altNames: ["Navi Mumbai", "Thane"],
+    state: "Maharashtra",
+    metaTitle: "Internet Leased Line Provider in Mumbai | ILL, SD-WAN, MPLS",
+    metaDescription:
+      "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Mumbai, Navi Mumbai & Thane: BKC, Lower Parel, Andheri, Powai & MIDC. Get a feasibility check.",
+    h1: "Internet Leased Line Provider in Mumbai",
+    intro: [
+      "Mumbai is India's financial capital, home to banks, brokers, insurers, media houses and the regional offices of companies from every sector. Adapt India Network delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice across Mumbai, Navi Mumbai and Thane through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
+      "Space in Mumbai is expensive and offices are often spread across several buildings and suburbs. We help companies link a head office in BKC or Lower Parel with back offices in Andheri, Powai or Navi Mumbai over one secure network, with backup links where downtime is not an option.",
+    ],
+    businessAreas: [
+      "Bandra Kurla Complex (BKC)",
+      "Lower Parel & Worli",
+      "Nariman Point & Fort",
+      "Andheri (East) & MIDC",
+      "Powai",
+      "Goregaon & Malad",
+      "Vikhroli & Kanjurmarg",
+      "Thane (Wagle Estate)",
+      "Navi Mumbai (Vashi, Airoli, Mahape)",
+      "Bhiwandi warehousing belt",
+    ],
+    segments: [
+      {
+        title: "Banking, broking & financial services",
+        text: "Trading desks and finance teams need low-latency, always-on internet with strict uptime. Dual-carrier leased lines and private MPLS keep transactions and market data flowing.",
+      },
+      {
+        title: "Media, advertising & production",
+        text: "Studios and agencies in Andheri, Goregaon and Lower Parel move large video and design files every day. Symmetrical bandwidth makes uploads as fast as downloads.",
+      },
+      {
+        title: "Corporate & regional headquarters",
+        text: "Head offices connect branches across western India and the rest of the country. SD-WAN gives central control of every site's traffic and security.",
+      },
+      {
+        title: "Warehousing & logistics",
+        text: "Distribution centres in Bhiwandi and Navi Mumbai run WMS, scanning and dispatch systems that need dependable links with automatic backup.",
+      },
+    ],
+    localNote:
+      "We deliver in Mumbai through our carrier partners' local fibre and field teams, with planning, ordering and escalation handled by our team as your single point of contact.",
+    faqs: [
+      {
+        question: "Do you provide leased lines in BKC and Lower Parel?",
+        answer:
+          "Yes. Commercial towers in BKC, Lower Parel and Worli are generally well served by enterprise fibre. We confirm which carriers are already in your building to speed up delivery.",
+      },
+      {
+        question: "Can you connect our Mumbai office with offices in Delhi NCR and other cities?",
+        answer:
+          "Yes. We connect offices across India using SD-WAN, MPLS or point-to-point leased lines, managed as one network.",
+      },
+      {
+        question: "Do you cover Navi Mumbai and Thane?",
+        answer:
+          "Yes. We serve Navi Mumbai, Thane and the Bhiwandi warehousing belt, subject to fibre feasibility at your exact address.",
+      },
+    ],
+    nearby: ["pune", "ahmedabad", "bengaluru"],
+  },
+  {
+    slug: "bengaluru",
+    city: "Bengaluru",
+    altNames: ["Bangalore"],
+    state: "Karnataka",
+    metaTitle: "Leased Line Provider in Bengaluru (Bangalore) | ILL & SD-WAN",
+    metaDescription:
+      "Internet Leased Line, SD-WAN and MPLS for tech companies and offices in Bengaluru: Whitefield, Outer Ring Road, Electronic City, Koramangala & Manyata Tech Park.",
+    h1: "Internet Leased Line Provider in Bengaluru (Bangalore)",
+    intro: [
+      "Bengaluru is India's technology hub, with software companies, global capability centres, startups and R&D labs spread from Whitefield to Electronic City. Adapt India Network supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to these teams through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
+      "Tech teams in Bengaluru push code, run cloud workloads and join video calls with clients worldwide all day. Dedicated, symmetrical bandwidth with static IPs and a backup on a second network keeps engineering work moving.",
+    ],
+    businessAreas: [
+      "Whitefield & ITPL",
+      "Outer Ring Road (Marathahalli to Bellandur)",
+      "Electronic City",
+      "Manyata Tech Park & Hebbal",
+      "Koramangala & HSR Layout",
+      "Indiranagar",
+      "MG Road & CBD",
+      "Bagmane Tech Park (CV Raman Nagar)",
+      "Peenya Industrial Area",
+      "Bommasandra & Hosur Road",
+    ],
+    segments: [
+      {
+        title: "Software companies & GCCs",
+        text: "Development centres need high upload speed for code repositories, CI pipelines and cloud consoles, with static IPs for client VPNs and whitelisting.",
+      },
+      {
+        title: "Startups & growing teams",
+        text: "Fast-growing companies move offices often. We size bandwidth for today and make upgrades straightforward as headcount grows.",
+      },
+      {
+        title: "Manufacturing & electronics",
+        text: "Plants in Peenya, Bommasandra and along Hosur Road run ERP and MES systems that need dependable links around the clock.",
+      },
+      {
+        title: "Coworking & managed offices",
+        text: "Operators need high-capacity internet shared across many tenants, with managed Wi-Fi and separate networks for each client.",
+      },
+    ],
+    localNote:
+      "We deliver in Bengaluru through our carrier partners' local networks, with design, ordering and support coordinated by our team so you have one point of contact.",
+    faqs: [
+      {
+        question: "Do you provide leased lines in Whitefield and Outer Ring Road?",
+        answer:
+          "Yes. Tech parks in Whitefield and along the Outer Ring Road usually have fibre from several carriers. We check what is already in your building before quoting.",
+      },
+      {
+        question: "Is Bangalore covered as well as Bengaluru?",
+        answer: "Bangalore and Bengaluru are the same city. We cover all the main business areas across the city.",
+      },
+      {
+        question: "Can we get a backup link from a different carrier?",
+        answer:
+          "Yes. We can arrange a primary and backup on separate networks, with automatic failover on your firewall or SD-WAN device.",
+      },
+    ],
+    nearby: ["chennai", "hyderabad", "mumbai"],
+  },
+  {
+    slug: "hyderabad",
+    city: "Hyderabad",
+    altNames: ["Secunderabad", "Cyberabad"],
+    state: "Telangana",
+    metaTitle: "Internet Leased Line Provider in Hyderabad | ILL, SD-WAN, MPLS",
+    metaDescription:
+      "Dedicated leased line, SD-WAN and MPLS for offices in Hyderabad: HITEC City, Gachibowli, Financial District, Madhapur & Secunderabad. Get a feasibility check.",
+    h1: "Internet Leased Line Provider in Hyderabad",
+    intro: [
+      "Hyderabad has become one of India's largest IT and pharma hubs, with technology campuses in HITEC City, Gachibowli and the Financial District, and life-sciences and manufacturing clusters around the city. Adapt India Network provides dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
+      "Many Hyderabad offices serve clients around the world and work across time zones, so connectivity has to hold up day and night. We design primary and backup links and keep them monitored so problems are caught early.",
+    ],
+    businessAreas: [
+      "HITEC City",
+      "Gachibowli",
+      "Financial District (Nanakramguda)",
+      "Madhapur",
+      "Kondapur",
+      "Banjara Hills & Jubilee Hills",
+      "Begumpet & Secunderabad",
+      "Genome Valley",
+      "Uppal & Pocharam",
+      "Shamshabad (airport zone)",
+    ],
+    segments: [
+      {
+        title: "IT services & global capability centres",
+        text: "Large delivery centres need dedicated bandwidth, static IPs and redundant links to serve clients worldwide without interruption.",
+      },
+      {
+        title: "Pharma & life sciences",
+        text: "Labs and plants in Genome Valley and nearby clusters run regulated systems and move large research data sets that need secure, reliable links.",
+      },
+      {
+        title: "Corporate & regional offices",
+        text: "Regional offices in Banjara Hills and Begumpet depend on cloud software and video meetings with teams across India.",
+      },
+    ],
+    localNote:
+      "We deliver in Hyderabad through our carrier partners' local networks, with planning and support handled by our team as your single point of contact.",
+    faqs: [
+      {
+        question: "Do you provide leased lines in HITEC City and Gachibowli?",
+        answer:
+          "Yes. These areas are well served by enterprise fibre, and we check which carriers already reach your building to speed things up.",
+      },
+      {
+        question: "Can you connect our Hyderabad office with other cities?",
+        answer:
+          "Yes. SD-WAN, MPLS or point-to-point leased lines can connect your Hyderabad site with offices anywhere in India.",
+      },
+      {
+        question: "Do you cover Secunderabad and Genome Valley?",
+        answer: "Yes, subject to fibre feasibility at your exact address.",
+      },
+    ],
+    nearby: ["bengaluru", "chennai", "pune"],
+  },
+  {
+    slug: "chennai",
+    city: "Chennai",
+    altNames: ["Madras"],
+    state: "Tamil Nadu",
+    metaTitle: "Internet Leased Line Provider in Chennai | ILL, SD-WAN, MPLS",
+    metaDescription:
+      "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Chennai: OMR, Guindy, Ambattur, Sriperumbudur & Oragadam. Get a quote for your site.",
+    h1: "Internet Leased Line Provider in Chennai",
+    intro: [
+      "Chennai combines a large IT corridor along the Old Mahabalipuram Road with one of India's biggest automotive and electronics manufacturing belts at Sriperumbudur and Oragadam. Adapt India Network supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to both, using the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
+      "Manufacturers here often run plants far from the city centre, while their offices sit in Guindy or on OMR. We connect every site into one secure network and add backup links where production or customer service depends on them.",
+    ],
+    businessAreas: [
+      "OMR IT Corridor (Perungudi to Siruseri)",
+      "Guindy",
+      "Taramani",
+      "Ambattur Industrial Estate",
+      "Sriperumbudur",
+      "Oragadam",
+      "Anna Salai & T. Nagar",
+      "Porur",
+      "Chennai Port & Ennore",
+      "Mahindra World City",
+    ],
+    segments: [
+      {
+        title: "IT & ITeS on OMR",
+        text: "Large delivery centres need high, symmetrical bandwidth and redundant links to serve clients worldwide.",
+      },
+      {
+        title: "Automotive & electronics manufacturing",
+        text: "Plants in Sriperumbudur, Oragadam and Mahindra World City run ERP and supplier systems around the clock. Dedicated links with backup keep production connected.",
+      },
+      {
+        title: "Logistics & port operations",
+        text: "Freight forwarders and container yards near the port need reliable links for customs filings, tracking and dispatch.",
+      },
+    ],
+    localNote:
+      "We deliver in Chennai through our carrier partners' local networks, with planning and support handled by our team as your single point of contact.",
+    faqs: [
+      {
+        question: "Do you provide leased lines on OMR and in Guindy?",
+        answer:
+          "Yes. The IT corridor and Guindy are well covered by enterprise fibre. We check carrier presence at your building first.",
+      },
+      {
+        question: "Can you connect our plant in Sriperumbudur with our city office?",
+        answer:
+          "Yes. We link plants and offices using SD-WAN, MPLS or point-to-point leased lines, subject to feasibility at each site.",
+      },
+      {
+        question: "Do you serve industrial estates like Ambattur?",
+        answer: "Yes, subject to fibre availability at your exact unit.",
+      },
+    ],
+    nearby: ["bengaluru", "hyderabad", "kolkata"],
+  },
+  {
+    slug: "pune",
+    city: "Pune",
+    altNames: ["Pimpri-Chinchwad"],
+    state: "Maharashtra",
+    metaTitle: "Leased Line Provider in Pune | ILL & SD-WAN for IT & Industry",
+    metaDescription:
+      "Internet Leased Line, SD-WAN and MPLS for offices and plants in Pune: Hinjewadi, Kharadi, Magarpatta, Baner, Chakan & Pimpri-Chinchwad MIDC.",
+    h1: "Internet Leased Line Provider in Pune",
+    intro: [
+      "Pune pairs a large IT sector in Hinjewadi, Kharadi and Magarpatta with an automotive and engineering base in Chakan, Talegaon and Pimpri-Chinchwad. Adapt India Network delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to both through Tata Tele Business Services and ACT Fibernet.",
+      "Companies here often have an office in the city and a plant on the outskirts, or offices in both Pune and Mumbai. We connect these sites into one secure network with central management.",
+    ],
+    businessAreas: [
+      "Hinjewadi IT Park",
+      "Kharadi (EON IT Park)",
+      "Magarpatta & Hadapsar",
+      "Baner & Balewadi",
+      "Viman Nagar & Yerwada",
+      "Shivajinagar & Camp",
+      "Pimpri-Chinchwad MIDC",
+      "Chakan",
+      "Talegaon",
+      "Ranjangaon",
+    ],
+    segments: [
+      {
+        title: "IT companies & tech parks",
+        text: "Development teams in Hinjewadi and Kharadi need symmetrical bandwidth, static IPs and backup links for client work.",
+      },
+      {
+        title: "Automotive & engineering plants",
+        text: "Plants in Chakan, Talegaon and Pimpri-Chinchwad run production and supplier systems around the clock and need dependable connectivity.",
+      },
+      {
+        title: "Education & institutions",
+        text: "Colleges and institutes need high-capacity internet with campus-wide Wi-Fi for students and staff.",
+      },
+    ],
+    localNote:
+      "We deliver in Pune through our carrier partners' local networks, with planning and support handled by our team as your single point of contact.",
+    faqs: [
+      {
+        question: "Do you provide leased lines in Hinjewadi and Kharadi?",
+        answer: "Yes. Both are well served by enterprise fibre. We confirm which carriers reach your building before quoting.",
+      },
+      {
+        question: "Can you connect our Chakan plant with our Pune or Mumbai office?",
+        answer: "Yes, using SD-WAN, MPLS or point-to-point leased lines, depending on your sites and applications.",
+      },
+      {
+        question: "Do you cover Pimpri-Chinchwad MIDC?",
+        answer: "Yes, subject to feasibility at your exact address.",
+      },
+    ],
+    nearby: ["mumbai", "hyderabad", "bengaluru"],
+  },
+  {
+    slug: "kolkata",
+    city: "Kolkata",
+    altNames: ["Salt Lake", "New Town"],
+    state: "West Bengal",
+    metaTitle: "Internet Leased Line Provider in Kolkata | ILL, SD-WAN, MPLS",
+    metaDescription:
+      "Dedicated leased line, SD-WAN and MPLS for offices in Kolkata: Salt Lake Sector V, New Town, Park Street, BBD Bagh & Howrah. Get a feasibility check.",
+    h1: "Internet Leased Line Provider in Kolkata",
+    intro: [
+      "Kolkata is the commercial centre of eastern India, with IT companies in Salt Lake Sector V and New Town, corporate and trading offices around Park Street and BBD Bagh, and industry and warehousing across Howrah. Adapt India Network provides dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
+      "For companies with branches across eastern and north-eastern India, we connect each location to the Kolkata office or the national head office over one managed network.",
+    ],
+    businessAreas: [
+      "Salt Lake Sector V",
+      "New Town (Rajarhat)",
+      "Park Street & Camac Street",
+      "BBD Bagh & Dalhousie",
+      "EM Bypass",
+      "Howrah",
+      "Kasba Industrial Estate",
+      "Taratala",
+    ],
+    segments: [
+      {
+        title: "IT & ITeS",
+        text: "Offices in Sector V and New Town need dedicated bandwidth and backup links to serve clients without interruption.",
+      },
+      {
+        title: "Trading, finance & corporate offices",
+        text: "Head and regional offices in central Kolkata rely on ERP, cloud software and video meetings with branches across India.",
+      },
+      {
+        title: "Manufacturing & warehousing",
+        text: "Units in Howrah and industrial estates need dependable connectivity for production, inventory and dispatch systems.",
+      },
+    ],
+    localNote:
+      "We deliver in Kolkata through our carrier partners' local networks, with planning and support handled by our team as your single point of contact.",
+    faqs: [
+      {
+        question: "Do you provide leased lines in Salt Lake Sector V and New Town?",
+        answer: "Yes. Both areas are well served by enterprise fibre, subject to feasibility at your building.",
+      },
+      {
+        question: "Can you connect branches across eastern India?",
+        answer: "Yes. SD-WAN or MPLS can connect branches anywhere in India into one managed network.",
+      },
+    ],
+    nearby: ["chennai", "lucknow", "delhi"],
+  },
+  {
+    slug: "ahmedabad",
+    city: "Ahmedabad",
+    altNames: ["Gandhinagar", "GIFT City"],
+    state: "Gujarat",
+    metaTitle: "Leased Line Provider in Ahmedabad & GIFT City | ILL & SD-WAN",
+    metaDescription:
+      "Internet Leased Line, SD-WAN and MPLS for businesses in Ahmedabad, Gandhinagar & GIFT City: SG Highway, Prahlad Nagar, Sanand, Changodar & Naroda.",
+    h1: "Internet Leased Line Provider in Ahmedabad & GIFT City",
+    intro: [
+      "Ahmedabad is Gujarat's business capital, with corporate offices along SG Highway, a growing financial services hub at GIFT City in Gandhinagar, and large manufacturing clusters in Sanand, Changodar, Naroda and Vatva. Adapt India Network delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
+      "Gujarat businesses often run plants across the state alongside a city office. We connect every site into one network and add backup links where production and dispatch depend on them.",
+    ],
+    businessAreas: [
+      "SG Highway",
+      "Prahlad Nagar",
+      "Ashram Road",
+      "GIFT City (Gandhinagar)",
+      "Sanand",
+      "Changodar",
+      "Naroda GIDC",
+      "Vatva GIDC",
+      "Bopal",
+    ],
+    segments: [
+      {
+        title: "Financial services in GIFT City",
+        text: "Banks and financial firms need secure, low-latency connectivity with redundancy and strict uptime.",
+      },
+      {
+        title: "Manufacturing & chemicals",
+        text: "Plants in Sanand, Changodar and the GIDC estates run ERP and production systems that need dependable links.",
+      },
+      {
+        title: "Corporate & trading offices",
+        text: "Offices along SG Highway and Ashram Road connect to branches and plants across Gujarat and India.",
+      },
+    ],
+    localNote:
+      "We deliver in Ahmedabad and across Gujarat through our carrier partners' local networks, with planning and support handled by our team.",
+    faqs: [
+      {
+        question: "Do you provide leased lines in GIFT City?",
+        answer: "Yes, subject to feasibility. We check carrier availability at your building before quoting.",
+      },
+      {
+        question: "Can you connect our Ahmedabad office with plants in GIDC estates?",
+        answer: "Yes, using SD-WAN, MPLS or point-to-point leased lines, depending on feasibility at each site.",
+      },
+    ],
+    nearby: ["mumbai", "jaipur", "pune"],
+  },
+  {
+    slug: "jaipur",
+    city: "Jaipur",
+    altNames: ["Rajasthan"],
+    state: "Rajasthan",
+    metaTitle: "Internet Leased Line Provider in Jaipur & Rajasthan | ILL, SD-WAN",
+    metaDescription:
+      "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Jaipur: Malviya Nagar, Sitapura, VKI Area, Mahindra SEZ & C-Scheme. Get a quote.",
+    h1: "Internet Leased Line Provider in Jaipur",
+    intro: [
+      "Jaipur is Rajasthan's commercial centre, with IT and BPO offices, gems and jewellery exporters, handicraft and textile businesses, hotels and a growing manufacturing base in Sitapura, VKI Area and Mahindra World City. Adapt India Network provides dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
+      "Jaipur is close to Delhi NCR and many companies run offices in both. We connect these sites over one managed network, and link branches across Rajasthan to the head office.",
+    ],
+    businessAreas: [
+      "C-Scheme",
+      "Malviya Nagar",
+      "Tonk Road",
+      "Sitapura Industrial Area",
+      "VKI Area",
+      "Mahindra World City (Jaipur SEZ)",
+      "Vaishali Nagar",
+      "MI Road",
+    ],
+    segments: [
+      {
+        title: "Exporters & gems and jewellery",
+        text: "Export businesses rely on secure connectivity for orders, payments and communication with buyers overseas.",
+      },
+      {
+        title: "IT, BPO & offices",
+        text: "Offices in C-Scheme, Malviya Nagar and the SEZ need dedicated bandwidth for cloud software, VoIP and client work.",
+      },
+      {
+        title: "Hotels & hospitality",
+        text: "Hotels need reliable guest Wi-Fi, booking systems and payment connectivity, with backup links for peak seasons.",
+      },
+    ],
+    localNote:
+      "We deliver in Jaipur through our carrier partners' local networks, with planning and support handled by our Delhi-based team.",
+    faqs: [
+      {
+        question: "Do you provide leased lines in Sitapura and Mahindra World City?",
+        answer: "Yes, subject to feasibility at your exact site.",
+      },
+      {
+        question: "Can you connect our Jaipur and Delhi offices?",
+        answer: "Yes. SD-WAN, MPLS or point-to-point leased lines can join your offices into one network.",
+      },
+    ],
+    nearby: ["delhi", "gurgaon", "ahmedabad"],
+  },
+  {
+    slug: "chandigarh",
+    city: "Chandigarh",
+    altNames: ["Mohali", "Panchkula", "Tricity"],
+    state: "Chandigarh",
+    metaTitle: "Leased Line Provider in Chandigarh, Mohali & Panchkula",
+    metaDescription:
+      "Internet Leased Line, SD-WAN and MPLS for offices in the Chandigarh Tricity: IT Park, Industrial Area Phase 1 & 2, Mohali, Panchkula & Zirakpur.",
+    h1: "Internet Leased Line Provider in Chandigarh Tricity",
+    intro: [
+      "The Chandigarh Tricity of Chandigarh, Mohali and Panchkula is the business hub for Punjab, Haryana and Himachal Pradesh, with IT companies in Chandigarh IT Park and Mohali, industrial units in the Industrial Area phases, and many government, healthcare and education institutions. Adapt India Network delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
+      "Companies headquartered here often have branches across Punjab and Himachal. We connect them to the head office with central control over traffic and security.",
+    ],
+    businessAreas: [
+      "Chandigarh IT Park",
+      "Industrial Area Phase 1 & 2",
+      "Sector 17 & Sector 34",
+      "Mohali IT City & Phase 8",
+      "Panchkula Industrial Area",
+      "Zirakpur",
+      "Baddi (industrial belt)",
+    ],
+    segments: [
+      {
+        title: "IT & software companies",
+        text: "Offices in IT Park and Mohali need symmetrical bandwidth, static IPs and backup links for client delivery.",
+      },
+      {
+        title: "Manufacturing & pharma",
+        text: "Units in the industrial areas and the Baddi belt run ERP and regulated systems that need dependable connectivity.",
+      },
+      {
+        title: "Healthcare & education",
+        text: "Hospitals, colleges and coaching institutes need high-capacity internet and campus Wi-Fi.",
+      },
+    ],
+    localNote:
+      "We deliver in the Tricity through our carrier partners' local networks, with planning and support handled by our Delhi-based team.",
+    faqs: [
+      {
+        question: "Do you cover Mohali and Panchkula as well as Chandigarh?",
+        answer: "Yes. We serve the whole Tricity, including Zirakpur, subject to feasibility at your exact address.",
+      },
+      {
+        question: "Can you connect branches across Punjab and Himachal Pradesh?",
+        answer: "Yes. SD-WAN or MPLS can connect branches across the region and the rest of India into one network.",
+      },
+    ],
+    nearby: ["delhi", "gurgaon", "jaipur"],
+  },
 ];
 
 export function getCityBySlug(slug: string): CityPage | undefined {

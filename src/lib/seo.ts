@@ -36,6 +36,15 @@ export const BUSINESS = {
     "Lucknow",
     "Uttar Pradesh",
     "Haryana",
+    "Mumbai",
+    "Bengaluru",
+    "Hyderabad",
+    "Chennai",
+    "Pune",
+    "Kolkata",
+    "Ahmedabad",
+    "Jaipur",
+    "Chandigarh",
   ],
 };
 
@@ -117,7 +126,7 @@ export function organizationSchema() {
     logo: absoluteUrl(BUSINESS.logo),
     image: absoluteUrl(DEFAULT_OG_IMAGE),
     description:
-      "Enterprise Internet Leased Line (ILL), SD-WAN, MPLS VPN, enterprise broadband, managed Wi-Fi, SIP trunk and cloud telephony provider in Delhi NCR, serving businesses across India.",
+      "Pan-India provider of enterprise Internet Leased Line (ILL), SD-WAN, MPLS VPN, enterprise broadband, managed Wi-Fi, SIP trunk and cloud telephony, headquartered in New Delhi.",
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
     address: {

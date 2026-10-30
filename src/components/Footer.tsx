@@ -216,6 +216,21 @@ export default function Footer() {
                       Leased Line in Lucknow
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/locations/mumbai" className="hover:text-white transition-colors">
+                      Leased Line in Mumbai
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/bengaluru" className="hover:text-white transition-colors">
+                      Leased Line in Bengaluru
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations" className="text-[#E31E24] hover:text-white transition-colors">
+                      All Pan-India Locations →
+                    </Link>
+                  </li>
                 </ul>
               </div>
 

@@ -9,9 +9,9 @@ import { cityPages } from "../../data/locationsData";
 import { pageMetadata, breadcrumbSchema } from "../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Leased Line Locations: Delhi NCR, Uttar Pradesh & India | Adapt India",
+  title: "Leased Line Provider Across India | All Locations | Adapt India",
   description:
-    "Internet Leased Line, SD-WAN and MPLS in Delhi, Gurgaon, Noida, Ghaziabad, Faridabad, Lucknow and cities across India. Find your city and check feasibility.",
+    "Pan-India Internet Leased Line, SD-WAN and MPLS: Delhi NCR, Mumbai, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Lucknow & more. Check feasibility.",
   path: "/locations/",
   image: "/banner-network-matrix.jpg",
 });
@@ -80,9 +80,8 @@ export default function LocationsPage() {
                   Your city not listed?
                 </h2>
                 <p className="text-sm sm:text-base text-zinc-700 leading-relaxed mb-4">
-                  We arrange leased lines, SD-WAN and MPLS for offices, plants and branches in cities across India,
-                  including Mumbai, Bengaluru, Chennai, Hyderabad, Pune, Kolkata, Ahmedabad, Jaipur and Chandigarh.
-                  Send us your site addresses and we will check feasibility for each one.
+                  We deliver leased lines, SD-WAN and MPLS pan-India, including tier-2 and tier-3 cities, industrial
+                  estates and remote branch locations. Send us your site addresses and we will check feasibility for each one.
                 </p>
                 <Link
                   href="/contact/"
