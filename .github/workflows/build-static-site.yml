@@ -36,7 +36,8 @@ jobs:
             grep -vE '^\s*(#|$)' .github/fetch-assets.txt | while read -r path url; do
               if [ ! -f "public/$path" ]; then
                 echo "Downloading $path"
-                curl -fsSL --retry 3 -o "public/$path" "$url"
+                mkdir -p "$(dirname "public/$path")"
+                curl -fsSL --retry 3 -o "public/$path" "$url" || { echo "WARN: could not download $path"; rm -f "public/$path"; }
               fi
             done
           fi

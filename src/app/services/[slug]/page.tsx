@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { allServices, getServiceBySlug } from "../../../data/servicesData";
 import { telecomServices } from "../../../data/telecomServicesData";
 import ServiceDetailClient from "./ServiceDetailClient";
+import SubServicePage from "../../../components/SubServicePage";
+import { subServices, getSubService, subServiceBanner } from "../../../data/subServices";
 import JsonLd from "../../../components/JsonLd";
 import {
   pageMetadata,
@@ -121,11 +123,24 @@ const ALIAS_SLUGS = [
 export async function generateStaticParams() {
   const main = allServices.map((service) => service.slug);
   const aliases = ALIAS_SLUGS.filter((a) => !main.includes(a) && getServiceBySlug(a));
-  return [...main, ...aliases].map((slug) => ({ slug }));
+  const subs = subServices.map((s) => s.slug).filter((s) => !main.includes(s));
+  return [...main, ...aliases, ...subs].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
+
+  const sub = getSubService(slug);
+  if (sub) {
+    const title = `${sub.name} in India | Adapt India Network`;
+    return pageMetadata({
+      title: title.length > 66 ? `${sub.name} | Adapt India` : title,
+      description: sub.summary,
+      path: `/services/${sub.slug}/`,
+      image: subServiceBanner(sub.slug),
+    });
+  }
+
   const service = getServiceBySlug(slug);
 
   if (!service) {
@@ -148,6 +163,44 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
 export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const { slug } = await params;
+
+  const sub = getSubService(slug);
+  if (sub) {
+    const index = subServices.indexOf(sub);
+    const parent = getServiceBySlug(sub.parent);
+    const parentName = parent?.name ?? "Services";
+    const related = subServices.filter((s) => s.group === sub.group && s.slug !== sub.slug).slice(0, 3);
+    const path = `/services/${sub.slug}/`;
+    return (
+      <>
+        <JsonLd
+          data={[
+            serviceSchema({
+              name: sub.name,
+              description: sub.summary,
+              path,
+              serviceType: sub.name,
+              areaServed: BUSINESS.areaServed,
+            }),
+            breadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Services", path: "/services/" },
+              { name: parentName, path: `/services/${sub.parent}/` },
+              { name: sub.name, path },
+            ]),
+            faqSchema(sub.faqs),
+          ]}
+        />
+        <SubServicePage
+          item={sub}
+          banner={subServiceBanner(sub.slug)}
+          parentName={parentName}
+          related={related}
+          variant={index % 4}
+        />
+      </>
+    );
+  }
   const service = getServiceBySlug(slug);
 
   if (!service) {

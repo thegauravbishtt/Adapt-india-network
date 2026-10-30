@@ -1,5 +1,6 @@
 "use client";
 
+import { subServiceMenuLinks } from "../data/subServices/menuLinks";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -91,7 +92,7 @@ const searchIndex: SearchItem[] = [
     title: "Clean Pipe DDoS Mitigation",
     category: "Service",
     description: "Carrier-level automated volumetric DDoS scrubbing and real-time malicious packet filtering.",
-    link: "/services/cyber-security",
+    link: "/services/smart-ddos-protection",
     keywords: ["clean pipe", "ddos", "scrubbing", "volumetric", "botnet", "attack"],
   },
   {
@@ -99,7 +100,7 @@ const searchIndex: SearchItem[] = [
     title: "Cloud Next-Gen Firewall (FWaaS)",
     category: "Service",
     description: "Centralized firewall protection with deep packet SSL inspection across remote offices.",
-    link: "/services/cyber-security",
+    link: "/services/next-gen-firewall",
     keywords: ["firewall", "fwaas", "ngfw", "ssl", "inspection", "utm"],
   },
   {
@@ -589,7 +590,7 @@ export default function Navbar() {
                     { label: "SIP Trunk Services", link: "/services/data-services" },
                     { label: "PRI Lines", link: "/services/data-services" },
                     { label: "Smartflo Cloud Telephony", link: "/services/cloud-telephony" },
-                    { label: "Toll-Free Services (1800)", link: "/services/data-services" },
+                    { label: "Toll-Free Services (1800)", link: "/services/toll-free-number-services" },
                     { label: "Interactive IVR Systems", link: "/services/cloud-telephony" },
                   ].map((item) => (
                     <Link
@@ -644,7 +645,7 @@ export default function Navbar() {
                 <>
                   {[
                     { label: "Enterprise Managed Wi-Fi", link: "/services/managed-wifi" },
-                    { label: "Smart Hosted PBX", link: "/services/cloud-telephony" },
+                    { label: "Smart Hosted PBX", link: "/services/smartflo-ucaas" },
                     { label: "Unified Audio/Video Conferencing", link: "/services" },
                   ].map((item) => (
                     <Link
@@ -669,7 +670,7 @@ export default function Navbar() {
               {currentMobileLevel === "cloud" && (
                 <>
                   {[
-                    { label: "Direct Cloud Connect (AWS/Azure/GCP)", link: "/services" },
+                    { label: "Direct Cloud Connect (AWS/Azure/GCP)", link: "/services/ez-cloud-connect" },
                     { label: "Cloud Telephony & IVR", link: "/services/cloud-telephony" },
                     { label: "Multi-Cloud Secure Interconnect", link: "/services/sd-wan" },
                   ].map((item) => (
@@ -695,8 +696,8 @@ export default function Navbar() {
               {currentMobileLevel === "cybersecurity" && (
                 <>
                   {[
-                    { label: "Cloud Next-Gen Firewall (FWaaS)", link: "/services/cyber-security" },
-                    { label: "Clean Pipe DDoS Mitigation", link: "/services/cyber-security" },
+                    { label: "Cloud Next-Gen Firewall (FWaaS)", link: "/services/next-gen-firewall" },
+                    { label: "Clean Pipe DDoS Mitigation", link: "/services/smart-ddos-protection" },
                     { label: "Edge Threat Defense & SOC", link: "/services/cyber-security" },
                   ].map((item) => (
                     <Link
@@ -1311,7 +1312,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["Smartflo CCaaS", "Smartflo CPaaS", "Smartflo UCaaS", "Microsoft Operator Connect", "Webex Calling", "Smartflo AI"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/business-communications" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
+                              <Link href={subServiceMenuLinks[item] ?? "/services/business-communications"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
                                 {item}
                               </Link>
                             </li>
@@ -1327,7 +1328,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["Smart Single Number Solution", "SIP Trunk Services", "Toll Free Number Services", "Call Register Services", "PRI Lines", "Centrex Systems", "Smart Internet Telephony", "1600 Series Support"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/business-communications" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
+                              <Link href={subServiceMenuLinks[item] ?? "/services/business-communications"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
                                 {item}
                               </Link>
                             </li>
@@ -1343,7 +1344,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["WhatsApp Business Platform", "Smartflo Enterprise RCS", "SMS Solutions", "Smartflo OBD", "Truecaller Business Verified", "PRI Dialing", "Smartflo Email Platform"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/business-communications" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
+                              <Link href={subServiceMenuLinks[item] ?? "/services/business-communications"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
                                 {item}
                               </Link>
                             </li>
@@ -1367,11 +1368,11 @@ export default function Navbar() {
                           {[
                             { name: "Network as a Service", href: "/services/network-as-a-service" },
                             { name: "Smart Internet Leased Line (ILL)", href: "/services/smart-internet-ill" },
-                            { name: "ILL Burstable Bandwidth", href: "/services/smart-internet-ill" },
-                            { name: "Smart DDoS Defense", href: "/services/cybersecurity-solutions" },
-                            { name: "SD-WAN Ready ILL", href: "/services/smart-internet-ill" },
-                            { name: "Secured Leased Line", href: "/services/smart-internet-ill" },
-                            { name: "Standard Carrier ILL", href: "/services/smart-internet-ill" },
+                            { name: "ILL Burstable Bandwidth", href: "/services/ill-burstable-bandwidth" },
+                            { name: "Smart DDoS Defense", href: "/services/smart-ddos-protection" },
+                            { name: "SD-WAN Ready ILL", href: "/services/sd-wan-ready-ill" },
+                            { name: "Secured Leased Line", href: "/services/secured-leased-line" },
+                            { name: "Standard Carrier ILL", href: "/services/standard-carrier-ill" },
                           ].map((item) => (
                             <li key={item.name}>
                               <Link href={item.href} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
@@ -1391,9 +1392,9 @@ export default function Navbar() {
                           {[
                             { name: "P2P-Leased Line (Point-to-Point)", href: "/services/point-to-point-leased-line" },
                             { name: "Smart WAN (SD-WAN iFLX)", href: "/services/smartflo-sd-wan" },
-                            { name: "SD-WAN iFLX Edge Gateway", href: "/services/smartflo-sd-wan" },
-                            { name: "EZ Cloud Connect (AWS/Azure)", href: "/services/cloud-infrastructure" },
-                            { name: "Ultra Low Latency (Ultra-LOLA)", href: "/services/point-to-point-leased-line" },
+                            { name: "SD-WAN iFLX Edge Gateway", href: "/services/sd-wan-iflx-edge-gateway" },
+                            { name: "EZ Cloud Connect (AWS/Azure)", href: "/services/ez-cloud-connect" },
+                            { name: "Ultra Low Latency (Ultra-LOLA)", href: "/services/ultra-low-latency" },
                           ].map((item) => (
                             <li key={item.name}>
                               <Link href={item.href} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
@@ -1413,9 +1414,9 @@ export default function Navbar() {
                           {[
                             { name: "SmartOffice® Business Broadband", href: "/services/smartoffice-connect" },
                             { name: "Enterprise High-Speed Broadband", href: "/services/enterprise-broadband" },
-                            { name: "Retail & Branch Broadband", href: "/services/bundled-solutions" },
-                            { name: "Managed Campus Wi-Fi", href: "/services/enterprise-broadband" },
-                            { name: "High-Density Public Wi-Fi", href: "/services/enterprise-broadband" },
+                            { name: "Retail & Branch Broadband", href: "/services/retail-branch-broadband" },
+                            { name: "Managed Campus Wi-Fi", href: "/services/managed-campus-wifi" },
+                            { name: "High-Density Public Wi-Fi", href: "/services/high-density-public-wifi" },
                           ].map((item) => (
                             <li key={item.name}>
                               <Link href={item.href} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
@@ -1441,7 +1442,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-3 text-xs text-gray-700">
                           {["Microsoft 365 Enterprise", "Microsoft Copilot AI", "Google Workspace", "Enterprise Zoom Rooms", "International Bridging Service"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/collaboration-productivity" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block font-medium">
+                              <Link href={subServiceMenuLinks[item] ?? "/services/collaboration-productivity"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block font-medium">
                                 {item}
                               </Link>
                             </li>
@@ -1492,7 +1493,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-3 text-xs text-gray-700">
                           {["Microsoft Azure", "Azure Virtual Desktop", "Azure Cognitive AI", "Cloud Migration Services", "Managed Cloud Services", "CloudMon Performance", "Adapt Smart Cloud"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/cloud-infrastructure" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block font-medium">
+                              <Link href={subServiceMenuLinks[item] ?? "/services/cloud-infrastructure"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block font-medium">
                                 {item}
                               </Link>
                             </li>
@@ -1541,7 +1542,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["Next-Gen Firewall (NGFW)", "Smart DDoS Mitigation", "Web Application Firewall (WAF)", "Zero Trust Network Access (ZTNA)"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/cybersecurity-solutions" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
+                              <Link href={subServiceMenuLinks[item] ?? "/services/cybersecurity-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
                             </li>
                           ))}
                         </ul>
@@ -1554,7 +1555,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["Endpoint Detection & Response (EDR)", "Cloud Email Security", "Data Loss Prevention (DLP)", "DNS Security & Filtering"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/cybersecurity-solutions" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
+                              <Link href={subServiceMenuLinks[item] ?? "/services/cybersecurity-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
                             </li>
                           ))}
                         </ul>
@@ -1580,7 +1581,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["24/7/365 L3 Network Monitoring", "Proactive Fault Detection", "BGP Routing Optimization", "Automated Failover Management"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/managed-services" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
+                              <Link href={subServiceMenuLinks[item] ?? "/services/managed-services"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
                             </li>
                           ))}
                         </ul>
@@ -1593,7 +1594,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["Multi-Vendor Router Management", "Firmware & Security Patching", "Bandwidth Utilization Audits", "Custom Enterprise SLAs"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/managed-services" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
+                              <Link href={subServiceMenuLinks[item] ?? "/services/managed-services"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
                             </li>
                           ))}
                         </ul>
@@ -1621,7 +1622,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["SmartOffice Starter Pack", "Branch-in-a-Box Connectivity", "Retail Store Dual-Failover Pack", "Pop-up Event Internet"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/bundled-solutions" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
+                              <Link href={subServiceMenuLinks[item] ?? "/services/bundled-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
                             </li>
                           ))}
                         </ul>
@@ -1634,7 +1635,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
                           {["ILL + SD-WAN Hybrid Bundle", "Cloud Interconnect & Direct Peering", "Unified Voice & SIP Trunk Suite", "Zero Trust Remote Workforce Pack"].map((item) => (
                             <li key={item}>
-                              <Link href="/services/bundled-solutions" onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
+                              <Link href={subServiceMenuLinks[item] ?? "/services/bundled-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
                             </li>
                           ))}
                         </ul>

@@ -4,6 +4,7 @@ import { telecomServices } from "../data/telecomServicesData";
 import { cityPages } from "../data/locationsData";
 import { seedArticles } from "../data/articles";
 import { getBlogs } from "../lib/db";
+import { subServices } from "../data/subServices";
 
 export const dynamic = "force-static";
 
@@ -50,6 +51,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...subServices.map((s) => ({
+      url: url(`/services/${s.slug}/`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     ...Array.from(blogSlugs).map((slug) => ({
       url: url(`/blog/${slug}/`),
