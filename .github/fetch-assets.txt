@@ -3,5 +3,3 @@
 # All from Unsplash under the Unsplash License (free for commercial use, no attribution required).
 # https://unsplash.com/photos/server-rack-filled-with-network-and-electronic-equipment-UpkcO_xS5k0
 about-network-rack.jpg https://images.unsplash.com/photo-1785682231847-93265d8e633d?w=1600&q=80&fm=jpg&fit=crop
-# https://unsplash.com/photos/a-rack-of-electronic-components-with-labels-HrWyLvKOSr4
-about-network-rack-2.jpg https://images.unsplash.com/photo-1742729251236-eab20c52da81?w=1600&q=80&fm=jpg&fit=crop
