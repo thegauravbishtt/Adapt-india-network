@@ -1,0 +1,63 @@
+# Builds the Next.js static export and commits the result to the repository root,
+# which is what Hostinger serves. Runs on pushes to this SEO branch, or manually
+# from the Actions tab (pick any branch).
+name: Build static site for Hostinger
+
+on:
+  push:
+    branches: ["seo/india-local-seo"]
+    paths-ignore:
+      - "build-log.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # Skip runs triggered by this workflow's own commit
+    if: "!contains(github.event.head_commit.message, '[static-build]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build static export
+        id: build
+        run: |
+          set -o pipefail
+          npx next build 2>&1 | tee build-log.txt
+
+      - name: Copy build into site root
+        if: success()
+        run: |
+          # out/ holds the finished website; the repo root is what Hostinger serves
+          cp -a out/. ./
+          rm -rf out
+
+      - name: Commit built files (or the error log if the build failed)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.build.outcome }}" = "success" ]; then
+            rm -f build-log.txt
+            git add -A
+            git reset -q -- node_modules .next 2>/dev/null || true
+            git commit -m "chore: static export build [static-build]" || echo "Nothing to commit"
+          else
+            git add build-log.txt
+            git commit -m "chore: build failed, see build-log.txt [static-build]"
+          fi
+          git push
