@@ -19,6 +19,7 @@ DirectoryIndex index.html
   RewriteRule ^cookies/?$ /cookie-preferences/ [R=301,L]
   RewriteRule ^work/?$ /services/ [R=301,L]
   RewriteRule ^industries(/.*)?$ /services/ [R=301,L]
+  RewriteRule ^blog/network-architecture/?$ /blog/ [R=301,L]
   RewriteRule ^services/internet-leased-line/?$ /services/smart-internet-ill/ [R=301,L]
   RewriteRule ^services/sd-wan/?$ /services/smartflo-sd-wan/ [R=301,L]
   RewriteRule ^services/mpls/?$ /services/managed-mpls/ [R=301,L]

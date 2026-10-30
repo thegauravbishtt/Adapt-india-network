@@ -36,7 +36,8 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
   if (!post) return { title: "Article Not Found", robots: { index: false, follow: true } };
 
   return pageMetadata({
-    title: `${post.title} | Adapt India Network`,
+    // Long article titles are used as-is so Google does not cut them off mid-word
+    title: post.title.length > 52 ? post.title : `${post.title} | Adapt India Network`,
     description: post.excerpt,
     path: `/blog/${post.slug || post.id}/`,
     image: post.image,
