@@ -159,6 +159,101 @@ function Body({ item, variant }: { item: SubService; variant: number }) {
   );
 }
 
+
+/** Quick facts strip under the banner. */
+function Glance({ item, parentName }: { item: SubService; parentName: string }) {
+  const facts = [
+    { label: "Category", value: item.group },
+    { label: "Part of", value: parentName },
+    { label: "Coverage", value: "Pan-India, from our New Delhi office" },
+    { label: "Support", value: "One team for setup and support" },
+  ];
+  return (
+    <section className={`${wrap} bg-white border-b border-zinc-200`}>
+      <dl className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-zinc-200">
+        {facts.map((f) => (
+          <div key={f.label} className="py-5 px-4 first:pl-0">
+            <dt className="text-[11px] font-mono font-bold uppercase tracking-widest text-zinc-500">{f.label}</dt>
+            <dd className="text-sm font-semibold text-zinc-900 mt-1">{f.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  );
+}
+
+/** "What changes for your business" band. */
+function Outcome({ item }: { item: SubService }) {
+  if (!item.outcome) return null;
+  return (
+    <section className={`${wrap} bg-gradient-to-br from-red-50 via-white to-white py-12 sm:py-14 border-y border-zinc-200`}>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+        <div className="md:col-span-4">
+          <span className="font-mono text-xs font-bold text-[#E31E24] uppercase tracking-wider">{"// "}The difference</span>
+          <h2 className="text-xl sm:text-2xl font-black font-display text-zinc-950 tracking-tight mt-1">
+            What changes for your business
+          </h2>
+        </div>
+        <blockquote className="md:col-span-8 border-l-4 border-[#E31E24] pl-5 text-base sm:text-lg text-zinc-800 leading-relaxed">
+          {item.outcome}
+        </blockquote>
+      </div>
+    </section>
+  );
+}
+
+/** Delivery steps plus what we need from the customer. */
+function Process({ item }: { item: SubService }) {
+  const steps = [
+    { title: "Requirement call", text: `We understand your sites, users and what you need from ${item.name}.` },
+    { title: "Feasibility and design", text: "We check availability at each location and share a clear proposal." },
+    { title: "Setup and testing", text: "We coordinate installation and configuration, then test before handover." },
+    { title: "Go-live and support", text: "You go live with one support desk to call for anything afterwards." },
+  ];
+  return (
+    <section className={`${wrap} bg-white py-12 sm:py-16`}>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-8">
+          <h2 className="text-xl sm:text-2xl font-black font-display text-zinc-950 tracking-tight mb-6">
+            How we deliver {item.name}
+          </h2>
+          <ol className="relative border-l-2 border-zinc-200 ml-3 flex flex-col gap-6">
+            {steps.map((st, i) => (
+              <li key={st.title} className="pl-6 relative">
+                <span className="absolute -left-[15px] top-0 w-7 h-7 rounded-full bg-zinc-950 text-white text-xs font-bold flex items-center justify-center ring-4 ring-white">
+                  {i + 1}
+                </span>
+                <h3 className="font-bold text-zinc-950">{st.title}</h3>
+                <p className="text-sm text-zinc-600 leading-relaxed mt-0.5">{st.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        {item.prep && item.prep.length > 0 && (
+          <aside className="lg:col-span-4 self-start rounded-2xl bg-zinc-950 text-white p-6">
+            <h3 className="text-sm font-bold uppercase tracking-wide mb-1">To get started</h3>
+            <p className="text-xs text-zinc-400 mb-4">Have these ready for the first call:</p>
+            <ul className="flex flex-col gap-3">
+              {item.prep.map((p) => (
+                <li key={p} className="text-sm text-zinc-200 flex gap-2.5">
+                  <span className="mt-0.5 w-4 h-4 shrink-0 rounded border border-red-400 text-red-400 text-[10px] flex items-center justify-center">✓</span>
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/contact/"
+              className="mt-5 inline-block w-full text-center bg-[#E31E24] hover:bg-[#c9171d] text-white text-sm font-bold rounded-md py-2.5"
+            >
+              Book a requirement call
+            </Link>
+          </aside>
+        )}
+      </div>
+    </section>
+  );
+}
+
 /** Page for one individual service from the Services menu. */
 export default function SubServicePage({ item, banner, parentName, related, variant }: Props) {
   return (
@@ -216,7 +311,13 @@ export default function SubServicePage({ item, banner, parentName, related, vari
             </div>
           </section>
 
+          <Glance item={item} parentName={parentName} />
+
           <Body item={item} variant={variant} />
+
+          <Outcome item={item} />
+
+          <Process item={item} />
 
           {/* FAQ */}
           <section className={`${wrap} bg-white py-12 sm:py-14`}>

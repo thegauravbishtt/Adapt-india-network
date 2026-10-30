@@ -13,4 +13,14 @@ export interface SubService {
   features: Array<{ title: string; text: string }>;
   goodFor: string[];
   faqs: Array<{ question: string; answer: string }>;
+  /** Filled in from the extras files. */
+  outcome?: string;
+  prep?: string[];
+}
+
+/** Extra per-page content: what changes after switching, what we need to start, more FAQs. */
+export interface SubServiceExtra {
+  outcome: string;
+  prep: string[];
+  faqs: Array<{ question: string; answer: string }>;
 }
