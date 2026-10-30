@@ -26,7 +26,7 @@ service-banners/smartflo-obd.jpg https://images.unsplash.com/photo-1554672408-17
 service-banners/truecaller-business-verified.jpg https://images.unsplash.com/photo-1619658535018-5a55d32e4628?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/pri-dialing.jpg https://images.unsplash.com/photo-1560264280-88b68371db39?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/smartflo-email-platform.jpg https://images.unsplash.com/photo-1678227547328-a795dde5328f?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
-service-banners/ill-burstable-bandwidth.jpg https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
+service-banners/ill-burstable-bandwidth.jpg https://images.unsplash.com/photo-1687038520693-e528c10e450a?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/sd-wan-ready-ill.jpg https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/secured-leased-line.jpg https://images.unsplash.com/photo-1614064548237-096f735f344f?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/standard-carrier-ill.jpg https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
@@ -47,7 +47,7 @@ service-banners/azure-virtual-desktop.jpg https://images.unsplash.com/photo-1612
 service-banners/azure-ai-services.jpg https://images.unsplash.com/photo-1677442135136-760c813028c0?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/cloud-migration-services.jpg https://images.unsplash.com/photo-1690627931320-16ac56eb2588?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/managed-cloud-services.jpg https://images.unsplash.com/photo-1762163516269-3c143e04175c?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
-service-banners/cloudmon-performance.jpg https://images.unsplash.com/photo-1767424412548-1a1ac7f4b9bc?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
+service-banners/cloudmon-performance.jpg https://images.unsplash.com/photo-1759662011366-8a743eae9649?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/adapt-smart-cloud.jpg https://images.unsplash.com/photo-1784652852605-6945598f2af3?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/next-gen-firewall.jpg https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/web-application-firewall.jpg https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
@@ -60,13 +60,13 @@ service-banners/network-monitoring-24x7.jpg https://images.unsplash.com/photo-17
 service-banners/proactive-fault-detection.jpg https://images.unsplash.com/photo-1785682117029-86171f64c826?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/bgp-routing-optimization.jpg https://images.unsplash.com/photo-1691435828932-911a7801adfb?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/automated-failover-management.jpg https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
-service-banners/multi-vendor-router-management.jpg https://images.unsplash.com/photo-1516044734145-07ca8eef8731?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
+service-banners/multi-vendor-router-management.jpg https://images.unsplash.com/photo-1698668975271-2ba9a323be6b?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/firmware-security-patching.jpg https://images.unsplash.com/photo-1783419231367-89bd75443ad7?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
-service-banners/bandwidth-utilization-audits.jpg https://images.unsplash.com/photo-1745270917331-787c80129680?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
+service-banners/bandwidth-utilization-audits.jpg https://images.unsplash.com/photo-1561233835-f937539b95b9?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/custom-enterprise-slas.jpg https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/smartoffice-starter-pack.jpg https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/branch-in-a-box.jpg https://images.unsplash.com/photo-1758691737124-05c5bffe46f0?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
-service-banners/retail-dual-failover-pack.jpg https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
+service-banners/retail-dual-failover-pack.jpg https://images.unsplash.com/photo-1771033834141-023d630b3965?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/pop-up-event-internet.jpg https://images.unsplash.com/photo-1761195696518-6384573549ea?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/ill-sd-wan-hybrid-bundle.jpg https://images.unsplash.com/photo-1639066648921-82d4500abf1a?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
 service-banners/cloud-interconnect-peering.jpg https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=700&fit=crop&crop=entropy&q=75&fm=jpg
