@@ -7,10 +7,11 @@ import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/db";
+import { seedArticles } from "@/data/articles";
 import { Network, ShieldCheck, Mail, Phone } from "lucide-react";
 
 export default function ArticlesPage() {
-  const [articles, setArticles] = useState<BlogPost[]>([]);
+  const [articles, setArticles] = useState<BlogPost[]>(seedArticles);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -18,7 +19,7 @@ export default function ArticlesPage() {
     fetch("/api/admin/blogs")
       .then((res) => res.json())
       .then((data) => {
-        if (data.blogs && Array.isArray(data.blogs)) {
+        if (data.blogs && Array.isArray(data.blogs) && data.blogs.length > 0) {
           setArticles(data.blogs);
         }
       })
@@ -27,10 +28,7 @@ export default function ArticlesPage() {
 
   const categories = [
     "All",
-    "Optical Infrastructure",
-    "SD-WAN",
-    "Network Reliability",
-    "Cyber Defense",
+    ...Array.from(new Set(articles.map((a) => a.category).filter(Boolean))),
   ];
 
   const filteredArticles = articles.filter((article) => {

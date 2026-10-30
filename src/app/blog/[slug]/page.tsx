@@ -1,7 +1,11 @@
 import React from "react";
-import { getBlogs } from "@/lib/db";
+import { getBlogs, type BlogPost } from "@/lib/db";
+import { seedArticles } from "@/data/articles";
 import BlogDetailClient from "./BlogDetailClient";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata, articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface BlogPageProps {
   params: Promise<{
@@ -9,52 +13,66 @@ interface BlogPageProps {
   }>;
 }
 
-const fallbackBlog = {
-  id: "network-architecture",
-  slug: "network-architecture",
-  title: "Next-Gen Enterprise Networking Architecture",
-  excerpt: "Insights into high-speed SD-WAN and MPLS network infrastructures.",
-  content: "Content coming soon.",
-  category: "Networking",
-  date: "2026-10-29",
-  readTime: "5 min read",
-  author: "Adapt Network Team",
-  image: "/fabric-intelligence.jpg",
-  tags: ["SD-WAN", "Networking"],
-};
+/** Posts from the admin blog store plus the built-in articles (admin posts win on clashes). */
+async function getAllPosts(): Promise<BlogPost[]> {
+  const stored = (await getBlogs()).filter((b) => b.status !== "draft");
+  const storedSlugs = new Set(stored.map((b) => b.slug || b.id));
+  return [...stored, ...seedArticles.filter((a) => !storedSlugs.has(a.slug))];
+}
+
+async function findPost(slug: string) {
+  const posts = await getAllPosts();
+  return { posts, post: posts.find((b) => b.slug === slug || b.id === slug) };
+}
 
 export async function generateStaticParams() {
-  const blogs = await getBlogs();
-  if (!blogs || blogs.length === 0) {
-    return [{ slug: "network-architecture" }];
-  }
-  return blogs.map((blog) => ({
-    slug: blog.slug || blog.id,
-  }));
+  const posts = await getAllPosts();
+  return posts.map((blog) => ({ slug: blog.slug || blog.id }));
 }
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const blogs = await getBlogs();
-  const blog = blogs.find((b) => b.slug === slug || b.id === slug) || fallbackBlog;
+  const { post } = await findPost(slug);
+  if (!post) return { title: "Article Not Found", robots: { index: false, follow: true } };
 
-  return {
-    title: `${blog.title} | Adapt India Network`,
-    description: blog.excerpt,
-    openGraph: {
-      title: blog.title,
-      description: blog.excerpt,
-      images: blog.image ? [blog.image] : [],
-    },
-  };
+  return pageMetadata({
+    title: `${post.title} | Adapt India Network`,
+    description: post.excerpt,
+    path: `/blog/${post.slug || post.id}/`,
+    image: post.image,
+    type: "article",
+  });
 }
 
 export default async function BlogDetailPage({ params }: BlogPageProps) {
   const { slug } = await params;
-  const blogs = await getBlogs();
-  const blog = blogs.find((b) => b.slug === slug || b.id === slug) || fallbackBlog;
+  const { posts, post } = await findPost(slug);
+  if (!post) notFound();
 
-  const relatedBlogs = blogs.filter((b) => b.id !== blog.id).slice(0, 3);
+  const path = `/blog/${post.slug || post.id}/`;
+  const relatedBlogs = posts.filter((b) => b.id !== post.id).slice(0, 3);
 
-  return <BlogDetailClient blog={blog as any} relatedBlogs={relatedBlogs as any} />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          articleSchema({
+            title: post.title,
+            description: post.excerpt,
+            path,
+            image: post.image,
+            datePublished: post.publishedAt,
+            author: post.author,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog/" },
+            { name: post.title, path },
+          ]),
+          ...(post.faqs?.length ? [faqSchema(post.faqs)] : []),
+        ]}
+      />
+      <BlogDetailClient blog={post} relatedBlogs={relatedBlogs} />
+    </>
+  );
 }

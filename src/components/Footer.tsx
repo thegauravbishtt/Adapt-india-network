@@ -66,22 +66,22 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services#sd-wan" className="hover:text-white transition-colors">
+                    <Link href="/services/smartflo-sd-wan" className="hover:text-white transition-colors">
                       Managed SD-WAN
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services#mpls" className="hover:text-white transition-colors">
+                    <Link href="/services/managed-mpls" className="hover:text-white transition-colors">
                       MPLS VPN Connectivity
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services#enterprise-broadband" className="hover:text-white transition-colors">
+                    <Link href="/services/enterprise-broadband" className="hover:text-white transition-colors">
                       Enterprise Broadband
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services#managed-wifi" className="hover:text-white transition-colors">
+                    <Link href="/services/enterprise-broadband" className="hover:text-white transition-colors">
                       Managed Wi-Fi Solutions
                     </Link>
                   </li>
@@ -124,22 +124,22 @@ export default function Footer() {
                 </h4>
                 <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
                   <li>
-                    <Link href="/services#sip-trunk" className="hover:text-white transition-colors">
+                    <Link href="/services/business-communications" className="hover:text-white transition-colors">
                       SIP Trunk Services
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services#cloud-telephony" className="hover:text-white transition-colors">
+                    <Link href="/services/business-communications" className="hover:text-white transition-colors">
                       Cloud Telephony
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services#cyber-security" className="hover:text-white transition-colors">
+                    <Link href="/services/cybersecurity-solutions" className="hover:text-white transition-colors">
                       Cyber Security Solutions
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services#data-services" className="hover:text-white transition-colors">
+                    <Link href="/services/point-to-point-leased-line" className="hover:text-white transition-colors">
                       Data Services &amp; PRI
                     </Link>
                   </li>
@@ -180,35 +180,40 @@ export default function Footer() {
             {/* COLUMN 3: Industries & Company */}
             {/* ==================================================== */}
             <div className="flex flex-col gap-9 text-left">
-              {/* Top Tier: Industries */}
+              {/* Top Tier: Locations (internal links to city landing pages) */}
               <div>
                 <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
-                  Industries
+                  <Link href="/locations" className="hover:text-white transition-colors">Locations</Link>
                 </h4>
                 <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
                   <li>
-                    <Link href="/services" className="hover:text-white transition-colors">
-                      Manufacturing
+                    <Link href="/locations/delhi" className="hover:text-white transition-colors">
+                      Leased Line in Delhi
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" className="hover:text-white transition-colors">
-                      Consumer Goods &amp; Retail
+                    <Link href="/locations/gurgaon" className="hover:text-white transition-colors">
+                      Leased Line in Gurgaon
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" className="hover:text-white transition-colors">
-                      Logistics &amp; Ports
+                    <Link href="/locations/noida" className="hover:text-white transition-colors">
+                      Leased Line in Noida
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" className="hover:text-white transition-colors">
-                      Banking &amp; Finance
+                    <Link href="/locations/ghaziabad" className="hover:text-white transition-colors">
+                      Leased Line in Ghaziabad
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" className="hover:text-white transition-colors">
-                      Healthcare &amp; Diagnostics
+                    <Link href="/locations/faridabad" className="hover:text-white transition-colors">
+                      Leased Line in Faridabad
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/lucknow" className="hover:text-white transition-colors">
+                      Leased Line in Lucknow
                     </Link>
                   </li>
                 </ul>

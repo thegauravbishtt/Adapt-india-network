@@ -4,6 +4,8 @@ import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 import WelcomeRequirementModal from "../components/WelcomeRequirementModal";
 import ScrollAnimationProvider from "../components/ScrollAnimationProvider";
+import JsonLd from "../components/JsonLd";
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE, organizationSchema, websiteSchema } from "../lib/seo";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -20,10 +22,59 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
+const HOME_TITLE =
+  "Internet Leased Line & SD-WAN Provider in Delhi NCR & India | Adapt India Network";
+const HOME_DESCRIPTION =
+  "Internet Leased Line (ILL), SD-WAN, MPLS & business broadband in Delhi, Gurgaon, Noida & across India. Tata Tele & ACT partner. Call +91 82874 79961.";
+
 export const metadata: Metadata = {
-  title: "Adapt India Network - Next-Gen Telecom, SD-WAN & Enterprise Networking Solutions",
-  description:
-    "ADAPT India Network delivers tailored enterprise IT, SD-WAN, Internet Leased Line (ILL), Managed WiFi, MPLS, and Cloud Telephony solutions with guaranteed 99.5% uptime SLA backend connectivity across India.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: HOME_TITLE,
+    template: "%s | Adapt India Network",
+  },
+  description: HOME_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "internet leased line Delhi",
+    "leased line provider in Delhi NCR",
+    "ILL connection Gurgaon",
+    "leased line Noida",
+    "SD-WAN provider India",
+    "MPLS service provider India",
+    "enterprise broadband Delhi",
+    "SIP trunk provider India",
+    "Tata Tele Business Services partner",
+    "ACT Fibernet enterprise partner",
+  ],
+  alternates: {
+    canonical: "/",
+    languages: { "en-IN": "/", "x-default": "/" },
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [{ url: DEFAULT_OG_IMAGE, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  other: {
+    "geo.region": "IN-DL",
+    "geo.placename": "New Delhi",
+  },
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png" },
@@ -44,7 +95,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${manrope.variable} ${spaceMono.variable} antialiased`}
     >
       <head>
@@ -54,6 +105,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
           rel="stylesheet"
         />
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </head>
       <body className="min-h-screen bg-transparent text-black font-sans flex flex-col">
         <LanguageProvider>

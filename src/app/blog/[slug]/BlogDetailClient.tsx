@@ -106,7 +106,7 @@ export default function BlogDetailClient({
                     </span>
                     <span className="flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 text-zinc-400" />
-                      {new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                      {new Date(blog.publishedAt).toLocaleDateString("en-IN", {
                         month: "short",
                         day: "numeric",
                         year: "numeric",
@@ -285,13 +285,11 @@ export default function BlogDetailClient({
                         </div>
                       </button>
 
-                      {isOpen && (
-                        <div className="px-4 sm:px-5 pb-5 pt-1 border-t border-zinc-100">
+                      <div hidden={!isOpen} className="px-4 sm:px-5 pb-5 pt-1 border-t border-zinc-100">
                           <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed whitespace-pre-line pl-9">
                             {faq.answer}
                           </p>
                         </div>
-                      )}
                     </div>
                   );
                 })}

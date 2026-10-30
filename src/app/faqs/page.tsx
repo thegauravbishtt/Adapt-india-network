@@ -1,5 +1,7 @@
 "use client";
 
+import JsonLd from "../../components/JsonLd";
+import { faqSchema } from "../../lib/seo";
 import React, { useState, useMemo } from "react";
 import Navbar from "../../components/Navbar";
 import NewsletterSection from "../../components/NewsletterSection";
@@ -119,6 +121,7 @@ export default function FAQPage() {
 
   return (
     <LanguageProvider>
+      <JsonLd data={faqSchema(FAQS_DATA)} />
       <div className="min-h-screen bg-white text-zinc-900 flex flex-col justify-between overflow-x-clip">
         <Navbar />
 
@@ -247,11 +250,9 @@ export default function FAQPage() {
                           />
                         </button>
 
-                        {isOpen && (
-                          <div className="pt-3 pr-6 text-sm sm:text-[15px] text-zinc-600 leading-relaxed animate-in fade-in duration-200">
+                        <div hidden={!isOpen} className="pt-3 pr-6 text-sm sm:text-[15px] text-zinc-600 leading-relaxed animate-in fade-in duration-200">
                             <p>{faq.answer}</p>
                           </div>
-                        )}
                       </div>
                     );
                   })

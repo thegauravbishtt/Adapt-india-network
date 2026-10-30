@@ -38,15 +38,17 @@ export default function Hero() {
       {/* Hero Content Overlay (Matching Reference Layout, Real-World Telecom) */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center pt-32 sm:pt-28 pb-16 sm:pb-10">
         
-        {/* Main Title (Clean, Bold, Impactful) */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white uppercase drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
-          Adapt India Networks
-        </h1>
+        {/* Main Title: brand + main search phrase in one H1, same look as before */}
+        <h1 className="flex flex-col items-center">
+          <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white uppercase drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
+            Adapt India Networks
+          </span>
 
-        {/* Subtitle (Realistic Telecom, Non-AI) */}
-        <p className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-zinc-200/90 max-w-2xl font-medium tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-          Enterprise Leased Lines, SD-WAN &amp; Dedicated High-Speed Connectivity
-        </p>
+          {/* Subtitle */}
+          <span className="block mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-zinc-200/90 max-w-2xl font-medium tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            Internet Leased Line, SD-WAN &amp; MPLS Provider in Delhi NCR &amp; Across India
+          </span>
+        </h1>
 
         {/* Center CTA Button (HorrorCon Style) */}
         <div className="mt-6 sm:mt-7">

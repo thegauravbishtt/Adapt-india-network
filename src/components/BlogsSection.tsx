@@ -19,9 +19,9 @@ const articles: ResourceArticle[] = [
     slug: "why-dedicated-internet-leased-lines-matter",
     tag: "WHITE PAPER",
     readTime: "5 min read",
-    title: "Dedicated Leased Lines (ILL): Architecture & 99.99% SLAs",
+    title: "Internet Leased Line vs Broadband: Why Dedicated Bandwidth Matters",
     excerpt:
-      "A practical look at 1:1 symmetrical bandwidth, uncompressed throughput, low-latency peering, and contractual uptime guarantees.",
+      "What an ILL is, how it differs from business broadband, and when your office should switch.",
     image: "/banner-datacenter-racks.jpg",
   },
   {
@@ -39,9 +39,9 @@ const articles: ResourceArticle[] = [
     slug: "cloud-telephony-sip-trunking-modern-workforce",
     tag: "SOLUTION BRIEF",
     readTime: "5 min read",
-    title: "Enterprise Wi-Fi 6 & Zero-Trust Campus Networking",
+    title: "Cloud Telephony & SIP Trunking for Indian Businesses",
     excerpt:
-      "Eliminating office bottlenecks with high-density wireless controllers, dynamic link failover, and unified firewall security.",
+      "How SIP trunks and cloud telephony replace PRI lines and PBX hardware, and what to check before you switch.",
     image: "/services/broadband_clean.jpg",
   },
 ];

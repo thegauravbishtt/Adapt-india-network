@@ -1,4 +1,7 @@
-User-agent: *
+User-Agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
-Sitemap: https://adapt-india.net/sitemap.xml
+Host: https://www.adapt-india.net
+Sitemap: https://www.adapt-india.net/sitemap.xml

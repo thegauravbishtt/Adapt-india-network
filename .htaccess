@@ -6,6 +6,27 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
 
+  # 0a. One address for the whole site: https://www.adapt-india.net
+  #     (http:// and non-www versions 301-redirect here, so Google sees one site, not two)
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^adapt-india\.net$ [NC]
+  RewriteRule ^(.*)$ https://www.adapt-india.net/$1 [R=301,L]
+
+  # 0b. Old / duplicate URLs -> main page (301 keeps any ranking they have)
+  RewriteRule ^faq/?$ /faqs/ [R=301,L]
+  RewriteRule ^privacy/?$ /privacy-policy/ [R=301,L]
+  RewriteRule ^terms/?$ /terms-and-conditions/ [R=301,L]
+  RewriteRule ^cookies/?$ /cookie-preferences/ [R=301,L]
+  RewriteRule ^work/?$ /services/ [R=301,L]
+  RewriteRule ^industries(/.*)?$ /services/ [R=301,L]
+  RewriteRule ^services/internet-leased-line/?$ /services/smart-internet-ill/ [R=301,L]
+  RewriteRule ^services/sd-wan/?$ /services/smartflo-sd-wan/ [R=301,L]
+  RewriteRule ^services/mpls/?$ /services/managed-mpls/ [R=301,L]
+  RewriteRule ^services/managed-wifi/?$ /services/enterprise-broadband/ [R=301,L]
+  RewriteRule ^services/cloud-telephony/?$ /services/business-communications/ [R=301,L]
+  RewriteRule ^services/cyber-security/?$ /services/cybersecurity-solutions/ [R=301,L]
+  RewriteRule ^services/data-services/?$ /services/point-to-point-leased-line/ [R=301,L]
+
   # 1. Route Contact Form API to PHP Mailer Handler
   RewriteRule ^api/contact/?$ contact.php [L,QSA]
 
@@ -22,12 +43,17 @@ DirectoryIndex index.html
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.*)$ $1.html [L]
 
-  # 5. Fallback 404
-  RewriteRule ^ 404.html [L]
+  # 5. Anything else is a real 404 (handled by ErrorDocument below with a 404 status,
+  #    instead of serving 404.html with a 200 status, which Google treats as a "soft 404")
 </IfModule>
 
 # Custom Error Pages
 ErrorDocument 404 /404.html
+
+# Compression (faster pages = better Core Web Vitals)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript application/json image/svg+xml
+</IfModule>
 
 # Caching for static assets
 <IfModule mod_expires.c>
@@ -38,8 +64,9 @@ ErrorDocument 404 /404.html
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/webp "access plus 1 month"
   ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType video/mp4 "access plus 1 month"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
-

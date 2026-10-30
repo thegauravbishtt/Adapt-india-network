@@ -7,169 +7,10 @@ import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/db";
+import { seedArticles } from "@/data/articles";
 
-const DEFAULT_ARTICLES: BlogPost[] = [
-  {
-    id: "article-1",
-    slug: "sd-wan-vs-traditional-mpls-enterprise-guide",
-    title: "SD-WAN vs Traditional MPLS: How to choose the right architecture.",
-    category: "Enterprise Architecture",
-    readTime: "4 min read",
-    image: "/services/sdwan_clean.jpg",
-    excerpt: "Exploring the architectural advantages, cost efficiencies, and zero-touch deployment model of next-generation SD-WAN over legacy MPLS circuits.",
-    tags: [
-      { text: "NETWORKING", variant: "dark" },
-      { text: "SD-WAN", variant: "yellow" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-15T10:00:00.000Z",
-    author: "Adapt Network Solutions",
-  },
-  {
-    id: "article-2",
-    slug: "why-dedicated-internet-leased-lines-matter",
-    title: "Why Dedicated Internet Leased Lines (ILL) are essential for 99.99% SLA.",
-    category: "Network Reliability",
-    readTime: "5 min read",
-    image: "/banner-datacenter-racks.jpg",
-    excerpt: "A deep dive into 1:1 symmetrical bandwidth, uncompressed throughput, low-latency peering, and enterprise-grade SLAs.",
-    tags: [
-      { text: "CONNECTIVITY", variant: "outline" },
-      { text: "ILL", variant: "dark" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-18T12:00:00.000Z",
-    author: "Adapt Network Engineering",
-  },
-  {
-    id: "article-3",
-    slug: "securing-multi-branch-enterprise-networks",
-    title: "Securing multi-branch enterprise networks against modern cyber threats.",
-    category: "Cyber Defense",
-    readTime: "6 min read",
-    image: "/services/cybersecurity.jpg",
-    excerpt: "Analyzing unified threat management, zero-trust network access (ZTNA), and edge firewall security across distributed corporate offices.",
-    tags: [
-      { text: "SECURITY", variant: "yellow" },
-      { text: "CYBER", variant: "outline" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-22T08:30:00.000Z",
-    author: "Adapt Security Ops",
-  },
-  {
-    id: "article-4",
-    slug: "high-density-wifi-6-enterprise-office-deployment",
-    title: "High-density Wi-Fi 6: Designing seamless wireless connectivity for offices.",
-    category: "Wireless Systems",
-    readTime: "4 min read",
-    image: "/wifi-banner.jpg",
-    excerpt: "How OFDMA, MU-MIMO, and centralized cloud controllers prevent congestion in crowded corporate campuses.",
-    tags: [
-      { text: "WI-FI 6", variant: "dark" },
-      { text: "OFFICE", variant: "yellow" },
-    ],
-    status: "published",
-    publishedAt: "2026-02-27T14:00:00.000Z",
-    author: "Adapt Wireless Team",
-  },
-  {
-    id: "article-5",
-    slug: "cloud-telephony-sip-trunking-modern-workforce",
-    title: "Cloud Telephony & SIP Trunking: Modernizing corporate voice communication.",
-    category: "Enterprise Systems",
-    readTime: "5 min read",
-    image: "/services/enterprise_partnership.jpg",
-    excerpt: "Eliminating legacy PBX hardware with elastic cloud telephony, automated IVRs, and high-concurrency SIP trunking.",
-    tags: [
-      { text: "TELEPHONY", variant: "outline" },
-      { text: "SIP TRUNK", variant: "dark" },
-    ],
-    status: "published",
-    publishedAt: "2026-03-01T11:00:00.000Z",
-    author: "Adapt Telecom Solutions",
-  },
-  {
-    id: "article-6",
-    slug: "pan-india-carrier-redundancy-dual-homed-failover",
-    title: "Building Pan-India enterprise redundancy with dual-homed carrier failover.",
-    category: "Business Continuity",
-    readTime: "6 min read",
-    image: "/banner-global-telecom.jpg",
-    excerpt: "Engineering active-active link aggregation, sub-second BGP failover, and geographic tier-1 carrier redundancy.",
-    tags: [
-      { text: "FAILOVER", variant: "yellow" },
-      { text: "UPTIME", variant: "outline" },
-    ],
-    status: "published",
-    publishedAt: "2026-03-02T09:00:00.000Z",
-    author: "Adapt Infrastructure Core",
-  },
-  {
-    id: "article-7",
-    slug: "cloud-devops-kubernetes-multi-region-scale",
-    title: "Architecting zero-downtime multi-region Cloud & DevOps pipelines.",
-    category: "Cloud & DevOps",
-    readTime: "6 min read",
-    image: "/photo1.png",
-    excerpt: "How modern cloud infrastructure, automated CI/CD canary deployments, and IaC eliminate operational downtime.",
-    tags: [
-      { text: "DEVOPS", variant: "dark" },
-      { text: "INFRA", variant: "yellow" },
-    ],
-    status: "published",
-    publishedAt: "2026-03-02T14:00:00.000Z",
-    author: "DevOps Architecture Lab",
-  },
-  {
-    id: "article-8",
-    slug: "brand-identity-that-commands-pricing-power",
-    title: "Brand identity systems that command pricing power and category leadership.",
-    category: "Web/App Design & Development",
-    readTime: "4 min read",
-    image: "/creative1.png",
-    excerpt: "Why premium visual design, micro-typography, and distinct design tokens justify 3x higher contract values.",
-    tags: [
-      { text: "DESIGN", variant: "dark" },
-      { text: "BRAND", variant: "outline" },
-    ],
-    status: "published",
-    publishedAt: "2026-03-03T08:00:00.000Z",
-    author: "Brand Architecture Group",
-  },
-  {
-    id: "article-9",
-    slug: "lifecycle-email-automation-for-d2c",
-    title: "Lifecycle email automation: Unlocking 35%+ revenue share in modern D2C.",
-    category: "Email & Automation",
-    readTime: "4 min read",
-    image: "/creative4.png",
-    excerpt: "Behavioral triggers, predictive replenishment flows, and VIP segmentation blueprints.",
-    tags: [
-      { text: "RETENTION", variant: "yellow" },
-      { text: "EMAIL", variant: "dark" },
-    ],
-    status: "published",
-    publishedAt: "2026-03-03T10:30:00.000Z",
-    author: "Retention Systems",
-  },
-  {
-    id: "article-10",
-    slug: "e-commerce-scaling-playbook-2026",
-    title: "Scaling modern D2C ecommerce brands beyond 8-figures profitably.",
-    category: "Industries",
-    readTime: "7 min read",
-    image: "/creative2.png",
-    excerpt: "Navigating unit economics, blended CAC, and international multi-currency fulfillment.",
-    tags: [
-      { text: "E-COMM", variant: "dark" },
-      { text: "SCALE", variant: "yellow" },
-    ],
-    status: "published",
-    publishedAt: "2026-03-03T12:00:00.000Z",
-    author: "Ecommerce Practice",
-  },
-];
+// Built-in articles shown until the admin blog store has posts.
+const DEFAULT_ARTICLES: BlogPost[] = seedArticles;
 
 export default function BlogPage() {
   const [articles, setArticles] = useState<BlogPost[]>(DEFAULT_ARTICLES);
@@ -255,16 +96,14 @@ export default function BlogPage() {
     return articles.filter((a) => matchesCategory(a.category, id)).length;
   };
 
-  // Exact Requested Toggles
+  // Filters built from the categories of the articles actually shown
   const pillFilters = [
     { id: "all", label: "All", count: articles.length },
-    { id: "Performance & Advertising", label: "Performance & Advertising", count: getCount("Performance & Advertising") },
-    { id: "Social Media", label: "Social Media", count: getCount("Social Media") },
-    { id: "Web/App Design & Development", label: "Web/App Design & Development", count: getCount("Web/App Design & Development") },
-    { id: "Content", label: "Content", count: getCount("Content") },
-    { id: "Email & Automation", label: "Email & Automation", count: getCount("Email & Automation") },
-    { id: "Cloud & DevOps", label: "Cloud & DevOps", count: getCount("Cloud & DevOps") || 3 },
-    { id: "SEO", label: "SEO", count: getCount("SEO") },
+    ...Array.from(new Set(articles.map((a) => a.category).filter(Boolean))).map((cat) => ({
+      id: cat,
+      label: cat,
+      count: getCount(cat),
+    })),
   ];
 
   const filteredArticles = articles.filter((article) =>

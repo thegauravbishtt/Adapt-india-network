@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import JsonLd from "./JsonLd";
+import { faqSchema } from "../lib/seo";
 
 interface FAQItem {
   id: string;
@@ -8,56 +10,57 @@ interface FAQItem {
   answer: string;
 }
 
-const faqs: FAQItem[] = [
+export const homeFaqs: FAQItem[] = [
   {
     id: "faq-1",
-    question: "What are global network services, and why are they essential for enterprises today?",
+    question: "What is an Internet Leased Line (ILL) and how is it different from broadband?",
     answer:
-      "Global network services provide reliable, high-speed, and secure connectivity across distributed branch offices, cloud environments, and datacenters. They ensure uninterrupted business continuity, low-latency access to mission-critical workloads, and centralized security policy enforcement across regional and international locations.",
+      "An Internet Leased Line is a dedicated fibre connection reserved only for your business, with the same upload and download speed, static IP addresses and an uptime SLA. Broadband is shared with other users, so speeds drop at busy times and upload is usually much slower.",
   },
   {
     id: "faq-2",
-    question: "How do global connectivity services support business expansion across multiple regions?",
+    question: "Do you provide leased lines in Delhi, Gurgaon, Noida and Ghaziabad?",
     answer:
-      "By leveraging pan-India optical fiber backbones, multi-carrier redundancy, and automated SD-WAN provisioning, enterprises can stand up new branches, logistics hubs, and regional offices in under 48 hours without dealing with fragmented local telcos, backed by single-contract 99.5% SLAs.",
+      "Yes. We are based in Saket, New Delhi and deliver leased lines, SD-WAN, MPLS and business broadband across Delhi NCR, including Delhi, Gurgaon, Noida, Greater Noida, Ghaziabad and Faridabad, as well as Lucknow and other cities in Uttar Pradesh.",
   },
   {
     id: "faq-3",
-    question: "What's the importance of visibility and analytics in managing global network services?",
+    question: "Can you connect offices and branches in other cities across India?",
     answer:
-      "Real-time network visibility and proactive telemetry allow enterprise IT teams to monitor bandwidth utilization, detect packet jitter or route degradation, and resolve bottlenecks before end users are impacted. Our 24/7/365 active NOC supervises dynamic failovers and strict SLA compliance.",
+      "Yes. Through our carrier partners Tata Tele Business Services and ACT Fibernet we deliver connectivity across India, and we connect your branches to the head office securely using SD-WAN, MPLS or point-to-point leased lines.",
   },
   {
     id: "faq-4",
-    question: "What makes Adapt India Network one of the leading enterprise network service providers?",
+    question: "How long does it take to install a leased line?",
     answer:
-      "Adapt India Network combines tier-1 carrier fiber access with carrier-neutral orchestration, dedicated 1:1 symmetrical leased lines, intelligent SD-WAN overlays, and guaranteed uptime SLAs—giving enterprise clients a single trusted point of accountability.",
+      "It depends on whether the carrier's fibre already reaches your building. We check feasibility at your exact address first and give you a realistic delivery timeline before you sign.",
   },
   {
     id: "faq-5",
-    question: "How can organisations transition from legacy MPLS networks to modern global connectivity services?",
+    question: "Should my business choose SD-WAN or MPLS?",
     answer:
-      "We engineer seamless phased hybrid migrations: keeping mission-critical ERP traffic on dedicated private circuits while steering cloud-destined workloads (SaaS, Microsoft 365, AWS, Azure) across high-throughput Internet WAN and SD-WAN. This reduces network costs by 30-45% with zero operational downtime.",
+      "SD-WAN works over leased lines, broadband and 4G/5G, is usually more cost-effective and makes cloud access faster. MPLS is a private carrier network suited to banks and businesses with strict compliance needs. Many companies use both, and we help you choose.",
   },
   {
     id: "faq-6",
-    question: "How can Adapt India Network's global connectivity services help enterprises accelerate digital transformation?",
+    question: "How do you keep my office online if a fibre is cut?",
     answer:
-      "Digital transformation demands agile, cloud-ready networks that adapt dynamically. Our programmable network fabric supports instant bandwidth scaling, zero-trust network access (ZTNA), and multi-cloud interconnects that empower hybrid workforces reliably.",
+      "For critical sites we set up a backup connection on a different carrier, ideally entering your building by a separate route, with automatic failover on your router, firewall or SD-WAN device so your team stays online.",
   },
   {
     id: "faq-7",
-    question: "What are the latest trends shaping the future of global network services?",
+    question: "Do you provide static IP addresses?",
     answer:
-      "Key enterprise trends include AI-driven predictive network operations (AIOps), software-defined cloud networking, automated path steering, and unified SASE/SSE frameworks that merge network performance with zero-trust cyber defense.",
+      "Yes. Leased lines come with static public IP addresses for servers, VPNs, remote CCTV access and whitelisting with banks, ERP vendors and portals.",
   },
   {
     id: "faq-8",
-    question: "How does the Adapt India Network Fabric enable secure, programmable global connectivity?",
+    question: "What support do you provide after installation?",
     answer:
-      "Our Network Fabric decouples physical carrier underlays from intelligent software overlays, allowing dynamic path selection, granular end-to-end encryption, automated QoS prioritization, and centralized portal visibility across all enterprise touchpoints.",
+      "Connections are monitored around the clock and our support team coordinates with the carrier to restore service quickly if a fault occurs. You get a single point of contact for every site.",
   },
 ];
+const faqs = homeFaqs;
 
 export default function HomeFAQSection() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -68,6 +71,7 @@ export default function HomeFAQSection() {
 
   return (
     <section id="faqs" className="w-full bg-white py-16 sm:py-20 lg:py-24 px-6 sm:px-10 lg:px-16 border-t border-zinc-200 select-none">
+      <JsonLd data={faqSchema(homeFaqs)} />
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
         
         {/* Left Column: Heading matching screenshot */}
@@ -114,13 +118,15 @@ export default function HomeFAQSection() {
                 </button>
 
                 {/* Expanded Answer */}
-                {isOpen && (
-                  <div className="pb-6 pl-8 pr-2 sm:pr-4 animate-in fade-in slide-in-from-top-1 duration-200">
-                    <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed font-normal">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
+                {/* Always in the HTML (so Google can read it); hidden until opened */}
+                <div
+                  hidden={!isOpen}
+                  className="pb-6 pl-8 pr-2 sm:pr-4 animate-in fade-in slide-in-from-top-1 duration-200"
+                >
+                  <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed font-normal">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
             );
           })}

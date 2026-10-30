@@ -900,11 +900,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                         </span>
                       </button>
 
-                      {isOpen && (
-                        <div className="px-4 pb-5 pt-1 sm:px-5 sm:pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 bg-[#fafafa]/50 animate-in fade-in-50 duration-150">
+                      <div hidden={!isOpen} className="px-4 pb-5 pt-1 sm:px-5 sm:pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 bg-[#fafafa]/50 animate-in fade-in-50 duration-150">
                           {faq.answer}
                         </div>
-                      )}
                     </div>
                   );
                 })}
