@@ -77,3 +77,4 @@ echo json_encode([
     'success' => true,
     'message' => 'Your project brief has been received successfully!'
 ]);
+

@@ -1914,4 +1914,958 @@ export const telecomServices: ServiceDetail[] = [
       ],
     },
   },
+{
+  "slug": "internet-leased-line",
+  "name": "Internet Leased Line (ILL)",
+  "category": "Network & Connectivity",
+  "tagline": "Carrier-Grade 1:1 Dedicated Symmetrical Bandwidth with 99.999% SLA",
+  "heroHeadline": "Enterprise Internet Leased Line (ILL) Built for",
+  "heroHighlight": "Uninterrupted High-Speed Operations.",
+  "heroSubtitle": "Dedicated, unshared symmetrical bandwidth engineered for zero packet loss, sub-15ms inter-metro latency, cloud-based DDoS scrubbing, and 24/7/365 proactive NOC monitoring.",
+  "image": "/banner-datacenter-racks.jpg",
+  "galleryImages": [
+    "/banner-network-matrix.jpg",
+    "/banner-servers-lights.jpg",
+    "/banner-global-telecom.jpg"
+  ],
+  "stats": [
+    {
+      "value": "99.999%",
+      "label": "Guaranteed SLA Uptime"
+    },
+    {
+      "value": "1:1",
+      "label": "Symmetric Bandwidth (No Contention)"
+    },
+    {
+      "value": "< 15ms",
+      "label": "Pan-India Tier-1 Latency"
+    },
+    {
+      "value": "< 4 Hours",
+      "label": "Mean Time to Restore (MTTR)"
+    }
+  ],
+  "overview": "Adapt India Network's Internet Leased Line (ILL) provides businesses with dedicated, uncontended internet connectivity over optical fiber. Backed by industry-leading SLAs, enterprise-grade routing, and dual-last-mile redundancy, our ILL ensures high availability and lightning-fast speeds for critical cloud applications.",
+  "theChallenge": "Standard broadband connections suffer from fluctuating speeds, peak-hour congestion, high latency, and poor upload bandwidth, causing disruptions in VoIP calls, cloud data backups, and video conferencing.",
+  "ourSolution": "We deliver 1:1 symmetrical bandwidth over carrier-class optical fiber with guaranteed bandwidth reservation, dual-path fiber redundancy, and 24/7 proactive monitoring from our Network Operations Center.",
+  "capabilities": [
+    {
+      "title": "1:1 Dedicated Bandwidth",
+      "description": "Zero contention ratio ensuring 100% of your purchased bandwidth is available at all times.",
+      "deliverables": [
+        "Speeds from 10 Mbps to 10 Gbps",
+        "Equal upload and download speeds",
+        "SFP / RJ45 Gigabit handoff",
+        "On-demand burstable bandwidth"
+      ]
+    },
+    {
+      "title": "Dual Fiber Path Redundancy",
+      "description": "Protected last-mile fiber routing entering your premises via diverse physical paths.",
+      "deliverables": [
+        "Automatic sub-50ms optical switchover",
+        "Dual-homed BGP routing",
+        "Secondary wireless/LTE failover",
+        "N+1 core infrastructure"
+      ]
+    },
+    {
+      "title": "Integrated Anti-DDoS Protection",
+      "description": "Always-on multi-terabit traffic scrubbing that filters malicious packets before they reach your network.",
+      "deliverables": [
+        "Volumetric attack mitigation",
+        "Real-time threat detection",
+        "Zero latency impact on clean traffic",
+        "Detailed incident reports"
+      ]
+    },
+    {
+      "title": "Static IP Subnets & IPv6 Support",
+      "description": "Dedicated static public IP pools with reverse DNS and dual-stack IPv4/IPv6 support.",
+      "deliverables": [
+        "Public IPv4 blocks (/29 to /24)",
+        "Native IPv6 addressing",
+        "Custom reverse DNS delegation",
+        "BGP peering support"
+      ]
+    }
+  ],
+  "techStack": [
+    "Single Mode Optical Fiber",
+    "BGP-4 Multi-Homed Routing",
+    "Cisco ASR / Catalyst",
+    "Juniper MX Series",
+    "IPv4 & IPv6 Dual-Stack",
+    "Anti-DDoS Scrubbing",
+    "SNMPv3 NOC Telemetry"
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Feasibility & Route Survey",
+      "desc": "Our field engineers evaluate your location and design redundant optical fiber lead-in paths."
+    },
+    {
+      "step": "02",
+      "title": "Fiber Pull & Splicing",
+      "desc": "Carrier-grade single-mode fiber is blown into your server room and terminated on managed switches."
+    },
+    {
+      "step": "03",
+      "title": "RFC 2544 Soak Testing",
+      "desc": "24-hour rigorous testing measuring latency, throughput, and packet jitter before sign-off."
+    },
+    {
+      "step": "04",
+      "title": "Go-Live & 24/7 NOC Support",
+      "desc": "Live service activation with automated telemetry monitoring and 15-minute SLA response."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Pan-India Financial Firm Zero Downtime",
+      "client": "Top FinTech NBFC",
+      "impact": "Eliminated transaction drops across 42 branch locations with 99.99% measured uptime.",
+      "image": "/banner-datacenter-racks.jpg"
+    },
+    {
+      "title": "High-Throughput E-Commerce Hub",
+      "client": "Leading Retail Logistics",
+      "impact": "Upgraded primary hub to 2 Gbps redundant ILL with sub-10ms cloud latency.",
+      "image": "/banner-network-matrix.jpg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between ILL and standard broadband?",
+      "answer": "An Internet Leased Line provides 1:1 dedicated, unshared bandwidth with equal upload and download speeds and a guaranteed 99.9% uptime SLA, whereas broadband is shared and asymmetrical."
+    },
+    {
+      "question": "How fast is service restored in case of a fiber cut?",
+      "answer": "Our circuits feature automated dual-path fiber switchover in under 50 milliseconds, with a committed 4-hour MTTR for physical cable restorations."
+    },
+    {
+      "question": "Do you provide static IP addresses with ILL?",
+      "answer": "Yes, every Internet Leased Line comes with a dedicated pool of public static IPv4 addresses and native IPv6 subnets."
+    }
+  ]
+},
+{
+  "slug": "sd-wan",
+  "name": "Managed SD-WAN Solutions",
+  "category": "Network & Connectivity",
+  "tagline": "Intelligent Application-Aware Routing & Cloud-Delivered WAN Optimization",
+  "heroHeadline": "Modern Software-Defined WAN (SD-WAN) For",
+  "heroHighlight": "Agile Multi-Site Enterprises.",
+  "heroSubtitle": "Unify multi-cloud connectivity, automate path steering across ILL, broadband, and 4G/5G, and secure branch traffic with centralized zero-touch policy orchestration.",
+  "image": "/adapt-sd-wan-clean.jpg",
+  "galleryImages": [
+    "/banner-network-matrix.jpg",
+    "/fabric-intelligence.jpg",
+    "/fabric-resilience.jpg"
+  ],
+  "stats": [
+    {
+      "value": "40%",
+      "label": "Bandwidth Cost Reduction"
+    },
+    {
+      "value": "< 10ms",
+      "label": "Dynamic Path Failover"
+    },
+    {
+      "value": "100%",
+      "label": "Centralized Cloud Visibility"
+    },
+    {
+      "value": "Zero-Touch",
+      "label": "Remote Branch Provisioning"
+    }
+  ],
+  "overview": "Adapt India Network's Managed SD-WAN transforms rigid legacy networks into flexible, software-driven fabrics. It dynamically steers application traffic across hybrid links (ILL, MPLS, broadband, LTE), ensuring critical applications like ERP, CRM, and video calls always experience peak performance.",
+  "theChallenge": "Managing dozens or hundreds of distributed branch offices with traditional routers requires complex manual configurations, expensive MPLS circuits, and offers poor visibility into SaaS application performance.",
+  "ourSolution": "Our cloud-managed SD-WAN provides zero-touch branch deployment, intelligent multi-path steering, end-to-end IPsec encryption, and unified single-pane-of-glass telemetry across your entire enterprise.",
+  "capabilities": [
+    {
+      "title": "Application-Aware Dynamic Path Steering",
+      "description": "Automatically routes mission-critical traffic over the best-performing link based on real-time jitter, loss, and latency.",
+      "deliverables": [
+        "Sub-second packet-level failover",
+        "Quality of Service (QoS) prioritization",
+        "Direct-to-Cloud SaaS breakout",
+        "Bandwidth aggregation across hybrid links"
+      ]
+    },
+    {
+      "title": "Zero-Touch Provisioning (ZTP)",
+      "description": "Deploy new branch locations in minutes by shipping pre-configured edge appliances that pull policies from the cloud.",
+      "deliverables": [
+        "Centralized cloud portal",
+        "Plug-and-play installation",
+        "Automated configuration push",
+        "Remote firmware updates"
+      ]
+    },
+    {
+      "title": "Integrated Edge Security & SASE",
+      "description": "Built-in stateful firewall, URL filtering, intrusion prevention, and secure web gateway at every branch edge.",
+      "deliverables": [
+        "AES-256 IPsec tunnel encryption",
+        "Next-Gen Firewall integration",
+        "Secure internet breakout (SASE)",
+        "Granular application access controls"
+      ]
+    },
+    {
+      "title": "Real-Time Telemetry & Analytics",
+      "description": "Full visibility into branch utilization, top applications, latency metrics, and link health across India.",
+      "deliverables": [
+        "Live cloud dashboard",
+        "Automated anomaly alerts",
+        "Historical capacity planning reports",
+        "SLA monitoring logs"
+      ]
+    }
+  ],
+  "techStack": [
+    "Cisco Meraki & Viptela",
+    "Fortinet Secure SD-WAN",
+    "VMware VeloCloud",
+    "IPsec AES-256 Mesh",
+    "BGP / OSPF Integration",
+    "Cloud Orchestrator",
+    "REST API Automation"
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Network Architecture Assessment",
+      "desc": "We evaluate your branch topology, bandwidth utilization, and cloud workloads to design the optimal SD-WAN overlay."
+    },
+    {
+      "step": "02",
+      "title": "Policy & Security Modeling",
+      "desc": "Define centralized QoS, firewall, and application prioritization rules in the orchestrator."
+    },
+    {
+      "step": "03",
+      "title": "Appliance Rollout & ZTP",
+      "desc": "Dispatch edge appliances to branches; devices automatically register and download policies upon power-up."
+    },
+    {
+      "step": "04",
+      "title": "Continuous 24/7 Optimization",
+      "desc": "Our NOC actively tracks link performance, reroutes traffic, and provides SLA analytics."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "150+ Retail Stores Unified",
+      "client": "National Apparel Retailer",
+      "impact": "Cut WAN expenditure by 45% while achieving 100% billing counter uptime across India.",
+      "image": "/adapt-sd-wan-clean.jpg"
+    },
+    {
+      "title": "Hybrid Cloud Interconnect for Healthcare",
+      "client": "Hospital Chain",
+      "impact": "Seamlessly connected 12 hospitals with zero packet loss for diagnostic imaging and telemedicine.",
+      "image": "/banner-network-matrix.jpg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can SD-WAN replace my existing MPLS network?",
+      "answer": "Yes. SD-WAN can augment or completely replace expensive MPLS circuits by bonding business broadband, leased lines, and 4G/5G connections into a unified, secure overlay."
+    },
+    {
+      "question": "How does SD-WAN improve video conferencing and VoIP quality?",
+      "answer": "It actively monitors packet loss and jitter on each link and steers voice/video packets to the cleanest path in real-time, preventing stutter or drops."
+    },
+    {
+      "question": "Is branch traffic encrypted?",
+      "answer": "Yes, all inter-branch and branch-to-cloud traffic is encrypted with military-grade AES-256 IPsec tunnels."
+    }
+  ]
+},
+{
+  "slug": "mpls",
+  "name": "MPLS VPN Connectivity",
+  "category": "Network & Connectivity",
+  "tagline": "Private Carrier-Grade Multi-Branch Mesh Intranet with Strict QoS SLA",
+  "heroHeadline": "Private Multi-Protocol Label Switching (MPLS) For",
+  "heroHighlight": "Critical Enterprise Intra-Connectivity.",
+  "heroSubtitle": "Connect your headquarters, regional data centers, branches, and remote facilities over a closed, highly secure private IP network with strict class-of-service guarantees.",
+  "image": "/services/mpls_clean.jpg",
+  "galleryImages": [
+    "/network-mpls.png",
+    "/banner-datacenter-racks.jpg",
+    "/banner-servers-lights.jpg"
+  ],
+  "stats": [
+    {
+      "value": "99.99%",
+      "label": "Intranet Availability SLA"
+    },
+    {
+      "value": "< 25ms",
+      "label": "Metro-to-Metro Latency"
+    },
+    {
+      "value": "Strict CoS",
+      "label": "Voice / Video / Data Prioritization"
+    },
+    {
+      "value": "100%",
+      "label": "Isolated Private Traffic"
+    }
+  ],
+  "overview": "Adapt India Network's Managed MPLS VPN delivers enterprise-grade private connectivity designed for financial institutions, manufacturing chains, and large corporate enterprises that require complete isolation from the public internet.",
+  "theChallenge": "Public internet connections carry inherent exposure to external threats, jitter, and congestion that can compromise sensitive ERP databases and intra-company data transfers.",
+  "ourSolution": "Our MPLS VPN operates over dedicated label-switched paths completely partitioned from the public internet. We guarantee packet prioritization and latency SLAs across all corporate endpoints.",
+  "capabilities": [
+    {
+      "title": "Private Any-to-Any Mesh Topology",
+      "description": "Direct branch-to-branch communication without backhauling through the central head office.",
+      "deliverables": [
+        "Full mesh and hub-and-spoke topologies",
+        "Multi-VRF (Virtual Routing & Forwarding)",
+        "Seamless addition of new branch nodes",
+        "Scalable bandwidth tiers per site"
+      ]
+    },
+    {
+      "title": "Class of Service (CoS) Prioritization",
+      "description": "Tag and guarantee bandwidth for voice, video, ERP, and transactional database packets.",
+      "deliverables": [
+        "Real-time, mission-critical, and best-effort queues",
+        "Strict priority queuing for voice",
+        "Bandwidth reservation during peaks",
+        "Zero jitter impact on critical flows"
+      ]
+    },
+    {
+      "title": "Complete Network Isolation",
+      "description": "Operates on private IP address spaces entirely insulated from external cyber vulnerabilities.",
+      "deliverables": [
+        "Carrier-level routing partition",
+        "Dedicated routing tables per client",
+        "No exposure to internet attacks",
+        "Regulatory and banking compliance"
+      ]
+    },
+    {
+      "title": "Hybrid Cloud MPLS Interconnect",
+      "description": "Direct high-speed interconnects into AWS Direct Connect, Azure ExpressRoute, and Google Cloud.",
+      "deliverables": [
+        "Private cloud gateway",
+        "Bypasses public internet routing",
+        "Guaranteed throughput to cloud workloads",
+        "Multi-region availability"
+      ]
+    }
+  ],
+  "techStack": [
+    "Cisco ASR / Catalyst MPLS",
+    "Juniper Networks Carrier Edge",
+    "BGP-4 & MPLS LDP",
+    "RFC 4364 BGP/MPLS IP VPNs",
+    "IEEE 802.1p CoS Tagging",
+    "24/7/365 NOC Engine"
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Topology & IP Addressing Design",
+      "desc": "Design the WAN mesh structure, VRF partitions, and bandwidth requirements for each site."
+    },
+    {
+      "step": "02",
+      "title": "Dedicated Last-Mile Provisioning",
+      "desc": "Deploy dedicated optical fiber links at each office location with managed customer edge routers."
+    },
+    {
+      "step": "03",
+      "title": "CoS & Routing Configuration",
+      "desc": "Implement traffic classification rules, test voice prioritization, and establish routing peering."
+    },
+    {
+      "step": "04",
+      "title": "Full-Mesh Activation & Monitoring",
+      "desc": "Launch the private network under continuous 24/7 NOC oversight with guaranteed uptime SLAs."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "National Bank Core Banking Network",
+      "client": "Leading Private Bank",
+      "impact": "Interconnected 85 branches with zero transaction latency and 99.99% network uptime.",
+      "image": "/services/mpls_clean.jpg"
+    },
+    {
+      "title": "Automotive Manufacturing Supply Chain",
+      "client": "OEM Manufacturer",
+      "impact": "Linked 6 manufacturing plants and 24 distribution hubs with real-time SAP ERP sync.",
+      "image": "/banner-servers-lights.jpg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How is MPLS different from a regular VPN over the Internet?",
+      "answer": "An internet VPN encrypts traffic over the public internet and is subject to latency spikes and outages. MPLS operates on a private carrier backbone with guaranteed SLAs and strict packet prioritization."
+    },
+    {
+      "question": "Can we mix high-speed ILL with MPLS?",
+      "answer": "Yes, we frequently implement hybrid networks where MPLS handles private corporate transactions while ILL manages general web traffic and SaaS."
+    },
+    {
+      "question": "What SLAs are provided with MPLS?",
+      "answer": "We offer 99.99% availability SLAs, sub-25ms latency guarantees, and 24/7/365 L3 support with a 4-hour restoration commitment."
+    }
+  ]
+},
+{
+  "slug": "managed-wifi",
+  "name": "Enterprise Managed Wi-Fi",
+  "category": "Network & Connectivity",
+  "tagline": "High-Density Wi-Fi 6/7 Deployments, Cloud Controller & Guest Portal Analytics",
+  "heroHeadline": "High-Density Enterprise Managed Wi-Fi For",
+  "heroHighlight": "Offices, Retail, Warehouses & Campuses.",
+  "heroSubtitle": "Turnkey enterprise wireless solutions featuring carrier-grade Wi-Fi 6/7 access points, centralized cloud management, seamless roaming, and enterprise WPA3 security.",
+  "image": "/wifi-banner.jpg",
+  "galleryImages": [
+    "/banner-network-matrix.jpg",
+    "/banner-servers-lights.jpg",
+    "/fabric-resilience.jpg"
+  ],
+  "stats": [
+    {
+      "value": "Wi-Fi 6/7",
+      "label": "Next-Gen Wireless Standards"
+    },
+    {
+      "value": "500+",
+      "label": "Concurrent Clients Per Access Point"
+    },
+    {
+      "value": "100%",
+      "label": "Seamless Campus Roaming"
+    },
+    {
+      "value": "WPA3",
+      "label": "Enterprise Security Protocol"
+    }
+  ],
+  "overview": "Modern workspaces demand dense, high-speed wireless connectivity that supports hundreds of laptops, mobile devices, and IoT hardware without dropouts. Adapt India Network designs, installs, and manages turnkey enterprise Wi-Fi networks.",
+  "theChallenge": "Consumer and unmanaged wireless equipment frequently crashes under high client density, suffers from dead zones, lacks rogue AP protection, and provides zero guest analytics.",
+  "ourSolution": "We deploy enterprise-grade access points, conduct predictive RF heat mapping, and manage everything through a cloud controller with automated radio resource management and role-based access control.",
+  "capabilities": [
+    {
+      "title": "Predictive RF Site Surveys & Heatmapping",
+      "description": "Acoustic and radio frequency modeling to eliminate dead zones and ensure uniform signal coverage.",
+      "deliverables": [
+        "Ekahau RF 3D heat mapping",
+        "Optimal AP density calculations",
+        "Interference mitigation design",
+        "Spectrum analysis reports"
+      ]
+    },
+    {
+      "title": "Cloud-Managed Wi-Fi Controller",
+      "description": "Centralized configuration, automated channel tuning, and remote client troubleshooting from one portal.",
+      "deliverables": [
+        "Single-dashboard management",
+        "Automated channel & power optimization",
+        "Fast 802.11r/k/v seamless roaming",
+        "Detailed client performance telemetry"
+      ]
+    },
+    {
+      "title": "Branded Captive Portal & Guest Analytics",
+      "description": "Custom guest onboarding portals with SMS OTP verification, social login, and marketing footfall telemetry.",
+      "deliverables": [
+        "Compliant SMS OTP authentication",
+        "Visitor dwell time analytics",
+        "Bandwidth throttling per user",
+        "Custom corporate splash pages"
+      ]
+    },
+    {
+      "title": "WPA3 Enterprise & 802.1X Security",
+      "description": "Integrate with Microsoft Active Directory, LDAP, or Google Workspace for secure corporate network access.",
+      "deliverables": [
+        "Per-user certificate authentication",
+        "Automated VLAN assignment by department",
+        "Rogue AP detection & containment",
+        "Isolated IoT network partitions"
+      ]
+    }
+  ],
+  "techStack": [
+    "Wi-Fi 6E & Wi-Fi 7",
+    "Aruba Networks & Cisco Catalyst",
+    "Ruckus Wireless",
+    "Cloud Wi-Fi Controller",
+    "802.1X RADIUS Authentication",
+    "WPA3 Enterprise Encryption"
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "RF Survey & Blueprint Audit",
+      "desc": "We evaluate your floor plan and structural materials to map exact access point mounting positions."
+    },
+    {
+      "step": "02",
+      "title": "Structured Cabling & Hardware Install",
+      "desc": "Installation of Cat6A cabling, PoE+ switches, and enterprise ceiling-mounted access points."
+    },
+    {
+      "step": "03",
+      "title": "SSID & Security Provisioning",
+      "desc": "Configure corporate SSIDs with RADIUS authentication and isolated guest portals."
+    },
+    {
+      "step": "04",
+      "title": "24/7 Managed NOC Oversight",
+      "desc": "Automated channel tuning, firmware patching, and rapid hardware replacement guarantees."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "50,000 Sq Ft Corporate Campus Wi-Fi",
+      "client": "Global Tech Enterprise",
+      "impact": "Deployed 64 Wi-Fi 6 APs supporting 1,800 concurrent devices with zero roaming drops.",
+      "image": "/wifi-banner.jpg"
+    },
+    {
+      "title": "High-Throughput Logistics Warehouse",
+      "client": "National 3PL Provider",
+      "impact": "Guaranteed 100% wireless barcode scanner coverage across 12-meter tall pallet racks.",
+      "image": "/banner-network-matrix.jpg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between Wi-Fi 6 and older Wi-Fi?",
+      "answer": "Wi-Fi 6 (802.11ax) handles 4x more concurrent devices per access point, reduces battery drain on mobile devices, and maintains higher speeds in dense corporate environments."
+    },
+    {
+      "question": "Can we track visitor footfall and guest demographics?",
+      "answer": "Yes, our captive portal solution provides compliant SMS OTP login with dwell time, return visitor rates, and device telemetry."
+    },
+    {
+      "question": "Is the hardware managed by your team?",
+      "answer": "Yes, our Managed Wi-Fi service includes 24/7 remote monitoring, automated software updates, and next-business-day hardware replacements."
+    }
+  ]
+},
+{
+  "slug": "cyber-security",
+  "name": "Cyber Security & Threat Defense",
+  "category": "Security & Compliance",
+  "tagline": "Zero-Trust Edge Security, Clean Pipe Anti-DDoS & Next-Gen Cloud Firewall",
+  "heroHeadline": "Enterprise Cyber Security & Cloud Defense For",
+  "heroHighlight": "Safeguarding Mission-Critical Operations.",
+  "heroSubtitle": "Protect your corporate network, cloud infrastructure, and distributed branch workforce with AI-driven threat intelligence, DDoS mitigation, and 24/7 SOC monitoring.",
+  "image": "/fabric-intelligence.jpg",
+  "galleryImages": [
+    "/banner-datacenter-racks.jpg",
+    "/banner-network-matrix.jpg",
+    "/fabric-future.jpg"
+  ],
+  "stats": [
+    {
+      "value": "24/7/365",
+      "label": "Active SOC Monitoring"
+    },
+    {
+      "value": "Tbps Scale",
+      "label": "DDoS Scrubbing Capacity"
+    },
+    {
+      "value": "< 5 Mins",
+      "label": "Threat Incident Response"
+    },
+    {
+      "value": "ISO 27001",
+      "label": "Certified Security Standards"
+    }
+  ],
+  "overview": "Cyber threats evolve at breakneck speeds. Adapt India Network provides unified, carrier-grade cybersecurity solutions that protect your physical infrastructure, cloud workloads, and remote employees against ransomware, malware, and volumetric cyber attacks.",
+  "theChallenge": "Modern businesses face sophisticated cyber attacks, including volumetric DDoS floods that take websites offline, targeted phishing, and credential compromise across distributed hybrid teams.",
+  "ourSolution": "We offer multi-layered defense featuring cloud DDoS scrubbing, Next-Generation Firewall as a Service (FWaaS), secure remote access (Zero Trust Network Access), and continuous SOC threat hunting.",
+  "capabilities": [
+    {
+      "title": "Clean Pipe DDoS Scrubbing",
+      "description": "Defend against massive Layer 3/4 and Layer 7 volumetric attacks before they saturate your internet pipes.",
+      "deliverables": [
+        "Multi-terabit cloud scrubbing centers",
+        "Automated BGP diversion within seconds",
+        "Protection against SYN, UDP, and HTTP floods",
+        "Comprehensive post-attack forensics"
+      ]
+    },
+    {
+      "title": "Next-Gen Firewall as a Service (FWaaS)",
+      "description": "Deploy deep packet inspection, intrusion prevention (IPS), and web application filtering across all traffic.",
+      "deliverables": [
+        "Deep SSL/TLS traffic inspection",
+        "Automated threat intelligence updates",
+        "URL filtering and application control",
+        "Malware sandboxing and emulation"
+      ]
+    },
+    {
+      "title": "Zero Trust Network Access (ZTNA)",
+      "description": "Replace legacy VPNs with identity-aware, least-privilege access for remote employees and contractors.",
+      "deliverables": [
+        "Continuous device posture checking",
+        "Per-application access authorization",
+        "MFA and single sign-on integration",
+        "Zero lateral attack movement"
+      ]
+    },
+    {
+      "title": "24/7 Security Operations Center (SOC)",
+      "description": "Real-time SIEM log correlation, automated behavioral alerting, and human security analysts watching your perimeter.",
+      "deliverables": [
+        "24/7 security analyst monitoring",
+        "Rapid containment SLAs (<15 mins)",
+        "Vulnerability assessment scans",
+        "Compliance reporting (RBI, ISO, SOC2)"
+      ]
+    }
+  ],
+  "techStack": [
+    "Fortinet FortiGate",
+    "Palo Alto Networks",
+    "CrowdStrike Falcon",
+    "Cloudflare Magic Transit",
+    "Splunk / Wazuh SIEM",
+    "Zero Trust Architecture (NIST 800-207)"
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Security Vulnerability Assessment",
+      "desc": "Our ethical hackers conduct external perimeter scans and posture audits across your corporate network."
+    },
+    {
+      "step": "02",
+      "title": "Defense Architecture Design",
+      "desc": "Tailor firewall policies, DDoS threshold triggers, and Zero Trust access groups to your workloads."
+    },
+    {
+      "step": "03",
+      "title": "Deployment & SIEM Integration",
+      "desc": "Route network traffic through security scrubbers and stream telemetry into our 24/7 SOC."
+    },
+    {
+      "step": "04",
+      "title": "Continuous Threat Hunting",
+      "desc": "Real-time mitigation of emerging exploits, automated patch alerts, and monthly executive briefings."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "E-Commerce Payment Gateway DDoS Defense",
+      "client": "Digital Payments FinTech",
+      "impact": "Successfully scrubbed a 180 Gbps volumetric attack with zero transaction latency.",
+      "image": "/fabric-intelligence.jpg"
+    },
+    {
+      "title": "Zero Trust Remote Access for 2,500 Staff",
+      "client": "Enterprise BPO Firm",
+      "impact": "Replaced vulnerable legacy SSL VPNs with ZTNA, slashing connection setup tickets by 70%.",
+      "image": "/banner-datacenter-racks.jpg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is clean pipe DDoS protection?",
+      "answer": "Clean pipe protection diverts incoming traffic through scrubbing centers during an attack, removing malicious packets and delivering only genuine traffic to your servers."
+    },
+    {
+      "question": "How does Zero Trust differ from traditional VPN?",
+      "answer": "A traditional VPN grants access to the entire corporate network once logged in. Zero Trust grants access only to specific approved applications after continuously validating user identity and device health."
+    },
+    {
+      "question": "Can you help our company meet RBI / ISO 27001 compliance?",
+      "answer": "Yes, our cybersecurity architecture and SOC log retention policies are fully aligned with ISO 27001, CERT-In, and RBI IT governance guidelines."
+    }
+  ]
+},
+{
+  "slug": "data-services",
+  "name": "Enterprise Data & SIP Services",
+  "category": "Voice & Data Solutions",
+  "tagline": "High-Capacity SIP Trunks, PRI Lines, Toll-Free 1800 & Dedicated Data Circuits",
+  "heroHeadline": "Scalable Enterprise Voice & Data Infrastructure For",
+  "heroHighlight": "Modern Contact Centers & Corporate HQs.",
+  "heroSubtitle": "Deliver crystalline enterprise voice and point-to-point data connectivity with unlimited concurrent channels, 99.95% uptime SLAs, and seamless IP-PBX integration.",
+  "image": "/banner-global-telecom.jpg",
+  "galleryImages": [
+    "/banner-servers-lights.jpg",
+    "/telephone-banner.jpg",
+    "/telephone-studio.jpg"
+  ],
+  "stats": [
+    {
+      "value": "1,500+",
+      "label": "Concurrent Channels Over Single Link"
+    },
+    {
+      "value": "99.95%",
+      "label": "Carrier Voice Uptime SLA"
+    },
+    {
+      "value": "Pan-India",
+      "label": "Toll-Free 1800 Coverage"
+    },
+    {
+      "value": "G.711 / G.729",
+      "label": "Crystal Clear HD Voice Codecs"
+    }
+  ],
+  "overview": "Effective enterprise communication requires bulletproof voice trunks and high-speed point-to-point data circuits. Adapt India Network provides telecom-grade SIP trunking, PRI interfaces, and Toll-Free solutions backed by Tier-1 carrier agreements.",
+  "theChallenge": "Traditional copper PRI lines are rigid, slow to scale, tied to physical server hardware, and prone to cross-talk, while standard VoIP providers suffer from jitter and echo.",
+  "ourSolution": "Our enterprise SIP trunks deliver virtual channels over dedicated fiber connections with end-to-end Quality of Service (QoS) guarantees, instant scalability, and built-in disaster recovery rerouting.",
+  "capabilities": [
+    {
+      "title": "High-Density SIP Trunking",
+      "description": "Scale from 30 to 1,500+ concurrent audio calls over a single optical connection with zero channel blocking.",
+      "deliverables": [
+        "Direct IP handoff to IP-PBX (Asterisk, Cisco, Avaya)",
+        "Dedicated voice bandwidth allocation",
+        "Instant burstable channel scalability",
+        "Comprehensive call detail records (CDR)"
+      ]
+    },
+    {
+      "title": "Pan-India Toll-Free Services (1800)",
+      "description": "Give customers across India a memorable 1800 number with smart regional call routing and IVR integration.",
+      "deliverables": [
+        "Single national access number",
+        "Time-based and geo-location routing",
+        "Multi-branch hunt group forwarding",
+        "Real-time call volume analytics dashboard"
+      ]
+    },
+    {
+      "title": "Primary Rate Interface (PRI) Lines",
+      "description": "Reliable 30-channel E1 PRI lines for traditional digital PBX systems and high-volume corporate switchboards.",
+      "deliverables": [
+        "Standard G.703/E1 interface handoff",
+        "Direct Inward Dialing (DID) number blocks",
+        "Sub-second call setup time",
+        "Full caller ID (CLI) presentation"
+      ]
+    },
+    {
+      "title": "Point-to-Point (P2P) Leased Data Circuits",
+      "description": "Dedicated Layer 2 clear-channel connectivity connecting two corporate offices with zero public routing.",
+      "deliverables": [
+        "Speeds from 10 Mbps to 10 Gbps",
+        "Lowest possible physical latency",
+        "Completely uncompressed protocol transparent throughput",
+        "Full hardware encryption compatible"
+      ]
+    }
+  ],
+  "techStack": [
+    "Session Initiation Protocol (SIP)",
+    "E1 / PRI ISDN Interfaces",
+    "Cisco Unified Communications",
+    "Avaya Aura & IP Office",
+    "Session Border Controllers (SBC)",
+    "G.711u / G.729 Codecs"
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Telephony Audit & Channel Sizing",
+      "desc": "Calculate your peak concurrent call volumes, DID requirements, and PBX compatibility."
+    },
+    {
+      "step": "02",
+      "title": "Dedicated Voice Fiber Lead-in",
+      "desc": "Deploy dedicated optical fiber with private IP routing directly into your server room."
+    },
+    {
+      "step": "03",
+      "title": "IP-PBX Interoperability Testing",
+      "desc": "Configure SIP signaling, test codec negotiation, and verify CLI delivery across all telcos."
+    },
+    {
+      "step": "04",
+      "title": "Number Porting & Live Cutover",
+      "desc": "Seamlessly port existing DIDs with zero downtime during off-peak windows."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "500-Seat Contact Center Voice Migration",
+      "client": "National Customer Support BPO",
+      "impact": "Replaced 16 copper PRIs with 500-channel SIP trunk, reducing telephony bills by 38%.",
+      "image": "/banner-global-telecom.jpg"
+    },
+    {
+      "title": "National Healthcare Helpline 1800",
+      "client": "Hospital Network",
+      "impact": "Handled 25,000+ daily patient inquiries with automated regional routing and 99.98% uptime.",
+      "image": "/telephone-banner.jpg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between SIP Trunk and PRI?",
+      "answer": "A PRI line is a physical cable supporting 30 channels. A SIP trunk runs over optical IP fiber and can scale from 30 to thousands of channels without physical wiring changes."
+    },
+    {
+      "question": "Can we retain our existing phone numbers?",
+      "answer": "Yes! We support full Mobile Number Portability (MNP) and DID porting so your customers experience no change."
+    },
+    {
+      "question": "What happens if our primary voice connection fails?",
+      "answer": "Our SIP service includes automated failover that instantly reroutes incoming calls to a backup data line or mobile hunt group in milliseconds."
+    }
+  ]
+},
+{
+  "slug": "cloud-telephony",
+  "name": "Cloud Telephony & Smart PBX",
+  "category": "Voice & Data Solutions",
+  "tagline": "AI-Powered Smartflo Cloud Communications, Multilevel IVR & Remote Workforce Calling",
+  "heroHeadline": "Next-Gen Cloud Telephony & Virtual PBX For",
+  "heroHighlight": "Seamless Remote & Hybrid Customer Engagement.",
+  "heroSubtitle": "Replace bulky on-premise hardware with an intelligent cloud communications platform featuring CRM integration, automated call recording, and smart agent routing.",
+  "image": "/telephone-banner.jpg",
+  "galleryImages": [
+    "/telephone-studio.jpg",
+    "/banner-servers-lights.jpg",
+    "/banner-network-matrix.jpg"
+  ],
+  "stats": [
+    {
+      "value": "100%",
+      "label": "Cloud Hosted (Zero Hardware)"
+    },
+    {
+      "value": "CRM Ready",
+      "label": "Salesforce, Zoho & HubSpot Sync"
+    },
+    {
+      "value": "AI-Powered",
+      "label": "Smart Interactive IVR Routing"
+    },
+    {
+      "value": "99.95%",
+      "label": "Carrier-Grade Platform Uptime"
+    }
+  ],
+  "overview": "Adapt India Network's Cloud Telephony empowers businesses to manage all business calls, customer inquiries, and agent performance entirely in the cloud. Agents can receive and make calls from laptops, softphones, or mobile apps with full tracking and CRM logging.",
+  "theChallenge": "On-premise PBX hardware is expensive to maintain, breaks down during power cuts, cannot support work-from-home agents, and lacks visibility into missed customer calls.",
+  "ourSolution": "Our cloud telephony suite provides intelligent multi-level IVRs, automatic call distribution (ACD), call recording, live supervisor whisper/barge-in, and instant CRM popups for every incoming lead.",
+  "capabilities": [
+    {
+      "title": "Intelligent Multi-Level IVR",
+      "description": "Greet callers professionally and route them dynamically to the right department based on keypad input.",
+      "deliverables": [
+        "Custom studio voice prompts",
+        "Business hours & holiday routing schedules",
+        "Self-service information options",
+        "Visual drag-and-drop call flow builder"
+      ]
+    },
+    {
+      "title": "CRM CTI & 1-Click Dialing",
+      "description": "Seamlessly integrate with Salesforce, Zoho, LeadSquared, and HubSpot to view customer details as the phone rings.",
+      "deliverables": [
+        "Incoming caller ID screen pop",
+        "1-click click-to-call from CRM",
+        "Automated call recording attached to contact profile",
+        "Real-time call duration and disposition logging"
+      ]
+    },
+    {
+      "title": "Virtual Number & Smart Hunt Groups",
+      "description": "One single master business phone number that rings across multiple team members simultaneously or sequentially.",
+      "deliverables": [
+        "Sequential, round-robin, and longest-idle routing",
+        "Missed call SMS alerts to customers",
+        "Voicemail to email transcription",
+        "Custom caller hold music"
+      ]
+    },
+    {
+      "title": "Live Supervisor Dashboard & Analytics",
+      "description": "Monitor team productivity, track average handle time, listen into live calls, and analyze peak call hours.",
+      "deliverables": [
+        "Real-time agent status telemetry",
+        "Call listening, whispering, and barging",
+        "Daily automated call summary emails",
+        "Agent performance KPIs and missed call logs"
+      ]
+    }
+  ],
+  "techStack": [
+    "WebRTC Softphone",
+    "REST API & Webhooks",
+    "Salesforce & Zoho CTI Integration",
+    "AWS High-Availability Cloud",
+    "Opus & G.711 Audio Codecs",
+    "Automated Speech Synthesis"
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Call Flow & IVR Blueprinting",
+      "desc": "Map your department routing, greeting scripts, and agent working hours."
+    },
+    {
+      "step": "02",
+      "title": "Virtual Number & User Setup",
+      "desc": "Provision your virtual business numbers and create agent accounts in the cloud portal."
+    },
+    {
+      "step": "03",
+      "title": "CRM Integration & Webhooks",
+      "desc": "Connect the telephony API to your CRM for automatic lead creation and click-to-dial."
+    },
+    {
+      "step": "04",
+      "title": "Agent Onboarding & Training",
+      "desc": "Train your team on the browser softphone and launch with live supervisor assistance."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Real Estate Agency Lead Conversion",
+      "client": "Premium Property Developer",
+      "impact": "Captured 100% of incoming buyer inquiries with zero missed calls and instant WhatsApp follow-up.",
+      "image": "/telephone-banner.jpg"
+    },
+    {
+      "title": "Pan-India D2C Brand Customer Support",
+      "client": "E-Commerce Brand",
+      "impact": "Cut customer call hold time by 45% using intelligent automated order status IVR.",
+      "image": "/telephone-studio.jpg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do my employees need physical desk phones?",
+      "answer": "No! Employees can make and receive calls directly through their laptop browser or our mobile app using internet connectivity."
+    },
+    {
+      "question": "Can all customer calls be recorded for quality audit?",
+      "answer": "Yes, 100% of incoming and outgoing calls are recorded securely and stored in encrypted cloud storage with instant playback."
+    },
+    {
+      "question": "How quickly can we set up cloud telephony?",
+      "answer": "Our cloud platform can be configured and live with numbers, IVRs, and agent accounts in less than 24 hours."
+    }
+  ]
+},
 ];
