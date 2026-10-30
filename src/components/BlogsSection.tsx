@@ -84,10 +84,10 @@ export default function BlogsSection() {
         )}
 
         {/* Numbered list */}
-        <ol className="lg:col-span-4 flex flex-col divide-y divide-zinc-800 border-y border-zinc-800 lg:border-t-0">
+        <ol className="lg:col-span-4 flex flex-col divide-y divide-zinc-800 border-y border-zinc-800 lg:border-t-0 lg:border-b-0">
           {rest.map((a, i) => (
-            <li key={a.slug}>
-              <Link href={`/blog/${a.slug}/`} className="group flex gap-4 py-5 first:pt-5 lg:first:pt-0">
+            <li key={a.slug} className="lg:flex-1">
+              <Link href={`/blog/${a.slug}/`} className="group flex gap-4 py-5 lg:h-full lg:items-center">
                 <span className="font-mono text-2xl font-bold text-zinc-700 group-hover:text-[#E31E24] transition-colors leading-none pt-0.5">
                   {String(i + 2).padStart(2, "0")}
                 </span>
@@ -99,7 +99,9 @@ export default function BlogsSection() {
                     {a.title}
                   </h3>
                 </span>
-                <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-[#E31E24] transition-colors shrink-0 mt-1" />
+                <span className="hidden sm:block w-20 h-16 shrink-0 rounded-lg overflow-hidden border border-zinc-800">
+                  <img src={a.image} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </span>
               </Link>
             </li>
           ))}
