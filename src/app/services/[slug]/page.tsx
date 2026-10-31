@@ -13,6 +13,7 @@ import {
   breadcrumbSchema,
   faqSchema,
   BUSINESS,
+  seoTitle,
 } from "../../../lib/seo";
 
 interface ServicePageProps {
@@ -28,7 +29,7 @@ interface ServicePageProps {
  */
 const SERVICE_SEO: Record<string, { title: string; description: string; serviceType: string }> = {
   "smart-internet-ill": {
-    title: "Internet Leased Line (ILL) Provider in Delhi NCR & India",
+    title: "Internet Leased Line (ILL) Provider in India",
     description:
       "Dedicated 1:1 symmetrical Internet Leased Line with SLA, static IPs and 24/7 NOC for offices in Delhi, Gurgaon, Noida and pan-India. Get a quote today.",
     serviceType: "Internet Leased Line",
@@ -40,7 +41,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     serviceType: "SD-WAN",
   },
   "smartoffice-connect": {
-    title: "SmartOffice Connect | Office Internet, Wi-Fi & Voice Bundle",
+    title: "SmartOffice Connect | Office Internet & Wi-Fi Bundle",
     description:
       "One bundle for new offices in Delhi NCR and India: leased line or broadband, managed Wi-Fi, firewall and cloud PBX on a single bill with one support desk.",
     serviceType: "Managed Office Connectivity",
@@ -64,31 +65,31 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     serviceType: "Network as a Service",
   },
   "collaboration-productivity": {
-    title: "Business Collaboration & Modern Workplace Solutions India",
+    title: "Business Collaboration Solutions in India",
     description:
       "Video meetings, unified communications and productivity tools set up and supported for Indian offices and hybrid teams, on a network built to run them.",
     serviceType: "Unified Communications",
   },
   "cloud-infrastructure": {
-    title: "Enterprise Cloud Connectivity & Infrastructure in India",
+    title: "Cloud Connectivity & Infrastructure in India",
     description:
       "Secure, low-latency connectivity to AWS, Azure, Google Cloud and Indian data centres, plus managed cloud infrastructure for growing businesses.",
     serviceType: "Cloud Connectivity",
   },
   "cybersecurity-solutions": {
-    title: "Network Security & Managed Firewall Services in India",
+    title: "Managed Firewall & Network Security in India",
     description:
       "Next-gen firewalls, DDoS protection, secure SD-WAN and managed SOC monitoring for Indian enterprises. Protect every branch from one security policy.",
     serviceType: "Managed Network Security",
   },
   "managed-services": {
-    title: "24/7 Managed NOC & Network Support Services India",
+    title: "24/7 Managed NOC & Network Support in India",
     description:
       "Round-the-clock network monitoring, fault management and vendor coordination for your leased lines, SD-WAN and branch networks anywhere in India.",
     serviceType: "Managed Network Operations",
   },
   "bundled-solutions": {
-    title: "Bundled Business Internet, Voice & Wi-Fi Plans in India",
+    title: "Business Internet, Voice & Wi-Fi Bundles in India",
     description:
       "Combine leased line, broadband backup, Wi-Fi, SIP trunk and security in one enterprise bundle with a single contract and support desk across India.",
     serviceType: "Bundled Telecom Services",
@@ -100,7 +101,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     serviceType: "Point-to-Point Leased Line",
   },
   "enterprise-broadband": {
-    title: "Enterprise Broadband & Office Wi-Fi in Delhi NCR & India",
+    title: "Business Broadband & Office Wi-Fi in India",
     description:
       "High-speed business broadband and managed campus Wi-Fi for offices, retail stores and warehouses in Delhi, Gurgaon, Noida and pan-India.",
     serviceType: "Enterprise Broadband",
@@ -132,9 +133,9 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   const sub = getSubService(slug);
   if (sub) {
-    const title = `${sub.name} in India | Adapt India Network`;
+    const base = `${sub.name} in India`;
     return pageMetadata({
-      title: title.length > 66 ? `${sub.name} | Adapt India` : title,
+      title: seoTitle(base.length <= 60 ? base : sub.name),
       description: sub.summary,
       path: `/services/${sub.slug}/`,
       image: subServiceBanner(sub.slug),
@@ -149,7 +150,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   const seo = SERVICE_SEO[service.slug];
   return pageMetadata({
-    title: seo ? `${seo.title} | Adapt India` : `${service.name} | Adapt India Network`,
+    title: seoTitle(seo ? seo.title : service.name),
     description: seo?.description ?? service.heroSubtitle,
     path: `/services/${slug}/`,
     // Aliases such as /services/sd-wan/ point Google at the main page.

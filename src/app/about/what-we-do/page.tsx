@@ -36,7 +36,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Connectivity",
       title: "Enterprise Broadband & Campus Wi-Fi",
       desc: "High-density managed Wi-Fi 6 infrastructure and resilient business broadband engineered for commercial offices and university campuses.",
-      href: "/services/enterprise-broadband-campus-wifi",
+      href: "/services/enterprise-broadband",
       tags: ["Managed Wi-Fi 6", "High-Density APs", "Captive Portal", "Bandwidth Shaper"],
     },
     {
@@ -52,7 +52,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "SD-WAN & VPN",
       title: "Managed MPLS VPN Networks",
       desc: "Carrier-grade private IP-VPN backbones with guaranteed Quality of Service (QoS), multi-site mesh routing, and end-to-end traffic isolation.",
-      href: "/services/managed-mpls-vpn",
+      href: "/services/managed-mpls",
       tags: ["QoS Traffic Classes", "Any-to-Any Mesh", "Full BGP Isolation", "Tata / ACT Backbone"],
     },
     {
@@ -68,7 +68,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Voice & Cloud",
       title: "Business Communications & SIP Trunk",
       desc: "Scalable enterprise voice trunking over dedicated IP channels supporting unlimited concurrent calling, 1800 toll-free, and high-clarity codecs.",
-      href: "/services/business-communications-sip-trunk",
+      href: "/services/business-communications",
       tags: ["PRI / SIP Replacement", "Unlimited Channels", "Toll-Free 1800", "G.711 / HD Audio"],
     },
     {
@@ -76,7 +76,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Voice & Cloud",
       title: "Collaboration & Modern Workplace",
       desc: "Unified cloud telephony, MS Teams direct routing, enterprise video conferencing, and hybrid workforce collaboration tools.",
-      href: "/services/collaboration-modern-workplace",
+      href: "/services/collaboration-productivity",
       tags: ["MS Teams Direct Routing", "Cloud PBX", "Omnichannel Comms", "Hybrid Workplace"],
     },
     {
@@ -84,7 +84,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Voice & Cloud",
       title: "Enterprise Cloud Infrastructure",
       desc: "Direct private Cloud Interconnect to AWS, Microsoft Azure, and Google Cloud with sub-5ms low latency and zero public internet exposure.",
-      href: "/services/enterprise-cloud-infrastructure",
+      href: "/services/cloud-infrastructure",
       tags: ["AWS Direct Connect", "Azure ExpressRoute", "Direct Cloud Peering", "Sub-5ms Latency"],
     },
     {
@@ -92,7 +92,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Security & NOC",
       title: "Cybersecurity & Managed SOC",
       desc: "Next-Gen Firewall as a Service (FWaaS), clean-pipe volumetric DDoS scrubbing, intrusion prevention, and 24/7 security event monitoring.",
-      href: "/services/cybersecurity-solutions-managed-soc",
+      href: "/services/cybersecurity-solutions",
       tags: ["Clean-Pipe DDoS", "Next-Gen FWaaS", "Threat Intelligence", "24/7 SOC Triage"],
     },
     {
@@ -100,7 +100,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Security & NOC",
       title: "24/7/365 Managed NOC Operations",
       desc: "Dual-active Network Operations Centers in Gurugram and Mumbai providing continuous SNMP surveillance, proactive ticketing, and sub-4h MTTR.",
-      href: "/services/managed-noc-operations",
+      href: "/services/network-monitoring-24x7",
       tags: ["Dual-Active NOC", "SNMP Telemetry", "Sub-4h MTTR", "Certified L2/L3 Staff"],
     },
     {
@@ -108,7 +108,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Security & NOC",
       title: "Network as a Service (NaaS)",
       desc: "Fully managed, OPEX-based enterprise networking including switches, routers, security gateways, and continuous lifecycle maintenance.",
-      href: "/services/network-as-a-service-naas",
+      href: "/services/network-as-a-service",
       tags: ["Zero CAPEX", "Full Hardware Lifecycle", "SLA-Backed Replacements", "Unified SLA"],
     },
     {
@@ -116,7 +116,7 @@ export default function WhatWeDoPage() {
       categoryLabel: "Connectivity",
       title: "Bundled Enterprise Telecom Solutions",
       desc: "Custom multi-product enterprise telecommunications packages designed for multi-branch retailers, BFSI branches, and healthcare chains.",
-      href: "/services/bundled-enterprise-telecom-solutions",
+      href: "/services/bundled-solutions",
       tags: ["Multi-Site Bundles", "Consolidated Billing", "Dedicated Account NOC", "Tier-1 Pricing"],
     },
   ];

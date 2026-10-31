@@ -14,6 +14,7 @@ import {
   faqSchema,
   serviceSchema,
   BUSINESS,
+  seoTitle,
 } from "../../../lib/seo";
 
 interface CityPageProps {
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   if (!page) return { title: "Location Not Found", robots: { index: false, follow: true } };
 
   return pageMetadata({
-    title: `${page.metaTitle} | Adapt India`,
+    title: seoTitle(page.metaTitle),
     description: page.metaDescription,
     path: `/locations/${page.slug}/`,
     image: "/banner-network-matrix.jpg",

@@ -3,7 +3,7 @@ import { pageMetadata } from "../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Terms & Conditions | Adapt India Network",
-  description: "Terms and conditions for the Adapt India Network website.",
+  description: "Terms and conditions for using the Adapt India Network website and enquiring about our leased line services.",
   path: "/terms/",
   canonicalPath: "/terms-and-conditions/",
 });

@@ -29,7 +29,7 @@ export const cityPages: CityPage[] = [
     city: "Delhi",
     altNames: ["New Delhi", "Delhi NCR"],
     state: "Delhi",
-    metaTitle: "Internet Leased Line Provider in Delhi | ILL, SD-WAN, MPLS",
+    metaTitle: "Leased Line Provider in Delhi | ILL & SD-WAN",
     metaDescription:
       "Dedicated Internet Leased Line, SD-WAN and MPLS for offices in Delhi: Connaught Place, Nehru Place, Okhla, Saket & more. Delhi-based team. Call +91 82874 79961.",
     h1: "Internet Leased Line Provider in Delhi",
@@ -100,7 +100,7 @@ export const cityPages: CityPage[] = [
     city: "Gurgaon",
     altNames: ["Gurugram"],
     state: "Haryana",
-    metaTitle: "Leased Line Provider in Gurgaon (Gurugram) | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Gurgaon (Gurugram)",
     metaDescription:
       "Internet Leased Line, SD-WAN and MPLS for offices in Gurgaon: Cyber City, Golf Course Road, Udyog Vihar, Sohna Road & Manesar. Tata Tele & ACT partner.",
     h1: "Internet Leased Line Provider in Gurgaon (Gurugram)",
@@ -171,7 +171,7 @@ export const cityPages: CityPage[] = [
     city: "Noida",
     altNames: ["Greater Noida", "Noida Extension"],
     state: "Uttar Pradesh",
-    metaTitle: "Internet Leased Line Provider in Noida & Greater Noida",
+    metaTitle: "Leased Line Provider in Noida & Greater Noida",
     metaDescription:
       "Dedicated leased line, SD-WAN and business broadband for offices, IT parks and factories in Noida, Greater Noida & Noida Expressway. Get a feasibility check.",
     h1: "Internet Leased Line Provider in Noida & Greater Noida",
@@ -242,7 +242,7 @@ export const cityPages: CityPage[] = [
     city: "Ghaziabad",
     altNames: ["Sahibabad", "Indirapuram"],
     state: "Uttar Pradesh",
-    metaTitle: "Leased Line Provider in Ghaziabad | Business Internet & SD-WAN",
+    metaTitle: "Leased Line Provider in Ghaziabad | ILL & SD-WAN",
     metaDescription:
       "Internet Leased Line and business broadband for factories, warehouses and offices in Ghaziabad: Sahibabad, Meerut Road, Loni, Indirapuram & Raj Nagar Extension.",
     h1: "Internet Leased Line Provider in Ghaziabad",
@@ -308,7 +308,7 @@ export const cityPages: CityPage[] = [
     city: "Faridabad",
     altNames: ["Ballabgarh"],
     state: "Haryana",
-    metaTitle: "Leased Line Provider in Faridabad | ILL for Factories & Offices",
+    metaTitle: "Leased Line Provider in Faridabad | ILL & SD-WAN",
     metaDescription:
       "Dedicated Internet Leased Line, SD-WAN and broadband for manufacturing units and offices in Faridabad: Sector 24, 25, 58, NIT, Ballabgarh & Mathura Road.",
     h1: "Internet Leased Line Provider in Faridabad",
@@ -368,7 +368,7 @@ export const cityPages: CityPage[] = [
     city: "Lucknow",
     altNames: ["Uttar Pradesh"],
     state: "Uttar Pradesh",
-    metaTitle: "Internet Leased Line Provider in Lucknow & Uttar Pradesh",
+    metaTitle: "Leased Line Provider in Lucknow & Uttar Pradesh",
     metaDescription:
       "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Lucknow and across Uttar Pradesh: Gomti Nagar, Hazratganj, Amausi & more. Get a quote.",
     h1: "Internet Leased Line Provider in Lucknow & Uttar Pradesh",
@@ -432,7 +432,7 @@ export const cityPages: CityPage[] = [
     city: "Mumbai",
     altNames: ["Navi Mumbai", "Thane"],
     state: "Maharashtra",
-    metaTitle: "Internet Leased Line Provider in Mumbai | ILL, SD-WAN, MPLS",
+    metaTitle: "Leased Line Provider in Mumbai | ILL & SD-WAN",
     metaDescription:
       "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Mumbai, Navi Mumbai & Thane: BKC, Lower Parel, Andheri, Powai & MIDC. Get a feasibility check.",
     h1: "Internet Leased Line Provider in Mumbai",
@@ -496,7 +496,7 @@ export const cityPages: CityPage[] = [
     city: "Bengaluru",
     altNames: ["Bangalore"],
     state: "Karnataka",
-    metaTitle: "Leased Line Provider in Bengaluru (Bangalore) | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Bengaluru (Bangalore)",
     metaDescription:
       "Internet Leased Line, SD-WAN and MPLS for tech companies and offices in Bengaluru: Whitefield, Outer Ring Road, Electronic City, Koramangala & Manyata Tech Park.",
     h1: "Internet Leased Line Provider in Bengaluru (Bangalore)",
@@ -559,7 +559,7 @@ export const cityPages: CityPage[] = [
     city: "Hyderabad",
     altNames: ["Secunderabad", "Cyberabad"],
     state: "Telangana",
-    metaTitle: "Internet Leased Line Provider in Hyderabad | ILL, SD-WAN, MPLS",
+    metaTitle: "Leased Line Provider in Hyderabad | ILL & SD-WAN",
     metaDescription:
       "Dedicated leased line, SD-WAN and MPLS for offices in Hyderabad: HITEC City, Gachibowli, Financial District, Madhapur & Secunderabad. Get a feasibility check.",
     h1: "Internet Leased Line Provider in Hyderabad",
@@ -618,7 +618,7 @@ export const cityPages: CityPage[] = [
     city: "Chennai",
     altNames: ["Madras"],
     state: "Tamil Nadu",
-    metaTitle: "Internet Leased Line Provider in Chennai | ILL, SD-WAN, MPLS",
+    metaTitle: "Leased Line Provider in Chennai | ILL & SD-WAN",
     metaDescription:
       "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Chennai: OMR, Guindy, Ambattur, Sriperumbudur & Oragadam. Get a quote for your site.",
     h1: "Internet Leased Line Provider in Chennai",
@@ -677,7 +677,7 @@ export const cityPages: CityPage[] = [
     city: "Pune",
     altNames: ["Pimpri-Chinchwad"],
     state: "Maharashtra",
-    metaTitle: "Leased Line Provider in Pune | ILL & SD-WAN for IT & Industry",
+    metaTitle: "Leased Line Provider in Pune | ILL & SD-WAN",
     metaDescription:
       "Internet Leased Line, SD-WAN and MPLS for offices and plants in Pune: Hinjewadi, Kharadi, Magarpatta, Baner, Chakan & Pimpri-Chinchwad MIDC.",
     h1: "Internet Leased Line Provider in Pune",
@@ -734,7 +734,7 @@ export const cityPages: CityPage[] = [
     city: "Kolkata",
     altNames: ["Salt Lake", "New Town"],
     state: "West Bengal",
-    metaTitle: "Internet Leased Line Provider in Kolkata | ILL, SD-WAN, MPLS",
+    metaTitle: "Leased Line Provider in Kolkata | ILL & SD-WAN",
     metaDescription:
       "Dedicated leased line, SD-WAN and MPLS for offices in Kolkata: Salt Lake Sector V, New Town, Park Street, BBD Bagh & Howrah. Get a feasibility check.",
     h1: "Internet Leased Line Provider in Kolkata",
@@ -785,7 +785,7 @@ export const cityPages: CityPage[] = [
     city: "Ahmedabad",
     altNames: ["Gandhinagar", "GIFT City"],
     state: "Gujarat",
-    metaTitle: "Leased Line Provider in Ahmedabad & GIFT City | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Ahmedabad & GIFT City",
     metaDescription:
       "Internet Leased Line, SD-WAN and MPLS for businesses in Ahmedabad, Gandhinagar & GIFT City: SG Highway, Prahlad Nagar, Sanand, Changodar & Naroda.",
     h1: "Internet Leased Line Provider in Ahmedabad & GIFT City",
@@ -837,7 +837,7 @@ export const cityPages: CityPage[] = [
     city: "Jaipur",
     altNames: ["Rajasthan"],
     state: "Rajasthan",
-    metaTitle: "Internet Leased Line Provider in Jaipur & Rajasthan | ILL, SD-WAN",
+    metaTitle: "Leased Line Provider in Jaipur | ILL & SD-WAN",
     metaDescription:
       "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Jaipur: Malviya Nagar, Sitapura, VKI Area, Mahindra SEZ & C-Scheme. Get a quote.",
     h1: "Internet Leased Line Provider in Jaipur",
@@ -888,7 +888,7 @@ export const cityPages: CityPage[] = [
     city: "Chandigarh",
     altNames: ["Mohali", "Panchkula", "Tricity"],
     state: "Chandigarh",
-    metaTitle: "Leased Line Provider in Chandigarh, Mohali & Panchkula",
+    metaTitle: "Leased Line Provider in Chandigarh Tricity",
     metaDescription:
       "Internet Leased Line, SD-WAN and MPLS for offices in the Chandigarh Tricity: IT Park, Industrial Area Phase 1 & 2, Mohali, Panchkula & Zirakpur.",
     h1: "Internet Leased Line Provider in Chandigarh Tricity",

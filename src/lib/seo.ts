@@ -21,6 +21,9 @@ export const BUSINESS = {
   region: "Delhi",
   postalCode: "110062",
   country: "IN",
+  /** Approximate map position of Saket District Centre, New Delhi. */
+  latitude: 28.5286,
+  longitude: 77.2192,
   logo: "/logo-nobg.png",
   /** Cities and regions shown in schema "areaServed". */
   areaServed: [
@@ -47,6 +50,17 @@ export const BUSINESS = {
     "Chandigarh",
   ],
 };
+
+/**
+ * Adds the brand to a page title only while the whole title still fits in
+ * Google's results (~60 characters); otherwise the keyword title is kept alone.
+ */
+export function seoTitle(base: string, max = 60): string {
+  for (const suffix of [" | Adapt India Network", " | Adapt India"]) {
+    if (base.length + suffix.length <= max) return base + suffix;
+  }
+  return base;
+}
 
 /** Absolute URL for a site path. Paths always end in "/" (trailingSlash is on). */
 export function absoluteUrl(path = "/"): string {
@@ -115,6 +129,19 @@ export function pageMetadata({
 
 const ORG_ID = `${SITE_URL}/#organization`;
 
+/** Core services listed in the business schema's offer catalogue. */
+const OFFERED_SERVICES: Array<{ name: string; path: string }> = [
+  { name: "Internet Leased Line (ILL)", path: "/services/smart-internet-ill/" },
+  { name: "Managed SD-WAN", path: "/services/smartflo-sd-wan/" },
+  { name: "MPLS VPN", path: "/services/managed-mpls/" },
+  { name: "Enterprise Broadband", path: "/services/enterprise-broadband/" },
+  { name: "Managed Wi-Fi", path: "/services/managed-campus-wifi/" },
+  { name: "SIP Trunk", path: "/services/sip-trunk-services/" },
+  { name: "Cloud Telephony", path: "/services/smartflo-ucaas/" },
+  { name: "Network Security", path: "/services/cybersecurity-solutions/" },
+  { name: "Point-to-Point Leased Line", path: "/services/point-to-point-leased-line/" },
+];
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -137,6 +164,23 @@ export function organizationSchema() {
       postalCode: BUSINESS.postalCode,
       addressCountry: BUSINESS.country,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: BUSINESS.latitude,
+      longitude: BUSINESS.longitude,
+    },
+    hasMap: `https://www.google.com/maps?q=${BUSINESS.latitude},${BUSINESS.longitude}`,
+    currenciesAccepted: "INR",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Enterprise connectivity services in India",
+      itemListElement: OFFERED_SERVICES.map((svc) => ({
+        "@type": "Offer",
+        priceCurrency: "INR",
+        areaServed: { "@type": "Country", name: "India" },
+        itemOffered: { "@type": "Service", name: svc.name, url: absoluteUrl(svc.path) },
+      })),
+    },
     areaServed: BUSINESS.areaServed.map((name) => ({
       "@type": name === "India" ? "Country" : "Place",
       name,
@@ -153,8 +197,15 @@ export function organizationSchema() {
       {
         "@type": "ContactPoint",
         email: BUSINESS.supportEmail,
+        telephone: BUSINESS.phone,
         contactType: "technical support",
         areaServed: "IN",
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
         availableLanguage: ["English", "Hindi"],
       },
     ],

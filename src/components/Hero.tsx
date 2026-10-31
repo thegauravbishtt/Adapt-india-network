@@ -25,6 +25,9 @@ export default function Hero() {
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/network-bg-poster.jpg"
+          aria-hidden="true"
           className="w-full h-full object-cover filter brightness-[0.7] contrast-[1.2]"
         >
           <source src="/network-bg.mp4" type="video/mp4" />

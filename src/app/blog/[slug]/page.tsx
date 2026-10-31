@@ -3,7 +3,13 @@ import { getBlogs, type BlogPost } from "@/lib/db";
 import { seedArticles } from "@/data/articles";
 import BlogDetailClient from "./BlogDetailClient";
 import JsonLd from "@/components/JsonLd";
-import { pageMetadata, articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
+import { pageMetadata, articleSchema, breadcrumbSchema, faqSchema, seoTitle } from "@/lib/seo";
+
+/** Shorter search titles for articles whose headline is too long for Google. */
+const SHORT_TITLES: Record<string, string> = {
+  "why-dedicated-internet-leased-lines-matter": "Leased Line (ILL) vs Business Broadband: Which to Choose",
+  "high-density-wifi-6-enterprise-office-deployment": "Office Wi-Fi 6 Design for Busy Workplaces",
+};
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -37,7 +43,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 
   return pageMetadata({
     // Long article titles are used as-is so Google does not cut them off mid-word
-    title: post.title.length > 52 ? post.title : `${post.title} | Adapt India Network`,
+    title: seoTitle(SHORT_TITLES[slug] ?? post.title),
     description: post.excerpt,
     path: `/blog/${post.slug || post.id}/`,
     image: post.image,

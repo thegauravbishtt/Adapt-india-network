@@ -74,6 +74,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "IN-DL",
     "geo.placename": "New Delhi",
+    "geo.position": "28.5286;77.2192",
+    ICBM: "28.5286, 77.2192",
   },
   icons: {
     icon: [
@@ -99,12 +101,8 @@ export default function RootLayout({
       className={`${manrope.variable} ${spaceMono.variable} antialiased`}
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
-          rel="stylesheet"
-        />
+        {/* Manrope and Space Mono are self-hosted by next/font, so no render-blocking
+            Google Fonts stylesheet is needed (faster first paint on Indian mobile networks). */}
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </head>
       <body className="min-h-screen bg-transparent text-black font-sans flex flex-col">
