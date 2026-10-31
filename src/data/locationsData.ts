@@ -31,16 +31,16 @@ export const cityPages: CityPage[] = [
     state: "Delhi",
     metaTitle: "Leased Line Provider in Delhi | ILL & SD-WAN",
     metaDescription:
-      "Dedicated Internet Leased Line, SD-WAN and MPLS for offices in Delhi: Connaught Place, Nehru Place, Okhla, Saket & more. Delhi-based team. Call +91 82874 79961.",
+      "Dedicated Internet Leased Line, SD-WAN and MPLS for offices in Delhi: Connaught Place, Nehru Place, Okhla, Paschim Vihar & more. Delhi-based team. Call +91 82874 79961.",
     h1: "Internet Leased Line Provider in Delhi",
     intro: [
-      "Adapt India Network is headquartered in Saket, New Delhi, so Delhi is where our team works every day. We arrange dedicated Internet Leased Lines (ILL), business broadband, SD-WAN and MPLS for offices, clinics, showrooms and warehouses across the city, delivered on the enterprise fibre networks of Tata Tele Business Services and ACT Fibernet.",
+      "Adapt India Network is headquartered in Paschim Vihar, New Delhi, so Delhi is where our team works every day. We arrange dedicated Internet Leased Lines (ILL), business broadband, SD-WAN and MPLS for offices, clinics, showrooms and warehouses across the city, delivered on the enterprise fibre networks of Tata Tele Business Services and ACT Fibernet.",
       "Delhi buildings vary a lot, from glass towers in Connaught Place to older commercial blocks in Nehru Place and industrial sheds in Okhla and Naraina. Before we quote, we check which carrier already has fibre in or near your building, so you get a realistic delivery date and the option of a second carrier for backup.",
     ],
     businessAreas: [
       "Connaught Place",
       "Nehru Place",
-      "Saket & Saket District Centre",
+      "Paschim Vihar & Punjabi Bagh",
       "Okhla Industrial Area",
       "Jasola & Mohan Cooperative",
       "Karol Bagh",
@@ -70,7 +70,7 @@ export const cityPages: CityPage[] = [
       },
     ],
     localNote:
-      "Because our office is in Saket, we can visit your site in Delhi for the survey, coordinate directly with the carrier's field team, and help you through installation and testing.",
+      "Because our office is in Paschim Vihar, we can visit your site in Delhi for the survey, coordinate directly with the carrier's field team, and help you through installation and testing.",
     faqs: [
       {
         question: "How long does a new leased line take to install in Delhi?",
@@ -90,7 +90,7 @@ export const cityPages: CityPage[] = [
       {
         question: "Which areas of Delhi do you cover?",
         answer:
-          "We serve all of Delhi, including Connaught Place, Nehru Place, Saket, Okhla, Jasola, Karol Bagh, Naraina, Mayapuri, Wazirpur and Aerocity, subject to carrier feasibility at your exact address.",
+          "We serve all of Delhi, including Connaught Place, Nehru Place, Paschim Vihar, Punjabi Bagh, Okhla, Jasola, Karol Bagh, Naraina, Mayapuri, Wazirpur and Aerocity, subject to carrier feasibility at your exact address.",
       },
     ],
     nearby: ["gurgaon", "noida", "ghaziabad", "faridabad"],

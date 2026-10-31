@@ -195,7 +195,7 @@ export default function PrivacyPolicyPage() {
                   <p><strong>Adapt India Network</strong></p>
                   <p>Phone: <a href="tel:+918287479961" className="text-zinc-950 font-semibold underline">+91 82874 79961</a></p>
                   <p>Email: <a href="mailto:info@adapt-india.net" className="text-zinc-950 font-semibold underline">info@adapt-india.net</a></p>
-                  <p>Location: Saket District Centre, New Delhi - 110062, Delhi, India</p>
+                  <p>Location: Paschim Vihar, New Delhi - 110063, Delhi, India</p>
                 </div>
               </div>
 

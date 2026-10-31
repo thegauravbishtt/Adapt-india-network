@@ -439,7 +439,7 @@ export default function ContactPage() {
                         Office Location
                       </span>
                       <p className="text-zinc-300 leading-relaxed">
-                        Saket, New Delhi - 110062, Delhi, India
+                        Paschim Vihar, New Delhi - 110063, Delhi, India
                       </p>
                     </div>
                   </div>
@@ -458,14 +458,14 @@ export default function ContactPage() {
                   // HEADQUARTERS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-black font-display text-zinc-950">
-                  Our Office in Saket, New Delhi
+                  Our Office in Paschim Vihar, New Delhi
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Located in South Delhi&apos;s commercial hub, our office houses senior telecommunications engineers, optical network architects, and 24/7 NOC support staff.
                 </p>
                 <div className="flex items-center gap-3 pt-2">
                   <a
-                    href="https://maps.google.com/?q=Saket,New+Delhi,Delhi,India"
+                    href="https://maps.google.com/?q=Paschim+Vihar,New+Delhi,Delhi,India"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-950 text-white hover:bg-[#E31E24] text-xs font-bold transition-all cursor-pointer shadow-md"
@@ -479,8 +479,8 @@ export default function ContactPage() {
 
               <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-zinc-200 shadow-lg h-72 sm:h-80 w-full bg-zinc-100">
                 <iframe
-                  title="Adapt India Network Location Saket New Delhi"
-                  src="https://maps.google.com/maps?q=Saket,New%20Delhi,India&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  title="Adapt India Network Location Paschim Vihar New Delhi"
+                  src="https://maps.google.com/maps?q=Paschim%20Vihar,New%20Delhi,India&t=&z=14&ie=UTF8&iwloc=&output=embed"
                   className="w-full h-full border-0"
                   loading="lazy"
                   allowFullScreen

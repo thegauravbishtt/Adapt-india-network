@@ -313,7 +313,7 @@ const DEFAULT_SETTINGS: AgencySettings = {
   tagline: "Enterprise Telecom, SD-WAN & Network Infrastructure Solutions",
   notificationEmail: process.env.EMAIL_TO || "info@adapt-india.net",
   supportPhone: "+91 82874 79961",
-  address: "Saket District Centre, New Delhi, India",
+  address: "Paschim Vihar, New Delhi, India",
   currency: "INR (₹)",
   emailAlertsEnabled: true,
   maintenanceMode: false,

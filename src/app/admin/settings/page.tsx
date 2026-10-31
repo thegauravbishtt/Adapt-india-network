@@ -31,7 +31,7 @@ export default function AdminSettingsPage() {
     tagline: "Enterprise Telecom, SD-WAN & Network Infrastructure Solutions",
     notificationEmail: "info@adapt-india.net",
     supportPhone: "+91 82874 79961",
-    address: "Saket District Centre, New Delhi, India 110062",
+    address: "Paschim Vihar, New Delhi, India 110063",
     currency: "INR (₹)",
     emailAlertsEnabled: true,
     maintenanceMode: false,

@@ -21,7 +21,7 @@ export const homeFaqs: FAQItem[] = [
     id: "faq-2",
     question: "Do you provide leased lines in Delhi, Gurgaon, Noida and Ghaziabad?",
     answer:
-      "Yes. We are based in Saket, New Delhi and deliver leased lines, SD-WAN, MPLS and business broadband across Delhi NCR, including Delhi, Gurgaon, Noida, Greater Noida, Ghaziabad and Faridabad, as well as Lucknow and other cities in Uttar Pradesh.",
+      "Yes. We are based in Paschim Vihar, New Delhi and deliver leased lines, SD-WAN, MPLS and business broadband across Delhi NCR, including Delhi, Gurgaon, Noida, Greater Noida, Ghaziabad and Faridabad, as well as Lucknow and other cities in Uttar Pradesh.",
   },
   {
     id: "faq-3",

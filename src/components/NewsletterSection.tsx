@@ -114,7 +114,7 @@ export default function NewsletterSection({
                 LOCATION
               </span>
               <p className="text-sm sm:text-base font-bold text-zinc-900">
-                Saket District Centre, New Delhi, India
+                Paschim Vihar, New Delhi, India
               </p>
             </div>
           </div>

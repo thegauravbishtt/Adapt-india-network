@@ -1842,7 +1842,7 @@ export default function Navbar() {
                       </div>
                       <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
                         <span className="text-gray-500 font-bold block mb-1">HEADQUARTERS</span>
-                        <span className="text-gray-800">Saket District Centre, New Delhi, India</span>
+                        <span className="text-gray-800">Paschim Vihar, New Delhi, India</span>
                       </div>
                     </div>
                   </div>

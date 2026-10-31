@@ -16,14 +16,14 @@ export const BUSINESS = {
   phoneDisplay: "+91 82874 79961",
   email: "info@adapt-india.net",
   supportEmail: "support@adapt-india.net",
-  street: "Saket District Centre, Saket",
+  street: "Paschim Vihar",
   city: "New Delhi",
   region: "Delhi",
-  postalCode: "110062",
+  postalCode: "110063",
   country: "IN",
-  /** Approximate map position of Saket District Centre, New Delhi. */
-  latitude: 28.5286,
-  longitude: 77.2192,
+  /** Approximate map position of Paschim Vihar, New Delhi. */
+  latitude: 28.6692,
+  longitude: 77.0947,
   logo: "/logo-nobg.png",
   /** Cities and regions shown in schema "areaServed". */
   areaServed: [

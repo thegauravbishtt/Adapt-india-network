@@ -3,7 +3,7 @@ import { pageMetadata } from "../../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Who We Are | Delhi-Based Business Network Provider",
-  description: "Meet the team behind Adapt India Network: a Saket, New Delhi enterprise telecom partner serving offices, warehouses and branches across Delhi NCR and India.",
+  description: "Meet the team behind Adapt India Network: a Paschim Vihar, New Delhi enterprise telecom partner serving offices, warehouses and branches across Delhi NCR and India.",
   path: "/about/who-we-are/",
 });
 

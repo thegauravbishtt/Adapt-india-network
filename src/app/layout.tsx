@@ -74,8 +74,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "IN-DL",
     "geo.placename": "New Delhi",
-    "geo.position": "28.5286;77.2192",
-    ICBM: "28.5286, 77.2192",
+    "geo.position": "28.6692;77.0947",
+    ICBM: "28.6692, 77.0947",
   },
   icons: {
     icon: [

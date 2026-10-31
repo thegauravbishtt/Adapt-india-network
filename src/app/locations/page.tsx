@@ -46,7 +46,7 @@ export default function LocationsPage() {
                 Leased Line &amp; SD-WAN Locations Across India
               </h1>
               <p className="text-zinc-200 text-sm sm:text-base leading-relaxed">
-                Our team is based in Saket, New Delhi, and we deliver enterprise connectivity across Delhi NCR,
+                Our team is based in Paschim Vihar, New Delhi, and we deliver enterprise connectivity across Delhi NCR,
                 Uttar Pradesh and the rest of India through the networks of Tata Tele Business Services and ACT Fibernet.
               </p>
             </div>
