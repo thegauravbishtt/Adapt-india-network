@@ -28,6 +28,9 @@ DirectoryIndex index.html
   RewriteRule ^services/cyber-security/?$ /services/cybersecurity-solutions/ [R=301,L]
   RewriteRule ^services/data-services/?$ /services/point-to-point-leased-line/ [R=301,L]
 
+  # 0c. Pages left over from the old web-agency template (not telecom services) -> Services
+  RewriteRule ^services/(seo-services|google-ads|meta-ads|web-development|app-development|ui-ux-design|ai-automation|whatsapp-marketing|social-media|content-marketing|email-marketing|local-seo-gmb|cloud-devops|it-consulting|enterprise-software)/?$ /services/ [R=301,L]
+
   # 1. Route Contact Form API to PHP Mailer Handler
   RewriteRule ^api/contact/?$ contact.php [L,QSA]
 
