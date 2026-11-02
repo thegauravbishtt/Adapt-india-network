@@ -72,6 +72,38 @@ $sent = @mail($to, $subject, $message, $headers);
 $logEntry = date('Y-m-d H:i:s') . " | " . $name . " | " . $email . " | " . $phone . " | " . $service . "\n";
 @file_put_contents(__DIR__ . '/leads_log.txt', $logEntry, FILE_APPEND | LOCK_EX);
 
+// ---- Also send a copy of this lead to the company CRM (via the Google Sheet inbox) ----
+// Uses the public website key: it can only ADD website leads, never read them.
+// Never blocks or breaks the form: any error here is ignored.
+$crmUrl = 'https://script.google.com/macros/s/AKfycbzO09B9X9A4yzIWf_O6zEMDooJwC-wIXzNp11tJLq_06BDuRVQsNL7BocRCXgc7NYLZpg/exec';
+$crmPhone = ($phone === 'Not provided' || $phone === '') ? '' : trim($countryCode . ' ' . $phone);
+$crmData = http_build_query([
+    'key'     => 'website2026',
+    'name'    => $name,
+    'phone'   => $crmPhone,
+    'email'   => $email,
+    'message' => "Service: $service | Company: $companyName | Budget: $budget | Form: $source\n$requirement",
+]);
+try {
+    if (function_exists('curl_init')) {
+        $ch = curl_init($crmUrl);
+        curl_setopt_array($ch, [
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $crmData,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => false,
+            CURLOPT_CONNECTTIMEOUT => 3,
+            CURLOPT_TIMEOUT => 6,
+        ]);
+        @curl_exec($ch);
+        @curl_close($ch);
+    } else {
+        @file_get_contents($crmUrl . '?' . $crmData, false, stream_context_create(['http' => ['timeout' => 6]]));
+    }
+} catch (\Throwable $e) {
+    // ignore: the email and log above have already been handled
+}
+
 http_response_code(200);
 echo json_encode([
     'success' => true,
