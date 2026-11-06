@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { leadProducts } from "../data/leadProducts";
 
 interface NewsletterSectionProps {
   title?: string;
@@ -234,15 +235,16 @@ export default function NewsletterSection({
                       className="w-full bg-[#f6f6f6] border border-zinc-200/80 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:bg-white focus:border-[#E31E24] focus:ring-2 focus:ring-[#E31E24]/20 transition-all"
                     >
                       <option value="">Choose a service</option>
-                      <option>Internet leased line (ILL)</option>
-                      <option>Business broadband</option>
-                      <option>Broadband (home)</option>
-                      <option>Point-to-point leased line</option>
-                      <option>SD-WAN</option>
-                      <option>MPLS</option>
-                      <option>Managed Wi-Fi</option>
-                      <option>Cloud telephony</option>
-                      <option>Other</option>
+                      {leadProducts.map((g) => (
+                        <optgroup key={g.group} label={g.group}>
+                          {g.items.map((it) => (
+                            <option key={it} value={it}>
+                              {it}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>

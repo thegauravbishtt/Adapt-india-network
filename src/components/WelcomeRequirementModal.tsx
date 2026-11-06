@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { leadProducts } from "../data/leadProducts";
 
 export default function WelcomeRequirementModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -266,15 +267,16 @@ export default function WelcomeRequirementModal() {
                     className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
                   >
                     <option value="">Choose a service</option>
-                    <option>Internet leased line (ILL)</option>
-                    <option>Business broadband</option>
-                    <option>Broadband (home)</option>
-                    <option>Point-to-point leased line</option>
-                    <option>SD-WAN</option>
-                    <option>MPLS</option>
-                    <option>Managed Wi-Fi</option>
-                    <option>Cloud telephony</option>
-                    <option>Other</option>
+                    {leadProducts.map((g) => (
+                      <optgroup key={g.group} label={g.group}>
+                        {g.items.map((it) => (
+                          <option key={it} value={it}>
+                            {it}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 

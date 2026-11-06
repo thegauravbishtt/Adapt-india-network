@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { leadProducts } from "../../data/leadProducts";
 import Navbar from "../../components/Navbar";
 import NewsletterSection from "../../components/NewsletterSection";
 import Footer from "../../components/Footer";
@@ -324,15 +325,16 @@ export default function ContactPage() {
                           className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
                         >
                           <option value="">Choose a service</option>
-                          <option>Internet leased line (ILL)</option>
-                          <option>Business broadband</option>
-                          <option>Broadband (home)</option>
-                          <option>Point-to-point leased line</option>
-                          <option>SD-WAN</option>
-                          <option>MPLS</option>
-                          <option>Managed Wi-Fi</option>
-                          <option>Cloud telephony</option>
-                          <option>Other</option>
+                          {leadProducts.map((g) => (
+                            <optgroup key={g.group} label={g.group}>
+                              {g.items.map((it) => (
+                                <option key={it} value={it}>
+                                  {it}
+                                </option>
+                              ))}
+                            </optgroup>
+                          ))}
+                          <option value="Other">Other</option>
                         </select>
                       </div>
                     </div>
