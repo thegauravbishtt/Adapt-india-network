@@ -4,7 +4,6 @@ import { network } from "./network";
 import { collabCloud } from "./collabCloud";
 import { securityManaged } from "./securityManaged";
 import { bundles } from "./bundles";
-import { products } from "./products";
 import { businessCommExtras } from "./extras/businessComm";
 import { networkCloudExtras } from "./extras/networkCloud";
 import { securityManagedBundleExtras } from "./extras/securityManagedBundles";
@@ -14,7 +13,7 @@ export type { SubService };
 const extras = { ...businessCommExtras, ...networkCloudExtras, ...securityManagedBundleExtras };
 
 /** Every individual service page linked from the Services menu, with its extra content merged in. */
-export const subServices: SubService[] = [...businessComm, ...network, ...collabCloud, ...securityManaged, ...bundles, ...products].map(
+export const subServices: SubService[] = [...businessComm, ...network, ...collabCloud, ...securityManaged, ...bundles].map(
   (s) => {
     const extra = extras[s.slug];
     return {
