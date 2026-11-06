@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { leadProducts } from "../data/leadProducts";
+import { emptyAddress, fullAddress } from "../data/address";
 
 export default function WelcomeRequirementModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function WelcomeRequirementModal() {
     email: "",
     countryCode: "+91",
     phone: "",
-    location: "",
+    ...emptyAddress,
     service: "",
     requirement: "",
   });
@@ -81,7 +82,7 @@ export default function WelcomeRequirementModal() {
           phone: formData.phone,
           countryCode: formData.countryCode,
           service: formData.service,
-          location: formData.location,
+          location: fullAddress(formData),
           companyName: "Website Visitor",
           requirement: formData.requirement || `Inquiry for ${formData.service}`,
           source: "Website Popup Form",
@@ -238,21 +239,74 @@ export default function WelcomeRequirementModal() {
 
 
 
-                <div>
-                  <label className="block text-xs font-medium text-zinc-700 mb-1">
-                    Location *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    minLength={3}
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    placeholder="Area, city or PIN code"
-                    autoComplete="address-level2"
-                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                  />
+                {/* Full address: needed to check if we can serve that location */}
+                <div className="flex flex-col gap-3">
+                  <div>
+                    <label className="block text-xs font-medium text-zinc-700 mb-1">
+                      Full Address *
+                    </label>
+                    <input
+                      type="text"
+                      name="address"
+                      required
+                      minLength={5}
+                      value={formData.address}
+                      onChange={handleChange}
+                      placeholder="Building / office no., street, area"
+                      autoComplete="street-address"
+                      className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium text-zinc-700 mb-1">
+                      Landmark <span className="font-normal text-zinc-400">(optional)</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="landmark"
+                      value={formData.landmark}
+                      onChange={handleChange}
+                      placeholder="e.g. near Metro Station"
+                      autoComplete="off"
+                      className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-2.5">
+                    <div>
+                      <label className="block text-xs font-medium text-zinc-700 mb-1">
+                        City *
+                      </label>
+                      <input
+                        type="text"
+                        name="city"
+                        required
+                        value={formData.city}
+                        onChange={handleChange}
+                        placeholder="City"
+                        autoComplete="address-level2"
+                        className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-zinc-700 mb-1">
+                        PIN Code *
+                      </label>
+                      <input
+                        type="text"
+                        name="pincode"
+                        required
+                        inputMode="numeric"
+                        pattern="[0-9]{6}"
+                        maxLength={6}
+                        title="6-digit PIN code"
+                        value={formData.pincode}
+                        onChange={handleChange}
+                        placeholder="6-digit PIN code"
+                        autoComplete="postal-code"
+                        className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div>

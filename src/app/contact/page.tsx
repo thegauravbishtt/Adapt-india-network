@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { leadProducts } from "../../data/leadProducts";
+import { emptyAddress, fullAddress } from "../../data/address";
 import Navbar from "../../components/Navbar";
 import NewsletterSection from "../../components/NewsletterSection";
 import Footer from "../../components/Footer";
@@ -28,7 +29,7 @@ export default function ContactPage() {
     phone: "",
     countryCode: "+91",
     companyName: "",
-    location: "",
+    ...emptyAddress,
     service: "",
     requirement: "",
   });
@@ -57,7 +58,7 @@ export default function ContactPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, location: fullAddress(formData) }),
       });
 
       const data = await res.json().catch(() => ({}));
@@ -75,7 +76,7 @@ export default function ContactPage() {
         phone: "",
         countryCode: "+91",
         companyName: "",
-        location: "",
+        ...emptyAddress,
         service: "",
         requirement: "",
       });
@@ -295,24 +296,78 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Location & Service (location is needed to check if we can serve that area) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-xs font-bold text-zinc-800">
-                          Location <span className="text-[#E31E24]">*</span>
+                    {/* Full address: needed to check if we can serve that location */}
+                    <div className="flex flex-col gap-3">
+                      <div>
+                        <label className="block text-xs font-bold text-zinc-800 mb-1.5">
+                          Full Address <span className="text-[#E31E24]">*</span>
                         </label>
                         <input
                           type="text"
-                          name="location"
+                          name="address"
                           required
-                          minLength={3}
-                          value={formData.location}
+                          minLength={5}
+                          value={formData.address}
                           onChange={handleChange}
-                          placeholder="Area, city or PIN code"
-                          autoComplete="address-level2"
+                          placeholder="Building / office no., street, area"
+                          autoComplete="street-address"
                           className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
                         />
                       </div>
+                      <div>
+                        <label className="block text-xs font-bold text-zinc-800 mb-1.5">
+                          Landmark <span className="font-normal text-zinc-400">(optional)</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="landmark"
+                          value={formData.landmark}
+                          onChange={handleChange}
+                          placeholder="e.g. near Metro Station"
+                          autoComplete="off"
+                          className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-bold text-zinc-800 mb-1.5">
+                            City <span className="text-[#E31E24]">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="city"
+                            required
+                            value={formData.city}
+                            onChange={handleChange}
+                            placeholder="City"
+                            autoComplete="address-level2"
+                            className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-bold text-zinc-800 mb-1.5">
+                            PIN Code <span className="text-[#E31E24]">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="pincode"
+                            required
+                            inputMode="numeric"
+                            pattern="[0-9]{6}"
+                            maxLength={6}
+                            title="6-digit PIN code"
+                            value={formData.pincode}
+                            onChange={handleChange}
+                            placeholder="6-digit PIN code"
+                            autoComplete="postal-code"
+                            className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Service */}
+                    <div className="grid grid-cols-1 gap-4">
                       <div className="flex flex-col gap-1.5">
                         <label className="text-xs font-bold text-zinc-800">
                           Service Interested In <span className="text-[#E31E24]">*</span>
