@@ -17,7 +17,10 @@ export default function NewsletterSection({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     companyName: "",
+    location: "",
+    service: "",
     requirement: "",
   });
 
@@ -26,7 +29,7 @@ export default function NewsletterSection({
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -45,7 +48,8 @@ export default function NewsletterSection({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          service: "Enterprise Network Strategy Call",
+          countryCode: "+91",
+          service: formData.service || "Enterprise Network Strategy Call",
           source: "Bottom Strategy Call Section",
         }),
       });
@@ -183,6 +187,64 @@ export default function NewsletterSection({
                     placeholder="you@company.com"
                     className="w-full bg-[#f6f6f6] border border-zinc-200/80 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:bg-white focus:border-[#E31E24] focus:ring-2 focus:ring-[#E31E24]/20 transition-all"
                   />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-zinc-800 mb-1">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="10-digit mobile number"
+                    autoComplete="tel-national"
+                    className="w-full bg-[#f6f6f6] border border-zinc-200/80 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:bg-white focus:border-[#E31E24] focus:ring-2 focus:ring-[#E31E24]/20 transition-all"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-800 mb-1">
+                      Location
+                    </label>
+                    <input
+                      type="text"
+                      name="location"
+                      required
+                      minLength={3}
+                      value={formData.location}
+                      onChange={handleChange}
+                      placeholder="Area, city or PIN code"
+                      autoComplete="address-level2"
+                      className="w-full bg-[#f6f6f6] border border-zinc-200/80 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:bg-white focus:border-[#E31E24] focus:ring-2 focus:ring-[#E31E24]/20 transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-800 mb-1">
+                      Service
+                    </label>
+                    <select
+                      name="service"
+                      required
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full bg-[#f6f6f6] border border-zinc-200/80 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:bg-white focus:border-[#E31E24] focus:ring-2 focus:ring-[#E31E24]/20 transition-all"
+                    >
+                      <option value="">Choose a service</option>
+                      <option>Internet leased line (ILL)</option>
+                      <option>Business broadband</option>
+                      <option>Broadband (home)</option>
+                      <option>Point-to-point leased line</option>
+                      <option>SD-WAN</option>
+                      <option>MPLS</option>
+                      <option>Managed Wi-Fi</option>
+                      <option>Cloud telephony</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>

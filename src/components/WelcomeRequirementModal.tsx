@@ -13,7 +13,8 @@ export default function WelcomeRequirementModal() {
     email: "",
     countryCode: "+91",
     phone: "",
-    service: "SEO & Search Optimization",
+    location: "",
+    service: "",
     requirement: "",
   });
 
@@ -79,6 +80,7 @@ export default function WelcomeRequirementModal() {
           phone: formData.phone,
           countryCode: formData.countryCode,
           service: formData.service,
+          location: formData.location,
           companyName: "Website Visitor",
           requirement: formData.requirement || `Inquiry for ${formData.service}`,
           source: "Website Popup Form",
@@ -234,6 +236,47 @@ export default function WelcomeRequirementModal() {
                 </div>
 
 
+
+                <div>
+                  <label className="block text-xs font-medium text-zinc-700 mb-1">
+                    Location *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    minLength={3}
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    placeholder="Area, city or PIN code"
+                    autoComplete="address-level2"
+                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-medium text-zinc-700 mb-1">
+                    Service Interested In *
+                  </label>
+                  <select
+                    required
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
+                  >
+                    <option value="">Choose a service</option>
+                    <option>Internet leased line (ILL)</option>
+                    <option>Business broadband</option>
+                    <option>Broadband (home)</option>
+                    <option>Point-to-point leased line</option>
+                    <option>SD-WAN</option>
+                    <option>MPLS</option>
+                    <option>Managed Wi-Fi</option>
+                    <option>Cloud telephony</option>
+                    <option>Other</option>
+                  </select>
+                </div>
 
                 <div>
                   <label className="block text-xs font-medium text-zinc-700 mb-1">

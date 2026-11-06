@@ -27,6 +27,8 @@ export default function ContactPage() {
     phone: "",
     countryCode: "+91",
     companyName: "",
+    location: "",
+    service: "",
     requirement: "",
   });
 
@@ -35,7 +37,7 @@ export default function ContactPage() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -72,6 +74,8 @@ export default function ContactPage() {
         phone: "",
         countryCode: "+91",
         companyName: "",
+        location: "",
+        service: "",
         requirement: "",
       });
     } catch (err: any) {
@@ -288,6 +292,49 @@ export default function ContactPage() {
                         placeholder="Company name"
                         className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
                       />
+                    </div>
+
+                    {/* Location & Service (location is needed to check if we can serve that area) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-800">
+                          Location <span className="text-[#E31E24]">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="location"
+                          required
+                          minLength={3}
+                          value={formData.location}
+                          onChange={handleChange}
+                          placeholder="Area, city or PIN code"
+                          autoComplete="address-level2"
+                          className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-800">
+                          Service Interested In <span className="text-[#E31E24]">*</span>
+                        </label>
+                        <select
+                          name="service"
+                          required
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400"
+                        >
+                          <option value="">Choose a service</option>
+                          <option>Internet leased line (ILL)</option>
+                          <option>Business broadband</option>
+                          <option>Broadband (home)</option>
+                          <option>Point-to-point leased line</option>
+                          <option>SD-WAN</option>
+                          <option>MPLS</option>
+                          <option>Managed Wi-Fi</option>
+                          <option>Cloud telephony</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
                     </div>
 
                     {/* Requirement */}
