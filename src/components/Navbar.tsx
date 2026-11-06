@@ -1,6 +1,6 @@
 "use client";
 
-import { subServiceMenuLinks } from "../data/subServices/menuLinks";
+import { productMenu } from "../data/productMenu";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -176,21 +176,13 @@ export default function Navbar() {
   const [activeNavTab, setActiveNavTab] = useState<
     "services" | "about" | "articles" | "clients" | "contact"
   >("services");
-  const [activeServiceCategory, setActiveServiceCategory] = useState<
-    | "top-services"
-    | "business-comm"
-    | "network-conn"
-    | "collab"
-    | "cloud"
-    | "cybersecurity"
-    | "managed-services"
-    | "bundled"
-  >("top-services");
+  const [activeServiceCategory, setActiveServiceCategory] = useState<string>(productMenu[0].id);
 
   const [mobileMenuStack, setMobileMenuStack] = useState<string[]>(["root"]);
   const currentMobileLevel = mobileMenuStack[mobileMenuStack.length - 1];
 
   const getMobileCategoryTitle = (level: string) => {
+    if (level.startsWith("p:")) return productMenu.find((c) => "p:" + c.id === level)?.label ?? "Services";
     switch (level) {
       case "services":
         return "Services";
@@ -515,23 +507,14 @@ export default function Navbar() {
                 </>
               )}
 
-              {/* Level 1: SERVICES (Screenshot 2) */}
+              {/* Level 1: SERVICES — product categories */}
               {currentMobileLevel === "services" && (
                 <>
-                  {[
-                    { id: "top-services", label: "Top Services" },
-                    { id: "business-comm", label: "Business Communications" },
-                    { id: "network-conn", label: "Network & Connectivity" },
-                    { id: "collab", label: "Collaboration & Productivity" },
-                    { id: "cloud", label: "Cloud Infrastructure" },
-                    { id: "cybersecurity", label: "Cybersecurity Solutions" },
-                    { id: "managed-services", label: "Managed Services" },
-                    { id: "bundled", label: "Bundled Solutions" },
-                  ].map((cat) => (
+                  {productMenu.map((cat) => (
                     <button
                       key={cat.id}
                       type="button"
-                      onClick={() => setMobileMenuStack((prev) => [...prev, cat.id])}
+                      onClick={() => setMobileMenuStack((prev) => [...prev, "p:" + cat.id])}
                       className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
                     >
                       <span>{cat.label}</span>
@@ -548,220 +531,25 @@ export default function Navbar() {
                     }}
                     className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-bold text-[#E31E24] hover:bg-red-50 active:bg-red-100 transition-colors cursor-pointer"
                   >
-                    <span>View All Services Catalog</span>
-                    <span className="text-sm font-bold">→</span>
+                    <span>View all services</span>
                   </Link>
                 </>
               )}
 
-              {/* Level 2: TOP SERVICES (Screenshot 3) */}
-              {currentMobileLevel === "top-services" && (
+              {/* Level 2: products in one category */}
+              {currentMobileLevel.startsWith("p:") && (
                 <>
-                  {[
-                    { label: "Smart Internet", link: "/services/smart-internet-ill" },
-                    { label: "Smartflo", link: "/services/smartflo-sd-wan" },
-                    { label: "SmartOffice ®", link: "/services/smartoffice-connect" },
-                    { label: "Vaultastic", link: "/services/cyber-security" },
-                    { label: "Internet Leased Line (ILL)", link: "/services/internet-leased-line" },
-                    { label: "Managed SD-WAN", link: "/services/sd-wan" },
-                  ].map((item) => (
+                  {(productMenu.find((c) => "p:" + c.id === currentMobileLevel)?.items ?? []).map((item) => (
                     <Link
-                      key={item.label}
-                      href={item.link}
+                      key={item.name}
+                      href={item.href}
                       onClick={() => {
                         setDrawerOpen(false);
                         setMobileMenuStack(["root"]);
                       }}
                       className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
                     >
-                      <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </Link>
-                  ))}
-                </>
-              )}
-
-              {/* Level 2: BUSINESS COMMUNICATIONS */}
-              {currentMobileLevel === "business-comm" && (
-                <>
-                  {[
-                    { label: "SIP Trunk Services", link: "/services/data-services" },
-                    { label: "PRI Lines", link: "/services/data-services" },
-                    { label: "Smartflo Cloud Telephony", link: "/services/cloud-telephony" },
-                    { label: "Toll-Free Services (1800)", link: "/services/toll-free-number-services" },
-                    { label: "Interactive IVR Systems", link: "/services/cloud-telephony" },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      onClick={() => {
-                        setDrawerOpen(false);
-                        setMobileMenuStack(["root"]);
-                      }}
-                      className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </Link>
-                  ))}
-                </>
-              )}
-
-              {/* Level 2: NETWORK & CONNECTIVITY */}
-              {currentMobileLevel === "network-conn" && (
-                <>
-                  {[
-                    { label: "Internet Leased Line (ILL)", link: "/services/internet-leased-line" },
-                    { label: "Smart Internet ILL + DDoS", link: "/services/smart-internet-ill" },
-                    { label: "Managed SD-WAN", link: "/services/sd-wan" },
-                    { label: "Smartflo SD-WAN", link: "/services/smartflo-sd-wan" },
-                    { label: "Managed MPLS VPN", link: "/services/mpls" },
-                    { label: "Enterprise Broadband", link: "/services/enterprise-broadband" },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      onClick={() => {
-                        setDrawerOpen(false);
-                        setMobileMenuStack(["root"]);
-                      }}
-                      className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </Link>
-                  ))}
-                </>
-              )}
-
-              {/* Level 2: COLLABORATION & PRODUCTIVITY */}
-              {currentMobileLevel === "collab" && (
-                <>
-                  {[
-                    { label: "Enterprise Managed Wi-Fi", link: "/services/managed-wifi" },
-                    { label: "Smart Hosted PBX", link: "/services/smartflo-ucaas" },
-                    { label: "Unified Audio/Video Conferencing", link: "/services" },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      onClick={() => {
-                        setDrawerOpen(false);
-                        setMobileMenuStack(["root"]);
-                      }}
-                      className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </Link>
-                  ))}
-                </>
-              )}
-
-              {/* Level 2: CLOUD INFRASTRUCTURE */}
-              {currentMobileLevel === "cloud" && (
-                <>
-                  {[
-                    { label: "Direct Cloud Connect (AWS/Azure/GCP)", link: "/services/ez-cloud-connect" },
-                    { label: "Cloud Telephony & IVR", link: "/services/cloud-telephony" },
-                    { label: "Multi-Cloud Secure Interconnect", link: "/services/sd-wan" },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      onClick={() => {
-                        setDrawerOpen(false);
-                        setMobileMenuStack(["root"]);
-                      }}
-                      className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </Link>
-                  ))}
-                </>
-              )}
-
-              {/* Level 2: CYBERSECURITY */}
-              {currentMobileLevel === "cybersecurity" && (
-                <>
-                  {[
-                    { label: "Cloud Next-Gen Firewall (FWaaS)", link: "/services/next-gen-firewall" },
-                    { label: "Clean Pipe DDoS Mitigation", link: "/services/smart-ddos-protection" },
-                    { label: "Edge Threat Defense & SOC", link: "/services/cyber-security" },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      onClick={() => {
-                        setDrawerOpen(false);
-                        setMobileMenuStack(["root"]);
-                      }}
-                      className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </Link>
-                  ))}
-                </>
-              )}
-
-              {/* Level 2: MANAGED SERVICES */}
-              {currentMobileLevel === "managed-services" && (
-                <>
-                  {[
-                    { label: "24/7/365 Managed NOC Services", link: "/about/what-we-do" },
-                    { label: "Proactive SLA Monitoring", link: "/services" },
-                    { label: "Router & Edge CPE Lifecycle", link: "/services" },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      onClick={() => {
-                        setDrawerOpen(false);
-                        setMobileMenuStack(["root"]);
-                      }}
-                      className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </Link>
-                  ))}
-                </>
-              )}
-
-              {/* Level 2: BUNDLED SOLUTIONS */}
-              {currentMobileLevel === "bundled" && (
-                <>
-                  {[
-                    { label: "SmartOffice® Starter Pack", link: "/services/smartoffice-connect" },
-                    { label: "Branch-in-a-Box Connectivity", link: "/services/smartoffice-connect" },
-                    { label: "Retail Multi-Branch Edge", link: "/services/sd-wan" },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      onClick={() => {
-                        setDrawerOpen(false);
-                        setMobileMenuStack(["root"]);
-                      }}
-                      className="w-full px-5 py-4 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
+                      <span>{item.name}</span>
                       <svg className="w-4 h-4 text-gray-800 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                       </svg>
@@ -1105,554 +893,68 @@ export default function Navbar() {
           {/* Drawer Body Container (Clean White Background) */}
           <div className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-8 py-6 sm:py-8">
             
-            {/* 1. SERVICES TAB: TTBS MULTI-COLUMN MEGA-MENU ARCHITECTURE (WHITE THEME) */}
+            {/* 1. SERVICES TAB: product categories on the left, products on the right */}
             {activeNavTab === "services" && (
-              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-xl flex flex-col lg:flex-row min-h-[520px]">
-                
-                {/* Left Categories Sidebar (Exactly like TTBS screenshots: Light Gray Background with Navy Active Tab) */}
-                <div className="w-full lg:w-72 bg-[#f3f4f6] border-b lg:border-b-0 lg:border-r border-gray-200 py-2 flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar shrink-0">
-                  
-                  {[
-                    { id: "top-services", label: "Top Services" },
-                    { id: "business-comm", label: "Business Communications" },
-                    { id: "network-conn", label: "Network & Connectivity" },
-                    { id: "collab", label: "Collaboration & Productivity" },
-                    { id: "cloud", label: "Cloud Infrastructure" },
-                    { id: "cybersecurity", label: "Cybersecurity Solutions" },
-                    { id: "managed-services", label: "Managed Services" },
-                    { id: "bundled", label: "Bundled Solutions" },
-                  ].map((category) => {
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-xl flex flex-col lg:flex-row min-h-[420px]">
+
+                {/* Left: categories */}
+                <div className="w-full lg:w-80 bg-[#f3f4f6] border-b lg:border-b-0 lg:border-r border-gray-200 py-2 flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar shrink-0">
+                  {productMenu.map((category) => {
                     const isActive = activeServiceCategory === category.id;
                     return (
                       <button
                         key={category.id}
                         type="button"
-                        onClick={() => setActiveServiceCategory(category.id as any)}
-                        className={`px-4 sm:px-5 py-3.5 text-xs sm:text-[13px] font-semibold tracking-wide text-left flex items-center justify-between whitespace-nowrap lg:whitespace-normal transition-all relative cursor-pointer ${
+                        onClick={() => setActiveServiceCategory(category.id)}
+                        onMouseEnter={() => setActiveServiceCategory(category.id)}
+                        aria-pressed={isActive}
+                        className={`px-4 sm:px-5 py-3.5 text-xs sm:text-[13px] font-semibold tracking-wide text-left flex items-center justify-between gap-3 whitespace-nowrap lg:whitespace-normal transition-colors relative cursor-pointer ${
                           isActive
                             ? "bg-[#002244] text-white font-bold shadow-md"
                             : "text-gray-700 hover:text-black hover:bg-gray-200/80"
                         }`}
                       >
                         <span>{category.label}</span>
-                        {/* Right Pointer Indicator matching TTBS */}
-                        {isActive ? (
-                          <span className="hidden lg:inline-block text-white font-black text-xs">
-                            ▶
-                          </span>
-                        ) : (
-                          <span className="hidden lg:inline-block text-gray-400 text-xs font-bold">
-                            ›
-                          </span>
-                        )}
+                        <span className={`hidden lg:inline-block text-xs font-bold ${isActive ? "text-white" : "text-gray-400"}`}>›</span>
                       </button>
                     );
                   })}
-
                 </div>
 
-                {/* Right Dynamic Content Panel (Clean White Interior) */}
-                <div className="flex-1 p-6 sm:p-8 bg-white overflow-y-auto text-gray-800">
-                  
-                  {/* Category 1: TOP SERVICES (Exact match to TTBS Image 1) */}
-                  {activeServiceCategory === "top-services" && (
-                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8 items-start">
-                      
-                      {/* Left 4-Card Grid */}
-                      <div className="xl:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        
-                        {/* Card 1: Smart Internet */}
-                        <Link
-                          href="/services/smart-internet-ill"
-                          onClick={() => setDrawerOpen(false)}
-                          className="group relative h-48 rounded-xl overflow-hidden border border-gray-200 hover:border-[#E31E24] transition-all duration-300 flex flex-col justify-end p-5 shadow-sm hover:shadow-md"
-                        >
-                          <img
-                            src="/banner-datacenter-racks.jpg"
-                            alt="Smart Internet"
-                            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] group-hover:scale-105 transition-transform duration-500"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                          <div className="relative z-10 text-white">
-                            <h4 className="text-base font-bold group-hover:text-red-400 transition-colors flex items-center justify-between">
-                              <span>Smart Internet (ILL)</span>
-                              <span className="text-zinc-300 group-hover:text-red-400 group-hover:translate-x-1 transition-all">→</span>
-                            </h4>
-                            <p className="text-xs text-zinc-300 mt-1 line-clamp-2">
-                              1:1 dedicated leased line bundled with cloud-based DDoS security &amp; 99.999% SLA.
-                            </p>
-                          </div>
-                        </Link>
-
-                        {/* Card 2: Smartflo SD-WAN */}
-                        <Link
-                          href="/services/smartflo-sd-wan"
-                          onClick={() => setDrawerOpen(false)}
-                          className="group relative h-48 rounded-xl overflow-hidden border border-gray-200 hover:border-[#E31E24] transition-all duration-300 flex flex-col justify-end p-5 shadow-sm hover:shadow-md"
-                        >
-                          <img
-                            src="/services/sdwan_clean.jpg"
-                            alt="Smartflo SD-WAN"
-                            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] group-hover:scale-105 transition-transform duration-500"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                          <div className="relative z-10 text-white">
-                            <h4 className="text-base font-bold group-hover:text-red-400 transition-colors flex items-center justify-between">
-                              <span>Smartflo SD-WAN</span>
-                              <span className="text-zinc-300 group-hover:text-red-400 group-hover:translate-x-1 transition-all">→</span>
-                            </h4>
-                            <p className="text-xs text-zinc-300 mt-1 line-clamp-2">
-                              Ultra-flexible, next-gen multi-cloud steering &amp; secure application mesh.
-                            </p>
-                          </div>
-                        </Link>
-
-                        {/* Card 3: SmartOffice */}
-                        <Link
-                          href="/services/smartoffice-connect"
-                          onClick={() => setDrawerOpen(false)}
-                          className="group relative h-48 rounded-xl overflow-hidden border border-gray-200 hover:border-[#E31E24] transition-all duration-300 flex flex-col justify-end p-5 shadow-sm hover:shadow-md"
-                        >
-                          <img
-                            src="/wifi-banner.jpg"
-                            alt="SmartOffice"
-                            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] group-hover:scale-105 transition-transform duration-500"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                          <div className="relative z-10 text-white">
-                            <h4 className="text-base font-bold group-hover:text-red-400 transition-colors flex items-center justify-between">
-                              <span>SmartOffice® Connect</span>
-                              <span className="text-zinc-300 group-hover:text-red-400 group-hover:translate-x-1 transition-all">→</span>
-                            </h4>
-                            <p className="text-xs text-zinc-300 mt-1 line-clamp-2">
-                              Enterprise business starter pack: productivity, voice &amp; security in one box.
-                            </p>
-                          </div>
-                        </Link>
-
-                        {/* Card 4: Managed MPLS */}
-                        <Link
-                          href="/services/managed-mpls"
-                          onClick={() => setDrawerOpen(false)}
-                          className="group relative h-48 rounded-xl overflow-hidden border border-gray-200 hover:border-[#E31E24] transition-all duration-300 flex flex-col justify-end p-5 shadow-sm hover:shadow-md"
-                        >
-                          <img
-                            src="/services/mpls_clean.jpg"
-                            alt="Managed MPLS"
-                            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] group-hover:scale-105 transition-transform duration-500"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                          <div className="relative z-10 text-white">
-                            <h4 className="text-base font-bold group-hover:text-red-400 transition-colors flex items-center justify-between">
-                              <span>Managed MPLS</span>
-                              <span className="text-zinc-300 group-hover:text-red-400 group-hover:translate-x-1 transition-all">→</span>
-                            </h4>
-                            <p className="text-xs text-zinc-300 mt-1 line-clamp-2">
-                              Rest assured, your enterprise data is protected across dedicated fiber backbones.
-                            </p>
-                          </div>
-                        </Link>
-
-                      </div>
-
-                      {/* Right Awards & Recognition Column (Exact match to TTBS Image 1, White Theme) */}
-                      <div className="p-6 rounded-xl bg-[#f8fafc] border border-blue-100 flex flex-col gap-4 text-left shadow-xs">
-                        <div className="flex items-center gap-2">
-                          <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-sm font-bold">
-                            🎖️
-                          </span>
-                          <span className="text-xs font-mono font-bold tracking-widest uppercase text-blue-900">
-                            Industry Leadership
-                          </span>
-                        </div>
-
-                        <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
-                          Awards and Recognition for Customer Centricity and Innovation
-                        </h3>
-
-                        <div className="border-t border-gray-200 pt-3 flex flex-col gap-3 text-xs text-gray-700">
-                          <div className="flex items-start gap-2">
-                            <span className="text-amber-500 mt-0.5 font-bold">★</span>
-                            <div>
-                              <strong className="text-gray-900 block font-semibold">ET Telecom Awards 2025</strong>
-                              <span className="text-gray-600">Enterprise Digital Transformation of the Year — accelerating connectivity across 100+ cities.</span>
-                            </div>
-                          </div>
-
-                          <div className="border-t border-gray-200 pt-3 flex items-start gap-2">
-                            <span className="text-amber-500 mt-0.5 font-bold">★</span>
-                            <div>
-                              <strong className="text-gray-900 block font-semibold">Carrier Grade Excellence 2025</strong>
-                              <span className="text-gray-600">Tier-1 Network SLA Provider &amp; Dedicated Multi-Cloud Infrastructure Integration.</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <Link
-                          href="/contact"
-                          onClick={() => setDrawerOpen(false)}
-                          className="mt-2 text-xs font-mono font-bold tracking-wider text-[#E31E24] hover:text-[#b51419] transition-colors uppercase inline-flex items-center gap-1"
-                        >
-                          Request Enterprise Quote →
-                        </Link>
-                      </div>
-
+                {/* Right: products in the chosen category */}
+                {(() => {
+                  const cat = productMenu.find((c) => c.id === activeServiceCategory) ?? productMenu[0];
+                  return (
+                    <div className="flex-1 p-6 sm:p-8 bg-white overflow-y-auto text-gray-800 text-left">
+                      <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24] inline-block">
+                        {cat.label}
+                      </h4>
+                      <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {cat.items.map((item) => (
+                          <li key={item.name}>
+                            <Link
+                              href={item.href}
+                              onClick={() => setDrawerOpen(false)}
+                              className="group flex items-center justify-between gap-3 h-full px-4 py-3.5 rounded-xl border border-gray-200 hover:border-[#E31E24] hover:bg-red-50/40 transition-colors"
+                            >
+                              <span className="text-sm font-semibold text-gray-900 group-hover:text-[#E31E24]">{item.name}</span>
+                              <svg className="w-4 h-4 text-gray-400 group-hover:text-[#E31E24] shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                              </svg>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        href="/services"
+                        onClick={() => setDrawerOpen(false)}
+                        className="inline-block mt-6 text-sm font-bold text-[#E31E24] hover:underline"
+                      >
+                        View all services
+                      </Link>
                     </div>
-                  )}
-
-                  {/* Category 2: BUSINESS COMMUNICATIONS (Clean White Style) */}
-                  {activeServiceCategory === "business-comm" && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                      
-                      {/* Column 1: Integrated Solutions */}
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Integrated Solutions
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["Smartflo CCaaS", "Smartflo CPaaS", "Smartflo UCaaS", "Microsoft Operator Connect", "Webex Calling", "Smartflo AI"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/business-communications"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 2: Inbound Communications */}
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Inbound Communications
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["Smart Single Number Solution", "SIP Trunk Services", "Toll Free Number Services", "Call Register Services", "PRI Lines", "Centrex Systems", "Smart Internet Telephony", "1600 Series Support"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/business-communications"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 3: Outbound & Marketing */}
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Outbound Communications
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["WhatsApp Business Platform", "Smartflo Enterprise RCS", "SMS Solutions", "Smartflo OBD", "Truecaller Business Verified", "PRI Dialing", "Smartflo Email Platform"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/business-communications"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                    </div>
-                  )}
-
-                  {/* Category 3: NETWORK & CONNECTIVITY (Clean White Style) */}
-                  {activeServiceCategory === "network-conn" && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                      
-                      {/* Column 1: Network as a Service & ILL */}
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Network as a Service &amp; ILL
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {[
-                            { name: "Network as a Service", href: "/services/network-as-a-service" },
-                            { name: "Smart Internet Leased Line (ILL)", href: "/services/smart-internet-ill" },
-                            { name: "ILL Burstable Bandwidth", href: "/services/ill-burstable-bandwidth" },
-                            { name: "Smart DDoS Defense", href: "/services/smart-ddos-protection" },
-                            { name: "SD-WAN Ready ILL", href: "/services/sd-wan-ready-ill" },
-                            { name: "Secured Leased Line", href: "/services/secured-leased-line" },
-                            { name: "Standard Carrier ILL", href: "/services/standard-carrier-ill" },
-                          ].map((item) => (
-                            <li key={item.name}>
-                              <Link href={item.href} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 2: P2P & Smart WAN */}
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          P2P &amp; Smart WAN
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {[
-                            { name: "P2P-Leased Line (Point-to-Point)", href: "/services/point-to-point-leased-line" },
-                            { name: "Smart WAN (SD-WAN iFLX)", href: "/services/smartflo-sd-wan" },
-                            { name: "SD-WAN iFLX Edge Gateway", href: "/services/sd-wan-iflx-edge-gateway" },
-                            { name: "EZ Cloud Connect (AWS/Azure)", href: "/services/ez-cloud-connect" },
-                            { name: "Ultra Low Latency (Ultra-LOLA)", href: "/services/ultra-low-latency" },
-                          ].map((item) => (
-                            <li key={item.name}>
-                              <Link href={item.href} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Column 3: Broadband & Wi-Fi */}
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Broadband &amp; Wi-Fi
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {[
-                            { name: "SmartOffice® Business Broadband", href: "/services/smartoffice-connect" },
-                            { name: "Enterprise High-Speed Broadband", href: "/services/enterprise-broadband" },
-                            { name: "Retail & Branch Broadband", href: "/services/retail-branch-broadband" },
-                            { name: "Managed Campus Wi-Fi", href: "/services/managed-campus-wifi" },
-                            { name: "High-Density Public Wi-Fi", href: "/services/high-density-public-wifi" },
-                          ].map((item) => (
-                            <li key={item.name}>
-                              <Link href={item.href} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                    </div>
-                  )}
-
-                  {/* Category 4: COLLABORATION & PRODUCTIVITY (Clean White Style) */}
-                  {activeServiceCategory === "collab" && (
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start text-left">
-                      
-                      {/* Left Column of Links */}
-                      <div className="flex flex-col gap-4">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Productivity Platforms
-                        </h4>
-                        <ul className="flex flex-col gap-3 text-xs text-gray-700">
-                          {["Microsoft 365 Enterprise", "Microsoft Copilot AI", "Google Workspace", "Enterprise Zoom Rooms", "International Bridging Service"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/collaboration-productivity"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block font-medium">
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Right Showcase (Title + 2 Featured Cards) */}
-                      <div className="lg:col-span-2 flex flex-col gap-4">
-                        <div>
-                          <h3 className="text-lg font-bold text-gray-900">Empower Teams with Smart Collaboration Tools</h3>
-                          <p className="text-xs text-gray-600 mt-1">Maximise productivity and innovation through secure, cloud-powered communication platforms.</p>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                          <Link href="/services/collaboration-productivity" onClick={() => setDrawerOpen(false)} className="relative h-44 rounded-xl overflow-hidden border border-gray-200 group shadow-sm block">
-                            <img src="/resources/smart_city_grid.jpg" alt="Copilot AI" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.55] group-hover:scale-105 transition-transform" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                            <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
-                              <span className="text-xs font-bold block">Introducing AI-Enabled Collaboration</span>
-                              <span className="text-[11px] text-zinc-300">Microsoft Copilot &amp; Smart Workspace Integration →</span>
-                            </div>
-                          </Link>
-
-                          <Link href="/services/collaboration-productivity" onClick={() => setDrawerOpen(false)} className="relative h-44 rounded-xl overflow-hidden border border-gray-200 group shadow-sm block">
-                            <img src="/resources/ai_network_chip.jpg" alt="Enterprise Solutions" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.55] group-hover:scale-105 transition-transform" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                            <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
-                              <span className="text-xs font-bold block">Leading Software Solutions</span>
-                              <span className="text-[11px] text-zinc-300">Reliable provider for corporate roadmaps →</span>
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-
-                    </div>
-                  )}
-
-                  {/* Category 5: CLOUD INFRASTRUCTURE (Clean White Style) */}
-                  {activeServiceCategory === "cloud" && (
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start text-left">
-                      
-                      {/* Left Column of Links */}
-                      <div className="flex flex-col gap-4">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Cloud Services
-                        </h4>
-                        <ul className="flex flex-col gap-3 text-xs text-gray-700">
-                          {["Microsoft Azure", "Azure Virtual Desktop", "Azure Cognitive AI", "Cloud Migration Services", "Managed Cloud Services", "CloudMon Performance", "Adapt Smart Cloud"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/cloud-infrastructure"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block font-medium">
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Right Showcase (Title + 2 Featured Cards) */}
-                      <div className="lg:col-span-2 flex flex-col gap-4">
-                        <div>
-                          <h3 className="text-lg font-bold text-gray-900">Empower Business Agility with Scalable Cloud Infrastructure</h3>
-                          <p className="text-xs text-gray-600 mt-1">Simplify operations, reduce costs, and communicate efficiently with secure, future-ready cloud solutions.</p>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                          <Link href="/services/cloud-infrastructure" onClick={() => setDrawerOpen(false)} className="relative h-44 rounded-xl overflow-hidden border border-gray-200 group shadow-sm block">
-                            <img src="/resources/globe_connectivity_dc.jpg" alt="Cloud AI" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.55] group-hover:scale-105 transition-transform" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                            <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
-                              <span className="text-xs font-bold block">Make Applications Smarter with Azure AI</span>
-                              <span className="text-[11px] text-zinc-300">Scalable cognitive cloud acceleration →</span>
-                            </div>
-                          </Link>
-
-                          <Link href="/services/cloud-infrastructure" onClick={() => setDrawerOpen(false)} className="relative h-44 rounded-xl overflow-hidden border border-gray-200 group shadow-sm block">
-                            <img src="/resources/network_engineer_ops.jpg" alt="Cloud Ops" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.55] group-hover:scale-105 transition-transform" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                            <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
-                              <span className="text-xs font-bold block">Smarter Cloud Ops, 30% Less Energy</span>
-                              <span className="text-[11px] text-zinc-300">Green Tier-4 data center efficiency →</span>
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-
-                    </div>
-                  )}
-
-                  {/* Category 6: CYBERSECURITY SOLUTIONS */}
-                  {activeServiceCategory === "cybersecurity" && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Network Security
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["Next-Gen Firewall (NGFW)", "Smart DDoS Mitigation", "Web Application Firewall (WAF)", "Zero Trust Network Access (ZTNA)"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/cybersecurity-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Endpoint &amp; Data
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["Endpoint Detection & Response (EDR)", "Cloud Email Security", "Data Loss Prevention (DLP)", "DNS Security & Filtering"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/cybersecurity-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="p-5 rounded-xl bg-blue-50/70 border border-blue-200">
-                        <span className="text-xs font-mono font-bold text-[#E31E24] uppercase block mb-1">
-                          Dedicated Security Operations
-                        </span>
-                        <h5 className="text-sm font-bold text-gray-900">24/7/365 Managed SOC Monitoring</h5>
-                        <p className="text-xs text-gray-600 mt-2">Continuous automated threat intelligence, real-time intrusion prevention &amp; rapid containment.</p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Category 7: MANAGED SERVICES */}
-                  {activeServiceCategory === "managed-services" && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          NOC Operations
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["24/7/365 L3 Network Monitoring", "Proactive Fault Detection", "BGP Routing Optimization", "Automated Failover Management"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/managed-services"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Router &amp; Infrastructure
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["Multi-Vendor Router Management", "Firmware & Security Patching", "Bandwidth Utilization Audits", "Custom Enterprise SLAs"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/managed-services"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="p-5 rounded-xl bg-blue-50/70 border border-blue-200">
-                        <span className="text-xs font-mono font-bold text-blue-900 uppercase block mb-1">
-                          NOC Direct Line
-                        </span>
-                        <a href="tel:+917838240941" className="text-base font-bold text-gray-900 hover:text-red-600 block">
-                          +91 78382 40941
-                        </a>
-                        <p className="text-xs text-gray-600 mt-2">Enterprise L3 engineers on standby round-the-clock.</p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Category 8: BUNDLED SOLUTIONS */}
-                  {activeServiceCategory === "bundled" && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Branch Bundles
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["SmartOffice Starter Pack", "Branch-in-a-Box Connectivity", "Retail Store Dual-Failover Pack", "Pop-up Event Internet"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/bundled-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex flex-col gap-3">
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-gray-900 pb-2 border-b-2 border-[#E31E24]">
-                          Enterprise Packs
-                        </h4>
-                        <ul className="flex flex-col gap-2.5 text-xs text-gray-700">
-                          {["ILL + SD-WAN Hybrid Bundle", "Cloud Interconnect & Direct Peering", "Unified Voice & SIP Trunk Suite", "Zero Trust Remote Workforce Pack"].map((item) => (
-                            <li key={item}>
-                              <Link href={subServiceMenuLinks[item] ?? "/services/bundled-solutions"} onClick={() => setDrawerOpen(false)} className="hover:text-[#E31E24] hover:translate-x-1 transition-all inline-block">{item}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="p-5 rounded-xl bg-gray-50 border border-gray-200">
-                        <span className="text-xs font-mono font-bold text-[#E31E24] uppercase block mb-1">
-                          Custom Architecture
-                        </span>
-                        <h5 className="text-sm font-bold text-gray-900">Tailored Enterprise Packages</h5>
-                        <p className="text-xs text-gray-600 mt-2">Get custom SLA agreements, dedicated multi-homed BGP lines, and custom firewall appliances.</p>
-                      </div>
-                    </div>
-                  )}
-
-                </div>
-
+                  );
+                })()}
               </div>
             )}
 
