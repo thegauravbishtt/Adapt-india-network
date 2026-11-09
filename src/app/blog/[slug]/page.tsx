@@ -43,8 +43,8 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 
   return pageMetadata({
     // Long article titles are used as-is so Google does not cut them off mid-word
-    title: seoTitle(SHORT_TITLES[slug] ?? post.title),
-    description: post.excerpt,
+    title: seoTitle(post.metaTitle ?? SHORT_TITLES[slug] ?? post.title),
+    description: post.metaDescription ?? post.excerpt,
     path: `/blog/${post.slug || post.id}/`,
     image: post.image,
     type: "article",
@@ -65,11 +65,13 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
         data={[
           articleSchema({
             title: post.title,
-            description: post.excerpt,
+            description: post.metaDescription ?? post.excerpt,
             path,
             image: post.image,
             datePublished: post.publishedAt,
+            dateModified: post.updatedAt,
             author: post.author,
+            keywords: post.focusKeyword,
           }),
           breadcrumbSchema([
             { name: "Home", path: "/" },

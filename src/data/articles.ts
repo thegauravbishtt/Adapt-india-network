@@ -1,4 +1,5 @@
 import type { BlogPost } from "../lib/db";
+import { guideArticles } from "./guideArticles";
 
 /**
  * Built-in articles. These pages are linked from the homepage, /blog and
@@ -6,7 +7,7 @@ import type { BlogPost } from "../lib/db";
  * empty. Content format: paragraphs separated by a blank line; a short line
  * without a full stop at the end is shown as a heading.
  */
-export const seedArticles: BlogPost[] = [
+const coreArticles: BlogPost[] = [
   {
     id: "article-2",
     slug: "why-dedicated-internet-leased-lines-matter",
@@ -376,6 +377,9 @@ We design dual-carrier connectivity for offices, plants and branches across Delh
     ],
   },
 ];
+
+/** Newest guides first, then the original articles. */
+export const seedArticles: BlogPost[] = [...guideArticles, ...coreArticles];
 
 export function getSeedArticle(slug: string): BlogPost | undefined {
   return seedArticles.find((a) => a.slug === slug || a.id === slug);

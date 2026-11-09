@@ -30,7 +30,15 @@ export interface BlogPost {
   tags: Array<{ text: string; variant: "dark" | "outline" | "yellow" }>;
   status: "published" | "draft";
   publishedAt: string;
+  /** Last meaningful content update (ISO date). Used for dateModified in schema. */
+  updatedAt?: string;
   author: string;
+  /** Search title (≤60 chars). Falls back to the headline. */
+  metaTitle?: string;
+  /** Search snippet (≤160 chars). Falls back to the excerpt. */
+  metaDescription?: string;
+  /** Main search phrase the article targets (for editors; not shown on the page). */
+  focusKeyword?: string;
   faqs?: Array<{ question: string; answer: string }>;
 }
 

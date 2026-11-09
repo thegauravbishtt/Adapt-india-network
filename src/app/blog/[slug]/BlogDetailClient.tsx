@@ -1,6 +1,7 @@
 "use client";
 
 import UpgradeCTA from "@/components/UpgradeCTA";
+import ArticleBody from "@/components/ArticleBody";
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -44,12 +45,6 @@ export default function BlogDetailClient({
       setTimeout(() => setCopied(false), 2000);
     }
   };
-
-  // Format content paragraphs
-  const contentParagraphs = (blog.content || "")
-    .split("\n\n")
-    .map((p) => p.trim())
-    .filter(Boolean);
 
   return (
     <LanguageProvider>
@@ -184,35 +179,8 @@ export default function BlogDetailClient({
 
           {/* Article Text Content */}
           <article className="prose prose-zinc max-w-none">
-            {contentParagraphs.length > 0 ? (
-              contentParagraphs.map((para, i) => {
-                // If the paragraph is short and ends without period or looks like a heading
-                const isHeading =
-                  para.length < 80 &&
-                  !para.endsWith(".") &&
-                  !para.includes("\n") &&
-                  i > 0;
-
-                if (isHeading) {
-                  return (
-                    <h2
-                      key={i}
-                      className="text-xl sm:text-2xl font-bold text-zinc-950 font-display uppercase tracking-tight mt-8 mb-3"
-                    >
-                      {para}
-                    </h2>
-                  );
-                }
-
-                return (
-                  <p
-                    key={i}
-                    className="text-sm sm:text-base text-zinc-700 leading-relaxed sm:leading-loose mb-5 font-normal whitespace-pre-line"
-                  >
-                    {para}
-                  </p>
-                );
-              })
+            {blog.content?.trim() ? (
+              <ArticleBody content={blog.content} />
             ) : (
               <p className="text-sm text-zinc-600 leading-relaxed">
                 {blog.excerpt}

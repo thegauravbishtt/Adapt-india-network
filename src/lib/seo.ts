@@ -287,17 +287,20 @@ export function articleSchema(input: {
   path: string;
   image?: string;
   datePublished: string;
+  dateModified?: string;
   author?: string;
+  keywords?: string;
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: input.title,
     description: input.description,
     mainEntityOfPage: absoluteUrl(input.path),
     image: absoluteUrl(input.image || DEFAULT_OG_IMAGE),
     datePublished: input.datePublished,
-    dateModified: input.datePublished,
+    dateModified: input.dateModified || input.datePublished,
+    ...(input.keywords ? { keywords: input.keywords } : {}),
     inLanguage: "en-IN",
     author: { "@type": "Organization", name: input.author || BUSINESS.name },
     publisher: { "@id": ORG_ID },
