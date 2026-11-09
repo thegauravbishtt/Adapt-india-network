@@ -23,13 +23,27 @@ DirectoryIndex index.html
   RewriteRule ^services/internet-leased-line/?$ /services/smart-internet-ill/ [R=301,L]
   RewriteRule ^services/sd-wan/?$ /services/smartflo-sd-wan/ [R=301,L]
   RewriteRule ^services/mpls/?$ /services/managed-mpls/ [R=301,L]
-  RewriteRule ^services/managed-wifi/?$ /services/enterprise-broadband/ [R=301,L]
+  RewriteRule ^services/managed-wifi/?$ /services/managed-campus-wifi/ [R=301,L]
   RewriteRule ^services/cloud-telephony/?$ /services/business-communications/ [R=301,L]
   RewriteRule ^services/cyber-security/?$ /services/cybersecurity-solutions/ [R=301,L]
   RewriteRule ^services/data-services/?$ /services/point-to-point-leased-line/ [R=301,L]
 
   # 0c. Pages left over from the old web-agency template (not telecom services) -> Services
   RewriteRule ^services/(seo-services|google-ads|meta-ads|web-development|app-development|ui-ux-design|ai-automation|whatsapp-marketing|social-media|content-marketing|email-marketing|local-seo-gmb|cloud-devops|it-consulting|enterprise-software)/?$ /services/ [R=301,L]
+
+  # 0d. Spam URLs injected into the old PHP site -> 410 Gone, so Google drops them for good
+  #     (e.g. /products/17521930, /shop/3287213.shtml, /index.php?products/832674, WordPress feeds)
+  RewriteCond %{QUERY_STRING} (^|&)products [NC]
+  RewriteRule ^index\.php$ - [G,L]
+  RewriteRule ^(products|shop)(/.*)?$ - [G,L]
+  RewriteRule ^(comments/)?feed/?$ - [G,L]
+
+  # 0e. Real pages from the old PHP site -> matching new page (trailing ? drops old query strings)
+  RewriteRule ^index\.php$ /? [R=301,L]
+  RewriteRule ^fiber-leased-line-service-provider\.php$ /services/smart-internet-ill/? [R=301,L]
+  RewriteRule ^enterprise-broadband\.php$ /services/enterprise-broadband/? [R=301,L]
+  RewriteRule ^blog-details\.php$ /blog/? [R=301,L]
+  RewriteRule ^contact-us/?$ /contact/ [R=301,L]
 
   # 1. Route Contact Form API to PHP Mailer Handler
   RewriteRule ^api/contact/?$ contact.php [L,QSA]
@@ -53,6 +67,7 @@ DirectoryIndex index.html
 
 # Custom Error Pages
 ErrorDocument 404 /404.html
+ErrorDocument 410 /404.html
 
 # Compression (faster pages = better Core Web Vitals)
 <IfModule mod_deflate.c>
