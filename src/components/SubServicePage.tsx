@@ -265,7 +265,7 @@ export default function SubServicePage({ item, banner, parentName, related, vari
           {/* HERO: fixed height so every service banner is the same size */}
           <section className="relative w-full text-white min-h-[360px] sm:min-h-[400px] lg:min-h-[420px] pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800 flex flex-col justify-end">
             <div className="absolute inset-0 z-0">
-              <img
+              <img fetchPriority="high"
                 src={banner}
                 alt={`${item.name} for businesses in India`}
                 className="w-full h-full object-cover object-center filter brightness-[0.72] contrast-[1.1]"

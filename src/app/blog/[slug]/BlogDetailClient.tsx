@@ -59,6 +59,7 @@ export default function BlogDetailClient({
             <img
               src={blog.image || "/banner-articles-enterprise.jpg"}
               alt={blog.title}
+              fetchPriority="high"
               className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
             />
             {/* Directional gradient to keep photo vibrant on right while text is super legible on left */}
@@ -322,6 +323,8 @@ export default function BlogDetailClient({
                       <img
                         src={related.image}
                         alt={related.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-2.5 left-2.5">

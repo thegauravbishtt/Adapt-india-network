@@ -175,6 +175,7 @@ export default function ServiceDetailClient({ service, cities = [] }: ServiceDet
             <img
               src={bannerImage}
               alt={service.name}
+              fetchPriority="high"
               className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
             />
             {/* Directional gradient to keep photo vibrant on right while text is super legible on left */}

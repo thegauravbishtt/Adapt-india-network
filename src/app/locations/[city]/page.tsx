@@ -84,7 +84,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
           {/* HERO */}
           <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-10 lg:pb-12 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
             <div className="absolute inset-0 z-0">
-              <img
+              <img fetchPriority="high"
                 src="/banner-network-matrix.jpg"
                 alt={`Enterprise fibre network for businesses in ${page.city}`}
                 className="w-full h-full object-cover object-center filter brightness-[0.6] contrast-[1.1]"
