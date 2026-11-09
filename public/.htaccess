@@ -43,6 +43,12 @@ DirectoryIndex index.html
   RewriteRule ^fiber-leased-line-service-provider\.php$ /services/smart-internet-ill/? [R=301,L]
   RewriteRule ^enterprise-broadband\.php$ /services/enterprise-broadband/? [R=301,L]
   RewriteRule ^blog-details\.php$ /blog/? [R=301,L]
+  RewriteRule ^cloud-telephony-solution-service-provider\.php$ /services/business-communications/? [R=301,L]
+  RewriteCond %{QUERY_STRING} (^|&)service=sd-wan(&|$) [NC]
+  RewriteRule ^service-details\.php$ /services/smartflo-sd-wan/? [R=301,L]
+  RewriteCond %{QUERY_STRING} (^|&)service=mpls(&|$) [NC]
+  RewriteRule ^service-details\.php$ /services/managed-mpls/? [R=301,L]
+  RewriteRule ^service-details\.php$ /services/? [R=301,L]
   RewriteRule ^contact-us/?$ /contact/ [R=301,L]
 
   # 1. Route Contact Form API to PHP Mailer Handler

@@ -432,13 +432,14 @@ export const cityPages: CityPage[] = [
     city: "Mumbai",
     altNames: ["Navi Mumbai", "Thane"],
     state: "Maharashtra",
-    metaTitle: "Leased Line Provider in Mumbai | ILL & SD-WAN",
+    metaTitle: "Leased Line & SD-WAN Services in Mumbai",
     metaDescription:
-      "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Mumbai, Navi Mumbai & Thane: BKC, Lower Parel, Andheri, Powai & MIDC. Get a feasibility check.",
-    h1: "Internet Leased Line Provider in Mumbai",
+      "Internet Leased Line, SD-WAN services and MPLS for businesses in Mumbai, Navi Mumbai & Thane: BKC, Lower Parel, Andheri, Powai & MIDC. Get a feasibility check.",
+    h1: "Internet Leased Line & SD-WAN Services in Mumbai",
     intro: [
       "Mumbai is India's financial capital, home to banks, brokers, insurers, media houses and the regional offices of companies from every sector. Adapt India Network delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice across Mumbai, Navi Mumbai and Thane through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
       "Space in Mumbai is expensive and offices are often spread across several buildings and suburbs. We help companies link a head office in BKC or Lower Parel with back offices in Andheri, Powai or Navi Mumbai over one secure network, with backup links where downtime is not an option.",
+      "For companies with several Mumbai sites, our managed SD-WAN service puts every office, store and warehouse on one network controlled from a single dashboard. It combines a leased line with broadband or 4G/5G at each site, sends voice and ERP traffic over the best link, and switches over automatically when a fibre is cut, which matters during the monsoon when cable damage is more common.",
     ],
     businessAreas: [
       "Bandra Kurla Complex (BKC)",
@@ -482,6 +483,11 @@ export const cityPages: CityPage[] = [
         question: "Can you connect our Mumbai office with offices in Delhi NCR and other cities?",
         answer:
           "Yes. We connect offices across India using SD-WAN, MPLS or point-to-point leased lines, managed as one network.",
+      },
+      {
+        question: "Do you provide SD-WAN services in Mumbai?",
+        answer:
+          "Yes. We set up and manage SD-WAN for businesses with multiple sites in Mumbai, Navi Mumbai and Thane, and can connect them with branches elsewhere in India. Each site gets an SD-WAN device that combines its links, prioritises important traffic and fails over automatically, all managed from one dashboard.",
       },
       {
         question: "Do you cover Navi Mumbai and Thane?",

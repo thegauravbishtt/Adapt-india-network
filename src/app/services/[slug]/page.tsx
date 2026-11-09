@@ -7,6 +7,7 @@ import ServiceDetailClient from "./ServiceDetailClient";
 import SubServicePage from "../../../components/SubServicePage";
 import { subServices, getSubService, subServiceBanner } from "../../../data/subServices";
 import JsonLd from "../../../components/JsonLd";
+import { cityPages } from "../../../data/locationsData";
 import {
   pageMetadata,
   serviceSchema,
@@ -47,9 +48,9 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     serviceType: "Managed Office Connectivity",
   },
   "managed-mpls": {
-    title: "MPLS VPN Service Provider in India | Managed MPLS",
+    title: "MPLS Service Provider in India | Managed MPLS VPN",
     description:
-      "Private, secure MPLS VPN connectivity between branches, plants and data centres across India with QoS, managed routers and round-the-clock monitoring.",
+      "MPLS service provider for Indian businesses: private MPLS VPN linking branches, plants and data centres in 150+ cities, with QoS and 24/7 support.",
     serviceType: "MPLS VPN",
   },
   "business-communications": {
@@ -233,7 +234,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           ]}
         />
       )}
-      <ServiceDetailClient service={service} />
+      <ServiceDetailClient
+        service={service}
+        cities={isTelecom ? cityPages.map((c) => ({ slug: c.slug, city: c.city })) : []}
+      />
     </>
   );
 }

@@ -13,9 +13,11 @@ import { ServiceDetail } from "../../../data/servicesData";
 
 interface ServiceDetailClientProps {
   service: ServiceDetail;
+  /** City landing pages to link to (helps Google find and rank both page types). */
+  cities?: Array<{ slug: string; city: string }>;
 }
 
-export default function ServiceDetailClient({ service }: ServiceDetailClientProps) {
+export default function ServiceDetailClient({ service, cities = [] }: ServiceDetailClientProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState({
@@ -916,6 +918,38 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 })}
               </div>
 
+            </div>
+          </section>
+        )}
+
+        {cities.length > 0 && (
+          <section className="w-full bg-white border-t border-gray-100 py-12 sm:py-16">
+            <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900">
+                {service.name} in your city
+              </h2>
+              <p className="mt-2 text-sm text-gray-600 max-w-2xl">
+                We deliver {service.name} across India through Tata Tele Business Services and ACT Fibernet. See local
+                coverage, business areas and delivery details for your city.
+              </p>
+              <ul className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
+                {cities.map((c) => (
+                  <li key={c.slug}>
+                    <Link
+                      href={`/locations/${c.slug}/`}
+                      className="block rounded-lg border border-gray-200 px-3 py-2.5 text-sm text-zinc-800 hover:border-[#E31E24] hover:text-[#E31E24] transition-colors"
+                    >
+                      {c.city}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/locations/"
+                className="inline-block mt-5 text-sm font-medium text-[#E31E24] hover:underline"
+              >
+                All locations →
+              </Link>
             </div>
           </section>
         )}
