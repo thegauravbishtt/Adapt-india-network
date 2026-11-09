@@ -33,7 +33,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const stored = (await getBlogs()).filter((b) => b.status !== "draft");
   const blogSlugs = new Set([...stored.map((b) => b.slug || b.id), ...seedArticles.map((a) => a.slug)]);
 
-  return [
+  // Old service URLs that public/.htaccess 301-redirects to a main page.
+  // A redirecting URL in the sitemap sends Google mixed signals, so keep them out.
+  const redirectedServiceSlugs = new Set([
+    "internet-leased-line",
+    "sd-wan",
+    "mpls",
+    "managed-wifi",
+    "cloud-telephony",
+    "cyber-security",
+    "data-services",
+  ]);
+  const notRedirected = (s: { slug: string }) => !redirectedServiceSlugs.has(s.slug);
+
+  const entries: MetadataRoute.Sitemap = [
     ...staticPages.map(([path, priority, changeFrequency]) => ({
       url: url(path),
       lastModified: now,
@@ -46,13 +59,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
-    ...telecomServices.map((s) => ({
+    ...telecomServices.filter(notRedirected).map((s) => ({
       url: url(`/services/${s.slug}/`),
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    ...subServices.map((s) => ({
+    ...subServices.filter(notRedirected).map((s) => ({
       url: url(`/services/${s.slug}/`),
       lastModified: now,
       changeFrequency: "monthly" as const,
@@ -65,4 +78,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     })),
   ];
+
+  // Drop any URL listed twice (a slug can appear in more than one data file)
+  const seen = new Set<string>();
+  return entries.filter((e) => (seen.has(e.url) ? false : (seen.add(e.url), true)));
 }
