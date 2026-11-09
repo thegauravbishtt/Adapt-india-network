@@ -16,7 +16,7 @@ export const guideArticles: BlogPost[] = [
     focusKeyword: "documents required for leased line connection",
     category: "Leased Lines",
     readTime: "6 min read",
-    image: "/banner-process.jpg",
+    image: "/service-banners/proactive-fault-detection.jpg",
     excerpt:
       "A plain checklist of the paperwork carriers ask for, and a step-by-step look at how a leased line goes from enquiry to a live link in your office.",
     tags: [
@@ -154,7 +154,7 @@ We handle the leased line process end to end for businesses across [Delhi](/loca
     focusKeyword: "static IP address for business",
     category: "Network Basics",
     readTime: "5 min read",
-    image: "/banner-servers-lights.jpg",
+    image: "/service-banners/bgp-routing-optimization.jpg",
     excerpt:
       "Remote CCTV access, VPNs, bank whitelisting and servers all need a fixed public IP. Here is how static IPs work in India and the right way to get one.",
     tags: [
@@ -279,7 +279,7 @@ We supply Internet Leased Lines with static public IP addresses for offices in [
     focusKeyword: "managed wifi for office",
     category: "Wireless Systems",
     readTime: "5 min read",
-    image: "/wifi-banner.jpg",
+    image: "/service-banners/pri-dialing.jpg",
     excerpt:
       "Why office Wi-Fi built from a few routers keeps letting people down, what a managed Wi-Fi service actually includes, and how to tell if your office needs one.",
     tags: [
@@ -409,7 +409,7 @@ We design and run [managed office and campus Wi-Fi](/services/managed-campus-wif
     focusKeyword: "hotel wifi solutions India",
     category: "Wireless Systems",
     readTime: "5 min read",
-    image: "/banner-global-telecom.jpg",
+    image: "/marketing-bg-1.jpg",
     excerpt:
       "Slow Wi-Fi is one of the most common complaints in hotel reviews. This guide covers room coverage, bandwidth, guest login rules and the network behind it.",
     tags: [

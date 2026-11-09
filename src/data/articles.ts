@@ -14,7 +14,7 @@ const coreArticles: BlogPost[] = [
     title: "Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters",
     category: "Network Reliability",
     readTime: "6 min read",
-    image: "/banner-datacenter-racks.jpg",
+    image: "/service-banners/sd-wan-ready-ill.jpg",
     excerpt:
       "What an Internet Leased Line actually is, how it differs from business broadband, and how Indian businesses can decide which one they need.",
     tags: [
@@ -147,7 +147,7 @@ We design and deliver SD-WAN, MPLS and hybrid WANs for businesses headquartered 
     title: "Cloud Telephony & SIP Trunking: A Guide for Indian Businesses",
     category: "Enterprise Systems",
     readTime: "5 min read",
-    image: "/services/enterprise_partnership.jpg",
+    image: "/service-banners/toll-free-number-services.jpg",
     excerpt:
       "How SIP trunks and cloud telephony replace PRI lines and on-premise PBX hardware, and what Indian businesses should check before switching.",
     tags: [
@@ -200,7 +200,7 @@ We provide SIP trunks, cloud telephony, toll-free and virtual numbers, and cloud
     title: "How to Secure a Multi-Branch Business Network in India",
     category: "Cyber Defense",
     readTime: "6 min read",
-    image: "/services/cybersecurity.jpg",
+    image: "/services/hero_cybersecurity.jpg",
     excerpt:
       "A practical security checklist for businesses with offices, stores or plants in several cities: firewalls, segmentation, secure remote access and monitoring.",
     tags: [
@@ -320,7 +320,7 @@ We design, install and manage enterprise Wi-Fi for offices, campuses, hospitals 
     title: "Building Internet Redundancy with Dual-Carrier Failover in India",
     category: "Network Reliability",
     readTime: "6 min read",
-    image: "/banner-global-telecom.jpg",
+    image: "/service-banners/automated-failover-management.jpg",
     excerpt:
       "How to keep offices and plants online when a fibre is cut: dual carriers, diverse paths, automatic failover and what to test.",
     tags: [
