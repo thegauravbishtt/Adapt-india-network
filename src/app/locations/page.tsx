@@ -32,7 +32,7 @@ export default function LocationsPage() {
           <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
             <div className="absolute inset-0 z-0">
               <img
-                src="/halftone-globe.jpg"
+                src="/halftone-globe.jpg" loading="lazy" decoding="async"
                 alt="Pan-India enterprise network coverage"
                 className="w-full h-full object-cover object-center filter brightness-[0.55]"
               />

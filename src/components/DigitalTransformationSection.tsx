@@ -115,7 +115,7 @@ export default function DigitalTransformationSection() {
                 className="flex-1 transition-all duration-500 ease-out rounded-2xl overflow-hidden relative cursor-pointer group shadow-sm border border-zinc-200/80 text-left p-0"
               >
                 <img
-                  src={item.image}
+                  src={item.image} loading="lazy" decoding="async"
                   alt={item.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />

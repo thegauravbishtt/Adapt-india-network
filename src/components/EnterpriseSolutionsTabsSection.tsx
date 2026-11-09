@@ -17,7 +17,7 @@ export default function EnterpriseSolutionsTabsSection() {
         {/* Halftone Dotted Globe with screen blend mode */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-80 mix-blend-screen">
           <img
-            src="/halftone-globe.jpg"
+            src="/halftone-globe.jpg" loading="lazy" decoding="async"
             alt="Halftone Dotted Globe Network"
             className="w-full max-w-5xl h-auto object-contain transform translate-y-6"
           />
@@ -113,7 +113,7 @@ export default function EnterpriseSolutionsTabsSection() {
         {/* Globe positioned in upper-right behind staggered cards matching reference */}
         <div className="absolute -right-8 sm:-right-4 top-8 sm:top-6 w-[330px] sm:w-[370px] h-[330px] sm:h-[370px] pointer-events-none opacity-85 mix-blend-screen overflow-hidden">
           <img
-            src="/halftone-globe.jpg"
+            src="/halftone-globe.jpg" loading="lazy" decoding="async"
             alt="Halftone Dotted Globe Network"
             className="w-full h-full object-contain"
           />
@@ -214,7 +214,7 @@ export default function EnterpriseSolutionsTabsSection() {
             <div className="bg-[#060B14] border border-[#1E293B] hover:border-[#E31E24]/60 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group p-2.5 sm:p-3">
               <div className="w-full aspect-[4/3] bg-white rounded-lg sm:rounded-xl overflow-hidden p-2 flex items-center justify-center">
                 <img
-                  src="/jd.png"
+                  src="/jd.png" loading="lazy" decoding="async"
                   alt="Adapt India Network Justdial Genuine Business Trust Stamp"
                   className="w-full h-full object-contain"
                 />
@@ -233,7 +233,7 @@ export default function EnterpriseSolutionsTabsSection() {
             <div className="bg-[#060B14] border border-[#1E293B] hover:border-[#E31E24]/60 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group p-2.5 sm:p-3">
               <div className="w-full aspect-[4/3] bg-white rounded-lg sm:rounded-xl overflow-hidden p-2 flex items-center justify-center">
                 <img
-                  src="/jd2.png"
+                  src="/jd2.png" loading="lazy" decoding="async"
                   alt="Adapt India Network Justdial Users Choice 2026"
                   className="w-full h-full object-contain"
                 />
