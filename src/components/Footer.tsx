@@ -174,6 +174,40 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
+
+              {/* Guides: articles not featured on the homepage, so every post is linked site-wide */}
+              <div>
+                <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
+                  <Link href="/blog/" className="hover:text-white transition-colors">Guides</Link>
+                </h4>
+                <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
+                  <li>
+                    <Link href="/blog/sd-wan-vs-traditional-mpls-enterprise-guide/" className="hover:text-white transition-colors">
+                      SD-WAN vs MPLS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog/cloud-telephony-sip-trunking-modern-workforce/" className="hover:text-white transition-colors">
+                      Cloud Telephony &amp; SIP Trunking
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog/pan-india-carrier-redundancy-dual-homed-failover/" className="hover:text-white transition-colors">
+                      Dual-Carrier Internet Failover
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog/securing-multi-branch-enterprise-networks/" className="hover:text-white transition-colors">
+                      Multi-Branch Network Security
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog/high-density-wifi-6-enterprise-office-deployment/" className="hover:text-white transition-colors">
+                      Wi-Fi 6 for Busy Offices
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* ==================================================== */}
@@ -224,6 +258,41 @@ export default function Footer() {
                   <li>
                     <Link href="/locations/bengaluru" className="hover:text-white transition-colors">
                       Leased Line in Bengaluru
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/hyderabad" className="hover:text-white transition-colors">
+                      Leased Line in Hyderabad
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/chennai" className="hover:text-white transition-colors">
+                      Leased Line in Chennai
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/pune" className="hover:text-white transition-colors">
+                      Leased Line in Pune
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/kolkata" className="hover:text-white transition-colors">
+                      Leased Line in Kolkata
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/ahmedabad" className="hover:text-white transition-colors">
+                      Leased Line in Ahmedabad
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/jaipur" className="hover:text-white transition-colors">
+                      Leased Line in Jaipur
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/chandigarh" className="hover:text-white transition-colors">
+                      Leased Line in Chandigarh
                     </Link>
                   </li>
                   <li>

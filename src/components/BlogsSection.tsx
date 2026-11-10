@@ -5,11 +5,14 @@ import { seedArticles } from "../data/articles";
 
 /** Homepage article picks: first one is featured. Images chosen so none repeat elsewhere on the homepage. */
 const picks: Array<{ slug: string; image?: string }> = [
-  { slug: "why-dedicated-internet-leased-lines-matter", image: "/service-banners/sd-wan-ready-ill.jpg" },
-  { slug: "sd-wan-vs-traditional-mpls-enterprise-guide" },
-  { slug: "cloud-telephony-sip-trunking-modern-workforce" },
-  { slug: "pan-india-carrier-redundancy-dual-homed-failover" },
+  { slug: "leased-line-connection-documents-installation-process" },
+  { slug: "why-dedicated-internet-leased-lines-matter" },
+  { slug: "managed-wifi-for-office" },
+  { slug: "static-ip-address-for-business-india" },
+  { slug: "hotel-wifi-solutions-india" },
 ];
+// The other articles are linked from the site footer (Guides), so every post
+// is reachable from every page.
 
 const articles = picks
   .map((p) => {
