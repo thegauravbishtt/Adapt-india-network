@@ -3,6 +3,7 @@ import { Manrope, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 import WelcomeRequirementModal from "../components/WelcomeRequirementModal";
+import TalkToUsButton from "../components/TalkToUsButton";
 import ScrollAnimationProvider from "../components/ScrollAnimationProvider";
 import JsonLd from "../components/JsonLd";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE, organizationSchema, websiteSchema } from "../lib/seo";
@@ -110,6 +111,7 @@ export default function RootLayout({
           <ScrollAnimationProvider />
           {children}
           <WelcomeRequirementModal />
+          <TalkToUsButton />
         </LanguageProvider>
       </body>
     </html>
