@@ -587,6 +587,21 @@ export const telecomServices: ServiceDetail[] = [
         answer:
           "Yes. Adapt India Network provides direct cloud on-ramps. Your AWS VPCs or Azure Virtual Networks appear as native private MPLS nodes without traversing the public internet.",
       },
+      {
+        question: "Who are the main MPLS service providers in India?",
+        answer:
+          "MPLS networks in India are run by large telecom carriers such as Tata Tele Business Services, Tata Communications, Airtel, Jio and BSNL. Adapt India Network designs, orders and manages MPLS VPNs on the Tata Tele Business Services network, and can add an internet or second-carrier link at each site for backup.",
+      },
+      {
+        question: "How much does an MPLS connection cost in India?",
+        answer:
+          "MPLS is priced per site. The cost depends on how many locations you connect, the bandwidth at each one, how far each site is from the carrier's network, the number of traffic priority classes and the contract length. We share a quote once feasibility is confirmed for your exact addresses.",
+      },
+      {
+        question: "Can MPLS and SD-WAN work together?",
+        answer:
+          "Yes. Many companies keep MPLS at head office, data centres and critical branches, and use SD-WAN with internet links at smaller sites. SD-WAN can also use MPLS and internet together at the same site, sending sensitive traffic over MPLS and the rest over the internet.",
+      },
     ],
     structuredSection: {
       title: "ENTERPRISE MANAGED MPLS VPN CONNECTIVITY",

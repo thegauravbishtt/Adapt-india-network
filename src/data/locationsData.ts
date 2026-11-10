@@ -31,7 +31,7 @@ export const cityPages: CityPage[] = [
     state: "Delhi",
     metaTitle: "Leased Line Provider in Delhi | ILL & SD-WAN",
     metaDescription:
-      "Dedicated Internet Leased Line, SD-WAN and MPLS for offices in Delhi: Connaught Place, Nehru Place, Okhla, Paschim Vihar & more. Delhi-based team. Call +91 82874 79961.",
+      "Internet Leased Line, SD-WAN and MPLS for offices in Delhi: Connaught Place, Nehru Place, Okhla & Paschim Vihar. Delhi-based team. Call +91 82874 79961.",
     h1: "Internet Leased Line Provider in Delhi",
     intro: [
       "Adapt India Network is headquartered in Paschim Vihar, New Delhi, so Delhi is where our team works every day. We arrange dedicated Internet Leased Lines (ILL), business broadband, SD-WAN and MPLS for offices, clinics, showrooms and warehouses across the city, delivered on the enterprise fibre networks of Tata Tele Business Services and ACT Fibernet.",
@@ -504,7 +504,7 @@ export const cityPages: CityPage[] = [
     state: "Karnataka",
     metaTitle: "Leased Line Provider in Bengaluru (Bangalore)",
     metaDescription:
-      "Internet Leased Line, SD-WAN and MPLS for tech companies and offices in Bengaluru: Whitefield, Outer Ring Road, Electronic City, Koramangala & Manyata Tech Park.",
+      "Internet Leased Line, SD-WAN and MPLS for offices in Bengaluru (Bangalore): Whitefield, Outer Ring Road, Electronic City, Koramangala & Manyata Tech Park.",
     h1: "Internet Leased Line Provider in Bengaluru (Bangalore)",
     intro: [
       "Bengaluru is India's technology hub, with software companies, global capability centres, startups and R&D labs spread from Whitefield to Electronic City. Adapt India Network supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to these teams through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",

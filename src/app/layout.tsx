@@ -23,7 +23,7 @@ const spaceMono = Space_Mono({
 });
 
 const HOME_TITLE =
-  "Leased Line & SD-WAN Provider in Delhi NCR & India | Adapt India";
+  "Leased Line & SD-WAN in Delhi NCR | Adapt India Network";
 const HOME_DESCRIPTION =
   "Internet Leased Line (ILL), SD-WAN, MPLS & business broadband in Delhi, Gurgaon, Noida & across India. Tata Tele & ACT partner. Call +91 82874 79961.";
 

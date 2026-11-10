@@ -148,7 +148,7 @@ export default function ContactPage() {
                   </span>
 
                   <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black text-white font-display tracking-tight uppercase leading-[1.1] mb-2 drop-shadow-md">
-                    CONTACT US
+                    Contact Adapt India Network
                   </h1>
 
                   <p className="text-zinc-200 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-4">

@@ -46,6 +46,8 @@ export default function Hero() {
           <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white uppercase drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
             Adapt India Networks
           </span>
+          {/* Separator so search engines read "Adapt India Networks – Internet Leased Line…" not "NetworksInternet" */}
+          <span className="sr-only"> – </span>
 
           {/* Subtitle */}
           <span className="block mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-zinc-200/90 max-w-2xl font-medium tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">

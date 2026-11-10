@@ -13,6 +13,8 @@ export interface ServiceGuide {
   goodFor: string[];
   included: Array<{ title: string; text: string }>;
   priceFactors: string[];
+  /** Optional buyer's checklist, e.g. "How to choose an MPLS provider". */
+  choosing?: { heading: string; intro: string; points: Array<{ title: string; text: string }> };
 }
 
 export const serviceGuides: Record<string, ServiceGuide> = {
@@ -125,6 +127,37 @@ export const serviceGuides: Record<string, ServiceGuide> = {
       "How many traffic priority classes you need",
       "Backup links or dual-carrier design for critical sites",
     ],
+    choosing: {
+      heading: "How to choose an MPLS service provider in India",
+      intro:
+        "Most MPLS networks in India run on a handful of large carriers, so the real differences are coverage at your addresses, the service levels in writing and who manages the network day to day. Check these before you sign.",
+      points: [
+        {
+          title: "Coverage at every site",
+          text: "Ask for a feasibility check on each exact address. A carrier whose fibre already reaches your buildings will deliver faster and more reliably than one that has to lay new cable or rely on a third party for the last mile.",
+        },
+        {
+          title: "SLAs in writing",
+          text: "Look for committed figures on availability, round-trip latency between sites, packet loss and time to repair, and what credit you get if they are missed.",
+        },
+        {
+          title: "Traffic priority classes",
+          text: "Confirm how many Class of Service levels are included, so voice, video and core applications can be kept ahead of email and file transfers.",
+        },
+        {
+          title: "Managed routers and monitoring",
+          text: "Find out who configures and replaces the router at each site, and whether the network is monitored around the clock so faults are raised before your branches call in.",
+        },
+        {
+          title: "Backup and SD-WAN options",
+          text: "Critical sites should have a second path. Ask whether the provider can add an internet or second-carrier link, or combine MPLS with SD-WAN, without redesigning the whole network.",
+        },
+        {
+          title: "One point of contact",
+          text: "With branches across several cities, a single team that owns orders, changes and faults saves a lot of time compared with chasing each carrier separately.",
+        },
+      ],
+    },
   },
   "business-communications": {
     layout: "split",

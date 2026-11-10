@@ -191,6 +191,8 @@ export const businessComm: SubService[] = [
   {
     slug: "smart-single-number",
     name: "Smart Single Number Solution",
+    h1: "Single Business Phone Number for All Branches",
+    metaTitle: "Single Business Phone Number for All Branches",
     parent: P,
     group: "Inbound Communications",
     headline: "One easy number for customers, routed to the right office or person",
@@ -373,6 +375,8 @@ export const businessComm: SubService[] = [
   {
     slug: "smart-internet-telephony",
     name: "Smart Internet Telephony",
+    h1: "Internet Telephony for Business",
+    metaTitle: "Internet Telephony for Business in India",
     parent: P,
     group: "Inbound Communications",
     headline: "Business phone lines that run over your internet connection",
@@ -436,6 +440,8 @@ export const businessComm: SubService[] = [
   {
     slug: "whatsapp-business-platform",
     name: "WhatsApp Business Platform",
+    h1: "WhatsApp Business API & Platform Services",
+    metaTitle: "WhatsApp Business API & Services in India",
     parent: P,
     group: "Outbound Communications",
     headline: "Talk to customers on WhatsApp at scale, with your verified business profile",

@@ -138,7 +138,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
           <section className="w-full bg-white py-12 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20">
             <div className="max-w-4xl mx-auto flex flex-col gap-5">
               <h2 className="text-xl sm:text-3xl font-black font-display text-zinc-950 tracking-tight">
-                Business internet and networking in {page.city}
+                Internet leased line and business connectivity in {page.city}
               </h2>
               {page.intro.map((p, i) => (
                 <p key={i} className="text-sm sm:text-base text-zinc-700 leading-relaxed">
@@ -156,7 +156,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
                 {"// "}Services
               </span>
               <h2 className="text-xl sm:text-3xl font-black font-display text-zinc-950 tracking-tight mt-1 mb-8">
-                Connectivity services available in {page.city}
+                Leased line, SD-WAN and MPLS services in {page.city}
               </h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {cityServiceLinks.map((s) => (

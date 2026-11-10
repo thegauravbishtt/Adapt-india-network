@@ -5,6 +5,10 @@ export interface SubService {
   parent: string;
   /** Menu group, e.g. "Inbound Communications". */
   group: string;
+  /** Optional page heading (H1) when it should differ from `name`, e.g. to match how people search. */
+  h1?: string;
+  /** Optional search title (≤60 chars incl. brand). Defaults to "<name> in India". */
+  metaTitle?: string;
   /** Short line under the H1 in the banner. */
   headline: string;
   /** Meta description (keep under ~158 characters). */

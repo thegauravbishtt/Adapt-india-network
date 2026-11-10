@@ -3,6 +3,7 @@
 import UpgradeCTA from "@/components/UpgradeCTA";
 import ServiceGuideSection from "@/components/ServiceGuideSection";
 import { serviceGuides } from "@/data/serviceGuides";
+import ServiceChoosingSection from "@/components/ServiceChoosingSection";
 import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../../../components/Navbar";
@@ -15,9 +16,11 @@ interface ServiceDetailClientProps {
   service: ServiceDetail;
   /** City landing pages to link to (helps Google find and rank both page types). */
   cities?: Array<{ slug: string; city: string }>;
+  /** Page H1 when it should differ from the service name (matches how people search). */
+  heading?: string;
 }
 
-export default function ServiceDetailClient({ service, cities = [] }: ServiceDetailClientProps) {
+export default function ServiceDetailClient({ service, cities = [], heading }: ServiceDetailClientProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState({
@@ -221,7 +224,7 @@ export default function ServiceDetailClient({ service, cities = [] }: ServiceDet
 
                 {/* Display Title */}
                 <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black text-white font-display tracking-tight uppercase leading-[1.08] mb-2.5 drop-shadow-md">
-                  {service.name}
+                  {heading ?? service.name}
                 </h1>
 
                 <p className="text-zinc-200 text-xs sm:text-sm font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-4">
@@ -285,6 +288,9 @@ export default function ServiceDetailClient({ service, cities = [] }: ServiceDet
         {/* 2b. PLAIN-LANGUAGE GUIDE (different layout per service) */}
         {serviceGuides[service.slug] && (
           <ServiceGuideSection guide={serviceGuides[service.slug]} serviceName={service.name} />
+        )}
+        {serviceGuides[service.slug]?.choosing && (
+          <ServiceChoosingSection choosing={serviceGuides[service.slug].choosing!} />
         )}
 
         {/* 3. BESPOKE PAGE CONTENT: Tailored Distinctive Design per Service */}

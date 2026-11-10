@@ -28,15 +28,17 @@ interface ServicePageProps {
  * Titles stay under ~65 characters and descriptions under ~160 so Google
  * shows them in full.
  */
-const SERVICE_SEO: Record<string, { title: string; description: string; serviceType: string }> = {
+const SERVICE_SEO: Record<string, { title: string; description: string; serviceType: string; h1?: string }> = {
   "smart-internet-ill": {
     title: "Internet Leased Line (ILL) Provider in India",
+    h1: "Internet Leased Line (ILL) Provider in India",
     description:
       "Dedicated 1:1 symmetrical Internet Leased Line with SLA, static IPs and 24/7 NOC for offices in Delhi, Gurgaon, Noida and pan-India. Get a quote today.",
     serviceType: "Internet Leased Line",
   },
   "smartflo-sd-wan": {
     title: "SD-WAN Service Provider in India | Managed SD-WAN",
+    h1: "Managed SD-WAN Service Provider in India",
     description:
       "Managed SD-WAN for multi-branch businesses in India: link bonding, automatic failover, central policy control and zero-touch branch rollout. Talk to our team.",
     serviceType: "SD-WAN",
@@ -49,6 +51,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
   },
   "managed-mpls": {
     title: "MPLS Service Provider in India | Managed MPLS VPN",
+    h1: "MPLS VPN Service Provider in India",
     description:
       "MPLS service provider for Indian businesses: private MPLS VPN linking branches, plants and data centres in 150+ cities, with QoS and 24/7 support.",
     serviceType: "MPLS VPN",
@@ -134,7 +137,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   const sub = getSubService(slug);
   if (sub) {
-    const base = `${sub.name} in India`;
+    const base = sub.metaTitle ?? `${sub.name} in India`;
     return pageMetadata({
       title: seoTitle(base.length <= 60 ? base : sub.name),
       description: sub.summary,
@@ -219,7 +222,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <JsonLd
           data={[
             serviceSchema({
-              name: seo?.title ?? service.name,
+              name: seo?.h1 ?? service.name,
               description: seo?.description ?? service.heroSubtitle,
               path,
               serviceType: seo?.serviceType ?? service.name,
@@ -236,6 +239,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       )}
       <ServiceDetailClient
         service={service}
+        heading={seo?.h1}
         cities={isTelecom ? cityPages.map((c) => ({ slug: c.slug, city: c.city })) : []}
       />
     </>

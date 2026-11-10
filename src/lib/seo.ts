@@ -181,10 +181,7 @@ export function organizationSchema() {
         itemOffered: { "@type": "Service", name: svc.name, url: absoluteUrl(svc.path) },
       })),
     },
-    areaServed: BUSINESS.areaServed.map((name) => ({
-      "@type": name === "India" ? "Country" : "Place",
-      name,
-    })),
+    areaServed: BUSINESS.areaServed.map(placeSchema),
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -274,11 +271,30 @@ export function serviceSchema(input: {
     description: input.description,
     url: absoluteUrl(input.path),
     provider: { "@id": ORG_ID },
-    areaServed: (input.areaServed ?? ["India"]).map((name) => ({
-      "@type": name === "India" ? "Country" : "Place",
-      name,
-    })),
+    areaServed: (input.areaServed ?? ["India"]).map(placeSchema),
   };
+}
+
+/** States and multi-city regions; everything else in areaServed lists is a city. */
+const REGIONS = new Set([
+  "Delhi NCR",
+  "Haryana",
+  "Uttar Pradesh",
+  "Maharashtra",
+  "Karnataka",
+  "Telangana",
+  "Tamil Nadu",
+  "West Bengal",
+  "Gujarat",
+  "Rajasthan",
+  "Punjab",
+  "Chandigarh Tricity",
+]);
+
+/** schema.org place with the most specific type: Country, AdministrativeArea or City. */
+export function placeSchema(name: string) {
+  const type = name === "India" ? "Country" : REGIONS.has(name) ? "AdministrativeArea" : "City";
+  return { "@type": type, name };
 }
 
 export function articleSchema(input: {

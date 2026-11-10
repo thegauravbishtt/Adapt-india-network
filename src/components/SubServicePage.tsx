@@ -290,7 +290,7 @@ export default function SubServicePage({ item, banner, parentName, related, vari
                   {"// "}{item.group}
                 </span>
                 <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black text-white font-display tracking-tight uppercase leading-[1.08] mb-2.5 drop-shadow-md">
-                  {item.name}
+                  {item.h1 ?? item.name}
                 </h1>
                 <p className="text-zinc-200 text-sm sm:text-base max-w-2xl leading-relaxed mb-4">{item.headline}</p>
                 <div className="flex flex-wrap items-center gap-2.5">

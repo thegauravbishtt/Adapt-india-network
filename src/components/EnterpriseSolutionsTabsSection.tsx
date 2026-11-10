@@ -121,9 +121,10 @@ export default function EnterpriseSolutionsTabsSection() {
 
         <div className="max-w-md mx-auto relative z-10 flex flex-col items-start text-left">
           {/* 1. Left-aligned Title */}
-          <h2 className="text-[26px] sm:text-[30px] font-normal tracking-tight text-white font-sans leading-tight mb-7">
+          {/* Mobile copy of the desktop heading above: a <p>, so the page has one "A partner you can trust" H2 */}
+          <p className="text-[26px] sm:text-[30px] font-normal tracking-tight text-white font-sans leading-tight mb-7">
             A partner you can <span className="text-[#E31E24] font-medium">trust</span>
-          </h2>
+          </p>
 
           {/* 2. Staggered Transparent Cards to see Earth */}
           <div className="w-full flex flex-col gap-3.5 my-1 relative">
