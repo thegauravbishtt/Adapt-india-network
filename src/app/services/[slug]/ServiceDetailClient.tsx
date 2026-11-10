@@ -7,7 +7,6 @@ import ServiceChoosingSection from "@/components/ServiceChoosingSection";
 import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../../../components/Navbar";
-import NewsletterSection from "../../../components/NewsletterSection";
 import Footer from "../../../components/Footer";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import { ServiceDetail } from "../../../data/servicesData";
@@ -966,12 +965,6 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
           text="Share your locations and requirements. We'll check feasibility at each address and send a clear proposal."
         />
 
-        {/* Global Strategy Call & Feasibility Section (RetailMark Offset Card in Brand Logo Red) */}
-        <NewsletterSection
-          title={`Request Feasibility & Proposal for ${service.name}`}
-          subtitle="Our enterprise telecom engineers will verify last-mile fiber availability, cross-connect routing, and provide tailored SLA tariff proposals within 2 hours."
-          buttonText="Request Verified Feasibility"
-        />
 
         {/* Global Footer */}
         <Footer />

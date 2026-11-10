@@ -5,7 +5,6 @@ import JsonLd from "../../components/JsonLd";
 import { faqSchema } from "../../lib/seo";
 import React, { useState, useMemo } from "react";
 import Navbar from "../../components/Navbar";
-import NewsletterSection from "../../components/NewsletterSection";
 import Footer from "../../components/Footer";
 import { LanguageProvider } from "../../context/LanguageContext";
 import Link from "next/link";
@@ -268,7 +267,6 @@ export default function FAQPage() {
         </main>
 
         <UpgradeCTA title="Still have a question?" text="Speak to our team directly. We'll answer honestly, including when a cheaper option will do the job." />
-        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>

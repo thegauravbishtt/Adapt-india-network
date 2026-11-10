@@ -3,7 +3,6 @@
 import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
-import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
@@ -286,7 +285,6 @@ export default function BlogPage() {
         </main>
 
         <UpgradeCTA title="Planning a network upgrade?" text="Turn what you've read into a plan. We'll check feasibility at your address and share options." />
-        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>

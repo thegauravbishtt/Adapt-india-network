@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Navbar from "../../../components/Navbar";
-import NewsletterSection from "../../../components/NewsletterSection";
 import Footer from "../../../components/Footer";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import UpgradeCTA from "@/components/UpgradeCTA";
@@ -317,7 +316,6 @@ export default function WhoWeArePage() {
           />
         </main>
 
-        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>

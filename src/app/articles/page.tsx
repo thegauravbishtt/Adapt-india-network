@@ -3,7 +3,6 @@
 import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
-import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
@@ -180,7 +179,6 @@ export default function ArticlesPage() {
         </main>
 
         <UpgradeCTA title="Want advice for your own network?" text="Share your setup and we'll suggest practical improvements, from backup links to SD-WAN." />
-        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>

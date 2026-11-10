@@ -3,7 +3,6 @@
 import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState } from "react";
 import Navbar from "../../../components/Navbar";
-import NewsletterSection from "../../../components/NewsletterSection";
 import Footer from "../../../components/Footer";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import Link from "next/link";
@@ -323,9 +322,7 @@ export default function HowWeWorkPage() {
           </section>
         </main>
 
-        {/* Strategy Call / Newsletter Section */}
         <UpgradeCTA title="See how we'd deliver your connection" text="From site survey to go-live, one team handles the carrier, installation and testing for every location." />
-        <NewsletterSection />
 
         {/* FOOTER */}
         <Footer />

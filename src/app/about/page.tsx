@@ -2,7 +2,6 @@
 
 import React from "react";
 import Navbar from "../../components/Navbar";
-import NewsletterSection from "../../components/NewsletterSection";
 import Footer from "../../components/Footer";
 import { LanguageProvider } from "../../context/LanguageContext";
 import UpgradeCTA from "@/components/UpgradeCTA";
@@ -256,7 +255,6 @@ export default function AboutMainPage() {
         </main>
 
         {/* Newsletter Section */}
-        <NewsletterSection />
 
         {/* FOOTER */}
         <Footer />

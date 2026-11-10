@@ -3,7 +3,6 @@
 import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState } from "react";
 import Navbar from "../../../components/Navbar";
-import NewsletterSection from "../../../components/NewsletterSection";
 import Footer from "../../../components/Footer";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import Link from "next/link";
@@ -341,7 +340,6 @@ export default function WhatWeDoPage() {
         </main>
 
         <UpgradeCTA title="Need a leased line, SD-WAN or business voice?" text="Tell us what you need to connect and we'll recommend the right mix of services for each site." />
-        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>

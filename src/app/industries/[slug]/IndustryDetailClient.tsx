@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Navbar from "../../../components/Navbar";
-import NewsletterSection from "../../../components/NewsletterSection";
 import Footer from "../../../components/Footer";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import { IndustryDetail, allIndustries } from "../../../data/industriesData";
@@ -474,7 +473,6 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
             </div>
           </section>
 
-          <NewsletterSection />
           <Footer />
         </div>
       </LanguageProvider>
@@ -933,7 +931,6 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
             </div>
           </section>
 
-          <NewsletterSection />
           <Footer />
         </div>
       </LanguageProvider>
@@ -1392,7 +1389,6 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
             </div>
           </section>
 
-          <NewsletterSection />
           <Footer />
         </div>
       </LanguageProvider>
@@ -3698,7 +3694,6 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
           </div>
         </section>
 
-        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>

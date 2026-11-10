@@ -4,7 +4,6 @@ import UpgradeCTA from "@/components/UpgradeCTA";
 import ArticleBody from "@/components/ArticleBody";
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
-import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Link from "next/link";
@@ -355,11 +354,9 @@ export default function BlogDetailClient({
             </div>
           )}
 
-          {/* Bottom Strategy Call Section */}
         </main>
 
         <UpgradeCTA title="Want this set up for your business?" text="Our team can check what's available at your office and recommend the right connection." />
-        <NewsletterSection />
         <Footer />
       </div>
     </LanguageProvider>
