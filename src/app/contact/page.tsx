@@ -111,7 +111,7 @@ export default function ContactPage() {
             <div className="absolute inset-0 z-0">
               <img
                 src="/telephone-old.jpg"
-                alt="Contact Adapt India Network"
+                alt="Contact Adapt India Networks"
                 className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10 z-10" />
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   </span>
 
                   <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black text-white font-display tracking-tight uppercase leading-[1.1] mb-2 drop-shadow-md">
-                    Contact Adapt India Network
+                    Contact Adapt India Networks
                   </h1>
 
                   <p className="text-zinc-200 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-4">
@@ -582,7 +582,7 @@ export default function ContactPage() {
 
               <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-zinc-200 shadow-lg h-72 sm:h-80 w-full bg-zinc-100">
                 <iframe
-                  title="Adapt India Network Location Paschim Vihar New Delhi"
+                  title="Adapt India Networks Location Paschim Vihar New Delhi"
                   src="https://maps.google.com/maps?q=Paschim%20Vihar,New%20Delhi,India&t=&z=14&ie=UTF8&iwloc=&output=embed"
                   className="w-full h-full border-0"
                   loading="lazy"

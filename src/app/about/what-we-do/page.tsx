@@ -136,7 +136,7 @@ export default function WhatWeDoPage() {
             <div className="absolute inset-0 z-0">
               <img
                 src="/banner-what-we-do.jpg"
-                alt="What We Do - Adapt India Network"
+                alt="What We Do - Adapt India Networks"
                 className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35 z-10" />

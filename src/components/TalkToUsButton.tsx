@@ -4,7 +4,7 @@
  * Plain link (no JavaScript needed), so it works everywhere, including in-app browsers.
  */
 const WHATSAPP_NUMBER = "918287479961";
-const GREETING = "Hi Adapt India Network, I'd like to talk about connectivity for my business.";
+const GREETING = "Hi Adapt India Networks, I'd like to talk about connectivity for my business.";
 
 export default function TalkToUsButton() {
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(GREETING)}`;

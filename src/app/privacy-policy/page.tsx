@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
               {/* Introduction */}
               <div>
                 <p>
-                  At <strong>Adapt India Network</strong> (“we”, “our”, or “us”), we respect your privacy and are committed to protecting the personal information you share with us through our website (<Link href="/" className="text-zinc-950 font-medium underline">adapt-india.net</Link>) and our enterprise telecommunications services.
+                  At <strong>Adapt India Networks</strong> (“we”, “our”, or “us”), we respect your privacy and are committed to protecting the personal information you share with us through our website (<Link href="/" className="text-zinc-950 font-medium underline">adapt-india.net</Link>) and our enterprise telecommunications services.
                 </p>
                 <p className="mt-3">
                   This Privacy Policy explains what information we collect, how we use it, and the choices you have regarding your data.
@@ -192,7 +192,7 @@ export default function PrivacyPolicyPage() {
                   If you have any questions about this Privacy Policy or our data practices, please reach out to us:
                 </p>
                 <div className="text-sm text-zinc-800 space-y-1">
-                  <p><strong>Adapt India Network</strong></p>
+                  <p><strong>Adapt India Networks</strong></p>
                   <p>Phone: <a href="tel:+918287479961" className="text-zinc-950 font-semibold underline">+91 82874 79961</a></p>
                   <p>Email: <a href="mailto:info@adapt-india.net" className="text-zinc-950 font-semibold underline">info@adapt-india.net</a></p>
                   <p>Location: Paschim Vihar, New Delhi - 110063, Delhi, India</p>

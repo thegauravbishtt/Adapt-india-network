@@ -24,7 +24,7 @@ const spaceMono = Space_Mono({
 });
 
 const HOME_TITLE =
-  "Leased Line & SD-WAN in Delhi NCR | Adapt India Network";
+  "Leased Line & SD-WAN in Delhi NCR | Adapt India Networks";
 const HOME_DESCRIPTION =
   "Internet Leased Line (ILL), SD-WAN, MPLS & business broadband in Delhi, Gurgaon, Noida & across India. Tata Tele & ACT partner. Call +91 82874 79961.";
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: HOME_TITLE,
-    template: "%s | Adapt India Network",
+    template: "%s | Adapt India Networks",
   },
   description: HOME_DESCRIPTION,
   applicationName: SITE_NAME,

@@ -216,7 +216,7 @@ export default function EnterpriseSolutionsTabsSection() {
               <div className="w-full aspect-[4/3] bg-white rounded-lg sm:rounded-xl overflow-hidden p-2 flex items-center justify-center">
                 <img
                   src="/jd.png" loading="lazy" decoding="async"
-                  alt="Adapt India Network Justdial Genuine Business Trust Stamp"
+                  alt="Adapt India Networks Justdial Genuine Business Trust Stamp"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -235,7 +235,7 @@ export default function EnterpriseSolutionsTabsSection() {
               <div className="w-full aspect-[4/3] bg-white rounded-lg sm:rounded-xl overflow-hidden p-2 flex items-center justify-center">
                 <img
                   src="/jd2.png" loading="lazy" decoding="async"
-                  alt="Adapt India Network Justdial Users Choice 2026"
+                  alt="Adapt India Networks Justdial Users Choice 2026"
                   className="w-full h-full object-contain"
                 />
               </div>

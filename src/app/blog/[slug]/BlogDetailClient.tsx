@@ -274,7 +274,7 @@ export default function BlogDetailClient({
               </div>
               <div>
                 <h4 className="text-base font-bold text-white">
-                  Published by {blog.author || "Adapt India Network"}
+                  Published by {blog.author || "Adapt India Networks"}
                 </h4>
                 <p className="text-xs text-zinc-400 mt-0.5">
                   Building next-generation optical fiber infrastructure, SD-WAN fabrics, and carrier SLA connectivity.

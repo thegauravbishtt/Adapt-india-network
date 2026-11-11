@@ -27,7 +27,7 @@ export default function AdminSettingsPage() {
   const [nodeEnv, setNodeEnv] = useState("development");
 
   const [formData, setFormData] = useState<AgencySettings>({
-    agencyName: "Adapt India Network",
+    agencyName: "Adapt India Networks",
     tagline: "Enterprise Telecom, SD-WAN & Network Infrastructure Solutions",
     notificationEmail: "info@adapt-india.net",
     supportPhone: "+91 82874 79961",

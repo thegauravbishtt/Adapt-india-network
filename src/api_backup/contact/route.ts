@@ -253,7 +253,7 @@ ${effectiveRequirement}
       });
 
       await transporter.sendMail({
-        from: `"Adapt India Network" <${cleanUser}>`,
+        from: `"Adapt India Networks" <${cleanUser}>`,
         to: destinationEmail,
         replyTo: `"${name}" <${email}>`,
         subject: `🔥 New Lead: ${name} (${effectiveCompanyName}) - ${effectiveService}`,

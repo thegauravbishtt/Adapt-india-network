@@ -19,7 +19,7 @@ export default function WhatsAppChatButton() {
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = message.trim() || "Hi Adapt India Network, I would like to inquire about enterprise connectivity.";
+    const text = message.trim() || "Hi Adapt India Networks, I would like to inquire about enterprise connectivity.";
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/${phoneNumber}?text=${encoded}`, "_blank", "noopener,noreferrer");
     setMessage("");
@@ -45,7 +45,7 @@ export default function WhatsAppChatButton() {
   return (
     <aside
       ref={widgetRef}
-      aria-label="Chat with Adapt India Network"
+      aria-label="Chat with Adapt India Networks"
       className="fixed bottom-16 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end select-none"
     >
       {/* 1. SIMPLE CLEAN WHITE CHAT POPUP */}

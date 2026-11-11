@@ -208,7 +208,7 @@ export default function ClientsPage() {
           <div className="absolute inset-0 z-0">
             <img
               src="/banner-datacenter-racks.jpg"
-              alt="Adapt India Network Enterprise Clients"
+              alt="Adapt India Networks Enterprise Clients"
               className="w-full h-full object-cover object-center scale-100 filter brightness-[0.65] contrast-[1.10]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10 z-10" />

@@ -35,7 +35,7 @@ export function blogHubSchema() {
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: "Adapt India Network blog",
+      name: "Adapt India Networks blog",
       numberOfItems: posts.length,
       itemListElement: posts.map((a, i) => ({
         "@type": "ListItem",

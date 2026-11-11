@@ -99,7 +99,7 @@ export default function HowWeWorkPage() {
             <div className="absolute inset-0 z-0">
               <img
                 src="/banner-process.jpg"
-                alt="How We Work - Adapt India Network"
+                alt="How We Work - Adapt India Networks"
                 className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35 z-10" />

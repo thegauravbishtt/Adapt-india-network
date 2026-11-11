@@ -26,7 +26,7 @@ export const guideArticles: BlogPost[] = [
     status: "published",
     publishedAt: "2026-11-09T09:00:00.000Z",
     updatedAt: "2026-11-09T09:00:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Ordering an Internet Leased Line is not like signing up for home broadband. There is a feasibility check, a customer application form, a set of company documents, and often some work inside your building before the link goes live. None of it is difficult, but missing one document or one permission is the most common reason a leased line takes three weeks longer than it should.
 
 This guide covers the documents Indian carriers usually ask for, the installation process step by step, and what you can prepare in advance. If you are still deciding whether you need a leased line at all, start with our comparison of [leased line vs business broadband](/blog/why-dedicated-internet-leased-lines-matter/).
@@ -112,7 +112,7 @@ Sorting out the first four before the order is placed can save a surprising amou
 
 If the internet going down would stop billing, dispatch or customer support, plan a second link while the first is being ordered. The backup should ideally come from a different carrier and enter the building through a different route, so a single cable cut does not take both down. Our guide to [dual-carrier failover](/blog/pan-india-carrier-redundancy-dual-homed-failover/) explains how this works in practice.
 
-## How Adapt India Network helps
+## How Adapt India Networks helps
 
 We handle the leased line process end to end for businesses across [Delhi](/locations/delhi/), [Gurgaon](/locations/gurgaon/), [Noida](/locations/noida/) and the rest of India, on the enterprise networks of Tata Tele Business Services and ACT Fibernet. We check which carriers already reach your building, prepare the paperwork with you, coordinate the site work and stay involved until the link is accepted. See our [Internet Leased Line service](/services/smart-internet-ill/) or [contact us](/contact/) for a feasibility check at your address.`,
     faqs: [
@@ -164,7 +164,7 @@ We handle the leased line process end to end for businesses across [Delhi](/loca
     status: "published",
     publishedAt: "2026-11-09T09:30:00.000Z",
     updatedAt: "2026-11-09T09:30:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Sooner or later, almost every growing business hears the same request from a vendor or IT person: "We need your static IP." It might be the bank setting up a payment integration, the CCTV installer who wants to show cameras on your phone, or the software vendor who will only allow logins from your office.
 
 If your office is on ordinary broadband, the honest answer is often that you do not have one. This guide explains what a static IP address is, why many Indian broadband connections cannot provide one, and how businesses usually get one.
@@ -237,7 +237,7 @@ A fixed, publicly reachable address is also easier for attackers to find. If you
 
 Our guide to [securing multi-branch networks](/blog/securing-multi-branch-enterprise-networks/) goes further, and our [managed security service](/services/cybersecurity-solutions/) can set this up for you.
 
-## Getting a static IP with Adapt India Network
+## Getting a static IP with Adapt India Networks
 
 We supply Internet Leased Lines with static public IP addresses for offices in [Delhi](/locations/delhi/), [Gurgaon](/locations/gurgaon/), [Noida](/locations/noida/), [Mumbai](/locations/mumbai/), [Bengaluru](/locations/bengaluru/) and across India, through Tata Tele Business Services and ACT Fibernet. Tell us what you need the address for and we will recommend the right block size and set up the firewall rules with you. [Contact us](/contact/) for a feasibility check.`,
     faqs: [
@@ -289,7 +289,7 @@ We supply Internet Leased Lines with static public IP addresses for offices in [
     status: "published",
     publishedAt: "2026-11-09T10:00:00.000Z",
     updatedAt: "2026-11-09T10:00:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Most office Wi-Fi in India starts the same way. Someone buys a good router, then a second one for the far end of the floor, then a range extender for the conference room. It works well enough at twelve people. At forty, calls drop when people walk between rooms, the guest network shares a password that half the city knows, and nobody can tell why the internet "feels slow" every afternoon.
 
 Managed Wi-Fi exists to fix exactly that. Instead of buying hardware and hoping, you get a wireless network that is designed for your space, monitored all the time, and supported by people whose job is to keep it working.
@@ -367,7 +367,7 @@ A perfect wireless network cannot make a congested internet connection faster. O
 - You are opening a new floor, branch or office
 - Nobody on your team has time to look after the network
 
-## Managed Wi-Fi with Adapt India Network
+## Managed Wi-Fi with Adapt India Networks
 
 We design and run [managed office and campus Wi-Fi](/services/managed-campus-wifi/) for offices, coworking spaces, schools and warehouses in [Delhi](/locations/delhi/), [Gurgaon](/locations/gurgaon/), [Noida](/locations/noida/) and across India, together with the leased lines and backup links that feed them. Every project starts with a survey, so the design fits your building rather than a template. [Talk to our team](/contact/) to arrange one.`,
     faqs: [
@@ -419,7 +419,7 @@ We design and run [managed office and campus Wi-Fi](/services/managed-campus-wif
     status: "published",
     publishedAt: "2026-11-09T10:30:00.000Z",
     updatedAt: "2026-11-09T10:30:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Read the reviews of almost any hotel in India and Wi-Fi comes up again and again. Guests forgive a small room or a slow lift more easily than a connection that drops halfway through a work call or will not load a film at night. For business hotels, it can decide whether a corporate client books again.
 
 The good news is that hotel Wi-Fi problems are rarely mysterious. They usually come from a handful of design decisions that can be fixed. This guide walks through them.
@@ -486,7 +486,7 @@ When a hotel's internet fails, guests are not the only ones affected. Check-in s
 - Add a backup link from a second carrier
 - Monitor the network centrally and review usage monthly
 
-## Hotel Wi-Fi with Adapt India Network
+## Hotel Wi-Fi with Adapt India Networks
 
 We design and manage guest Wi-Fi for hotels, guest houses, service apartments and banquet venues, together with the leased lines and backup links behind it. Our [managed Wi-Fi service](/services/managed-campus-wifi/) and [high-density public Wi-Fi](/services/high-density-public-wifi/) cover rooms through to banquet halls, and we work across [Delhi](/locations/delhi/), [Gurgaon](/locations/gurgaon/), [Jaipur](/locations/jaipur/) and the rest of India. [Contact us](/contact/) to arrange a survey of your property.`,
     faqs: [

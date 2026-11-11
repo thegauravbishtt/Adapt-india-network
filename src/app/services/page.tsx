@@ -324,7 +324,7 @@ export default function ServicesPage() {
                   <thead>
                     <tr className="border-b border-zinc-200 text-zinc-400 font-mono uppercase text-[11px]">
                       <th className="py-3 px-4">Performance Metric</th>
-                      <th className="py-3 px-4 bg-blue-50/50 text-[#0066FF] font-bold">Adapt India Network ILL</th>
+                      <th className="py-3 px-4 bg-blue-50/50 text-[#0066FF] font-bold">Adapt India Networks ILL</th>
                       <th className="py-3 px-4">Traditional Commercial Leased Line</th>
                       <th className="py-3 px-4">Standard Business Broadband</th>
                     </tr>

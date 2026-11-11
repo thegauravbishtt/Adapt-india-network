@@ -19,7 +19,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "< 4 Hours", label: "Mean Time to Restore (MTTR)" },
     ],
     overview:
-      "Modern enterprises run on mission-critical cloud applications, real-time transaction processing, and synchronized data pipelines. Adapt India Network's Smart Internet Leased Line (ILL) delivers dedicated carrier-grade connectivity terminated over redundant optical fiber rings directly into your server room or data center.",
+      "Modern enterprises run on mission-critical cloud applications, real-time transaction processing, and synchronized data pipelines. Adapt India Networks' Smart Internet Leased Line (ILL) delivers dedicated carrier-grade connectivity terminated over redundant optical fiber rings directly into your server room or data center.",
     theChallenge:
       "Shared broadband connections suffer from unpredictable peak-hour throttling, high packet jitter, asymmetrical upload speeds, and sluggish response times that cripple VoIP, video conferencing, and multi-cloud database syncs.",
     ourSolution:
@@ -97,7 +97,7 @@ export const telecomServices: ServiceDetail[] = [
       {
         step: "04",
         title: "Live Activation & 24/7 NOC Monitoring",
-        desc: "Integration with Adapt India Network's 24/7/365 NOC dashboard with automated SNMP polling and instant escalation lines.",
+        desc: "Integration with Adapt India Networks' 24/7/365 NOC dashboard with automated SNMP polling and instant escalation lines.",
       },
     ],
     caseStudies: [
@@ -157,7 +157,7 @@ export const telecomServices: ServiceDetail[] = [
       ],
       whyChooseTitle: "WHY ADAPT INDIA NETWORK ILL?",
       whyChooseDesc:
-        "We are not a reseller. Adapt India Network operates direct optical fiber infrastructure interconnected with India's premier Tier-1 backbones, ensuring low-hop routing and direct peering at NIXI and major cloud exchanges.",
+        "We are not a reseller. Adapt India Networks operates direct optical fiber infrastructure interconnected with India's premier Tier-1 backbones, ensuring low-hop routing and direct peering at NIXI and major cloud exchanges.",
       whyChooseBullets: [
         "100+ Metro Cities Covered Nationwide",
         "Direct On-Ramps to AWS, Azure, Google Cloud",
@@ -187,7 +187,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "Zero-Touch", label: "Rapid Branch Provisioning" },
     ],
     overview:
-      "Legacy hub-and-spoke WAN architectures route all branch cloud traffic back through corporate data centers, causing bandwidth bottlenecks and high latency. Adapt India Network's Smartflo SD-WAN decouples network hardware from software control, enabling intelligent dynamic routing across multiple transport links directly to SaaS and cloud environments.",
+      "Legacy hub-and-spoke WAN architectures route all branch cloud traffic back through corporate data centers, causing bandwidth bottlenecks and high latency. Adapt India Networks' Smartflo SD-WAN decouples network hardware from software control, enabling intelligent dynamic routing across multiple transport links directly to SaaS and cloud environments.",
     theChallenge:
       "Enterprises managing multiple retail branches, regional offices, and cloud workloads struggle with expensive MPLS circuits, complicated router CLI configurations, slow site turnarounds, and lack of application performance visibility.",
     ourSolution:
@@ -314,7 +314,7 @@ export const telecomServices: ServiceDetail[] = [
       ],
       whyChooseTitle: "WHY ADAPT INDIA SMARTFLO SD-WAN?",
       whyChooseDesc:
-        "Unlike standalone software vendors who leave you to source and manage multiple ISP circuits yourself, Adapt India Network provides both the Tier-1 underlying fiber and the managed SD-WAN overlay on a single SLA contract.",
+        "Unlike standalone software vendors who leave you to source and manage multiple ISP circuits yourself, Adapt India Networks provides both the Tier-1 underlying fiber and the managed SD-WAN overlay on a single SLA contract.",
       whyChooseBullets: [
         "Single Point of Accountability for Links + Hardware",
         "PAN-India Logistics & Field Engineer Deployment",
@@ -344,7 +344,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "1 Single SLA", label: "Single Vendor Responsibility" },
     ],
     overview:
-      "Setting up a new office branch traditionally means negotiating with separate vendors for internet leased lines, local PBX systems, Wi-Fi access points, router firewalls, and cloud storage. SmartOffice® Connect consolidates all necessary communications and network infrastructure into a unified, plug-and-play solution managed round-the-clock by Adapt India Network.",
+      "Setting up a new office branch traditionally means negotiating with separate vendors for internet leased lines, local PBX systems, Wi-Fi access points, router firewalls, and cloud storage. SmartOffice® Connect consolidates all necessary communications and network infrastructure into a unified, plug-and-play solution managed round-the-clock by Adapt India Networks.",
     theChallenge:
       "SMEs, growing enterprises, and branch offices waste weeks coordinating between telecom providers, EPABX installers, and IT hardware technicians, leading to finger-pointing whenever outages occur.",
     ourSolution:
@@ -489,7 +489,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "Class of Service", label: "Hardware-Enforced QoS" },
     ],
     overview:
-      "When enterprise data security, regulatory compliance, and deterministic packet delivery cannot be compromised, sending sensitive internal data over the public internet is not an option. Adapt India Network's Managed MPLS VPN delivers fully private, Layer-3 and Layer-2 virtual networks isolated from public cyber threats.",
+      "When enterprise data security, regulatory compliance, and deterministic packet delivery cannot be compromised, sending sensitive internal data over the public internet is not an option. Adapt India Networks' Managed MPLS VPN delivers fully private, Layer-3 and Layer-2 virtual networks isolated from public cyber threats.",
     theChallenge:
       "BFSI institutions, healthcare conglomerates, and retail operations require secure multi-site interconnectivity with zero packet jitter for core banking, ERP synchronization, and live telemetry without exposure to internet DDoS attacks.",
     ourSolution:
@@ -585,12 +585,12 @@ export const telecomServices: ServiceDetail[] = [
       {
         question: "Can we connect our cloud infrastructure (AWS/Azure) directly to our MPLS?",
         answer:
-          "Yes. Adapt India Network provides direct cloud on-ramps. Your AWS VPCs or Azure Virtual Networks appear as native private MPLS nodes without traversing the public internet.",
+          "Yes. Adapt India Networks provides direct cloud on-ramps. Your AWS VPCs or Azure Virtual Networks appear as native private MPLS nodes without traversing the public internet.",
       },
       {
         question: "Who are the main MPLS service providers in India?",
         answer:
-          "MPLS networks in India are run by large telecom carriers such as Tata Tele Business Services, Tata Communications, Airtel, Jio and BSNL. Adapt India Network designs, orders and manages MPLS VPNs on the Tata Tele Business Services network, and can add an internet or second-carrier link at each site for backup.",
+          "MPLS networks in India are run by large telecom carriers such as Tata Tele Business Services, Tata Communications, Airtel, Jio and BSNL. Adapt India Networks designs, orders and manages MPLS VPNs on the Tata Tele Business Services network, and can add an internet or second-carrier link at each site for backup.",
       },
       {
         question: "How much does an MPLS connection cost in India?",
@@ -649,7 +649,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "AI Enabled", label: "Real-Time Sentiment & Transcription" },
     ],
     overview:
-      "Legacy copper PRI lines and on-premise PBX systems are expensive to scale, fragile during network spikes, and incapable of supporting distributed remote agents. Adapt India Network's Business Communications suite delivers cloud-native voice, programmable SIP trunks, and omnichannel customer engagement APIs built for modern scale.",
+      "Legacy copper PRI lines and on-premise PBX systems are expensive to scale, fragile during network spikes, and incapable of supporting distributed remote agents. Adapt India Networks' Business Communications suite delivers cloud-native voice, programmable SIP trunks, and omnichannel customer engagement APIs built for modern scale.",
     theChallenge:
       "Enterprises face high call-drop rates, rigid line caps, massive telecom bills, and siloed customer communication channels that prevent customer service teams from collaborating effectively.",
     ourSolution:
@@ -794,7 +794,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "99.999%", label: "End-to-End SLA Guarantee" },
     ],
     overview:
-      "Static multi-year bandwidth contracts no longer match the elastic reality of cloud computing. Adapt India Network's Network as a Service (NaaS) allows enterprises to consume networking like cloud compute: spin up connections rapidly, burst bandwidth during seasonal peaks, and pay only for active capacity.",
+      "Static multi-year bandwidth contracts no longer match the elastic reality of cloud computing. Adapt India Networks' Network as a Service (NaaS) allows enterprises to consume networking like cloud compute: spin up connections rapidly, burst bandwidth during seasonal peaks, and pay only for active capacity.",
     theChallenge:
       "Traditional enterprise telecom contracts take weeks to modify, lock businesses into rigid multi-year capacity minimums, and require heavy upfront hardware investments that quickly become obsolete.",
     ourSolution:
@@ -869,7 +869,7 @@ export const telecomServices: ServiceDetail[] = [
       {
         step: "04",
         title: "Elastic Operation & Continuous NOC Oversight",
-        desc: "Manage bandwidth dynamically with complete confidence backed by Adapt India Network's 24/7/365 NOC team.",
+        desc: "Manage bandwidth dynamically with complete confidence backed by Adapt India Networks' 24/7/365 NOC team.",
       },
     ],
     caseStudies: [
@@ -938,7 +938,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "Tier-1", label: "Microsoft & Google Cloud Partner" },
     ],
     overview:
-      "Modern workplaces demand seamless collaboration between distributed teams without sacrificing data privacy or enterprise security. Adapt India Network delivers turnkey deployment, migration, and management of Microsoft 365, Copilot AI, and Google Workspace backed by enterprise connectivity.",
+      "Modern workplaces demand seamless collaboration between distributed teams without sacrificing data privacy or enterprise security. Adapt India Networks delivers turnkey deployment, migration, and management of Microsoft 365, Copilot AI, and Google Workspace backed by enterprise connectivity.",
     theChallenge:
       "Organizations struggle with fragmented communication tools, shadow IT applications, vulnerable remote logins, and complex license management that inflate IT costs.",
     ourSolution:
@@ -1053,7 +1053,7 @@ export const telecomServices: ServiceDetail[] = [
       ],
       whyChooseTitle: "WHY ADAPT INDIA FOR COLLABORATION?",
       whyChooseDesc:
-        "Unlike standard software resellers, Adapt India Network provides both the Tier-1 high-speed fiber connection and the cloud workspace platform, ensuring peak video call quality and rapid cloud syncing.",
+        "Unlike standard software resellers, Adapt India Networks provides both the Tier-1 high-speed fiber connection and the cloud workspace platform, ensuring peak video call quality and rapid cloud syncing.",
       whyChooseBullets: [
         "Certified Microsoft & Google Cloud Engineers",
         "Zero-Loss Email Migration Track Record",
@@ -1083,7 +1083,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "99.999%", label: "Virtual Infrastructure SLA" },
     ],
     overview:
-      "Enterprise cloud adoption requires more than simply moving virtual machines. Adapt India Network helps organizations engineer resilient hybrid cloud topologies combining private dedicated infrastructure with hyperscale public clouds (Azure, AWS, GCP) interconnected over dedicated optical fiber.",
+      "Enterprise cloud adoption requires more than simply moving virtual machines. Adapt India Networks helps organizations engineer resilient hybrid cloud topologies combining private dedicated infrastructure with hyperscale public clouds (Azure, AWS, GCP) interconnected over dedicated optical fiber.",
     theChallenge:
       "Companies struggle with spiraling monthly cloud bills, unexpected egress data charges, sluggish database replication latency, and complex multi-cloud security management.",
     ourSolution:
@@ -1198,7 +1198,7 @@ export const telecomServices: ServiceDetail[] = [
       ],
       whyChooseTitle: "WHY ADAPT INDIA FOR CLOUD?",
       whyChooseDesc:
-        "Most cloud consultants only know software; most ISPs only know cables. Adapt India Network bridges both worlds with carrier-grade fiber pipes directly linked into hyperscale cloud regions.",
+        "Most cloud consultants only know software; most ISPs only know cables. Adapt India Networks bridges both worlds with carrier-grade fiber pipes directly linked into hyperscale cloud regions.",
       whyChooseBullets: [
         "Certified Azure & AWS Solutions Architects",
         "Sub-2ms Direct Peering Latency",
@@ -1228,7 +1228,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "Zero Trust", label: "Identity-Driven Access Architecture" },
     ],
     overview:
-      "As corporate applications migrate to the cloud and employees work from diverse branch locations, traditional perimeter castle-and-moat security is obsolete. Adapt India Network delivers multi-layered cybersecurity combining carrier-level network defense with 24/7 AI-driven threat intelligence.",
+      "As corporate applications migrate to the cloud and employees work from diverse branch locations, traditional perimeter castle-and-moat security is obsolete. Adapt India Networks delivers multi-layered cybersecurity combining carrier-level network defense with 24/7 AI-driven threat intelligence.",
     theChallenge:
       "Enterprises face sophisticated volumetric DDoS attacks, ransomware infiltration via phishing, unpatched edge vulnerabilities, and lack the massive budget needed to hire an internal 24/7 security analyst team.",
     ourSolution:
@@ -1373,7 +1373,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "Pan-India", label: "Field Engineer Dispatch Fleet" },
     ],
     overview:
-      "Enterprise networks are complex ecosystems of multi-vendor routers, SD-WAN controllers, optical transceivers, and firewalls. Maintaining an internal 24/7 shift of senior L3 network engineers is cost-prohibitive. Adapt India Network provides round-the-clock managed Network Operations Center (NOC) services as an extension of your IT team.",
+      "Enterprise networks are complex ecosystems of multi-vendor routers, SD-WAN controllers, optical transceivers, and firewalls. Maintaining an internal 24/7 shift of senior L3 network engineers is cost-prohibitive. Adapt India Networks provides round-the-clock managed Network Operations Center (NOC) services as an extension of your IT team.",
     theChallenge:
       "Internal IT staff are consumed by daily user troubleshooting, leaving core network telemetry unmonitored. When outages occur at night or on weekends, delayed detection leads to costly downtime and lost business.",
     ourSolution:
@@ -1517,7 +1517,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "1 SLA", label: "Single Point of Accountability" },
     ],
     overview:
-      "Opening dozens of regional branches, logistics centers, or retail showrooms requires rapid, predictable IT deployment. Adapt India Network's Bundled Solutions package high-speed leased line connectivity, SD-WAN failover, cloud voice, and security firewalls into standardized, ready-to-deploy enterprise kits.",
+      "Opening dozens of regional branches, logistics centers, or retail showrooms requires rapid, predictable IT deployment. Adapt India Networks' Bundled Solutions package high-speed leased line connectivity, SD-WAN failover, cloud voice, and security firewalls into standardized, ready-to-deploy enterprise kits.",
     theChallenge:
       "Enterprise expansion slows down when regional managers must negotiate with different local ISPs in every city, coordinate hardware deliveries, and deal with inconsistent service qualities.",
     ourSolution:
@@ -1630,7 +1630,7 @@ export const telecomServices: ServiceDetail[] = [
       ],
       whyChooseTitle: "WHY ADAPT INDIA BUNDLED SOLUTIONS?",
       whyChooseDesc:
-        "We eliminate the nightmare of managing dozens of local telecom vendors across different states. Adapt India Network gives you one standardized, carrier-grade partner nationwide.",
+        "We eliminate the nightmare of managing dozens of local telecom vendors across different states. Adapt India Networks gives you one standardized, carrier-grade partner nationwide.",
       whyChooseBullets: [
         "Up to 35% Lower Cost Compared to Separate Services",
         "Rapid Deployment Across 100+ Metro Hubs",
@@ -1660,7 +1660,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "99.999%", label: "Ring Protected Availability" },
     ],
     overview:
-      "When enterprises transfer massive database volumes between primary data centers, disaster recovery sites, or corporate campuses, public internet routing is too slow and variable. Adapt India Network's Point-to-Point (P2P) Leased Line delivers transparent, dedicated Layer-2 Ethernet pipes with zero routing overhead.",
+      "When enterprises transfer massive database volumes between primary data centers, disaster recovery sites, or corporate campuses, public internet routing is too slow and variable. Adapt India Networks' Point-to-Point (P2P) Leased Line delivers transparent, dedicated Layer-2 Ethernet pipes with zero routing overhead.",
     theChallenge:
       "High-frequency financial trading, real-time SAN storage replication, and high-throughput backup transfers require deterministic microsecond latency that standard routed VPNs cannot deliver.",
     ourSolution:
@@ -1804,7 +1804,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "99.9%", label: "Business-Grade Uptime SLA" },
     ],
     overview:
-      "Consumer broadband is inadequate for modern business environments where hundreds of laptops, smartphones, and IoT devices compete for airtime. Adapt India Network delivers business-grade fiber broadband bundled with enterprise-class cloud-managed Wi-Fi 6 networks.",
+      "Consumer broadband is inadequate for modern business environments where hundreds of laptops, smartphones, and IoT devices compete for airtime. Adapt India Networks delivers business-grade fiber broadband bundled with enterprise-class cloud-managed Wi-Fi 6 networks.",
     theChallenge:
       "Offices suffer from Wi-Fi dead zones, dropped connections during conference calls, slow file downloads, and unmonitored guest access that poses cybersecurity vulnerabilities.",
     ourSolution:
@@ -1961,7 +1961,7 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Mean Time to Restore (MTTR)"
     }
   ],
-  "overview": "Adapt India Network's Internet Leased Line (ILL) provides businesses with dedicated, uncontended internet connectivity over optical fiber. Backed by industry-leading SLAs, enterprise-grade routing, and dual-last-mile redundancy, our ILL ensures high availability and lightning-fast speeds for critical cloud applications.",
+  "overview": "Adapt India Networks' Internet Leased Line (ILL) provides businesses with dedicated, uncontended internet connectivity over optical fiber. Backed by industry-leading SLAs, enterprise-grade routing, and dual-last-mile redundancy, our ILL ensures high availability and lightning-fast speeds for critical cloud applications.",
   "theChallenge": "Standard broadband connections suffer from fluctuating speeds, peak-hour congestion, high latency, and poor upload bandwidth, causing disruptions in VoIP calls, cloud data backups, and video conferencing.",
   "ourSolution": "We deliver 1:1 symmetrical bandwidth over carrier-class optical fiber with guaranteed bandwidth reservation, dual-path fiber redundancy, and 24/7 proactive monitoring from our Network Operations Center.",
   "capabilities": [
@@ -2098,7 +2098,7 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Remote Branch Provisioning"
     }
   ],
-  "overview": "Adapt India Network's Managed SD-WAN transforms rigid legacy networks into flexible, software-driven fabrics. It dynamically steers application traffic across hybrid links (ILL, MPLS, broadband, LTE), ensuring critical applications like ERP, CRM, and video calls always experience peak performance.",
+  "overview": "Adapt India Networks' Managed SD-WAN transforms rigid legacy networks into flexible, software-driven fabrics. It dynamically steers application traffic across hybrid links (ILL, MPLS, broadband, LTE), ensuring critical applications like ERP, CRM, and video calls always experience peak performance.",
   "theChallenge": "Managing dozens or hundreds of distributed branch offices with traditional routers requires complex manual configurations, expensive MPLS circuits, and offers poor visibility into SaaS application performance.",
   "ourSolution": "Our cloud-managed SD-WAN provides zero-touch branch deployment, intelligent multi-path steering, end-to-end IPsec encryption, and unified single-pane-of-glass telemetry across your entire enterprise.",
   "capabilities": [
@@ -2235,7 +2235,7 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Isolated Private Traffic"
     }
   ],
-  "overview": "Adapt India Network's Managed MPLS VPN delivers enterprise-grade private connectivity designed for financial institutions, manufacturing chains, and large corporate enterprises that require complete isolation from the public internet.",
+  "overview": "Adapt India Networks' Managed MPLS VPN delivers enterprise-grade private connectivity designed for financial institutions, manufacturing chains, and large corporate enterprises that require complete isolation from the public internet.",
   "theChallenge": "Public internet connections carry inherent exposure to external threats, jitter, and congestion that can compromise sensitive ERP databases and intra-company data transfers.",
   "ourSolution": "Our MPLS VPN operates over dedicated label-switched paths completely partitioned from the public internet. We guarantee packet prioritization and latency SLAs across all corporate endpoints.",
   "capabilities": [
@@ -2371,7 +2371,7 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Enterprise Security Protocol"
     }
   ],
-  "overview": "Modern workspaces demand dense, high-speed wireless connectivity that supports hundreds of laptops, mobile devices, and IoT hardware without dropouts. Adapt India Network designs, installs, and manages turnkey enterprise Wi-Fi networks.",
+  "overview": "Modern workspaces demand dense, high-speed wireless connectivity that supports hundreds of laptops, mobile devices, and IoT hardware without dropouts. Adapt India Networks designs, installs, and manages turnkey enterprise Wi-Fi networks.",
   "theChallenge": "Consumer and unmanaged wireless equipment frequently crashes under high client density, suffers from dead zones, lacks rogue AP protection, and provides zero guest analytics.",
   "ourSolution": "We deploy enterprise-grade access points, conduct predictive RF heat mapping, and manage everything through a cloud controller with automated radio resource management and role-based access control.",
   "capabilities": [
@@ -2507,7 +2507,7 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Certified Security Standards"
     }
   ],
-  "overview": "Cyber threats evolve at breakneck speeds. Adapt India Network provides unified, carrier-grade cybersecurity solutions that protect your physical infrastructure, cloud workloads, and remote employees against ransomware, malware, and volumetric cyber attacks.",
+  "overview": "Cyber threats evolve at breakneck speeds. Adapt India Networks provides unified, carrier-grade cybersecurity solutions that protect your physical infrastructure, cloud workloads, and remote employees against ransomware, malware, and volumetric cyber attacks.",
   "theChallenge": "Modern businesses face sophisticated cyber attacks, including volumetric DDoS floods that take websites offline, targeted phishing, and credential compromise across distributed hybrid teams.",
   "ourSolution": "We offer multi-layered defense featuring cloud DDoS scrubbing, Next-Generation Firewall as a Service (FWaaS), secure remote access (Zero Trust Network Access), and continuous SOC threat hunting.",
   "capabilities": [
@@ -2643,7 +2643,7 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Crystal Clear HD Voice Codecs"
     }
   ],
-  "overview": "Effective enterprise communication requires bulletproof voice trunks and high-speed point-to-point data circuits. Adapt India Network provides telecom-grade SIP trunking, PRI interfaces, and Toll-Free solutions backed by Tier-1 carrier agreements.",
+  "overview": "Effective enterprise communication requires bulletproof voice trunks and high-speed point-to-point data circuits. Adapt India Networks provides telecom-grade SIP trunking, PRI interfaces, and Toll-Free solutions backed by Tier-1 carrier agreements.",
   "theChallenge": "Traditional copper PRI lines are rigid, slow to scale, tied to physical server hardware, and prone to cross-talk, while standard VoIP providers suffer from jitter and echo.",
   "ourSolution": "Our enterprise SIP trunks deliver virtual channels over dedicated fiber connections with end-to-end Quality of Service (QoS) guarantees, instant scalability, and built-in disaster recovery rerouting.",
   "capabilities": [
@@ -2779,7 +2779,7 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Carrier-Grade Platform Uptime"
     }
   ],
-  "overview": "Adapt India Network's Cloud Telephony empowers businesses to manage all business calls, customer inquiries, and agent performance entirely in the cloud. Agents can receive and make calls from laptops, softphones, or mobile apps with full tracking and CRM logging.",
+  "overview": "Adapt India Networks' Cloud Telephony empowers businesses to manage all business calls, customer inquiries, and agent performance entirely in the cloud. Agents can receive and make calls from laptops, softphones, or mobile apps with full tracking and CRM logging.",
   "theChallenge": "On-premise PBX hardware is expensive to maintain, breaks down during power cuts, cannot support work-from-home agents, and lacks visibility into missed customer calls.",
   "ourSolution": "Our cloud telephony suite provides intelligent multi-level IVRs, automatic call distribution (ACD), call recording, live supervisor whisper/barge-in, and instant CRM popups for every incoming lead.",
   "capabilities": [

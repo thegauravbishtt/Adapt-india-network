@@ -317,7 +317,7 @@ const DEFAULT_SUBSCRIBERS: Subscriber[] = [
 ];
 
 const DEFAULT_SETTINGS: AgencySettings = {
-  agencyName: "Adapt India Network",
+  agencyName: "Adapt India Networks",
   tagline: "Enterprise Telecom, SD-WAN & Network Infrastructure Solutions",
   notificationEmail: process.env.EMAIL_TO || "info@adapt-india.net",
   supportPhone: "+91 82874 79961",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Services | Adapt India Network",
+  title: "Services | Adapt India Networks",
   description: "Enterprise connectivity services.",
   path: "/work/",
   canonicalPath: "/services/",

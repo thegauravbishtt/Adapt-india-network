@@ -247,7 +247,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "ABOUT ADAPT INDIA NETWORK",
       description:
-        "Adapt India Network is a premier enterprise telecom and network infrastructure provider in India. In alliance with Tata Teleservices (TTBS) and ACT Enterprise, we deliver carrier-grade Internet Leased Lines, SD-WAN, MPLS VPN, Cloud Telephony, and edge cybersecurity with 99.999% SLA uptime.",
+        "Adapt India Networks is a premier enterprise telecom and network infrastructure provider in India. In alliance with Tata Teleservices (TTBS) and ACT Enterprise, we deliver carrier-grade Internet Leased Lines, SD-WAN, MPLS VPN, Cloud Telephony, and edge cybersecurity with 99.999% SLA uptime.",
       storyTitle: "OUR MISSION",
       storyDesc:
         "Founded to deliver mission-critical connectivity without compromise, we operate dual-active 24/7 Network Operations Centers (NOC) and high-availability fiber rings across 60+ Indian commercial hubs.",
@@ -326,7 +326,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "ADAPT INDIA NETWORK के बारे में",
       description:
-        "Adapt India Network नई दिल्ली स्थित एक स्वतंत्र डिजिटल मार्केटिंग एजेंसी है। हम आधुनिक वेबसाइट्स, ऍप्लिकेशन्स और डिजिटल विकास प्रणालियां डिजाइन और विकसित करते हैं।",
+        "Adapt India Networks नई दिल्ली स्थित एक स्वतंत्र डिजिटल मार्केटिंग एजेंसी है। हम आधुनिक वेबसाइट्स, ऍप्लिकेशन्स और डिजिटल विकास प्रणालियां डिजाइन और विकसित करते हैं।",
       storyTitle: "हमारी कहानी",
       storyDesc: "हम पारंपरिक एजेंसी की जटिलताओं को समाप्त कर सीधे डेवलपर्स और डिजाइनर्स के साथ पारदर्शी सहयोग प्रदान करते हैं।",
       missionTitle: "हमारा मिशन",
@@ -402,7 +402,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "SOBRE ADAPT INDIA NETWORK",
       description:
-        "Adapt India Network es una agencia de marketing digital independiente con sede en Nueva Delhi, India. Diseñamos y desarrollamos sitios web modernos y sistemas de crecimiento.",
+        "Adapt India Networks es una agencia de marketing digital independiente con sede en Nueva Delhi, India. Diseñamos y desarrollamos sitios web modernos y sistemas de crecimiento.",
       storyTitle: "NUESTRA HISTORIA",
       storyDesc: "Sustituimos la burocracia tradicional de las agencias por colaboración directa con diseñadores e ingenieros.",
       missionTitle: "NUESTRA MISIÓN",
@@ -477,7 +477,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "关于 ADAPT INDIA NETWORK",
       description:
-        "Adapt India Network 是一家位于印度新德里的独立数字营销机构。我们为全球企业设计并构建高性能网站、应用程序与数字化增长体系。",
+        "Adapt India Networks 是一家位于印度新德里的独立数字营销机构。我们为全球企业设计并构建高性能网站、应用程序与数字化增长体系。",
       storyTitle: "发展历程",
       storyDesc: "我们告别传统机构的繁琐流程，让客户直接与资深设计师和工程师协同，高效交付高品质项目。",
       missionTitle: "核心使命",
@@ -553,7 +553,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "О КОМПАНИИ ADAPT INDIA NETWORK",
       description:
-        "Adapt India Network — независимое агентство цифрового маркетинга из Нью-Дели, Индия. Мы создаем современные веб-решения и системы роста для растущих компаний по всему миру.",
+        "Adapt India Networks — независимое агентство цифрового маркетинга из Нью-Дели, Индия. Мы создаем современные веб-решения и системы роста для растущих компаний по всему миру.",
       storyTitle: "НАША ИСТОРИЯ",
       storyDesc: "Мы отказались от бюрократии агентств в пользу прямого общения с ведущими разработчиками и дизайнерами.",
       missionTitle: "НАША МИССИЯ",
@@ -629,7 +629,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "ADAPT INDIA NETWORK 소개",
       description:
-        "Adapt India Network는 인도 뉴델리에 본사를 둔 독립 디지털 마케팅 에이전시입니다. 우리는 전 세계 성장하는 기업을 위해 최신 웹사이트와 디지털 성장 시스템을 구축합니다.",
+        "Adapt India Networks는 인도 뉴델리에 본사를 둔 독립 디지털 마케팅 에이전시입니다. 우리는 전 세계 성장하는 기업을 위해 최신 웹사이트와 디지털 성장 시스템을 구축합니다.",
       storyTitle: "우리의 스토리",
       storyDesc: "불필요한 중간 관리 없이 클라이언트가 실무 디자이너 및 엔지니어와 직접 소통하여 최상의 결과물을 만듭니다.",
       missionTitle: "우리의 미션",
@@ -705,7 +705,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "ADAPT INDIA NETWORK について",
       description:
-        "Adapt India Network は、インド・ニューデリーを拠点とする独立系デジタルマーケティングエージェンシーです。世界中の成長企業に向けて、最新のWebサイトや成長システムを構築しています。",
+        "Adapt India Networks は、インド・ニューデリーを拠点とする独立系デジタルマーケティングエージェンシーです。世界中の成長企業に向けて、最新のWebサイトや成長システムを構築しています。",
       storyTitle: "私たちのストーリー",
       storyDesc: "従来のエージェンシーのような無駄な階層を省き、開発者やデザイナーと直接対話できる透明な開発体制を提供します。",
       missionTitle: "ミッション",

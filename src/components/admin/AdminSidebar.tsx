@@ -96,7 +96,7 @@ export default function AdminSidebar({
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-sm text-zinc-900 leading-tight">
-                  Adapt India Network
+                  Adapt India Networks
                 </span>
                 <span className="text-[11px] text-zinc-500 font-medium">
                   Admin Workspace

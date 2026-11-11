@@ -19,7 +19,7 @@ export default function MobileBottomBar() {
         <a
           href="mailto:info@adapt-india.net"
           className="flex items-center justify-center gap-2 bg-[#121212] hover:bg-black text-white font-bold text-[14px] sm:text-[15px] tracking-tight h-12 active:bg-zinc-900 transition-colors"
-          aria-label="Send email to Adapt India Network"
+          aria-label="Send email to Adapt India Networks"
         >
           <svg
             className="w-4 h-4 text-white shrink-0"

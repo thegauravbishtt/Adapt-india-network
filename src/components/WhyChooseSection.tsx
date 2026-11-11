@@ -40,7 +40,7 @@ export default function WhyChooseSection() {
             {/* Header */}
             <h2 className="text-[34px] sm:text-[42px] md:text-[48px] font-extrabold text-white tracking-[-0.025em] leading-[1.12] mb-10 sm:mb-12">
               Why enterprises choose<br />
-              Adapt India Network
+              Adapt India Networks
             </h2>
 
             {/* 3 Core Points */}

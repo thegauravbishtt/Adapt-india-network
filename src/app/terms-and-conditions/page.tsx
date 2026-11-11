@@ -96,7 +96,7 @@ export default function TermsAndConditionsPage() {
               {/* Introduction */}
               <div>
                 <p>
-                  Welcome to <strong>Adapt India Network</strong>. These Terms and Conditions govern your access to our website (<Link href="/" className="text-zinc-950 font-medium underline">adapt-india.net</Link>) and the provision of our enterprise telecommunications and network infrastructure services.
+                  Welcome to <strong>Adapt India Networks</strong>. These Terms and Conditions govern your access to our website (<Link href="/" className="text-zinc-950 font-medium underline">adapt-india.net</Link>) and the provision of our enterprise telecommunications and network infrastructure services.
                 </p>
                 <p className="mt-3">
                   By engaging our services or using our website, you agree to comply with and be bound by these terms.
@@ -111,7 +111,7 @@ export default function TermsAndConditionsPage() {
                   1. Services &amp; Scope of Work
                 </h2>
                 <p>
-                  Adapt India Network provides digital and software engineering services as defined in individual project proposals, quotations, or formal Statements of Work (SOW) mutually agreed with the client.
+                  Adapt India Networks provides digital and software engineering services as defined in individual project proposals, quotations, or formal Statements of Work (SOW) mutually agreed with the client.
                 </p>
                 <p className="mt-3">
                   Any additional features, change requests, or expanded scope requested outside the initial agreement will be estimated and billed separately with client approval.
@@ -140,7 +140,7 @@ export default function TermsAndConditionsPage() {
                   Upon receipt of full payment for all agreed milestones, <strong>100% ownership of all custom code, design files, and project assets</strong> created specifically for the client is transferred directly to the client.
                 </p>
                 <p className="mt-3">
-                  Unless otherwise agreed in a separate Non-Disclosure Agreement (NDA), Adapt India Network reserves the right to display the completed work in its portfolio and marketing case studies.
+                  Unless otherwise agreed in a separate Non-Disclosure Agreement (NDA), Adapt India Networks reserves the right to display the completed work in its portfolio and marketing case studies.
                 </p>
               </div>
 
@@ -170,7 +170,7 @@ export default function TermsAndConditionsPage() {
                   6. Limitation of Liability
                 </h2>
                 <p>
-                  To the maximum extent permitted by law, Adapt India Network shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use the delivered software or services.
+                  To the maximum extent permitted by law, Adapt India Networks shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use the delivered software or services.
                 </p>
               </div>
 
@@ -193,7 +193,7 @@ export default function TermsAndConditionsPage() {
                   If you have questions regarding these Terms &amp; Conditions, please reach out to:
                 </p>
                 <div className="text-sm text-zinc-800 space-y-1">
-                  <p><strong>Adapt India Network</strong></p>
+                  <p><strong>Adapt India Networks</strong></p>
                   <p>Phone: <a href="tel:+918287479961" className="text-zinc-950 font-semibold underline">+91 82874 79961</a></p>
                   <p>Email: <a href="mailto:info@adapt-india.net" className="text-zinc-950 font-semibold underline">info@adapt-india.net</a></p>
                   <p>Location: Paschim Vihar, New Delhi - 110063, Delhi, India</p>

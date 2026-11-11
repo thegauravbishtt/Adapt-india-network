@@ -434,7 +434,7 @@ export default function Navbar() {
                 <div className="flex items-center">
                   <img
                     src="/logo-nobg.png"
-                    alt="Adapt India Network"
+                    alt="Adapt India Networks"
                     className="h-12 w-auto object-contain"
                     style={{ imageRendering: "crisp-edges" }}
                   />
@@ -1753,7 +1753,7 @@ export default function Navbar() {
                       link: "/articles",
                     },
                     {
-                      title: "Adapt India Network IP Transit & Dedicated Leased Lines",
+                      title: "Adapt India Networks IP Transit & Dedicated Leased Lines",
                       category: "Whitepaper",
                       image: "/resources/network_engineer_ops.jpg",
                       link: "/articles",

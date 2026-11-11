@@ -54,7 +54,7 @@ export default function ArticlesPage() {
           <div className="absolute inset-0 z-0">
             <img
               src="/banner-network-matrix.jpg"
-              alt="Adapt India Network Articles"
+              alt="Adapt India Networks Articles"
               className="w-full h-full object-cover object-center scale-100 filter brightness-[0.70] contrast-[1.10]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35 z-10" />

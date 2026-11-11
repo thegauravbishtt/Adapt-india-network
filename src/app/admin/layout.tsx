@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ToastProvider } from "@/components/admin/ToastNotification";
 
 export const metadata: Metadata = {
-  title: "Admin Portal | Adapt India Network",
-  description: "Adapt India Network Management & Control Panel",
+  title: "Admin Portal | Adapt India Networks",
+  description: "Adapt India Networks Management & Control Panel",
   robots: {
     index: false,
     follow: false,

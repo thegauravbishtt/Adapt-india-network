@@ -23,7 +23,7 @@ const coreArticles: BlogPost[] = [
     ],
     status: "published",
     publishedAt: "2026-02-18T12:00:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Most offices in India start on broadband. It is cheap, quick to install and fine for a few people browsing and sending email. As a business grows, video calls freeze, cloud software slows down in the evening, and uploads take far longer than downloads. That is usually the point where an Internet Leased Line (ILL) is worth a serious look.
 
 What is an Internet Leased Line
@@ -50,7 +50,7 @@ How to make a leased line resilient
 
 A single connection can still fail if the fibre is cut. For critical sites, the best practice is a second link from a different carrier, ideally entering the building through a separate path, with automatic failover on your router, firewall or SD-WAN device. Some businesses use broadband or 4G/5G as a lower-cost backup.
 
-How Adapt India Network can help
+How Adapt India Networks can help
 
 We arrange Internet Leased Lines for offices across Delhi, Gurgaon, Noida, Ghaziabad, Faridabad and the rest of India on the enterprise networks of Tata Tele Business Services and ACT Fibernet. We check which carriers already reach your building, recommend the right bandwidth, and coordinate installation and support. Contact us for a feasibility check at your address.`,
     faqs: [
@@ -85,7 +85,7 @@ We arrange Internet Leased Lines for offices across Delhi, Gurgaon, Noida, Ghazi
     ],
     status: "published",
     publishedAt: "2026-02-15T10:00:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Companies with offices, plants, stores or warehouses in several cities need a wide area network (WAN) to connect them. For years the default in India was MPLS. Today many businesses are moving to SD-WAN, or combining the two. Here is how to decide what fits your network.
 
 What MPLS is
@@ -120,7 +120,7 @@ The hybrid approach
 
 Many Indian enterprises run a hybrid: MPLS at data centres and large sites, and SD-WAN with internet links at smaller branches, all managed as one network. This lets you migrate gradually without a risky cut-over.
 
-How Adapt India Network can help
+How Adapt India Networks can help
 
 We design and deliver SD-WAN, MPLS and hybrid WANs for businesses headquartered in Delhi NCR with branches across India. We assess your current network and applications, recommend a design, and coordinate links and devices at every site. Get in touch to plan your migration.`,
     faqs: [
@@ -156,7 +156,7 @@ We design and deliver SD-WAN, MPLS and hybrid WANs for businesses headquartered 
     ],
     status: "published",
     publishedAt: "2026-03-01T11:00:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Business phone systems in India have changed quickly. PRI lines and boxes of PBX hardware in the server room are being replaced by SIP trunks and cloud telephony that run over your data network. Here is what each option does and how to choose.
 
 What a SIP trunk is
@@ -179,7 +179,7 @@ Contact centres and customer engagement
 
 For sales and support teams, cloud contact centre platforms add features such as automatic call distribution, outbound dialling, live dashboards and WhatsApp Business messaging alongside voice, all managed from one place.
 
-How Adapt India Network can help
+How Adapt India Networks can help
 
 We provide SIP trunks, cloud telephony, toll-free and virtual numbers, and cloud contact centre solutions, together with the leased line or SD-WAN connectivity they run on. That gives you one partner for both the network and the voice service. Contact us to plan your move from PRI or legacy PBX.`,
     faqs: [
@@ -209,7 +209,7 @@ We provide SIP trunks, cloud telephony, toll-free and virtual numbers, and cloud
     ],
     status: "published",
     publishedAt: "2026-02-22T08:30:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Every branch, store and warehouse you connect is another way into your network. Smaller sites often have the weakest protection: a basic router, a shared Wi-Fi password and no one on site to notice problems. Here is how to secure a distributed network without making it hard to run.
 
 Put a proper firewall at every site
@@ -240,7 +240,7 @@ Keep people in the loop
 
 Most attacks start with a phishing email or a reused password. Regular awareness training, password managers and multi-factor authentication close many of the easiest routes in.
 
-How Adapt India Network can help
+How Adapt India Networks can help
 
 We provide next-generation firewalls, secure SD-WAN, DDoS protection and managed monitoring alongside the connectivity for each of your sites, so security policies are consistent across Delhi NCR and every branch in India. Speak to us for a review of your current setup.`,
     faqs: [
@@ -271,7 +271,7 @@ We provide next-generation firewalls, secure SD-WAN, DDoS protection and managed
     ],
     status: "published",
     publishedAt: "2026-02-27T14:00:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `A fast internet connection does not help if the Wi-Fi inside the office cannot keep up. Many offices in India still run on a few consumer routers placed wherever there was a socket, and performance collapses when everyone arrives. Good wireless design fixes this.
 
 Why office Wi-Fi slows down
@@ -298,7 +298,7 @@ Manage it centrally
 
 Cloud-managed access points let you see every device, change settings across floors or sites at once, and get alerts when something goes wrong, which is especially useful for businesses with several offices.
 
-How Adapt India Network can help
+How Adapt India Networks can help
 
 We design, install and manage enterprise Wi-Fi for offices, campuses, hospitals and warehouses, together with the internet connection behind it. Contact us for a Wi-Fi assessment of your premises.`,
     faqs: [
@@ -329,7 +329,7 @@ We design, install and manage enterprise Wi-Fi for offices, campuses, hospitals 
     ],
     status: "published",
     publishedAt: "2026-03-02T09:00:00.000Z",
-    author: "Adapt India Network",
+    author: "Adapt India Networks",
     content: `Fibre cuts from road works, metro construction and building repairs are a fact of life in Indian cities. Even the best single connection will go down sometimes. If your business cannot stop when the internet does, you need redundancy designed in from the start.
 
 Start with what downtime costs
@@ -360,7 +360,7 @@ Test it
 
 Unplug the primary link during a quiet period and confirm that everything keeps working. Repeat after any change to your network. Many backups fail because they were never tested.
 
-How Adapt India Network can help
+How Adapt India Networks can help
 
 We design dual-carrier connectivity for offices, plants and branches across Delhi NCR and India, coordinate both carriers, and configure automatic failover. Contact us to review the resilience of your current setup.`,
     faqs: [

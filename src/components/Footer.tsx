@@ -417,7 +417,7 @@ export default function Footer() {
               </button>
 
               <span className="text-zinc-500 text-[11px]">
-                © {new Date().getFullYear()} Adapt India Network
+                © {new Date().getFullYear()} Adapt India Networks
               </span>
             </div>
 

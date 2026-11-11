@@ -65,7 +65,7 @@ export const allServices: ServiceDetail[] = [
       { value: "SOC2", label: "Compliance-Ready Code" },
     ],
     overview:
-      "Modern enterprises cannot afford fragile frameworks or slow execution. Adapt India Network builds modular, microservices-driven backend systems and bespoke SaaS platforms designed for seamless integrations, low-latency performance, and massive scale.",
+      "Modern enterprises cannot afford fragile frameworks or slow execution. Adapt India Networks builds modular, microservices-driven backend systems and bespoke SaaS platforms designed for seamless integrations, low-latency performance, and massive scale.",
     theChallenge:
       "Traditional enterprise software is slow to develop, riddled with legacy dependencies, and requires massive maintenance overhead. Off-the-shelf software rarely fits proprietary workflows, leading to costly workarounds.",
     ourSolution:
@@ -1529,7 +1529,7 @@ export const allServices: ServiceDetail[] = [
       { value: "< 2s", label: "Automated Bot Response Time" },
     ],
     overview:
-      "WhatsApp is where your customers spend their day. Adapt India Network harnesses the official Meta WhatsApp Cloud API and enterprise broadcast platforms to build automated support, broadcast marketing, catalog shopping, and multi-agent customer support consoles.",
+      "WhatsApp is where your customers spend their day. Adapt India Networks harnesses the official Meta WhatsApp Cloud API and enterprise broadcast platforms to build automated support, broadcast marketing, catalog shopping, and multi-agent customer support consoles.",
     theChallenge:
       "Manual WhatsApp chats don't scale, account bans happen with unverified numbers, and disconnected messaging tools fail to synchronize customer purchase records with your central CRM.",
     ourSolution:

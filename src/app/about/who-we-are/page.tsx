@@ -13,8 +13,8 @@ export default function WhoWeArePage() {
 
   const faqs = [
     {
-      q: "What is Adapt India Network's core operational focus?",
-      a: "Adapt India Network is an enterprise-grade telecommunications and network solutions provider in India. In strategic alliance with Tier-1 carriers including Tata Teleservices (TTBS) and ACT Enterprise, we design, deploy, and manage mission-critical Internet Leased Lines (ILL), SD-WAN overlays, MPLS VPN fabrics, SIP Trunks, and Edge Cybersecurity across 60+ Indian commercial metros.",
+      q: "What is Adapt India Networks' core operational focus?",
+      a: "Adapt India Networks is an enterprise-grade telecommunications and network solutions provider in India. In strategic alliance with Tier-1 carriers including Tata Teleservices (TTBS) and ACT Enterprise, we design, deploy, and manage mission-critical Internet Leased Lines (ILL), SD-WAN overlays, MPLS VPN fabrics, SIP Trunks, and Edge Cybersecurity across 60+ Indian commercial metros.",
     },
     {
       q: "How does Adapt India deliver a 99.999% SLA uptime guarantee?",
@@ -68,7 +68,7 @@ export default function WhoWeArePage() {
             <div className="absolute inset-0 z-0">
               <img
                 src="/banner-who-we-are.jpg"
-                alt="Who We Are - Adapt India Network"
+                alt="Who We Are - Adapt India Networks"
                 className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10 z-10" />
@@ -114,7 +114,7 @@ export default function WhoWeArePage() {
                   </h1>
 
                   <p className="text-zinc-200 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-4">
-                    Adapt India Network is India&apos;s leading enterprise telecom solutions provider. In strategic alliance with Tata Teleservices (TTBS) and ACT Enterprise, we power corporate offices, financial hubs, healthcare campuses, and data centers with mission-critical connectivity.
+                    Adapt India Networks is India&apos;s leading enterprise telecom solutions provider. In strategic alliance with Tata Teleservices (TTBS) and ACT Enterprise, we power corporate offices, financial hubs, healthcare campuses, and data centers with mission-critical connectivity.
                   </p>
                 </div>
 
@@ -139,7 +139,7 @@ export default function WhoWeArePage() {
                   Carrier-grade network infrastructure built for zero downtime.
                 </h2>
                 <p className="text-zinc-700 text-sm sm:text-base leading-relaxed">
-                  Enterprises cannot afford network downtime, packet loss, or high latency. Adapt India Network was established to replace fragmented telecom vendor management with unified, SLA-backed optical connectivity and intelligent SD-WAN architectures.
+                  Enterprises cannot afford network downtime, packet loss, or high latency. Adapt India Networks was established to replace fragmented telecom vendor management with unified, SLA-backed optical connectivity and intelligent SD-WAN architectures.
                 </p>
                 <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
                   In alliance with Tier-1 carriers including Tata Teleservices and ACT Enterprise, we deploy dedicated last-mile optical fiber, enterprise SIP voice trunks, clean-pipe cybersecurity, and 24/7/365 active NOC surveillance across Pan-India commercial centers.
@@ -165,7 +165,7 @@ export default function WhoWeArePage() {
                 <div className="relative rounded-3xl overflow-hidden border border-zinc-200/90 shadow-md">
                   <img
                     src="/about-network-rack.jpg"
-                    alt="Network rack with switches and patch cabling managed by Adapt India Network"
+                    alt="Network rack with switches and patch cabling managed by Adapt India Networks"
                     className="w-full h-80 sm:h-96 object-cover object-center"
                   />
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 text-white text-left">

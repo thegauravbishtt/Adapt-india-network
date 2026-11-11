@@ -22,7 +22,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Uninterrupted”",
     rating: 5,
     content:
-      "Network engineering and enterprise leased line deployment from Adapt India Network is unparalleled. With their 99.999% SLA uptime and proactive dual-active NOC monitoring, our pan-India logistics operations run uninterrupted 24/7.",
+      "Network engineering and enterprise leased line deployment from Adapt India Networks is unparalleled. With their 99.999% SLA uptime and proactive dual-active NOC monitoring, our pan-India logistics operations run uninterrupted 24/7.",
     author: {
       name: "Sanjiv Nishchal",
       role: "Operations Director",
@@ -35,7 +35,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Resilient”",
     rating: 5,
     content:
-      "The scalable SD-WAN architecture and redundant optical fiber rings deployed by Adapt India Network have transformed our corporate communications. Sub-50ms failover has eliminated downtime completely.",
+      "The scalable SD-WAN architecture and redundant optical fiber rings deployed by Adapt India Networks have transformed our corporate communications. Sub-50ms failover has eliminated downtime completely.",
     author: {
       name: "Sumeet Gupta",
       role: "Chief Technology Officer",
@@ -48,7 +48,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Exceptional”",
     rating: 5,
     content:
-      "Adapt India Network's enterprise telecom partnership with Tata and ACT has been a game-changer for our manufacturing campuses. Their 1:1 symmetric bandwidth and sub-4h MTTR ensure absolute business continuity.",
+      "Adapt India Networks' enterprise telecom partnership with Tata and ACT has been a game-changer for our manufacturing campuses. Their 1:1 symmetric bandwidth and sub-4h MTTR ensure absolute business continuity.",
     author: {
       name: "Anupama Malik",
       role: "Head of Infrastructure",
@@ -61,7 +61,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Deterministic”",
     rating: 5,
     content:
-      "Working with Adapt India Network felt like having an elite Tier-1 telecom engineering team on our side. They provisioned multi-gigabit fiber cross-connects ahead of schedule with zero packet jitter.",
+      "Working with Adapt India Networks felt like having an elite Tier-1 telecom engineering team on our side. They provisioned multi-gigabit fiber cross-connects ahead of schedule with zero packet jitter.",
     author: {
       name: "Vikramaditya Roy",
       role: "VP of Enterprise IT",
@@ -74,7 +74,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Carrier-Grade”",
     rating: 5,
     content:
-      "The technical integrity and 24/7 NOC responsiveness at Adapt India Network is world-class. From day one, our multi-site enterprise network has run at five-nines availability.",
+      "The technical integrity and 24/7 NOC responsiveness at Adapt India Networks is world-class. From day one, our multi-site enterprise network has run at five-nines availability.",
     author: {
       name: "Kavita Sharma",
       role: "VP of Engineering",

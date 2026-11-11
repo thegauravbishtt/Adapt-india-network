@@ -9,7 +9,7 @@
  */
 
 /** Last change that touched every page (site-wide footer/navigation and linking update). */
-export const SITE_WIDE_UPDATE = "2026-11-10";
+export const SITE_WIDE_UPDATE = "2026-11-11";
 
 /** Pages changed after the site-wide update. */
 const PAGE_DATES: Record<string, string> = {

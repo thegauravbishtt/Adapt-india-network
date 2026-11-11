@@ -1,23 +1,38 @@
 import type { Metadata } from "next";
 
 /**
- * Central SEO settings for Adapt India Network.
+ * Central SEO settings for Adapt India Networks.
  * Change business details here and every page, schema block and the
  * sitemap pick them up automatically.
  */
 export const SITE_URL = "https://www.adapt-india.net";
-export const SITE_NAME = "Adapt India Network";
+export const SITE_NAME = "Adapt India Networks";
 export const DEFAULT_OG_IMAGE = "/banner-global-telecom.jpg";
 
 export const BUSINESS = {
-  name: "Adapt India Network",
-  legalName: "Adapt India Network",
+  name: "Adapt India Networks",
+  legalName: "Adapt India Networks",
   phone: "+91-8287479961",
   phoneDisplay: "+91 82874 79961",
   email: "info@adapt-india.net",
   supportEmail: "support@adapt-india.net",
-  street: "Paschim Vihar",
+  /** Same address as the Google Business Profile, so listings match everywhere. */
+  street: "WZ97B, Ground Floor, Tackchand Complex, Jwala Heri Market, Paschim Vihar",
   city: "New Delhi",
+  /** Other names people search for the business by. */
+  alternateNames: ["Adapt India Network", "Adapt India"],
+  foundingYear: "2015",
+  /** Office hours (the NOC itself runs 24/7). */
+  openingHours: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:30", closes: "19:00" },
+  /** Official profiles elsewhere. Google uses these to link them to this business. */
+  sameAs: [
+    "https://www.facebook.com/p/Adapt-India-Networks-100063716298776/",
+    "https://www.instagram.com/adaptindianetworks/",
+    "https://in.linkedin.com/company/adapt-india-networks",
+    "https://www.justdial.com/Delhi/Adapt-India-Network-Near-Holi-Park-Paschim-Vihar/011PXX11-XX11-201223162930-K4Q6_BZDET",
+    "https://www.indiamart.com/adapt-india-network/profile.html",
+    "https://www.sulekha.com/adapt-india-networks-paschim-vihar-delhi-contact-address",
+  ],
   region: "Delhi",
   postalCode: "110063",
   country: "IN",
@@ -56,7 +71,7 @@ export const BUSINESS = {
  * Google's results (~60 characters); otherwise the keyword title is kept alone.
  */
 export function seoTitle(base: string, max = 60): string {
-  for (const suffix of [" | Adapt India Network", " | Adapt India"]) {
+  for (const suffix of [" | Adapt India Networks", " | Adapt India"]) {
     if (base.length + suffix.length <= max) return base + suffix;
   }
   return base;
@@ -149,6 +164,9 @@ export function organizationSchema() {
     "@id": ORG_ID,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
+    alternateName: BUSINESS.alternateNames,
+    foundingDate: BUSINESS.foundingYear,
+    sameAs: BUSINESS.sameAs,
     url: `${SITE_URL}/`,
     logo: absoluteUrl(BUSINESS.logo),
     image: absoluteUrl(DEFAULT_OG_IMAGE),
@@ -170,6 +188,12 @@ export function organizationSchema() {
       longitude: BUSINESS.longitude,
     },
     hasMap: `https://www.google.com/maps?q=${BUSINESS.latitude},${BUSINESS.longitude}`,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: BUSINESS.openingHours.days,
+      opens: BUSINESS.openingHours.opens,
+      closes: BUSINESS.openingHours.closes,
+    },
     currenciesAccepted: "INR",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -226,6 +250,7 @@ export function websiteSchema() {
     "@id": `${SITE_URL}/#website`,
     url: `${SITE_URL}/`,
     name: SITE_NAME,
+    alternateName: BUSINESS.alternateNames,
     inLanguage: "en-IN",
     publisher: { "@id": ORG_ID },
   };
