@@ -1,3 +1,5 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo";
 import type { Metadata } from "next";
 import { pageMetadata } from "../../lib/seo";
 
@@ -8,5 +10,14 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about/" }]),
+        ]}
+      />
+      {children}
+    </>
+  );
 }

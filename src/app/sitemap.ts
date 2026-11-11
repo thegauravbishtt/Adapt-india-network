@@ -5,12 +5,12 @@ import { cityPages } from "../data/locationsData";
 import { seedArticles } from "../data/articles";
 import { getBlogs } from "../lib/db";
 import { subServices } from "../data/subServices";
+import { lastModifiedFor } from "../data/contentDates";
 
 export const dynamic = "force-static";
 
 /** Generated at build time as /sitemap.xml. Lists only pages we want in Google. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
   const url = (path: string) => `${SITE_URL}${path}`;
 
   const staticPages: Array<[string, number, MetadataRoute.Sitemap[number]["changeFrequency"]]> = [
@@ -32,6 +32,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const stored = (await getBlogs()).filter((b) => b.status !== "draft");
   const blogSlugs = new Set([...stored.map((b) => b.slug || b.id), ...seedArticles.map((a) => a.slug)]);
+  /** A post's own update or publish date (not the build time). */
+  const postDate = (slug: string): Date => {
+    const post = seedArticles.find((a) => a.slug === slug) ?? stored.find((b) => (b.slug || b.id) === slug);
+    const d = post?.updatedAt ?? post?.publishedAt;
+    return d ? new Date(d) : lastModifiedFor(`/blog/${slug}/`);
+  };
 
   // Old service URLs that public/.htaccess 301-redirects to a main page.
   // A redirecting URL in the sitemap sends Google mixed signals, so keep them out.
@@ -49,31 +55,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [
     ...staticPages.map(([path, priority, changeFrequency]) => ({
       url: url(path),
-      lastModified: now,
+      lastModified: lastModifiedFor(path),
       changeFrequency,
       priority,
     })),
     ...cityPages.map((c) => ({
       url: url(`/locations/${c.slug}/`),
-      lastModified: now,
+      lastModified: lastModifiedFor(`/locations/${c.slug}/`),
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
     ...telecomServices.filter(notRedirected).map((s) => ({
       url: url(`/services/${s.slug}/`),
-      lastModified: now,
+      lastModified: lastModifiedFor(`/services/${s.slug}/`),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
     ...subServices.filter(notRedirected).map((s) => ({
       url: url(`/services/${s.slug}/`),
-      lastModified: now,
+      lastModified: lastModifiedFor(`/services/${s.slug}/`),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
     ...Array.from(blogSlugs).map((slug) => ({
       url: url(`/blog/${slug}/`),
-      lastModified: now,
+      lastModified: postDate(slug),
       changeFrequency: "yearly" as const,
       priority: 0.6,
     })),

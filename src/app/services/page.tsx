@@ -5,23 +5,7 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { LanguageProvider } from "../../context/LanguageContext";
-import { allServices } from "../../data/servicesData";
-
-/*
- * Cards shown on the Services page. Hidden here (each URL 301-redirects in public/.htaccess):
- * - leftover digital-agency pages from the original template (web, apps, ads, SEO, etc.),
- *   which redirect back to /services/, so their cards led nowhere;
- * - older duplicates of telecom services that redirect to the main page already listed.
- */
-const HIDDEN_ON_HUB = new Set([
-  "enterprise-software", "web-development", "app-development", "cloud-devops", "it-consulting",
-  "ui-ux-design", "seo-services", "google-ads", "meta-ads", "social-media", "content-marketing",
-  "local-seo-gmb", "email-marketing", "whatsapp-marketing", "ai-automation",
-  "internet-leased-line", "sd-wan", "mpls", "cloud-telephony", "cyber-security", "data-services",
-]);
-/** Cards whose old URL redirects: link straight to the final page. */
-const HUB_HREF: Record<string, string> = { "managed-wifi": "/services/managed-campus-wifi/" };
-const hubServices = allServices.filter((s) => !HIDDEN_ON_HUB.has(s.slug));
+import { hubServices, hubServiceHref } from "../../data/hubServices";
 import Link from "next/link";
 
 export default function ServicesPage() {
@@ -195,7 +179,7 @@ export default function ServicesPage() {
                   {/* Card Bottom CTA Link */}
                   <div className="px-6 pb-6 pt-2 flex items-center justify-between border-t border-gray-100">
                     <Link
-                      href={HUB_HREF[service.slug] ?? `/services/${service.slug}/`}
+                      href={hubServiceHref(service.slug)}
                       className="inline-flex items-center gap-2 bg-[#E31E24] hover:bg-[#c9171d] text-white px-4 py-2 rounded-md text-xs font-mono font-bold tracking-wider uppercase transition-all shadow-xs"
                     >
                       <span>Explore Service</span>

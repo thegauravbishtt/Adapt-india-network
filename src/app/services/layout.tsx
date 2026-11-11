@@ -1,3 +1,6 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema, absoluteUrl } from "@/lib/seo";
+import { hubServices, hubServiceHref } from "@/data/hubServices";
 import type { Metadata } from "next";
 import { pageMetadata } from "../../lib/seo";
 
@@ -8,5 +11,31 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Services", path: "/services/" }]),
+          servicesListSchema(),
+        ]}
+      />
+      {children}
+    </>
+  );
+}
+
+/** The services listed on this page, so search engines see the catalogue as a list. */
+function servicesListSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Enterprise connectivity and IT services",
+    numberOfItems: hubServices.length,
+    itemListElement: hubServices.map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: s.name,
+      url: absoluteUrl(hubServiceHref(s.slug)),
+    })),
+  };
 }
