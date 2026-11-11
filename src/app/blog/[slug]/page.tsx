@@ -9,6 +9,8 @@ import { pageMetadata, articleSchema, breadcrumbSchema, faqSchema, seoTitle } fr
 const SHORT_TITLES: Record<string, string> = {
   "why-dedicated-internet-leased-lines-matter": "Leased Line (ILL) vs Business Broadband: Which to Choose",
   "high-density-wifi-6-enterprise-office-deployment": "Office Wi-Fi 6 Design for Busy Workplaces",
+  "sd-wan-vs-traditional-mpls-enterprise-guide": "SD-WAN vs MPLS: How Indian Businesses Should Choose",
+  "pan-india-carrier-redundancy-dual-homed-failover": "Dual-Carrier Internet Failover for Indian Businesses",
 };
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";

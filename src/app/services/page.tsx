@@ -6,6 +6,22 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { LanguageProvider } from "../../context/LanguageContext";
 import { allServices } from "../../data/servicesData";
+
+/*
+ * Cards shown on the Services page. Hidden here (each URL 301-redirects in public/.htaccess):
+ * - leftover digital-agency pages from the original template (web, apps, ads, SEO, etc.),
+ *   which redirect back to /services/, so their cards led nowhere;
+ * - older duplicates of telecom services that redirect to the main page already listed.
+ */
+const HIDDEN_ON_HUB = new Set([
+  "enterprise-software", "web-development", "app-development", "cloud-devops", "it-consulting",
+  "ui-ux-design", "seo-services", "google-ads", "meta-ads", "social-media", "content-marketing",
+  "local-seo-gmb", "email-marketing", "whatsapp-marketing", "ai-automation",
+  "internet-leased-line", "sd-wan", "mpls", "cloud-telephony", "cyber-security", "data-services",
+]);
+/** Cards whose old URL redirects: link straight to the final page. */
+const HUB_HREF: Record<string, string> = { "managed-wifi": "/services/managed-campus-wifi/" };
+const hubServices = allServices.filter((s) => !HIDDEN_ON_HUB.has(s.slug));
 import Link from "next/link";
 
 export default function ServicesPage() {
@@ -44,7 +60,7 @@ export default function ServicesPage() {
 
               <div className="flex items-center gap-3">
                 <span className="px-3 py-0.5 rounded-full bg-black/60 border border-sky-500/40 text-[#38bdf8] font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-wider backdrop-blur-md">
-                  // ALL SERVICES ({allServices.length})
+                  // ALL SERVICES ({hubServices.length})
                 </span>
               </div>
             </div>
@@ -75,7 +91,7 @@ export default function ServicesPage() {
                     href="#catalog"
                     className="px-6 py-2.5 bg-[#E31E24] hover:bg-[#c9171d] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md transition-colors shadow-sm"
                   >
-                    Browse Catalog ({allServices.length}) ↓
+                    Browse Catalog ({hubServices.length}) ↓
                   </a>
 
                   <a
@@ -110,7 +126,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-200 pb-6">
               <div>
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#E31E24] block mb-1">
-                  FULL SERVICE DIRECTORY ({allServices.length})
+                  FULL SERVICE DIRECTORY ({hubServices.length})
                 </span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
                   Tailored Enterprise Practice Areas
@@ -123,7 +139,7 @@ export default function ServicesPage() {
 
             {/* Grid of Service Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {allServices.map((service) => (
+              {hubServices.map((service) => (
                 <article
                   key={service.slug}
                   className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-xl hover:border-[#E31E24]/60 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
@@ -179,7 +195,7 @@ export default function ServicesPage() {
                   {/* Card Bottom CTA Link */}
                   <div className="px-6 pb-6 pt-2 flex items-center justify-between border-t border-gray-100">
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={HUB_HREF[service.slug] ?? `/services/${service.slug}/`}
                       className="inline-flex items-center gap-2 bg-[#E31E24] hover:bg-[#c9171d] text-white px-4 py-2 rounded-md text-xs font-mono font-bold tracking-wider uppercase transition-all shadow-xs"
                     >
                       <span>Explore Service</span>

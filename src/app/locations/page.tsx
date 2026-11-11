@@ -10,7 +10,7 @@ import { cityPages } from "../../data/locationsData";
 import { pageMetadata, breadcrumbSchema } from "../../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Leased Line Provider Across India | All Locations | Adapt India",
+  title: "Leased Line Provider Across India: All Locations | Adapt India",
   description:
     "Pan-India Internet Leased Line, SD-WAN and MPLS: Delhi NCR, Mumbai, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Lucknow & more. Check feasibility.",
   path: "/locations/",
