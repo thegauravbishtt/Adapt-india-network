@@ -1,5 +1,7 @@
 "use client";
 
+import JsonLd from "@/components/JsonLd";
+import { aboutHubSchema } from "@/lib/hubSchemas";
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -64,6 +66,7 @@ export default function AboutMainPage() {
 
   return (
     <LanguageProvider>
+      <JsonLd data={aboutHubSchema()} />
       <div className="min-h-screen bg-white text-zinc-900 flex flex-col justify-between overflow-x-clip relative w-full select-none">
         
         {/* Navigation */}

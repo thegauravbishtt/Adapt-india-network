@@ -1,5 +1,7 @@
 "use client";
 
+import JsonLd from "@/components/JsonLd";
+import { servicesHubSchema } from "@/lib/hubSchemas";
 import UpgradeCTA from "@/components/UpgradeCTA";
 import React from "react";
 import Navbar from "../../components/Navbar";
@@ -11,6 +13,7 @@ import Link from "next/link";
 export default function ServicesPage() {
   return (
     <LanguageProvider>
+      <JsonLd data={servicesHubSchema()} />
       <div className="min-h-screen bg-[#f8f9fa] flex flex-col overflow-x-clip relative w-full text-gray-900 font-sans">
         
         {/* Floating Navbar with Red Announcement Bar */}

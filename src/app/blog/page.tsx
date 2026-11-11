@@ -1,5 +1,7 @@
 "use client";
 
+import JsonLd from "@/components/JsonLd";
+import { blogHubSchema } from "@/lib/hubSchemas";
 import UpgradeCTA from "@/components/UpgradeCTA";
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
@@ -112,6 +114,7 @@ export default function BlogPage() {
 
   return (
     <LanguageProvider>
+      <JsonLd data={blogHubSchema()} />
       <div className="min-h-screen bg-white text-zinc-900 flex flex-col justify-between overflow-x-clip relative w-full select-none selection:bg-[#fac917] selection:text-black">
         <Navbar />
 

@@ -23,5 +23,5 @@ const PAGE_DATES: Record<string, string> = {
 };
 
 export function lastModifiedFor(path: string): Date {
-  return new Date(`${PAGE_DATES[path] ?? SITE_WIDE_UPDATE}T00:00:00+05:30`);
+  return new Date(`${PAGE_DATES[path] ?? SITE_WIDE_UPDATE}T12:00:00+05:30`);
 }
