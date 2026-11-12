@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "../lib/seo";
 import { telecomServices } from "../data/telecomServicesData";
 import { cityPages } from "../data/locationsData";
+import { areaPages } from "../data/areaPages";
 import { seedArticles } from "../data/articles";
 import { getBlogs } from "../lib/db";
 import { subServices } from "../data/subServices";
@@ -64,6 +65,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: lastModifiedFor(`/locations/${c.slug}/`),
       changeFrequency: "monthly" as const,
       priority: 0.9,
+    })),
+    ...areaPages.map((a) => ({
+      url: url(`/locations/${a.citySlug}/${a.slug}/`),
+      lastModified: lastModifiedFor(`/locations/${a.citySlug}/${a.slug}/`),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
     ...telecomServices.filter(notRedirected).map((s) => ({
       url: url(`/services/${s.slug}/`),

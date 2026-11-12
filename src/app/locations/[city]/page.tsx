@@ -8,6 +8,7 @@ import JsonLd from "../../../components/JsonLd";
 import UpgradeCTA from "../../../components/UpgradeCTA";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import { cityPages, getCityBySlug, cityServiceLinks } from "../../../data/locationsData";
+import { areasForCity } from "../../../data/areaPages";
 import {
   pageMetadata,
   breadcrumbSchema,
@@ -56,6 +57,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
   const nearby = page.nearby
     .map((slug) => getCityBySlug(slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
+  const areaLinks = areasForCity(page.slug);
 
   return (
     <LanguageProvider>
@@ -202,6 +204,20 @@ export default async function CityLandingPage({ params }: CityPageProps) {
               <p className="text-sm text-zinc-400 mb-6">
                 Availability depends on carrier fibre at your exact address. We confirm feasibility before you commit.
               </p>
+              {areaLinks.length > 0 && (
+                <ul className="flex flex-wrap gap-2.5 mb-5">
+                  {areaLinks.map((a) => (
+                    <li key={a.slug}>
+                      <Link
+                        href={`/locations/${a.citySlug}/${a.slug}/`}
+                        className="inline-block px-3.5 py-1.5 rounded-full bg-[#E31E24] hover:bg-[#c9171d] text-xs sm:text-sm font-semibold text-white"
+                      >
+                        Leased line in {a.area}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
               <ul className="flex flex-wrap gap-2.5">
                 {page.businessAreas.map((a) => (
                   <li
