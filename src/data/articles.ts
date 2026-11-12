@@ -52,7 +52,7 @@ A single connection can still fail if the fibre is cut. For critical sites, the 
 
 How Adapt India Networks can help
 
-We arrange Internet Leased Lines for offices across Delhi, Gurgaon, Noida, Ghaziabad, Faridabad and the rest of India on the enterprise networks of Tata Tele Business Services and ACT Fibernet. We check which carriers already reach your building, recommend the right bandwidth, and coordinate installation and support. Contact us for a feasibility check at your address.`,
+We arrange [Internet Leased Lines](/services/smart-internet-ill/) for offices across [Delhi](/locations/delhi/), [Gurgaon](/locations/gurgaon/), [Noida](/locations/noida/), Ghaziabad, Faridabad and the rest of India on the enterprise networks of Tata Tele Business Services and ACT Fibernet. We check which carriers already reach your building, recommend the right bandwidth, and coordinate installation and support. [Contact us](/contact/) for a feasibility check at your address.`,
     faqs: [
       {
         question: "Is a leased line faster than broadband?",
@@ -90,11 +90,11 @@ We arrange Internet Leased Lines for offices across Delhi, Gurgaon, Noida, Ghazi
 
 What MPLS is
 
-MPLS (Multiprotocol Label Switching) is a private network run by a telecom carrier. Your branches connect to the carrier's MPLS cloud and traffic between them never touches the public internet. It offers predictable latency, built-in quality of service for voice and critical applications, and a single carrier responsible for the whole network.
+[MPLS](/services/managed-mpls/) (Multiprotocol Label Switching) is a private network run by a telecom carrier. Your branches connect to the carrier's MPLS cloud and traffic between them never touches the public internet. It offers predictable latency, built-in quality of service for voice and critical applications, and a single carrier responsible for the whole network.
 
 What SD-WAN is
 
-SD-WAN (Software-Defined WAN) builds an encrypted overlay network on top of any internet connection: leased lines, broadband or 4G/5G. A central controller decides which link each application should use, combines multiple links, and moves traffic automatically when a link degrades. New branches can be brought online quickly because devices are configured from the cloud.
+[SD-WAN](/services/smartflo-sd-wan/) (Software-Defined WAN) builds an encrypted overlay network on top of any internet connection: leased lines, broadband or 4G/5G. A central controller decides which link each application should use, combines multiple links, and moves traffic automatically when a link degrades. New branches can be brought online quickly because devices are configured from the cloud.
 
 Cost
 
@@ -102,7 +102,7 @@ MPLS circuits generally cost more per Mbps than internet links, especially for s
 
 Performance and reliability
 
-MPLS gives consistent performance between sites because traffic stays on one carrier's private backbone. SD-WAN performance depends on the quality of the underlying links, but it compensates by monitoring every path in real time and steering voice, video and ERP traffic to the best one. With a leased line plus a broadband or 4G/5G backup at each branch, SD-WAN can match or exceed single-link MPLS availability.
+MPLS gives consistent performance between sites because traffic stays on one carrier's private backbone. SD-WAN performance depends on the quality of the underlying links, but it compensates by monitoring every path in real time and steering voice, video and ERP traffic to the best one. With a [leased line](/services/smart-internet-ill/) plus a broadband or 4G/5G backup at each branch, SD-WAN can match or exceed single-link MPLS availability.
 
 Cloud and SaaS access
 
@@ -122,7 +122,7 @@ Many Indian enterprises run a hybrid: MPLS at data centres and large sites, and 
 
 How Adapt India Networks can help
 
-We design and deliver SD-WAN, MPLS and hybrid WANs for businesses headquartered in Delhi NCR with branches across India. We assess your current network and applications, recommend a design, and coordinate links and devices at every site. Get in touch to plan your migration.`,
+We design and deliver [managed SD-WAN](/services/smartflo-sd-wan/), [MPLS VPN](/services/managed-mpls/) and hybrid WANs for businesses headquartered in Delhi NCR with branches across India, from [Mumbai](/locations/mumbai/) to [Bengaluru](/locations/bengaluru/). We assess your current network and applications, recommend a design, and coordinate links and devices at every site. [Get in touch](/contact/) to plan your migration.`,
     faqs: [
       {
         question: "Is SD-WAN cheaper than MPLS?",
@@ -181,7 +181,7 @@ For sales and support teams, cloud contact centre platforms add features such as
 
 How Adapt India Networks can help
 
-We provide SIP trunks, cloud telephony, toll-free and virtual numbers, and cloud contact centre solutions, together with the leased line or SD-WAN connectivity they run on. That gives you one partner for both the network and the voice service. Contact us to plan your move from PRI or legacy PBX.`,
+We provide [SIP trunks](/services/sip-trunk-services/), [cloud telephony](/services/smartflo-ucaas/), toll-free and virtual numbers, and cloud contact centre solutions, together with the [leased line](/services/smart-internet-ill/) or [SD-WAN](/services/smartflo-sd-wan/) connectivity they run on. That gives you one partner for both the network and the voice service. Contact us to plan your move from PRI or legacy PBX.`,
     faqs: [
       {
         question: "Can I keep my existing business numbers when moving to SIP?",
@@ -242,7 +242,7 @@ Most attacks start with a phishing email or a reused password. Regular awareness
 
 How Adapt India Networks can help
 
-We provide next-generation firewalls, secure SD-WAN, DDoS protection and managed monitoring alongside the connectivity for each of your sites, so security policies are consistent across Delhi NCR and every branch in India. Speak to us for a review of your current setup.`,
+We provide [next-generation firewalls](/services/cybersecurity-solutions/), [secure SD-WAN](/services/smartflo-sd-wan/), DDoS protection and managed monitoring alongside the connectivity for each of your sites, so security policies are consistent across Delhi NCR and every branch in India. Speak to us for a review of your current setup.`,
     faqs: [
       {
         question: "Is the router from my internet provider enough for a branch office?",
@@ -300,7 +300,7 @@ Cloud-managed access points let you see every device, change settings across flo
 
 How Adapt India Networks can help
 
-We design, install and manage enterprise Wi-Fi for offices, campuses, hospitals and warehouses, together with the internet connection behind it. Contact us for a Wi-Fi assessment of your premises.`,
+We design, install and manage [enterprise Wi-Fi](/services/managed-campus-wifi/) for offices, campuses, hospitals and warehouses, together with the [internet connection](/services/smart-internet-ill/) behind it. Contact us for a Wi-Fi assessment of your premises.`,
     faqs: [
       {
         question: "How many access points does my office need?",
@@ -362,7 +362,7 @@ Unplug the primary link during a quiet period and confirm that everything keeps 
 
 How Adapt India Networks can help
 
-We design dual-carrier connectivity for offices, plants and branches across Delhi NCR and India, coordinate both carriers, and configure automatic failover. Contact us to review the resilience of your current setup.`,
+We design dual-carrier connectivity for offices, plants and branches across Delhi NCR and India, coordinate both carriers, and configure automatic failover, often with [SD-WAN](/services/smartflo-sd-wan/) on top of two [leased lines](/services/smart-internet-ill/). Contact us to review the resilience of your current setup.`,
     faqs: [
       {
         question: "Is a second connection from the same provider enough?",

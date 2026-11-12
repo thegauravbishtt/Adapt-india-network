@@ -53,7 +53,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     title: "MPLS Service Provider in India | Managed MPLS VPN",
     h1: "MPLS VPN Service Provider in India",
     description:
-      "MPLS service provider for Indian businesses: private MPLS VPN linking branches, plants and data centres in 150+ cities, with QoS and 24/7 support.",
+      "MPLS service provider for Indian businesses: private MPLS VPN linking branches, plants and data centres across India, with traffic priority and 24/7 support.",
     serviceType: "MPLS VPN",
   },
   "business-communications": {

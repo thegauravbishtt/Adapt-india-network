@@ -283,19 +283,34 @@ export const telecomServices: ServiceDetail[] = [
     ],
     faqs: [
       {
-        question: "Can Smartflo SD-WAN replace our expensive MPLS network?",
+        question: "Can SD-WAN replace our MPLS network?",
         answer:
-          "Yes. Many clients replace or augment MPLS by pairing a dedicated Internet Leased Line (ILL) with an affordable secondary broadband connection. SD-WAN delivers equal or superior SLA uptime at up to 40-50% lower monthly recurring cost.",
+          "Often, yes. Many businesses move smaller branches from MPLS to SD-WAN over a leased line plus a broadband or 4G/5G backup, and keep MPLS only at the head office or data centre where they need it. We look at your sites and applications and tell you which branches suit SD-WAN and which are better left on MPLS.",
       },
       {
-        question: "How does sub-second failover prevent dropped calls?",
+        question: "What is cellular SD-WAN, and do you offer it?",
         answer:
-          "Traditional routers take 10 to 30 seconds to recognize a dead link, dropping active VoIP calls and VPN sessions. Smartflo SD-WAN injects continuous synthetic probes; when degradation is spotted, packets are mirrored and shifted in under 50ms without disconnecting active calls.",
+          "Cellular SD-WAN means a branch uses a 4G or 5G SIM as one of its links, either as the backup or as the main link where fibre is not available yet. It is useful for new stores, kiosks and temporary sites. Our SD-WAN devices take SIM cards, so a site can go live on 4G/5G and add a leased line later.",
       },
       {
-        question: "Do you supply the edge hardware appliances?",
+        question: "How does SD-WAN stop calls dropping when a link fails?",
         answer:
-          "Yes. We offer turnkey managed hardware bundles including high-throughput dual-WAN / quad-WAN edge appliances with built-in Wi-Fi and 4G/5G LTE SIM slots.",
+          "The SD-WAN device keeps testing every link for delay, loss and jitter. When the main link goes down or gets poor, it moves voice and business traffic to the other link on its own, usually without the call dropping. With an ordinary router, someone has to notice the failure first.",
+      },
+      {
+        question: "Is the SD-WAN managed for us, or do we run it ourselves?",
+        answer:
+          "Either. Most of our customers choose managed SD-WAN, where we set up the devices, write the traffic rules, watch the links 24/7 and chase faults with the carriers. If you have your own network team, we can hand over the dashboard and support you when needed.",
+      },
+      {
+        question: "Do you provide SD-WAN in Mumbai, Bengaluru and other cities?",
+        answer:
+          "Yes. We set up SD-WAN for businesses with branches across India, including Delhi NCR, Mumbai, Bengaluru, Hyderabad, Chennai, Pune and Kolkata. Each site is checked for which carriers can deliver a link at that address before anything is ordered.",
+      },
+      {
+        question: "Do you supply the SD-WAN devices?",
+        answer:
+          "Yes. We supply and configure the SD-WAN device for each site, sized for the number of users and links there, with ports for a leased line, broadband and a 4G/5G SIM.",
       },
     ],
     structuredSection: {

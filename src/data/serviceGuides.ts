@@ -73,6 +73,37 @@ export const serviceGuides: Record<string, ServiceGuide> = {
       "Security add-ons you want switched on",
       "Whether we manage it for you or you manage it yourself",
     ],
+    choosing: {
+      heading: "How to choose an SD-WAN service provider in India",
+      intro:
+        "SD-WAN devices from most vendors do similar things. What decides how well it works for you is the links at each branch, who runs the network after go-live and how faults get fixed. Ask about these before you sign.",
+      points: [
+        {
+          title: "Links at every branch",
+          text: "SD-WAN is only as good as the connections under it. Ask the provider to check, address by address, which carriers can give a leased line or broadband there, and where a 4G/5G SIM will have to do for now.",
+        },
+        {
+          title: "Two different paths",
+          text: "Failover only helps if the two links don't share the same cable or carrier. For important branches, ask for the primary and backup on different networks.",
+        },
+        {
+          title: "Managed or self-run",
+          text: "Find out who writes the traffic rules, who watches the links at night and who calls the carrier when a fibre is cut. A managed service should cover all three.",
+        },
+        {
+          title: "Rules for your applications",
+          text: "Billing, POS, ERP and voice should be prioritised over video streaming and updates. Ask to see how these rules will be set for your business before rollout.",
+        },
+        {
+          title: "Security at the branch",
+          text: "Check whether the device includes a firewall and web filtering, or whether each site still needs a separate security box.",
+        },
+        {
+          title: "Working with MPLS",
+          text: "If you already run MPLS, the provider should be able to connect SD-WAN branches to it, so you can move sites over in stages instead of all at once.",
+        },
+      ],
+    },
   },
   "smartoffice-connect": {
     layout: "rows",

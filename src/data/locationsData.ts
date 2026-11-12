@@ -163,6 +163,16 @@ export const cityPages: CityPage[] = [
         answer:
           "It depends on headcount and how much you use video calls, cloud apps and backups. We review your users and applications and suggest a size you can upgrade later without changing the circuit.",
       },
+      {
+        question: "How do I get a leased line connection in Gurgaon?",
+        answer:
+          "Share your office address and the speed you have in mind. We check which carriers already have fibre in or near your building, then send a quote. After you confirm, the carrier needs your company KYC documents and, in many Gurgaon towers, permission from the building management for fibre entry. We coordinate the survey, installation and testing with you.",
+      },
+      {
+        question: "Why does leased line delivery take longer in some Gurgaon buildings?",
+        answer:
+          "Most delays come from the building, not the carrier. Older blocks in Udyog Vihar may need new ducting and landlord approval, while many towers on Golf Course Road and in Cyber City already have fibre from several carriers inside. That's why we check your exact building before giving you a delivery estimate.",
+      },
     ],
     nearby: ["delhi", "faridabad", "noida"],
   },
