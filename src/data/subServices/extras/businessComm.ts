@@ -132,7 +132,8 @@ export const businessCommExtras: Record<string, SubServiceExtra> = {
       "Customers get updates and answers on the app they already check all day, and your support team handles chats from a shared inbox instead of passing one phone around. Common questions are answered automatically, even at night.",
     prep: ["A phone number to register for WhatsApp", "Your Meta Business account (we help create one)", "Message templates for the updates you want to send"],
     faqs: [
-      { question: "How are WhatsApp messages charged?", answer: "Meta charges per conversation, with rates depending on the category (utility, marketing, authentication or service). We'll explain the current pricing." },
+      { question: "How are WhatsApp messages charged?", answer: "Meta charges per template message, with the rate depending on the category: marketing, utility or authentication. Replies to customers within 24 hours of their last message are not charged as template messages. We explain the current rates when we set up your account." },
+      { question: "How long does WhatsApp Business API approval take?", answer: "It depends mainly on Meta verifying your business and approving your templates. Having your company documents, website and a clear display name ready makes it quicker. We guide you through each step." },
       { question: "Can we get the green verified tick?", answer: "Verification badges are granted by Meta based on its criteria. We can help you apply when eligible." },
     ],
   },

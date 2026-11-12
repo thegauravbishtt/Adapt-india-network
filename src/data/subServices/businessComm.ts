@@ -446,27 +446,52 @@ export const businessComm: SubService[] = [
     group: "Outbound Communications",
     headline: "Talk to customers on WhatsApp at scale, with your verified business profile",
     summary:
-      "WhatsApp Business Platform (API) for Indian businesses: order updates, reminders, support chats and campaigns from your verified business number.",
+      "WhatsApp Business API for Indian businesses: order updates, reminders, support chats and campaigns from one business number, with a shared inbox and CRM integration.",
     intro: [
-      "The WhatsApp Business Platform lets businesses send updates and handle customer conversations on WhatsApp from a business number, connected to their systems rather than a single phone.",
-      "Teams can share one number, messages can be automated from your CRM or order system, and customers get updates on the app they already use every day.",
+      "The WhatsApp Business Platform (often called the WhatsApp Business API) lets a business send updates and handle customer chats on WhatsApp from its own number, connected to its systems instead of a single phone. It is the version banks, hospitals, e-commerce brands and schools use when one phone with the WhatsApp Business app is no longer enough.",
+      "Several agents can answer from the same number, messages can be triggered from your CRM, order system or billing software, and simple questions can be answered by a chatbot at any hour. Customers get updates on the app they already open many times a day, which is why reminders and delivery updates on WhatsApp tend to get read.",
+      "We set up the platform for you: the Meta Business account, number registration, message templates and the shared inbox. We also connect it to the calling and SMS services you use with us, so customer communication sits with one partner.",
     ],
     features: [
-      { title: "Approved templates", text: "Order confirmations, reminders and alerts sent through approved message templates." },
-      { title: "Shared team inbox", text: "Several agents answer chats from one business number." },
-      { title: "Chatbots", text: "Automate FAQs, tracking and simple bookings." },
-      { title: "System integration", text: "Trigger messages from your CRM, e-commerce or ERP." },
+      { title: "Approved templates", text: "Order confirmations, payment reminders, appointment alerts and OTPs sent through templates approved by Meta." },
+      { title: "Shared team inbox", text: "Several agents answer chats from one business number, with chats assigned and tracked." },
+      { title: "Chatbots and quick replies", text: "Automate FAQs, order tracking, simple bookings and lead capture, with a hand-over to a person when needed." },
+      { title: "Buttons and lists", text: "Let customers tap to confirm, reschedule or choose an option instead of typing." },
+      { title: "System integration", text: "Trigger messages from your CRM, e-commerce store, ERP or hospital system." },
+      { title: "Campaigns to opted-in customers", text: "Send offers and announcements to customers who agreed to hear from you, within WhatsApp's rules." },
     ],
-    goodFor: ["E-commerce and D2C brands", "Banks, NBFCs and insurers", "Hospitals and clinics", "Education and coaching institutes"],
+    goodFor: [
+      "E-commerce and D2C brands",
+      "Banks, NBFCs and insurers",
+      "Hospitals, clinics and diagnostic labs",
+      "Schools, colleges and coaching institutes",
+      "Real estate developers and brokers",
+      "Retail chains and service centres",
+    ],
     faqs: [
       {
-        question: "Is this different from the WhatsApp Business app?",
+        question: "Is the WhatsApp Business API different from the WhatsApp Business app?",
         answer:
-          "Yes. The app is for one phone and small volumes. The platform (API) is for businesses that need multiple agents, automation and integration.",
+          "Yes. The app runs on one phone and suits small volumes. The platform (API) is for businesses that need several agents on one number, automated messages from their systems, chatbots and reports.",
       },
       {
-        question: "Can we send promotional messages?",
-        answer: "Yes, to customers who have opted in, using approved templates and following WhatsApp's policies.",
+        question: "Can we send promotional messages on WhatsApp?",
+        answer: "Yes, to customers who have opted in, using approved marketing templates and following WhatsApp's messaging policies.",
+      },
+      {
+        question: "Can we use our existing business number?",
+        answer:
+          "Usually, yes. A number already used on the WhatsApp Business app can normally be moved to the platform. We check whether your number qualifies before starting, or you can register a new number.",
+      },
+      {
+        question: "Do we need our own developer to use the WhatsApp Business API?",
+        answer:
+          "No. Your team can work from a ready shared inbox and campaign dashboard. A developer is only needed for deeper links with your own software, and we can help with standard integrations.",
+      },
+      {
+        question: "Who provides WhatsApp Business API services in India?",
+        answer:
+          "Access to the platform comes from Meta through approved business solution providers. We set it up on that basis and support you on the account, templates, inbox and integrations, alongside your calling and SMS.",
       },
     ],
   },

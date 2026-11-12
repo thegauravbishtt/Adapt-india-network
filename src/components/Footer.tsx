@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { areaPages } from "../data/areaPages";
 
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -300,6 +301,22 @@ export default function Footer() {
                       All Pan-India Locations →
                     </Link>
                   </li>
+                </ul>
+              </div>
+
+              {/* Business areas (area landing pages, linked site-wide so Google finds them) */}
+              <div>
+                <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
+                  Business Areas
+                </h4>
+                <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
+                  {areaPages.map((a) => (
+                    <li key={`${a.citySlug}-${a.slug}`}>
+                      <Link href={`/locations/${a.citySlug}/${a.slug}/`} className="hover:text-white transition-colors">
+                        Leased Line in {a.area}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 

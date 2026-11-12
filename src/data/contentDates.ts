@@ -13,6 +13,7 @@ export const SITE_WIDE_UPDATE = "2026-11-12";
 
 /** Pages changed after the site-wide update. */
 const PAGE_DATES: Record<string, string> = {
+  "/services/whatsapp-business-platform/": "2026-11-12",
   "/services/smartflo-sd-wan/": "2026-11-12",
   "/services/managed-mpls/": "2026-11-12",
   "/locations/gurgaon/": "2026-11-12",
