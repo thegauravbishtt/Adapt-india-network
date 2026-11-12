@@ -100,20 +100,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Integration with Adapt India Networks' 24/7/365 NOC dashboard with automated SNMP polling and instant escalation lines.",
       },
     ],
-    caseStudies: [
-      {
-        title: "Pan-India FinTech Transaction Hub",
-        client: "Leading Payment Gateway & Banking Partner",
-        impact: "Zero downtime across 180M monthly payment transactions with sub-12ms inter-city latency.",
-        image: "/banner-datacenter-racks.jpg",
-      },
-      {
-        title: "Multi-Campus Healthcare Network",
-        client: "Apex Hospital Consortium",
-        impact: "Seamless real-time DICOM MRI file sync and telemedicine streaming across 14 hospitals.",
-        image: "/banner-servers-lights.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "What is the difference between an Internet Leased Line (ILL) and regular broadband?",
@@ -267,20 +254,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Our NOC actively tracks packet health across all links, fine-tuning path metrics and providing continuous SLA reporting.",
       },
     ],
-    caseStudies: [
-      {
-        title: "National Retail Chain SD-WAN Deployment",
-        client: "450+ Store Lifestyle Brand",
-        impact: "Cut monthly WAN telecom spend by 48% while boosting POS transaction uptime to 99.999%.",
-        image: "/services/sdwan_clean.jpg",
-      },
-      {
-        title: "Distributed Financial Services Firm",
-        client: "Equities & Wealth Management Leader",
-        impact: "Seamless automated failover between fiber ILL and 5G cellular with zero interrupted trading terminal sessions.",
-        image: "/banner-network-matrix.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Can SD-WAN replace our MPLS network?",
@@ -438,14 +412,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Your office goes live with high-speed internet and unified communications backed by 24/7 proactive monitoring.",
       },
     ],
-    caseStudies: [
-      {
-        title: "Rapid Expansion for Coworking Provider",
-        client: "Leading National Coworking Chain",
-        impact: "Deployed SmartOffice Connect across 12 new locations in 3 weeks, supporting 1,800 daily coworker devices.",
-        image: "/wifi-banner.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Can our employees use their office phone extensions on their smartphones?",
@@ -583,14 +550,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Our NOC team tracks circuit availability round-the-clock, maintaining sub-4 hour MTTR SLAs nationwide.",
       },
     ],
-    caseStudies: [
-      {
-        title: "Core Banking & ATM Network Interconnect",
-        client: "Major Scheduled Commercial Bank",
-        impact: "Connected 180 branches and 400 ATMs with 99.999% SLA uptime and zero security breaches.",
-        image: "/banner-servers-lights.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Is MPLS more secure than an IPsec VPN over the public internet?",
@@ -743,14 +703,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Staff training, simulated load testing, and transition to live traffic backed by 24/7 dedicated voice NOC engineering.",
       },
     ],
-    caseStudies: [
-      {
-        title: "High-Volume Customer Support Migration",
-        client: "India's Leading Direct-to-Consumer Brand",
-        impact: "Handled 25,000+ daily customer inquiries with 99.99% call success rate and 34% reduction in telecom overhead.",
-        image: "/telephone-banner.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Can we connect your SIP trunk to Microsoft Teams?",
@@ -887,14 +840,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Manage bandwidth dynamically with complete confidence backed by Adapt India Networks' 24/7/365 NOC team.",
       },
     ],
-    caseStudies: [
-      {
-        title: "E-Commerce Festival Scale-Up",
-        client: "Tier-1 Online Marketplace",
-        impact: "Burst network capacity by 400% across Big Billion festival week with zero packet drops and automated scale-down.",
-        image: "/banner-global-telecom.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "How quickly can we burst our leased line bandwidth under NaaS?",
@@ -1032,14 +978,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Complete enterprise cutover followed by dedicated 24/7 helpdesk support for password resets and license provisioning.",
       },
     ],
-    caseStudies: [
-      {
-        title: "Enterprise Cloud Workspace Transformation",
-        client: "Automotive Component Manufacturer",
-        impact: "Migrated 2,400 user accounts from legacy on-premise mail to Microsoft 365 in 48 hours with zero data loss.",
-        image: "/resources/smart_city_grid.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Can you help our company adopt Microsoft Copilot AI securely?",
@@ -1177,14 +1116,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Continuous automated observability, real-time threat detection, and monthly FinOps reviews to keep cloud costs low.",
       },
     ],
-    caseStudies: [
-      {
-        title: "Hybrid Cloud Migration for Logistics Leader",
-        client: "Supply Chain & Warehousing Enterprise",
-        impact: "Migrated 80+ core database servers to Azure with direct fiber ExpressRoute, trimming monthly IT overhead by 32%.",
-        image: "/resources/globe_connectivity_dc.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "How does Direct Cloud Connect save money on cloud bills?",
@@ -1322,14 +1254,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Our certified security team monitors for suspicious activities round-the-clock, containing threats in under 15 minutes.",
       },
     ],
-    caseStudies: [
-      {
-        title: "DDoS Defense for Online FinTech Exchange",
-        client: "High-Frequency Financial Trading Platform",
-        impact: "Neutralized 140 Gbps distributed volumetric attack in 8 seconds with zero trading downtime or data leakage.",
-        image: "/banner-network-matrix.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "How does upstream DDoS scrubbing protect our connection?",
@@ -1466,14 +1391,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Our senior L3 engineers assume round-the-clock stewardship of your enterprise network health.",
       },
     ],
-    caseStudies: [
-      {
-        title: "NOC Outsourcing for Nationwide Logistics Chain",
-        client: "Logistics Hub with 120 Regional Depots",
-        impact: "Reduced average incident resolution time from 3.8 hours to 22 minutes with zero weekend service interruptions.",
-        image: "/resources/network_engineer_ops.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Can your NOC manage hardware we already own?",
@@ -1609,14 +1527,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Monitor all store networks from a single portal backed by our 24/7/365 enterprise NOC team.",
       },
     ],
-    caseStudies: [
-      {
-        title: "Turnkey Connectivity for 80 QSR Outlets",
-        client: "Fast-Growing Quick Service Restaurant Chain",
-        impact: "Rolled out 80 store bundles in 45 days, achieving 100% POS billing continuity during peak holiday rushes.",
-        image: "/banner-what-we-do.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Can we add new branches to our bundle dynamically?",
@@ -1753,14 +1664,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Circuit is delivered with clean SFP+ optical handoff backed by continuous optical dB monitoring.",
       },
     ],
-    caseStudies: [
-      {
-        title: "Primary to DR Data Center Mirroring",
-        client: "National Stock Broking Firm",
-        impact: "Connected primary data center to DR facility with 10 Gbps P2P line, achieving real-time database replication with < 2ms latency.",
-        image: "/banner-servers-lights.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Can we run our own VLANs and jumbo frames across the P2P link?",
@@ -1897,14 +1801,7 @@ export const telecomServices: ServiceDetail[] = [
         desc: "Full walk-through speed and roaming verification ensuring flawless signal coverage in every room and hallway.",
       },
     ],
-    caseStudies: [
-      {
-        title: "High-Density Campus Wi-Fi for Tech Hub",
-        client: "Modern 3-Story Technology Office",
-        impact: "Deployed 28 Wi-Fi 6 access points supporting 650 simultaneous engineer laptops with zero video call buffering.",
-        image: "/wifi-banner.jpg",
-      },
-    ],
+    caseStudies: [],
     faqs: [
       {
         question: "Is guest Wi-Fi isolated from our company computers?",

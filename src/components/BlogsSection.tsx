@@ -103,7 +103,7 @@ export default function BlogsSection() {
                   </h3>
                 </span>
                 <span className="hidden sm:block w-20 h-16 shrink-0 rounded-lg overflow-hidden border border-zinc-800">
-                  <img src={a.image} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={a.image} alt={a.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </span>
               </Link>
             </li>
