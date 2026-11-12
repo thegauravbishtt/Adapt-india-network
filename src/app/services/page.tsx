@@ -69,7 +69,7 @@ export default function ServicesPage() {
                 </h1>
 
                 <p className="text-zinc-200 text-xs sm:text-sm md:text-base font-normal max-w-2xl leading-relaxed drop-shadow-sm mb-4">
-                  Mission-critical Internet Leased Lines (ILL), Next-Gen SD-WAN, private MPLS VPN backbones, cloud telephony, and multi-cloud interconnects backed by strict 99.999% SLA uptime guarantees.
+                  Mission-critical Internet Leased Lines (ILL), Next-Gen SD-WAN, private MPLS VPN backbones, cloud telephony, and multi-cloud interconnects backed by strict 99.5% SLA uptime guarantees.
                 </p>
 
                 {/* CTAs */}
@@ -221,7 +221,7 @@ export default function ServicesPage() {
               <div className="shrink-0 flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
                 <span className="text-xs font-mono font-bold text-zinc-700 uppercase">
-                  Live Core Status: 99.999% SLA Optimal
+                  Live Core Status: 99.5% SLA Optimal
                 </span>
               </div>
             </div>
@@ -332,7 +332,7 @@ export default function ServicesPage() {
                   <tbody className="divide-y divide-zinc-100 text-zinc-700">
                     <tr>
                       <td className="py-3.5 px-4 font-semibold text-zinc-900">Uptime Availability Guarantee</td>
-                      <td className="py-3.5 px-4 bg-blue-50/50 font-bold text-[#0066FF]">99.999% (&lt; 5 mins/yr)</td>
+                      <td className="py-3.5 px-4 bg-blue-50/50 font-bold text-[#0066FF]">99.5%</td>
                       <td className="py-3.5 px-4">99.0% - 99.5% (&gt; 43 hrs/yr)</td>
                       <td className="py-3.5 px-4 text-zinc-400">Best Effort (No SLA)</td>
                     </tr>
@@ -399,7 +399,7 @@ export default function ServicesPage() {
 
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col gap-2">
                 <span className="text-2xl font-black text-[#E31E24] font-mono">03</span>
-                <h4 className="text-base font-bold text-white">Contractual 99.999% SLA</h4>
+                <h4 className="text-base font-bold text-white">Contractual 99.5% SLA</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed">Backed by contractual service credits and &lt;4 hour MTTR on-site restoration.</p>
               </div>
 

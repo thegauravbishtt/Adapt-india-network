@@ -24,7 +24,7 @@ const FAQS_DATA: FAQItem[] = [
     category: "Internet Leased Line (ILL)",
     question: "What is the key technical difference between Adapt India ILL and standard business broadband?",
     answer:
-      "Adapt India ILL delivers an uncompressed 1:1 symmetrical connection over underground single-mode optical fiber with zero contention. Unlike commercial broadband which multiplexes bandwidth across dozens of local subscribers (ratios of 1:8 to 1:20), your committed throughput is 100% reserved 24/7/365 and backed by a strict contractual 99.999% SLA.",
+      "Adapt India ILL delivers an uncompressed 1:1 symmetrical connection over underground single-mode optical fiber with zero contention. Unlike commercial broadband which multiplexes bandwidth across dozens of local subscribers (ratios of 1:8 to 1:20), your committed throughput is 100% reserved 24/7/365 and backed by a strict contractual 99.5% SLA.",
   },
   {
     id: "ill-2",
@@ -61,7 +61,7 @@ const FAQS_DATA: FAQItem[] = [
   {
     id: "sla-1",
     category: "SLA & Guarantees",
-    question: "How is the 99.999% uptime guarantee measured and credited?",
+    question: "How is the 99.5% uptime guarantee measured and credited?",
     answer:
       "Availability is tracked continuously via automated NOC telemetry polling at 60-second intervals. Any unplanned downtime exceeding 5.26 minutes across an annual billing cycle triggers contractual billing credits: 10% credit for 99.5%-99.9% availability, 25% credit for 99.0%-99.5%, and 50% service credit for < 99.0% availability.",
   },

@@ -9,20 +9,20 @@
  */
 
 /** Last change that touched every page (site-wide footer/navigation and linking update). */
-export const SITE_WIDE_UPDATE = "2026-11-11";
+export const SITE_WIDE_UPDATE = "2026-11-12";
 
 /** Pages changed after the site-wide update. */
 const PAGE_DATES: Record<string, string> = {
   "/services/smartflo-sd-wan/": "2026-11-12",
   "/services/managed-mpls/": "2026-11-12",
   "/locations/gurgaon/": "2026-11-12",
-  "/services/": "2026-11-11",
-  "/locations/": "2026-11-11",
-  "/about/": "2026-11-11",
-  "/about/who-we-are/": "2026-11-11",
-  "/faqs/": "2026-11-11",
-  "/terms-and-conditions/": "2026-11-11",
-  "/blog/": "2026-11-11",
+  "/services/": "2026-11-12",
+  "/locations/": "2026-11-12",
+  "/about/": "2026-11-12",
+  "/about/who-we-are/": "2026-11-12",
+  "/faqs/": "2026-11-12",
+  "/terms-and-conditions/": "2026-11-12",
+  "/blog/": "2026-11-12",
 };
 
 export function lastModifiedFor(path: string): Date {

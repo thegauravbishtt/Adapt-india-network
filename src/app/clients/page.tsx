@@ -254,7 +254,7 @@ export default function ClientsPage() {
                   <ShieldCheck className="w-5 h-5 text-[#E31E24]" />
                   <div className="text-left">
                     <p className="text-[11px] font-mono uppercase text-zinc-300">Carrier Class SLA</p>
-                    <p className="text-xs font-bold font-sans">99.999% Guaranteed Uptime</p>
+                    <p className="text-xs font-bold font-sans">99.5% Guaranteed Uptime</p>
                   </div>
                 </div>
               </div>

@@ -5,7 +5,7 @@ export const telecomServices: ServiceDetail[] = [
     slug: "smart-internet-ill",
     name: "Smart Internet (ILL)",
     category: "Network & Connectivity",
-    tagline: "Carrier-Grade Dedicated Leased Line with 99.999% SLA",
+    tagline: "Carrier-Grade Dedicated Leased Line with 99.5% SLA",
     heroHeadline: "Enterprise Internet Leased Line (ILL) Built for",
     heroHighlight: "Uninterrupted Operations.",
     heroSubtitle:
@@ -13,7 +13,7 @@ export const telecomServices: ServiceDetail[] = [
     image: "/banner-datacenter-racks.jpg",
     galleryImages: ["/banner-network-matrix.jpg", "/banner-servers-lights.jpg", "/banner-global-telecom.jpg"],
     stats: [
-      { value: "99.999%", label: "Guaranteed SLA Uptime" },
+      { value: "99.5%", label: "Guaranteed SLA Uptime" },
       { value: "1:1", label: "Symmetric Bandwidth (No Contention)" },
       { value: "< 15ms", label: "Pan-India Tier-1 Latency" },
       { value: "< 4 Hours", label: "Mean Time to Restore (MTTR)" },
@@ -105,7 +105,7 @@ export const telecomServices: ServiceDetail[] = [
       {
         question: "What is the difference between an Internet Leased Line (ILL) and regular broadband?",
         answer:
-          "Regular broadband is a shared connection with contention ratios up to 1:30 and asymmetrical speeds (fast download, slow upload). An Internet Leased Line (ILL) is a 100% dedicated, unshared, 1:1 symmetrical connection backed by financial SLAs guaranteeing 99.999% uptime and <4 hour MTTR.",
+          "Regular broadband is a shared connection with contention ratios up to 1:30 and asymmetrical speeds (fast download, slow upload). An Internet Leased Line (ILL) is a 100% dedicated, unshared, 1:1 symmetrical connection backed by financial SLAs guaranteeing 99.5% uptime and <4 hour MTTR.",
       },
       {
         question: "How fast is the installation and commissioning turnaround?",
@@ -113,9 +113,9 @@ export const telecomServices: ServiceDetail[] = [
           "For on-net buildings (where Adapt India fiber already exists), commissioning is completed in 3 to 5 business days. For greenfield sites requiring fiber trenching, typical deployment takes 10 to 14 business days with temporary 4G/5G bonding provided in the interim.",
       },
       {
-        question: "How does the 99.999% SLA uptime guarantee work?",
+        question: "How does the 99.5% SLA uptime guarantee work?",
         answer:
-          "Our SLA is backed by contractual service credits. If availability drops below 99.999% or if round-trip latency / packet loss exceeds specified thresholds, credit penalties are automatically deducted from your billing cycle.",
+          "Our SLA is backed by contractual service credits. If availability drops below 99.5% or if round-trip latency / packet loss exceeds specified thresholds, credit penalties are automatically deducted from your billing cycle.",
       },
       {
         question: "Do you provide static public IP addresses?",
@@ -134,7 +134,7 @@ export const telecomServices: ServiceDetail[] = [
         "Engineered for modern high-throughput workloads, cloud synchronization, and real-time operations requiring zero latency spikes.",
       checklist: [
         "1:1 Dedicated Symmetrical Speed",
-        "99.999% Availability Financial SLA",
+        "99.5% Availability Financial SLA",
         "Dual Last-Mile Physical Fiber Paths",
         "Proactive 24/7/365 NOC Surveillance",
         "Sub-15ms Inter-Metro Round Trip Time",
@@ -169,7 +169,7 @@ export const telecomServices: ServiceDetail[] = [
     galleryImages: ["/network-sdwan.png", "/banner-network-matrix.jpg", "/banner-datacenter-racks.jpg"],
     stats: [
       { value: "40%", label: "Average WAN Cost Savings" },
-      { value: "99.999%", label: "Multi-Link Network Uptime" },
+      { value: "99.5%", label: "Multi-Link Network Uptime" },
       { value: "< 50ms", label: "Sub-Second Link Failover" },
       { value: "Zero-Touch", label: "Rapid Branch Provisioning" },
     ],
@@ -441,7 +441,7 @@ export const telecomServices: ServiceDetail[] = [
       ],
       whyChooseTitle: "WHY CHOOSE SMARTOFFICE CONNECT?",
       whyChooseDesc:
-        "Stop managing five different telecom bills and chasing three different vendors during an outage. SmartOffice Connect gives you one enterprise partner with guaranteed 99.999% SLA uptime.",
+        "Stop managing five different telecom bills and chasing three different vendors during an outage. SmartOffice Connect gives you one enterprise partner with guaranteed 99.5% SLA uptime.",
       whyChooseBullets: [
         "Turnkey Setup in 72 Hours",
         "Scalable from 10 to 500+ Office Users",
@@ -466,7 +466,7 @@ export const telecomServices: ServiceDetail[] = [
     galleryImages: ["/network-mpls.png", "/banner-datacenter-racks.jpg", "/banner-servers-lights.jpg"],
     stats: [
       { value: "100%", label: "Private & Air-Gapped from Internet" },
-      { value: "99.999%", label: "Core Availability SLA" },
+      { value: "99.5%", label: "Core Availability SLA" },
       { value: "< 20ms", label: "Inter-City Low-Latency Core" },
       { value: "Class of Service", label: "Hardware-Enforced QoS" },
     ],
@@ -585,7 +585,7 @@ export const telecomServices: ServiceDetail[] = [
       checklist: [
         "100% Private Closed-User-Group (CUG)",
         "Hardware-Enforced Class of Service (QoS)",
-        "Contractual 99.999% Core Availability SLA",
+        "Contractual 99.5% Core Availability SLA",
         "Sub-20ms Inter-Metro Round-Trip Latency",
         "Direct AWS & Azure Cloud Direct Connect",
         "Fully Managed Cisco / Juniper Edge Routers",
@@ -619,7 +619,7 @@ export const telecomServices: ServiceDetail[] = [
     galleryImages: ["/banner-network-matrix.jpg", "/banner-what-we-do.jpg", "/banner-datacenter-racks.jpg"],
     stats: [
       { value: "1,500+", label: "Concurrent Channels per Trunk" },
-      { value: "99.99%", label: "Voice Call Quality & SLA" },
+      { value: "99.5%", label: "Voice Call Quality & SLA" },
       { value: "Omnichannel", label: "Voice, WhatsApp, SMS & RCS" },
       { value: "AI Enabled", label: "Real-Time Sentiment & Transcription" },
     ],
@@ -759,7 +759,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "On-Demand", label: "Instant Bandwidth Scaling" },
       { value: "Zero CAPEX", label: "Pure OPEX Subscription Model" },
       { value: "Direct Peering", label: "AWS, Azure, GCP Cloud Ramps" },
-      { value: "99.999%", label: "End-to-End SLA Guarantee" },
+      { value: "99.5%", label: "End-to-End SLA Guarantee" },
     ],
     overview:
       "Static multi-year bandwidth contracts no longer match the elastic reality of cloud computing. Adapt India Networks' Network as a Service (NaaS) allows enterprises to consume networking like cloud compute: spin up connections rapidly, burst bandwidth during seasonal peaks, and pay only for active capacity.",
@@ -862,7 +862,7 @@ export const telecomServices: ServiceDetail[] = [
         "Direct AWS, Azure & Google Cloud Connect",
         "Pure OPEX Model with Zero Upfront CAPEX",
         "Fully Managed Enterprise Hardware Included",
-        "Carrier-Grade 99.999% SLA Uptime",
+        "Carrier-Grade 99.5% SLA Uptime",
         "RESTful API & Webhook Telemetry Integration",
         "Self-Service Bandwidth Management Portal",
         "24/7/365 Proactive NOC Monitoring & Support",
@@ -1034,7 +1034,7 @@ export const telecomServices: ServiceDetail[] = [
       { value: "Tier-4", label: "Certified Data Center Partner" },
       { value: "< 2ms", label: "Direct Cloud Connect Latency" },
       { value: "30%", label: "Average Cloud Cost Reduction" },
-      { value: "99.999%", label: "Virtual Infrastructure SLA" },
+      { value: "99.5%", label: "Virtual Infrastructure SLA" },
     ],
     overview:
       "Enterprise cloud adoption requires more than simply moving virtual machines. Adapt India Networks helps organizations engineer resilient hybrid cloud topologies combining private dedicated infrastructure with hyperscale public clouds (Azure, AWS, GCP) interconnected over dedicated optical fiber.",
@@ -1491,7 +1491,7 @@ export const telecomServices: ServiceDetail[] = [
         description: "One predictable monthly invoice covering all branch locations nationwide with unified NOC escalation.",
         deliverables: [
           "Consolidated billing across all cities and branches",
-          "Single contractual SLA guaranteeing 99.999% uptime",
+          "Single contractual SLA guaranteeing 99.5% uptime",
           "Dedicated enterprise national account manager",
           "Online portal showing all branch link statuses",
         ],
@@ -1576,14 +1576,14 @@ export const telecomServices: ServiceDetail[] = [
     heroHeadline: "Dedicated Unshared Point-to-Point Circuits for",
     heroHighlight: "Ultra-High Speed Data Replication.",
     heroSubtitle:
-      "Connect primary data centers, disaster recovery facilities, and enterprise headquarters over dedicated Layer-2 optical circuits with zero internet overhead, deterministic latency, and 99.999% SLA availability.",
+      "Connect primary data centers, disaster recovery facilities, and enterprise headquarters over dedicated Layer-2 optical circuits with zero internet overhead, deterministic latency, and 99.5% SLA availability.",
     image: "/banner-servers-lights.jpg",
     galleryImages: ["/banner-datacenter-racks.jpg", "/banner-network-matrix.jpg", "/banner-global-telecom.jpg"],
     stats: [
       { value: "100%", label: "Dedicated Layer-2 Clear Channel" },
       { value: "10 Gbps+", label: "High-Capacity Optical Wavelengths" },
       { value: "< 5ms", label: "Intra-City Low Latency" },
-      { value: "99.999%", label: "Ring Protected Availability" },
+      { value: "99.5%", label: "Ring Protected Availability" },
     ],
     overview:
       "When enterprises transfer massive database volumes between primary data centers, disaster recovery sites, or corporate campuses, public internet routing is too slow and variable. Adapt India Networks' Point-to-Point (P2P) Leased Line delivers transparent, dedicated Layer-2 Ethernet pipes with zero routing overhead.",
@@ -1696,7 +1696,7 @@ export const telecomServices: ServiceDetail[] = [
         "We own and operate high-capacity optical fiber rings across key metro hubs, giving your enterprise direct, low-hop connectivity with guaranteed performance SLAs.",
       whyChooseBullets: [
         "Direct Data Center to Data Center Interconnects",
-        "Strict 99.999% Service Level Agreement",
+        "Strict 99.5% Service Level Agreement",
         "Sub-50ms Optical Auto-Switching Protection",
         "Optional End-to-End MACsec Encryption",
         "Fast 5-Day Commissioning on On-Net Sites",
@@ -1845,7 +1845,7 @@ export const telecomServices: ServiceDetail[] = [
   "slug": "internet-leased-line",
   "name": "Internet Leased Line (ILL)",
   "category": "Network & Connectivity",
-  "tagline": "Carrier-Grade 1:1 Dedicated Symmetrical Bandwidth with 99.999% SLA",
+  "tagline": "Carrier-Grade 1:1 Dedicated Symmetrical Bandwidth with 99.5% SLA",
   "heroHeadline": "Enterprise Internet Leased Line (ILL) Built for",
   "heroHighlight": "Uninterrupted High-Speed Operations.",
   "heroSubtitle": "Dedicated, unshared symmetrical bandwidth engineered for zero packet loss, sub-15ms inter-metro latency, cloud-based DDoS scrubbing, and 24/7/365 proactive NOC monitoring.",
@@ -1857,7 +1857,7 @@ export const telecomServices: ServiceDetail[] = [
   ],
   "stats": [
     {
-      "value": "99.999%",
+      "value": "99.5%",
       "label": "Guaranteed SLA Uptime"
     },
     {
@@ -1953,7 +1953,7 @@ export const telecomServices: ServiceDetail[] = [
     {
       "title": "Pan-India Financial Firm Zero Downtime",
       "client": "Top FinTech NBFC",
-      "impact": "Eliminated transaction drops across 42 branch locations with 99.99% measured uptime.",
+      "impact": "Eliminated transaction drops across 42 branch locations with 99.5% measured uptime.",
       "image": "/banner-datacenter-racks.jpg"
     },
     {
@@ -2131,7 +2131,7 @@ export const telecomServices: ServiceDetail[] = [
   ],
   "stats": [
     {
-      "value": "99.99%",
+      "value": "99.5%",
       "label": "Intranet Availability SLA"
     },
     {
@@ -2226,7 +2226,7 @@ export const telecomServices: ServiceDetail[] = [
     {
       "title": "National Bank Core Banking Network",
       "client": "Leading Private Bank",
-      "impact": "Interconnected 85 branches with zero transaction latency and 99.99% network uptime.",
+      "impact": "Interconnected 85 branches with zero transaction latency and 99.5% network uptime.",
       "image": "/services/mpls_clean.jpg"
     },
     {
@@ -2247,7 +2247,7 @@ export const telecomServices: ServiceDetail[] = [
     },
     {
       "question": "What SLAs are provided with MPLS?",
-      "answer": "We offer 99.99% availability SLAs, sub-25ms latency guarantees, and 24/7/365 L3 support with a 4-hour restoration commitment."
+      "answer": "We offer 99.5% availability SLAs, sub-25ms latency guarantees, and 24/7/365 L3 support with a 4-hour restoration commitment."
     }
   ]
 },

@@ -19,7 +19,7 @@ const searchIndex: SearchItem[] = [
     id: "smart-internet",
     title: "Smart Internet (ILL)",
     category: "Service",
-    description: "1:1 dedicated leased line bundled with cloud-based DDoS security & 99.999% SLA.",
+    description: "1:1 dedicated leased line bundled with cloud-based DDoS security & 99.5% SLA.",
     link: "/services/smart-internet-ill",
     keywords: ["internet", "leased line", "ill", "bandwidth", "fiber", "sla", "dedicated"],
   },
@@ -833,7 +833,7 @@ export default function Navbar() {
                   {[
                     { label: "24/7 Optical NOC Monitoring", link: "/about/what-we-do" },
                     { label: "Enterprise Alliances (Tata TTBS & ACT)", link: "/about/who-we-are" },
-                    { label: "99.999% SLA Carrier Protocol", link: "/about/how-we-work" },
+                    { label: "99.5% SLA Carrier Protocol", link: "/about/how-we-work" },
                   ].map((item) => (
                     <Link
                       key={item.label}
@@ -1179,7 +1179,7 @@ export default function Navbar() {
                               <span className="text-zinc-300 group-hover:text-red-400 group-hover:translate-x-1 transition-all">→</span>
                             </h4>
                             <p className="text-xs text-zinc-300 mt-1 line-clamp-2">
-                              1:1 dedicated leased line bundled with cloud-based DDoS security &amp; 99.999% SLA.
+                              1:1 dedicated leased line bundled with cloud-based DDoS security &amp; 99.5% SLA.
                             </p>
                           </div>
                         </Link>
@@ -1667,12 +1667,12 @@ export default function Navbar() {
                     Carrier-Grade Telecom &amp; SD-WAN Infrastructure for Modern Enterprises
                   </h3>
                   <p className="text-sm text-gray-600 mt-4 leading-relaxed">
-                    Adapt India Networks provides mission-critical enterprise internet leased lines, software-defined WAN, and cloud interconnects across India. With our 99.999% SLA uptime guarantee and dedicated 24/7/365 NOC engineering teams, we ensure seamless connectivity for leading brands, BFSI institutions, and large corporate networks.
+                    Adapt India Networks provides mission-critical enterprise internet leased lines, software-defined WAN, and cloud interconnects across India. With our 99.5% SLA uptime guarantee and dedicated 24/7/365 NOC engineering teams, we ensure seamless connectivity for leading brands, BFSI institutions, and large corporate networks.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 pt-8 border-t border-gray-200">
                     <div>
-                      <span className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">99.999%</span>
+                      <span className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">99.5%</span>
                       <span className="text-xs text-gray-500 block mt-1">Guaranteed SLA Uptime</span>
                     </div>
                     <div>
@@ -1805,7 +1805,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <span className="text-xs text-gray-600">Discover how Adapt India delivers 99.999% uptime for multi-site enterprise infrastructure.</span>
+                  <span className="text-xs text-gray-600">Discover how Adapt India delivers 99.5% uptime for multi-site enterprise infrastructure.</span>
                   <Link
                     href="/services"
                     onClick={() => setDrawerOpen(false)}

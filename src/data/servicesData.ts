@@ -55,11 +55,11 @@ export const allServices: ServiceDetail[] = [
     heroHeadline: "Scalable Enterprise Software Built for",
     heroHighlight: "Enduring Growth.",
     heroSubtitle:
-      "We design, engineer, and deploy mission-critical enterprise systems that eliminate technical debt, automate complex workflows, and handle high-throughput operations with 99.99% availability.",
+      "We design, engineer, and deploy mission-critical enterprise systems that eliminate technical debt, automate complex workflows, and handle high-throughput operations with 99.5% availability.",
     image: "/services/enterprise_software.jpg",
     galleryImages: ["/gro.png", "/image1.png", "/studio-photo.png"],
     stats: [
-      { value: "99.99%", label: "Uptime SLA Guarantee" },
+      { value: "99.5%", label: "Uptime SLA Guarantee" },
       { value: "10x", label: "Workflow Throughput" },
       { value: "0", label: "Legacy Technical Debt" },
       { value: "SOC2", label: "Compliance-Ready Code" },
@@ -429,7 +429,7 @@ export const allServices: ServiceDetail[] = [
     image: "/services/cloud_devops.jpg",
     galleryImages: ["/gro.png", "/image4.png", "/studio-photo.png"],
     stats: [
-      { value: "99.99%", label: "System Availability" },
+      { value: "99.5%", label: "System Availability" },
       { value: "-40%", label: "Average Cloud Bill Reduction" },
       { value: "< 5 min", label: "Automated Deploy Cycle" },
       { value: "Zero", label: "Single Points of Failure" },

@@ -45,7 +45,7 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
     },
     {
       question: `What contractual SLA uptime backs ${service.name}?`,
-      answer: "We commit to a contractual 99.999% network uptime backed by financial service credit penalties. Round-trip latency (<15ms metro, <45ms national) and zero packet loss guarantees are actively monitored 24/7/365 by our Level-3 NOC.",
+      answer: "We commit to a contractual 99.5% network uptime backed by financial service credit penalties. Round-trip latency (<15ms metro, <45ms national) and zero packet loss guarantees are actively monitored 24/7/365 by our Level-3 NOC.",
     },
     {
       question: "Is 24/7/365 dedicated technical support included?",
@@ -91,7 +91,7 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
   const quickHighlights: Record<string, Array<{ title: string; desc: string }>> = {
     "smart-internet-ill": [
       { title: "1:1 Dedicated Bandwidth", desc: "Zero contention ratio. You get 100% of the upload and download speed you pay for." },
-      { title: "99.999% SLA Uptime", desc: "Contractually guaranteed network availability backed by financial service credits." },
+      { title: "99.5% SLA Uptime", desc: "Contractually guaranteed network availability backed by financial service credits." },
       { title: "Dual Optical Fiber Ring", desc: "Sub-50ms automated optical failover with diverse last-mile physical entry." },
     ],
     "smartflo-sd-wan": [
@@ -157,7 +157,7 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
   };
 
   const highlights = quickHighlights[service.slug] || [
-    { title: "99.999% SLA Uptime", desc: "Carrier-grade availability backed by financial service credits." },
+    { title: "99.5% SLA Uptime", desc: "Carrier-grade availability backed by financial service credits." },
     { title: "Dedicated Support", desc: "Direct hotline to certified L3 network engineers 24 hours a day." },
     { title: "Pan-India Fiber", desc: "Optical infrastructure connecting major industrial and metro centers." },
   ];
@@ -341,7 +341,7 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
                     <tbody className="divide-y divide-gray-200 text-gray-700">
                       <tr>
                         <td className="py-3 px-4 font-medium text-gray-900">Uptime SLA</td>
-                        <td className="py-3 px-4 font-bold text-green-700">99.999% Guaranteed</td>
+                        <td className="py-3 px-4 font-bold text-green-700">99.5% Guaranteed</td>
                         <td className="py-3 px-4 text-gray-500">98% (No Guarantee)</td>
                       </tr>
                       <tr>

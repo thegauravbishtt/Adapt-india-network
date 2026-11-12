@@ -18,9 +18,9 @@ export default function WhatWeDoPage() {
       category: "connectivity",
       categoryLabel: "Connectivity",
       title: "Smart Internet (ILL)",
-      desc: "1:1 dedicated, uncompressed symmetrical bandwidth with dual-path optical fiber rings, sub-15ms latency, and 99.999% SLA uptime.",
+      desc: "1:1 dedicated, uncompressed symmetrical bandwidth with dual-path optical fiber rings, sub-15ms latency, and 99.5% SLA uptime.",
       href: "/services/smart-internet-ill",
-      tags: ["1:1 Dedicated", "Dual-Ring Fiber", "Sub-15ms Latency", "99.999% SLA"],
+      tags: ["1:1 Dedicated", "Dual-Ring Fiber", "Sub-15ms Latency", "99.5% SLA"],
     },
     {
       category: "connectivity",
@@ -319,7 +319,7 @@ export default function WhatWeDoPage() {
                 READY TO CONNECT YOUR BUSINESS INFRASTRUCTURE?
               </h2>
               <p className="text-zinc-300 text-sm sm:text-base max-w-xl">
-                Our telecom architects will conduct an on-site feasibility survey and configure carrier-backed 99.999% SLA connectivity for your enterprise.
+                Our telecom architects will conduct an on-site feasibility survey and configure carrier-backed 99.5% SLA connectivity for your enterprise.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                 <Link

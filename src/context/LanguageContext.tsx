@@ -152,7 +152,7 @@ export const defaultFeaturedWorkItems: FeaturedWorkItem[] = [
     name: "Global Tech Hub",
     category: "AI & CLOUD ROUTING",
     headline: "Next-Gen Software-Defined WAN",
-    description: "Dynamic packet steering and encrypted overlays guaranteeing 99.99% application uptime.",
+    description: "Dynamic packet steering and encrypted overlays guaranteeing 99.5% application uptime.",
     src: "/services/sdwan_clean.jpg",
   },
   {
@@ -247,7 +247,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       tag: "ABOUT ADAPT INDIA NETWORK",
       description:
-        "Adapt India Networks is a premier enterprise telecom and network infrastructure provider in India. In alliance with Tata Teleservices (TTBS) and ACT Enterprise, we deliver carrier-grade Internet Leased Lines, SD-WAN, MPLS VPN, Cloud Telephony, and edge cybersecurity with 99.999% SLA uptime.",
+        "Adapt India Networks is a premier enterprise telecom and network infrastructure provider in India. In alliance with Tata Teleservices (TTBS) and ACT Enterprise, we deliver carrier-grade Internet Leased Lines, SD-WAN, MPLS VPN, Cloud Telephony, and edge cybersecurity with 99.5% SLA uptime.",
       storyTitle: "OUR MISSION",
       storyDesc:
         "Founded to deliver mission-critical connectivity without compromise, we operate dual-active 24/7 Network Operations Centers (NOC) and high-availability fiber rings across 60+ Indian commercial hubs.",

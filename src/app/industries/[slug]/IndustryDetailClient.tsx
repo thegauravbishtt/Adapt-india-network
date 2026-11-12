@@ -2954,7 +2954,7 @@ export default function IndustryDetailClient({ industry }: IndustryDetailClientP
                   <div className="absolute bottom-4 inset-x-4 bg-white/95 backdrop-blur-md border border-zinc-200 p-5 rounded-2xl shadow-xl flex flex-col gap-1 text-black">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-mono font-bold text-zinc-500 uppercase">CLINICAL INFRASTRUCTURE</span>
-                      <span className="px-2 py-0.5 rounded-md bg-black text-[#fbea3d] font-mono text-[10px] font-bold">99.99% UPTIME</span>
+                      <span className="px-2 py-0.5 rounded-md bg-black text-[#fbea3d] font-mono text-[10px] font-bold">99.5% UPTIME</span>
                     </div>
                     <h4 className="text-sm font-bold font-display text-zinc-900">
                       Hospital-Grade HealthTech Engineering

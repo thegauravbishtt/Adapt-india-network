@@ -17,7 +17,7 @@ export default function WhoWeArePage() {
       a: "Adapt India Networks is an enterprise-grade telecommunications and network solutions provider in India. In strategic alliance with Tier-1 carriers including Tata Teleservices (TTBS) and ACT Enterprise, we design, deploy, and manage mission-critical Internet Leased Lines (ILL), SD-WAN overlays, MPLS VPN fabrics, SIP Trunks, and Edge Cybersecurity across 60+ Indian commercial metros.",
     },
     {
-      q: "How does Adapt India deliver a 99.999% SLA uptime guarantee?",
+      q: "How does Adapt India deliver a 99.5% SLA uptime guarantee?",
       a: "Our network architecture is built on dual-homed, self-healing optical fiber rings terminating directly into Tier-1 carrier points of presence (PoPs). All backbone links feature automated BGP multi-homing and sub-50ms hardware failover, backed by round-the-clock proactive monitoring from our dual-active Network Operations Centers (NOC).",
     },
     {
@@ -148,7 +148,7 @@ export default function WhoWeArePage() {
                 <div className="mt-2 flex flex-col gap-2.5 text-xs sm:text-sm text-zinc-800">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#E31E24] shrink-0" />
-                    <span>99.999% Service Level Agreement (SLA) uptime guarantee</span>
+                    <span>99.5% Service Level Agreement (SLA) uptime guarantee</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#E31E24] shrink-0" />

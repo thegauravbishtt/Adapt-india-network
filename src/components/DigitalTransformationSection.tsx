@@ -32,7 +32,7 @@ const pillarsData: PillarItem[] = [
       "Dual-homed fiber backbones, diverse subsea and terrestrial routes, and 24/7 proactive NOC monitoring ensuring zero business interruption across enterprise nodes. High-resilience core routing guarantees mission-critical connectivity even during carrier-level disruptions.",
     image: "/fabric-resilience.jpg",
     stats: [
-      { value: "99.999%", label: "uptime SLA guarantee" },
+      { value: "99.5%", label: "uptime SLA guarantee" },
       { value: "24/7/365", label: "dedicated NOC operations" },
     ],
   },

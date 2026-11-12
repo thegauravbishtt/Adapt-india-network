@@ -18,7 +18,7 @@ export default function AboutMainPage() {
       desc: "Our mission, executive engineering leadership, core principles, and strategic alliances with Tata Teleservices (TTBS) and ACT Enterprise.",
       href: "/about/who-we-are",
       cta: "Explore Who We Are →",
-      stats: "99.999% SLA Uptime · 100+ Metro Hubs",
+      stats: "99.5% SLA Uptime · 100+ Metro Hubs",
       highlights: ["Dual-Active NOC Centers", "Direct L3 Network Engineering", "Authorized Tata & ACT Partner"],
     },
     {
@@ -44,7 +44,7 @@ export default function AboutMainPage() {
   const networkPillars = [
     {
       num: "01",
-      title: "99.999% Contractual SLA",
+      title: "99.5% Contractual SLA",
       desc: "Dual-homed fiber paths, diverse physical entry points, and automated optical failover ensure your business stays connected around the clock.",
     },
     {

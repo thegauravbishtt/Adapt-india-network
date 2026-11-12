@@ -60,7 +60,7 @@ export default function HowWeWorkPage() {
         "24/7/365 Dual-Active NOC Surveillance",
         "Sub-4 Hour On-Site MTTR Guarantee",
         "Real-Time Customer Telemetry Dashboard",
-        "Monthly 99.999% SLA Performance Audits",
+        "Monthly 99.5% SLA Performance Audits",
       ],
       highlight: "24/7 NOC Active",
     },
@@ -68,7 +68,7 @@ export default function HowWeWorkPage() {
 
   const guarantees = [
     {
-      title: "99.999% SLA Uptime",
+      title: "99.5% SLA Uptime",
       desc: "Carrier-backed contractual uptime guarantees with automated credit compensation for any downtime breach.",
     },
     {
@@ -255,7 +255,7 @@ export default function HowWeWorkPage() {
 
                   <div className="pt-4 border-t border-zinc-200 flex items-center justify-between text-[11px] font-mono text-zinc-500 mt-4">
                     <span>Tata Teleservices &amp; ACT Alliances</span>
-                    <span className="text-zinc-900 font-semibold">● 99.999% SLA Guaranteed</span>
+                    <span className="text-zinc-900 font-semibold">● 99.5% SLA Guaranteed</span>
                   </div>
                 </div>
               </div>

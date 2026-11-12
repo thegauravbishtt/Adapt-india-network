@@ -70,7 +70,7 @@ export default function TermsAndConditionsPage() {
                   <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400">
                     <span>Effective: October 2026</span>
                     <span>•</span>
-                    <span>Standard Enterprise SLA 99.999%</span>
+                    <span>Standard Enterprise SLA 99.5%</span>
                   </div>
                 </div>
 

@@ -22,7 +22,7 @@ export const demoTestimonials: TestimonialItem[] = [
     headline: "“Uninterrupted”",
     rating: 5,
     content:
-      "Network engineering and enterprise leased line deployment from Adapt India Networks is unparalleled. With their 99.999% SLA uptime and proactive dual-active NOC monitoring, our pan-India logistics operations run uninterrupted 24/7.",
+      "Network engineering and enterprise leased line deployment from Adapt India Networks is unparalleled. With their 99.5% SLA uptime and proactive dual-active NOC monitoring, our pan-India logistics operations run uninterrupted 24/7.",
     author: {
       name: "Sanjiv Nishchal",
       role: "Operations Director",

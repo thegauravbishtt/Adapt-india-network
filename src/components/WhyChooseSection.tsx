@@ -22,7 +22,7 @@ const valuePoints: ValuePoint[] = [
   {
     title: "Deployment is the start, not the finish.",
     description:
-      "Pulling fiber to the building is one problem. Sub-millisecond jitter control, automated carrier failover, and strict 99.99% SLA uptime are what protect your business, and they are where most traditional providers come unstuck.",
+      "Pulling fiber to the building is one problem. Sub-millisecond jitter control, automated carrier failover, and strict 99.5% SLA uptime are what protect your business, and they are where most traditional providers come unstuck.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function WhyChooseSection() {
           <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
             <div className="w-full max-w-[480px] bg-[#18181B] border border-white/[0.08] rounded-[22px] p-8 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
               <blockquote className="m-0 p-0 text-[#E8B923] text-[20px] sm:text-[23px] lg:text-[25px] font-medium leading-[1.42] tracking-[-0.01em]">
-                &ldquo;Getting connected is one problem. Keeping mission-critical branches running at 99.99% uptime across India is a different one, and it is the one that decides whether an enterprise grows.&rdquo;
+                &ldquo;Getting connected is one problem. Keeping mission-critical branches running at 99.5% uptime across India is a different one, and it is the one that decides whether an enterprise grows.&rdquo;
               </blockquote>
             </div>
           </div>
