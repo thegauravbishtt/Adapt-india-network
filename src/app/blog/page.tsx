@@ -3,7 +3,7 @@
 import JsonLd from "@/components/JsonLd";
 import { blogHubSchema } from "@/lib/hubSchemas";
 import UpgradeCTA from "@/components/UpgradeCTA";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -15,21 +15,9 @@ import { seedArticles } from "@/data/articles";
 const DEFAULT_ARTICLES: BlogPost[] = seedArticles;
 
 export default function BlogPage() {
-  const [articles, setArticles] = useState<BlogPost[]>(DEFAULT_ARTICLES);
+  const [articles] = useState<BlogPost[]>(DEFAULT_ARTICLES);
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  useEffect(() => {
-    fetch("/api/admin/blogs")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.blogs && data.blogs.length > 0) {
-          setArticles(data.blogs);
-        }
-      })
-      .catch(() => {
-        // Use default
-      });
-  }, []);
 
   const matchesCategory = (articleCat: string, targetId: string): boolean => {
     const aCat = (articleCat || "").toLowerCase();

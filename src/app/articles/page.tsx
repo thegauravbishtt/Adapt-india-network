@@ -1,7 +1,7 @@
 "use client";
 
 import UpgradeCTA from "@/components/UpgradeCTA";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -11,20 +11,10 @@ import { seedArticles } from "@/data/articles";
 import { Network, ShieldCheck, Mail, Phone } from "lucide-react";
 
 export default function ArticlesPage() {
-  const [articles, setArticles] = useState<BlogPost[]>(seedArticles);
+  const [articles] = useState<BlogPost[]>(seedArticles);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    fetch("/api/admin/blogs")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.blogs && Array.isArray(data.blogs) && data.blogs.length > 0) {
-          setArticles(data.blogs);
-        }
-      })
-      .catch(() => {});
-  }, []);
 
   const categories = [
     "All",
