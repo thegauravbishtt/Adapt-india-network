@@ -372,6 +372,7 @@ export default function ContactPage() {
                           Service Interested In <span className="text-[#E31E24]">*</span>
                         </label>
                         <select
+                          aria-label="Service interested in"
                           name="service"
                           required
                           value={formData.service}

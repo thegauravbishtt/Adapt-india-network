@@ -1885,6 +1885,7 @@ export default function Navbar() {
         <div
           role="dialog"
           aria-modal="true"
+          aria-label="Search the site"
           className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex flex-col items-center justify-start pt-16 sm:pt-24 px-4 sm:px-6 animate-in fade-in duration-150 overflow-y-auto"
           onClick={(e) => {
             if (e.target === e.currentTarget) {

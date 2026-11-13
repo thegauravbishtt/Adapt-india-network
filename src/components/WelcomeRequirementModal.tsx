@@ -20,7 +20,14 @@ export default function WelcomeRequirementModal() {
     requirement: "",
   });
 
-  // Open after 3 seconds on page load
+  /*
+   * When to show the enquiry popup.
+   * Google can rank pages lower when a popup covers the content right after a visitor
+   * arrives from search, especially on mobile. So:
+   *  - never on phones (the WhatsApp "Talk to us" button covers leads there);
+   *  - on larger screens, only after the visitor has read about 60% of the page
+   *    or stayed 30 seconds, and once per visit.
+   */
   useEffect(() => {
     try {
       const closed = sessionStorage.getItem("owlio_modal_closed");
@@ -28,12 +35,26 @@ export default function WelcomeRequirementModal() {
     } catch {
       // Storage unavailable
     }
+    if (window.matchMedia("(max-width: 767px)").matches) return;
 
-    const timer = setTimeout(() => {
+    let opened = false;
+    const open = () => {
+      if (opened) return;
+      opened = true;
       setIsOpen(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
+      cleanup();
+    };
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY / max >= 0.6) open();
+    };
+    const timer = setTimeout(open, 30000);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    const cleanup = () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+    };
+    return cleanup;
   }, []);
 
   // Close on Escape key
@@ -120,6 +141,7 @@ export default function WelcomeRequirementModal() {
       }}
       aria-modal="true"
       role="dialog"
+      aria-label="Share your requirement"
     >
       <div className="relative w-full max-w-md bg-white text-zinc-900 rounded-xl shadow-xl border border-zinc-200 overflow-hidden flex flex-col">
         
@@ -211,6 +233,7 @@ export default function WelcomeRequirementModal() {
                   </label>
                   <div className="flex gap-2">
                     <select
+                      aria-label="Country code"
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleChange}
@@ -314,6 +337,7 @@ export default function WelcomeRequirementModal() {
                     Service Interested In *
                   </label>
                   <select
+                    aria-label="Service interested in"
                     required
                     name="service"
                     value={formData.service}
