@@ -110,12 +110,12 @@ export default function ContactPage() {
             {/* Background Image with Dark Vignette & Gradient Overlays */}
             <div className="absolute inset-0 z-0">
               <img
-                src="/telephone-old.jpg"
+                src="/banner-contact-support.jpg"
                 alt="Contact Adapt India Networks"
-                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
+                className="w-full h-full object-cover object-center scale-100 filter brightness-[0.92] contrast-[1.05]"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10 z-10" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d] via-transparent to-black/45 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0d]/80 via-transparent to-black/25 z-10" />
             </div>
 
             {/* Top Row: Back to Home + Global Divider Line */}
