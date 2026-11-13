@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-10 items-start">
             
             {/* ==================================================== */}
-            {/* COLUMN 1: Products & Partners */}
+            {/* COLUMN 1: Products, Partners & Company */}
             {/* ==================================================== */}
             <div className="flex flex-col gap-9 text-left">
               {/* Top Tier: Products */}
@@ -108,6 +108,40 @@ export default function Footer() {
                   <li>
                     <Link href="/about/who-we-are" className="hover:text-white transition-colors">
                       Strategic Carrier Alliances
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Bottom Tier: Company */}
+              <div>
+                <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
+                  Company
+                </h4>
+                <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
+                  <li>
+                    <Link href="/about" className="hover:text-white transition-colors">
+                      About Hub
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/who-we-are" className="hover:text-white transition-colors">
+                      Who We Are
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/how-we-work" className="hover:text-white transition-colors">
+                      How We Work
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/what-we-do" className="hover:text-white transition-colors">
+                      What We Do
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="hover:text-white transition-colors">
+                      Offices &amp; Contact
                     </Link>
                   </li>
                 </ul>
@@ -217,7 +251,7 @@ export default function Footer() {
             </div>
 
             {/* ==================================================== */}
-            {/* COLUMN 3: Industries & Company */}
+            {/* COLUMN 3: Locations */}
             {/* ==================================================== */}
             <div className="flex flex-col gap-9 text-left">
               {/* Top Tier: Locations (internal links to city landing pages) */}
@@ -309,55 +343,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Business areas (area landing pages, linked site-wide so Google finds them) */}
-              <div>
-                <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
-                  Business Areas
-                </h4>
-                <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
-                  {areaPages.map((a) => (
-                    <li key={`${a.citySlug}-${a.slug}`}>
-                      <Link href={`/locations/${a.citySlug}/${a.slug}/`} className="hover:text-white transition-colors">
-                        Leased Line in {a.area}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Bottom Tier: Company */}
-              <div>
-                <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
-                  Company
-                </h4>
-                <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
-                  <li>
-                    <Link href="/about" className="hover:text-white transition-colors">
-                      About Hub
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about/who-we-are" className="hover:text-white transition-colors">
-                      Who We Are
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about/how-we-work" className="hover:text-white transition-colors">
-                      How We Work
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about/what-we-do" className="hover:text-white transition-colors">
-                      What We Do
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="hover:text-white transition-colors">
-                      Offices &amp; Contact
-                    </Link>
-                  </li>
-                </ul>
-              </div>
             </div>
 
             {/* ==================================================== */}
@@ -418,6 +403,22 @@ export default function Footer() {
               </div>
             </div>
 
+          </div>
+
+          {/* Business areas (area landing pages, linked site-wide so Google finds them) */}
+          <div className="border-t border-zinc-800/80 pt-6 text-left">
+            <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
+              Business Areas
+            </h4>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2.5 text-xs sm:text-[13px] text-zinc-200">
+              {areaPages.map((a) => (
+                <li key={`${a.citySlug}-${a.slug}`}>
+                  <Link href={`/locations/${a.citySlug}/${a.slug}/`} className="hover:text-white transition-colors">
+                    Leased Line in {a.area}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Bottom Bar: Back to Top, Legal Links & "Ask me anything..." Capsule */}
