@@ -183,6 +183,11 @@ export default function Footer() {
                 </h4>
                 <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
                   <li>
+                    <Link href="/blog/point-to-point-leased-line-vs-internet-leased-line/" className="hover:text-white transition-colors">
+                      Point-to-Point vs Internet Leased Line
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/blog/sd-wan-vs-traditional-mpls-enterprise-guide/" className="hover:text-white transition-colors">
                       SD-WAN vs MPLS
                     </Link>

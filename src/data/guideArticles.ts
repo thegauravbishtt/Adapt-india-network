@@ -7,6 +7,124 @@ import type { BlogPost } from "../lib/db";
  */
 export const guideArticles: BlogPost[] = [
   {
+    id: "guide-p2p-vs-ill",
+    slug: "point-to-point-leased-line-vs-internet-leased-line",
+    title: "Point-to-Point Leased Line vs Internet Leased Line: Which Does Your Business Need?",
+    metaTitle: "Point-to-Point Leased Line vs Internet Leased Line",
+    metaDescription:
+      "What a point-to-point leased line does, how it differs from an internet leased line (ILL), when Indian businesses use each, and when you need both.",
+    focusKeyword: "point to point leased line vs internet leased line",
+    category: "Leased Lines",
+    readTime: "7 min read",
+    image: "/service-banners/standard-carrier-ill.jpg",
+    excerpt:
+      "One connects your office to the internet. The other connects two of your own sites to each other. Here is how to tell which one you need, with examples from Indian offices, factories and data centres.",
+    tags: [
+      { text: "LEASED LINE", variant: "dark" },
+      { text: "POINT-TO-POINT", variant: "outline" },
+    ],
+    status: "published",
+    publishedAt: "2026-11-13T09:00:00.000Z",
+    updatedAt: "2026-11-13T09:00:00.000Z",
+    author: "Adapt India Networks",
+    content: `We get this question almost every week, usually from someone who has been quoted for a "leased line" and isn't sure which kind they were quoted for. Both are called leased lines. Both are dedicated fibre circuits with an SLA. But they do completely different jobs, and buying the wrong one is an expensive mistake to undo.
+
+The short version: an **Internet Leased Line (ILL)** connects one of your sites to the internet. A **point-to-point leased line (P2P)** connects two of your own sites to each other, privately, without touching the internet at all.
+
+## What is an Internet Leased Line?
+
+An Internet Leased Line is a dedicated connection from your office to the carrier's internet backbone. The bandwidth is reserved for you, it is the same speed in both directions, and it comes with static public IP addresses and an SLA in writing. It is what you buy when the problem is "our internet is slow or unreliable".
+
+You use an ILL for everything that lives on the internet: email, Microsoft 365 or Google Workspace, cloud ERP, video calls, websites, payment gateways and remote access for staff working from home. If you are comparing it with ordinary broadband, our guide to [leased line vs business broadband](/blog/why-dedicated-internet-leased-lines-matter/) covers that decision.
+
+## What is a point-to-point leased line?
+
+A point-to-point leased line is a private circuit between two fixed locations, for example your head office and your factory, or your office and the data centre where your servers sit. The carrier reserves bandwidth on its network between those two points and nobody else's traffic runs on it.
+
+There is no internet on a P2P link. Data goes in at one end and comes out at the other, like a very long private network cable. Because it never crosses the public internet, it has steady latency, no exposure to internet traffic and nothing to configure in terms of VPNs or public IPs between the sites.
+
+## The difference, side by side
+
+- **What it connects:** ILL connects one site to the internet. P2P connects two of your sites to each other.
+- **Internet access:** ILL gives you internet. P2P gives you none on its own.
+- **Who can reach it:** ILL is reachable from the internet through your public IPs, so it needs a firewall. P2P is a closed link only your two sites use.
+- **IP addresses:** ILL comes with static public IPs. P2P runs on your own private addressing.
+- **Typical use:** ILL for cloud apps, email, video calls and remote access. P2P for ERP traffic to a server room, CCTV from a plant, data centre replication, or voice between two offices.
+- **How it is priced:** ILL mainly by bandwidth and your location. P2P by bandwidth and the distance between the two ends, so a link within the same city usually costs less than one between cities.
+
+## When a point-to-point leased line makes sense
+
+P2P is the right tool when two sites need to behave like one network and the traffic between them matters. A few examples we see often:
+
+- **Factory and head office.** A plant in [IMT Manesar](/locations/gurgaon/imt-manesar/) or [Greater Noida](/locations/noida/greater-noida/) runs on an ERP server at the Delhi or Gurgaon office. A P2P link keeps production entries and dispatch updates flowing without depending on two internet connections and a VPN.
+- **Office and data centre.** Companies with servers in a colocation facility connect their office to the rack with a P2P link, so file servers and databases feel local.
+- **Disaster recovery.** Replicating data between a primary site and a backup site needs steady, private bandwidth. P2P gives exactly that.
+- **CCTV and security.** Large campuses and warehouses send camera feeds back to a central control room over a private link instead of the internet.
+- **Two offices in the same city.** Teams in, say, [Okhla](/locations/delhi/okhla/) and [Nehru Place](/locations/delhi/nehru-place/) that share files, a phone system and a printer can work as one office.
+
+## When an Internet Leased Line is enough
+
+If your sites mostly use cloud software, the link between them matters less. When the ERP, email and files are all in the cloud, each office just needs a good internet connection. An ILL at each site, with a backup on a second network, is usually simpler and cheaper than a private link between them.
+
+The same is true for a single office. If you only have one location, there is nothing to connect point-to-point. You need an ILL.
+
+## When you need both
+
+Many businesses end up with both, and it is a sensible setup:
+
+1. An **ILL at the head office** for internet, with static IPs and a firewall.
+2. A **P2P link from the head office to the factory, warehouse or data centre** for private traffic.
+3. The remote site either uses the head office's internet over the P2P link, or has its own small internet line as a backup.
+
+This keeps sensitive traffic off the internet and gives you one place to manage security. The trade-off is that if the head office line goes down, every site that depends on it loses internet too, which is why we usually recommend a backup at the head office in this design.
+
+## What about MPLS and SD-WAN?
+
+P2P works best between two sites. Once you have three, four or twenty locations, running a separate P2P link between each pair gets complicated. That is where [MPLS](/services/managed-mpls/) (one private network joining all your sites) or [SD-WAN](/services/smartflo-sd-wan/) (one managed network running over internet links) take over. Our guide to [SD-WAN vs MPLS](/blog/sd-wan-vs-traditional-mpls-enterprise-guide/) explains how to choose between those.
+
+A rough rule of thumb from what we see in practice: two sites with heavy traffic between them, choose P2P. Several sites with private traffic, look at MPLS. Several sites mostly using the cloud, look at SD-WAN.
+
+## Questions to ask before you order
+
+- **Where exactly are both ends?** P2P feasibility depends on both addresses. A carrier may reach one building easily and the other not at all.
+- **How much traffic runs between the sites?** Check what actually flows between them: ERP sessions, file transfers, camera feeds, backups. Size the link for that, not for a round number.
+- **Does the remote site need its own internet?** Decide whether it will use the head office's internet over the link or keep a small line of its own.
+- **What happens if the link fails?** For a plant that stops without its ERP, plan a backup path, either a second link on a different route or a VPN over internet as a fallback.
+- **Who supports it?** A P2P link has two ends and sometimes two carriers' teams involved. Having one partner who owns the fault from both ends saves a lot of phone calls.
+
+## How Adapt India Networks helps
+
+We provide [Internet Leased Lines](/services/smart-internet-ill/) and [point-to-point leased lines](/services/point-to-point-leased-line/) on the enterprise networks of Tata Tele Business Services and ACT Fibernet, for businesses in Delhi NCR and across India. We check feasibility at both ends before quoting, suggest the simplest setup that fits how your sites actually work, and stay as the single point of contact after go-live. [Contact us](/contact/) with your addresses and we will tell you what is possible.`,
+    faqs: [
+      {
+        question: "What is the difference between a point-to-point leased line and an internet leased line?",
+        answer:
+          "An internet leased line connects one of your sites to the internet with dedicated bandwidth and static public IPs. A point-to-point leased line is a private circuit between two of your own sites and does not include internet access.",
+      },
+      {
+        question: "Does a point-to-point leased line give internet access?",
+        answer:
+          "No. A P2P link only carries traffic between the two sites it connects. If the remote site needs internet, it either uses the internet line at the main site over the P2P link or has its own internet connection.",
+      },
+      {
+        question: "Is a point-to-point leased line more secure than an internet leased line?",
+        answer:
+          "Traffic on a P2P link never crosses the public internet and is not reachable from outside, so there is less exposure. An internet leased line is reachable through its public IPs and needs a firewall. Both are dedicated circuits.",
+      },
+      {
+        question: "Can a point-to-point leased line connect offices in two different cities?",
+        answer:
+          "Yes. P2P links can run within a city or between cities. Distance is one of the main factors in the cost, so an inter-city link usually costs more than one within the same city.",
+      },
+      {
+        question: "Should we choose point-to-point, MPLS or SD-WAN for multiple branches?",
+        answer:
+          "For two sites with heavy private traffic, a P2P link is usually simplest. For several sites that need a private network, MPLS fits better. For several sites that mainly use cloud applications, SD-WAN over internet links is often the more flexible choice.",
+      },
+    ],
+  },
+
+  {
     id: "guide-leased-line-documents",
     slug: "leased-line-connection-documents-installation-process",
     title: "Leased Line Connection in India: Documents Required and Installation Process",

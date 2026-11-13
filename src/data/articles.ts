@@ -52,7 +52,7 @@ A single connection can still fail if the fibre is cut. For critical sites, the 
 
 How Adapt India Networks can help
 
-We arrange [Internet Leased Lines](/services/smart-internet-ill/) for offices across [Delhi](/locations/delhi/), [Gurgaon](/locations/gurgaon/), [Noida](/locations/noida/), Ghaziabad, Faridabad and the rest of India on the enterprise networks of Tata Tele Business Services and ACT Fibernet. We check which carriers already reach your building, recommend the right bandwidth, and coordinate installation and support. [Contact us](/contact/) for a feasibility check at your address.`,
+We arrange [Internet Leased Lines](/services/smart-internet-ill/) for offices across [Delhi](/locations/delhi/), [Gurgaon](/locations/gurgaon/), [Noida](/locations/noida/), Ghaziabad, Faridabad and the rest of India on the enterprise networks of Tata Tele Business Services and ACT Fibernet. We check which carriers already reach your building, recommend the right bandwidth, and coordinate installation and support. If you also need to connect two of your own sites privately, read our guide to [point-to-point vs internet leased lines](/blog/point-to-point-leased-line-vs-internet-leased-line/). [Contact us](/contact/) for a feasibility check at your address.`,
     faqs: [
       {
         question: "Is a leased line faster than broadband?",
