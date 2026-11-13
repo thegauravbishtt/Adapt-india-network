@@ -77,7 +77,7 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
           }),
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Blog", path: "/blog/" },
+            { name: "Articles", path: "/articles/" },
             { name: post.title, path },
           ]),
           ...(post.faqs?.length ? [faqSchema(post.faqs)] : []),

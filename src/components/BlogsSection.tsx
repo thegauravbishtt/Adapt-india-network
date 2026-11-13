@@ -44,7 +44,7 @@ export default function BlogsSection() {
             Plain-English guides on leased lines, SD-WAN, business voice and keeping your offices online.
           </p>
           <Link
-            href="/blog/"
+            href="/articles/"
             className="hidden lg:inline-flex mt-8 items-center gap-2 self-start border border-white/20 hover:border-[#E31E24] hover:bg-[#E31E24] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
           >
             All articles <ArrowUpRight className="w-4 h-4" />
@@ -112,7 +112,7 @@ export default function BlogsSection() {
 
         {/* Mobile button */}
         <Link
-          href="/blog/"
+          href="/articles/"
           className="lg:hidden inline-flex items-center justify-center gap-2 bg-[#E31E24] hover:bg-[#c9181d] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors"
         >
           All articles <ArrowUpRight className="w-4 h-4" />

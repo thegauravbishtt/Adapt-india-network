@@ -70,7 +70,7 @@ export default function BlogDetailClient({
           <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">
             <div className="flex items-center justify-between gap-4 pb-2.5 sm:pb-3 border-b border-white/20">
               <Link
-                href="/blog"
+                href="/articles/"
                 className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-mono font-bold tracking-widest text-zinc-300 hover:text-white uppercase transition-colors group cursor-pointer"
               >
                 <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
@@ -303,7 +303,7 @@ export default function BlogDetailClient({
                   </h3>
                 </div>
                 <Link
-                  href="/blog"
+                  href="/articles/"
                   className="text-xs font-bold text-zinc-700 hover:text-black hidden sm:inline-flex items-center gap-1"
                 >
                   <span>View all</span>

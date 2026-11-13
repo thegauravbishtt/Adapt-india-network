@@ -213,7 +213,7 @@ export default function Footer() {
               {/* Guides: articles not featured on the homepage, so every post is linked site-wide */}
               <div>
                 <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mb-3.5 tracking-normal">
-                  <Link href="/blog/" className="hover:text-white transition-colors">Guides</Link>
+                  <Link href="/articles/" className="hover:text-white transition-colors">Guides</Link>
                 </h4>
                 <ul className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-zinc-200">
                   <li>
