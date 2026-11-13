@@ -312,7 +312,7 @@ export const areaPages: AreaPage[] = [
           "Yes. We provide SIP trunks and cloud telephony alongside the leased line, so your voice and data come from one partner with one support desk.",
       },
     ],
-    nearbyAreas: ["imt-manesar", "west-delhi", "okhla"],
+    nearbyAreas: ["cyber-city", "golf-course-road", "imt-manesar", "west-delhi"],
   },
   {
     slug: "imt-manesar",
@@ -375,7 +375,7 @@ export const areaPages: AreaPage[] = [
           "Yes. We plan and install managed Wi-Fi for production areas, stores and offices, sized to the campus.",
       },
     ],
-    nearbyAreas: ["udyog-vihar", "west-delhi"],
+    nearbyAreas: ["udyog-vihar", "cyber-city", "golf-course-road"],
   },
   {
     slug: "sector-62-63",
@@ -434,7 +434,7 @@ export const areaPages: AreaPage[] = [
           "Yes, with a point-to-point leased line or SD-WAN, depending on how many sites you have and what runs between them.",
       },
     ],
-    nearbyAreas: ["okhla", "nehru-place"],
+    nearbyAreas: ["greater-noida", "okhla", "nehru-place"],
   },
   {
     slug: "andheri",
@@ -564,7 +564,332 @@ export const areaPages: AreaPage[] = [
           "Yes, with SD-WAN, MPLS or a point-to-point link, managed as one network by our team.",
       },
     ],
-    nearbyAreas: ["andheri"],
+    nearbyAreas: ["electronic-city", "hitec-city", "andheri"],
+  },
+  {
+    slug: "cyber-city",
+    citySlug: "gurgaon",
+    area: "Cyber City",
+    metaTitle: "Leased Line in DLF Cyber City, Gurgaon",
+    metaDescription:
+      "Dual-carrier internet leased line, SD-WAN and MPLS for corporate offices in DLF Cyber City, Cyber Hub and nearby DLF Phase 2 and 3, Gurgaon.",
+    h1: "Internet Leased Line in Cyber City, Gurgaon",
+    intro: [
+      "Cyber City is where many of Gurgaon's corporate offices, regional headquarters and global teams sit. Offices here usually already have one internet line. What they ask us for is a second line on a different carrier, a private link to branches or a data centre, or a cleaner way to manage connections across several floors and cities.",
+      "We provide Internet Leased Lines, SD-WAN and MPLS in DLF Cyber City and the surrounding DLF phases on the networks of Tata Tele Business Services and ACT Fibernet Enterprise, with one team handling orders, changes and faults.",
+    ],
+    localities: [
+      "DLF Cyber City",
+      "Cyber Hub",
+      "DLF Phase 2",
+      "DLF Phase 3",
+      "Udyog Vihar Phase 4 and 5",
+      "NH-48 office corridor",
+      "Sikanderpur",
+      "MG Road Gurgaon",
+    ],
+    siteNotes: [
+      {
+        title: "Most towers have several carriers",
+        text: "Large office towers here usually have fibre from more than one carrier already inside, which makes a main and backup line on different networks practical. We confirm which carriers are present in your tower before quoting.",
+      },
+      {
+        title: "Building approvals",
+        text: "Facility management teams in these towers have set processes for new circuits: work permits, access times and cable routes through the riser. We handle that paperwork with the carrier so your admin team doesn't have to chase it.",
+      },
+    ],
+    segments: [
+      {
+        title: "Regional and corporate headquarters",
+        text: "Head offices connect to branches, plants and data centres across India. MPLS or SD-WAN links them as one network, with internet breakout where it makes sense.",
+      },
+      {
+        title: "Global teams and capability centres",
+        text: "Teams working with overseas colleagues need dual-carrier internet and steady video calls through the evening.",
+      },
+      {
+        title: "Consulting and professional firms",
+        text: "Floors with many people on video calls and cloud tools need symmetrical bandwidth, managed Wi-Fi and a backup that switches automatically.",
+      },
+    ],
+    faqs: [
+      {
+        question: "We already have a leased line in Cyber City. Can you add a second one?",
+        answer:
+          "Yes. We can add a line on a different carrier and set up automatic failover between the two, so one carrier's fault doesn't take the office offline.",
+      },
+      {
+        question: "Can you connect our Cyber City office to branches in other cities?",
+        answer:
+          "Yes, with SD-WAN, MPLS or a combination of both, managed as one network. We check feasibility at each branch address.",
+      },
+      {
+        question: "Do you handle the building's approval process for new circuits?",
+        answer:
+          "We coordinate with the carrier and your facility management team on work permits, access and cable routes, so the installation follows the building's rules.",
+      },
+    ],
+    nearbyAreas: ["golf-course-road", "udyog-vihar", "imt-manesar"],
+  },
+  {
+    slug: "golf-course-road",
+    citySlug: "gurgaon",
+    area: "Golf Course Road",
+    metaTitle: "Leased Line on Golf Course Road & Sohna Road",
+    metaDescription:
+      "Internet leased line and SD-WAN for offices on Golf Course Road, Golf Course Extension and Sohna Road, Gurgaon. Building feasibility checked before quoting.",
+    h1: "Internet Leased Line on Golf Course Road and Sohna Road, Gurgaon",
+    intro: [
+      "Golf Course Road, Golf Course Extension Road and Sohna Road have filled with office towers, co-working spaces and business centres over the last decade. Companies here range from startups on a single floor to large teams across several, and many of them moved in from shared broadband and now need something they can depend on.",
+      "We provide dedicated Internet Leased Lines, SD-WAN and SIP trunks along these corridors through Tata Tele Business Services and ACT Fibernet Enterprise.",
+    ],
+    localities: [
+      "Golf Course Road",
+      "Golf Course Extension Road",
+      "Sohna Road",
+      "Sector 42 and 43",
+      "Sector 48 and 49",
+      "Sector 53 and 54",
+      "Sector 65 and 66",
+      "Badshahpur",
+    ],
+    siteNotes: [
+      {
+        title: "Newer towers",
+        text: "Many towers along these roads already have enterprise fibre inside, which usually makes connecting quicker. We confirm which carriers are present before quoting.",
+      },
+      {
+        title: "Co-working and business centres",
+        text: "If you are in a co-working space, a dedicated line for your team is often possible with the operator's approval. We check this with the building first.",
+      },
+    ],
+    segments: [
+      {
+        title: "Growing companies moving off broadband",
+        text: "Teams that have outgrown shared broadband can start with a modest leased line and upgrade the speed later on the same circuit.",
+      },
+      {
+        title: "Sales and support teams",
+        text: "Calling teams need clear voice. A leased line with SIP trunks or cloud telephony keeps calls steady during busy hours.",
+      },
+      {
+        title: "Multi-floor offices",
+        text: "Larger offices combine a leased line, a backup on a second network and managed Wi-Fi across every floor.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines on Golf Course Extension Road and Sohna Road?",
+        answer:
+          "Yes, along with Golf Course Road and nearby sectors like 42, 43, 48, 49, 53, 54, 65 and 66. We check which carriers reach your building and send options.",
+      },
+      {
+        question: "Can we get a dedicated line in a co-working space?",
+        answer:
+          "Often, yes. It needs the operator's approval and a route for the fibre to your cabin or floor. We check both before quoting.",
+      },
+      {
+        question: "Can you also set up office phone lines?",
+        answer:
+          "Yes. We provide SIP trunks and cloud telephony along with the internet line, with one point of contact for both.",
+      },
+    ],
+    nearbyAreas: ["cyber-city", "udyog-vihar"],
+  },
+  {
+    slug: "greater-noida",
+    citySlug: "noida",
+    area: "Greater Noida",
+    metaTitle: "Leased Line in Greater Noida for Factories",
+    metaDescription:
+      "Internet leased line, point-to-point links and SD-WAN for factories, warehouses, colleges and offices in Greater Noida, Ecotech, Kasna and Knowledge Park.",
+    h1: "Internet Leased Line in Greater Noida",
+    intro: [
+      "Greater Noida combines large industrial areas, warehouses, colleges and a growing number of offices. Factories in the Ecotech sectors and Kasna run production and dispatch systems all day, while colleges and institutes in Knowledge Park need internet for thousands of students at once.",
+      "We provide Internet Leased Lines, point-to-point links and SD-WAN in Greater Noida through Tata Tele Business Services and ACT Fibernet Enterprise, with campus Wi-Fi where needed.",
+    ],
+    localities: [
+      "Ecotech 1, 2 and 3",
+      "Kasna",
+      "Knowledge Park",
+      "Udyog Vihar Greater Noida",
+      "Surajpur",
+      "Alpha and Beta sectors",
+      "Pari Chowk",
+      "Greater Noida West",
+    ],
+    siteNotes: [
+      {
+        title: "Large plots and campuses",
+        text: "Factories and colleges here are spread out. The internet line reaches the gate, but production halls, hostels and blocks need wired links or Wi-Fi to share it.",
+      },
+      {
+        title: "Distance from the main fibre",
+        text: "Some industrial plots sit well away from the nearest carrier point. We check the route during the survey so you know what the carrier needs to lay.",
+      },
+    ],
+    segments: [
+      {
+        title: "Factories and warehouses",
+        text: "ERP, dispatch, supplier portals and CCTV need a reliable line, often with a 4G/5G backup where a second fibre isn't available.",
+      },
+      {
+        title: "Colleges and institutes",
+        text: "Campuses need high bandwidth, managed Wi-Fi across buildings and controls on what students can access.",
+      },
+      {
+        title: "Offices linked to Noida or Delhi",
+        text: "A point-to-point link or SD-WAN joins a Greater Noida plant with a head office in Noida, Delhi or Gurgaon.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines in Ecotech and Kasna?",
+        answer:
+          "Yes, along with Knowledge Park, Surajpur and the Alpha and Beta sectors. Feasibility depends on the plot, so we check your address first.",
+      },
+      {
+        question: "Can you set up Wi-Fi across our college campus?",
+        answer:
+          "Yes. We plan and install managed campus Wi-Fi for academic blocks, hostels and common areas, along with the internet line.",
+      },
+      {
+        question: "Can you connect our Greater Noida factory to our Noida office?",
+        answer:
+          "Yes, with a point-to-point leased line for a private link, or SD-WAN if more sites are involved.",
+      },
+    ],
+    nearbyAreas: ["sector-62-63", "okhla"],
+  },
+  {
+    slug: "electronic-city",
+    citySlug: "bengaluru",
+    area: "Electronic City",
+    metaTitle: "Leased Line in Electronic City, Bengaluru",
+    metaDescription:
+      "Internet leased line, SD-WAN and dual-carrier internet for IT offices and factories in Electronic City Phase 1 and 2, Hosur Road and Bommasandra, Bengaluru.",
+    h1: "Internet Leased Line in Electronic City, Bengaluru",
+    intro: [
+      "Electronic City is one of Bengaluru's oldest tech hubs, with large IT campuses, product companies and support centres, plus manufacturing units in the nearby Bommasandra and Jigani industrial areas. Teams here work across time zones and expect the internet to hold up at night as well as during the day.",
+      "We provide Internet Leased Lines, SD-WAN and dual-carrier setups in Electronic City through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
+    ],
+    localities: [
+      "Electronic City Phase 1",
+      "Electronic City Phase 2",
+      "Hosur Road",
+      "Bommasandra",
+      "Jigani",
+      "Hebbagodi",
+      "Begur",
+      "Bommanahalli",
+    ],
+    siteNotes: [
+      {
+        title: "IT campuses",
+        text: "Large campuses usually have several carriers available, which makes a main and backup line on different networks practical.",
+      },
+      {
+        title: "Industrial units",
+        text: "Factories in Bommasandra and Jigani may need a fibre run from the road. We check the route during the survey.",
+      },
+    ],
+    segments: [
+      {
+        title: "IT services and product teams",
+        text: "Development, testing and support teams need symmetrical bandwidth, static IPs and steady VPN access.",
+      },
+      {
+        title: "Support and operations centres",
+        text: "Round-the-clock teams need a backup that switches automatically, so a night-time fibre cut doesn't stop work.",
+      },
+      {
+        title: "Manufacturers",
+        text: "Electronics and engineering units run ERP and supplier systems that depend on a reliable line.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines in Electronic City Phase 1 and 2?",
+        answer:
+          "Yes, along with Hosur Road, Bommasandra, Jigani and nearby areas. We check which carriers reach your building before quoting.",
+      },
+      {
+        question: "Can you connect our Electronic City office with our Whitefield office?",
+        answer:
+          "Yes, with a point-to-point leased line or SD-WAN, depending on what runs between the two sites.",
+      },
+      {
+        question: "Can we keep our existing line and add a backup?",
+        answer:
+          "Yes. We can add a line on a different carrier or a 4G/5G backup, with automatic failover.",
+      },
+    ],
+    nearbyAreas: ["whitefield", "hitec-city"],
+  },
+  {
+    slug: "hitec-city",
+    citySlug: "hyderabad",
+    area: "HITEC City",
+    metaTitle: "Leased Line in HITEC City & Gachibowli, Hyderabad",
+    metaDescription:
+      "Internet leased line, SD-WAN and dual-carrier internet for offices in HITEC City, Madhapur, Gachibowli, Kondapur and the Financial District, Hyderabad.",
+    h1: "Internet Leased Line in HITEC City, Hyderabad",
+    intro: [
+      "HITEC City, Madhapur, Gachibowli and the Financial District make up Hyderabad's main business corridor, with global technology companies, capability centres, banks and a growing number of startups. Most of the work here depends on cloud platforms and video calls with teams in other countries.",
+      "We provide Internet Leased Lines, SD-WAN and dual-carrier internet across this corridor through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
+    ],
+    localities: [
+      "HITEC City",
+      "Madhapur",
+      "Gachibowli",
+      "Kondapur",
+      "Financial District",
+      "Nanakramguda",
+      "Kokapet",
+      "Raidurg",
+    ],
+    siteNotes: [
+      {
+        title: "Tech parks and towers",
+        text: "Most large buildings in this corridor have fibre from several carriers, so a main and backup line on different networks is usually practical.",
+      },
+      {
+        title: "New buildings in Kokapet and the Financial District",
+        text: "Newer areas are still being built out. We confirm what each carrier can deliver at your exact address before quoting.",
+      },
+    ],
+    segments: [
+      {
+        title: "Capability centres and IT companies",
+        text: "Teams working with global offices need dual-carrier internet, static IPs and private links back to their parent networks.",
+      },
+      {
+        title: "Banking and financial firms",
+        text: "Offices in the Financial District need secure links, a firewall and a backup that switches automatically.",
+      },
+      {
+        title: "Startups",
+        text: "Smaller teams can start with a modest leased line and add a backup and more speed as they grow.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines in HITEC City and Gachibowli?",
+        answer:
+          "Yes, along with Madhapur, Kondapur, the Financial District, Nanakramguda and Kokapet. We check which carriers reach your building first.",
+      },
+      {
+        question: "Can we have two lines from different carriers in Hyderabad?",
+        answer:
+          "Yes. Where your building has more than one carrier, we set up a main and backup line on different networks with automatic failover.",
+      },
+      {
+        question: "Can you connect our Hyderabad office with offices in Bengaluru or Delhi?",
+        answer:
+          "Yes, with SD-WAN or MPLS managed as one network, with feasibility checked at each address.",
+      },
+    ],
+    nearbyAreas: ["electronic-city", "whitefield"],
   },
 ];
 
