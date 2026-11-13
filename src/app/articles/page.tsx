@@ -43,7 +43,7 @@ export default function ArticlesPage() {
         <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
           <div className="absolute inset-0 z-0">
             <img
-              src="/banner-network-matrix.jpg"
+              src="/banner-articles-enterprise.jpg"
               alt="Adapt India Networks Articles"
               className="w-full h-full object-cover object-center scale-100 filter brightness-[0.70] contrast-[1.10]"
             />
