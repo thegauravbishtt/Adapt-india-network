@@ -9,10 +9,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           mkdir -p photo-candidates
-          for id in CktZjrBaM8s Ad2TAPEhliE aWslrFhs1w4 xQydhL4LmlA; do
-            img=$(curl -sSL -A "Mozilla/5.0" "https://unsplash.com/photos/$id" | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
-            echo "$id -> $img"
-            [ -n "$img" ] && curl -sSL --fail -o "photo-candidates/$id.jpg" "$img?w=2000&q=85&fm=jpg" || echo "failed $id"
+          for id in 935979 7128952 442150 19226354 7129713; do
+            curl -sSL --fail -A "Mozilla/5.0" -o "photo-candidates/$id.jpg" "https://images.pexels.com/photos/$id/pexels-photo-$id.jpeg?auto=compress&cs=tinysrgb&w=2000" || echo "failed $id"
           done
           ls -la photo-candidates
           git config user.name "github-actions" && git config user.email "actions@github.com"
