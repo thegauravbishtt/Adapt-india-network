@@ -100,9 +100,9 @@ export const cityPages: CityPage[] = [
     city: "Gurgaon",
     altNames: ["Gurugram"],
     state: "Haryana",
-    metaTitle: "Leased Line Provider in Gurgaon (Gurugram)",
+    metaTitle: "Internet Leased Line in Gurgaon | Leased Line Providers",
     metaDescription:
-      "Internet Leased Line, SD-WAN and MPLS for offices in Gurgaon: Cyber City, Golf Course Road, Udyog Vihar, Sohna Road & Manesar. Tata Tele & ACT partner.",
+      "Leased line internet in Gurgaon (Gurugram) for offices in Cyber City, Golf Course Road, Udyog Vihar, Sohna Road & Manesar, on Tata Tele and ACT fibre.",
     h1: "Internet Leased Line Provider in Gurgaon (Gurugram)",
     intro: [
       "Gurgaon is home to corporate headquarters, IT and ITeS companies, startups and a large manufacturing belt stretching to Manesar. Adapt India Networks supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to these offices and plants, using the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
@@ -181,7 +181,7 @@ export const cityPages: CityPage[] = [
     city: "Noida",
     altNames: ["Greater Noida", "Noida Extension"],
     state: "Uttar Pradesh",
-    metaTitle: "Leased Line Provider in Noida & Greater Noida",
+    metaTitle: "Leased Line Provider in Noida | Internet Leased Line",
     metaDescription:
       "Dedicated leased line, SD-WAN and business broadband for offices, IT parks and factories in Noida, Greater Noida & Noida Expressway. Get a feasibility check.",
     h1: "Internet Leased Line Provider in Noida & Greater Noida",
@@ -442,7 +442,7 @@ export const cityPages: CityPage[] = [
     city: "Mumbai",
     altNames: ["Navi Mumbai", "Thane"],
     state: "Maharashtra",
-    metaTitle: "Leased Line & SD-WAN Services in Mumbai",
+    metaTitle: "SD-WAN Services & Leased Line Provider in Mumbai",
     metaDescription:
       "Internet Leased Line, SD-WAN services and MPLS for businesses in Mumbai, Navi Mumbai & Thane: BKC, Lower Parel, Andheri, Powai & MIDC. Get a feasibility check.",
     h1: "Internet Leased Line & SD-WAN Services in Mumbai",
@@ -512,9 +512,9 @@ export const cityPages: CityPage[] = [
     city: "Bengaluru",
     altNames: ["Bangalore"],
     state: "Karnataka",
-    metaTitle: "Leased Line Provider in Bengaluru (Bangalore)",
+    metaTitle: "Internet Leased Line in Bangalore | Bengaluru Provider",
     metaDescription:
-      "Internet Leased Line, SD-WAN and MPLS for offices in Bengaluru (Bangalore): Whitefield, Outer Ring Road, Electronic City, Koramangala & Manyata Tech Park.",
+      "Internet leased line in Bangalore (Bengaluru), plus SD-WAN and MPLS, for offices in Whitefield, Outer Ring Road, Electronic City, Koramangala & Manyata.",
     h1: "Internet Leased Line Provider in Bengaluru (Bangalore)",
     intro: [
       "Bengaluru is India's technology hub, with software companies, global capability centres, startups and R&D labs spread from Whitefield to Electronic City. Adapt India Networks supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to these teams through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",

@@ -441,12 +441,12 @@ export const businessComm: SubService[] = [
     slug: "whatsapp-business-platform",
     name: "WhatsApp Business Platform",
     h1: "WhatsApp Business API & Platform Services",
-    metaTitle: "WhatsApp Business API & Services in India",
+    metaTitle: "WhatsApp Business Services & API Solutions in India",
     parent: P,
     group: "Outbound Communications",
     headline: "Talk to customers on WhatsApp at scale, with your verified business profile",
     summary:
-      "WhatsApp Business API for Indian businesses: order updates, reminders, support chats and campaigns from one business number, with a shared inbox and CRM integration.",
+      "WhatsApp Business services and API solutions for Indian businesses: order updates, reminders, support chats and campaigns from one business number, with a shared inbox and CRM integration.",
     intro: [
       "The WhatsApp Business Platform (often called the WhatsApp Business API) lets a business send updates and handle customer chats on WhatsApp from its own number, connected to its systems instead of a single phone. It is the version banks, hospitals, e-commerce brands and schools use when one phone with the WhatsApp Business app is no longer enough.",
       "Several agents can answer from the same number, messages can be triggered from your CRM, order system or billing software, and simple questions can be answered by a chatbot at any hour. Customers get updates on the app they already open many times a day, which is why reminders and delivery updates on WhatsApp tend to get read.",

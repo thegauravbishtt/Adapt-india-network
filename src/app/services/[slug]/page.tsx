@@ -50,10 +50,10 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     serviceType: "Managed Office Connectivity",
   },
   "managed-mpls": {
-    title: "MPLS Service Provider in India | Managed MPLS VPN",
-    h1: "MPLS VPN Service Provider in India",
+    title: "MPLS Service Providers in India | Managed MPLS Services",
+    h1: "Managed MPLS Service Provider in India",
     description:
-      "MPLS service provider for Indian businesses: private MPLS VPN linking branches, plants and data centres across India, with traffic priority and 24/7 support.",
+      "Managed MPLS services for Indian businesses: a private MPLS VPN network linking branches, plants and data centres, with traffic priority and 24/7 support.",
     serviceType: "MPLS VPN",
   },
   "business-communications": {
