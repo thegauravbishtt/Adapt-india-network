@@ -9,7 +9,6 @@ import EndToEndServicesSection from "../components/EndToEndServicesSection";
 import DigitalTransformationSection from "../components/DigitalTransformationSection";
 import EnterpriseSolutionsTabsSection from "../components/EnterpriseSolutionsTabsSection";
 import BlogsSection from "../components/BlogsSection";
-import HomeAreasSection from "../components/HomeAreasSection";
 import ProvenResultsReviewsSection from "../components/ProvenResultsReviewsSection";
 import HomeFAQSection from "../components/HomeFAQSection";
 import BuildFoundationCTA from "../components/BuildFoundationCTA";
@@ -31,7 +30,6 @@ export default function Home() {
           <DigitalTransformationSection />
           <EnterpriseSolutionsTabsSection />
           <EndToEndServicesSection />
-          <HomeAreasSection />
           <BlogsSection />
           <ProvenResultsReviewsSection />
           <HomeFAQSection />
