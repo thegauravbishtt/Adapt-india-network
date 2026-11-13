@@ -1,0 +1,17 @@
+name: Fetch stock photos (temporary)
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p photo-candidates
+          for id in CktZjrBaM8s Ad2TAPEhliE aWslrFhs1w4 xQydhL4LmlA; do
+            curl -sSL --fail -o "photo-candidates/$id.jpg" "https://unsplash.com/photos/$id/download?force=true&w=2000" || echo "failed $id"
+          done
+          ls -la photo-candidates
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          git add photo-candidates && git commit -m "chore: photo candidates [static-build]" && git push
