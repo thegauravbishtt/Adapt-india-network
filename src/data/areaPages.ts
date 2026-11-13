@@ -499,7 +499,7 @@ export const areaPages: AreaPage[] = [
           "Yes. SD-WAN or MPLS can link your Mumbai office with branches anywhere in India, managed as one network.",
       },
     ],
-    nearbyAreas: ["whitefield"],
+    nearbyAreas: ["bkc-lower-parel", "hinjewadi", "whitefield"],
   },
   {
     slug: "whitefield",
@@ -889,7 +889,267 @@ export const areaPages: AreaPage[] = [
           "Yes, with SD-WAN or MPLS managed as one network, with feasibility checked at each address.",
       },
     ],
-    nearbyAreas: ["electronic-city", "whitefield"],
+    nearbyAreas: ["electronic-city", "omr", "whitefield"],
+  },
+  {
+    slug: "bkc-lower-parel",
+    citySlug: "mumbai",
+    area: "BKC & Lower Parel",
+    metaTitle: "Leased Line in BKC & Lower Parel, Mumbai",
+    metaDescription:
+      "Dual-carrier internet leased line, MPLS and SD-WAN for offices in Bandra Kurla Complex, Lower Parel, Worli and Nariman Point, Mumbai.",
+    h1: "Internet Leased Line in BKC and Lower Parel, Mumbai",
+    intro: [
+      "Bandra Kurla Complex, Lower Parel and Worli hold many of Mumbai's bank, finance, media and corporate offices, while Nariman Point and Fort still house older head offices. Businesses here depend on trading platforms, payment systems and video calls, so they expect a backup line that takes over on its own, not a phone call to the ISP.",
+      "We provide Internet Leased Lines, MPLS and SD-WAN across these business districts through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
+    ],
+    localities: [
+      "Bandra Kurla Complex (BKC)",
+      "Lower Parel",
+      "Worli",
+      "Prabhadevi",
+      "Nariman Point",
+      "Fort",
+      "Kalina",
+      "Santacruz East",
+    ],
+    siteNotes: [
+      {
+        title: "Newer towers vs older head offices",
+        text: "Towers in BKC and Lower Parel usually have several carriers inside. Older buildings around Nariman Point and Fort may need more work to bring in a second carrier, so we check each address.",
+      },
+      {
+        title: "Monsoon planning",
+        text: "Flooding and digging in the rains can cut fibre. For critical offices we keep the backup on a different carrier and route, or on 4G/5G, with automatic failover.",
+      },
+    ],
+    segments: [
+      {
+        title: "Banks, NBFCs and financial firms",
+        text: "Branches and head offices need private links to data centres, firewalls and a backup that switches without anyone noticing.",
+      },
+      {
+        title: "Media and agencies",
+        text: "Large files go out all day, so upload speed matters as much as download.",
+      },
+      {
+        title: "Corporate headquarters",
+        text: "Head offices connect branches across India with MPLS or SD-WAN, managed as one network.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines in BKC and Lower Parel?",
+        answer:
+          "Yes, along with Worli, Prabhadevi, Nariman Point, Fort and Kalina. We confirm which carriers can deliver at your building before quoting.",
+      },
+      {
+        question: "Can you add a second carrier to our existing Mumbai office line?",
+        answer:
+          "Yes. We add a line on a different carrier and set up automatic failover, so a fault on one network doesn't take the office offline.",
+      },
+      {
+        question: "Can you connect our Mumbai office to our data centre?",
+        answer:
+          "Yes, with a point-to-point leased line or MPLS, depending on how many sites need to join.",
+      },
+    ],
+    nearbyAreas: ["andheri"],
+  },
+  {
+    slug: "hinjewadi",
+    citySlug: "pune",
+    area: "Hinjewadi",
+    metaTitle: "Leased Line in Hinjewadi & Kharadi, Pune",
+    metaDescription:
+      "Internet leased line, SD-WAN and dual-carrier internet for IT offices in Hinjewadi Phase 1 to 3, Baner, Kharadi and Magarpatta, Pune.",
+    h1: "Internet Leased Line in Hinjewadi, Pune",
+    intro: [
+      "Hinjewadi's Rajiv Gandhi Infotech Park is Pune's largest IT hub, with Kharadi, Magarpatta and Baner close behind. Software companies, support centres and engineering teams here work with clients around the world, so the internet has to hold up through late-night calls as well as office hours.",
+      "We provide Internet Leased Lines, SD-WAN and dual-carrier internet in Hinjewadi and Pune's other business areas through Tata Tele Business Services and ACT Fibernet Enterprise.",
+    ],
+    localities: [
+      "Hinjewadi Phase 1",
+      "Hinjewadi Phase 2",
+      "Hinjewadi Phase 3",
+      "Wakad",
+      "Baner",
+      "Balewadi",
+      "Kharadi",
+      "Magarpatta",
+    ],
+    siteNotes: [
+      {
+        title: "IT parks",
+        text: "Large IT parks usually have more than one carrier, which makes a main and backup line on different networks practical.",
+      },
+      {
+        title: "Standalone buildings",
+        text: "Offices in Wakad and Baner outside the big parks may need a fresh fibre run. We check feasibility at your address first.",
+      },
+    ],
+    segments: [
+      {
+        title: "Software and IT services",
+        text: "Developers and support teams need symmetrical bandwidth, static IPs and steady VPN access.",
+      },
+      {
+        title: "Engineering and automotive design",
+        text: "Pune's engineering teams move large design files and connect to plants in Chakan and beyond.",
+      },
+      {
+        title: "Startups",
+        text: "Smaller teams can start with a modest leased line and upgrade later on the same circuit.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines in Hinjewadi Phase 1, 2 and 3?",
+        answer:
+          "Yes, along with Wakad, Baner, Balewadi, Kharadi and Magarpatta. We check which carriers reach your building and send options.",
+      },
+      {
+        question: "Can you connect our Pune office to our plant or another city?",
+        answer:
+          "Yes, with a point-to-point link, SD-WAN or MPLS, depending on the number of sites and what runs between them.",
+      },
+      {
+        question: "Can we keep our current line and add a backup?",
+        answer:
+          "Yes. We can add a line on a different carrier or a 4G/5G backup, with automatic failover.",
+      },
+    ],
+    nearbyAreas: ["andheri", "whitefield"],
+  },
+  {
+    slug: "omr",
+    citySlug: "chennai",
+    area: "OMR",
+    metaTitle: "Leased Line on OMR & Guindy, Chennai",
+    metaDescription:
+      "Internet leased line, SD-WAN and dual-carrier internet for offices on OMR (IT Corridor), Sholinganallur, Perungudi, Taramani and Guindy, Chennai.",
+    h1: "Internet Leased Line on OMR, Chennai",
+    intro: [
+      "Old Mahabalipuram Road, Chennai's IT Corridor, runs past Perungudi, Thoraipakkam, Sholinganallur and Siruseri, with tech parks and offices along most of its length. Guindy and Taramani add more corporate offices closer to the city. Teams here work across time zones and expect a connection that stays up through monsoon rains and late-night calls.",
+      "We provide Internet Leased Lines, SD-WAN and dual-carrier setups along OMR and in Guindy through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
+    ],
+    localities: [
+      "Perungudi",
+      "Thoraipakkam",
+      "Sholinganallur",
+      "Navalur",
+      "Siruseri",
+      "Taramani",
+      "Guindy",
+      "Velachery",
+    ],
+    siteNotes: [
+      {
+        title: "Tech parks along the corridor",
+        text: "Large parks usually have several carriers, so a main and backup line on different networks is practical.",
+      },
+      {
+        title: "Plan the backup for the rains",
+        text: "Heavy rain can affect fibre routes. For important offices we put the backup on a different carrier or on 4G/5G, with automatic failover.",
+      },
+    ],
+    segments: [
+      {
+        title: "IT services and capability centres",
+        text: "Global teams need dual-carrier internet, static IPs and private links to their parent networks.",
+      },
+      {
+        title: "Support and operations centres",
+        text: "Round-the-clock teams need a backup that switches on its own, so a night-time fault doesn't stop work.",
+      },
+      {
+        title: "Corporate offices in Guindy",
+        text: "Head offices connect branches across Tamil Nadu and India with SD-WAN or MPLS.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines along OMR?",
+        answer:
+          "Yes, from Perungudi and Thoraipakkam to Sholinganallur, Navalur and Siruseri, plus Taramani and Guindy. We check which carriers reach your building first.",
+      },
+      {
+        question: "How do you keep our Chennai office online during the monsoon?",
+        answer:
+          "We put the backup on a different carrier or route, or on 4G/5G, and use automatic failover so traffic moves to the working link.",
+      },
+      {
+        question: "Can you connect our Chennai office with offices in other cities?",
+        answer:
+          "Yes, with SD-WAN or MPLS managed as one network, with feasibility checked at each address.",
+      },
+    ],
+    nearbyAreas: ["electronic-city", "hitec-city"],
+  },
+  {
+    slug: "salt-lake-sector-v",
+    citySlug: "kolkata",
+    area: "Salt Lake Sector V",
+    metaTitle: "Leased Line in Salt Lake Sector V, Kolkata",
+    metaDescription:
+      "Internet leased line, SD-WAN and MPLS for IT offices and businesses in Salt Lake Sector V, New Town, Rajarhat and Park Street, Kolkata.",
+    h1: "Internet Leased Line in Salt Lake Sector V, Kolkata",
+    intro: [
+      "Salt Lake Sector V is Kolkata's main IT and business hub, with New Town and Rajarhat growing alongside it. IT companies, support centres and the regional offices of national businesses work from here, while many older head offices remain around Park Street and Camac Street.",
+      "We provide Internet Leased Lines, SD-WAN and MPLS in Sector V and across Kolkata's business areas through Tata Tele Business Services and ACT Fibernet Enterprise.",
+    ],
+    localities: [
+      "Salt Lake Sector V",
+      "New Town",
+      "Rajarhat",
+      "Salt Lake Sector I and II",
+      "Park Street",
+      "Camac Street",
+      "Esplanade",
+      "EM Bypass",
+    ],
+    siteNotes: [
+      {
+        title: "Office complexes in Sector V and New Town",
+        text: "Most office complexes here have fibre from more than one carrier, which makes a dual-carrier setup practical.",
+      },
+      {
+        title: "Older buildings in central Kolkata",
+        text: "Buildings around Park Street and Camac Street may need landlord approval and a new fibre run. We check this before quoting.",
+      },
+    ],
+    segments: [
+      {
+        title: "IT and support centres",
+        text: "Teams need symmetrical bandwidth, static IPs and a backup that switches on its own.",
+      },
+      {
+        title: "Regional offices",
+        text: "Eastern India offices connect to head offices and branches with SD-WAN or MPLS.",
+      },
+      {
+        title: "Businesses moving off broadband",
+        text: "Growing offices can start with a modest leased line and add speed as they grow.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide leased lines in Salt Lake Sector V?",
+        answer:
+          "Yes, along with New Town, Rajarhat, Park Street and Camac Street. We check which carriers reach your building and send options.",
+      },
+      {
+        question: "Can you connect our Kolkata office with branches in eastern India?",
+        answer:
+          "Yes, with SD-WAN or MPLS managed as one network, with feasibility checked at each branch address.",
+      },
+      {
+        question: "Can we have two internet lines from different carriers?",
+        answer:
+          "Yes. Where your building has more than one carrier, we set up a main and backup line on different networks with automatic failover.",
+      },
+    ],
+    nearbyAreas: ["hitec-city", "omr"],
   },
 ];
 

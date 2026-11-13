@@ -10,6 +10,7 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import { LanguageProvider } from "../../../context/LanguageContext";
 import { ServiceDetail } from "../../../data/servicesData";
+import { areaPages } from "../../../data/areaPages";
 
 interface ServiceDetailClientProps {
   service: ServiceDetail;
@@ -946,6 +947,19 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
                       className="block rounded-lg border border-gray-200 px-3 py-2.5 text-sm text-zinc-800 hover:border-[#E31E24] hover:text-[#E31E24] transition-colors"
                     >
                       {c.city}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <h3 className="mt-8 text-sm font-semibold text-zinc-900">Business areas</h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {areaPages.map((a) => (
+                  <li key={`${a.citySlug}-${a.slug}`}>
+                    <Link
+                      href={`/locations/${a.citySlug}/${a.slug}/`}
+                      className="inline-block rounded-full bg-gray-100 px-3 py-1.5 text-xs sm:text-sm text-zinc-800 hover:bg-[#E31E24] hover:text-white transition-colors"
+                    >
+                      {a.area}
                     </Link>
                   </li>
                 ))}
