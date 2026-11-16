@@ -9,6 +9,7 @@ import Footer from "../../components/Footer";
 import { LanguageProvider } from "../../context/LanguageContext";
 import { hubServices, hubServiceHref } from "../../data/hubServices";
 import Link from "next/link";
+import AllServicesList from "../../components/AllServicesList";
 
 export default function ServicesPage() {
   return (
@@ -414,6 +415,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Global Newsletter & Footer */}
+        <AllServicesList />
         <UpgradeCTA title="Not sure which service fits?" text="Tell us how many sites you have and what you run on the network. We'll suggest the right setup, not the most expensive one." />
         <Footer />
       </div>

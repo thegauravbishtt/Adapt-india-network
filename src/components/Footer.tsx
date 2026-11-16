@@ -442,6 +442,8 @@ export default function Footer() {
               <span className="text-zinc-500 text-[11px]">
                 © {new Date().getFullYear()} Adapt India Networks
               </span>
+              <Link href="/privacy-policy/" className="text-zinc-500 text-[11px] hover:text-white">Privacy Policy</Link>
+              <Link href="/terms-and-conditions/" className="text-zinc-500 text-[11px] hover:text-white">Terms</Link>
             </div>
 
             {/* Right: Floating "Ask me anything..." Capsule (Matching reference screenshot exactly) */}
