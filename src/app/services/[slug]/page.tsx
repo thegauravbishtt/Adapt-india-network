@@ -5,7 +5,7 @@ import { allServices, getServiceBySlug } from "../../../data/servicesData";
 import { telecomServices } from "../../../data/telecomServicesData";
 import ServiceDetailClient from "./ServiceDetailClient";
 import SubServicePage from "../../../components/SubServicePage";
-import { subServices, getSubService, subServiceBanner } from "../../../data/subServices";
+import { subServices, getSubService, subServiceBanner, isIndexedSubService } from "../../../data/subServices";
 import JsonLd from "../../../components/JsonLd";
 import { cityPages } from "../../../data/locationsData";
 import {
@@ -143,6 +143,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       description: sub.summary,
       path: `/services/${sub.slug}/`,
       image: subServiceBanner(sub.slug),
+      noIndex: !isIndexedSubService(sub.slug),
     });
   }
 

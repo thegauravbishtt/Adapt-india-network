@@ -5,7 +5,7 @@ import { cityPages } from "../data/locationsData";
 import { areaPages } from "../data/areaPages";
 import { seedArticles } from "../data/articles";
 import { getBlogs } from "../lib/db";
-import { subServices } from "../data/subServices";
+import { subServices, isIndexedSubService } from "../data/subServices";
 import { lastModifiedFor } from "../data/contentDates";
 
 export const dynamic = "force-static";
@@ -77,7 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    ...subServices.filter(notRedirected).map((s) => ({
+    ...subServices.filter(notRedirected).filter((s) => isIndexedSubService(s.slug)).map((s) => ({
       url: url(`/services/${s.slug}/`),
       lastModified: lastModifiedFor(`/services/${s.slug}/`),
       changeFrequency: "monthly" as const,
