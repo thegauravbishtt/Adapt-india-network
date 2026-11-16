@@ -20,6 +20,8 @@ const PAGE_DATES: Record<string, string> = {
   "/locations/noida/": "2026-11-13",
   "/locations/mumbai/": "2026-11-13",
   "/locations/bengaluru/": "2026-11-13",
+  "/services/smart-internet-ill/": "2026-11-16",
+  "/contact/": "2026-11-16",
   "/services/": "2026-11-12",
   "/locations/": "2026-11-12",
   "/about/": "2026-11-12",

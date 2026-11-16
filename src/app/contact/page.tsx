@@ -81,8 +81,11 @@ export default function ContactPage() {
       });
     } catch (err: any) {
       console.error("[Contact Form Submit Error]:", err);
-      // Fallback friendly success
-      setIsSubmitted(true);
+      // Show the real problem instead of a fake "thank you", so the enquiry isn't lost.
+      setErrorMessage(
+        (err?.message && err.message !== "Failed to fetch" ? err.message + " " : "") +
+          "If it keeps failing, please call +91 82874 79961 or WhatsApp us."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -409,6 +412,20 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#E31E24]/20 focus:border-[#E31E24] transition-all placeholder:text-zinc-400 resize-y"
                       />
                     </div>
+
+                    {errorMessage && (
+                      <p role="alert" className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                        {errorMessage}{" "}
+                        <a
+                          href="https://wa.me/918287479961"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold underline"
+                        >
+                          Open WhatsApp
+                        </a>
+                      </p>
+                    )}
 
                     {/* Submit Button */}
                     <div className="pt-2">

@@ -103,6 +103,16 @@ export const telecomServices: ServiceDetail[] = [
     caseStudies: [],
     faqs: [
       {
+        question: "What is ILL in networking?",
+        answer:
+          "ILL stands for Internet Leased Line. It is a dedicated fibre connection from an internet provider to your office, with the same upload and download speed, bandwidth that isn't shared with other customers, static public IP addresses and an uptime SLA in writing. Businesses use it when the internet is critical to their work.",
+      },
+      {
+        question: "How do I get an ILL connection for my office?",
+        answer:
+          "Share your office address and the speed you need. We check which carriers (Tata Tele Business Services or ACT Fibernet) already have fibre in your building, send you options, and handle the paperwork, installation and testing. You'll need your company's KYC documents, GST details and the building's permission for cabling.",
+      },
+      {
         question: "What is the difference between an Internet Leased Line (ILL) and regular broadband?",
         answer:
           "Regular broadband is a shared connection with contention ratios up to 1:30 and asymmetrical speeds (fast download, slow upload). An Internet Leased Line (ILL) is a 100% dedicated, unshared, 1:1 symmetrical connection backed by financial SLAs guaranteeing 99.5% uptime and <4 hour MTTR.",

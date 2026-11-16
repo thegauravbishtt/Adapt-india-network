@@ -12,6 +12,10 @@ const coreArticles: BlogPost[] = [
     id: "article-2",
     slug: "why-dedicated-internet-leased-lines-matter",
     title: "Internet Leased Line (ILL) vs Business Broadband: Why Dedicated Bandwidth Matters",
+    metaTitle: "Leased Line vs Broadband: Key Differences for Business",
+    metaDescription:
+      "Leased line vs broadband: the real difference in speed, upload, uptime, static IP and support, and how to tell which one your office needs.",
+    focusKeyword: "leased line vs broadband",
     category: "Network Reliability",
     readTime: "6 min read",
     image: "/service-banners/sd-wan-ready-ill.jpg",
@@ -23,6 +27,7 @@ const coreArticles: BlogPost[] = [
     ],
     status: "published",
     publishedAt: "2026-02-18T12:00:00.000Z",
+    updatedAt: "2026-11-16T10:00:00.000Z",
     author: "Adapt India Networks",
     content: `Most offices in India start on broadband. It is cheap, quick to install and fine for a few people browsing and sending email. As a business grows, video calls freeze, cloud software slows down in the evening, and uploads take far longer than downloads. That is usually the point where an Internet Leased Line (ILL) is worth a serious look.
 
