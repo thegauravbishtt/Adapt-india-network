@@ -73,3 +73,20 @@ jobs:
             git commit -m "chore: build failed, see build-log.txt [static-build]"
           fi
           git push
+
+      # Tell Bing (and other IndexNow search engines) about every page, so updates are
+      # picked up within days instead of weeks. Waits for Hostinger to publish the new
+      # files first. Never fails the build.
+      - name: Ping IndexNow
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          KEY=a44b760ccfbb2241051ae21dbf0365b2
+          for i in $(seq 1 20); do
+            if curl -fsS "https://www.adapt-india.net/$KEY.txt" | grep -q "$KEY"; then break; fi
+            sleep 30
+          done
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's#<loc>##;s#</loc>##' | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"www.adapt-india.net\",\"key\":\"$KEY\",\"keyLocation\":\"https://www.adapt-india.net/$KEY.txt\",\"urlList\":$URLS}"
