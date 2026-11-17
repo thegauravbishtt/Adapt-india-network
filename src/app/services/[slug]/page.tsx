@@ -34,7 +34,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "Internet Leased Line (ILL) Provider in India",
     keyword: "Internet leased line",
     description:
-      "Internet leased line connection for business: dedicated fibre, same upload and download speed, static IPs and a 99.5% SLA, in Delhi NCR and across India.",
+      "Internet leased line connection for business: dedicated fibre, same upload and download speed, static IPs, 99.5% SLA. Free feasibility check across India.",
     serviceType: "Internet Leased Line",
   },
   "smartflo-sd-wan": {
@@ -42,7 +42,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "Managed SD-WAN Service Provider in India",
     keyword: "SD-WAN",
     description:
-      "Managed SD-WAN for multi-branch businesses in India: link bonding, automatic failover, central policy control and zero-touch branch rollout. Talk to our team.",
+      "Managed SD-WAN for businesses with branches across India: automatic failover, any mix of leased line, broadband and 4G/5G, one dashboard. Free feasibility check.",
     serviceType: "SD-WAN",
   },
   "smartoffice-connect": {
@@ -56,7 +56,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "Managed MPLS Service Provider in India",
     keyword: "MPLS",
     description:
-      "Managed MPLS services for Indian businesses: a private MPLS VPN network linking branches, plants and data centres, with traffic priority and 24/7 support.",
+      "Managed MPLS services in India: a private MPLS VPN linking branches, plants and data centres, with traffic priority and managed routers. Free feasibility check.",
     serviceType: "MPLS VPN",
   },
   "business-communications": {
@@ -64,7 +64,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "SIP Trunk & Cloud Telephony Provider in India",
     keyword: "SIP trunk and cloud telephony",
     description:
-      "SIP trunking, cloud contact centre, toll-free and virtual numbers, and WhatsApp Business API for Indian businesses. Port numbers and integrate with your CRM.",
+      "SIP trunk and cloud telephony for Indian businesses: SIP trunks for your PBX, cloud PBX and IVR, toll-free numbers and WhatsApp Business API. Get a free quote.",
     serviceType: "SIP Trunk and Cloud Telephony",
   },
   "network-as-a-service": {

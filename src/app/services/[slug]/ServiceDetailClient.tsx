@@ -1,5 +1,6 @@
 "use client";
 
+import QuickQuoteForm from "../../../components/QuickQuoteForm";
 import UpgradeCTA from "@/components/UpgradeCTA";
 import ServiceGuideSection from "@/components/ServiceGuideSection";
 import { serviceGuides } from "@/data/serviceGuides";
@@ -290,6 +291,10 @@ export default function ServiceDetailClient({ service, cities = [], heading, key
         {/* 2b. PLAIN-LANGUAGE GUIDE (different layout per service) */}
         {serviceGuides[service.slug] && (
           <ServiceGuideSection guide={serviceGuides[service.slug]} serviceName={service.name} />
+          <QuickQuoteForm
+            service={keyword ?? service.name}
+            heading={`Get a free ${keyword ? keyword.toLowerCase() : service.name} quote`}
+          />
         )}
         {serviceGuides[service.slug]?.choosing && (
           <ServiceChoosingSection choosing={serviceGuides[service.slug].choosing!} />
@@ -321,6 +326,26 @@ export default function ServiceDetailClient({ service, cities = [], heading, key
                   <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Step 3: Handover</span>
                   <h3 className="text-base font-bold text-gray-900">Ready for your firewall</h3>
                   <p className="text-sm text-gray-600">The line is handed over on a router or fibre/copper port, with your static IPs configured and the speed tested before sign-off.</p>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">What leased line speed does your office need?</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  A rough starting point for offices using cloud apps and video calls. Heavy uploads, CCTV, servers or a call centre need more.
+                  We size it properly during the survey, and the speed can usually be raised later on the same line.
+                </p>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                  {[
+                    ["Up to 15 people", "20 to 50 Mbps"],
+                    ["15 to 50 people", "50 to 100 Mbps"],
+                    ["50 to 150 people", "100 to 300 Mbps"],
+                    ["150+ people or heavy uploads", "300 Mbps to 1 Gbps"],
+                  ].map(([who, speed]) => (
+                    <div key={who} className="rounded-lg border border-gray-200 bg-white p-4">
+                      <p className="text-xs text-gray-500">{who}</p>
+                      <p className="text-base font-bold text-gray-900">{speed}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div>
