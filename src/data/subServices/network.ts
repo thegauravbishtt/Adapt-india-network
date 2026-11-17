@@ -124,6 +124,7 @@ export const network: SubService[] = [
   {
     slug: "smart-ddos-protection",
     name: "Smart DDoS Protection",
+    metaTitle: "DDoS Protection Solutions for Business in India",
     parent: "cybersecurity-solutions",
     group: "Network Security",
     headline: "Keep your internet link and online services up during a DDoS attack",

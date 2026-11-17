@@ -69,7 +69,6 @@ export const NOINDEX_SUBSERVICES = new Set<string>([
   "cloudmon-performance",
   "adapt-smart-cloud",
   // Security and managed-service add-ons
-  "web-application-firewall",
   "zero-trust-network-access",
   "endpoint-detection-response",
   "cloud-email-security",
@@ -78,7 +77,6 @@ export const NOINDEX_SUBSERVICES = new Set<string>([
   "proactive-fault-detection",
   "bgp-routing-optimization",
   "automated-failover-management",
-  "multi-vendor-router-management",
   "firmware-security-patching",
   "bandwidth-utilization-audits",
   "custom-enterprise-slas",
@@ -97,7 +95,6 @@ export const NOINDEX_SUBSERVICES = new Set<string>([
   "smartflo-email-platform",
   // Network add-ons
   "sd-wan-iflx-edge-gateway",
-  "ez-cloud-connect",
   "ultra-low-latency",
 ]);
 

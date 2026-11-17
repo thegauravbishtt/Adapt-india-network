@@ -280,6 +280,7 @@ export const collabCloud: SubService[] = [
   {
     slug: "managed-cloud-services",
     name: "Managed Cloud Services",
+    metaTitle: "Cloud Managed Services Provider in Delhi & India",
     parent: CL,
     group: "Cloud Infrastructure",
     headline: "We look after your cloud: monitoring, backups, patching and costs",

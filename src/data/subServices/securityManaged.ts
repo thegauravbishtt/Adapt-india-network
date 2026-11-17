@@ -38,6 +38,7 @@ export const securityManaged: SubService[] = [
   {
     slug: "web-application-firewall",
     name: "Web Application Firewall (WAF)",
+    metaTitle: "WAF Solutions: Web Application Firewall in India",
     parent: S,
     group: "Application Security",
     headline: "Protect your website, portal and APIs from common web attacks",
