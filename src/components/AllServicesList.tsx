@@ -40,6 +40,16 @@ export default function AllServicesList() {
             </div>
           ))}
         </div>
+        <p className="mt-8 text-sm text-zinc-700">
+          Also:{" "}
+          <Link href="/services/internet-exchange-peering/" className="font-semibold text-zinc-900 hover:text-[#E31E24] hover:underline">
+            Internet Exchange & Peering
+          </Link>{" "}
+          ·{" "}
+          <Link href="/industries/" className="font-semibold text-zinc-900 hover:text-[#E31E24] hover:underline">
+            Solutions by industry
+          </Link>
+        </p>
       </div>
     </section>
   );
