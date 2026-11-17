@@ -280,15 +280,17 @@ export const collabCloud: SubService[] = [
   {
     slug: "managed-cloud-services",
     name: "Managed Cloud Services",
+    h1: "Cloud Managed Services Provider in Delhi & India",
     metaTitle: "Cloud Managed Services Provider in Delhi & India",
     parent: CL,
     group: "Cloud Infrastructure",
     headline: "We look after your cloud: monitoring, backups, patching and costs",
     summary:
-      "Managed cloud services in India: day-to-day management of your Azure, AWS or private cloud, including monitoring, backups, security patching and cost reviews.",
+      "Cloud managed services provider in Delhi and across India: monitoring, backups, patching, security and cost reviews for your Azure, AWS or private cloud.",
     intro: [
       "After moving to the cloud, someone still needs to watch the servers, apply updates, check backups and keep an eye on the bill. Many companies don't have the people for this.",
       "With managed cloud services, our team handles these routine tasks and responds when something goes wrong, so your staff can focus on the business.",
+      "We work from Delhi with businesses across India, and look after the network side too, from the leased line or SD-WAN into the cloud, so one team owns the whole path when something slows down.",
     ],
     features: [
       { title: "Monitoring", text: "Servers and services watched with alerts on problems." },
@@ -305,6 +307,18 @@ export const collabCloud: SubService[] = [
       {
         question: "Do we keep access to our cloud account?",
         answer: "Yes. The account stays yours; we work within it under agreed permissions.",
+      },
+      {
+        question: "What are cloud managed services?",
+        answer: "Cloud managed services means an outside team looks after your cloud servers and services day to day: monitoring, backups, security updates, user access and cost control.",
+      },
+      {
+        question: "Do you provide cloud managed services in Delhi?",
+        answer: "Yes. Our office is in Paschim Vihar, New Delhi, and we support businesses in Delhi NCR and across India remotely, with visits where needed.",
+      },
+      {
+        question: "Can you manage both our cloud and our office network?",
+        answer: "Yes. We can manage the cloud setup together with the leased line, SD-WAN or MPLS that connects your offices to it.",
       },
     ],
   },

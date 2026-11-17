@@ -38,15 +38,17 @@ export const securityManaged: SubService[] = [
   {
     slug: "web-application-firewall",
     name: "Web Application Firewall (WAF)",
+    h1: "WAF Solutions: Web Application Firewall for Business",
     metaTitle: "WAF Solutions: Web Application Firewall in India",
     parent: S,
     group: "Application Security",
     headline: "Protect your website, portal and APIs from common web attacks",
     summary:
-      "Web Application Firewall (WAF) for Indian businesses: protect websites, customer portals and APIs from SQL injection, bots and other web attacks.",
+      "WAF solutions for Indian businesses: a web application firewall that protects websites, customer portals and APIs from SQL injection, bots and web attacks.",
     intro: [
       "Websites, customer portals and APIs are constantly probed for weaknesses. A web application firewall sits in front of them and blocks common attacks such as SQL injection, cross-site scripting and malicious bots.",
       "It adds protection even while your developers fix underlying issues, and it can be deployed in the cloud without changing your hosting.",
+      "A WAF is different from the firewall in your office. The office firewall protects your network; a WAF protects the websites and applications that customers reach from the internet, wherever they're hosted.",
     ],
     features: [
       { title: "Blocks common attacks", text: "Protection against the most frequent web exploits." },
@@ -63,6 +65,18 @@ export const securityManaged: SubService[] = [
       {
         question: "Do we need to change our hosting?",
         answer: "No. Cloud WAFs usually work by changing DNS to route traffic through the protection layer.",
+      },
+      {
+        question: "What is a WAF solution?",
+        answer: "A web application firewall checks traffic going to your website or API and blocks attacks such as SQL injection, cross-site scripting and abusive bots before they reach the application.",
+      },
+      {
+        question: "Is a WAF the same as a network firewall?",
+        answer: "No. A network firewall protects your office network. A WAF protects web applications and APIs, looking inside web requests for attacks.",
+      },
+      {
+        question: "Does a WAF protect against DDoS attacks?",
+        answer: "A WAF handles application-level floods and bots. Large network floods are handled by DDoS protection, so high-risk sites usually use both.",
       },
     ],
   },
@@ -341,14 +355,17 @@ export const securityManaged: SubService[] = [
   {
     slug: "multi-vendor-router-management",
     name: "Multi-Vendor Router Management",
+    metaTitle: "Multi-Vendor Network Device Management in India",
+    h1: "Multi-Vendor Network Device Management & Support",
     parent: M,
     group: "Device Management",
     headline: "One team to manage routers and switches from different brands",
     summary:
-      "Multi-vendor router and switch management: configuration, backups, changes and troubleshooting for mixed-brand networks across your sites.",
+      "Multi-vendor network management in India: configuration management, backups, changes and support for routers and switches of different brands at every site.",
     intro: [
       "Most networks end up with a mix of brands: one at head office, another at branches, a third supplied by a carrier. Managing them needs different skills and tools.",
       "We take over day-to-day management of routers and switches across brands: configuration backups, change requests and troubleshooting, all through one support desk.",
+      "Configuration management is at the centre of it: every device's settings are backed up, every change is recorded, and a failed device can be replaced with the right configuration quickly.",
     ],
     features: [
       { title: "Mixed-brand support", text: "Major router and switch vendors handled by one team." },
@@ -365,6 +382,18 @@ export const securityManaged: SubService[] = [
       {
         question: "Do we keep admin access?",
         answer: "Yes. Access is agreed with you and all changes are logged.",
+      },
+      {
+        question: "What is multi-vendor configuration management?",
+        answer: "Keeping the settings of network devices from different brands backed up, documented and changed in a controlled way, so the network stays consistent and failures are quick to fix.",
+      },
+      {
+        question: "Can you support devices we bought from other providers?",
+        answer: "Yes. We take over management of existing routers and switches after checking models, software versions and support status.",
+      },
+      {
+        question: "Do you support network devices across multiple sites?",
+        answer: "Yes. Devices at every site are managed remotely through one support desk, with on-site help arranged when hardware must be replaced.",
       },
     ],
   },

@@ -124,15 +124,17 @@ export const network: SubService[] = [
   {
     slug: "smart-ddos-protection",
     name: "Smart DDoS Protection",
+    h1: "DDoS Protection Solutions for Business in India",
     metaTitle: "DDoS Protection Solutions for Business in India",
     parent: "cybersecurity-solutions",
     group: "Network Security",
     headline: "Keep your internet link and online services up during a DDoS attack",
     summary:
-      "DDoS protection for Indian businesses: detect and filter attack traffic in the network so your leased line, website and services stay online.",
+      "DDoS protection solutions for Indian businesses: managed DDoS mitigation that filters attacks upstream, so your leased line, website and VPN stay online.",
     intro: [
       "A DDoS (Distributed Denial of Service) attack floods your internet connection or servers with junk traffic until genuine users can't get through. Even a short attack can take a website, payment system or VPN offline.",
       "DDoS protection watches traffic heading to your network and filters attack traffic in the carrier's network, so clean traffic still reaches you.",
+      "Protection is added to your internet leased line by the carrier, so it works for your website, payment gateway, VPN and email together. It suits any business whose customers or staff depend on reaching its services over the internet.",
     ],
     features: [
       { title: "Traffic monitoring", text: "Unusual spikes are detected automatically." },
@@ -149,6 +151,18 @@ export const network: SubService[] = [
       {
         question: "Is it always on?",
         answer: "Options include always-on protection or on-demand mitigation when an attack is detected.",
+      },
+      {
+        question: "What is DDoS protection?",
+        answer: "DDoS protection detects floods of junk traffic aimed at your network and filters them out before they reach your internet link, so genuine users can still connect.",
+      },
+      {
+        question: "What is the difference between DDoS protection and a firewall?",
+        answer: "A firewall controls what gets in through your link. DDoS protection works upstream in the carrier's network and stops attack traffic from filling the link in the first place. Most businesses need both.",
+      },
+      {
+        question: "Can DDoS protection be added to an existing leased line?",
+        answer: "Usually yes. It's added to the internet leased line at the carrier's end, so no new equipment is needed at your office in most cases.",
       },
     ],
   },
@@ -185,14 +199,17 @@ export const network: SubService[] = [
   {
     slug: "ez-cloud-connect",
     name: "EZ Cloud Connect (AWS/Azure)",
+    metaTitle: "Cloud Connectivity Services in India: AWS & Azure",
+    h1: "Cloud Connectivity Services: Private Links to AWS & Azure",
     parent: "cloud-infrastructure",
     group: "Enterprise WAN",
     headline: "A private connection from your offices to AWS and Azure",
     summary:
-      "EZ Cloud Connect: private, dedicated connectivity from your offices and data centres to AWS and Microsoft Azure, off the public internet.",
+      "Cloud connectivity services in India: private, dedicated links from your offices and data centres to AWS and Microsoft Azure, off the public internet.",
     intro: [
       "When important applications run in AWS or Azure, reaching them over the public internet means variable speed and delay. A private cloud connection gives your offices a dedicated path into the cloud instead.",
       "It's typically used for ERP, databases and backups where steady performance and security matter.",
+      "For businesses that already use MPLS or SD-WAN, the cloud connection can join that network, so every branch reaches the cloud over the same private path.",
     ],
     features: [
       { title: "Private path to cloud", text: "Traffic to AWS or Azure stays off the public internet." },
@@ -209,6 +226,18 @@ export const network: SubService[] = [
       {
         question: "Can we connect to both AWS and Azure?",
         answer: "Yes. Multi-cloud connections are possible.",
+      },
+      {
+        question: "What is cloud connectivity?",
+        answer: "Cloud connectivity is the network link between your offices or data centre and your cloud provider. It can run over the internet, or over a private connection for steadier performance.",
+      },
+      {
+        question: "When is a private cloud connection worth it?",
+        answer: "When important systems such as ERP or databases run in the cloud, when you move large backups, or when you need predictable performance and security.",
+      },
+      {
+        question: "Do you provide cloud connectivity across India?",
+        answer: "Yes. Feasibility depends on your office or data centre location and the cloud region, so we check each site first.",
       },
     ],
   },

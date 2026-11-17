@@ -13,6 +13,11 @@ export const SITE_WIDE_UPDATE = "2026-11-12";
 
 /** Pages changed after the site-wide update. */
 const PAGE_DATES: Record<string, string> = {
+  "/services/multi-vendor-router-management/": "2026-11-17",
+  "/services/ez-cloud-connect/": "2026-11-17",
+  "/services/managed-cloud-services/": "2026-11-17",
+  "/services/web-application-firewall/": "2026-11-17",
+  "/services/smart-ddos-protection/": "2026-11-17",
   "/services/enterprise-broadband/": "2026-11-17",
   "/services/business-communications/": "2026-11-17",
   "/services/whatsapp-business-platform/": "2026-11-13",
