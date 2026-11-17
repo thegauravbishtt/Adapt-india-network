@@ -48,7 +48,7 @@ export const industryPages: SolutionPage[] = [
     name: "Hospitals & Clinics",
     metaTitle: "Leased Line & Network for Hospitals and Clinics",
     metaDescription:
-      "Internet leased line, backup links, Wi-Fi and network security for hospitals, diagnostic centres and clinic chains in India, planned around systems that can't go down.",
+      "Internet leased line, backup links, Wi-Fi and network security for hospitals, diagnostic centres and clinic chains in India, planned so key systems stay up.",
     focusKeyword: "leased line for hospitals",
     h1: "Internet Leased Line and Network Solutions for Hospitals",
     lead: "Dependable internet, private links and Wi-Fi for hospitals, diagnostic centres and clinic chains.",
@@ -213,7 +213,7 @@ export const industryPages: SolutionPage[] = [
     name: "Factories & Manufacturing",
     metaTitle: "Leased Line for Factories & Manufacturing Plants",
     metaDescription:
-      "Internet leased line, point-to-point links, SD-WAN and industrial Wi-Fi for factories and manufacturing plants in India's industrial areas, with backup for remote sites.",
+      "Leased line, point-to-point links, SD-WAN and industrial Wi-Fi for factories and manufacturing plants in India's industrial areas, with backup links.",
     focusKeyword: "internet for factories",
     h1: "Internet Leased Line and Networks for Factories",
     lead: "Connectivity for plants in industrial areas, from the office block to the shop floor.",
@@ -313,7 +313,7 @@ export const ixPage: SolutionPage = {
   name: "Internet Exchange & Peering",
   metaTitle: "Internet Exchange (IX) & Peering Services in India",
   metaDescription:
-    "Connect your network to internet exchange points in Mumbai, Delhi NCR, Chennai, Hyderabad, Bengaluru and Kolkata: IX ports, transport links, BGP peering setup and IP transit.",
+    "Internet exchange and peering in Mumbai, Delhi NCR, Chennai, Hyderabad, Bengaluru and Kolkata: IX ports, transport links, BGP setup and IP transit.",
   focusKeyword: "internet exchange point india",
   h1: "Internet Exchange and Peering Services in India",
   lead: "IX connectivity, transport links and BGP peering for ISPs, content networks and enterprises with their own ASN.",

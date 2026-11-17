@@ -18,7 +18,11 @@ DirectoryIndex index.html
   RewriteRule ^terms/?$ /terms-and-conditions/ [R=301,L]
   RewriteRule ^cookies/?$ /cookie-preferences/ [R=301,L]
   RewriteRule ^work/?$ /services/ [R=301,L]
-  RewriteRule ^industries(/.*)?$ /services/ [R=301,L]
+  # Old industry pages from the previous site -> the closest new industry page (or the hub)
+  RewriteRule ^industries/healthcare/?$ /industries/hospitals/ [R=301,L]
+  RewriteRule ^industries/education/?$ /industries/schools-colleges/ [R=301,L]
+  RewriteRule ^industries/hospitality/?$ /industries/hotels/ [R=301,L]
+  RewriteRule ^industries/(agriculture-agritech|ecommerce|finance-fintech|food-beverages|it-technology|jewellery|real-estate|travel-tourism)/?$ /industries/ [R=301,L]
   RewriteRule ^blog/?$ /articles/ [R=301,L]
   RewriteRule ^blog/network-architecture/?$ /articles/ [R=301,L]
   RewriteRule ^services/internet-leased-line/?$ /services/smart-internet-ill/ [R=301,L]
