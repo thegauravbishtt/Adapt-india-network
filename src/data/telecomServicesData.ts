@@ -9,14 +9,14 @@ export const telecomServices: ServiceDetail[] = [
     heroHeadline: "Enterprise Internet Leased Line (ILL) Built for",
     heroHighlight: "Uninterrupted Operations.",
     heroSubtitle:
-      "1:1 dedicated, uncompressed symmetrical bandwidth engineered for zero packet loss, sub-15ms inter-metro latency, cloud-based DDoS scrubbing, and 24/7/365 proactive NOC monitoring.",
+      "A dedicated fibre internet connection for your business: bandwidth that isn't shared, the same upload and download speed, static public IPs and a 99.5% uptime SLA in writing, delivered on Tata Tele Business Services and ACT Fibernet networks.",
     image: "/banner-datacenter-racks.jpg",
     galleryImages: ["/banner-network-matrix.jpg", "/banner-servers-lights.jpg", "/banner-global-telecom.jpg"],
     stats: [
-      { value: "99.5%", label: "Guaranteed SLA Uptime" },
-      { value: "1:1", label: "Symmetric Bandwidth (No Contention)" },
-      { value: "< 15ms", label: "Pan-India Tier-1 Latency" },
-      { value: "< 4 Hours", label: "Mean Time to Restore (MTTR)" },
+      { value: "99.5%", label: "Uptime SLA in writing" },
+      { value: "1:1", label: "Dedicated, not shared" },
+      { value: "Static IPs", label: "Included with the line" },
+      { value: "24/7", label: "Fault support" },
     ],
     overview:
       "Modern enterprises run on mission-critical cloud applications, real-time transaction processing, and synchronized data pipelines. Adapt India Networks' Smart Internet Leased Line (ILL) delivers dedicated carrier-grade connectivity terminated over redundant optical fiber rings directly into your server room or data center.",
@@ -118,24 +118,24 @@ export const telecomServices: ServiceDetail[] = [
           "Regular broadband is a shared connection with contention ratios up to 1:30 and asymmetrical speeds (fast download, slow upload). An Internet Leased Line (ILL) is a 100% dedicated, unshared, 1:1 symmetrical connection backed by financial SLAs guaranteeing 99.5% uptime and <4 hour MTTR.",
       },
       {
-        question: "How fast is the installation and commissioning turnaround?",
+        question: "How long does a leased line installation take?",
         answer:
-          "For on-net buildings (where Adapt India fiber already exists), commissioning is completed in 3 to 5 business days. For greenfield sites requiring fiber trenching, typical deployment takes 10 to 14 business days with temporary 4G/5G bonding provided in the interim.",
+          "It depends on whether the carrier's fibre already reaches your building. Where it does, installation is much quicker; where a new fibre run or building permission is needed, it takes longer. We check your exact address first and tell you the expected timeline before you sign, and a 4G/5G link can keep you running in the meantime.",
       },
       {
         question: "How does the 99.5% SLA uptime guarantee work?",
         answer:
-          "Our SLA is backed by contractual service credits. If availability drops below 99.5% or if round-trip latency / packet loss exceeds specified thresholds, credit penalties are automatically deducted from your billing cycle.",
+          "The 99.5% uptime commitment is written into your contract. If availability falls below it, service credits apply as per the carrier's SLA terms, which we share with you before you sign.",
       },
       {
         question: "Do you provide static public IP addresses?",
         answer:
-          "Yes. Every ILL circuit includes a dedicated static IPv4 subnet (/29 with 5 usable IPs by default, expandable to /28 or /27 upon justification) along with native IPv6 dual-stack allocation.",
+          "Yes. Static public IP addresses come with the leased line. Tell us how many you need for servers, VPN or CCTV access, and we'll arrange the right block; larger blocks need a short justification form because IPv4 addresses are limited.",
       },
       {
         question: "Can we peer using our own Autonomous System Number (ASN) and BGP?",
         answer:
-          "Yes. We support standard BGP-4 peering. You can announce your enterprise IP prefixes, receive default or full Internet routing tables, and establish multi-homed BGP sessions across our Tier-1 upstream peers.",
+          "Yes. If you have your own ASN and IP prefixes, BGP can be set up on the leased line so you can announce your addresses, and with lines from two carriers you can be multi-homed for resilience.",
       },
     ],
     structuredSection: {
@@ -174,14 +174,14 @@ export const telecomServices: ServiceDetail[] = [
     heroHeadline: "Next-Gen Software-Defined WAN Engineered for",
     heroHighlight: "Agile Multi-Cloud Enterprises.",
     heroSubtitle:
-      "Centralized cloud orchestration, automated multi-link traffic steering (ILL + MPLS + 4G/5G), application-aware QoS, and integrated zero-trust security perimeters for modern distributed workforces.",
+      "Managed SD-WAN for businesses with branches across India: use leased lines, broadband and 4G/5G together at each site, with automatic failover, traffic rules for your applications and one dashboard for every branch.",
     image: "/services/sdwan_clean.jpg",
     galleryImages: ["/network-sdwan.png", "/banner-network-matrix.jpg", "/banner-datacenter-racks.jpg"],
     stats: [
-      { value: "40%", label: "Average WAN Cost Savings" },
-      { value: "99.5%", label: "Multi-Link Network Uptime" },
-      { value: "< 50ms", label: "Sub-Second Link Failover" },
-      { value: "Zero-Touch", label: "Rapid Branch Provisioning" },
+      { value: "Any link", label: "Leased line, broadband or 4G/5G" },
+      { value: "Automatic", label: "Failover between links" },
+      { value: "One", label: "Dashboard for every branch" },
+      { value: "24/7", label: "Managed monitoring" },
     ],
     overview:
       "Legacy hub-and-spoke WAN architectures route all branch cloud traffic back through corporate data centers, causing bandwidth bottlenecks and high latency. Adapt India Networks' Smartflo SD-WAN decouples network hardware from software control, enabling intelligent dynamic routing across multiple transport links directly to SaaS and cloud environments.",
@@ -471,14 +471,14 @@ export const telecomServices: ServiceDetail[] = [
     heroHeadline: "Multiprotocol Label Switching (MPLS) Engineered for",
     heroHighlight: "Bank-Grade Network Security.",
     heroSubtitle:
-      "Interconnect your corporate headquarters, disaster recovery facilities, branches, and multi-tenant data centers over a fully private, SLA-backed Tier-1 optical backbone with deterministic QoS prioritization.",
+      "A private MPLS VPN network linking your head office, branches, plants and data centres across India, kept separate from the public internet, with traffic priority for voice and core applications and managed routers at every site.",
     image: "/services/mpls_clean.jpg",
     galleryImages: ["/network-mpls.png", "/banner-datacenter-racks.jpg", "/banner-servers-lights.jpg"],
     stats: [
-      { value: "100%", label: "Private & Air-Gapped from Internet" },
-      { value: "99.5%", label: "Core Availability SLA" },
-      { value: "< 20ms", label: "Inter-City Low-Latency Core" },
-      { value: "Class of Service", label: "Hardware-Enforced QoS" },
+      { value: "Private", label: "Separate from the public internet" },
+      { value: "99.5%", label: "Availability SLA" },
+      { value: "Class of Service", label: "Priority for voice and core apps" },
+      { value: "Managed", label: "Routers at every site" },
     ],
     overview:
       "When enterprise data security, regulatory compliance, and deterministic packet delivery cannot be compromised, sending sensitive internal data over the public internet is not an option. Adapt India Networks' Managed MPLS VPN delivers fully private, Layer-3 and Layer-2 virtual networks isolated from public cyber threats.",
@@ -565,12 +565,12 @@ export const telecomServices: ServiceDetail[] = [
       {
         question: "Is MPLS more secure than an IPsec VPN over the public internet?",
         answer:
-          "Yes. IPsec VPNs travel over the public internet, leaving them vulnerable to volumetric DDoS attacks, variable ISP routing, and public port scanning. MPLS is a private closed-user-group (CUG) network completely isolated from the internet.",
+          "MPLS keeps your traffic on the carrier's private network instead of the public internet, which is why banks and regulated businesses prefer it. An IPsec VPN is encrypted but travels over the internet, so its performance depends on internet conditions.",
       },
       {
         question: "Can we connect our cloud infrastructure (AWS/Azure) directly to our MPLS?",
         answer:
-          "Yes. Adapt India Networks provides direct cloud on-ramps. Your AWS VPCs or Azure Virtual Networks appear as native private MPLS nodes without traversing the public internet.",
+          "Often, yes. Depending on the cloud provider and region, your cloud network can be connected to the MPLS through a private cloud connection instead of the public internet. We check what's available for your setup.",
       },
       {
         question: "Who are the main MPLS service providers in India?",
@@ -624,14 +624,14 @@ export const telecomServices: ServiceDetail[] = [
     heroHeadline: "Scalable Omnichannel Voice & Contact Center Infrastructure for",
     heroHighlight: "High-Growth Brands.",
     heroSubtitle:
-      "Modernize customer interactions with carrier-grade SIP trunking, AI-enabled cloud contact centers (CCaaS), 1800 toll-free lines, WhatsApp Business API, and automated outbound dialing.",
+      "SIP trunks for your existing PBX, cloud telephony and contact centre, toll-free numbers and WhatsApp Business API for Indian businesses, with calls and messages linked to your CRM.",
     image: "/telephone-banner.jpg",
     galleryImages: ["/banner-network-matrix.jpg", "/banner-what-we-do.jpg", "/banner-datacenter-racks.jpg"],
     stats: [
-      { value: "1,500+", label: "Concurrent Channels per Trunk" },
-      { value: "99.5%", label: "Voice Call Quality & SLA" },
-      { value: "Omnichannel", label: "Voice, WhatsApp, SMS & RCS" },
-      { value: "AI Enabled", label: "Real-Time Sentiment & Transcription" },
+      { value: "SIP", label: "Trunks for your PBX" },
+      { value: "Cloud", label: "PBX, IVR and contact centre" },
+      { value: "1800", label: "Toll-free numbers" },
+      { value: "WhatsApp", label: "Business API messaging" },
     ],
     overview:
       "Legacy copper PRI lines and on-premise PBX systems are expensive to scale, fragile during network spikes, and incapable of supporting distributed remote agents. Adapt India Networks' Business Communications suite delivers cloud-native voice, programmable SIP trunks, and omnichannel customer engagement APIs built for modern scale.",
@@ -718,12 +718,32 @@ export const telecomServices: ServiceDetail[] = [
       {
         question: "Can we connect your SIP trunk to Microsoft Teams?",
         answer:
-          "Yes. We support Microsoft Operator Connect and Direct Routing, enabling your employees to make and receive external telephone calls directly inside Microsoft Teams desktop and mobile apps.",
+          "Yes. External calling can be set up inside Microsoft Teams, so staff make and receive normal phone calls from the Teams app on their laptop or mobile.",
+      },
+      {
+        question: "What is a SIP trunk?",
+        answer:
+          "A SIP trunk delivers business phone lines over a data connection instead of copper or PRI lines. It connects your IP PBX to the telephone network, and you can add or reduce call channels without new cabling.",
+      },
+      {
+        question: "What is the difference between a SIP trunk and a PRI line?",
+        answer:
+          "A PRI line is a physical circuit with a fixed 30 voice channels. A SIP trunk carries calls over data, so the number of channels can match your needs, and one set of numbers can serve several offices.",
+      },
+      {
+        question: "What is cloud telephony?",
+        answer:
+          "Cloud telephony runs your phone system in the provider's cloud instead of a PBX in your office. IVR, call routing, queues and recording are managed from a web dashboard, and staff take calls on desk phones, laptops or mobiles.",
+      },
+      {
+        question: "What affects the cost of a SIP trunk or cloud telephony?",
+        answer:
+          "The number of call channels or users, your call volumes and destinations, the types of numbers you need (local or toll-free), and features such as recording and CRM integration. We share a quote once we know your setup.",
       },
       {
         question: "Can we keep our existing business phone numbers?",
         answer:
-          "Yes. We manage full telecom Mobile/Fixed Number Portability (MNP/FNP), allowing you to migrate your existing corporate numbers seamlessly to our SIP trunk infrastructure.",
+          "In many cases, yes, depending on the type of number and where it's registered. We check each number before planning the move and run the new service alongside the old one so calls aren't lost.",
       },
     ],
     structuredSection: {
@@ -1723,14 +1743,14 @@ export const telecomServices: ServiceDetail[] = [
     heroHeadline: "High-Density Gigabit Broadband and Managed Wi-Fi 6 for",
     heroHighlight: "Modern Connected Workspaces.",
     heroSubtitle:
-      "Equip commercial buildings, campus offices, and retail showrooms with ultra-fast gigabit fiber broadband, high-density Wi-Fi 6 access points, captive guest portals, and cloud-managed security.",
+      "Business broadband connections for small offices, shops, clinics and branch sites, with Wi-Fi planned for your floor and an option to use broadband as the backup for your leased line.",
     image: "/wifi-banner.jpg",
     galleryImages: ["/banner-what-we-do.jpg", "/banner-datacenter-racks.jpg", "/banner-servers-lights.jpg"],
     stats: [
-      { value: "1 Gbps", label: "Gigabit Fiber Access Speeds" },
-      { value: "Wi-Fi 6", label: "High-Concurrency 802.11ax" },
-      { value: "Captive Portal", label: "Secure Guest OTP Onboarding" },
-      { value: "99.9%", label: "Business-Grade Uptime SLA" },
+      { value: "Fibre", label: "Business broadband" },
+      { value: "Wi-Fi 6", label: "Planned for your floor" },
+      { value: "Guest", label: "OTP login for visitors" },
+      { value: "Backup", label: "Second line for leased line sites" },
     ],
     overview:
       "Consumer broadband is inadequate for modern business environments where hundreds of laptops, smartphones, and IoT devices compete for airtime. Adapt India Networks delivers business-grade fiber broadband bundled with enterprise-class cloud-managed Wi-Fi 6 networks.",
@@ -1816,12 +1836,27 @@ export const telecomServices: ServiceDetail[] = [
       {
         question: "Is guest Wi-Fi isolated from our company computers?",
         answer:
-          "Yes. We configure dedicated 802.1Q VLANs. Visitors on guest Wi-Fi can only access the public internet and are completely blocked from viewing or accessing corporate printers, servers, or employee laptops.",
+          "Yes. Guest Wi-Fi runs on its own separate network. Visitors get internet access only and can't see your company's computers, printers or servers.",
+      },
+      {
+        question: "What is the difference between business broadband and a leased line?",
+        answer:
+          "Business broadband shares capacity with other users and usually has lower upload than download speed. A leased line is dedicated to you, with the same speed both ways, static IPs and an uptime SLA. Broadband suits small sites; leased lines suit offices that depend on the internet.",
+      },
+      {
+        question: "Can I get a static IP on business broadband?",
+        answer:
+          "On many business broadband plans a static IP is available as an add-on, depending on the carrier and location. If you need several static IPs or an uptime SLA, a leased line is usually the better choice.",
+      },
+      {
+        question: "Which broadband speed does my office need?",
+        answer:
+          "It depends on the number of people, how much video calling and cloud software you use, and whether you upload large files or CCTV. Tell us how you work and we'll suggest a plan that leaves room to grow.",
       },
       {
         question: "Can this service act as a backup for our leased line?",
         answer:
-          "Yes. Many enterprises use our Enterprise Broadband as an affordable, high-speed secondary backup line paired with an SD-WAN gateway for automated failover.",
+          "Yes. Broadband from a different carrier makes a good backup for a leased line, with a firewall or SD-WAN device switching over automatically if the main line fails.",
       },
     ],
     structuredSection: {

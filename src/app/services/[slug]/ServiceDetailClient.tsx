@@ -18,9 +18,11 @@ interface ServiceDetailClientProps {
   cities?: Array<{ slug: string; city: string }>;
   /** Page H1 when it should differ from the service name (matches how people search). */
   heading?: string;
+  /** Plain search phrase for the service, used in "in your city" and CTA headings. */
+  keyword?: string;
 }
 
-export default function ServiceDetailClient({ service, cities = [], heading }: ServiceDetailClientProps) {
+export default function ServiceDetailClient({ service, cities = [], heading, keyword }: ServiceDetailClientProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState({
@@ -41,24 +43,24 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
   const baseFaqs = service.faqs || [];
   const supplementaryFaqs = [
     {
-      question: `What are the typical deployment timelines for ${service.name}?`,
-      answer: "Standard provisioning takes 3 to 5 business days for on-net facilities with active building risers. For off-net or greenfield sites requiring fiber trenching and equipment mounting, deployment spans 7 to 12 business days, with temporary bonded cellular backup available immediately.",
+      question: `How long does it take to set up ${service.name}?`,
+      answer: "It depends mainly on whether the carrier's fibre already reaches your building. We check feasibility at your exact address first and give you the expected timeline before you sign. Where a new fibre run or building approval is needed, a 4G/5G link can keep you running in the meantime.",
     },
     {
-      question: `What contractual SLA uptime backs ${service.name}?`,
-      answer: "We commit to a contractual 99.5% network uptime backed by financial service credit penalties. Round-trip latency (<15ms metro, <45ms national) and zero packet loss guarantees are actively monitored 24/7/365 by our Level-3 NOC.",
+      question: `What uptime SLA comes with ${service.name}?`,
+      answer: "Dedicated connectivity comes with a 99.5% uptime commitment in writing. The repair-time terms and service credits follow the carrier's SLA, and we share the full terms with you before you sign.",
     },
     {
-      question: "Is 24/7/365 dedicated technical support included?",
-      answer: "Yes. All enterprise clients receive a direct hotline and priority ticketing access to our Level-3 Network Operations Center (NOC). Mean Time to Respond (MTTR) is under 15 minutes, with field engineer dispatch within 4 hours.",
+      question: "Is 24/7 support included?",
+      answer: "Yes. You report a fault to our team any time, and we log it with the carrier, chase it until it's fixed and keep you updated, so you don't have to deal with the carrier's call centre yourself.",
     },
     {
-      question: "Can this solution integrate with our existing firewalls and routing equipment?",
-      answer: "Yes. Our circuits and configurations are vendor-agnostic, supporting Cisco, Fortinet, Palo Alto, Juniper, and standard BGP-4 / OSPF routing protocols without requiring hardware replacements.",
+      question: "Will it work with our existing firewall and router?",
+      answer: "Usually, yes. Connections are handed over on standard ports and work with common firewalls and routers. We check your current equipment during the survey and tell you if anything needs changing.",
     },
     {
-      question: "What bandwidth scaling and billing options are available?",
-      answer: "We support flexible 12, 24, and 36-month terms with quarterly or annual billing. Bandwidth can be scaled on-demand within 24 hours through our enterprise customer portal with zero downtime.",
+      question: "Can we upgrade the speed later?",
+      answer: "Yes. In most cases the speed can be increased on the same line without new cabling. Contract terms and any upgrade lead time are agreed with you upfront.",
     },
   ];
 
@@ -91,14 +93,14 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
   // Dedicated Quick Highlights for Each Service
   const quickHighlights: Record<string, Array<{ title: string; desc: string }>> = {
     "smart-internet-ill": [
-      { title: "1:1 Dedicated Bandwidth", desc: "Zero contention ratio. You get 100% of the upload and download speed you pay for." },
-      { title: "99.5% SLA Uptime", desc: "Contractually guaranteed network availability backed by financial service credits." },
-      { title: "Dual Optical Fiber Ring", desc: "Sub-50ms automated optical failover with diverse last-mile physical entry." },
+      { title: "Dedicated Bandwidth", desc: "The speed you take is yours alone, the same for upload and download." },
+      { title: "99.5% Uptime SLA", desc: "Availability committed in writing, with static public IPs included." },
+      { title: "Backup Line Option", desc: "Add a second line from a different carrier with automatic failover." },
     ],
     "smartflo-sd-wan": [
       { title: "Multi-Link Traffic Steering", desc: "Automatically balances application traffic across fiber, MPLS, and 5G cellular." },
-      { title: "Zero-Touch Deployment", desc: "Plug-and-play edge routers that auto-configure via cloud controller in 30 minutes." },
-      { title: "Direct Cloud On-Ramps", desc: "Optimized low-latency routes directly to AWS, Microsoft 365, and Azure." },
+      { title: "Quick Branch Setup", desc: "Devices are configured from the cloud, so new branches go live without on-site engineers." },
+      { title: "Direct Cloud Access", desc: "Trusted cloud traffic like Microsoft 365 goes straight out from each branch." },
     ],
     "smartoffice-connect": [
       { title: "All-in-One Gateway", desc: "High-speed internet, cloud PBX voice, Wi-Fi 6, and firewall in a single managed box." },
@@ -108,10 +110,10 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
     "managed-mpls": [
       { title: "100% Private Network", desc: "Isolated closed-user group completely separated from the public internet." },
       { title: "Hardware-Enforced QoS", desc: "Guaranteed priority queuing for voice, video, and core banking transactions." },
-      { title: "Pan-India Coverage", desc: "Direct optical presence connecting 100+ industrial and metro hubs nationwide." },
+      { title: "Pan-India Sites", desc: "Branches, plants and data centres across India on one private network." },
     ],
     "business-communications": [
-      { title: "Scalable SIP Trunking", desc: "Handle from 10 to 1,500+ concurrent calls with crystal-clear HD voice quality." },
+      { title: "Scalable SIP Trunking", desc: "Add or reduce call channels as your team changes, without new cabling." },
       { title: "Smartflo Cloud Call Center", desc: "Skill-based routing, automated dialers, and two-way CRM integration." },
       { title: "WhatsApp Business API", desc: "Verified corporate messaging for automated customer alerts and support." },
     ],
@@ -151,15 +153,15 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
       { title: "Jumbo Frame Support", desc: "Transfers up to 9,000 MTU frames with full line-rate throughput." },
     ],
     "enterprise-broadband": [
-      { title: "Gigabit Business Speeds", desc: "Up to 1 Gbps fiber broadband with low contention and business-grade priority." },
-      { title: "High-Density Wi-Fi 6", desc: "Commercial access points supporting 200+ concurrent active wireless devices." },
+      { title: "Business Fibre Broadband", desc: "Fibre broadband plans for offices, shops and branches." },
+      { title: "Planned Wi-Fi 6", desc: "Business access points placed for your floor plan and number of users." },
       { title: "Branded Guest Portal", desc: "Secure SMS OTP guest onboarding that isolates visitors from corporate computers." },
     ],
   };
 
   const highlights = quickHighlights[service.slug] || [
     { title: "99.5% SLA Uptime", desc: "Carrier-grade availability backed by financial service credits." },
-    { title: "Dedicated Support", desc: "Direct hotline to certified L3 network engineers 24 hours a day." },
+    { title: "24/7 Support", desc: "Faults logged and chased with the carrier by our team." },
     { title: "Pan-India Fiber", desc: "Optical infrastructure connecting major industrial and metro centers." },
   ];
 
@@ -299,72 +301,69 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
         {service.slug === "smart-internet-ill" && (
           <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-14 bg-white border-b border-gray-200 text-left">
             <div className="max-w-7xl mx-auto flex flex-col gap-10">
-              
               <div>
-                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">How It Works</span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Dedicated Fiber Architecture</h2>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1">Dedicated 1:1 optical path directly from Adapt India core POP to your server room.</p>
+                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">How it works</span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">How an internet leased line reaches your office</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">A dedicated fibre connection from the carrier's network to your server room or rack.</p>
               </div>
-
-              {/* 3 Step Architecture Flow */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-blue-900 uppercase">STEP 1: CORE POP</span>
-                  <h4 className="text-base font-bold text-gray-900">Dual Upstream Peering</h4>
-                  <p className="text-xs text-gray-600">Interconnected with Tier-1 carriers and NIXI with automated BGP-4 routing.</p>
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Step 1: Feasibility</span>
+                  <h3 className="text-base font-bold text-gray-900">Check the building</h3>
+                  <p className="text-sm text-gray-600">We find out which carriers (Tata Tele Business Services or ACT Fibernet) already have fibre in your building, or how far a new fibre run has to go.</p>
                 </div>
-
                 <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">STEP 2: OPTICAL RING</span>
-                  <h4 className="text-base font-bold text-gray-900">Redundant Last-Mile Fiber</h4>
-                  <p className="text-xs text-gray-600">Dual diverse physical cable routes entering your building to prevent cuts.</p>
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Step 2: Last mile</span>
+                  <h3 className="text-base font-bold text-gray-900">Fibre to your floor</h3>
+                  <p className="text-sm text-gray-600">The carrier brings fibre into your building and up to your office, with building approval where it's needed.</p>
                 </div>
-
                 <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-green-800 uppercase">STEP 3: SERVER ROOM</span>
-                  <h4 className="text-base font-bold text-gray-900">SFP+ Optical Hand-off</h4>
-                  <p className="text-xs text-gray-600">Single-mode optical fiber or RJ45 port ready for your firewall or router.</p>
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Step 3: Handover</span>
+                  <h3 className="text-base font-bold text-gray-900">Ready for your firewall</h3>
+                  <p className="text-sm text-gray-600">The line is handed over on a router or fibre/copper port, with your static IPs configured and the speed tested before sign-off.</p>
                 </div>
               </div>
-
-              {/* Simple SLA Matrix Table */}
-              <div className="mt-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Service Level Agreement (SLA) Standards</h3>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">Internet leased line vs business broadband</h3>
                 <div className="overflow-x-auto rounded-xl border border-gray-200">
                   <table className="w-full text-left text-xs sm:text-sm">
                     <thead className="bg-gray-100 text-gray-700 font-semibold">
                       <tr>
-                        <th className="py-3 px-4">Metric</th>
-                        <th className="py-3 px-4">Adapt India Guarantee</th>
-                        <th className="py-3 px-4">Standard Broadband</th>
+                        <th className="py-3 px-4"> </th>
+                        <th className="py-3 px-4">Internet leased line</th>
+                        <th className="py-3 px-4">Business broadband</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 text-gray-700">
                       <tr>
-                        <td className="py-3 px-4 font-medium text-gray-900">Uptime SLA</td>
-                        <td className="py-3 px-4 font-bold text-green-700">99.5% Guaranteed</td>
-                        <td className="py-3 px-4 text-gray-500">98% (No Guarantee)</td>
+                        <td className="py-3 px-4 font-medium text-gray-900">Bandwidth</td>
+                        <td className="py-3 px-4 font-bold text-green-700">Dedicated to you, not shared</td>
+                        <td className="py-3 px-4 text-gray-500">Shared with other users nearby</td>
                       </tr>
                       <tr>
-                        <td className="py-3 px-4 font-medium text-gray-900">Bandwidth Ratio</td>
-                        <td className="py-3 px-4 font-bold text-green-700">1:1 Symmetric (Equal Upload &amp; Download)</td>
-                        <td className="py-3 px-4 text-gray-500">1:20 Shared Contention</td>
+                        <td className="py-3 px-4 font-medium text-gray-900">Upload speed</td>
+                        <td className="py-3 px-4 font-bold text-green-700">Same as download</td>
+                        <td className="py-3 px-4 text-gray-500">Often lower than download</td>
                       </tr>
                       <tr>
-                        <td className="py-3 px-4 font-medium text-gray-900">Inter-City Latency</td>
-                        <td className="py-3 px-4 font-bold text-green-700">&lt; 15 ms across Tier-1 Core</td>
-                        <td className="py-3 px-4 text-gray-500">40 – 70 ms</td>
+                        <td className="py-3 px-4 font-medium text-gray-900">Uptime commitment</td>
+                        <td className="py-3 px-4 font-bold text-green-700">99.5% SLA in writing</td>
+                        <td className="py-3 px-4 text-gray-500">Usually best effort</td>
                       </tr>
                       <tr>
-                        <td className="py-3 px-4 font-medium text-gray-900">Restoration Time (MTTR)</td>
-                        <td className="py-3 px-4 font-bold text-green-700">&lt; 4 Hours on-site</td>
-                        <td className="py-3 px-4 text-gray-500">24 – 48 Hours</td>
+                        <td className="py-3 px-4 font-medium text-gray-900">Static public IPs</td>
+                        <td className="py-3 px-4 font-bold text-green-700">Included</td>
+                        <td className="py-3 px-4 text-gray-500">Extra, or not offered</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 font-medium text-gray-900">Fault handling</td>
+                        <td className="py-3 px-4 font-bold text-green-700">Priority repair under the carrier SLA</td>
+                        <td className="py-3 px-4 text-gray-500">Standard complaint queue</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
-
             </div>
           </section>
         )}
@@ -376,8 +375,8 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
               
               <div>
                 <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">Architecture Comparison</span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Why Enterprises Switch from MPLS to SD-WAN</h2>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1">Save up to 40% on WAN expenses while gaining sub-second multi-link failover.</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Why businesses move from MPLS to SD-WAN</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Use any mix of links at each branch, with automatic failover and one dashboard for every site.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -390,11 +389,11 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
                   <ul className="flex flex-col gap-2.5 text-xs text-gray-600">
                     <li className="flex items-center gap-2">
                       <span className="text-red-500 font-bold">✕</span>
-                      <span>Traffic takes 20-30 seconds to failover during an outage</span>
+                      <span>A branch with one circuit goes down when that circuit fails</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-red-500 font-bold">✕</span>
-                      <span>Expensive dedicated MPLS lines with slow site turnarounds</span>
+                      <span>Every branch needs a private circuit from one carrier</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-red-500 font-bold">✕</span>
@@ -415,7 +414,7 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
                   <ul className="flex flex-col gap-2.5 text-xs text-blue-950 font-medium">
                     <li className="flex items-center gap-2">
                       <span className="text-green-600 font-bold">✓</span>
-                      <span>Sub-50ms packet failover preserves active Zoom &amp; VoIP calls</span>
+                      <span>Traffic moves to the backup link automatically, often before calls drop</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-green-600 font-bold">✓</span>
@@ -427,7 +426,7 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-green-600 font-bold">✓</span>
-                      <span>Zero-touch provisioning: branch goes live in under 30 minutes</span>
+                      <span>Pre-configured devices, so a new branch is set up from the cloud</span>
                     </li>
                   </ul>
                 </div>
@@ -482,34 +481,29 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
         {/* D. If Managed MPLS: Private Network Security */}
         {service.slug === "managed-mpls" && (
           <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-14 bg-white border-b border-gray-200 text-left">
-            <div className="max-w-7xl mx-auto flex flex-col gap-8">
-              
+            <div className="max-w-7xl mx-auto flex flex-col gap-10">
               <div>
-                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">Bank-Grade Security</span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Class of Service (CoS) Traffic Prioritization</h2>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1">Hardware-enforced packet queues ensuring mission-critical ERP never stutters.</p>
+                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">Traffic priority</span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">MPLS traffic priority (Class of Service)</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">MPLS lets you decide which traffic goes first when a link is busy.</p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 rounded-xl border border-blue-200 bg-blue-50/50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-blue-800 uppercase">PRIORITY 1: REAL-TIME</span>
-                  <h4 className="text-base font-bold text-gray-900">Voice &amp; Video Traffic</h4>
-                  <p className="text-xs text-gray-600">Zero packet jitter and guaranteed bandwidth reservation for smooth conferencing.</p>
-                </div>
-
                 <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-gray-700 uppercase">PRIORITY 2: CRITICAL</span>
-                  <h4 className="text-base font-bold text-gray-900">Core Banking &amp; ERP</h4>
-                  <p className="text-xs text-gray-600">Deterministic sub-millisecond priority for database synchronizations.</p>
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Priority 1</span>
+                  <h3 className="text-base font-bold text-gray-900">Voice and video</h3>
+                  <p className="text-sm text-gray-600">Calls and meetings get first claim on bandwidth, so they stay clear when the link is busy.</p>
                 </div>
-
                 <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-gray-700 uppercase">PRIORITY 3: STANDARD</span>
-                  <h4 className="text-base font-bold text-gray-900">General Web &amp; Email</h4>
-                  <p className="text-xs text-gray-600">Best-effort throughput that never interferes with mission-critical applications.</p>
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Priority 2</span>
+                  <h3 className="text-base font-bold text-gray-900">Core banking, ERP and billing</h3>
+                  <p className="text-sm text-gray-600">Business applications come next, ahead of general traffic.</p>
+                </div>
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Priority 3</span>
+                  <h3 className="text-base font-bold text-gray-900">Email, web and backups</h3>
+                  <p className="text-sm text-gray-600">Everything else uses the remaining capacity without slowing the important traffic.</p>
                 </div>
               </div>
-
             </div>
           </section>
         )}
@@ -517,40 +511,34 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
         {/* E. If Business Communications: Omnichannel Voice */}
         {service.slug === "business-communications" && (
           <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-14 bg-white border-b border-gray-200 text-left">
-            <div className="max-w-7xl mx-auto flex flex-col gap-8">
-              
+            <div className="max-w-7xl mx-auto flex flex-col gap-10">
               <div>
-                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">Omnichannel Channels</span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Modern Enterprise Communications Suite</h2>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1">Connect with customers on phone, WhatsApp, and SMS with CRM sync.</p>
+                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">Voice and messaging</span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Business phone and messaging services</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Calls and customer messages on one platform, linked to your CRM where you need it.</p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                <div className="p-5 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">SIP TRUNK</span>
-                  <h4 className="text-sm font-bold text-gray-900">High-Capacity Channels</h4>
-                  <p className="text-xs text-gray-600">10 to 1,500+ concurrent channels compatible with Teams, Asterisk, and Avaya.</p>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">SIP trunk</span>
+                  <h3 className="text-base font-bold text-gray-900">Phone lines for your PBX</h3>
+                  <p className="text-sm text-gray-600">Call channels delivered over data to your existing IP PBX, scaled up or down without new cabling.</p>
                 </div>
-
-                <div className="p-5 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">CLOUD CCaaS</span>
-                  <h4 className="text-sm font-bold text-gray-900">Smart Contact Center</h4>
-                  <p className="text-xs text-gray-600">Intelligent IVR, predictive dialer, and live agent call monitoring.</p>
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Cloud telephony</span>
+                  <h3 className="text-base font-bold text-gray-900">Cloud PBX and contact centre</h3>
+                  <p className="text-sm text-gray-600">IVR, call queues, recording and reports from a dashboard, on desk phones, laptops or mobiles.</p>
                 </div>
-
-                <div className="p-5 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">WHATSAPP API</span>
-                  <h4 className="text-sm font-bold text-gray-900">Verified Business Chat</h4>
-                  <p className="text-xs text-gray-600">Automated order alerts, rich media buttons, and chatbot handoff.</p>
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Toll-free</span>
+                  <h3 className="text-base font-bold text-gray-900">1800 and single numbers</h3>
+                  <p className="text-sm text-gray-600">One number for customers, routed to the right office or team.</p>
                 </div>
-
-                <div className="p-5 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">1800 TOLL-FREE</span>
-                  <h4 className="text-sm font-bold text-gray-900">National Vanity Numbers</h4>
-                  <p className="text-xs text-gray-600">Single recognizable number accessible across all mobile and landline networks.</p>
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Messaging</span>
+                  <h3 className="text-base font-bold text-gray-900">WhatsApp Business API</h3>
+                  <p className="text-sm text-gray-600">Order updates, reminders and support chats from one verified business number.</p>
                 </div>
               </div>
-
             </div>
           </section>
         )}
@@ -678,46 +666,27 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
         {/* I. If Enterprise Broadband: Plan & Tier Comparison */}
         {service.slug === "enterprise-broadband" && (
           <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-14 bg-white border-b border-gray-200 text-left">
-            <div className="max-w-7xl mx-auto flex flex-col gap-8">
+            <div className="max-w-7xl mx-auto flex flex-col gap-10">
               <div>
-                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">Speed &amp; Capacity Options</span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Enterprise Broadband Tiers</h2>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1">High-speed business fiber designed for small offices, retail outlets, and branch sites.</p>
+                <span className="text-xs font-mono font-bold uppercase text-[#E31E24]">Which setup fits</span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Business broadband for every kind of site</h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Not every site needs a leased line. Here's where business broadband works well.</p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 rounded-2xl border border-gray-200 bg-gray-50 flex flex-col gap-3">
-                  <span className="text-xs font-mono font-bold text-gray-500 uppercase">TIER 1 • SME</span>
-                  <h3 className="text-2xl font-black text-gray-900">200 Mbps</h3>
-                  <p className="text-xs text-gray-600">Ideal for up to 25 users. Equal upload and download speed with zero throttling.</p>
-                  <ul className="text-xs text-gray-700 flex flex-col gap-1.5 pt-3 border-t border-gray-200 mt-auto">
-                    <li>✓ 1 Static IPv4 Address</li>
-                    <li>✓ Wi-Fi 6 Router Included</li>
-                    <li>✓ 99.5% Uptime Commitment</li>
-                  </ul>
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Small sites</span>
+                  <h3 className="text-base font-bold text-gray-900">Small offices, shops and clinics</h3>
+                  <p className="text-sm text-gray-600">Fibre broadband with a business router and properly planned Wi-Fi, for sites with a handful of users and cloud apps.</p>
                 </div>
-
-                <div className="p-6 rounded-2xl border-2 border-[#E31E24] bg-white shadow-sm flex flex-col gap-3 relative">
-                  <span className="absolute -top-3 right-6 px-3 py-0.5 bg-[#E31E24] text-white text-[10px] font-bold uppercase rounded-full">POPULAR</span>
-                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">TIER 2 • BUSINESS</span>
-                  <h3 className="text-2xl font-black text-gray-900">500 Mbps</h3>
-                  <p className="text-xs text-gray-600">For mid-size offices with 25-75 users conducting daily video calls and CRM transfers.</p>
-                  <ul className="text-xs text-gray-700 flex flex-col gap-1.5 pt-3 border-t border-gray-200 mt-auto">
-                    <li>✓ 2 Static IPv4 Addresses</li>
-                    <li>✓ Dual-Band Managed Wi-Fi</li>
-                    <li>✓ 8-Hour On-Site Resolution</li>
-                  </ul>
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Branches</span>
+                  <h3 className="text-base font-bold text-gray-900">Branch offices with a backup</h3>
+                  <p className="text-sm text-gray-600">Broadband plus a 4G/5G backup, joined to head office with SD-WAN if you have several branches.</p>
                 </div>
-
-                <div className="p-6 rounded-2xl border border-gray-200 bg-gray-50 flex flex-col gap-3">
-                  <span className="text-xs font-mono font-bold text-gray-500 uppercase">TIER 3 • ENTERPRISE</span>
-                  <h3 className="text-2xl font-black text-gray-900">1,000 Mbps</h3>
-                  <p className="text-xs text-gray-600">Full Gigabit throughput for high-demand creative studios and branch headquarters.</p>
-                  <ul className="text-xs text-gray-700 flex flex-col gap-1.5 pt-3 border-t border-gray-200 mt-auto">
-                    <li>✓ /29 Subnet (5 Usable IPs)</li>
-                    <li>✓ Priority NOC Routing</li>
-                    <li>✓ 4-Hour On-Site Resolution</li>
-                  </ul>
+                <div className="p-6 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
+                  <span className="text-xs font-mono font-bold text-[#E31E24] uppercase">Backup</span>
+                  <h3 className="text-base font-bold text-gray-900">Second line for a leased line site</h3>
+                  <p className="text-sm text-gray-600">Broadband from a different carrier as the backup to your leased line, with automatic failover.</p>
                 </div>
               </div>
             </div>
@@ -933,10 +902,10 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
           <section className="w-full bg-white border-t border-gray-100 py-12 sm:py-16">
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900">
-                {service.name} in your city
+                {keyword ?? service.name} in your city
               </h2>
               <p className="mt-2 text-sm text-gray-600 max-w-2xl">
-                We deliver {service.name} across India through Tata Tele Business Services and ACT Fibernet. See local
+                We deliver {keyword ? keyword.toLowerCase() : service.name} across India through Tata Tele Business Services and ACT Fibernet. See local
                 coverage, business areas and delivery details for your city.
               </p>
               <ul className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
@@ -975,7 +944,7 @@ export default function ServiceDetailClient({ service, cities = [], heading }: S
         )}
 
         <UpgradeCTA
-          title={`Get ${service.name} for your business`}
+          title={keyword ? `${keyword} quote for your business` : `Get ${service.name} for your business`}
           text="Share your locations and requirements. We'll check feasibility at each address and send a clear proposal."
         />
 

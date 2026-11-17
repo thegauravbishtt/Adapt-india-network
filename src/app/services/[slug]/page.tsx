@@ -28,17 +28,19 @@ interface ServicePageProps {
  * Titles stay under ~65 characters and descriptions under ~160 so Google
  * shows them in full.
  */
-const SERVICE_SEO: Record<string, { title: string; description: string; serviceType: string; h1?: string }> = {
+const SERVICE_SEO: Record<string, { title: string; description: string; serviceType: string; h1?: string; keyword?: string }> = {
   "smart-internet-ill": {
     title: "Internet Leased Line (ILL) Provider in India",
     h1: "Internet Leased Line (ILL) Provider in India",
+    keyword: "Internet leased line",
     description:
-      "Dedicated 1:1 symmetrical Internet Leased Line with SLA, static IPs and 24/7 NOC for offices in Delhi, Gurgaon, Noida and pan-India. Get a quote today.",
+      "Internet leased line connection for business: dedicated fibre, same upload and download speed, static IPs and a 99.5% SLA, in Delhi NCR and across India.",
     serviceType: "Internet Leased Line",
   },
   "smartflo-sd-wan": {
     title: "SD-WAN Service Provider in India | Managed SD-WAN",
     h1: "Managed SD-WAN Service Provider in India",
+    keyword: "SD-WAN",
     description:
       "Managed SD-WAN for multi-branch businesses in India: link bonding, automatic failover, central policy control and zero-touch branch rollout. Talk to our team.",
     serviceType: "SD-WAN",
@@ -52,12 +54,15 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
   "managed-mpls": {
     title: "MPLS Service Providers in India | Managed MPLS Services",
     h1: "Managed MPLS Service Provider in India",
+    keyword: "MPLS",
     description:
       "Managed MPLS services for Indian businesses: a private MPLS VPN network linking branches, plants and data centres, with traffic priority and 24/7 support.",
     serviceType: "MPLS VPN",
   },
   "business-communications": {
     title: "SIP Trunk & Cloud Telephony Provider in India",
+    h1: "SIP Trunk & Cloud Telephony Provider in India",
+    keyword: "SIP trunk and cloud telephony",
     description:
       "SIP trunking, cloud contact centre, toll-free and virtual numbers, and WhatsApp Business API for Indian businesses. Port numbers and integrate with your CRM.",
     serviceType: "SIP Trunk and Cloud Telephony",
@@ -105,9 +110,11 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     serviceType: "Point-to-Point Leased Line",
   },
   "enterprise-broadband": {
-    title: "Business Broadband & Office Wi-Fi in India",
+    title: "Business Broadband Connection & Office Wi-Fi in India",
+    h1: "Business Broadband Connection & Office Wi-Fi",
+    keyword: "Business broadband",
     description:
-      "High-speed business broadband and managed campus Wi-Fi for offices, retail stores and warehouses in Delhi, Gurgaon, Noida and pan-India.",
+      "Business broadband connection and managed office Wi-Fi for small offices, shops, clinics and branches in Delhi NCR and across India, plus backup lines.",
     serviceType: "Enterprise Broadband",
   },
 };
@@ -241,6 +248,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <ServiceDetailClient
         service={service}
         heading={seo?.h1}
+        keyword={seo?.keyword}
         cities={isTelecom ? cityPages.map((c) => ({ slug: c.slug, city: c.city })) : []}
       />
     </>

@@ -13,14 +13,16 @@ export const SITE_WIDE_UPDATE = "2026-11-12";
 
 /** Pages changed after the site-wide update. */
 const PAGE_DATES: Record<string, string> = {
+  "/services/enterprise-broadband/": "2026-11-17",
+  "/services/business-communications/": "2026-11-17",
   "/services/whatsapp-business-platform/": "2026-11-13",
-  "/services/smartflo-sd-wan/": "2026-11-12",
-  "/services/managed-mpls/": "2026-11-13",
+  "/services/smartflo-sd-wan/": "2026-11-17",
+  "/services/managed-mpls/": "2026-11-17",
   "/locations/gurgaon/": "2026-11-13",
   "/locations/noida/": "2026-11-13",
   "/locations/mumbai/": "2026-11-13",
   "/locations/bengaluru/": "2026-11-13",
-  "/services/smart-internet-ill/": "2026-11-16",
+  "/services/smart-internet-ill/": "2026-11-17",
   "/contact/": "2026-11-16",
   "/services/": "2026-11-12",
   "/locations/": "2026-11-12",

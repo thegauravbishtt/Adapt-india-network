@@ -44,6 +44,37 @@ export const serviceGuides: Record<string, ServiceGuide> = {
       "Contract length",
       "Whether you add a backup link from a second carrier",
     ],
+    choosing: {
+      heading: "How to choose an internet leased line provider in India",
+      intro:
+        "Leased lines in India run on a small number of carrier networks, so the differences that matter are whether the carrier already reaches your building, what the SLA says, and who you call when the line goes down. Check these before you sign.",
+      points: [
+        {
+          title: "Fibre already in your building",
+          text: "Ask which carriers already have fibre in your building. A carrier that is already there can deliver faster and usually more reliably than one that has to lay new cable.",
+        },
+        {
+          title: "Uptime SLA in writing",
+          text: "Look for the uptime commitment, the repair-time terms and the service credits written into the contract, not just promised on a call.",
+        },
+        {
+          title: "Static IPs and upload speed",
+          text: "Confirm how many static public IPs are included and that upload speed matches download, if you run VPNs, CCTV access, servers or video calls.",
+        },
+        {
+          title: "Room to upgrade",
+          text: "Check that the speed can be increased later on the same line, so you don't have to change provider as the office grows.",
+        },
+        {
+          title: "A backup on another carrier",
+          text: "If downtime is costly, plan a second line from a different carrier, ideally on a different route, with automatic failover.",
+        },
+        {
+          title: "Who handles faults",
+          text: "Find out who you call when the line goes down and whether they will chase the carrier for you, day and night.",
+        },
+      ],
+    },
   },
   "smartflo-sd-wan": {
     layout: "cards",
@@ -216,6 +247,37 @@ export const serviceGuides: Record<string, ServiceGuide> = {
       "Number types (toll-free, local, mobile)",
       "Features such as recording, CRM integration and analytics",
     ],
+    choosing: {
+      heading: "How to choose a SIP trunk or cloud telephony provider",
+      intro:
+        "Call quality and reliability depend as much on the network as on the phone service, so look at both before you switch.",
+      points: [
+        {
+          title: "SIP trunk or cloud PBX",
+          text: "Keep a working IP PBX with a SIP trunk; move to cloud telephony if your team is spread out or the PBX is ageing.",
+        },
+        {
+          title: "The line that carries your calls",
+          text: "Voice needs a stable connection with low delay. A leased line or a dedicated voice link works far better than shared broadband.",
+        },
+        {
+          title: "Your existing numbers",
+          text: "Ask which of your current numbers can move across and how the switch will be done without losing calls.",
+        },
+        {
+          title: "Features you'll actually use",
+          text: "IVR, call queues, recording, missed-call alerts and CRM integration matter for sales and support teams. Check they're included.",
+        },
+        {
+          title: "Rules for business calling",
+          text: "If you make promotional calls, make sure the setup follows TRAI's rules on commercial communication.",
+        },
+        {
+          title: "One partner for voice and network",
+          text: "When the same team looks after the phone service and the internet line, call-quality problems get fixed faster.",
+        },
+      ],
+    },
   },
   "network-as-a-service": {
     layout: "cards",
@@ -434,5 +496,32 @@ export const serviceGuides: Record<string, ServiceGuide> = {
       "Number of sites",
       "Whether it's a main link or a backup",
     ],
+    choosing: {
+      heading: "Business broadband or leased line: how to decide",
+      intro:
+        "Business broadband is the right choice for many small sites. These questions help you decide when it's enough and when to move to a leased line.",
+      points: [
+        {
+          title: "How many people use it",
+          text: "A small office or shop with a few users and cloud apps usually does well on broadband. Larger teams on video calls all day benefit from a leased line.",
+        },
+        {
+          title: "How much you upload",
+          text: "Broadband upload is usually lower than download. If you send CCTV footage, backups or large files, upload speed matters.",
+        },
+        {
+          title: "What downtime costs you",
+          text: "If an outage stops billing or sales, add a backup line or move to a leased line with an uptime SLA.",
+        },
+        {
+          title: "Static IP needs",
+          text: "One static IP is often available on broadband. Several static IPs usually mean a leased line.",
+        },
+        {
+          title: "Wi-Fi inside the office",
+          text: "Slow internet is often a Wi-Fi problem, not the line. Plan access points for the number of people and the layout.",
+        },
+      ],
+    },
   },
 };
