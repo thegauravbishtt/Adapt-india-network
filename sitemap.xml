@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
 <loc>https://www.adapt-india.net/</loc>
 <lastmod>2026-11-12T06:30:00.000Z</lastmod>
@@ -272,12 +272,18 @@
 </url>
 <url>
 <loc>https://www.adapt-india.net/services/smart-internet-ill/</loc>
+<image:image>
+<image:loc>https://www.adapt-india.net/images/services/internet-leased-line-provider-india.jpg</image:loc>
+</image:image>
 <lastmod>2026-11-17T06:30:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
 <loc>https://www.adapt-india.net/services/smartflo-sd-wan/</loc>
+<image:image>
+<image:loc>https://www.adapt-india.net/images/services/managed-sd-wan-service-provider-india.jpg</image:loc>
+</image:image>
 <lastmod>2026-11-17T06:30:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
@@ -290,12 +296,18 @@
 </url>
 <url>
 <loc>https://www.adapt-india.net/services/managed-mpls/</loc>
+<image:image>
+<image:loc>https://www.adapt-india.net/images/services/mpls-vpn-service-provider-india.jpg</image:loc>
+</image:image>
 <lastmod>2026-11-17T06:30:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
 <loc>https://www.adapt-india.net/services/business-communications/</loc>
+<image:image>
+<image:loc>https://www.adapt-india.net/images/services/sip-trunk-cloud-telephony-india.jpg</image:loc>
+</image:image>
 <lastmod>2026-11-17T06:30:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
@@ -338,12 +350,18 @@
 </url>
 <url>
 <loc>https://www.adapt-india.net/services/point-to-point-leased-line/</loc>
+<image:image>
+<image:loc>https://www.adapt-india.net/images/services/point-to-point-leased-line-india.jpg</image:loc>
+</image:image>
 <lastmod>2026-11-12T06:30:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
 <loc>https://www.adapt-india.net/services/enterprise-broadband/</loc>
+<image:image>
+<image:loc>https://www.adapt-india.net/images/services/business-broadband-connection-office.jpg</image:loc>
+</image:image>
 <lastmod>2026-11-17T06:30:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
