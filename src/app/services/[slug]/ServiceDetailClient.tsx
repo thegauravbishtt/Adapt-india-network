@@ -291,14 +291,15 @@ export default function ServiceDetailClient({ service, cities = [], heading, key
         {/* 2b. PLAIN-LANGUAGE GUIDE (different layout per service) */}
         {serviceGuides[service.slug] && (
           <ServiceGuideSection guide={serviceGuides[service.slug]} serviceName={service.name} />
-          <QuickQuoteForm
-            service={keyword ?? service.name}
-            heading={`Get a free ${keyword ? keyword.toLowerCase() : service.name} quote`}
-          />
         )}
         {serviceGuides[service.slug]?.choosing && (
           <ServiceChoosingSection choosing={serviceGuides[service.slug].choosing!} />
         )}
+
+        <QuickQuoteForm
+          service={keyword ?? service.name}
+          heading={`Get a free ${keyword ? keyword.toLowerCase() : service.name} quote`}
+        />
 
         {/* 3. BESPOKE PAGE CONTENT: Tailored Distinctive Design per Service */}
         
