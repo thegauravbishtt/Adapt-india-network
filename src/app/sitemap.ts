@@ -3,7 +3,6 @@ import { SITE_URL } from "../lib/seo";
 import { telecomServices } from "../data/telecomServicesData";
 import { cityPages } from "../data/locationsData";
 import { areaPages } from "../data/areaPages";
-import { industryPages } from "../data/solutionPages";
 import { seedArticles } from "../data/articles";
 import { getBlogs } from "../lib/db";
 import { subServices, isIndexedSubService } from "../data/subServices";
@@ -26,8 +25,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ["/about/how-we-work/", 0.5, "yearly"],
     ["/clients/", 0.6, "monthly"],
     ["/faqs/", 0.6, "monthly"],
-    ["/industries/", 0.7, "monthly"],
-    ["/services/internet-exchange-peering/", 0.8, "monthly"],
     ["/articles/", 0.5, "weekly"],
     ["/privacy-policy/", 0.2, "yearly"],
     ["/terms-and-conditions/", 0.2, "yearly"],
@@ -71,12 +68,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...areaPages.map((a) => ({
       url: url(`/locations/${a.citySlug}/${a.slug}/`),
       lastModified: lastModifiedFor(`/locations/${a.citySlug}/${a.slug}/`),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
-    ...industryPages.map((p) => ({
-      url: url(`/industries/${p.slug}/`),
-      lastModified: lastModifiedFor(`/industries/${p.slug}/`),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

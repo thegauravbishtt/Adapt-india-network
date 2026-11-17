@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { areaPages } from "../data/areaPages";
-import { industryPages } from "../data/solutionPages";
 
 /**
  * Homepage links to city and business-area pages.
@@ -53,28 +52,6 @@ export default function HomeAreasSection() {
               className="inline-block px-3.5 py-1.5 rounded-full text-sm font-semibold text-[#E31E24] hover:underline"
             >
               All locations →
-            </Link>
-          </li>
-        </ul>
-
-        <h3 className="text-xs font-mono font-bold tracking-widest uppercase text-zinc-500 mb-3">Industries</h3>
-        <ul className="flex flex-wrap gap-2.5 mb-7">
-          {industryPages.map((p) => (
-            <li key={p.slug}>
-              <Link
-                href={`/industries/${p.slug}/`}
-                className="inline-block px-3.5 py-1.5 rounded-full border border-zinc-300 text-sm text-zinc-800 hover:border-[#E31E24] hover:text-[#E31E24] transition-colors"
-              >
-                {p.name}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link
-              href="/services/internet-exchange-peering/"
-              className="inline-block px-3.5 py-1.5 rounded-full border border-zinc-300 text-sm text-zinc-800 hover:border-[#E31E24] hover:text-[#E31E24] transition-colors"
-            >
-              Internet Exchange & Peering
             </Link>
           </li>
         </ul>

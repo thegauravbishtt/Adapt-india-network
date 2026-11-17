@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { areaPages } from "../data/areaPages";
-import { industryPages } from "../data/solutionPages";
 
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -419,23 +418,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
-            <h4 className="text-xs sm:text-[13px] text-zinc-400 font-normal mt-6 mb-3.5 tracking-normal">
-              <Link href="/industries/" className="hover:text-white transition-colors">Industries</Link>
-            </h4>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2.5 text-xs sm:text-[13px] text-zinc-200">
-              {industryPages.map((p) => (
-                <li key={p.slug}>
-                  <Link href={`/industries/${p.slug}/`} className="hover:text-white transition-colors">
-                    {p.name}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/services/internet-exchange-peering/" className="hover:text-white transition-colors">
-                  Internet Exchange & Peering
-                </Link>
-              </li>
             </ul>
           </div>
 
