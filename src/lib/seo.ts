@@ -287,11 +287,15 @@ export function serviceSchema(input: {
   path: string;
   serviceType: string;
   areaServed?: string[];
+  image?: string;
+  alternateName?: string[];
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name: input.name,
+    ...(input.alternateName?.length ? { alternateName: input.alternateName } : {}),
+    ...(input.image ? { image: absoluteUrl(input.image) } : {}),
     serviceType: input.serviceType,
     description: input.description,
     url: absoluteUrl(input.path),

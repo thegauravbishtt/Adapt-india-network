@@ -1,3 +1,4 @@
+import { SERVICE_SEO_IMAGES } from "../../../data/serviceSeoImages";
 import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -167,7 +168,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     path: `/services/${slug}/`,
     // Aliases such as /services/sd-wan/ point Google at the main page.
     canonicalPath: `/services/${service.slug}/`,
-    image: service.image,
+    image: SERVICE_SEO_IMAGES[service.slug]?.src ?? service.image,
     // Pages left over from the old website template (web design, SEO, ads...)
     // are not part of the telecom offering, so keep them out of Google.
     noIndex: !telecomSlugs.has(service.slug),
@@ -235,6 +236,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               path,
               serviceType: seo?.serviceType ?? service.name,
               areaServed: BUSINESS.areaServed,
+              image: SERVICE_SEO_IMAGES[service.slug]?.src ?? service.image,
+              alternateName: SERVICE_SEO_IMAGES[service.slug]?.alternateNames,
             }),
             breadcrumbSchema([
               { name: "Home", path: "/" },

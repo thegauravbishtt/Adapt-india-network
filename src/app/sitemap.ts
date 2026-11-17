@@ -7,6 +7,7 @@ import { seedArticles } from "../data/articles";
 import { getBlogs } from "../lib/db";
 import { subServices, isIndexedSubService } from "../data/subServices";
 import { lastModifiedFor } from "../data/contentDates";
+import { SERVICE_SEO_IMAGES } from "../data/serviceSeoImages";
 
 export const dynamic = "force-static";
 
@@ -76,6 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: lastModifiedFor(`/services/${s.slug}/`),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+      ...(SERVICE_SEO_IMAGES[s.slug] ? { images: [url(SERVICE_SEO_IMAGES[s.slug].src)] } : {}),
     })),
     ...subServices.filter(notRedirected).filter((s) => isIndexedSubService(s.slug)).map((s) => ({
       url: url(`/services/${s.slug}/`),

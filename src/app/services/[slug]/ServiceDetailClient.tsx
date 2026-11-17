@@ -1,5 +1,6 @@
 "use client";
 
+import { SERVICE_SEO_IMAGES } from "../../../data/serviceSeoImages";
 import QuickQuoteForm from "../../../components/QuickQuoteForm";
 import UpgradeCTA from "@/components/UpgradeCTA";
 import ServiceGuideSection from "@/components/ServiceGuideSection";
@@ -89,7 +90,8 @@ export default function ServiceDetailClient({ service, cities = [], heading, key
     "enterprise-broadband": "/services/broadband_clean.jpg",
   };
 
-  const bannerImage = topicImages[service.slug] || service.image || "/banner-datacenter-racks.jpg";
+  const seoImage = SERVICE_SEO_IMAGES[service.slug];
+  const bannerImage = seoImage?.src || topicImages[service.slug] || service.image || "/banner-datacenter-racks.jpg";
 
   // Dedicated Quick Highlights for Each Service
   const quickHighlights: Record<string, Array<{ title: string; desc: string }>> = {
@@ -180,7 +182,7 @@ export default function ServiceDetailClient({ service, cities = [], heading, key
           <div className="absolute inset-0 z-0">
             <img
               src={bannerImage}
-              alt={service.name}
+              alt={seoImage?.alt ?? service.name}
               fetchPriority="high"
               className="w-full h-full object-cover object-center scale-100 filter brightness-[0.72] contrast-[1.10]"
             />
