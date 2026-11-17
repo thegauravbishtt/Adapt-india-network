@@ -115,7 +115,7 @@ export const telecomServices: ServiceDetail[] = [
       {
         question: "What is the difference between an Internet Leased Line (ILL) and regular broadband?",
         answer:
-          "Regular broadband is a shared connection with contention ratios up to 1:30 and asymmetrical speeds (fast download, slow upload). An Internet Leased Line (ILL) is a 100% dedicated, unshared, 1:1 symmetrical connection backed by financial SLAs guaranteeing 99.5% uptime and <4 hour MTTR.",
+          "Regular broadband is shared with other users in your area, and upload is usually much slower than download, so it slows down at busy times. An Internet Leased Line (ILL) is dedicated to your business, with the same speed for upload and download, static IPs and a 99.5% uptime SLA in writing.",
       },
       {
         question: "How long does a leased line installation take?",
