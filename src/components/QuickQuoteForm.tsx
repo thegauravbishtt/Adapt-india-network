@@ -51,7 +51,7 @@ export default function QuickQuoteForm({ service, heading }: { service: string; 
     "w-full rounded-md border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-[#E31E24]";
 
   return (
-    <section id="quote" className="w-full bg-[#0c0c0d] text-white py-12 sm:py-16 px-4 sm:px-8 lg:px-14">
+    <section id="contact-quote" className="scroll-mt-24 w-full bg-[#0c0c0d] text-white py-12 sm:py-16 px-4 sm:px-8 lg:px-14">
       <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2 items-start">
         <div>
           <h2 className="text-2xl sm:text-3xl font-black font-display tracking-tight mb-3">{heading}</h2>
