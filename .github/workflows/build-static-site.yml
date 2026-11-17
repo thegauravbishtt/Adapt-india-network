@@ -81,7 +81,7 @@ jobs:
         if: steps.build.outcome == 'success'
         continue-on-error: true
         run: |
-          KEY=a44b760ccfbb2241051ae21dbf0365b2
+          KEY=c7558c03fc2cbe141351caa1c32502c0
           for i in $(seq 1 20); do
             if curl -fsS "https://www.adapt-india.net/$KEY.txt" | grep -q "$KEY"; then break; fi
             sleep 30
