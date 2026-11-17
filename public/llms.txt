@@ -1,0 +1,50 @@
+# Adapt India Networks
+
+> Adapt India Networks is an authorised partner of Tata Tele Business Services and ACT Fibernet, founded in 2015 and based in Paschim Vihar, New Delhi. It provides Internet Leased Lines (ILL), SD-WAN, MPLS VPN, business broadband, managed Wi-Fi, SIP trunks and cloud telephony to businesses across India, with feasibility checked at each address before quoting.
+
+Key facts:
+- Business name: Adapt India Networks (partnership firm, founded 2015)
+- Address: WZ97B, Ground Floor, Tackchand Complex, Jwala Heri Market, Paschim Vihar, New Delhi 110063, India
+- Phone / WhatsApp: +91 82874 79961
+- Email: info@adapt-india.net
+- Hours: Monday to Saturday, 9:30 am to 7:00 pm; fault support 24/7
+- Carrier networks: Tata Tele Business Services and ACT Fibernet
+- Service area: Delhi NCR (Delhi, Gurgaon, Noida, Ghaziabad, Faridabad) and cities across India including Mumbai, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Lucknow, Jaipur and Chandigarh
+- Internet leased lines come with a 99.5% uptime SLA in writing and static public IPs
+- Prices are not published; quotes depend on speed, location, carrier availability in the building and contract length
+
+## Main services
+
+- [Internet Leased Line (ILL)](https://www.adapt-india.net/services/smart-internet-ill/): dedicated fibre internet with the same upload and download speed, static IPs and a 99.5% uptime SLA
+- [Managed SD-WAN](https://www.adapt-india.net/services/smartflo-sd-wan/): one network for all branches over leased line, broadband and 4G/5G, with automatic failover
+- [MPLS VPN](https://www.adapt-india.net/services/managed-mpls/): private network between offices, plants and data centres, with traffic priority
+- [SIP Trunk and Cloud Telephony](https://www.adapt-india.net/services/business-communications/): SIP trunks, cloud PBX and IVR, toll-free numbers, WhatsApp Business API
+- [Business Broadband and Office Wi-Fi](https://www.adapt-india.net/services/enterprise-broadband/): broadband for small sites and as a backup line, with planned Wi-Fi
+- [Point-to-Point Leased Line](https://www.adapt-india.net/services/point-to-point-leased-line/): private link between two of your sites
+- [Managed Wi-Fi](https://www.adapt-india.net/services/managed-campus-wifi/): office and campus Wi-Fi design, installation and management
+- [All services](https://www.adapt-india.net/services/)
+
+## Locations
+
+- [All locations](https://www.adapt-india.net/locations/)
+- [Leased line in Delhi](https://www.adapt-india.net/locations/delhi/)
+- [Leased line in Gurgaon](https://www.adapt-india.net/locations/gurgaon/)
+- [Leased line in Noida](https://www.adapt-india.net/locations/noida/)
+- [Leased line in Mumbai](https://www.adapt-india.net/locations/mumbai/)
+- [Leased line in Bengaluru](https://www.adapt-india.net/locations/bengaluru/)
+- [Leased line in Hyderabad](https://www.adapt-india.net/locations/hyderabad/)
+
+## Guides
+
+- [Leased line vs broadband](https://www.adapt-india.net/blog/why-dedicated-internet-leased-lines-matter/)
+- [Point-to-point vs internet leased line](https://www.adapt-india.net/blog/point-to-point-leased-line-vs-internet-leased-line/)
+- [SD-WAN vs MPLS](https://www.adapt-india.net/blog/sd-wan-vs-traditional-mpls-enterprise-guide/)
+- [Dual ISP failover for office](https://www.adapt-india.net/blog/pan-india-carrier-redundancy-dual-homed-failover/)
+- [Static IP address for business](https://www.adapt-india.net/blog/static-ip-address-for-business-india/)
+- [Leased line documents and installation process](https://www.adapt-india.net/blog/leased-line-connection-documents-installation-process/)
+- [SIP trunk vs cloud telephony vs PRI](https://www.adapt-india.net/blog/cloud-telephony-sip-trunking-modern-workforce/)
+- [FAQs](https://www.adapt-india.net/faqs/)
+
+## Contact
+
+- [Contact and quote request](https://www.adapt-india.net/contact/)

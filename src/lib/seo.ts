@@ -171,7 +171,7 @@ export function organizationSchema() {
     logo: absoluteUrl(BUSINESS.logo),
     image: absoluteUrl(DEFAULT_OG_IMAGE),
     description:
-      "Pan-India provider of enterprise Internet Leased Line (ILL), SD-WAN, MPLS VPN, enterprise broadband, managed Wi-Fi, SIP trunk and cloud telephony, headquartered in New Delhi.",
+      "Adapt India Networks is an authorised partner of Tata Tele Business Services and ACT Fibernet, founded in 2015 and based in Paschim Vihar, New Delhi. It provides Internet Leased Line (ILL), SD-WAN, MPLS VPN, business broadband, managed Wi-Fi, SIP trunk and cloud telephony to businesses across India.",
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
     address: {
@@ -239,6 +239,12 @@ export function organizationSchema() {
       "SIP Trunk",
       "Cloud Telephony",
       "Network Security",
+      "Point-to-Point Leased Line",
+      "Internet Exchange and Peering",
+      "Dual ISP Failover",
+      "Static IP Address",
+      "Toll-Free Numbers",
+      "WhatsApp Business API",
     ],
   };
 }

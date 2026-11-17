@@ -1,6 +1,7 @@
 "use client";
 
 import { SERVICE_SEO_IMAGES } from "../../../data/serviceSeoImages";
+import { SERVICE_ANSWERS } from "../../../data/serviceAnswers";
 import QuickQuoteForm from "../../../components/QuickQuoteForm";
 import UpgradeCTA from "@/components/UpgradeCTA";
 import ServiceGuideSection from "@/components/ServiceGuideSection";
@@ -289,6 +290,26 @@ export default function ServiceDetailClient({ service, cities = [], heading, key
             </div>
           </div>
         </section>
+
+        {/* 2a. QUICK ANSWER: a short, quotable answer for search and AI assistants */}
+        {SERVICE_ANSWERS[service.slug] && (
+          <section className="w-full bg-white border-b border-gray-200 px-4 sm:px-8 lg:px-14 py-10 sm:py-12">
+            <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-[1.4fr_1fr] items-start">
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{SERVICE_ANSWERS[service.slug].question}</h2>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{SERVICE_ANSWERS[service.slug].answer}</p>
+              </div>
+              <dl className="rounded-xl border border-gray-200 bg-gray-50 divide-y divide-gray-200 text-sm">
+                {SERVICE_ANSWERS[service.slug].facts.map(([k, v]) => (
+                  <div key={k} className="flex justify-between gap-4 px-4 py-2.5">
+                    <dt className="text-gray-500">{k}</dt>
+                    <dd className="font-semibold text-gray-900 text-right">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </section>
+        )}
 
         {/* 2b. PLAIN-LANGUAGE GUIDE (different layout per service) */}
         {serviceGuides[service.slug] && (
