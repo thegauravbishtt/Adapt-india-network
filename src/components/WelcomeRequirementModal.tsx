@@ -131,9 +131,13 @@ export default function WelcomeRequirementModal() {
 
   if (!isOpen) return null;
 
+  const input =
+    "w-full px-3 py-2.5 bg-white border border-zinc-300 rounded-md text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#E31E24] focus:ring-1 focus:ring-[#E31E24] transition-colors";
+  const label = "block text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-600 mb-1";
+
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 animate-in fade-in duration-150"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           handleClose();
@@ -143,246 +147,206 @@ export default function WelcomeRequirementModal() {
       role="dialog"
       aria-label="Share your requirement"
     >
-      <div className="relative w-full max-w-md bg-white text-zinc-900 rounded-xl shadow-xl border border-zinc-200 overflow-hidden flex flex-col">
-        
+      <div className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-white rounded-xl shadow-2xl border border-zinc-800 grid md:grid-cols-[0.85fr_1.15fr]">
         {/* Close Button */}
         <button
           type="button"
           onClick={handleClose}
-          className="absolute top-3.5 right-3.5 p-1.5 text-zinc-400 hover:text-zinc-700 rounded-md hover:bg-zinc-100 transition-colors cursor-pointer"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/5 md:bg-zinc-100 text-zinc-500 hover:text-white hover:bg-[#E31E24] transition-colors cursor-pointer"
           aria-label="Close"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        <div className="p-6 sm:p-7">
+        {/* Brand panel */}
+        <div className="relative bg-[#0c0c0d] text-white p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
+          <div className="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-[#E31E24]/20 blur-3xl pointer-events-none" />
+          <div className="relative">
+            <span className="font-mono text-[11px] font-extrabold tracking-widest text-[#E31E24] uppercase">
+              {"// "}Free feasibility check
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-black font-display uppercase leading-tight tracking-tight">
+              Get the right connection for your office
+            </h2>
+            <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+              Share your address and we'll check which carriers already reach your building, then send you options.
+            </p>
+            <ul className="mt-5 hidden md:flex flex-col gap-2.5 text-sm text-zinc-300">
+              {[
+                "Leased line, SD-WAN, MPLS & broadband",
+                "Tata Tele Business Services & ACT Fibernet",
+                "99.5% uptime SLA in writing",
+                "One team for setup, support & billing",
+              ].map((t) => (
+                <li key={t} className="flex gap-2.5 items-start">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#E31E24] shrink-0" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative mt-6 hidden md:block border-t border-white/10 pt-4 text-sm">
+            <p className="text-zinc-400">Prefer to talk?</p>
+            <a href="tel:+918287479961" className="font-bold text-white hover:text-[#E31E24]">
+              +91 82874 79961
+            </a>
+            <span className="text-zinc-500"> · </span>
+            <a
+              href="https://wa.me/918287479961"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white hover:text-[#E31E24]"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        {/* Form panel */}
+        <div className="p-5 sm:p-7">
           {isSubmitted ? (
-            <div className="py-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3 text-lg font-bold">
+            <div className="h-full flex flex-col items-center justify-center text-center py-10">
+              <div className="w-14 h-14 rounded-full bg-[#E31E24]/10 text-[#E31E24] flex items-center justify-center mb-4 text-2xl font-bold">
                 ✓
               </div>
-              <h3 className="text-xl font-bold text-zinc-900 mb-1">
-                Thank You
-              </h3>
-              <p className="text-sm text-zinc-600 mb-5">
-                We have received your details and our team will get in touch with you shortly.
+              <h3 className="text-xl font-black font-display uppercase text-zinc-900 mb-1">Thank you</h3>
+              <p className="text-sm text-zinc-600 mb-6 max-w-xs">
+                We've received your details. Our team will call you to confirm the requirement.
               </p>
               <button
                 type="button"
                 onClick={handleClose}
-                className="px-5 py-2 bg-zinc-900 hover:bg-black text-white text-sm font-semibold rounded-lg transition-colors cursor-pointer"
+                className="px-6 py-2.5 bg-[#E31E24] hover:bg-[#c9171d] text-white text-xs font-bold uppercase tracking-wider rounded-md transition-colors cursor-pointer"
               >
                 Close
               </button>
             </div>
           ) : (
-            <div>
-              {/* Heading */}
-              <div className="mb-5 pr-6">
-                <h2 className="text-xl font-bold text-zinc-900">
-                  Get in Touch
-                </h2>
-                <p className="text-xs text-zinc-500 mt-1">
-                  Leave your details below and we will contact you shortly.
-                </p>
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-x-3 gap-y-3 text-left">
+              <div className="col-span-2 sm:col-span-1">
+                <label className={label}>Name *</label>
+                <input type="text" required name="name" value={formData.name} onChange={handleChange} placeholder="Your name" autoComplete="name" className={input} />
+              </div>
+
+              <div className="col-span-2 sm:col-span-1">
+                <label className={label}>Phone *</label>
+                <div className="flex gap-2">
+                  <select
+                    aria-label="Country code"
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleChange}
+                    className="w-[74px] px-1.5 py-2.5 bg-white border border-zinc-300 rounded-md text-xs text-zinc-900 focus:outline-none focus:border-[#E31E24] shrink-0"
+                  >
+                    <option value="+91">+91</option>
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+971">+971</option>
+                    <option value="+61">+61</option>
+                    <option value="+65">+65</option>
+                    <option value="+49">+49</option>
+                    <option value="+33">+33</option>
+                  </select>
+                  <input type="tel" required name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone number" autoComplete="tel" className={input} />
+                </div>
+              </div>
+
+              <div className="col-span-2">
+                <label className={label}>Email *</label>
+                <input type="email" required name="email" value={formData.email} onChange={handleChange} placeholder="name@company.com" autoComplete="email" className={input} />
+              </div>
+
+              {/* Full address: needed to check if we can serve that location */}
+              <div className="col-span-2">
+                <label className={label}>Office address *</label>
+                <input
+                  type="text"
+                  name="address"
+                  required
+                  minLength={5}
+                  value={formData.address}
+                  onChange={handleChange}
+                  placeholder="Building / office no., street, area"
+                  autoComplete="street-address"
+                  className={input}
+                />
+              </div>
+
+              <div className="col-span-2 grid grid-cols-3 gap-3">
+                <div>
+                  <label className={label}>Landmark</label>
+                  <input type="text" name="landmark" value={formData.landmark} onChange={handleChange} placeholder="Optional" autoComplete="off" className={input} />
+                </div>
+                <div>
+                  <label className={label}>City *</label>
+                  <input type="text" name="city" required value={formData.city} onChange={handleChange} placeholder="City" autoComplete="address-level2" className={input} />
+                </div>
+                <div>
+                  <label className={label}>PIN *</label>
+                  <input
+                    type="text"
+                    name="pincode"
+                    required
+                    inputMode="numeric"
+                    pattern="[0-9]{6}"
+                    maxLength={6}
+                    title="6-digit PIN code"
+                    value={formData.pincode}
+                    onChange={handleChange}
+                    placeholder="6 digits"
+                    autoComplete="postal-code"
+                    className={input}
+                  />
+                </div>
+              </div>
+
+              <div className="col-span-2">
+                <label className={label}>Service *</label>
+                <select aria-label="Service interested in" required name="service" value={formData.service} onChange={handleChange} className={input}>
+                  <option value="">Choose a service</option>
+                  {leadProducts.map((g) => (
+                    <optgroup key={g.group} label={g.group}>
+                      {g.items.map((it) => (
+                        <option key={it} value={it}>
+                          {it}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div className="col-span-2">
+                <label className={label}>Message <span className="normal-case font-normal text-zinc-400">(optional)</span></label>
+                <textarea
+                  rows={2}
+                  name="requirement"
+                  value={formData.requirement}
+                  onChange={handleChange}
+                  placeholder="Speed, number of users or sites, backup needed..."
+                  className={`${input} resize-none`}
+                />
               </div>
 
               {errorMessage && (
-                <div className="mb-3.5 p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs">
-                  {errorMessage}
-                </div>
+                <p role="alert" className="col-span-2 p-2.5 rounded-md bg-red-50 border border-red-200 text-red-700 text-xs">
+                  {errorMessage} You can also call +91 82874 79961 or WhatsApp us.
+                </p>
               )}
 
-              {/* Simple Form */}
-              <form onSubmit={handleSubmit} className="space-y-3.5 text-left">
-                <div>
-                  <label className="block text-xs font-medium text-zinc-700 mb-1">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your name"
-                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-zinc-700 mb-1">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="name@example.com"
-                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-zinc-700 mb-1">
-                    Phone Number *
-                  </label>
-                  <div className="flex gap-2">
-                    <select
-                      aria-label="Country code"
-                      name="countryCode"
-                      value={formData.countryCode}
-                      onChange={handleChange}
-                      className="w-24 px-2 py-2 bg-white border border-zinc-300 rounded-lg text-xs text-zinc-900 focus:outline-none focus:border-zinc-900 transition-colors shrink-0"
-                    >
-                      <option value="+91">+91 (IN)</option>
-                      <option value="+1">+1 (US)</option>
-                      <option value="+44">+44 (UK)</option>
-                      <option value="+971">+971 (UAE)</option>
-                      <option value="+61">+61 (AU)</option>
-                      <option value="+65">+65 (SG)</option>
-                      <option value="+49">+49 (DE)</option>
-                      <option value="+33">+33 (FR)</option>
-                    </select>
-                    <input
-                      type="tel"
-                      required
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Phone number"
-                      className="flex-1 px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                    />
-                  </div>
-                </div>
-
-
-
-                {/* Full address: needed to check if we can serve that location */}
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <label className="block text-xs font-medium text-zinc-700 mb-1">
-                      Full Address *
-                    </label>
-                    <input
-                      type="text"
-                      name="address"
-                      required
-                      minLength={5}
-                      value={formData.address}
-                      onChange={handleChange}
-                      placeholder="Building / office no., street, area"
-                      autoComplete="street-address"
-                      className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-zinc-700 mb-1">
-                      Landmark <span className="font-normal text-zinc-400">(optional)</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="landmark"
-                      value={formData.landmark}
-                      onChange={handleChange}
-                      placeholder="e.g. near Metro Station"
-                      autoComplete="off"
-                      className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-2.5">
-                    <div>
-                      <label className="block text-xs font-medium text-zinc-700 mb-1">
-                        City *
-                      </label>
-                      <input
-                        type="text"
-                        name="city"
-                        required
-                        value={formData.city}
-                        onChange={handleChange}
-                        placeholder="City"
-                        autoComplete="address-level2"
-                        className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-medium text-zinc-700 mb-1">
-                        PIN Code *
-                      </label>
-                      <input
-                        type="text"
-                        name="pincode"
-                        required
-                        inputMode="numeric"
-                        pattern="[0-9]{6}"
-                        maxLength={6}
-                        title="6-digit PIN code"
-                        value={formData.pincode}
-                        onChange={handleChange}
-                        placeholder="6-digit PIN code"
-                        autoComplete="postal-code"
-                        className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-zinc-700 mb-1">
-                    Service Interested In *
-                  </label>
-                  <select
-                    aria-label="Service interested in"
-                    required
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors"
-                  >
-                    <option value="">Choose a service</option>
-                    {leadProducts.map((g) => (
-                      <optgroup key={g.group} label={g.group}>
-                        {g.items.map((it) => (
-                          <option key={it} value={it}>
-                            {it}
-                          </option>
-                        ))}
-                      </optgroup>
-                    ))}
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-zinc-700 mb-1">
-                    Message <span className="text-zinc-400 font-normal">(optional)</span>
-                  </label>
-                  <textarea
-                    rows={2}
-                    name="requirement"
-                    value={formData.requirement}
-                    onChange={handleChange}
-                    placeholder="Brief description of your project..."
-                    className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 transition-colors resize-none"
-                  />
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-2.5 px-4 bg-zinc-900 hover:bg-black disabled:opacity-50 text-white font-semibold text-sm rounded-lg transition-colors cursor-pointer text-center"
-                  >
-                    {isSubmitting ? "Submitting..." : "Submit"}
-                  </button>
-                </div>
-              </form>
-            </div>
+              <div className="col-span-2 pt-1">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3 px-4 bg-[#E31E24] hover:bg-[#c9171d] disabled:opacity-60 text-white font-bold text-sm uppercase tracking-wider rounded-md transition-colors cursor-pointer"
+                >
+                  {isSubmitting ? "Sending..." : "Get a free quote →"}
+                </button>
+              </div>
+            </form>
           )}
         </div>
       </div>
