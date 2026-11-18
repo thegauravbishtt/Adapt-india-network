@@ -38,7 +38,7 @@ export default function BlogsSection() {
             {"// "}Guides &amp; insights
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-tight mt-3">
-            Resources to help you <span className="text-[#E31E24]">choose better</span>
+            Leased line &amp; SD-WAN guides to help you <span className="text-[#E31E24]">choose better</span>
           </h2>
           <p className="text-zinc-400 text-sm leading-relaxed mt-4">
             Plain-English guides on leased lines, SD-WAN, business voice and keeping your offices online.

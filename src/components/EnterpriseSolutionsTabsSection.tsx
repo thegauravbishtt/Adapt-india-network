@@ -26,7 +26,7 @@ export default function EnterpriseSolutionsTabsSection() {
         {/* Top Centered Title */}
         <div className="relative z-10 text-center mb-16 lg:mb-20">
           <h2 className="text-3xl lg:text-[44px] font-normal tracking-tight text-white font-sans leading-tight">
-            A partner you can <span className="text-[#E31E24] font-medium">trust</span>
+            A Tata Tele &amp; ACT partner you can <span className="text-[#E31E24] font-medium">trust</span>
           </h2>
         </div>
 
@@ -123,7 +123,7 @@ export default function EnterpriseSolutionsTabsSection() {
           {/* 1. Left-aligned Title */}
           {/* Mobile copy of the desktop heading above: a <p>, so the page has one "A partner you can trust" H2 */}
           <p className="text-[26px] sm:text-[30px] font-normal tracking-tight text-white font-sans leading-tight mb-7">
-            A partner you can <span className="text-[#E31E24] font-medium">trust</span>
+            A Tata Tele &amp; ACT partner you can <span className="text-[#E31E24] font-medium">trust</span>
           </p>
 
           {/* 2. Staggered Transparent Cards to see Earth */}

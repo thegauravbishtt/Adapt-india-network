@@ -59,10 +59,10 @@ export default function DigitalTransformationSection() {
         {/* Section Headline matching exact reference screenshot */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-normal text-zinc-900 tracking-tight leading-tight">
-            <span className="text-[#E31E24] font-medium">Network Fabric</span> for modern enterprises
+            <span className="text-[#E31E24] font-medium">Leased line, SD-WAN &amp; MPLS</span> for growing businesses
           </h2>
           <p className="mt-4 text-zinc-600 text-xs sm:text-[14px] md:text-[15px] leading-relaxed font-normal max-w-3xl">
-            As digital ecosystems evolve, traditional networks struggle with performance, cost and operational complexity. Our Network Fabric gives you a future-ready, programmable platform with integrated security, unified visibility and on-demand control, helping you adapt faster, operate smarter and stay protected everywhere with a network built to scale with your business.
+            Offices depend on the internet for cloud apps, calls and billing. We connect a single office or hundreds of branches across India with internet leased lines, managed SD-WAN and MPLS on Tata Tele Business Services and ACT Fibernet networks, with backup links, security and one team to call when something breaks.
           </p>
         </div>
 

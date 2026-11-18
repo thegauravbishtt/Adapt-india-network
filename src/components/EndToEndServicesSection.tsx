@@ -78,7 +78,7 @@ export default function EndToEndServicesSection() {
               {"// "}Our services
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-zinc-900 tracking-tight leading-tight mt-2">
-              What we deliver, <span className="text-[#E31E24]">end to end</span>
+              Business internet and network services, <span className="text-[#E31E24]">end to end</span>
             </h2>
             <p className="text-zinc-600 text-sm sm:text-base leading-relaxed mt-4">
               Internet, private networks, Wi-Fi, business voice and security for offices across India, from one team
