@@ -135,6 +135,8 @@ Ten years ago most business applications ran on servers at the head office, so s
 
 SD-WAN lets each branch send trusted cloud traffic straight to the internet, while internal traffic such as file servers and on-premise ERP still travels over encrypted tunnels. Video calls in particular feel noticeably better when they take the direct route.
 
+For core systems hosted in AWS or Azure, a [private cloud connection](/services/ez-cloud-connect/) can join the WAN so every branch reaches them over a dedicated path, and [cloud managed services](/services/managed-cloud-services/) can look after the servers themselves if you don't have an in-house cloud team.
+
 ## Security
 
 MPLS is private, which is why banks and payment networks have trusted it for years. It is not encrypted by default, though, and it does nothing about threats arriving from the internet at each branch.
@@ -374,12 +376,13 @@ When staff leave, remove their access on the same day. This sounds obvious, but 
 ## 5. Watch the internet links themselves
 
 - **Web and DNS filtering** blocks many phishing and malware sites before anyone reaches them, at every branch and for remote staff.
-- **DDoS protection** matters if you host services, run an online store or accept payments over your own connection. Clean-pipe protection on the [leased line](/services/smart-internet-ill/) filters attack traffic before it reaches your office.
+- **[DDoS protection](/services/smart-ddos-protection/)** matters if you host services, run an online store or accept payments over your own connection. Clean-pipe protection on the [leased line](/services/smart-internet-ill/) filters attack traffic before it reaches your office.
+- **A [web application firewall (WAF)](/services/web-application-firewall/)** protects customer portals, websites and APIs from attacks such as SQL injection and abusive bots, wherever they are hosted.
 - **Static IPs** should only expose the services you mean to expose. Check from outside which ports are open on each office IP.
 
 ## 6. Keep devices updated
 
-Firewalls, routers, switches and Wi-Fi access points all get security updates. Branch equipment is the most likely to be forgotten because nobody sees it. Keep an inventory of every network device at every site, with its firmware version, and schedule updates.
+Firewalls, routers, switches and Wi-Fi access points all get security updates. Branch equipment is the most likely to be forgotten because nobody sees it. Keep an inventory of every network device at every site, with its firmware version, and schedule updates. If your branches run a mix of brands, [multi-vendor network management](/services/multi-vendor-router-management/) keeps configurations backed up and changes recorded across all of them.
 
 ## 7. Log everything and have someone look at it
 

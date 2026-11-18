@@ -987,4 +987,19 @@ export const cityServiceLinks = [
     href: "/services/business-communications/",
     text: "Business calling, toll-free numbers and cloud contact centre.",
   },
+  {
+    name: "DDoS Protection",
+    href: "/services/smart-ddos-protection/",
+    text: "Filter attack traffic upstream so your line and online services stay up.",
+  },
+  {
+    name: "Web Application Firewall (WAF)",
+    href: "/services/web-application-firewall/",
+    text: "Protect websites, portals and APIs from web attacks and bad bots.",
+  },
+  {
+    name: "Cloud Managed Services",
+    href: "/services/managed-cloud-services/",
+    text: "Monitoring, backups, patching and cost reviews for your cloud.",
+  },
 ];
