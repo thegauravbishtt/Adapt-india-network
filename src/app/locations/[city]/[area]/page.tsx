@@ -8,6 +8,7 @@ import JsonLd from "../../../../components/JsonLd";
 import UpgradeCTA from "../../../../components/UpgradeCTA";
 import { LanguageProvider } from "../../../../context/LanguageContext";
 import { getCityBySlug, cityServiceLinks } from "../../../../data/locationsData";
+import QuickQuoteForm from "../../../../components/QuickQuoteForm";
 import { areaPages, getAreaPage, areaWhatsAppLink } from "../../../../data/areaPages";
 import {
   pageMetadata,
@@ -282,6 +283,10 @@ export default async function AreaLandingPage({ params }: AreaPageProps) {
               </ul>
             </div>
           </section>
+          <QuickQuoteForm
+            service={`Leased line in ${page.area}, ${cityPage.city}`}
+            heading={`Get a free leased line quote in ${page.area}`}
+          />
         </main>
 
         <UpgradeCTA

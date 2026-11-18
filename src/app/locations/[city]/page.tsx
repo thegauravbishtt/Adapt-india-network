@@ -7,7 +7,8 @@ import Footer from "../../../components/Footer";
 import JsonLd from "../../../components/JsonLd";
 import UpgradeCTA from "../../../components/UpgradeCTA";
 import { LanguageProvider } from "../../../context/LanguageContext";
-import { cityPages, getCityBySlug, cityServiceLinks } from "../../../data/locationsData";
+import { cityPages, getCityBySlug, cityServiceLinks, cityExtraFaqs } from "../../../data/locationsData";
+import QuickQuoteForm from "../../../components/QuickQuoteForm";
 import { areasForCity } from "../../../data/areaPages";
 import {
   pageMetadata,
@@ -58,6 +59,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
     .map((slug) => getCityBySlug(slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
   const areaLinks = areasForCity(page.slug);
+  const allFaqs = [...page.faqs, ...cityExtraFaqs(page)];
 
   return (
     <LanguageProvider>
@@ -75,7 +77,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
             { name: "Locations", path: "/locations/" },
             { name: page.city, path },
           ]),
-          faqSchema(page.faqs),
+          faqSchema(allFaqs),
         ]}
       />
 
@@ -148,6 +150,21 @@ export default async function CityLandingPage({ params }: CityPageProps) {
                 </p>
               ))}
               <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">{page.localNote}</p>
+              <dl className="mt-2 rounded-xl border border-zinc-200 bg-zinc-50 divide-y divide-zinc-200 text-sm">
+                {[
+                  ["Services", "Internet leased line, SD-WAN, MPLS, broadband, SIP and cloud telephony"],
+                  ["Carrier networks", "Tata Tele Business Services, ACT Fibernet"],
+                  ["Business areas", page.businessAreas.slice(0, 5).join(", ")],
+                  ["Uptime SLA", "99.5% in writing on leased lines"],
+                  ["Before quoting", "Free feasibility check at your building"],
+                  ["Head office", "Paschim Vihar, New Delhi"],
+                ].map(([k, v]) => (
+                  <div key={k} className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-6 px-4 py-2.5">
+                    <dt className="text-zinc-500 shrink-0">{k}</dt>
+                    <dd className="font-semibold text-zinc-900 sm:text-right">{v}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </section>
 
@@ -238,7 +255,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
                 Leased line questions from {page.city} businesses
               </h2>
               <div className="flex flex-col divide-y divide-zinc-200 border-y border-zinc-200">
-                {page.faqs.map((f) => (
+                {allFaqs.map((f) => (
                   <details key={f.question} className="group py-4">
                     <summary className="cursor-pointer list-none flex justify-between gap-4 font-bold text-zinc-950">
                       <h3 className="text-sm sm:text-base">{f.question}</h3>
@@ -250,6 +267,11 @@ export default async function CityLandingPage({ params }: CityPageProps) {
               </div>
             </div>
           </section>
+
+          <QuickQuoteForm
+            service={`Leased line in ${page.city}`}
+            heading={`Get a free leased line quote in ${page.city}`}
+          />
 
           {/* NEARBY + CTA */}
           <section className="w-full bg-[#f8f9fa] py-12 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20 border-t border-zinc-200">

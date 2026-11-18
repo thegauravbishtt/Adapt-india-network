@@ -1003,3 +1003,32 @@ export const cityServiceLinks = [
     text: "Monitoring, backups, patching and cost reviews for your cloud.",
   },
 ];
+
+/**
+ * Three practical questions every city page answers, written with the city's name and
+ * its own business areas. Questions the city already answers are skipped.
+ */
+export function cityExtraFaqs(page: CityPage): Array<{ question: string; answer: string }> {
+  const has = (re: RegExp) => page.faqs.some((f) => re.test(f.question));
+  const areas = page.businessAreas.slice(0, 3).join(", ");
+  const out: Array<{ question: string; answer: string }> = [];
+  if (!has(/how long|install|deliver/i)) {
+    out.push({
+      question: `How long does it take to get a leased line in ${page.city}?`,
+      answer: `It depends mainly on whether a carrier's fibre already reaches your building. In ${page.city}, many commercial buildings already have Tata Tele Business Services or ACT Fibernet fibre, which makes delivery much quicker; where a new fibre run or building approval is needed, it takes longer. We check your exact address first and give you the expected timeline before you sign.`,
+    });
+  }
+  if (!has(/backup|second|failover|redundan/i)) {
+    out.push({
+      question: `Can I get a backup internet line for my ${page.city} office?`,
+      answer: `Yes. Where your building has more than one carrier, as many do around ${areas}, we set up a main and backup line on different networks with automatic failover. Where only one carrier reaches the site, a 4G/5G backup does the same job.`,
+    });
+  }
+  if (!has(/speed|bandwidth|mbps/i)) {
+    out.push({
+      question: `What leased line speed does a ${page.city} office need?`,
+      answer: `As a rough guide for offices using cloud apps and video calls: up to 15 people 20 to 50 Mbps, 15 to 50 people 50 to 100 Mbps, and 50 to 150 people 100 to 300 Mbps. CCTV, servers or large uploads need more. We size it during the survey, and the speed can usually be raised later on the same line.`,
+    });
+  }
+  return out;
+}
