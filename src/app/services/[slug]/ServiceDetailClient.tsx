@@ -2,6 +2,7 @@
 
 import { SERVICE_SEO_IMAGES } from "../../../data/serviceSeoImages";
 import { SERVICE_ANSWERS } from "../../../data/serviceAnswers";
+import CoreServiceExtras from "../../../components/CoreServiceExtras";
 import QuickQuoteForm from "../../../components/QuickQuoteForm";
 import UpgradeCTA from "@/components/UpgradeCTA";
 import ServiceGuideSection from "@/components/ServiceGuideSection";
@@ -318,6 +319,8 @@ export default function ServiceDetailClient({ service, cities = [], heading, key
         {serviceGuides[service.slug]?.choosing && (
           <ServiceChoosingSection choosing={serviceGuides[service.slug].choosing!} />
         )}
+
+        <CoreServiceExtras slug={service.slug} />
 
         <QuickQuoteForm
           service={keyword ?? service.name}

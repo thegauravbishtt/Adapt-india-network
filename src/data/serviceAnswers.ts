@@ -10,7 +10,7 @@ export const SERVICE_ANSWERS: Record<
   "smart-internet-ill": {
     question: "What is an internet leased line?",
     answer:
-      "An internet leased line (ILL) is a dedicated fibre internet connection for a business. The bandwidth is not shared with other users, upload and download speeds are the same, and it comes with static public IP addresses and an uptime SLA. Adapt India Networks provides leased lines across India on Tata Tele Business Services and ACT Fibernet networks.",
+      "An internet leased line (ILL) is a dedicated fibre internet connection for a business. The bandwidth is not shared with other users, upload and download speeds are the same, and it comes with static public IP addresses and an uptime SLA. Adapt India Networks provides leased line connections for businesses across India on Tata Tele Business Services and ACT Fibernet networks.",
     facts: [
       ["Bandwidth", "Dedicated, same speed up and down"],
       ["Uptime SLA", "99.5% in writing"],
@@ -22,7 +22,7 @@ export const SERVICE_ANSWERS: Record<
   "smartflo-sd-wan": {
     question: "What is managed SD-WAN?",
     answer:
-      "Managed SD-WAN connects all of a company's branches into one network over any mix of links, such as leased lines, broadband and 4G/5G. It moves traffic to a working link automatically when one fails and is controlled from one dashboard. Adapt India Networks sets up, monitors and manages SD-WAN for businesses across India.",
+      "Managed SD-WAN connects all of a company's branches into one network over any mix of links, such as leased lines, broadband and 4G/5G. It moves traffic to a working link automatically when one fails and is controlled from one dashboard. Adapt India Networks provides managed SD-WAN services across India, including cellular SD-WAN on 4G/5G for sites without fibre.",
     facts: [
       ["Links per site", "Leased line, broadband or 4G/5G"],
       ["Failover", "Automatic between links"],
@@ -34,7 +34,7 @@ export const SERVICE_ANSWERS: Record<
   "managed-mpls": {
     question: "What is an MPLS VPN?",
     answer:
-      "An MPLS VPN is a private network run by a telecom carrier that links a company's offices, plants and data centres. Traffic stays on the carrier's network instead of the public internet, and voice or core applications can be given priority. Adapt India Networks designs and manages MPLS networks for businesses across India.",
+      "An MPLS VPN is a private network run by a telecom carrier that links a company's offices, plants and data centres. Traffic stays on the carrier's network instead of the public internet, and voice or core applications can be given priority. As an MPLS service provider, Adapt India Networks designs and manages MPLS networks for businesses across India.",
     facts: [
       ["Network", "Private, separate from the internet"],
       ["Traffic priority", "Class of Service for voice and core apps"],
