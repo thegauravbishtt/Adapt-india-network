@@ -444,7 +444,7 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
               aria-hidden="true"
               className="lg:hidden w-full h-full object-cover object-[80%_center]"
             />
-            <div className="absolute inset-0 bg-black/60 lg:hidden" />
+            <div className="absolute inset-0 bg-black/65 lg:hidden" />
             <div className="hidden lg:block absolute -right-24 top-1/4 w-[620px] h-[620px] rounded-full bg-[#E31E24]/20 blur-[130px]" />
             <div className="hidden lg:block absolute left-[45%] -bottom-40 w-[520px] h-[420px] rounded-full bg-[#E31E24]/10 blur-[120px]" />
           </div>
@@ -478,9 +478,9 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
               src="/images/services/smartflo-cloud-telephony-phone.webp"
               alt="Smartflo cloud telephony on a mobile phone: incoming toll-free call with IVR choice and answer button"
               fetchPriority="high"
-              width={756}
-              height={871}
-              className="hidden lg:block absolute right-[300px] xl:right-[340px] -bottom-10 h-[290px] w-auto pointer-events-none select-none"
+              width={624}
+              height={816}
+              className="hidden lg:block absolute left-[700px] -bottom-10 h-[250px] w-auto pointer-events-none select-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
             />
             <div className="flex flex-col items-start">
               <div className="flex flex-col items-start text-left max-w-3xl">
