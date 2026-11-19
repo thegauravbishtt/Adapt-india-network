@@ -742,6 +742,114 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
           </div>
         </section>
 
+        {/* WEB PANEL: login and admin dashboard (drawn in code, no logos) */}
+        <section className="w-full px-4 sm:px-8 lg:px-14 py-14 sm:py-20 bg-white border-y border-gray-100">
+          <div className="max-w-7xl mx-auto">
+            <SectionTitle
+              eyebrow="Web panel"
+              title="A simple panel for users and admins"
+              intro="Your team signs in with a user ID and password. Admins see live calls, missed calls and every agent's status on one dashboard."
+            />
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.6fr] items-stretch">
+              {/* Login screen */}
+              <div>
+                <p className="text-sm font-semibold text-gray-900 mb-3 text-center">Login with user ID and password</p>
+                <div className="rounded-2xl border border-gray-200 shadow-lg overflow-hidden bg-white grid grid-cols-[1fr_1.1fr] min-h-[340px]">
+                  <div className="relative bg-gradient-to-br from-[#1a1a1d] via-[#3a0d0f] to-[#E31E24] p-6 flex flex-col justify-end text-white">
+                    <span className="absolute top-5 left-5 w-10 h-10 rounded-full border-2 border-white/40 flex items-center justify-center">
+                      <Icon name="phone" className="w-5 h-5" />
+                    </span>
+                    <p className="text-xl sm:text-2xl font-bold leading-tight">Business calls.<br />Anytime, anywhere.</p>
+                  </div>
+                  <div className="p-5 sm:p-6 flex flex-col justify-center gap-3">
+                    <p className="text-center text-lg font-semibold text-gray-900 mb-1">Login</p>
+                    <div className="h-9 rounded-md border border-gray-200 bg-gray-50 px-3 flex items-center text-xs text-gray-400">Login ID</div>
+                    <div className="h-9 rounded-md border border-gray-200 bg-gray-50 px-3 flex items-center text-xs text-gray-400">Password</div>
+                    <span className="text-[11px] text-[#E31E24]">Forgot password?</span>
+                    <div className="h-9 rounded-md bg-[#E31E24] text-white text-sm font-semibold flex items-center justify-center">Login</div>
+                    <div className="flex items-center gap-2 text-[10px] text-gray-400"><span className="flex-1 h-px bg-gray-200" />OR<span className="flex-1 h-px bg-gray-200" /></div>
+                    <div className="h-9 rounded-md border border-[#E31E24] text-[#E31E24] text-xs font-semibold flex items-center justify-center">Single sign-on</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Admin dashboard */}
+              <div>
+                <p className="text-sm font-semibold text-gray-900 mb-3 text-center">Admin dashboard</p>
+                <div className="rounded-2xl border border-gray-200 shadow-lg overflow-hidden bg-white">
+                  <div className="flex items-center justify-between gap-3 px-4 py-2.5 border-b border-gray-200 bg-white">
+                    <span className="text-sm font-bold text-gray-900">Dashboard</span>
+                    <div className="flex items-center gap-2 text-[11px] font-semibold">
+                      <span className="px-2.5 py-1 rounded-full bg-green-50 text-green-700 border border-green-200">● Available</span>
+                      <span className="hidden sm:inline px-2.5 py-1 rounded-md bg-[#E31E24] text-white">Click to Call</span>
+                      <span className="hidden sm:inline px-2.5 py-1 rounded-md bg-red-50 text-[#E31E24] border border-red-200">Send SMS</span>
+                    </div>
+                  </div>
+                  <div className="flex min-h-[340px]">
+                    <aside className="hidden sm:flex w-40 shrink-0 bg-[#1a1a1d] text-zinc-300 text-xs flex-col py-3">
+                      {["Dashboard", "Active calls", "Scheduled calls", "Services", "Call detail records", "Reporting", "Settings", "API documentation", "Knowledge base"].map((m, i) => (
+                        <span key={m} className={`px-4 py-2 ${i === 0 ? "bg-[#E31E24] text-white font-semibold" : ""}`}>{m}</span>
+                      ))}
+                    </aside>
+                    <div className="flex-1 bg-gray-50 p-4 grid gap-4 sm:grid-cols-[1.5fr_1fr] content-start">
+                      <div className="rounded-xl bg-white border border-gray-200 p-4">
+                        <p className="text-[11px] font-semibold text-gray-500 border-l-2 border-[#E31E24] pl-2 mb-3">Live data</p>
+                        <div className="grid grid-cols-3 gap-2 text-center">
+                          {[
+                            ["phone", "0", "Active calls"],
+                            ["missed", "1", "Missed calls"],
+                            ["headset", "0", "Answered calls"],
+                          ].map(([ic, n, l]) => (
+                            <div key={l} className="flex flex-col items-center gap-1">
+                              <Icon name={ic} className="w-5 h-5 text-[#E31E24]" />
+                              <span className="text-lg font-bold text-gray-900">{n}</span>
+                              <span className="text-[10px] text-gray-500">{l}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="rounded-xl bg-white border border-gray-200 p-4">
+                        <p className="text-[11px] font-semibold text-gray-500 border-l-2 border-[#E31E24] pl-2 mb-3">Quick access</p>
+                        <div className="flex flex-col items-center gap-1 pt-2">
+                          <Icon name="hash" className="w-6 h-6 text-[#E31E24]" />
+                          <span className="text-[11px] text-gray-600">My numbers</span>
+                        </div>
+                      </div>
+                      <div className="sm:col-span-2 rounded-xl bg-white border border-gray-200 p-4 overflow-x-auto">
+                        <p className="text-[11px] font-semibold text-gray-500 border-l-2 border-[#E31E24] pl-2 mb-3">Agent stats</p>
+                        <table className="w-full text-[11px] text-left">
+                          <thead className="text-gray-500">
+                            <tr className="border-b border-gray-100">
+                              <th className="py-1.5 font-semibold">Agent</th>
+                              <th className="py-1.5 font-semibold">Answered</th>
+                              <th className="py-1.5 font-semibold">Missed</th>
+                              <th className="py-1.5 font-semibold">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody className="text-gray-700">
+                            {[
+                              ["Sales desk (mobile)", "0", "0", "Available", "bg-green-500"],
+                              ["Support desk", "0", "1", "Busy", "bg-[#E31E24]"],
+                              ["Backup line", "0", "0", "Away", "bg-gray-400"],
+                            ].map(([a, an, mi, st, dot]) => (
+                              <tr key={a} className="border-b border-gray-50">
+                                <td className="py-1.5 font-medium">{a}</td>
+                                <td className="py-1.5">{an}</td>
+                                <td className="py-1.5">{mi}</td>
+                                <td className="py-1.5"><span className="inline-flex items-center gap-1.5"><span className={`w-2 h-2 rounded-full ${dot}`} />{st}</span></td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* WHY BUY THROUGH ADAPT INDIA */}
         <section className="w-full px-4 sm:px-8 lg:px-14 py-14 sm:py-16 bg-[#111214] text-white">
           <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1fr_1.2fr] items-center">
