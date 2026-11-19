@@ -438,7 +438,7 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
               src="/images/services/smartflo-cloud-telephony-ivr-call-routing.jpg"
               alt="Smartflo cloud telephony: an incoming call routed by IVR to agents on laptop, mobile and desk phone"
               fetchPriority="high"
-              className="w-full h-full object-cover object-[80%_center]"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent z-10" />
             <div className="absolute inset-0 bg-black/60 lg:hidden z-10" />
