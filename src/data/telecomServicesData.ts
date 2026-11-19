@@ -2713,11 +2713,11 @@ export const telecomServices: ServiceDetail[] = [
   "slug": "cloud-telephony",
   "name": "Smartflo Cloud Telephony",
   "category": "Voice & Data Solutions",
-  "tagline": "AI-Powered Smartflo Cloud Communications, Multilevel IVR & Remote Workforce Calling",
+  "tagline": "Smartflo cloud telephony: IVR, toll-free numbers, call recording and mobile calling",
   "heroHeadline": "Next-Gen Cloud Telephony & Virtual PBX For",
   "heroHighlight": "Seamless Remote & Hybrid Customer Engagement.",
-  "heroSubtitle": "Tata Tele Business Services' cloud calling suite for Indian businesses: toll-free and virtual numbers, multi-level IVR, click-to-call, call recording and CRM integration, run from a web dashboard and mobile app with no PBX hardware.",
-  "image": "/images/services/smartflo-cloud-telephony-dashboard.jpg",
+  "heroSubtitle": "A cloud phone system for Indian businesses: toll-free and virtual numbers, multi-level IVR, click-to-call, call recording and CRM integration, run from a web dashboard and mobile app with no PBX hardware.",
+  "image": "/images/services/smartflo-cloud-telephony-banner.jpg",
   "galleryImages": [
     "/telephone-studio.jpg",
     "/banner-servers-lights.jpg",
@@ -2738,7 +2738,7 @@ export const telecomServices: ServiceDetail[] = [
     },
     {
       "value": "99.5%",
-      "label": "Platform Uptime (as stated by TTBS)"
+      "label": "Platform Uptime"
     }
   ],
   "overview": "Adapt India Networks' Cloud Telephony empowers businesses to manage all business calls, customer inquiries, and agent performance entirely in the cloud. Agents can receive and make calls from laptops, softphones, or mobile apps with full tracking and CRM logging.",
@@ -2821,7 +2821,7 @@ export const telecomServices: ServiceDetail[] = [
       "title": "Real Estate Agency Lead Conversion",
       "client": "Premium Property Developer",
       "impact": "Captured 100% of incoming buyer inquiries with zero missed calls and instant WhatsApp follow-up.",
-      "image": "/images/services/smartflo-cloud-telephony-dashboard.jpg"
+      "image": "/images/services/smartflo-cloud-telephony-banner.jpg"
     },
     {
       "title": "Pan-India D2C Brand Customer Support",
@@ -2833,7 +2833,7 @@ export const telecomServices: ServiceDetail[] = [
   "faqs": [
     {
       "question": "What is Smartflo cloud telephony?",
-      "answer": "Smartflo is the cloud communication suite from Tata Tele Business Services. It covers toll-free and virtual numbers, multi-level IVR, call routing, click-to-call, call recording and CRM integration, managed from a web dashboard and mobile app. Adapt India Networks is an authorised partner that sets it up and supports it."
+      "answer": "Smartflo is a cloud phone system for businesses. It covers toll-free and virtual numbers, multi-level IVR, call routing, click-to-call, call recording and CRM integration, managed from a web dashboard and mobile app. Adapt India Networks sets it up and supports it for businesses across India."
     },
     {
       "question": "Do my employees need desk phones?",

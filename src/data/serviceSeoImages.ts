@@ -25,8 +25,8 @@ export const SERVICE_SEO_IMAGES: Record<string, { src: string; alt: string; alte
     alternateNames: ["SIP Trunk", "Cloud Telephony", "Business Phone Lines", "Cloud PBX", "Toll-Free Number"],
   },
   "cloud-telephony": {
-    src: "/images/services/smartflo-cloud-telephony-dashboard.jpg",
-    alt: "Smartflo cloud telephony admin dashboard and mobile app by Tata Tele Business Services",
+    src: "/images/services/smartflo-cloud-telephony-banner.jpg",
+    alt: "Smartflo cloud telephony dashboard and mobile call screen from Adapt India Networks",
     alternateNames: ["Smartflo", "Smartflo Cloud Telephony", "Cloud Telephony", "Cloud PBX", "Virtual PBX", "IVR Service", "Toll-Free Number"],
   },
   "enterprise-broadband": {
