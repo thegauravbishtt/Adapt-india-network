@@ -68,6 +68,7 @@ export const collabCloud: SubService[] = [
   {
     slug: "google-workspace",
     name: "Google Workspace",
+    metaTitle: "Google Workspace Setup & Support for Business",
     parent: C,
     group: "Collaboration & Productivity",
     headline: "Gmail with your company domain, plus Drive, Meet and Docs for the whole team",
@@ -160,6 +161,7 @@ export const collabCloud: SubService[] = [
   {
     slug: "microsoft-azure",
     name: "Microsoft Azure",
+    metaTitle: "Microsoft Azure Cloud Services for Business in India",
     parent: CL,
     group: "Cloud Infrastructure",
     headline: "Run servers, databases and applications on Microsoft's cloud, with local support",

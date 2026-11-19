@@ -7,6 +7,7 @@ export const businessComm: SubService[] = [
   {
     slug: "smartflo-ccaas",
     name: "Smartflo CCaaS",
+    metaTitle: "Cloud Contact Centre Software (CCaaS) in India",
     parent: P,
     group: "Integrated Solutions",
     headline: "Run your call centre from the cloud, with agents in the office or at home",
@@ -37,6 +38,7 @@ export const businessComm: SubService[] = [
   {
     slug: "smartflo-cpaas",
     name: "Smartflo CPaaS",
+    metaTitle: "CPaaS: SMS, Voice & WhatsApp APIs in India",
     parent: P,
     group: "Integrated Solutions",
     headline: "Add calling, SMS and WhatsApp to your own app or website through APIs",
@@ -68,6 +70,7 @@ export const businessComm: SubService[] = [
   {
     slug: "smartflo-ucaas",
     name: "Smartflo UCaaS",
+    metaTitle: "Cloud Telephony & UCaaS for Business in India",
     parent: P,
     group: "Integrated Solutions",
     headline: "Office phones, chat and meetings in one app, on any device",
@@ -313,6 +316,7 @@ export const businessComm: SubService[] = [
   {
     slug: "pri-lines",
     name: "PRI Lines",
+    metaTitle: "PRI Line Connection for Business in India",
     parent: P,
     group: "Inbound Communications",
     headline: "Digital phone lines with 30 simultaneous calls on one connection",
@@ -528,6 +532,7 @@ export const businessComm: SubService[] = [
   {
     slug: "sms-solutions",
     name: "SMS Solutions",
+    metaTitle: "Bulk SMS Service for Business in India",
     parent: P,
     group: "Outbound Communications",
     headline: "OTPs, alerts and campaigns delivered by SMS, fully DLT-compliant",
