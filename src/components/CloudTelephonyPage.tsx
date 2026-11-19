@@ -14,6 +14,9 @@ import type { ServiceDetail } from "../data/servicesData";
  */
 
 /* Simple line icons (24x24, stroke) so no extra icon names are needed. */
+const PHONE_PATH =
+  "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z";
+
 const ICONS: Record<string, React.ReactNode> = {
   phone: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />,
   incoming: (
@@ -231,6 +234,91 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
+/** Banner illustration: a call comes in, the IVR routes it, an agent answers. Drawn in code, no logos. */
+function CallFlowArt() {
+  const dots = { stroke: "rgba(255,255,255,0.75)", strokeWidth: 3, fill: "none", strokeLinecap: "round" as const, strokeDasharray: "1 9" };
+  return (
+    <svg viewBox="0 0 560 300" className="w-full h-auto" role="img" aria-label="An incoming call is routed by the IVR to an agent on a laptop, the mobile app or a desk phone">
+      <defs>
+        <filter id="ctShadow" x="-30%" y="-30%" width="160%" height="170%">
+          <feDropShadow dx="0" dy="10" stdDeviation="12" floodColor="#000" floodOpacity="0.45" />
+        </filter>
+      </defs>
+      {/* connectors */}
+      <path d="M98 150 H188" {...dots} />
+      <path d="M332 150 C 372 150, 378 62, 418 62" {...dots} />
+      <path d="M332 150 H418" {...dots} />
+      <path d="M332 150 C 372 150, 378 238, 418 238" {...dots} />
+
+      {/* caller phone */}
+      <g filter="url(#ctShadow)">
+        <rect x="8" y="58" width="90" height="184" rx="16" fill="#f4f4f5" />
+        <rect x="15" y="76" width="76" height="142" rx="6" fill="#1f1f23" />
+        <circle cx="53" cy="128" r="21" fill="#E31E24">
+          <animate attributeName="r" values="21;24;21" dur="1.6s" repeatCount="indefinite" />
+        </circle>
+        <path transform="translate(42 117) scale(0.92)" d={PHONE_PATH} fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="30" y="164" width="46" height="6" rx="3" fill="#52525b" />
+        <rect x="37" y="176" width="32" height="5" rx="2.5" fill="#3f3f46" />
+        <rect x="42" y="228" width="22" height="5" rx="2.5" fill="#d4d4d8" />
+      </g>
+      <text x="53" y="268" textAnchor="middle" fontSize="12" fill="#d4d4d8" fontWeight="600">Customer calls</text>
+
+      {/* IVR card */}
+      <g filter="url(#ctShadow)">
+        <rect x="188" y="72" width="144" height="156" rx="16" fill="#fff" />
+        <path d="M188 88 a16 16 0 0 1 16 -16 h112 a16 16 0 0 1 16 16 v20 h-144 z" fill="#E31E24" />
+        <text x="260" y="96" textAnchor="middle" fontSize="13" fill="#fff" fontWeight="700" letterSpacing="2">IVR</text>
+        {[
+          ["1", "Sales", 120],
+          ["2", "Support", 154],
+          ["3", "Accounts", 188],
+        ].map(([n, l, y]) => (
+          <g key={n as string}>
+            <rect x="200" y={(y as number) - 4} width="120" height="26" rx="7" fill="#fef2f2" />
+            <text x="212" y={(y as number) + 13} fontSize="12" fill="#27272a" fontWeight="600">
+              <tspan fill="#E31E24" fontWeight="800">{n}</tspan>
+              {"  " + l}
+            </text>
+          </g>
+        ))}
+      </g>
+      <text x="260" y="250" textAnchor="middle" fontSize="12" fill="#d4d4d8" fontWeight="600">Smartflo IVR</text>
+
+      {/* agent: laptop */}
+      <g filter="url(#ctShadow)">
+        <rect x="418" y="30" width="118" height="70" rx="8" fill="#f4f4f5" />
+        <rect x="424" y="36" width="106" height="58" rx="4" fill="#27272a" />
+        <circle cx="477" cy="58" r="10" fill="#E31E24" />
+        <rect x="460" y="76" width="34" height="5" rx="2.5" fill="#71717a" />
+        <path d="M410 100 H544 L536 110 H418 Z" fill="#d4d4d8" />
+      </g>
+      {/* agent: mobile app / headset */}
+      <g filter="url(#ctShadow)">
+        <rect x="418" y="122" width="118" height="56" rx="12" fill="#fff" />
+        <circle cx="446" cy="150" r="17" fill="#e4e4e7" />
+        <circle cx="446" cy="145" r="7" fill="#a1a1aa" />
+        <path d="M434 162 a12 10 0 0 1 24 0" fill="#a1a1aa" />
+        <path d="M432 148 a14 14 0 0 1 28 0" fill="none" stroke="#E31E24" strokeWidth="3.5" strokeLinecap="round" />
+        <rect x="472" y="138" width="50" height="7" rx="3.5" fill="#27272a" />
+        <rect x="472" y="152" width="34" height="12" rx="6" fill="#dcfce7" />
+      </g>
+      {/* agent: desk phone */}
+      <g filter="url(#ctShadow)">
+        <rect x="418" y="208" width="118" height="62" rx="12" fill="#fff" />
+        <rect x="428" y="218" width="26" height="42" rx="8" fill="#27272a" />
+        <rect x="462" y="218" width="64" height="18" rx="4" fill="#18181b" />
+        <g fill="#d4d4d8">
+          <circle cx="470" cy="246" r="3.5" /><circle cx="482" cy="246" r="3.5" /><circle cx="494" cy="246" r="3.5" />
+          <circle cx="470" cy="256" r="3.5" /><circle cx="482" cy="256" r="3.5" /><circle cx="494" cy="256" r="3.5" />
+        </g>
+        <circle cx="514" cy="251" r="6" fill="#E31E24" />
+      </g>
+      <text x="477" y="292" textAnchor="middle" fontSize="12" fill="#fff" fontWeight="600">Right agent answers</text>
+    </svg>
+  );
+}
+
 function Icon({ name, className = "w-6 h-6" }: { name: string; className?: string }) {
   return (
     <svg
@@ -433,15 +521,11 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
 
         {/* HERO: same size as the other service banners */}
         <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-          <div className="absolute inset-0 z-0">
-            <img
-              src="/images/services/smartflo-cloud-telephony-ivr-call-routing.jpg"
-              alt="Smartflo cloud telephony: an incoming call routed by IVR to agents on laptop, mobile and desk phone"
-              fetchPriority="high"
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent z-10" />
-            <div className="absolute inset-0 bg-black/60 lg:hidden z-10" />
+          {/* Flat background: dark base with a red diagonal panel on the right (desktop) */}
+          <div className="absolute inset-0 z-0 bg-[#0e0e10]" aria-hidden="true">
+            <div className="hidden lg:block absolute inset-y-0 right-0 w-[52%] bg-[#17171a] [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)]" />
+            <div className="hidden lg:block absolute inset-y-0 right-0 w-[34%] bg-[#E31E24] [clip-path:polygon(34%_0,100%_0,100%_100%,0_100%)]" />
+            <div className="lg:hidden absolute -right-16 -bottom-10 w-56 h-56 rounded-full bg-[#E31E24]/25 blur-3xl" />
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">
@@ -469,7 +553,7 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+            <div className="grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-6 lg:gap-10">
               <div className="flex flex-col items-start text-left max-w-3xl">
                 <span className="font-mono text-[11px] sm:text-xs font-extrabold tracking-widest text-[#ff4d52] uppercase mb-1.5 block">
                   // Cloud phone system for business
@@ -496,14 +580,10 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
                   </a>
                 </div>
               </div>
-              <div className="hidden lg:flex items-center gap-2.5 text-zinc-300 font-mono text-[11px] font-bold uppercase tracking-wider select-none shrink-0 self-end">
-                <span>SCROLL DOWN</span>
-                <a
-                  href="#overview"
-                  className="w-8 h-8 rounded-full border border-white/30 bg-black/40 flex items-center justify-center text-[#ff4d52] hover:bg-black/70 hover:border-white transition-all animate-bounce"
-                >
-                  ↓
-                </a>
+              <div className="w-full max-w-md sm:max-w-lg mx-auto lg:mx-0 lg:ml-auto">
+                <div className="rounded-2xl lg:rounded-none bg-white/[0.04] lg:bg-transparent border border-white/10 lg:border-0 p-4 sm:p-5 lg:p-0">
+                  <CallFlowArt />
+                </div>
               </div>
             </div>
           </div>
