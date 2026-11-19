@@ -436,16 +436,17 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
 
         {/* HERO: same size as the other service banners */}
         <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-          {/* Background photo: a hand holding a phone with a cloud call screen */}
+          {/* Background: dark on desktop (phone shown as its own image), photo with dark overlay on mobile */}
           <div className="absolute inset-0 z-0 bg-[#0c0c0d]">
             <img
               src="/images/services/smartflo-cloud-telephony-mobile-app.jpg"
-              alt="Smartflo cloud telephony on a mobile phone: incoming toll-free call with IVR choice and answer button"
-              fetchPriority="high"
-              className="w-full h-full object-cover object-[78%_center] lg:object-right"
+              alt=""
+              aria-hidden="true"
+              className="lg:hidden w-full h-full object-cover object-[80%_center]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent z-10" />
-            <div className="absolute inset-0 bg-black/55 lg:hidden z-10" />
+            <div className="absolute inset-0 bg-black/60 lg:hidden" />
+            <div className="hidden lg:block absolute -right-24 top-1/4 w-[620px] h-[620px] rounded-full bg-[#E31E24]/20 blur-[130px]" />
+            <div className="hidden lg:block absolute left-[45%] -bottom-40 w-[520px] h-[420px] rounded-full bg-[#E31E24]/10 blur-[120px]" />
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">
@@ -473,6 +474,14 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full">
+            <img
+              src="/images/services/smartflo-cloud-telephony-phone.webp"
+              alt="Smartflo cloud telephony on a mobile phone: incoming toll-free call with IVR choice and answer button"
+              fetchPriority="high"
+              width={756}
+              height={871}
+              className="hidden lg:block absolute right-[300px] xl:right-[340px] -bottom-10 h-[290px] w-auto pointer-events-none select-none"
+            />
             <div className="flex flex-col items-start">
               <div className="flex flex-col items-start text-left max-w-3xl">
                 <span className="font-mono text-[11px] sm:text-xs font-extrabold tracking-widest text-[#ff4d52] uppercase mb-1.5 block">
