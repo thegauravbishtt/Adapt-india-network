@@ -103,9 +103,14 @@ export const telecomServices: ServiceDetail[] = [
     caseStudies: [],
     faqs: [
       {
-        question: "What is ILL in networking?",
+        question: "What is ILL in networking? (ILL full form)",
         answer:
-          "ILL stands for Internet Leased Line. It is a dedicated fibre connection from an internet provider to your office, with the same upload and download speed, bandwidth that isn't shared with other customers, static public IP addresses and an uptime SLA in writing. Businesses use it when the internet is critical to their work.",
+          "The full form of ILL is Internet Leased Line. It is a dedicated fibre connection from an internet provider to your office, with the same upload and download speed, bandwidth that isn't shared with other customers, static public IP addresses and an uptime SLA in writing. Businesses use it when the internet is critical to their work.",
+      },
+      {
+        question: "What is the difference between ISDN and a leased line?",
+        answer:
+          "ISDN is an older digital telephone-line technology that connects on demand and offers low speeds; it has largely been replaced in India. A leased line is an always-on, dedicated fibre connection with the same upload and download speed, static IPs and an uptime SLA, which is what businesses use today for internet and private links between offices.",
       },
       {
         question: "How do I get an ILL connection for my office?",
