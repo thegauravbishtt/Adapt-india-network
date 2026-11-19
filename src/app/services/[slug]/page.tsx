@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { allServices, getServiceBySlug } from "../../../data/servicesData";
 import { telecomServices } from "../../../data/telecomServicesData";
 import ServiceDetailClient from "./ServiceDetailClient";
+import CloudTelephonyPage from "../../../components/CloudTelephonyPage";
 import SubServicePage from "../../../components/SubServicePage";
 import { subServices, getSubService, subServiceBanner, isIndexedSubService } from "../../../data/subServices";
 import JsonLd from "../../../components/JsonLd";
@@ -30,6 +31,14 @@ interface ServicePageProps {
  * shows them in full.
  */
 const SERVICE_SEO: Record<string, { title: string; description: string; serviceType: string; h1?: string; keyword?: string }> = {
+  "cloud-telephony": {
+    title: "Smartflo Cloud Telephony Service Provider in India",
+    h1: "Smartflo Cloud Telephony",
+    keyword: "Smartflo cloud telephony",
+    description:
+      "Smartflo cloud telephony from an authorised Tata Tele partner: toll-free and virtual numbers, IVR, call recording, CRM integration and mobile app. Get a free quote.",
+    serviceType: "Cloud Telephony",
+  },
   "smart-internet-ill": {
     title: "Internet Leased Line (ILL) Provider in India",
     h1: "Internet Leased Line (ILL) Provider in India",
@@ -248,12 +257,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           ]}
         />
       )}
+      {service.slug === "cloud-telephony" ? (
+        <CloudTelephonyPage service={service} heading={seo?.h1} />
+      ) : (
       <ServiceDetailClient
         service={service}
         heading={seo?.h1}
         keyword={seo?.keyword}
         cities={isTelecom ? cityPages.map((c) => ({ slug: c.slug, city: c.city })) : []}
       />
+      )}
     </>
   );
 }

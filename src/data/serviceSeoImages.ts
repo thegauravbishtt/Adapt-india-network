@@ -24,6 +24,11 @@ export const SERVICE_SEO_IMAGES: Record<string, { src: string; alt: string; alte
     alt: "SIP trunk and cloud telephony for business calling in India",
     alternateNames: ["SIP Trunk", "Cloud Telephony", "Business Phone Lines", "Cloud PBX", "Toll-Free Number"],
   },
+  "cloud-telephony": {
+    src: "/images/services/smartflo-cloud-telephony-dashboard.jpg",
+    alt: "Smartflo cloud telephony admin dashboard and mobile app by Tata Tele Business Services",
+    alternateNames: ["Smartflo", "Smartflo Cloud Telephony", "Cloud Telephony", "Cloud PBX", "Virtual PBX", "IVR Service", "Toll-Free Number"],
+  },
   "enterprise-broadband": {
     src: "/images/services/business-broadband-connection-office.jpg",
     alt: "Business broadband connection and office Wi-Fi",

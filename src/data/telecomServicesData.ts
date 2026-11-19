@@ -2711,13 +2711,13 @@ export const telecomServices: ServiceDetail[] = [
 },
 {
   "slug": "cloud-telephony",
-  "name": "Cloud Telephony & Smart PBX",
+  "name": "Smartflo Cloud Telephony",
   "category": "Voice & Data Solutions",
   "tagline": "AI-Powered Smartflo Cloud Communications, Multilevel IVR & Remote Workforce Calling",
   "heroHeadline": "Next-Gen Cloud Telephony & Virtual PBX For",
   "heroHighlight": "Seamless Remote & Hybrid Customer Engagement.",
-  "heroSubtitle": "Replace bulky on-premise hardware with an intelligent cloud communications platform featuring CRM integration, automated call recording, and smart agent routing.",
-  "image": "/telephone-banner.jpg",
+  "heroSubtitle": "Tata Tele Business Services' cloud calling suite for Indian businesses: toll-free and virtual numbers, multi-level IVR, click-to-call, call recording and CRM integration, run from a web dashboard and mobile app with no PBX hardware.",
+  "image": "/images/services/smartflo-cloud-telephony-dashboard.jpg",
   "galleryImages": [
     "/telephone-studio.jpg",
     "/banner-servers-lights.jpg",
@@ -2737,8 +2737,8 @@ export const telecomServices: ServiceDetail[] = [
       "label": "Smart Interactive IVR Routing"
     },
     {
-      "value": "99.95%",
-      "label": "Carrier-Grade Platform Uptime"
+      "value": "99.5%",
+      "label": "Platform Uptime (as stated by TTBS)"
     }
   ],
   "overview": "Adapt India Networks' Cloud Telephony empowers businesses to manage all business calls, customer inquiries, and agent performance entirely in the cloud. Agents can receive and make calls from laptops, softphones, or mobile apps with full tracking and CRM logging.",
@@ -2821,7 +2821,7 @@ export const telecomServices: ServiceDetail[] = [
       "title": "Real Estate Agency Lead Conversion",
       "client": "Premium Property Developer",
       "impact": "Captured 100% of incoming buyer inquiries with zero missed calls and instant WhatsApp follow-up.",
-      "image": "/telephone-banner.jpg"
+      "image": "/images/services/smartflo-cloud-telephony-dashboard.jpg"
     },
     {
       "title": "Pan-India D2C Brand Customer Support",
@@ -2832,16 +2832,28 @@ export const telecomServices: ServiceDetail[] = [
   ],
   "faqs": [
     {
-      "question": "Do my employees need physical desk phones?",
-      "answer": "No! Employees can make and receive calls directly through their laptop browser or our mobile app using internet connectivity."
+      "question": "What is Smartflo cloud telephony?",
+      "answer": "Smartflo is the cloud communication suite from Tata Tele Business Services. It covers toll-free and virtual numbers, multi-level IVR, call routing, click-to-call, call recording and CRM integration, managed from a web dashboard and mobile app. Adapt India Networks is an authorised partner that sets it up and supports it."
     },
     {
-      "question": "Can all customer calls be recorded for quality audit?",
-      "answer": "Yes, 100% of incoming and outgoing calls are recorded securely and stored in encrypted cloud storage with instant playback."
+      "question": "Do my employees need desk phones?",
+      "answer": "No. Agents can make and take calls on the Smartflo mobile app or from the web panel. Smartflo also works with existing landlines and desk phones if you want to keep them."
     },
     {
-      "question": "How quickly can we set up cloud telephony?",
-      "answer": "Our cloud platform can be configured and live with numbers, IVRs, and agent accounts in less than 24 hours."
+      "question": "Can calls be recorded?",
+      "answer": "Yes. Call recording and detailed call logs are part of Smartflo and can be played back from the dashboard. How long recordings are kept depends on the plan you choose."
+    },
+    {
+      "question": "Can Smartflo connect to our CRM?",
+      "answer": "Yes. Smartflo offers API and webhook integration and plug-and-play integration with major CRMs, so caller details and call logs can show up in the tools your team already uses."
+    },
+    {
+      "question": "Can we get a toll-free number with IVR?",
+      "answer": "Yes. Smartflo inbound solutions include toll-free numbers with multi-level IVR, virtual numbers and extension-based routing, so each caller reaches the right team."
+    },
+    {
+      "question": "How long does it take to go live?",
+      "answer": "It depends on how many numbers and users you need, the number paperwork and how complex your call flows are. We confirm the timeline once we understand your requirements."
     }
   ]
 },
