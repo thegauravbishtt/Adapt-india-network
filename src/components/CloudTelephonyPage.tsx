@@ -234,72 +234,6 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-/** Banner visual: a live call card showing the call flow (incoming call, IVR choice, agent connected). Built in code, no logos. */
-function HeroCallCard() {
-  return (
-    <div className="relative">
-      <div className="absolute -inset-6 rounded-[2rem] bg-[#E31E24]/20 blur-3xl" aria-hidden="true" />
-      <div className="relative rounded-2xl border border-white/10 bg-gradient-to-b from-[#1c1c20] to-[#111113] shadow-2xl shadow-black/60 overflow-hidden">
-        <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-white/10">
-          <span className="inline-flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-widest text-zinc-400">
-            <span className="relative flex w-2 h-2">
-              <span className="absolute inline-flex w-full h-full rounded-full bg-[#ff4d52] opacity-75 animate-ping" />
-              <span className="relative inline-flex w-2 h-2 rounded-full bg-[#E31E24]" />
-            </span>
-            Live call
-          </span>
-          <span className="text-[11px] text-zinc-500">Smartflo dashboard</span>
-        </div>
-
-        <ol className="relative p-4 sm:p-5 flex flex-col gap-3">
-          <span className="absolute left-[38px] sm:left-[42px] top-10 bottom-10 border-l-2 border-dashed border-[#E31E24]/50" aria-hidden="true" />
-
-          <li className="relative flex items-center gap-3 rounded-xl bg-white/[0.04] border border-white/10 p-3">
-            <span className="w-9 h-9 rounded-full bg-[#E31E24] text-white flex items-center justify-center shrink-0 shadow-lg shadow-[#E31E24]/40">
-              <Icon name="incoming" className="w-4 h-4" />
-            </span>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-white">Incoming call</p>
-              <p className="text-xs text-zinc-400">On your toll-free number</p>
-            </div>
-          </li>
-
-          <li className="relative flex items-start gap-3 rounded-xl bg-white/[0.04] border border-white/10 p-3">
-            <span className="w-9 h-9 rounded-full bg-[#27272a] border border-white/10 text-[#ff4d52] flex items-center justify-center shrink-0">
-              <Icon name="hash" className="w-4 h-4" />
-            </span>
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold text-white mb-2">IVR menu</p>
-              <div className="flex flex-wrap gap-1.5 text-[11px] font-semibold">
-                <span className="px-2.5 py-1 rounded-md bg-white/5 text-zinc-300 border border-white/10">1 Sales</span>
-                <span className="px-2.5 py-1 rounded-md bg-[#E31E24] text-white">2 Support</span>
-                <span className="px-2.5 py-1 rounded-md bg-white/5 text-zinc-300 border border-white/10">3 Accounts</span>
-              </div>
-            </div>
-          </li>
-
-          <li className="relative flex items-center gap-3 rounded-xl bg-white text-gray-900 p-3">
-            <span className="w-9 h-9 rounded-full bg-red-50 text-[#E31E24] flex items-center justify-center shrink-0">
-              <Icon name="headset" className="w-4 h-4" />
-            </span>
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold">Connected to Support</p>
-              <p className="text-xs text-gray-500">Agent answered on the mobile app</p>
-            </div>
-            <span className="text-[11px] font-semibold px-2 py-1 rounded-full bg-green-50 text-green-700 shrink-0">● On call</span>
-          </li>
-        </ol>
-
-        <div className="hidden sm:flex flex-wrap gap-2 px-4 sm:px-5 pb-4 text-[11px] text-zinc-400">
-          <span className="px-2.5 py-1 rounded-full border border-white/10">● Recording on</span>
-          <span className="px-2.5 py-1 rounded-full border border-white/10">Logged in CRM</span>
-          <span className="px-2.5 py-1 rounded-full border border-white/10">Missed calls tracked</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Icon({ name, className = "w-6 h-6" }: { name: string; className?: string }) {
   return (
     <svg
@@ -502,11 +436,16 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
 
         {/* HERO: same size as the other service banners */}
         <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
-          {/* Background: dark base, soft red light behind the card, faint dot texture */}
-          <div className="absolute inset-0 z-0 bg-[#0c0c0d]" aria-hidden="true">
-            <div className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(#ffffff_1px,transparent_1px)] [background-size:22px_22px]" />
-            <div className="absolute -right-32 top-1/3 w-[520px] h-[520px] rounded-full bg-[#E31E24]/15 blur-[120px]" />
-            <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#E31E24]/60 to-transparent" />
+          {/* Background photo: a hand holding a phone with a cloud call screen */}
+          <div className="absolute inset-0 z-0 bg-[#0c0c0d]">
+            <img
+              src="/images/services/smartflo-cloud-telephony-mobile-app.jpg"
+              alt="Smartflo cloud telephony on a mobile phone: incoming toll-free call with IVR choice and answer button"
+              fetchPriority="high"
+              className="w-full h-full object-cover object-[78%_center] lg:object-right"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent z-10" />
+            <div className="absolute inset-0 bg-black/55 lg:hidden z-10" />
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">
@@ -534,7 +473,7 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full">
-            <div className="grid lg:grid-cols-[1.2fr_0.8fr] items-center gap-8 lg:gap-12">
+            <div className="flex flex-col items-start">
               <div className="flex flex-col items-start text-left max-w-3xl">
                 <span className="font-mono text-[11px] sm:text-xs font-extrabold tracking-widest text-[#ff4d52] uppercase mb-1.5 block">
                   // Cloud phone system for business
@@ -560,9 +499,6 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
                     <span>Call: +91 82874 79961</span>
                   </a>
                 </div>
-              </div>
-              <div className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto mt-2 lg:mt-0">
-                <HeroCallCard />
               </div>
             </div>
           </div>
