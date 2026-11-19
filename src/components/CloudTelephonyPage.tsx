@@ -290,7 +290,7 @@ function HeroCallCard() {
           </li>
         </ol>
 
-        <div className="flex flex-wrap gap-2 px-4 sm:px-5 pb-4 text-[11px] text-zinc-400">
+        <div className="hidden sm:flex flex-wrap gap-2 px-4 sm:px-5 pb-4 text-[11px] text-zinc-400">
           <span className="px-2.5 py-1 rounded-full border border-white/10">● Recording on</span>
           <span className="px-2.5 py-1 rounded-full border border-white/10">Logged in CRM</span>
           <span className="px-2.5 py-1 rounded-full border border-white/10">Missed calls tracked</span>
