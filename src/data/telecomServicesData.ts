@@ -2717,7 +2717,7 @@ export const telecomServices: ServiceDetail[] = [
   "heroHeadline": "Next-Gen Cloud Telephony & Virtual PBX For",
   "heroHighlight": "Seamless Remote & Hybrid Customer Engagement.",
   "heroSubtitle": "A cloud phone system for Indian businesses: toll-free and virtual numbers, multi-level IVR, click-to-call, call recording and CRM integration, run from a web dashboard and mobile app with no PBX hardware.",
-  "image": "/images/services/smartflo-cloud-telephony-business-phone.jpg",
+  "image": "/images/services/smartflo-cloud-telephony-ivr-call-routing.jpg",
   "galleryImages": [
     "/telephone-studio.jpg",
     "/banner-servers-lights.jpg",
