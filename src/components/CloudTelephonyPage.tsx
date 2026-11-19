@@ -435,10 +435,10 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
         <section className="relative w-full text-white pt-28 sm:pt-32 lg:pt-36 pb-7 sm:pb-9 lg:pb-10 px-4 sm:px-8 lg:px-14 xl:px-20 overflow-hidden border-b border-zinc-800">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/services/smartflo-cloud-telephony-call-centre.jpg"
-              alt="Call centre agent with a headset answering business calls on Smartflo cloud telephony"
+              src="/images/services/smartflo-cloud-telephony-business-phone.jpg"
+              alt="Business telephone: Smartflo cloud telephony replaces old office phone systems"
               fetchPriority="high"
-              className="w-full h-full object-cover object-[70%_center] brightness-[0.8]"
+              className="w-full h-full object-cover object-[center_62%] brightness-[0.85]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent z-10" />
             <div className="absolute inset-0 bg-black/60 lg:hidden z-10" />

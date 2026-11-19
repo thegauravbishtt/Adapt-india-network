@@ -2717,7 +2717,7 @@ export const telecomServices: ServiceDetail[] = [
   "heroHeadline": "Next-Gen Cloud Telephony & Virtual PBX For",
   "heroHighlight": "Seamless Remote & Hybrid Customer Engagement.",
   "heroSubtitle": "A cloud phone system for Indian businesses: toll-free and virtual numbers, multi-level IVR, click-to-call, call recording and CRM integration, run from a web dashboard and mobile app with no PBX hardware.",
-  "image": "/images/services/smartflo-cloud-telephony-call-centre.jpg",
+  "image": "/images/services/smartflo-cloud-telephony-business-phone.jpg",
   "galleryImages": [
     "/telephone-studio.jpg",
     "/banner-servers-lights.jpg",
@@ -2821,7 +2821,7 @@ export const telecomServices: ServiceDetail[] = [
       "title": "Real Estate Agency Lead Conversion",
       "client": "Premium Property Developer",
       "impact": "Captured 100% of incoming buyer inquiries with zero missed calls and instant WhatsApp follow-up.",
-      "image": "/images/services/smartflo-cloud-telephony-call-centre.jpg"
+      "image": "/telephone-banner.jpg"
     },
     {
       "title": "Pan-India D2C Brand Customer Support",

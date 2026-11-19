@@ -25,8 +25,8 @@ export const SERVICE_SEO_IMAGES: Record<string, { src: string; alt: string; alte
     alternateNames: ["SIP Trunk", "Cloud Telephony", "Business Phone Lines", "Cloud PBX", "Toll-Free Number"],
   },
   "cloud-telephony": {
-    src: "/images/services/smartflo-cloud-telephony-call-centre.jpg",
-    alt: "Call centre agent with a headset answering business calls on Smartflo cloud telephony",
+    src: "/images/services/smartflo-cloud-telephony-business-phone.jpg",
+    alt: "Business telephone: Smartflo cloud telephony replaces old office phone systems",
     alternateNames: ["Smartflo", "Smartflo Cloud Telephony", "Cloud Telephony", "Cloud PBX", "Virtual PBX", "IVR Service", "Toll-Free Number"],
   },
   "enterprise-broadband": {
