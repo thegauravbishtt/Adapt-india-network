@@ -6,7 +6,25 @@ import React, { useState } from "react";
  * Short enquiry form shown on service pages, so a visitor can ask for a quote
  * without leaving the page. Posts to the same /api/contact handler as the contact page.
  */
-export default function QuickQuoteForm({ service, heading }: { service: string; heading: string }) {
+const DEFAULT_INTRO =
+  "Tell us your address and what you need. We check which carriers already reach your building and come back with options.";
+const DEFAULT_POINTS = [
+  "Free feasibility check at your address",
+  "Options from Tata Tele Business Services and ACT Fibernet",
+  "One team for installation, support and billing",
+];
+
+export default function QuickQuoteForm({
+  service,
+  heading,
+  intro = DEFAULT_INTRO,
+  points = DEFAULT_POINTS,
+}: {
+  service: string;
+  heading: string;
+  intro?: string;
+  points?: string[];
+}) {
   const [form, setForm] = useState({ name: "", phone: "", email: "", location: "", requirement: "", website: "" });
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -56,13 +74,12 @@ export default function QuickQuoteForm({ service, heading }: { service: string; 
         <div>
           <h2 className="text-2xl sm:text-3xl font-black font-display tracking-tight mb-3">{heading}</h2>
           <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
-            Tell us your address and what you need. We check which carriers already reach your building and come back
-            with options.
+            {intro}
           </p>
           <ul className="text-sm text-zinc-300 flex flex-col gap-1.5">
-            <li>✓ Free feasibility check at your address</li>
-            <li>✓ Options from Tata Tele Business Services and ACT Fibernet</li>
-            <li>✓ One team for installation, support and billing</li>
+            {points.map((p) => (
+              <li key={p}>✓ {p}</li>
+            ))}
           </ul>
           <p className="text-sm text-zinc-400 mt-5">
             Prefer to talk?{" "}

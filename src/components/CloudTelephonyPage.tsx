@@ -365,7 +365,16 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
           </div>
         </section>
 
-        <QuickQuoteForm service="Smartflo cloud telephony" heading="Get a free Smartflo cloud telephony quote" />
+        <QuickQuoteForm
+          service="Smartflo cloud telephony"
+          heading="Get a free Smartflo cloud telephony quote"
+          intro="Tell us how many people take calls, which numbers you need and how calls should be routed. We come back with the right Smartflo setup for your team."
+          points={[
+            "Free consultation on your call flows",
+            "Toll-free, virtual numbers and IVR set up for you",
+            "One team for setup, training and support",
+          ]}
+        />
 
         {/* FAQ */}
         {faqs.length > 0 && (
