@@ -524,7 +524,7 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
           {/* Flat background: dark base with a red diagonal panel on the right (desktop) */}
           <div className="absolute inset-0 z-0 bg-[#0e0e10]" aria-hidden="true">
             <div className="hidden lg:block absolute inset-y-0 right-0 w-[52%] bg-[#17171a] [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)]" />
-            <div className="hidden lg:block absolute inset-y-0 right-0 w-[34%] bg-[#E31E24] [clip-path:polygon(34%_0,100%_0,100%_100%,0_100%)]" />
+            <div className="hidden lg:block absolute top-24 bottom-0 right-0 w-[30%] bg-[#E31E24] [clip-path:polygon(34%_0,100%_0,100%_100%,0_100%)]" />
             <div className="lg:hidden absolute -right-16 -bottom-10 w-56 h-56 rounded-full bg-[#E31E24]/25 blur-3xl" />
           </div>
 
