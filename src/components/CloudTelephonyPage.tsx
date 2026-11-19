@@ -461,6 +461,7 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
               className="w-full h-full object-cover object-[72%_center]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent z-10" />
+            <div className="absolute inset-0 bg-black/60 lg:hidden z-10" />
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full mb-3 sm:mb-4">

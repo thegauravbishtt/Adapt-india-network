@@ -36,7 +36,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "Smartflo Cloud Telephony",
     keyword: "Smartflo cloud telephony",
     description:
-      "Smartflo cloud telephony from an authorised Tata Tele partner: toll-free and virtual numbers, IVR, call recording, CRM integration and mobile app. Get a free quote.",
+      "Smartflo cloud telephony from an authorised Tata Tele partner: toll-free and virtual numbers, IVR, call recording, CRM integration and a mobile app.",
     serviceType: "Cloud Telephony",
   },
   "smart-internet-ill": {
