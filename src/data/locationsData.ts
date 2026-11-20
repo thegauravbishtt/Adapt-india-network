@@ -1030,5 +1030,11 @@ export function cityExtraFaqs(page: CityPage): Array<{ question: string; answer:
       answer: `As a rough guide for offices using cloud apps and video calls: up to 15 people 20 to 50 Mbps, 15 to 50 people 50 to 100 Mbps, and 50 to 150 people 100 to 300 Mbps. CCTV, servers or large uploads need more. We size it during the survey, and the speed can usually be raised later on the same line.`,
     });
   }
+  if (!has(/lease line/i)) {
+    out.push({
+      question: `Is a "lease line" the same as a leased line in ${page.city}?`,
+      answer: `Yes. "Lease line", "leased line" and "ILL" (internet leased line) all mean the same thing: a dedicated fibre internet connection for your office, with the same upload and download speed, static IPs and an uptime SLA. We provide lease line connections for offices across ${page.city}, including ${areas}.`,
+    });
+  }
   return out;
 }
