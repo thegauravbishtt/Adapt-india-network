@@ -531,7 +531,7 @@ export default function CloudTelephonyPage({ service, heading }: { service: Serv
             </div>
             <dl className="rounded-2xl border border-red-100 bg-gradient-to-b from-red-50/70 to-white divide-y divide-red-100 text-sm overflow-hidden">
               {[
-                ["Numbers", "Toll-free and virtual"],
+                ["Numbers", "Virtual DID Number"],
                 ["Answer calls on", "Mobile app, laptop, desk phone"],
                 ["Call routing", "IVR, skills, time of day"],
                 ["Recording and reports", "Included in the dashboard"],
