@@ -29,9 +29,9 @@ export const cityPages: CityPage[] = [
     city: "Delhi",
     altNames: ["New Delhi", "Delhi NCR"],
     state: "Delhi",
-    metaTitle: "Leased Line Provider in Delhi | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Delhi | Free Feasibility Check",
     metaDescription:
-      "Internet Leased Line, SD-WAN and MPLS for offices in Delhi: Connaught Place, Nehru Place, Okhla & Paschim Vihar. Delhi-based team. Call +91 82874 79961.",
+      "Leased line, SD-WAN & MPLS for Delhi offices: Connaught Place, Nehru Place, Okhla & more. Local team in Paschim Vihar. Free check: +91 82874 79961.",
     h1: "Internet Leased Line Provider in Delhi",
     intro: [
       "Adapt India Networks is headquartered in Paschim Vihar, New Delhi, so Delhi is where our team works every day. We arrange dedicated Internet Leased Lines (ILL), business broadband, SD-WAN and MPLS for offices, clinics, showrooms and warehouses across the city, delivered on the enterprise fibre networks of Tata Tele Business Services and ACT Fibernet.",
@@ -100,9 +100,9 @@ export const cityPages: CityPage[] = [
     city: "Gurgaon",
     altNames: ["Gurugram"],
     state: "Haryana",
-    metaTitle: "Internet Leased Line in Gurgaon | Leased Line Providers",
+    metaTitle: "Internet Leased Line in Gurgaon | Free Feasibility Check",
     metaDescription:
-      "Leased line internet in Gurgaon (Gurugram) for offices in Cyber City, Golf Course Road, Udyog Vihar, Sohna Road & Manesar, on Tata Tele and ACT fibre.",
+      "Leased line internet in Gurgaon for Cyber City, Golf Course Road, Udyog Vihar & Sohna Road offices. Tata Tele & ACT fibre, static IPs, 99.5% SLA. Free check.",
     h1: "Internet Leased Line Provider in Gurgaon (Gurugram)",
     intro: [
       "Gurgaon is home to corporate headquarters, IT and ITeS companies, startups and a large manufacturing belt stretching to Manesar. Adapt India Networks supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to these offices and plants, using the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
@@ -181,9 +181,9 @@ export const cityPages: CityPage[] = [
     city: "Noida",
     altNames: ["Greater Noida", "Noida Extension"],
     state: "Uttar Pradesh",
-    metaTitle: "Leased Line Provider in Noida | Internet Leased Line",
+    metaTitle: "Leased Line Provider in Noida | Free Feasibility Check",
     metaDescription:
-      "Dedicated leased line, SD-WAN and business broadband for offices, IT parks and factories in Noida, Greater Noida & Noida Expressway. Get a feasibility check.",
+      "Leased line, SD-WAN and broadband for offices, IT parks and factories in Noida, Greater Noida & Noida Expressway. Static IPs, 99.5% SLA. Free check.",
     h1: "Internet Leased Line Provider in Noida & Greater Noida",
     intro: [
       "Noida has grown into one of Uttar Pradesh's biggest business hubs, with IT parks along the Noida–Greater Noida Expressway, electronics and garment manufacturing in its industrial sectors, and a fast-growing commercial belt in Greater Noida. Adapt India Networks delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business broadband across both cities.",
@@ -252,9 +252,9 @@ export const cityPages: CityPage[] = [
     city: "Ghaziabad",
     altNames: ["Sahibabad", "Indirapuram"],
     state: "Uttar Pradesh",
-    metaTitle: "Leased Line Provider in Ghaziabad | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Ghaziabad | Free Feasibility Check",
     metaDescription:
-      "Internet Leased Line and business broadband for factories, warehouses and offices in Ghaziabad: Sahibabad, Meerut Road, Loni, Indirapuram & Raj Nagar Extension.",
+      "Leased line and business broadband for factories, warehouses and offices in Sahibabad, Indirapuram & Raj Nagar Extension. Tata Tele & ACT partner. Free check.",
     h1: "Internet Leased Line Provider in Ghaziabad",
     intro: [
       "Ghaziabad is a major industrial and logistics city on the eastern edge of Delhi, with manufacturing at Sahibabad, Meerut Road and Loni, and commercial growth in Indirapuram, Vaishali and Raj Nagar Extension. Adapt India Networks provides dedicated Internet Leased Lines, business broadband, SD-WAN and MPLS for these businesses.",
@@ -318,9 +318,9 @@ export const cityPages: CityPage[] = [
     city: "Faridabad",
     altNames: ["Ballabgarh"],
     state: "Haryana",
-    metaTitle: "Leased Line Provider in Faridabad | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Faridabad | Free Feasibility Check",
     metaDescription:
-      "Dedicated Internet Leased Line, SD-WAN and broadband for manufacturing units and offices in Faridabad: Sector 24, 25, 58, NIT, Ballabgarh & Mathura Road.",
+      "Leased line, SD-WAN and broadband for factories and offices in Faridabad: Sector 24, 25, 58, NIT & Ballabgarh. Tata Tele & ACT partner. Free check.",
     h1: "Internet Leased Line Provider in Faridabad",
     intro: [
       "Faridabad is one of the oldest industrial cities in the NCR, with auto parts, engineering and electrical manufacturers spread across its industrial sectors and along Mathura Road. Adapt India Networks supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business broadband to these plants and to the offices that support them.",
@@ -378,9 +378,9 @@ export const cityPages: CityPage[] = [
     city: "Lucknow",
     altNames: ["Uttar Pradesh"],
     state: "Uttar Pradesh",
-    metaTitle: "Leased Line Provider in Lucknow & Uttar Pradesh",
+    metaTitle: "Leased Line Provider in Lucknow | Free Feasibility Check",
     metaDescription:
-      "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Lucknow and across Uttar Pradesh: Gomti Nagar, Hazratganj, Amausi & more. Get a quote.",
+      "Leased line, SD-WAN and MPLS for businesses in Lucknow and across Uttar Pradesh: Gomti Nagar, Hazratganj & Amausi. Tata Tele & ACT partner. Free check.",
     h1: "Internet Leased Line Provider in Lucknow & Uttar Pradesh",
     intro: [
       "Lucknow is the administrative and commercial capital of Uttar Pradesh, with corporate offices in Gomti Nagar and Hazratganj, industrial units near Amausi and Chinhat, and a growing IT and education sector. Adapt India Networks provides dedicated Internet Leased Lines, SD-WAN, MPLS and business broadband here, and across UP cities including Kanpur, Agra, Varanasi and Meerut.",
@@ -442,9 +442,9 @@ export const cityPages: CityPage[] = [
     city: "Mumbai",
     altNames: ["Navi Mumbai", "Thane"],
     state: "Maharashtra",
-    metaTitle: "SD-WAN Services & Leased Line Provider in Mumbai",
+    metaTitle: "SD-WAN & Leased Line Provider in Mumbai | Free Check",
     metaDescription:
-      "Internet Leased Line, SD-WAN services and MPLS for businesses in Mumbai, Navi Mumbai & Thane: BKC, Lower Parel, Andheri, Powai & MIDC. Get a feasibility check.",
+      "Leased line, SD-WAN services and MPLS in Mumbai, Navi Mumbai & Thane: BKC, Lower Parel, Andheri & Powai. Tata Tele & ACT partner. Free feasibility check.",
     h1: "Internet Leased Line & SD-WAN Services in Mumbai",
     intro: [
       "Mumbai is India's financial capital, home to banks, brokers, insurers, media houses and the regional offices of companies from every sector. Adapt India Networks delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice across Mumbai, Navi Mumbai and Thane through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
@@ -512,9 +512,9 @@ export const cityPages: CityPage[] = [
     city: "Bengaluru",
     altNames: ["Bangalore"],
     state: "Karnataka",
-    metaTitle: "Internet Leased Line in Bangalore | Bengaluru Provider",
+    metaTitle: "Internet Leased Line in Bangalore | Free Feasibility Check",
     metaDescription:
-      "Internet leased line in Bangalore (Bengaluru), plus SD-WAN and MPLS, for offices in Whitefield, Outer Ring Road, Electronic City, Koramangala & Manyata.",
+      "Internet leased line in Bangalore, plus SD-WAN and MPLS, for Whitefield, ORR, Electronic City & Koramangala offices. Static IPs, 99.5% SLA. Free check.",
     h1: "Internet Leased Line Provider in Bengaluru (Bangalore)",
     intro: [
       "Bengaluru is India's technology hub, with software companies, global capability centres, startups and R&D labs spread from Whitefield to Electronic City. Adapt India Networks supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to these teams through the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
@@ -575,9 +575,9 @@ export const cityPages: CityPage[] = [
     city: "Hyderabad",
     altNames: ["Secunderabad", "Cyberabad"],
     state: "Telangana",
-    metaTitle: "Leased Line Provider in Hyderabad | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Hyderabad | Free Feasibility Check",
     metaDescription:
-      "Dedicated leased line, SD-WAN and MPLS for offices in Hyderabad: HITEC City, Gachibowli, Financial District, Madhapur & Secunderabad. Get a feasibility check.",
+      "Leased line, SD-WAN and MPLS for offices in HITEC City, Gachibowli, Financial District & Madhapur. Tata Tele & ACT partner, 99.5% SLA. Free feasibility check.",
     h1: "Internet Leased Line Provider in Hyderabad",
     intro: [
       "Hyderabad has become one of India's largest IT and pharma hubs, with technology campuses in HITEC City, Gachibowli and the Financial District, and life-sciences and manufacturing clusters around the city. Adapt India Networks provides dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
@@ -634,9 +634,9 @@ export const cityPages: CityPage[] = [
     city: "Chennai",
     altNames: ["Madras"],
     state: "Tamil Nadu",
-    metaTitle: "Leased Line Provider in Chennai | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Chennai | Free Feasibility Check",
     metaDescription:
-      "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Chennai: OMR, Guindy, Ambattur, Sriperumbudur & Oragadam. Get a quote for your site.",
+      "Leased line, SD-WAN and MPLS for businesses in Chennai: OMR, Guindy, Ambattur, Sriperumbudur & Oragadam. Tata Tele & ACT partner. Free feasibility check.",
     h1: "Internet Leased Line Provider in Chennai",
     intro: [
       "Chennai combines a large IT corridor along the Old Mahabalipuram Road with one of India's biggest automotive and electronics manufacturing belts at Sriperumbudur and Oragadam. Adapt India Networks supplies dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to both, using the enterprise networks of Tata Tele Business Services and ACT Fibernet.",
@@ -693,9 +693,9 @@ export const cityPages: CityPage[] = [
     city: "Pune",
     altNames: ["Pimpri-Chinchwad"],
     state: "Maharashtra",
-    metaTitle: "Leased Line Provider in Pune | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Pune | Free Feasibility Check",
     metaDescription:
-      "Internet Leased Line, SD-WAN and MPLS for offices and plants in Pune: Hinjewadi, Kharadi, Magarpatta, Baner, Chakan & Pimpri-Chinchwad MIDC.",
+      "Leased line, SD-WAN and MPLS for offices and plants in Pune: Hinjewadi, Kharadi, Magarpatta, Baner & Chakan. Tata Tele & ACT partner, 99.5% SLA. Free check.",
     h1: "Internet Leased Line Provider in Pune",
     intro: [
       "Pune pairs a large IT sector in Hinjewadi, Kharadi and Magarpatta with an automotive and engineering base in Chakan, Talegaon and Pimpri-Chinchwad. Adapt India Networks delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice to both through Tata Tele Business Services and ACT Fibernet.",
@@ -750,9 +750,9 @@ export const cityPages: CityPage[] = [
     city: "Kolkata",
     altNames: ["Salt Lake", "New Town"],
     state: "West Bengal",
-    metaTitle: "Leased Line Provider in Kolkata | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Kolkata | Free Feasibility Check",
     metaDescription:
-      "Dedicated leased line, SD-WAN and MPLS for offices in Kolkata: Salt Lake Sector V, New Town, Park Street, BBD Bagh & Howrah. Get a feasibility check.",
+      "Leased line, SD-WAN and MPLS for offices in Kolkata: Salt Lake Sector V, New Town, Park Street & Howrah. Tata Tele & ACT partner, 99.5% SLA. Free check.",
     h1: "Internet Leased Line Provider in Kolkata",
     intro: [
       "Kolkata is the commercial centre of eastern India, with IT companies in Salt Lake Sector V and New Town, corporate and trading offices around Park Street and BBD Bagh, and industry and warehousing across Howrah. Adapt India Networks provides dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
@@ -801,9 +801,9 @@ export const cityPages: CityPage[] = [
     city: "Ahmedabad",
     altNames: ["Gandhinagar", "GIFT City"],
     state: "Gujarat",
-    metaTitle: "Leased Line Provider in Ahmedabad & GIFT City",
+    metaTitle: "Leased Line Provider in Ahmedabad | Free Feasibility Check",
     metaDescription:
-      "Internet Leased Line, SD-WAN and MPLS for businesses in Ahmedabad, Gandhinagar & GIFT City: SG Highway, Prahlad Nagar, Sanand, Changodar & Naroda.",
+      "Leased line, SD-WAN and MPLS in Ahmedabad, Gandhinagar & GIFT City: SG Highway, Prahlad Nagar & Sanand. Tata Tele & ACT partner. Free feasibility check.",
     h1: "Internet Leased Line Provider in Ahmedabad & GIFT City",
     intro: [
       "Ahmedabad is Gujarat's business capital, with corporate offices along SG Highway, a growing financial services hub at GIFT City in Gandhinagar, and large manufacturing clusters in Sanand, Changodar, Naroda and Vatva. Adapt India Networks delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
@@ -853,9 +853,9 @@ export const cityPages: CityPage[] = [
     city: "Jaipur",
     altNames: ["Rajasthan"],
     state: "Rajasthan",
-    metaTitle: "Leased Line Provider in Jaipur | ILL & SD-WAN",
+    metaTitle: "Leased Line Provider in Jaipur | Free Feasibility Check",
     metaDescription:
-      "Dedicated Internet Leased Line, SD-WAN and MPLS for businesses in Jaipur: Malviya Nagar, Sitapura, VKI Area, Mahindra SEZ & C-Scheme. Get a quote.",
+      "Leased line, SD-WAN and MPLS for businesses in Jaipur: Malviya Nagar, Sitapura, VKI Area & Mahindra SEZ. Tata Tele & ACT partner. Free feasibility check.",
     h1: "Internet Leased Line Provider in Jaipur",
     intro: [
       "Jaipur is Rajasthan's commercial centre, with IT and BPO offices, gems and jewellery exporters, handicraft and textile businesses, hotels and a growing manufacturing base in Sitapura, VKI Area and Mahindra World City. Adapt India Networks provides dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",
@@ -904,9 +904,9 @@ export const cityPages: CityPage[] = [
     city: "Chandigarh",
     altNames: ["Mohali", "Panchkula", "Tricity"],
     state: "Chandigarh",
-    metaTitle: "Leased Line Provider in Chandigarh Tricity",
+    metaTitle: "Leased Line Provider in Chandigarh | Free Feasibility Check",
     metaDescription:
-      "Internet Leased Line, SD-WAN and MPLS for offices in the Chandigarh Tricity: IT Park, Industrial Area Phase 1 & 2, Mohali, Panchkula & Zirakpur.",
+      "Leased line, SD-WAN and MPLS for offices in the Chandigarh Tricity: IT Park, Mohali, Panchkula & Zirakpur. Tata Tele & ACT partner. Free check.",
     h1: "Internet Leased Line Provider in Chandigarh Tricity",
     intro: [
       "The Chandigarh Tricity of Chandigarh, Mohali and Panchkula is the business hub for Punjab, Haryana and Himachal Pradesh, with IT companies in Chandigarh IT Park and Mohali, industrial units in the Industrial Area phases, and many government, healthcare and education institutions. Adapt India Networks delivers dedicated Internet Leased Lines, SD-WAN, MPLS and business voice here through Tata Tele Business Services and ACT Fibernet.",

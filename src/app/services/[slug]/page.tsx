@@ -36,15 +36,15 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "Smartflo Cloud Telephony",
     keyword: "Smartflo cloud telephony",
     description:
-      "Smartflo cloud telephony for business: toll-free and virtual numbers, IVR, call recording, CRM integration and a mobile app. Set up and supported by Adapt India.",
+      "Smartflo cloud telephony: toll-free and virtual numbers, IVR, call recording, CRM integration and a mobile app for your team. Free consultation and setup.",
     serviceType: "Cloud Telephony",
   },
   "smart-internet-ill": {
-    title: "Internet Leased Line (ILL) Provider in India",
+    title: "Internet Leased Line (ILL) Provider in India | 99.5% SLA",
     h1: "Internet Leased Line (ILL) Provider in India",
     keyword: "Internet leased line",
     description:
-      "Internet leased line connection for business: dedicated fibre, same upload and download speed, static IPs, 99.5% SLA. Free feasibility check across India.",
+      "Dedicated fibre internet for your office: same upload and download speed, static IPs and a 99.5% uptime SLA. Tata Tele & ACT partner. Free feasibility check.",
     serviceType: "Internet Leased Line",
   },
   "smartflo-sd-wan": {
@@ -52,7 +52,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "Managed SD-WAN Service Provider in India",
     keyword: "SD-WAN",
     description:
-      "Managed SD-WAN for businesses with branches across India: automatic failover, any mix of leased line, broadband and 4G/5G, one dashboard. Free feasibility check.",
+      "Managed SD-WAN for multi-branch businesses in India: automatic failover across leased line, broadband and 4G/5G, one dashboard. Free feasibility check.",
     serviceType: "SD-WAN",
   },
   "smartoffice-connect": {
@@ -62,11 +62,11 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     serviceType: "Managed Office Connectivity",
   },
   "managed-mpls": {
-    title: "MPLS Service Providers in India | Managed MPLS Services",
+    title: "MPLS Service Providers in India | Managed MPLS VPN",
     h1: "Managed MPLS Service Provider in India",
     keyword: "MPLS",
     description:
-      "Managed MPLS services in India: a private MPLS VPN linking branches, plants and data centres, with traffic priority and managed routers. Free feasibility check.",
+      "Managed MPLS VPN linking your branches, plants and data centres across India, with traffic priority and managed routers. Tata Tele & ACT partner. Free check.",
     serviceType: "MPLS VPN",
   },
   "business-communications": {
@@ -116,7 +116,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
   "point-to-point-leased-line": {
     title: "Point-to-Point Leased Line (P2P) Provider in India",
     description:
-      "Private point-to-point leased circuits linking offices, plants and data centres in Delhi NCR and across India with dedicated, uncontended bandwidth.",
+      "Private point-to-point leased line linking your offices, plants and data centres in Delhi NCR and across India. Dedicated bandwidth. Free feasibility check.",
     serviceType: "Point-to-Point Leased Line",
   },
   "enterprise-broadband": {
@@ -124,7 +124,7 @@ const SERVICE_SEO: Record<string, { title: string; description: string; serviceT
     h1: "Business Broadband Connection & Office Wi-Fi",
     keyword: "Business broadband",
     description:
-      "Business broadband connection and managed office Wi-Fi for small offices, shops, clinics and branches in Delhi NCR and across India, plus backup lines.",
+      "Business broadband and managed office Wi-Fi for small offices, shops, clinics and branches in Delhi NCR and across India, plus backup lines. Free check.",
     serviceType: "Enterprise Broadband",
   },
 };
