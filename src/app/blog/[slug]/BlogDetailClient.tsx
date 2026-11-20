@@ -290,6 +290,36 @@ export default function BlogDetailClient({
             </Link>
           </div>
 
+          {/* City links: helps readers (and Google) reach the local leased line pages */}
+          <nav aria-label="Leased line by city" className="mt-12 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 sm:p-6">
+            <p className="text-sm font-bold text-zinc-950 mb-3">Leased line in your city</p>
+            <ul className="flex flex-wrap gap-2">
+              {[
+                ["delhi", "Delhi"],
+                ["gurgaon", "Gurgaon"],
+                ["noida", "Noida"],
+                ["ghaziabad", "Ghaziabad"],
+                ["faridabad", "Faridabad"],
+                ["mumbai", "Mumbai"],
+                ["bengaluru", "Bengaluru"],
+                ["hyderabad", "Hyderabad"],
+                ["chennai", "Chennai"],
+                ["pune", "Pune"],
+                ["kolkata", "Kolkata"],
+                ["ahmedabad", "Ahmedabad"],
+              ].map(([slug, city]) => (
+                <li key={slug}>
+                  <Link
+                    href={`/locations/${slug}/`}
+                    className="inline-block px-3 py-1.5 rounded-full border border-zinc-300 bg-white text-xs font-semibold text-zinc-800 hover:border-[#E31E24] hover:text-[#E31E24] transition-colors"
+                  >
+                    Leased line in {city}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           {/* Related Articles Section */}
           {relatedBlogs && relatedBlogs.length > 0 && (
             <div className="mt-16 sm:mt-20">
