@@ -160,7 +160,7 @@ export const defaultFeaturedWorkItems: FeaturedWorkItem[] = [
     name: "Enterprise Financial Core",
     category: "CYBER SECURITY & DATA",
     headline: "Dedicated Fiber Leased Line Grid",
-    description: "Symmetric Gigabit bandwidth and direct peering with tier-1 internet exchanges.",
+    description: "Dedicated symmetrical bandwidth with static IPs and an uptime SLA.",
     src: "/services/broadband_clean.jpg",
   },
 ];

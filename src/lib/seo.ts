@@ -240,7 +240,6 @@ export function organizationSchema() {
       "Cloud Telephony",
       "Network Security",
       "Point-to-Point Leased Line",
-      "Internet Exchange and Peering",
       "Dual ISP Failover",
       "Static IP Address",
       "Toll-Free Numbers",

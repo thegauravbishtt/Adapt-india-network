@@ -388,8 +388,8 @@ export default function ServicesPage() {
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col gap-2">
                 <span className="text-2xl font-black text-[#E31E24] font-mono">01</span>
-                <h4 className="text-base font-bold text-white">Direct Tier-1 Peering</h4>
-                <p className="text-xs text-zinc-400 leading-relaxed">Interconnected with India's top backbones, NIXI, and direct cloud on-ramps to AWS and Azure.</p>
+                <h4 className="text-base font-bold text-white">Leading Carrier Networks</h4>
+                <p className="text-xs text-zinc-400 leading-relaxed">Delivered on Tata Tele Business Services and ACT Fibernet networks, with private links to AWS and Azure where you need them.</p>
               </div>
 
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col gap-2">
