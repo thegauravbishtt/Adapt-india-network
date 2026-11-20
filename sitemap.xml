@@ -367,6 +367,15 @@
 <priority>0.8</priority>
 </url>
 <url>
+<loc>https://www.adapt-india.net/services/cloud-telephony/</loc>
+<image:image>
+<image:loc>https://www.adapt-india.net/images/services/smartflo-cloud-telephony-mobile-app.jpg</image:loc>
+</image:image>
+<lastmod>2026-11-12T06:30:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://www.adapt-india.net/services/smartflo-ccaas/</loc>
 <lastmod>2026-11-12T06:30:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
