@@ -27,13 +27,13 @@ const coreArticles: BlogPost[] = [
     ],
     status: "published",
     publishedAt: "2026-02-18T12:00:00.000Z",
-    updatedAt: "2026-11-16T10:00:00.000Z",
+    updatedAt: "2026-11-20T06:00:00.000Z",
     author: "Adapt India Networks",
     content: `Most offices in India start on broadband. It is cheap, quick to install and fine for a few people browsing and sending email. As a business grows, video calls freeze, cloud software slows down in the evening, and uploads take far longer than downloads. That is usually the point where an Internet Leased Line (ILL) is worth a serious look.
 
-What is an Internet Leased Line
+What is an Internet Leased Line (ILL full form)
 
-An Internet Leased Line is a dedicated internet connection reserved for one customer. The bandwidth you buy is not shared with other subscribers in your building or area, and upload speed is the same as download speed. It is delivered over fibre, comes with static public IP addresses, and is backed by a Service Level Agreement (SLA) that commits the provider to uptime and repair targets.
+ILL stands for Internet Leased Line. In networking, an ILL is a dedicated internet connection reserved for one customer. The bandwidth you buy is not shared with other subscribers in your building or area, and upload speed is the same as download speed. It is delivered over fibre, comes with static public IP addresses, and is backed by a Service Level Agreement (SLA) that commits the provider to uptime and repair targets.
 
 How broadband is different
 

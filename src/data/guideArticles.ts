@@ -317,7 +317,7 @@ You need a static IP when the outside world has to reach you, or has to trust tr
 
 If none of these apply to you, a dynamic IP on good broadband may be perfectly fine.
 
-## How to get a static IP address in India
+## How to get (buy) a static IP address in India
 
 There are three realistic routes for a business.
 
@@ -325,7 +325,7 @@ There are three realistic routes for a business.
 
 An [Internet Leased Line](/services/smart-internet-ill/) normally comes with static public IP addresses as part of the service. Because the connection is dedicated to you, the addresses are genuinely yours for the life of the contract, and you also get symmetrical speeds and an uptime SLA. For most businesses that need a static IP for serious work, this is the cleanest answer.
 
-### 2. As an add-on to business broadband
+### 2. As an add-on to business broadband (static IP on broadband)
 
 Some providers sell a static IP as an add-on to business broadband plans. This can work for a small office that only needs remote CCTV or a single VPN, but check two things before you rely on it: that the address is a true public IP and not behind CGNAT, and what support you get if it stops working.
 
