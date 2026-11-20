@@ -47,7 +47,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "sd-wan",
     "mpls",
     "managed-wifi",
-    "cloud-telephony",
     "cyber-security",
     "data-services",
   ]);

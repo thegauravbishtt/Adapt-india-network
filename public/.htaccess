@@ -30,7 +30,6 @@ DirectoryIndex index.html
   RewriteRule ^services/sd-wan/?$ /services/smartflo-sd-wan/ [R=301,L]
   RewriteRule ^services/mpls/?$ /services/managed-mpls/ [R=301,L]
   RewriteRule ^services/managed-wifi/?$ /services/managed-campus-wifi/ [R=301,L]
-  RewriteRule ^services/cloud-telephony/?$ /services/business-communications/ [R=301,L]
   RewriteRule ^services/cyber-security/?$ /services/cybersecurity-solutions/ [R=301,L]
   RewriteRule ^services/data-services/?$ /services/point-to-point-leased-line/ [R=301,L]
 
