@@ -59,17 +59,7 @@ export default async function CityLandingPage({ params }: CityPageProps) {
     .map((slug) => getCityBySlug(slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
   const areaLinks = areasForCity(page.slug);
-  // Cities where Google already shows us for internet exchange / peering searches
-  const ixCity = ["delhi", "mumbai", "hyderabad"].includes(page.slug);
-  const ixFaq = ixCity
-    ? [
-        {
-          question: `Do you provide internet exchange (IX) and peering connections in ${page.city}?`,
-          answer: `Yes. Adapt India Networks provides internet exchange (IX) and peering connections in ${page.city} for ISPs, hosting providers, data centres and businesses with heavy internet traffic. Peering at an internet exchange point lets your network swap traffic directly with other networks, which usually means lower latency and less load on your upstream internet bandwidth. Tell us your network and traffic needs and we will suggest the right setup.`,
-        },
-      ]
-    : [];
-  const allFaqs = [...page.faqs, ...cityExtraFaqs(page), ...ixFaq];
+  const allFaqs = [...page.faqs, ...cityExtraFaqs(page)];
 
   return (
     <LanguageProvider>
@@ -257,44 +247,6 @@ export default async function CityLandingPage({ params }: CityPageProps) {
               </ul>
             </div>
           </section>
-
-          {/* INTERNET EXCHANGE / PEERING (only where people search for it) */}
-          {ixCity && (
-            <section className="w-full bg-zinc-50 border-y border-zinc-200 py-12 sm:py-14 px-4 sm:px-8 lg:px-14 xl:px-20">
-              <div className="max-w-6xl mx-auto grid gap-8 lg:grid-cols-[1.2fr_1fr] items-start">
-                <div>
-                  <span className="font-mono text-[11px] sm:text-xs font-extrabold tracking-widest text-[#E31E24] uppercase block mb-2">
-                    // Internet exchange and peering
-                  </span>
-                  <h2 className="text-xl sm:text-3xl font-black font-display text-zinc-950 tracking-tight mb-4">
-                    Internet exchange point (IX) and peering in {page.city}
-                  </h2>
-                  <p className="text-sm sm:text-base text-zinc-700 leading-relaxed mb-3">
-                    Besides leased lines, we provide internet exchange (IX) and peering connections in {page.city}. At an
-                    internet exchange point, your network connects directly with other networks and exchanges traffic
-                    with them, instead of sending everything through a paid upstream provider.
-                  </p>
-                  <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">
-                    It suits ISPs, hosting and cloud providers, data centres, gaming and streaming platforms, and any
-                    business moving a lot of traffic to the same networks every day.
-                  </p>
-                </div>
-                <ul className="grid gap-3 text-sm">
-                  {[
-                    ["Lower latency", "Traffic takes a shorter path to the networks your users are on."],
-                    ["Less upstream load", "Peered traffic does not use your paid internet bandwidth."],
-                    ["More control", "Choose which networks you peer with and how traffic is routed."],
-                    ["One partner", "IX port, leased line to the exchange and support from one team."],
-                  ].map(([t, d]) => (
-                    <li key={t} className="rounded-xl bg-white border border-zinc-200 p-4">
-                      <p className="font-bold text-zinc-950">{t}</p>
-                      <p className="text-zinc-600 mt-0.5">{d}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          )}
 
           {/* FAQ */}
           <section className="w-full bg-white py-12 sm:py-16 px-4 sm:px-8 lg:px-14 xl:px-20">

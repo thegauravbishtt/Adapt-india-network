@@ -159,7 +159,7 @@ export const telecomServices: ServiceDetail[] = [
       ],
       whyChooseTitle: "WHY ADAPT INDIA NETWORK ILL?",
       whyChooseDesc:
-        "We are not a reseller. Adapt India Networks operates direct optical fiber infrastructure interconnected with India's premier Tier-1 backbones, ensuring low-hop routing and direct peering at NIXI and major cloud exchanges.",
+        "Adapt India Networks is an authorised Tata Tele Business Services and ACT Fibernet partner. We check which carrier reaches your building, set up your line with static IPs and an uptime SLA, and stay your single point of contact for support.",
       whyChooseBullets: [
         "100+ Metro Cities Covered Nationwide",
         "Direct On-Ramps to AWS, Azure, Google Cloud",

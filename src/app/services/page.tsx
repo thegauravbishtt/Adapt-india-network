@@ -212,10 +212,10 @@ export default function ServicesPage() {
                   // OPTICAL CORE TELEMETRY &amp; INTERCONNECTS
                 </span>
                 <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-zinc-950 font-display tracking-tight leading-tight">
-                  Pan-India Optical Latency &amp; Direct Peering Exchanges
+                  Pan-India Connectivity Through Leading Carriers
                 </h2>
                 <p className="text-zinc-600 text-xs sm:text-sm md:text-base leading-relaxed mt-2">
-                  Operating dedicated dark-fiber routes over DWDM Dense Wavelength Division Multiplexing with direct interconnects at NIXI (National Internet Exchange of India), Extreme IX, and AMS-IX India.
+                  Leased lines, SD-WAN and MPLS delivered on Tata Tele Business Services and ACT Fibernet networks, with one team handling installation and support.
                 </p>
               </div>
 
