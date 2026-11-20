@@ -958,17 +958,17 @@ export function getCityBySlug(slug: string): CityPage | undefined {
 /** Core services linked from every city page. */
 export const cityServiceLinks = [
   {
-    name: "Internet Leased Line (ILL)",
+    name: "Internet Leased Line (ILL) Provider",
     href: "/services/smart-internet-ill/",
     text: "Dedicated 1:1 symmetrical internet with static IPs and an uptime SLA.",
   },
   {
-    name: "SD-WAN",
+    name: "Managed SD-WAN Service",
     href: "/services/smartflo-sd-wan/",
     text: "Connect all branches, combine links and fail over automatically.",
   },
   {
-    name: "MPLS VPN",
+    name: "MPLS VPN Service Provider",
     href: "/services/managed-mpls/",
     text: "Private, secure connectivity between offices, plants and data centres.",
   },
@@ -1001,6 +1001,11 @@ export const cityServiceLinks = [
     name: "Cloud Managed Services",
     href: "/services/managed-cloud-services/",
     text: "Monitoring, backups, patching and cost reviews for your cloud.",
+  },
+  {
+    name: "Smartflo Cloud Telephony",
+    href: "/services/cloud-telephony/",
+    text: "Toll-free and virtual numbers, IVR, call recording and a mobile app for your team.",
   },
 ];
 
